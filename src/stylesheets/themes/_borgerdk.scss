@@ -1,0 +1,64 @@
+// These variables overwrite the default values, giving the style the virk.dk theme
+
+$font-sans:                  'Source Sans Pro', Calibri, 'Trebuchet MS', 'Gill Sans', Verdana, sans-serif;
+
+$color-primary:              #43610e; //btn
+$color-primary-darker:       #46650e; //btn-hover
+$color-primary-darkest:      #496a0f; //btn-active
+
+$color-secondary:            #ae4227;
+$color-secondary-dark:       #9d3c23;
+$color-secondary-darkest:    #732c1a;
+$color-secondary-light:      lighten($color-secondary, 60%);
+$color-secondary-lightest:   lighten($color-secondary, 90%);
+
+$color-primary-alt:          #356772;
+$color-primary-alt-dark:     #2e5a64; //btn-hover
+$color-primary-alt-darkest:  #2e5a64; //btn-active
+
+$border-radius:              2px; //btn border radius
+
+// "new" variables
+$sidenav-current:            $color-primary;
+
+$input-font-size:            14px; 
+$input-height:               30px;
+$input-line-height:          1;
+$input-background-color:     white; // #ecf3f7;
+$input-border-radius:        4px;
+$input-border-color:       #cccccc;
+$only-left-border:           false;
+$input-padding-vertical:     8px; 
+$color-error:                #b64529;
+$color-success:              #333; 
+$input-error-border-normal:  1px solid $color-error;
+$input-error-border-large:   1px solid $color-error;
+$input-success-border:       1px solid $color-primary; 
+
+$table-th-border-bottom:        1px solid #cccccc;
+$table-th-border-left:          0;
+$table-th-border-right:         0;
+$table-th-border-top:           0;
+
+$table-td-border-bottom:        1px solid #cccccc;
+$table-td-border-left:          0;
+$table-td-border-right:         0;
+$table-td-border-top:           0;
+
+
+$nav-bg-color:                      #F5F5F5;
+$nav-border:                        3px solid $color-primary;
+$nav-border-padding:                14px;
+$nav-button-expanded-bg-color:      $nav-bg-color;
+$nav-button-expanded-bg-hover-color: $nav-bg-color;
+$nav-button-expanded-txt-color:     #000; 
+$nav-submenu-txt-color:             #000; 
+$nav-submenu-bg-color:              $nav-bg-color;
+$nav-submenu-bg-hover-color:        #e6e6e6;
+
+$backdrop-color: #000;
+$backdrop-opacity: .5;
+
+$button-primary-alt-color:    white;
+
+$tringuide-bg-color:          white;

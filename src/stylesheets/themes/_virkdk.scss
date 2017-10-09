@@ -1,0 +1,54 @@
+// These variables overwrite the default values, giving the style the virk.dk theme
+
+$font-sans:                  'Source Sans Pro', Calibri, 'Trebuchet MS', 'Gill Sans', Verdana, sans-serif;
+
+$color-primary:              #027091; //btn
+$color-primary-darker:       #606060; //btn-hover
+$color-primary-darkest:      #014c63; //btn-active
+
+$color-secondary:            #cf7719;
+$color-secondary-dark:       darken($color-secondary, 30%);
+$color-secondary-darkest:    darken($color-secondary, 60%);
+$color-secondary-light:      lighten($color-secondary, 60%);
+$color-secondary-lightest:   lighten($color-secondary, 90%);
+
+$color-gray:                 #727272;
+
+$border-radius:              0px; //btn border radius
+
+// "new" variables
+$sidenav-current:            #cf7719;
+
+$input-font-size:            14px; 
+$input-height:               30px;
+$input-line-height:          1;
+$input-background-color:     white; // #ecf3f7;
+$only-left-border:           false;
+$input-padding-vertical:     8px; 
+$color-error:                #ce1415;
+
+$table-th-border-bottom:        2px solid #333;
+$table-th-border-left:          0;
+$table-th-border-right:         0;
+$table-th-border-top:           0;
+
+$table-td-border-bottom:        1px solid #cccccc;;
+$table-td-border-left:          0;
+$table-td-border-right:         0;
+$table-td-border-top:           0;
+
+
+$nav-bg-color:                      #f8f4f1;
+$nav-border:                        3px solid $color-secondary;
+$nav-border-padding:                14px;
+$nav-button-expanded-bg-color:      $nav-bg-color;
+$nav-button-expanded-bg-hover-color: $nav-bg-color;
+$nav-button-expanded-txt-color:     #000; 
+$nav-submenu-txt-color:             #000; 
+$nav-submenu-bg-color:              $nav-bg-color;
+$nav-submenu-bg-hover-color:        #e6e3e0;
+
+$backdrop-color: #000;
+$backdrop-opacity: .5;
+
+$tringuide-bg-color:          #f8f4f1;
