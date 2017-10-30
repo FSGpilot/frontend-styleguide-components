@@ -29,8 +29,8 @@ body {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }
 
-.fontawesome-icon-list {
-  i {
-    padding-right: 10px;
-  }
+*:focus,
+.usa-focus {
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
 }

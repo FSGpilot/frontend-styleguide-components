@@ -7,10 +7,6 @@ table {
     th,
     td {
       background-color: $color-gray-lightest;
-      border-left: $table-th-border-left;
-      border-right: $table-th-border-right;
-      border-bottom: $table-th-border-bottom;
-      border-top: $table-th-border-top;
     }
   }
 
@@ -27,12 +23,8 @@ table {
   th,
   td {
     background-color: $color-white;
+    border: 1px solid $color-gray;
     padding: 1.5rem;
-
-    border-left: $table-td-border-left;
-    border-right: $table-td-border-right;
-    border-bottom: $table-td-border-bottom;
-    border-top: $table-td-border-top;
   }
 }
 

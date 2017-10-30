@@ -21,7 +21,7 @@ gulp.task('clean-tmp-directory', function (done) {
   return del(dutil.dirName);
 });
 
-/*gulp.task('zip-archives', function (done) {
+gulp.task('zip-archives', function (done) {
 
   dutil.logMessage('zip-archives', 'Creating a zip archive in dist/' + dutil.dirName + '.zip');
 
@@ -58,7 +58,7 @@ gulp.task('clean-tmp-directory', function (done) {
 
   zip.on('close', function (code) { if (0 === code) { done(); } });
 
-});*/
+});
 
 gulp.task(task, [ 'build' ], function (done) {
 
@@ -66,7 +66,7 @@ gulp.task(task, [ 'build' ], function (done) {
 
   runSequence(
     'make-tmp-directory',
-    //'zip-archives',
+    'zip-archives',
     'clean-tmp-directory',
     done
   );
