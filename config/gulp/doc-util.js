@@ -5,57 +5,106 @@ var notifier = require('node-notifier');
 
 var shellPrefix = '$';
 
+//Danish Flag
 function drawFlag () {
-
-  // American Flag in ASCII
-  //
+  
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.blue('xxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
   gutil.log(
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  );
-  gutil.log(
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  );
-  gutil.log(
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  );
-  gutil.log(
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  );
-  gutil.log(
-    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-  );
-  gutil.log(
-    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
   );
 
+  gutil.log(
+    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.white('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
+  gutil.log(
+    chalk.red('xxxxxxxxxxxxxxxxxxxx'),
+    chalk.white('xxxxxxxxxxxx'),
+    chalk.red('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  );
 }
 
 function notify (title, message, wait) {
