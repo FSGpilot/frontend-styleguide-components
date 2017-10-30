@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var dutil = require('./doc-util');
-var spawn = require('cross-spawn');
+var appRoot = require('app-root-path'); 
+var zipFolder = require('zip-folder');
 var runSequence = require('run-sequence');
 var del = require('del');
 var task = 'release';
@@ -21,43 +22,25 @@ gulp.task('clean-tmp-directory', function (done) {
   return del(dutil.dirName);
 });
 
+/*
+Gulp.task for zipping the compiled files to the dist folder, to make it easier to distribute the compiled code
+The function uses two simple node packages: 
+- zip-folder     (https://github.com/sole/node-zip-folder)
+- app-root-path  (https://github.com/inxilpro/node-app-root-path)
+The zip-folder package allows for zipping a specific folder to a specific path.
+The app-root-path package automatically finds the root path of the project, which is necassery with the zip-folder package.
+*/
 gulp.task('zip-archives', function (done) {
 
   dutil.logMessage('zip-archives', 'Creating a zip archive in dist/' + dutil.dirName + '.zip');
 
-  var zip = spawn('zip', [
-    '--log-info',
-    '-r',
-    './dist/' + dutil.dirName + '.zip',
-    dutil.dirName,
-    '-x "*.DS_Store"',
-  ]);
-
-  zip.stdout.on('data', function (data) {
-
-    if (/[\w\d]+/.test(data)) {
-
-      dutil.logData('zip-archives', data);
-
+  zipFolder(appRoot + '/' + dutil.dirName, appRoot + '/dist/'+ dutil.dirName + '.zip', function(err) {
+    if(err) {
+      dutil.logMessage("Something went wrong while zipping", err);
+    } else {
+      dutil.logMessage('zip-archives', dutil.dirName + "succesfully zipped to dist/" + dutil.dirName + ".zip");
     }
-
   });
-
-  zip.stderr.on('data', function (data) {
-
-    dutil.logError('zip-archives', data);
-
-  });
-
-  zip.on('error', function (error) {
-
-     dutil.logError('zip-archives', 'Failed to create a zip archive');
-
-     done(error);
-  });
-
-  zip.on('close', function (code) { if (0 === code) { done(); } });
-
 });
 
 gulp.task(task, [ 'build' ], function (done) {
