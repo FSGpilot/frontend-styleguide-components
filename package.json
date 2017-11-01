@@ -9,6 +9,7 @@
   "jsnext:main": "src/js/start.js",
   "scripts": {
     "build": "gulp build",
+    "fb": "fractal build",
     "build:css": "gulp sass",
     "build:js": "gulp javascript",
     "cover": "istanbul cover --config config/istanbul.yml gulp cover",

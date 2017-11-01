@@ -1,8 +1,15 @@
-<div class="usa-alert {{ alert.classes }}" {% if alert.role %}role="{{alert.role}}"{% endif %}>
+{% macro alert(classes, role, title, content) %}
+
+<div class="usa-alert {{ classes }}" {% if role %}role="{{role}}"{% endif %}>
   <div class="usa-alert-body">
-    {%- if alert.title -%}
-    <h3 class="usa-alert-heading">{{ alert.title }}</h3>
+    {%- if title -%}
+    <h3 class="usa-alert-heading">{{ title }}</h3>
     {%- endif -%}
-    <p class="usa-alert-text">{{ alert.content }}</p>
+    <p class="usa-alert-text">{{ content }}</p>
   </div>
 </div>
+
+{% endmacro %}
+
+{{ alert(alert_example.classes, alert_example.role, alert_example.title, alert_example.content) }}
+
