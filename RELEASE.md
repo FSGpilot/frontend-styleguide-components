@@ -1,7 +1,6 @@
-# Releasing the Web Design Standards
+# Releasing the Styleguide
 
-This is our official process for releasing new versions of the [U.S. Web Design
-Standards](https://standards.usa.gov).
+This is our official process for releasing new versions of the [Styleguide](https://standards.usa.gov).
 
 
 ## Table of contents

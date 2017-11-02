@@ -1,0 +1,28 @@
+{# 
+  @param classes: usa-alert-info, usa-alert-success, usa-alert-warning, usa-alert-error, usa-alert-paragraph, usa-alert-slim. 
+  @param role: e.g. 'alert'. 
+  @param title: String, title of the alert. 
+  @param content: String, the text content of the alert. 
+
+  @usage: 
+    {% import "alerts/alerts.njk" as alerts %}
+    ...
+    {{ alert('usa-alert-info', 'alert', 'A fancy title', 'Some alert content text') }}
+
+  @return: the HTML for an alert-box.
+#}
+{% macro alert(classes, role, title, content) %}
+
+<div class="usa-alert {{ classes }}" {% if role %}role="{{role}}"{% endif %}>
+  <div class="usa-alert-body">
+    {%- if title -%}
+    <h3 class="usa-alert-heading">{{ title }}</h3>
+    {%- endif -%}
+    <p class="usa-alert-text">{{ content }}</p>
+  </div>
+</div>
+
+{% endmacro %}
+
+{{ alert(alert_example.classes, alert_example.role, alert_example.title, alert_example.content) }}
+
