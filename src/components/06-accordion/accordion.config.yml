@@ -11,7 +11,7 @@ variants:
       Add the `usa-accordion-bordered` class to your `.usa-accordion`
       to enable the visual border.
     context:
-      accordion:
+      accordion_example:
         id_prefix: b-
         variant: bordered
 
@@ -21,12 +21,12 @@ variants:
       by adding the `aria-multiselectable="true"` attribute to your
       `.usa-accordion`.
     context:
-      accordion:
+      accordion_example:
         id_prefix: m-
         multiselectable: true
 
 context:
-  accordion:
+  accordion_example:
     items:
       - title: First Amendment
         id: a1

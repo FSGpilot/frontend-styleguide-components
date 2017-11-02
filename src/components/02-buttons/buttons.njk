@@ -1,3 +1,9 @@
+{% import "05-alerts/alerts.njk" as alerts %}
+{% import "06-accordion/accordion.njk" as accordions %}
+
+{{ accordions.accordion('bordered', '', '', 'Some content') }}
+
+
 
 {% if (classes == 'usa-button-secondary-inverse') %}
   <div class="dark-bg">
