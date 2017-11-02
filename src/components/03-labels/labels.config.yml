@@ -1,6 +1,6 @@
 label: Labels
 status: ready
-preview: '@uswds-framed'
+preview: '@dkwds-framed'
 
 variants:
   - name: default

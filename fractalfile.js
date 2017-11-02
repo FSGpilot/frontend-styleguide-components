@@ -13,12 +13,12 @@ const context = {
   },
 };
 
-fractal.set('project.title', 'U.S. Web Design Standards');
+fractal.set('project.title', 'Frontend Styleguide');
 
 const components = fractal.components;
 components.set('ext', '.njk');
 components.set('path', 'src/components');
-components.set('default.preview', '@uswds');
+components.set('default.preview', '@dkwds');
 components.set('default.context', context);
 
 // use Nunjucks as the templating engine

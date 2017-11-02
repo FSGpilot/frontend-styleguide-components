@@ -1,5 +1,5 @@
 label: Primary (header)
-preview: '@uswds-header'
+preview: '@dkwds-header'
 
 context:
   nav:
