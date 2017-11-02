@@ -6,33 +6,30 @@
 @import "mixins/grid-framework";
 @import "mixins/grid";
 
-// Container widths
-//
-// Set the container width, and override it for fixed navbars in media queries.
-
 @if $enable-bs-grid {
+  // Container widths
+  //
+  // Set the container width, and override it for fixed navbars in media queries.
+
   .container {
     @include make-container();
     @include make-container-max-widths();
   }
-}
 
-// Fluid container
-//
-// Utilizes the mixin meant for fixed width containers, but with 100% width for
-// fluid, full width layouts.
 
-@if $enable-bs-grid {
+  // Fluid container
+  //
+  // Utilizes the mixin meant for fixed width containers, but with 100% width for
+  // fluid, full width layouts.
+
   .container-fluid {
     @include make-container();
   }
-}
 
-// Row
-//
-// Rows contain and clear the floats of your columns.
+  // Row
+  //
+  // Rows contain and clear the floats of your columns.
 
-@if $enable-bs-grid {
   .row {
     @include make-row();
   }
@@ -49,16 +46,14 @@
       padding-left: 0;
     }
   }
-}
 
-// Columns
-//
-// Common styles for small and large grid columns
+  // Columns
+  //
+  // Common styles for small and large grid columns
 
-@if $enable-bs-grid {
   @include make-grid-columns();
 }
 
-
 // Additional flex utilities
+
 @import 'utilities/flex';

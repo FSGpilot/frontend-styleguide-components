@@ -7,9 +7,7 @@
     @include outer-container();
     max-width: $site-max-width;
   }
-}
 
-@if $enable-uswd-grid {
   .usa-grid {
     @include padding(null $site-margins-mobile);
 
@@ -17,16 +15,13 @@
       @include padding(null $site-margins);
     }
   }
-}
 
-@if $enable-uswd-grid {
   .usa-grid-full {
     padding: 0;
   }
-}
 
-// Grid items
-@if $enable-uswd-grid {
+
+  // Grid items
   @include media($medium) {
     .usa-width-one-whole {
       @include span-columns(6);
@@ -84,9 +79,7 @@
       @include span-columns(4);
     }
   }
-}
 
-@if $enable-uswd-grid {
   @include media($large) {
     .usa-width-one-whole {
       @include span-columns(12);
@@ -156,19 +149,17 @@
       @include span-columns(7);
     }
   }
-}
 
-// Specifies end of a row.
-// Required if grid-box contains multiple rows.
-// Required if browser does not support :last-child
-@if $enable-uswd-grid {
+
+  // Specifies end of a row.
+  // Required if grid-box contains multiple rows.
+  // Required if browser does not support :last-child
   .usa-end-row {
     @include omega();
   }
-}
 
-// Grid Offsets
-@if $enable-uswd-grid {
+
+  // Grid Offsets
   .usa-offset-one-twelfth {
     @include shift(1 of 12);
   }
