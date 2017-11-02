@@ -1,4 +1,4 @@
-/*! uswds @version */
+/*! dkwds @version */
 
 // Vendor -------------- //
 @import 'lib/bourbon';
@@ -6,10 +6,12 @@
 @import 'lib/normalize';
 
 // Core -------------- //
+@import 'core/functions';
 @import 'core/variables';
 @import 'core/fonts';
 @import 'core/base';
-@import 'core/grid';
+@import 'core/bootstrap-grid';
+@import 'core/uswd-grid';
 @import 'core/utilities';
 
 // Elements -------------- //

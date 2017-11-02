@@ -60,8 +60,8 @@ gulp.task(task, [ 'copy-vendor-sass' ], function () {
   var stream = gulp.src(['src/stylesheets/dkwds.scss','src/stylesheets/dkwds-virkdk.scss','src/stylesheets/dkwds-borgerdk.scss'])
     // 1. do the version replacement
     .pipe(replace(
-      /\buswds @version\b/g,
-      'uswds v' + pkg.version
+      /\bdkwds @version\b/g,
+      'dkwds v' + pkg.version
     ))
     // 2. convert SCSS to CSS
     .pipe(

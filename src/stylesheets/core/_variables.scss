@@ -105,6 +105,80 @@ $color-visited:              $color-purple !default;
 $color-shadow:               rgba(#000, 0.3) !default;
 $color-transparent:          rgba(#000, 0) !default;
 
+// Grid switcher
+$enable-bs-grid:             false !default;  // Enable Bootstrap grid
+$enable-uswd-grid:           false !default; // Enable USWD grid
+
+// Both grids can't be enabled or disabled at once.
+@if(($enable-bs-grid == true) and ($enable-uswd-grid == true)) {
+  @error 'Both grids cannot be enabled. Please set either $enable-bs-grid or $enable-uswd-grid to false, and try again.'
+}
+
+@if(($enable-bs-grid == false) and ($enable-uswd-grid == false)) {
+  @error 'Both grids cannot be disabled. Please set either $enable-bs-grid or $enable-uswd-grid to true, and try again.'
+}
+
+
+// Bootstrap Grid
+//
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+
+// USWD Grid
+//
 // Mobile First Breakpoints
 $small-screen:  481px !default;
 $medium-screen: 600px !default;
