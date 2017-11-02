@@ -106,7 +106,7 @@ $color-shadow:               rgba(#000, 0.3) !default;
 $color-transparent:          rgba(#000, 0) !default;
 
 // Grid switcher
-$enable-bs-grid:             false !default;  // Enable Bootstrap grid
+$enable-bs-grid:             true !default;  // Enable Bootstrap grid
 $enable-uswd-grid:           false !default; // Enable USWD grid
 
 // Both grids can't be enabled or disabled at once.
