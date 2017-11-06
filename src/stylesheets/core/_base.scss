@@ -31,5 +31,6 @@ body {
 
 *:focus,
 .usa-focus {
-  @include focus;
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
 }
