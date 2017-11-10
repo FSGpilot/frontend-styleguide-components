@@ -11,9 +11,6 @@ coverage/
 # ignore the generated dist directory
 dist/
 
-# ignore the Fractal build directory
-build/
-
 # ignore the generated dkwds directory
 dkwds-1.4.2/
 

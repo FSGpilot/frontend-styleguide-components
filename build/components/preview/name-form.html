@@ -1,0 +1,46 @@
+
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Dkwds Content: Default</title>
+    <link rel="stylesheet" href="../../dist/css/dkwds-virkdk.min.css">
+  </head>
+  <body>
+    
+  <div class="usa-grid" style="padding: 2em">
+    <div class="usa-width-one-whole">
+      
+  <form class="usa-form">
+    <fieldset>
+      <legend>Name</legend>
+      <label for="title" class="usa-input-optional">Title</label>
+      <input class="usa-input-tiny" id="title" name="title" type="text">
+
+      <label for="first-name">First name</label>
+      <input id="first-name" name="first-name" type="text" required="" aria-required="true">
+
+      <label for="middle-name" class="usa-input-optional">Middle name</label>
+      <input id="middle-name" name="middle-name" type="text">
+
+      <label for="last-name">Last name</label>
+      <input id="last-name" name="last-name" type="text" required="" aria-required="true">
+
+    </fieldset>
+  </form>
+
+    </div>
+  </div>
+
+    <script src="../../dist/js/dkwds.min.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+      document.body.addEventListener('submit', function(e) {
+        // https://github.com/18F/web-design-standards/issues/2101
+        e.preventDefault();
+      }, true);
+    }, false);
+    </script>
+  </body>
+</html>
+
