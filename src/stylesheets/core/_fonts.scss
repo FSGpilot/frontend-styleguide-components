@@ -2,76 +2,76 @@
 // Raleway
 @include font-face(
   'Raleway',
-  '#{$fonts-path/raleway/Raleway-ExtraLight',
+  '#{$font-path}/raleway/Raleway-ExtraLight',
   200,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Raleway',
-  '#{$fonts-path/raleway/Raleway-Light',
+  '#{$font-path}/raleway/Raleway-Light',
   300,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Raleway',
-  '#{$fonts-path/raleway/Raleway-Regular',
+  '#{$font-path}/raleway/Raleway-Regular',
   400,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Raleway',
-  '#{$fonts-path/raleway/Raleway-SemiBold',
+  '#{$font-path}/raleway/Raleway-SemiBold',
   600,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Raleway',
-  '#{$fonts-path/raleway/Raleway-Bold',
+  '#{$font-path}/raleway/Raleway-Bold',
   700,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 
 // Open Sans
 @include font-face(
   'Open Sans',
-  '#{$fonts-path/opensans/OpenSans-Light',
+  '#{$font-path}/opensans/OpenSans-Light',
   300,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Open Sans',
-  '#{$fonts-path/opensans/OpenSans-Regular',
+  '#{$font-path}/opensans/OpenSans-Regular',
   400,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Open Sans',
-  '#{$fonts-path/opensans/OpenSans-SemiBold',
+  '#{$font-path}/opensans/OpenSans-SemiBold',
   600,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 @include font-face(
   'Open Sans',
-  '#{$fonts-path/opensans/OpenSans-Bold',
+  '#{$font-path}/opensans/OpenSans-Bold',
   700,
   normal,
-  $fole-formats: woff2 ttf
+  $file-formats: woff2 ttf
 );
 
 /*

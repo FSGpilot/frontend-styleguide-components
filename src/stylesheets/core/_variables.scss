@@ -42,8 +42,13 @@ $lightest:                    56% !default;
 $darker:                      10% !default;
 $darkest:                     22% !default;
 
+$color-virk:                  #000 !default; // Overwritten in _themes
+$color-borger:                #000 !default; // Overwritten in _themes
+
 $color-white:                 #ffffff !default;
 $color-base:                  #212121 !default;
+
+$color-black:                 #000000 !default;
 
 $color-gray:                  #5b616b !default;
 $color-gray-light:            #aeb0b5 !default;

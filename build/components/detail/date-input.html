@@ -153,25 +153,33 @@
 <div class="Browser-panel Browser-code is-active" data-role="tab-panel" id="browser-d16bee8e8d88edde90105949cf22b791-panel-html">
     <code class="Code Code--lang-html">
         
-        <pre><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Date of birth<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-hint"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dobHint"</span>&gt;</span>For example: 04 28 1986<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <pre><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-drop_text"</span>&gt;</span>Reset password<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-serif"</span>&gt;</span>Please enter your new password<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-date-of-birth"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-group usa-form-group-month"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"date_of_birth_1"</span>&gt;</span>Month<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-input-inline"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"dobHint"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"date_of_birth_1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"date_of_birth_1"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"0?[1-9]|1[012]"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"12"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-alert usa-alert-info"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-alert-body"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-alert-heading"</span>&gt;</span>Password information<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-alert-text"</span>&gt;</span>
+                    Length requirements
+                    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span> Character constraints, if any
+                <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-group usa-form-group-day"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"date_of_birth_2"</span>&gt;</span>Day<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-input-inline"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"dobHint"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"date_of_birth_2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"date_of_birth_2"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"0?[1-9]|1[0-9]|2[0-9]|3[01]"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"31"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-group usa-form-group-year"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"date_of_birth_3"</span>&gt;</span>Year<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-input-inline"</span> <span class="hljs-attr">aria-describedby</span>=<span class="hljs-string">"dobHint"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-control"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"date_of_birth_3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"date_of_birth_3"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"[0-9]{4}"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"1900"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"2000"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span></pre>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"password"</span>&gt;</span>New password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"confirmPassword"</span>&gt;</span>Confirm password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"confirmPassword"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"confirmPassword"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-form-note"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:void(0);"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"usa-show_multipassword"</span> <span class="hljs-attr">aria-controls</span>=<span class="hljs-string">"password confirmPassword"</span>&gt;</span>Show my typing<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Reset password"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></pre>
         
     </code>
 </div>
@@ -188,25 +196,36 @@
     
     <div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-d16bee8e8d88edde90105949cf22b791-panel-view">
     <code class="Code Code--lang-text">
-        <pre>&lt;fieldset&gt;
-    &lt;legend&gt;<span class="hljs-type">Date</span> of birth&lt;/legend&gt;
-    &lt;span <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-hint"</span> id=<span class="hljs-string">"dobHint"</span>&gt;<span class="hljs-type">For</span> example: <span class="hljs-number">04</span> <span class="hljs-number">28</span> <span class="hljs-number">1986</span>&lt;/span&gt;
+        <pre>&lt;<span class="hljs-selector-tag">form</span> class=<span class="hljs-string">"usa-form"</span>&gt;
+  &lt;fieldset&gt;
+    &lt;<span class="hljs-selector-tag">legend</span> class=<span class="hljs-string">"usa-drop_text"</span>&gt;Reset password&lt;/legend&gt;
+    &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"usa-serif"</span>&gt;Please enter your new password&lt;/span&gt;
 
-    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-date-of-birth"</span>&gt;
-      &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-group usa-form-group-month"</span>&gt;
-        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"date_of_birth_1"</span>&gt;<span class="hljs-type">Month</span>&lt;/label&gt;
-        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-input-inline"</span> aria-describedby=<span class="hljs-string">"dobHint"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-control"</span> id=<span class="hljs-string">"date_of_birth_1"</span> name=<span class="hljs-string">"date_of_birth_1"</span> pattern=<span class="hljs-string">"0?[1-9]|1[012]"</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"number"</span> min=<span class="hljs-string">"1"</span> max=<span class="hljs-string">"12"</span> value=<span class="hljs-string">""</span>&gt;
-      &lt;/div&gt;
-      &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-group usa-form-group-day"</span>&gt;
-        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"date_of_birth_2"</span>&gt;<span class="hljs-type">Day</span>&lt;/label&gt;
-        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-input-inline"</span> aria-describedby=<span class="hljs-string">"dobHint"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-control"</span> id=<span class="hljs-string">"date_of_birth_2"</span> name=<span class="hljs-string">"date_of_birth_2"</span> pattern=<span class="hljs-string">"0?[1-9]|1[0-9]|2[0-9]|3[01]"</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"number"</span> min=<span class="hljs-string">"1"</span> max=<span class="hljs-string">"31"</span> value=<span class="hljs-string">""</span>&gt;
-      &lt;/div&gt;
-      &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-group usa-form-group-year"</span>&gt;
-        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"date_of_birth_3"</span>&gt;<span class="hljs-type">Year</span>&lt;/label&gt;
-        &lt;input <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-input-inline"</span> aria-describedby=<span class="hljs-string">"dobHint"</span> <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"usa-form-control"</span> id=<span class="hljs-string">"date_of_birth_3"</span> name=<span class="hljs-string">"date_of_birth_3"</span> pattern=<span class="hljs-string">"[0-9]{4}"</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"number"</span> min=<span class="hljs-string">"1900"</span> max=<span class="hljs-string">"2000"</span> value=<span class="hljs-string">""</span>&gt;
+    &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"usa-alert usa-alert-info"</span>&gt;
+      &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"usa-alert-body"</span>&gt;
+        &lt;<span class="hljs-selector-tag">h3</span> class=<span class="hljs-string">"usa-alert-heading"</span>&gt;Password information&lt;/h3&gt;
+        &lt;<span class="hljs-selector-tag">p</span> class=<span class="hljs-string">"usa-alert-text"</span>&gt;
+          Length requirements
+          &lt;br&gt;
+          Character constraints, <span class="hljs-keyword">if</span> any
+        &lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/fieldset&gt;</pre>
+
+    &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"password"</span>&gt;New password&lt;/label&gt;
+    &lt;<span class="hljs-selector-tag">input</span> id=<span class="hljs-string">"password"</span> name=<span class="hljs-string">"password"</span> type=<span class="hljs-string">"password"</span>&gt;
+
+    &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"confirmPassword"</span>&gt;Confirm password&lt;/label&gt;
+    &lt;<span class="hljs-selector-tag">input</span> id=<span class="hljs-string">"confirmPassword"</span> name=<span class="hljs-string">"confirmPassword"</span> type=<span class="hljs-string">"password"</span>&gt;
+    &lt;<span class="hljs-selector-tag">p</span> class=<span class="hljs-string">"usa-form-note"</span>&gt;
+      &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"javascript:void(0);"</span>
+        class=<span class="hljs-string">"usa-show_multipassword"</span>
+        aria-controls=<span class="hljs-string">"password confirmPassword"</span>&gt;Show my typing&lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"submit"</span> value=<span class="hljs-string">"Reset password"</span>&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
     </code>
 </div>
 
@@ -217,7 +236,7 @@
             
             <pre><span class="hljs-attr">package:</span>
 <span class="hljs-attr">  name:</span> <span class="hljs-string">dkwds</span>
-<span class="hljs-attr">  version:</span> <span class="hljs-number">1.4</span><span class="hljs-number">.1</span>
+<span class="hljs-attr">  version:</span> <span class="hljs-number">1.4</span><span class="hljs-number">.2</span>
 <span class="hljs-attr">uswds:</span>
 <span class="hljs-attr">  path:</span> <span class="hljs-string">../../dist</span>
 </pre>
@@ -263,7 +282,7 @@
         </li>
         <li class="Meta-item">
             <strong class="Meta-key">Filesystem Path:</strong>
-            <span class="Meta-value">src\components\07-form\controls\date-input.njk</span>
+            <span class="Meta-value">src/components/07-form/controls/date-input.njk</span>
         </li>
         
         
