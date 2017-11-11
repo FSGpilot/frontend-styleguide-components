@@ -13,9 +13,15 @@ dist/
 
 # ignore the generated dkwds directory
 dkwds-1.4.2/
+dkwds-1.4.1/
 
 # ignore the generated builds directory
-build/
+build/components/detail/
+build/components/preview
+build/components/raw
+build/dist
+build/themes
+
 
 # ignore gulp-generated vendor files
 src/stylesheets/lib

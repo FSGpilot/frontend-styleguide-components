@@ -5,7 +5,7 @@
   "engines": {
     "node": ">= 4"
   },
-  "main": "dist/js/uswds.min.js",
+  "main": "dist/js/dkwds.min.js",
   "jsnext:main": "src/js/start.js",
   "scripts": {
     "build": "gulp build",
