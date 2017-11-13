@@ -25,59 +25,79 @@ $base-line-height:    1.5 !default;
 $heading-line-height: 1.3 !default;
 $lead-line-height:    1.7 !default;
 
-$font-sans:           'Source Sans Pro', $helvetica !default;
+//$font-sans:           'Source Sans Pro', $helvetica !default;
 $font-serif:          'Merriweather', $georgia !default;
+
+$font-sans:           'Open Sans', $helvetica !default;
+$font-heading:        'Raleway', $helvetica !default;
 
 // TODO these should be called font-weight-${}
 $font-normal:         400 !default;
 $font-bold:           700 !default;
 
-// Color
-$color-blue:                 #0071bc !default;
+
+// Colors
+$lighter:                     30% !default;
+$lightest:                    56% !default;
+$darker:                      10% !default;
+$darkest:                     22% !default;
+
+$color-virk:                  #000 !default; // Overwritten in _themes
+$color-borger:                #000 !default; // Overwritten in _themes
+
+$color-white:                 #ffffff !default;
+$color-base:                  #212121 !default;
+
+$color-black:                 #000000 !default;
+
+$color-gray:                  #5b616b !default;
+$color-gray-light:            #aeb0b5 !default;
+$color-gray-medium:           #757575 !default;
+$color-gray-dark:             #323a45 !default;
+
+$color-blue:                  #0071bc !default;
+$color-success:               #588012 !default;
+$color-info:                  #027091 !default;
+$color-warning:               #fdb81e !default;
+$color-error:                 #e31c3d !default;
+
+// USWD Color leftovers
+// TODO: Rework or remove these
 $color-blue-darker:          #205493 !default;
 $color-blue-darkest:         #112e51 !default;
 
 $color-aqua:                 #02bfe7 !default;
-$color-aqua-dark:            #00a6d2 !default;
-$color-aqua-darkest:         #046b99 !default;
-$color-aqua-light:           #9bdaf1 !default;
-$color-aqua-lightest:        #e1f3f8 !default;
+$color-aqua-dark:            darken($color-aqua, $darker) !default;
+$color-aqua-darkest:         darken($color-aqua, $darkest) !default;
+$color-aqua-light:           lighten($color-aqua, $lighter) !default;
+$color-aqua-lightest:        lighten($color-aqua, $lightest) !default;
 
-$color-red:                  #e31c3d !default;
-$color-red-dark:             #cd2026 !default;
-$color-red-darkest:          #981b1e !default;
-$color-red-light:            #e59393 !default;
-$color-red-lightest:         #f9dede !default;
+$color-red:                  $color-error !default;
+$color-red-dark:             darken($color-red, $darker) !default;
+$color-red-darkest:          darken($color-red, $darkest) !default;
+$color-red-light:            lighten($color-red, $lighter) !default;
+$color-red-lightest:         lighten($color-red, $lightest) !default;
 
-$color-white:                #ffffff !default;
-$color-black:                #000000 !default;
-$color-black-light:          #212121 !default;
-
-$color-gray-dark:            #323a45 !default;
-$color-gray:                 #5b616b !default;
-$color-gray-medium:          #757575 !default;
-$color-gray-light:           #aeb0b5 !default;
-$color-gray-lighter:         #d6d7d9 !default;
-$color-gray-lightest:        #f1f1f1 !default;
-
+$color-gray-lighter:         lighten($color-gray, $lighter) !default;
+$color-gray-lightest:        lighten($color-gray, $lightest) !default;
 $color-gray-warm-dark:       #494440 !default;
 $color-gray-warm-light:      #e4e2e0 !default;
 $color-gray-cool-light:      #dce4ef !default;
 
-$color-gold:                 #fdb81e !default;
+$color-gold:                 $color-virk !default;
 $color-gold-light:           #f9c642 !default;
-$color-gold-lighter:         #fad980 !default;
-$color-gold-lightest:        #fff1d2 !default;
+$color-gold-lighter:         lighten($color-gold, $lighter) !default;
+$color-gold-lightest:        lighten($color-gold, $lightest) !default;
 
 $color-green:                #2e8540 !default;
 $color-green-light:          #4aa564 !default;
-$color-green-lighter:        #94bfa2 !default;
-$color-green-lightest:       #e7f4e4 !default;
+$color-green-lighter:        lighten($color-green, $lighter) !default;
+$color-green-lightest:       lighten($color-green, $lightest) !default;
 
 $color-cool-blue:            #205493 !default;
 $color-cool-blue-light:      #4773aa !default;
-$color-cool-blue-lighter:    #8ba6ca !default;
-$color-cool-blue-lightest:   #dce4ef !default;
+$color-cool-blue-lighter:    lighten($color-cool-blue, $lighter) !default;
+$color-cool-blue-lightest:   lighten($color-cool-blue, $lightest) !default;
 
 $color-purple:               #4c2c92 !default;
 
@@ -98,14 +118,31 @@ $color-secondary-darkest:    $color-red-darkest !default;
 $color-secondary-light:      $color-red-light !default;
 $color-secondary-lightest:   $color-red-lightest !default;
 
-$color-base:                 $color-black-light !default;
+// Color map
+// TODO: Might need the leftover colors
+//       and the functional colors from USWD
+$colors: ();
+$colors: map-merge((
+    white: $color-white,
+    base: $color-base,
+    gray: $color-gray,
+    blue: $color-blue,
+    success: $color-success,
+    info: $color-info,
+    purple: $color-purple,
+    warning: $color-warning,
+    error: $color-error
+), $colors);
+
 $color-focus:                $color-gray-light !default;
 $color-visited:              $color-purple !default;
 
 $color-shadow:               rgba(#000, 0.3) !default;
 $color-transparent:          rgba(#000, 0) !default;
 
-// Grid switcher
+
+// Grid
+// ----------------
 $enable-bs-grid:             true !default;  // Enable Bootstrap grid
 $enable-uswd-grid:           false !default; // Enable USWD grid
 
@@ -117,7 +154,6 @@ $enable-uswd-grid:           false !default; // Enable USWD grid
 @if(($enable-bs-grid == false) and ($enable-uswd-grid == false)) {
   @error 'Both grids cannot be disabled. Please set either $enable-bs-grid or $enable-uswd-grid to true, and try again.'
 }
-
 
 // Bootstrap Grid
 //
@@ -137,7 +173,6 @@ $spacers: (
   5: ($spacer * 3)
 ) !default;
 
-
 // Grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
@@ -154,7 +189,6 @@ $grid-breakpoints: (
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
-
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
@@ -167,7 +201,6 @@ $container-max-widths: (
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
-
 
 // Grid columns
 //
