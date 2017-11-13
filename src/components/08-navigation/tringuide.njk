@@ -1,28 +1,17 @@
-<div class="usa-grid-full">
-  <aside class="usa-width-one-third">
-    <ul class="usa-sidenav-list tringuide">
-      <li>
-        <a href="#">
-          1. Stamdata
-          <span class="error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Du mangler at udfylde data</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          2. Startdato
-          <span class="info"><i class="fa fa-check-circle" aria-hidden="true"></i> Udfyldt</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="usa-current">
-          3. Et tredje step
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          4. Opsummering og godkendelse
-        </a>
-      </li>
-    </ul>
-  </aside>
-</div>
+{% macro tringuide(trinliste) %}
+  <div class="usa-grid-full">
+      <ul class="usa-sidenav-list">
+        {% for trin in trinliste %}
+          <li>
+            <a href="{{trin.href}}" {% if trin.current %} class="usa-current" {% endif %}>
+              {{loop.index}}. {{trin.text}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+  </div>        
+{% endmacro %}
+
+
+{{ tringuide(tringuiden.trinlisten) }}
+    

@@ -1,0 +1,61 @@
+{% import "08-navigation/tringuide.njk" as tringuiden %}
+{% import "07-form/templates/address-form.njk" as adresse  %}
+{% import "07-form/templates/name-form.njk" as navn %}
+{% import "07-form/controls/date-input.njk" as dato %}
+{% import "07-form/controls/radiobutton.njk" as radiob %}
+
+
+
+{% extends 'layouts/_base.njk' %}
+
+{% block header %}
+    {% render '@header--extended' %}
+{% endblock %}
+
+
+{% block body %}
+    <header class="container">
+        <div class="col">
+           <h2>{{title}}</h2>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row">
+        <div class="col-sm-4">
+            {{tringuiden.tringuide([{ text: "Inden du går igang"}, { text: "Oplysninger om dig", current: true}, {text: "Bekræft oplysninger"}])}}
+        </div>
+        <div class="col-sm-8">
+            <h3>Oplysninger om dig</h3>
+            <form class="usa-form-large">
+                <fieldset>
+                    {{navn.navneform()}}
+                    {{adresse.adresseform()}}
+                    {{dato.datoinput("Fødselsdagsdato")}}
+
+                    <div class="row">
+                        <label>Har du tidligere søgt om indsigt?</label>
+                    </div>
+                    <div class="row">
+                        <ul class="usa-unstyled-list">
+                            {{radiob.radiobutton("valg-ja", "valg", "valg-ja", true, "Ja")}}
+                            {{radiob.radiobutton("valg-nej", "valg", "valg-nej", false, "Nej")}}
+                        </ul>
+                    </div> 
+                </fieldset>
+            </form>
+            <div class="row">
+                <button class="usa-button usa-button-primary">Næste</button>                    
+            </div>
+            <div class="row">
+                 <a href="" >Forrige</a>                
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+{% block footer -%}
+{% render '@footer' %}
+{% endblock %}
