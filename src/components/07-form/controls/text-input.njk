@@ -1,4 +1,4 @@
-{% macro textinput(id, label, class, error, errormsg, name) %}
+{% macro textinput(id, label, class, error, errormsg, name, classlabel) %}
   {% if error %}
   <div class="usa-input-error">
     <label class="usa-input-error-label" for="{{id}}">{{label}}</label>
@@ -6,7 +6,7 @@
     <input id="{{id}}" name="{{name}}" type="text" aria-describedby="input-error-message">
   </div>
   {% else %} 
-     <label for="{{id}}">{{label}}</label>
+     <label for="{{id}}" class="{{classlabel}}">{{label}}</label>
      <input class="{{class}}" id="{{id}}" name="{{name}}" type="text">
   {% endif %}
 {% endmacro %}
