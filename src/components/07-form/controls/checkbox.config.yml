@@ -1,0 +1,24 @@
+label: Checkbox
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  checkbox_example:
+    items:
+      - id: truth
+        name: historical-figures-1
+        value: truth
+        checked: true
+        text: Sojourner Truth
+      - id: douglass
+        name: historical-figures-1
+        value: douglass
+        text: Frederick Douglass
+      - id: washington
+        name: historical-figures-1
+        value: washington
+        text: Booker T. Washington
+      - id: washington
+        name: historical-figures-1
+        disabled: true
+        text: George Washington Carver
