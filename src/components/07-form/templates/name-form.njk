@@ -1,18 +1,13 @@
+{% import "07-form/controls/text-input.njk" as input %}
 
-  <form class="usa-form">
-    <fieldset>
-      <legend>Name</legend>
-      <label for="title" class="usa-input-optional">Title</label>
-      <input class="usa-input-tiny" id="title" name="title" type="text">
+{% macro navneform() %}
+      {{input.textinput(input-text-fornavn, "Fornavn", "", false, "", input-text-fornavn)}}
+      {{input.textinput(input-text-efternavn, "Efternavn", "", false, "", input-text-efternavn)}}
+{% endmacro %}
 
-      <label for="first-name">First name</label>
-      <input id="first-name" name="first-name" type="text" required="" aria-required="true">
-
-      <label for="middle-name" class="usa-input-optional">Middle name</label>
-      <input id="middle-name" name="middle-name" type="text">
-
-      <label for="last-name">Last name</label>
-      <input id="last-name" name="last-name" type="text" required="" aria-required="true">
-
-    </fieldset>
-  </form>
+<form class="usa-form-large">
+  <fieldset>
+    <legend>Navn</legend>
+    {{navneform()}}
+  </fieldset>
+</form>
