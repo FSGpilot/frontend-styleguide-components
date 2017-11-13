@@ -1,9 +1,9 @@
-label: Checkbox
+label: Radio button
 status: ready
 preview: '@dkwds-framed'
 
 context:
-  checkbox_example:
+  radiobuttons_example:
     items:
       - id: truth
         name: historical-figures-1
@@ -18,8 +18,7 @@ context:
         name: historical-figures-1
         value: washington
         text: Booker T. Washington
-      - id: carver
+      - id: washington
         name: historical-figures-1
         value: carver
-        disabled: true
         text: George Washington Carver

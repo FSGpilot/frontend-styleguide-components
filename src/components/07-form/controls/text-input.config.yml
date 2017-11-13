@@ -1,0 +1,26 @@
+label: Tekst-input
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  textinput_example:
+    items:
+      - id: input-type-text
+        label: Text input label
+        name: input-type-text
+      - id: input-focus
+        label: Text input focused
+        class: usa-focus
+        name: input-focus
+      - id: input-error
+        name: input-error
+        label: Text input error
+        error: true
+        errormsg: Helpful error message
+      - id: input-success
+        label: Text input success
+        class: usa-input-success
+        name: input-success
+      - id: input-type-textarea
+        label: Text area label
+        name: input-type-textarea
