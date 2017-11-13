@@ -1,0 +1,11 @@
+label: Tringuide
+status: ready
+
+context:
+  tringuiden:
+    trinlisten: &default_links
+      - text: Trin 1
+      - text: Trin 2 (valgt)
+        current: true
+      - text: Trin 3
+      - text: Trin 4
