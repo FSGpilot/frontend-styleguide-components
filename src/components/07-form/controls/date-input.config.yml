@@ -1,0 +1,9 @@
+label: Dato-input
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  datoinput_example:
+    label1: Fødselsdato
+    label2: Indsendelsesfrist
+    
