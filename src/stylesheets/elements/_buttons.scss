@@ -219,3 +219,42 @@ html .usa-button-secondary-inverse-disabled,  // Deprecated
   padding: .5rem 1rem;
   font-size: $small-font-size;
 }
+
+
+.usa-button-ghost {
+  border: 0;
+  background-color: transparent;
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:hover,
+  &.usa-button-hover {
+    background-color: transparent;
+    color: $color-primary;
+    box-shadow: $button-stroke $color-primary;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.usa-button-active {
+    background-color: transparent;
+    color: $color-primary;
+    box-shadow: $button-stroke $color-primary-darkest;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.usa-focus {
+    background-color: transparent;
+    color: $color-primary;
+    outline: 2px solid $color-primary-darker;
+    text-decoration: underline;
+  }
+
+  &:disabled,
+  &.usa-disabled {
+    background-color: transparent;
+    opacity: .5;
+    text-decoration: underline;
+  }
+}

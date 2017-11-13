@@ -1,27 +1,59 @@
 label: Buttons
 status: ready
+preview: '@dkwds-framed'
 
 variants:
-  - name: primary
-    context:
-      category: primary
-      label: Primary buttons
-      classes: 'usa-button'
+  - name: default
+    label: Examples
 
-  - name: secondary
-    context:
-      category: secondary
-      label: Secondary buttons
-      classes: 'usa-button-secondary'
 
-  - name: ghost
-    context:
-      category: ghost
-      label: Ghost buttons
-      classes: 'usa-button-ghost'
+context:
+  button_example:
+    items:
+      - class: 'primary'
+        label: 'Primary buttons'
+        state: 'default'
+      - class: 'primary'
+        state: 'hover'
+      - class: 'primary'
+        state: 'active'
+      - class: 'primary'
+        state: 'focus'
+      - class: 'primary'
+        state: 'disabled'
 
-  - name: small
-    context:
-      category: small
-      label: Small buttons
-      classes: 'usa-button-small'
+      - class: 'secondary'
+        label: 'Secondary buttons'
+        state: 'default'
+      - class: 'secondary'
+        state: 'hover'
+      - class: 'secondary'
+        state: 'active'
+      - class: 'secondary'
+        state: 'focus'
+      - class: 'secondary'
+        state: 'disabled'
+
+      - class: 'ghost'
+        label: 'Ghost buttons'
+        state: 'default'
+      - class: 'ghost'
+        state: 'hover'
+      - class: 'ghost'
+        state: 'active'
+      - class: 'ghost'
+        state: 'focus'
+      - class: 'ghost'
+        state: 'disabled'
+
+      - class: 'small'
+        label: 'Small buttons'
+        state: 'default'
+      - class: 'small'
+        state: 'hover'
+      - class: 'small'
+        state: 'active'
+      - class: 'small'
+        state: 'focus'
+      - class: 'small'
+        state: 'disabled'
