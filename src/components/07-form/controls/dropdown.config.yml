@@ -1,0 +1,17 @@
+label: Dropdown
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  dropdown_example:
+    name: options
+    id: options
+    label: Dropdown titel
+    options:
+      - value: "option1"
+        text: "Mulighed 1"
+      - value: "option2"
+        text: "Mulighed 2"
+      - value: "option3"
+        text: "Mulighed 3"
+      
