@@ -34,7 +34,6 @@ button,
 [type=image] {
   @include font-smoothing;
   @include margin(0.5em 0.5em 0.5em null);
-  position: relative;
   appearance: none;
   background-color: $color-primary;
   border: 0;
@@ -50,18 +49,6 @@ button,
   text-align: center;
   text-decoration: none;
   width: 100%;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid transparent;
-    border-radius: $button-border-radius;
-  }
 
   @include media($small-screen) {
     width: auto;

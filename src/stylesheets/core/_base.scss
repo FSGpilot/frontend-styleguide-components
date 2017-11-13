@@ -31,11 +31,6 @@ body {
 
 *:focus,
 .usa-focus {
-  //outline: $focus-outline;
-  //outline-offset: $focus-spacing;
-  outline: 0;
-
-  &:after {
-    border: 2px solid $color-primary-darker;
-  }
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
 }
