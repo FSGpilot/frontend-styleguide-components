@@ -68,7 +68,7 @@ h3,
 h4,
 h5 {
   clear: both;
-  font-family: $font-serif;
+  font-family: $font-heading;
   line-height: $heading-line-height;
   margin-bottom: .5em;
   margin-top: 1.5em;
@@ -144,7 +144,7 @@ dfn {
   a,
   li,
   span {
-    font-family: $font-serif;
+    font-family: $font-heading;
   }
 }
 
@@ -162,7 +162,7 @@ dfn {
 }
 
 .usa-font-lead {
-  font-family: $font-serif;
+  font-family: $font-heading;
   font-size: $lead-font-size;
   font-weight: $font-normal;
   line-height: $lead-line-height;

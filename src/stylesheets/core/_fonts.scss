@@ -1,4 +1,80 @@
 /* stylelint-disable at-rule-empty-line-before */
+// Raleway
+@include font-face(
+  'Raleway',
+  '#{$font-path}/raleway/Raleway-ExtraLight',
+  200,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Raleway',
+  '#{$font-path}/raleway/Raleway-Light',
+  300,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Raleway',
+  '#{$font-path}/raleway/Raleway-Regular',
+  400,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Raleway',
+  '#{$font-path}/raleway/Raleway-SemiBold',
+  600,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Raleway',
+  '#{$font-path}/raleway/Raleway-Bold',
+  700,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+
+// Open Sans
+@include font-face(
+  'Open Sans',
+  '#{$font-path}/opensans/OpenSans-Light',
+  300,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Open Sans',
+  '#{$font-path}/opensans/OpenSans-Regular',
+  400,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Open Sans',
+  '#{$font-path}/opensans/OpenSans-SemiBold',
+  600,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+@include font-face(
+  'Open Sans',
+  '#{$font-path}/opensans/OpenSans-Bold',
+  700,
+  normal,
+  $file-formats: woff2 ttf
+);
+
+/*
 @include font-face(
   'Source Sans Pro',
   '#{$font-path}/sourcesanspro-light-webfont',
@@ -62,4 +138,5 @@
   normal,
   $file-formats: eot woff2 woff ttf
 );
+*/
 /* stylelint-enable */
