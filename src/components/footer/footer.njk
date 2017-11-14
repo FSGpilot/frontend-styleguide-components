@@ -1,0 +1,71 @@
+{# 
+  Alle the footer have most of their code from the USWD footer--big-variant.
+
+  @param classes: usa-alert-info, usa-alert-success, usa-alert-warning, usa-alert-error, usa-alert-paragraph, usa-alert-slim. 
+  @param role: e.g. 'alert'. 
+  @param title: String, title of the alert. 
+  @param content: String, the text content of the alert. 
+
+  @usage: 
+    {% import "alerts/alerts.njk" as alerts %}
+    ...
+    {{ alert('usa-alert-info', 'alert', 'A fancy title', 'Some alert content text') }}
+
+  @return: the HTML for an alert-box.
+#}
+{% macro footerMedium(name, contact, subjects) %}
+  
+<footer class="footer footer-medium" role="contentinfo">
+  <div class="container footer-return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  <div class="footer-primary-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="usa-footer-primary-link">
+              <h4>Ansvarlig myndighed</h4>
+            </li>
+            <li><a href="javascript:void(0);">Styrelsen for Institutioner og Uddannelsesstøtte</a></li>
+          </ul>
+        </div>
+
+        <div class="col-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="usa-footer-primary-link">
+              <h4>Kontakt</h4>
+            </li>
+            <address>
+              <li><a href="tel:70 70 70 70">70 70 70 70</a></li>
+              <li><a href="mailto:info@agency.gov">info@agency.gov</a></li>
+            </address>
+          </ul>
+          
+        </div>
+
+        <nav class="usa-footer-nav col-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="usa-footer-primary-link">
+              <h4>Emne</h4> 
+            </li>
+            <li><a href="javascript:void(0);">Myndighedslink</a></li>
+            <li><a href="javascript:void(0);">Myndighedslink</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-secondary_section"> 
+    <div class="container">
+      <div class="usa-footer-logo usa-width-one-half">
+        <p>En del af <span class="footer-logo"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endmacro %}
+
+{{ footerMedium(alert_example.classes, alert_example.role, alert_example.title, alert_example.content) }}
+

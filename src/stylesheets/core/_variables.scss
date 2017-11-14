@@ -58,6 +58,7 @@ $color-gray-dark:             #323a45 !default;
 $color-blue:                  #0071bc !default;
 $color-success:               #588012 !default;
 $color-info:                  #027091 !default;
+$color-info-lighter:          #b4e3f4 !default;
 $color-warning:               #fdb81e !default;
 $color-error:                 #e31c3d !default;
 
@@ -78,8 +79,8 @@ $color-red-darkest:          darken($color-red, $darkest) !default;
 $color-red-light:            lighten($color-red, $lighter) !default;
 $color-red-lightest:         lighten($color-red, $lightest) !default;
 
-$color-gray-lighter:         lighten($color-gray, $lighter) !default;
-$color-gray-lightest:        lighten($color-gray, $lightest) !default;
+$color-gray-lighter:         #d6d7d9 !default; //lighten($color-gray, $lighter) !default;
+$color-gray-lightest:        #F1F1F1 !default;//lighten($color-gray, $lightest) !default;
 $color-gray-warm-dark:       #494440 !default;
 $color-gray-warm-light:      #e4e2e0 !default;
 $color-gray-cool-light:      #dce4ef !default;

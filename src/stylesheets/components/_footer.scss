@@ -1,10 +1,10 @@
-.usa-footer {
+.footer {
   .usa-unstyled-list {
     display: block;
   }
 
   .usa-footer-primary-link {
-    color: $color-base;
+    color: $color-white;
     display: block;
     font-weight: $font-bold;
     margin-top: 0;
@@ -40,17 +40,21 @@
   }
 }
 
-.usa-footer-return-to-top {
+.footer-return-to-top {
   color: $color-primary;
   padding-bottom: $spacing-medium;
   padding-top: $spacing-medium;
   text-decoration: underline;
 }
 
-.usa-footer-primary-section {
-  background-color: $color-gray-lightest;
+.footer-primary-section {
+  background-color: $color-gray-dark;
 
-  .usa-footer-primary-content {
+  a {
+    color: $color-info-lighter;
+  }
+
+  .footer-primary-content {
     padding-left: 1.5rem;
     padding-right: 2.5rem;
 
@@ -68,15 +72,15 @@
     }
   }
 
-  .usa-grid-full {
-    @include media($medium-screen) {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-  }
+  // .usa-grid-full {
+  //   @include media($medium-screen) {
+  //     padding-left: 2.5rem;
+  //     padding-right: 2.5rem;
+  //   }
+  // }
 }
 
-.usa-footer-medium {
+.footer-medium {
   .usa-footer-contact_info {
     p {
       margin: 0 $spacing-small 0 0;
@@ -109,17 +113,21 @@
     padding-top: $spacing-md-small;
   }
 
-  .usa-footer-primary-section {
-    > .usa-grid {
-      padding: 0;
-
-      @include media($medium-screen) {
-        padding-left: $spacing-large;
-        padding-right: $spacing-large;
-      }
+  .footer-primary-section {
+    @include media($medium-screen) {
+      padding-bottom: 4rem;
+      padding-top: 3rem;
     }
+    // > .usa-grid {
+    //   padding: 0;
 
-    .usa-footer-primary-content {
+    //   @include media($medium-screen) {
+    //     padding-left: $spacing-large;
+    //     padding-right: $spacing-large;
+    //   }
+    // }
+
+    .footer-primary-content {
       @include media($large-screen) {
         margin-right: 5%;
         width: inherit;
@@ -146,7 +154,7 @@
       display: block;
     }
 
-    .usa-footer-primary-content {
+    .footer-primary-content {
       @include media($large-screen) {
         margin-right: 5%;
         width: inherit;
@@ -165,7 +173,7 @@
     padding-top: $spacing-md-small;
   }
 
-  .usa-footer-primary-section {
+  .footer-primary-section {
     > .usa-grid {
       padding: 0;
 
@@ -207,9 +215,9 @@
 }
 
 /* stylelint-disable selector-no-qualifying-type */
-ul.usa-footer-primary-content,
-li.usa-footer-primary-content,
-li.usa-footer-primary-content {
+ul.footer-primary-content,
+li.footer-primary-content,
+li.footer-primary-content {
   border-top: 1px solid $color-gray-light;
 
   @include media($medium-screen) {
@@ -251,8 +259,8 @@ li.usa-footer-primary-content {
   }
 }
 
-.usa-footer-secondary_section {
-  background-color: $color-gray-lighter;
+.footer-secondary_section {
+  background-color: $color-gray-lightest;
   padding-bottom: $spacing-medium;
   padding-top: $spacing-medium;
 
@@ -307,7 +315,7 @@ li.usa-footer-primary-content {
     }
   }
 
-  .usa-footer-primary-section {
+  .footer-primary-section {
     @include media($medium-screen) {
       padding-bottom: 4rem;
       padding-top: 3rem;
@@ -322,7 +330,7 @@ li.usa-footer-primary-content {
       }
     }
 
-    .usa-footer-primary-content {
+    .footer-primary-content {
       padding-left: 0;
       padding-right: 0;
 
