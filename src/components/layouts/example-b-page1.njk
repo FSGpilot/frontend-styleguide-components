@@ -1,0 +1,45 @@
+{% import "08-navigation/tringuide.njk" as tringuiden %}
+
+{% extends 'layouts/_base.njk' %}
+
+{% block header %}
+    {% render '@header--extended' %}
+{% endblock %}
+
+
+{% block body %}
+    <header class="container">
+        <div class="col">
+           <h2>{{title}}</h2>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                {{tringuiden.tringuide([{ text: "Inden du går igang", current: true}, { text: "Oplysninger om dig"}, {text: "Bekræft oplysninger"}])}}
+            </div>
+            <div class="col-sm-8">
+                <h3>Inden du går igang</h3>
+                <p>Inden du går igang skal du være opmærksom på:</p>
+                <ul>
+                    <li>at alle oplysninger kan ændres, efter at du har indtastet. Det gælder dog ikke, når løsningen er sendt.</li>
+                    <li>at oplysningerne ikke bliver brugt i andre sammenhænge, medmindre du får andet at vide.</li>
+                    <li>
+                    at du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området.
+                    Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, medmindre andet er anført
+                    </li>
+                </ul>
+                <h4>Hvis du vil klage:</h4>
+                <p>Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p> 
+                <button class="usa-button usa-button-primary">Næste</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block banner -%}
+{% endblock %}
+{% block footer -%}
+{% render '@footer' %}
+{% endblock %}
