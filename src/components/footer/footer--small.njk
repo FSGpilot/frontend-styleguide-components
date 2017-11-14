@@ -1,46 +1,60 @@
-<footer class="usa-footer usa-footer-slim" role="contentinfo">
-  <div class="usa-grid usa-footer-return-to-top">
-    <a href="javascript:void(0);">Return to top</a>
+{# 
+  Alle the footer have most of their code from the USWD footer--big-variant.
+
+  @param agency: f.eks. "Styrelsen for Institutioner og Uddannelsesstøtte"
+  @param contact: e.g. {tel:'70707070', mail:'info@agency.gov' }
+
+  @usage: 
+    {% import "footer/footer--small.njk" as footerbig %}
+    ...
+    {{ footerbig(<see input params above>) }}
+
+  @return: the HTML for a small footer.
+#}
+{% macro footerSmall(agency, contact) %}
+  
+<footer class="footer" role="contentinfo">
+  <div class="container footer-return-to-top">
+    <a href="#">Return to top</a>
   </div>
-  <div class="usa-footer-primary-section">
-    <div class="usa-grid">
-      <nav class="usa-footer-nav usa-width-two-thirds">
-        <ul class="usa-unstyled-list">
-          <li class="usa-width-one-fourth usa-footer-primary-content">
-            <a class="usa-footer-primary-link" href="javascript:void(0);">Primary link</a>
-          </li>
-          <li class="usa-width-one-fourth usa-footer-primary-content">
-            <a class="usa-footer-primary-link" href="javascript:void(0);">Primary link</a>
-          </li>
-          <li class="usa-width-one-fourth usa-footer-primary-content">
-            <a class="usa-footer-primary-link" href="javascript:void(0);">Primary link</a>
-          </li>
-          <li class="usa-width-one-fourth usa-footer-primary-content">
-            <a class="usa-footer-primary-link" href="javascript:void(0);">Primary link</a>
-          </li>
-        </ul>
-      </nav>
-      <address>
-        <div class="usa-width-one-third">
-          <div class="usa-footer-primary-content usa-footer-contact_info">
-            <p>
-              <a href="tel:1-800-555-5555">(800) CALL-GOVT</a>
-            </p>
-          </div>
-          <div class="usa-footer-primary-content usa-footer-contact_info">
-            <p><a href="mailto:info@agency.gov">info@agency.gov</a></p>
-          </div>
+  <div class="footer-primary-section">
+    <div class="container">
+      <nav class="footer-nav row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Ansvarlig myndighed</h4>
+            </li>
+            <li><a href="javascript:void(0);">{{ agency }}</a></li>
+          </ul>
         </div>
-      </address>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Kontakt</h4>
+            </li>
+            <address>
+              <li><a href="tel:{{ contact.tel }}">{{ contact.tel }}</a></li>
+              <li><a href="mailto:{{ contact.mail }}">{{ contact.mail }}</a></li>
+            </address>
+          </ul>
+        </div>
+
+      </nav>
     </div>
   </div>
 
-  <div class="usa-footer-secondary_section">
-    <div class="usa-grid">
-      <div class="usa-footer-logo">
-        <img class="usa-footer-slim-logo-img" src="{{ uswds.path }}/img/logo-img.png" alt="Logo image">
-        <h3 class="usa-footer-slim-logo-heading">Name of Agency</h3>
+  <div class="footer-secondary_section">
+    <div class="container">
+      <div class="footer-logo row">
+        <div class="footer-logo-img col-12">En del af</div>
       </div>
     </div>
   </div>
 </footer>
+{% endmacro %}
+
+{{ footerSmall("Landbrug- fødevarer og erhversstyrelsen",  
+                {tel:'70707070', mail:'kontakt@mailadresse.dk'}) }}
+
