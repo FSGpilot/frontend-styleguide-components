@@ -1,27 +1,49 @@
+{% macro list(type, content) %}
+  {% if (type == 'ul') -%}
+    <ul>
+      {{content}}
+    </ul>
+  {%- elif (type == 'ol') -%}
+    <ol>
+      {{content}}
+    </ol>
+  {%- endif %}
+{% endmacro %}
 
-  <div class="usa-grid-full">
-    <div class="usa-width-one-third">
 
-      <h6 class="usa-heading-alt">Unordered list</h6>
+{% macro listitem(class, text) %}
+  <li{%- if class -%} class="{{class}}"{%- endif -%}>{{text}}</li>
+{% endmacro %}
 
-      <ul>
-        <li>Unordered list item</li>
-        <li>Unordered list item</li>
-        <li>Unordered list item</li>
-      </ul>
 
-    </div>
+<div class="usa-grid-full">
+  <div class="usa-width-one-third">
 
-    <div class="usa-width-one-third">
+    <h4 class="usa-heading-alt">Unordered list</h4>
+    <ul>
+      {{ listitem('','Unordered list item') }}
+      {{ listitem('','Unordered list item') }}
+      {{ listitem('','Unordered list item') }}
+    </ul>
 
-      <h6 class="usa-heading-alt mt0">Ordered list</h6>
-
-      <ol>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-      </ol>
-
-    </div>
   </div>
+  <div class="usa-width-one-third">
 
+    <h4 class="usa-heading-alt">Ordered list</h4>
+    <ol>
+      {{ listitem('','Ordered list item') }}
+      {{ listitem('','Ordered list item') }}
+      {{ listitem('','Ordered list item') }}
+    </ol>
+
+  </div>
+</div>
+
+<style scoped>
+  h4 {
+    margin-bottom: 1rem;
+  }
+  .usa-grid-full .usa-width-one-third:first-of-type {
+    margin-bottom: 30px;
+  }
+</style>

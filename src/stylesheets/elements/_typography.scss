@@ -26,7 +26,8 @@ a {
     @include focus;
   }
 
-  &:visited {
+  &:visited,
+  &.usa-color-text-visited {
     color: $color-visited;
   }
 }
@@ -125,6 +126,16 @@ dfn {
   max-width: $text-max-width;
 }
 
+.usa-heading {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-heading;
+  }
+}
+
+
 .usa-sans {
   p,
   a,
@@ -145,6 +156,29 @@ dfn {
   li,
   span {
     font-family: $font-heading;
+  }
+}
+
+.usa-sans-source {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-sans-source;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-bold;
+  }
+}
+
+.usa-serif-merri {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-serif-merri;
   }
 }
 

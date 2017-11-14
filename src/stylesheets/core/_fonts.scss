@@ -5,7 +5,7 @@
   '#{$font-path}/raleway/Raleway-ExtraLight',
   200,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -13,7 +13,7 @@
   '#{$font-path}/raleway/Raleway-Light',
   300,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -21,7 +21,7 @@
   '#{$font-path}/raleway/Raleway-Regular',
   400,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -29,7 +29,7 @@
   '#{$font-path}/raleway/Raleway-SemiBold',
   600,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -37,7 +37,7 @@
   '#{$font-path}/raleway/Raleway-Bold',
   700,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 
@@ -47,7 +47,7 @@
   '#{$font-path}/opensans/OpenSans-Light',
   300,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -55,7 +55,7 @@
   '#{$font-path}/opensans/OpenSans-Regular',
   400,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -63,7 +63,7 @@
   '#{$font-path}/opensans/OpenSans-SemiBold',
   600,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
 @include font-face(
@@ -71,13 +71,13 @@
   '#{$font-path}/opensans/OpenSans-Bold',
   700,
   normal,
-  $file-formats: woff2 ttf
+  $file-formats: ttf
 );
 
-/*
+// Source Sans Pro
 @include font-face(
   'Source Sans Pro',
-  '#{$font-path}/sourcesanspro-light-webfont',
+  '#{$font-path}/sourcesanspro/sourcesanspro-light-webfont',
   300,
   normal,
   $file-formats: eot woff2 woff ttf
@@ -85,7 +85,7 @@
 
 @include font-face(
   'Source Sans Pro',
-  '#{$font-path}/sourcesanspro-regular-webfont',
+  '#{$font-path}/sourcesanspro/sourcesanspro-regular-webfont',
   400,
   normal,
   $file-formats: eot woff2 woff ttf
@@ -93,7 +93,7 @@
 
 @include font-face(
   'Source Sans Pro',
-  '#{$font-path}/sourcesanspro-italic-webfont',
+  '#{$font-path}/sourcesanspro/sourcesanspro-italic-webfont',
   400,
   italic,
   $file-formats: eot woff2 woff ttf
@@ -101,15 +101,16 @@
 
 @include font-face(
   'Source Sans Pro',
-  '#{$font-path}/sourcesanspro-bold-webfont',
+  '#{$font-path}/sourcesanspro/sourcesanspro-bold-webfont',
   700,
   normal,
   $file-formats: eot woff2 woff ttf
 );
 
+// Merriweather
 @include font-face(
   'Merriweather',
-  '#{$font-path}/merriweather-light-webfont',
+  '#{$font-path}/merriweather/merriweather-light-webfont',
   300,
   normal,
   $file-formats: eot woff2 woff ttf
@@ -117,7 +118,7 @@
 
 @include font-face(
   'Merriweather',
-  '#{$font-path}/merriweather-regular-webfont',
+  '#{$font-path}/merriweather/merriweather-regular-webfont',
   400,
   normal,
   $file-formats: eot woff2 woff ttf
@@ -125,7 +126,7 @@
 
 @include font-face(
   'Merriweather',
-  '#{$font-path}/merriweather-italic-webfont',
+  '#{$font-path}/merriweather/merriweather-italic-webfont',
   400,
   italic,
   $file-formats: eot woff2 woff ttf
@@ -133,10 +134,9 @@
 
 @include font-face(
   'Merriweather',
-  '#{$font-path}/merriweather-bold-webfont',
+  '#{$font-path}/merriweather/merriweather-bold-webfont',
   700,
   normal,
   $file-formats: eot woff2 woff ttf
 );
-*/
 /* stylelint-enable */
