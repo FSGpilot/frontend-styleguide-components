@@ -1,15 +1,28 @@
 label: Fonts
 status: ready
+preview: '@dkwds-framed'
 
 context:
   typefaces:
+    - id: heading
+      name: Raleway
+      description: |
+        <p>Raleway is an elegant sans-serif typeface family intended for headings and other large size usage.</p>
+        <p>Initially designed by Matt McInerney as a single thin weight, it was expanded into a 9 weight family by Pablo Impallari and Rodrigo Fuenzalida in 2012 and iKerned by Igino Marini. It also has a sister family, <a href="https://fonts.google.com/specimen/Raleway+Dots">Raleway Dots</a>.</p>
+
     - id: sans
+      name: Open Sans
+      description: |
+        <p>Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp. This version contains the complete 897 character set, which includes the standard ISO Latin 1, Latin CE, Greek and Cyrillic character sets.</p>
+        <p>Open Sans was designed with an upright stress, open forms and a neutral, yet friendly appearance. It was optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.</p>
+
+    - id: sans-source
       name: Source Sans Pro
       description: |
         <p>Source Sans Pro is an open-source sans serif typeface created for legibility in UI design. With a variety of weights that read easily at all sizes, Source Sans Pro provides clear headers as well as highly-readable body text.</p>
         <p>Inspired by twentieth-century American gothic typeface design, its slender but open letters offer a clean and friendly simplicity. Advanced hinting allows Source Sans Pro to render well on Windows systems which run Cleartype, and across browsers and devices. Moreover, it supports a variety of languages and alphabets, including Western and European language, Vietnamese, pinyin Romanization of Chinese, and Navajo.</p>
 
-    - id: serif
+    - id: serif-merri
       name: Merriweather
       description: |
         <p>Merriweather is an open-source serif typeface designed for on-screen reading. This font is ideal for text-dense design: the letterforms have a tall x-height but remain relatively small, making for excellent readability across screen sizes while not occupying extra horizontal space.</p>
