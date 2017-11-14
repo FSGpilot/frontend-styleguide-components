@@ -4,13 +4,15 @@ preview: '@dkwds-framed'
 
 variants:
   - name: default
-    label: Info
-    context:
-      label:
-        classes: ""
+    label: Example
 
-  - name: big
-    label: Big
-    context:
-      label:
+context:
+  label_example:
+    items:
+      - name: default
+        classes: ""
+        label: Normal
+
+      - name: big
         classes: "usa-label-big"
+        label: Big
