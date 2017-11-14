@@ -26,7 +26,8 @@ a {
     @include focus;
   }
 
-  &:visited {
+  &:visited,
+  &.usa-color-text-visited {
     color: $color-visited;
   }
 }
