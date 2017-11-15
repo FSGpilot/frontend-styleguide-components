@@ -1,6 +1,9 @@
-<div class="usa-nav-secondary">
+<div class="usa-nav-secondary usa-nav-toolbox">
+  toolbox
+</div>
+{# <div class="usa-nav-secondary">
   {% if nav.search %}
-    {% render '@search--header', {search: nav.search, search_js: true} %}
+    {% render '@search--header', {search: nav.search, search_js: true, id_prefix: id_prefix} %}
   {% endif %}
   <ul class="usa-unstyled-list usa-nav-secondary-links">
     {% if nav.search %}
@@ -16,5 +19,4 @@
     </li>
     {% endfor %}
   </ul>
-</div>
-
+</div> #}

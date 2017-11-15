@@ -136,6 +136,34 @@ $z-index-nav:     9000;
 // Extended header ----------- //
 
 .usa-header-extended {
+  .portal-header{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: block;
+    height: auto;
+    border-bottom: 1px solid #d6d7d9;
+
+    // @include media($nav-width) {
+      &:after{
+        clear: both;
+        content: "";
+        display: block;
+      }
+    // }
+    
+  }
+  .portal-header-inner{
+    @include media($nav-width) {
+      @include outer-container();
+      @include padding(null $site-margins);
+      margin-top: -1px;
+      max-width: $site-max-width;
+      position: relative;
+    }
+  }
+
   .usa-header {
     @include media($nav-width) {
       border-bottom: none;

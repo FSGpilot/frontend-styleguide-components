@@ -21,7 +21,6 @@ gulp.task(task, function (done) {
   })
   .transform('babelify', {
     global: true,
-    plugins:['transform-class-properties'],
     presets: ['es2015'],
   });
 

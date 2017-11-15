@@ -1,0 +1,23 @@
+{% from "09-header/_nav-01-portal-header.njk"   import portal_header        as portal_header %}
+{% from "09-header/_nav-02-solution-header.njk" import solution_header      as solution_header %}
+{% from "09-header/_nav-02-solution-header.njk" import solution_header_nav  as solution_header_nav %}
+{% from "09-header/_nav-03-topnavigation.njk"   import topnavigation        as topnavigation %}
+
+{% macro header_simple(portal_header_data, solution_header_data, solution_nav, top_nav) %}
+<header class="usa-header usa-header-extended" role="banner">
+  {{ portal_header(portal_header_data) }}
+  {{ solution_header(solution_header_data) }}
+  <nav role="navigation" class="usa-nav">
+    <div class="usa-nav-inner">
+      {{ solution_header_nav(solution_nav) }}
+      {{ topnavigation(top_nav) }} 
+      {# {% render '@nav-02-solution-header', {nav: header.primary}, true %}
+      {% render '@nav-03-topnavigation', {nav: header.secondary, id_prefix: header.primary.id_prefix}, true %} #}
+    </div>
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+{% endmacro %}
+
+{{ header_simple(portal_header_data, solution_header_data, solution_nav, top_nav) }}

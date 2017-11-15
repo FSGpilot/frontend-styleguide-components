@@ -1,3 +1,7 @@
+{# 
+
+#}
+{% macro topnavigation(nav) %}
 <button class="usa-nav-close">
   <img src="{{ uswds.path }}/img/close.svg" alt="close">
 </button>
@@ -40,3 +44,5 @@
 {%- if nav.search -%}
   {% render '@search--header', {search: nav.search, id_prefix: nav.id_prefix}, true %}
 {%- endif -%}
+
+{% endmacro %}

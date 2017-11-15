@@ -1,340 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/white.css?cachebust=1.2.0" type="text/css">
 
 
-<style scoped>
-  .usa-header {
-    margin-bottom: 14rem;
-  }
+<title>Error rendering component header--default | Frontend Styleguide</title>
 
-  .usa-header ~ .usa-header {
-    border-top: 1px dotted black;
-  }
-</style>
-
-<header class="usa-header usa-header-basic" role="banner">
-  <div class="usa-nav-container">
-    <div class="usa-navbar">
-  <div class="usa-logo" id="basic-logo">
-    <em class="usa-logo-text">
-      <a href="/"
-        title="Home"
-        aria-label="Home">
-        Basic header
-      </a>
-    </em>
-  </div>
-  <button class="usa-menu-btn">Menu</button>
-</div>
-
-    <nav role="navigation" class="usa-nav">
-      
-      <button class="usa-nav-close">
-  <img src="../../dist/img/close.svg" alt="close">
-</button>
-<ul class="usa-nav-primary usa-accordion"><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="basic-nav-section-one">
-      <span>Section title</span>
-    </button>
-    <ul id="basic-nav-section-one" class="usa-nav-submenu"><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li></ul></li><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="basic-nav-section-two">
-      <span>Simple terms</span>
-    </button>
-    <ul id="basic-nav-section-two" class="usa-nav-submenu"><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li></ul></li><li><a class="usa-nav-link" href="javascript:void(0)">
-      <span>Distinct from each other</span>
-    </a></li></ul><form class="usa-search usa-search-small ">
-  <div role="search">
-    <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
-    <input id="basic-search-field-small" type="search" name="search">
-    <button type="submit">
-      <span class="usa-sr-only">Search</span>
-    </button>
-  </form>
-</div>
-
-      
-    </nav>
-  </div>
-</header>
-<div class="usa-overlay"></div>
+</head>
+<body>
 
 
 
-<header class="usa-header usa-header-basic usa-header-basic-megamenu" role="banner">
-  <div class="usa-nav-container">
-    <div class="usa-navbar">
-  <div class="usa-logo" id="basic-mega-logo">
-    <em class="usa-logo-text">
-      <a href="/"
-        title="Home"
-        aria-label="Home">
-        Basic with mega-menu
-      </a>
-    </em>
-  </div>
-  <button class="usa-menu-btn">Menu</button>
-</div>
-
-    <nav role="navigation" class="usa-nav">
-      <div class="usa-nav-inner">
-      <button class="usa-nav-close">
-  <img src="../../dist/img/close.svg" alt="close">
-</button>
-<ul class="usa-nav-primary usa-accordion"><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="basic-mega-nav-section-one">
-      <span>Section title</span>
-    </button>
-    <ul id="basic-mega-nav-section-one" class="usa-nav-submenu usa-megamenu usa-grid-full"><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title longer</a>
-              </li><li>
-                <a href="#">A very long page title that goes onto two lines</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div></ul></li><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="basic-mega-nav-section-two">
-      <span>Simple terms</span>
-    </button>
-    <ul id="basic-mega-nav-section-two" class="usa-nav-submenu usa-megamenu usa-grid-full"><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title longer</a>
-              </li><li>
-                <a href="#">A very long page title that goes onto two lines</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div></ul></li><li><a class="usa-nav-link" href="javascript:void(0)">
-      <span>Distinct from each other</span>
-    </a></li></ul><form class="usa-search usa-search-small ">
-  <div role="search">
-    <label class="usa-sr-only" for="basic-mega-search-field-small">Search small</label>
-    <input id="basic-mega-search-field-small" type="search" name="search">
-    <button type="submit">
-      <span class="usa-sr-only">Search</span>
-    </button>
-  </form>
-</div>
-
-      </div>
-    </nav>
-  </div>
-</header>
-<div class="usa-overlay"></div>
+<div class="Frame Frame--full" id="frame">
 
 
-
-<header class="usa-header usa-header-extended" role="banner">
-  <div class="usa-navbar">
-  <div class="usa-logo" id="extended-logo">
-    <em class="usa-logo-text">
-      <a href="/"
-        title="Home"
-        aria-label="Home">
-        Extended header
-      </a>
-    </em>
-  </div>
-  <button class="usa-menu-btn">Menu</button>
-</div>
-
-  <nav role="navigation" class="usa-nav">
-    <div class="usa-nav-inner">
-      <button class="usa-nav-close">
-  <img src="../../dist/img/close.svg" alt="close">
-</button>
-<ul class="usa-nav-primary usa-accordion"><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="extended-nav-section-one">
-      <span>Section title</span>
-    </button>
-    <ul id="extended-nav-section-one" class="usa-nav-submenu"><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li></ul></li><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="extended-nav-section-two">
-      <span>Simple terms</span>
-    </button>
-    <ul id="extended-nav-section-two" class="usa-nav-submenu"><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li><li>
-              <a href="#">Subsection title</a>
-            </li></ul></li><li><a class="usa-nav-link" href="javascript:void(0)">
-      <span>Distinct from each other</span>
-    </a></li></ul>
-      <div class="usa-nav-secondary">
-  
-    <form class="usa-search usa-search-small  js-search-form">
-  <div role="search">
-    <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
-    <input id="extended-search-field-small" type="search" name="search">
-    <button type="submit">
-      <span class="usa-sr-only">Search</span>
-    </button>
-  </form>
-</div>
-
-  
-  <ul class="usa-unstyled-list usa-nav-secondary-links">
-    
-    <li class="js-search-button-container">
-      <button class="usa-header-search-button js-search-button">Search</button>
-    </li>
-    
-    
-    <li>
-      <a href="">
-        Secondary priority link
-      </a>
-    </li>
-    
-    <li>
-      <a href="">
-        Easy to comprehend
-      </a>
-    </li>
-    
-  </ul>
-</div>
+<div class="Error Error--render">
+    <h4 class="Error-title">Error rendering component</h4>
+    <div class="Error-message Prose">
+        <p>(unknown path)
+  Template render error: (unknown path)
+  Error: Could not render component &#39;@nav-solution-header&#39; - component not found.</p>
 
     </div>
-  </nav>
-</header>
-<div class="usa-overlay"></div>
-
-
-
-<header class="usa-header usa-header-extended" role="banner">
-  <div class="usa-navbar">
-  <div class="usa-logo" id="extended-mega-logo">
-    <em class="usa-logo-text">
-      <a href="/"
-        title="Home"
-        aria-label="Home">
-        Extended header<br>with mega-menu
-      </a>
-    </em>
-  </div>
-  <button class="usa-menu-btn">Menu</button>
+    
+    <code class="Error-stack">
+        <pre>Template render error: (unknown path)
+  Template render error: (unknown path)
+  Error: Could not render component '@nav-solution-header' - component not found.
+    at Object.exports.prettifyError (C:\Projects\DIGST-ERST\Analyse\Code\dk-web-design-standards\node_modules\nunjucks\src\lib.js:34:15)
+    at C:\Projects\DIGST-ERST\Analyse\Code\dk-web-design-standards\node_modules\nunjucks\src\environment.js:486:31
+    at eval (eval at _compile (C:\Projects\DIGST-ERST\Analyse\Code\dk-web-design-standards\node_modules\nunjucks\src\environment.js:565:24), <anonymous>:18:11)
+    at entity.render.then.catch.err (C:\Projects\DIGST-ERST\Analyse\Code\dk-web-design-standards\node_modules\@frctl\nunjucks\src\extensions\render.js:46:21)
+    at process._tickCallback (internal/process/next_tick.js:109:7)</pre>
+    </code>
+    
 </div>
 
-  <nav role="navigation" class="usa-nav">
-    <div class="usa-nav-inner">
-      <button class="usa-nav-close">
-  <img src="../../dist/img/close.svg" alt="close">
-</button>
-<ul class="usa-nav-primary usa-accordion"><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="extended-mega-nav-section-one">
-      <span>Section title</span>
-    </button>
-    <ul id="extended-mega-nav-section-one" class="usa-nav-submenu usa-megamenu usa-grid-full"><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title longer</a>
-              </li><li>
-                <a href="#">A very long page title that goes onto two lines</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div></ul></li><li><button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="extended-mega-nav-section-two">
-      <span>Simple terms</span>
-    </button>
-    <ul id="extended-mega-nav-section-two" class="usa-nav-submenu usa-megamenu usa-grid-full"><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title longer</a>
-              </li><li>
-                <a href="#">A very long page title that goes onto two lines</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div><div class="usa-megamenu-col"><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li><li>
-                <a href="#">Subsection title</a>
-              </li></div></ul></li><li><a class="usa-nav-link" href="javascript:void(0)">
-      <span>Distinct from each other</span>
-    </a></li></ul>
-      <div class="usa-nav-secondary">
-  
-    <form class="usa-search usa-search-small  js-search-form">
-  <div role="search">
-    <label class="usa-sr-only" for="extended-mega-search-field-small">Search small</label>
-    <input id="extended-mega-search-field-small" type="search" name="search">
-    <button type="submit">
-      <span class="usa-sr-only">Search</span>
-    </button>
-  </form>
+
 </div>
 
-  
-  <ul class="usa-unstyled-list usa-nav-secondary-links">
-    
-    <li class="js-search-button-container">
-      <button class="usa-header-search-button js-search-button">Search</button>
-    </li>
-    
-    
-    <li>
-      <a href="">
-        Secondary priority link
-      </a>
-    </li>
-    
-    <li>
-      <a href="">
-        Easy to comprehend
-      </a>
-    </li>
-    
-  </ul>
-</div>
-
-    </div>
-  </nav>
-</header>
-<div class="usa-overlay"></div>
 
 
 
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.0"></script>
+
+
+
+</body>
+</html>
