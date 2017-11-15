@@ -1,5 +1,5 @@
-{% macro button(class, state) %}
-  {% if (state == 'default') -%}
+{%- macro button(class, state) -%}
+  {%- if (state == 'default') -%}
     <button class="usa-button-{{class}}">Default</button>
   {%- elif (state == 'hover') -%}
     <button class="usa-button-{{class}} usa-button-hover">Hover</button>
@@ -10,10 +10,11 @@
   {%- elif (state == 'disabled') -%}
     <button class="usa-button-{{class}}" disabled>Disabled</button>
   {%- endif %}
-{% endmacro %}
+{%- endmacro -%}
 
-{% for buttons in button_example.items %}
-  {%- if buttons.label -%} <h4>{{ buttons.label }}</h4> {%- endif -%}
-
-  {{ button(buttons.class, buttons.state) }}
-{% endfor %}
+{%- for buttons in button_example.items -%}
+{%- if buttons.label %} 
+<h4>{{ buttons.label }}</h4> 
+{% endif -%}
+{{ button(buttons.class, buttons.state) }}
+{% endfor -%}
