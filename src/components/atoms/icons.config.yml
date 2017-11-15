@@ -1,0 +1,23 @@
+label: Icons
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  icons_example:
+    items:
+      - icon: address-book
+      - icon: telegram
+      - icon: user-o
+      - icon: id-card-o
+      - icon: bar-chart
+      - icon: ban
+      - icon: barcode
+      - icon: area-chart
+      - icon: assistive-listening-systems
+      - icon: anchor
+      - icon: calendar-check-o
+      - icon: check-square
+      - icon: child
+      - icon: file-code-o
+      - icon: fire-extinguisher
+      - icon: group

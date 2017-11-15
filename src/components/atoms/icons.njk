@@ -1,54 +1,36 @@
-<div class="usa-grid fontawesome-icon-list">
-    <div class="usa-width-one-fourth">
-      <span><i class="fa fa-address-book" aria-hidden="true"></i> <span class="sr-only">Example of </span>address-book</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-telegram" aria-hidden="true"></i> <span class="sr-only">Example of </span>telegram</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-user-o" aria-hidden="true"></i> <span class="sr-only">Example of </span>user-o</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-id-card-o" aria-hidden="true"></i> <span class="sr-only">Example of </span>id-card-o</span>
-    </div>
+{% macro icon(icon, classes) %}
+  <i class="fa fa-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>
+{% endmacro %}
 
-    <div class="usa-width-one-fourth">
-      <span><i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="sr-only">Example of </span>bar-chart</span>
+<p>Full list here: <a href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a></p>
+<div class="usa-grid fontawesome-icon-list row">
+  {% for icons in icons_example.items %}
+    <div class="col-md-3">
+      <div class="icon-box">
+        <div>{{ icon(icons.icon, "usa-color-text-blue") }}</div>
+        <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
+      </div>
     </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-ban" aria-hidden="true"></i> <span class="sr-only">Example of </span>ban</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-barcode" aria-hidden="true"></i> <span class="sr-only">Example of </span>barcode</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="sr-only">Example of </span>area-chart</span>
-    </div>
+  {% endfor %}
+</div>
 
-    <div class="usa-width-one-fourth">
-      <span><i class="fa fa-assistive-listening-systems" aria-hidden="true"></i> <span class="sr-only">Example of </span>assistive-listening-systems</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-anchor" aria-hidden="true"></i> <span class="sr-only">Example of </span>anchor</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i> <span class="sr-only">Example of </span>calendar-check-o</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-check-square" aria-hidden="true"></i> <span class="sr-only">Example of </span>check-square</span>
-    </div>
+<style scoped>
+  .icon-box {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    <div class="usa-width-one-fourth">
-      <span><i class="fa fa-child" aria-hidden="true"></i> <span class="sr-only">Example of </span>child</span>
-    </div>
-      <div class="usa-width-one-fourth">
-      <span><i class="fa fa-file-code-o" aria-hidden="true"></i> <span class="sr-only">Example of </span>file-code-o</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-fire-extinguisher" aria-hidden="true"></i> <span class="sr-only">Example of </span>fire-extinguisher</span>
-    </div>
-        <div class="usa-width-one-fourth">
-      <span><i class="fa fa-group" aria-hidden="true"></i> <span class="sr-only">Example of </span>group <span class="text-muted">(alias)</span></span>
-    </div>
+  .icon-box i.fa {
+    font-size: 3rem;
+    margin-bottom: 5px;
+  }
 
-  </div>
+  .col-md-3 {
+    float: left;
+  }
+</style>
