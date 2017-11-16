@@ -1,5 +1,6 @@
-//
 // Additional flex alignment options.
+// https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_flex.scss
+
 @if $enable-bs-grid {
   @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
