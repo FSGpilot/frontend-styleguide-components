@@ -156,6 +156,21 @@ $enable-uswd-grid:            false !default; // Enable USWD grid
   @error 'Both grids cannot be disabled. Please set either $enable-bs-grid or $enable-uswd-grid to true, and try again.'
 }
 
+// Common grid breakpoints variables
+//
+// This is where you define the breakpoints.
+// These will be reflected in both Bootstrap and USWD grid variants,
+// so you only have to change these at one place.
+//
+// These needs to be inserted twice at the moment,
+// as we have both grid variants included.
+
+$grid-xs: 0 !default;
+$grid-sm: 576px !default;
+$grid-md: 768px !default;
+$grid-lg: 992px !default;
+$grid-xl: 1200px !default;
+
 // Bootstrap Grid
 //
 // Spacing
@@ -174,23 +189,23 @@ $spacers: (
   5: ($spacer * 3)
 ) !default;
 
-// Grid breakpoints
+// Bootstrap grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  xs: $grid-xs,
+  sm: $grid-sm,
+  md: $grid-md,
+  lg: $grid-lg,
+  xl: $grid-xl
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
-// Grid containers
+// Bootstrap containers
 //
 // Define the maximum width of `.container` for different screen sizes.
 
@@ -203,7 +218,7 @@ $container-max-widths: (
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
-// Grid columns
+// Bootstrap grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
@@ -214,9 +229,9 @@ $grid-gutter-width:             30px !default;
 // USWD Grid
 //
 // Mobile First Breakpoints
-$small-screen:                  481px !default;
-$medium-screen:                 600px !default;
-$large-screen:                  1201px !default;
+$small-screen:                  $grid-sm !default;
+$medium-screen:                 $grid-md !default;
+$large-screen:                  $grid-xl !default;
 
 // Grid column counts by screen size
 $grid-columns-small:            1 !default;
@@ -238,7 +253,7 @@ $asset-pipeline:                false !default;
 // Magic Numbers
 $text-max-width:                53rem !default;
 $lead-max-width:                77rem !default;
-$site-max-width:                1040px !default;
+$site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  3rem !default;
 $site-margins-mobile:           1.5rem !default;
 $article-max-width:             600px !default;
@@ -250,7 +265,7 @@ $button-border-radius:          5px !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 1px solid $color-gray-light;
 $focus-spacing:                 2px;
-$nav-width:                     951px !default;
+$nav-width:                     $grid-lg !default; // 992px
 
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines
