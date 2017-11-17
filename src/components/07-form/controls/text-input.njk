@@ -11,7 +11,8 @@
   {% endif %}
 {% endmacro %}
 
-
-{% for item in textinput_example.items %}
-  {{textinput(item.id, item.label, item.class, item.error, item.errormsg, name)}}
-{% endfor %}
+<div class="container">
+  {% for item in textinput_example.items %}
+    {{textinput(item.id, item.label, item.class, item.error, item.errormsg, name)}}
+  {% endfor %}
+</div>
