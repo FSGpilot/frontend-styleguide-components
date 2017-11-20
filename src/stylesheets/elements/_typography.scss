@@ -72,11 +72,11 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
   clear: both;
   font-family: $font-heading;
   line-height: $heading-line-height;
@@ -84,31 +84,31 @@ h5 {
   margin-top: 1.5em;
 }
 
-h6 {
+h6, .h6 {
   font-family: $font-sans;
 }
 
-h1 {
+h1, .h1 {
   @include h1();
 }
 
-h2 {
+h2, .h2 {
   @include h2();
 }
 
-h3 {
+h3, .h3 {
   @include h3();
 }
 
-h4 {
+h4, .h4 {
   @include h4();
 }
 
-h5 {
+h5, .h5 {
   @include h5();
 }
 
-h6 {
+h6, .h6 {
   @include h6();
 }
 
