@@ -8,7 +8,7 @@ $button-stroke: inset 0 0 0 2px;
 // deprecated usa-button-disabled style.
 @mixin disabledesque {
   background-color: $color-gray-lighter;
-  pointer-events: none;
+  cursor: not-allowed;
 
   &:hover,
   &.usa-button-hover,
@@ -154,7 +154,7 @@ button,
   }
 
   &:disabled {
-    @include disabledesque;
+    @include disabledesque
   }
 }
 /* stylelint-disable */
@@ -170,7 +170,6 @@ button,
 .usa-button-secondary-inverse:disabled,
 .usa-button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
   box-shadow: $button-stroke $color-gray-lighter;
-  pointer-events: none;
   color: $color-gray-lighter;
 
   &:hover,
@@ -180,7 +179,9 @@ button,
   &:focus,
   &.usa-focus {
     background-color: $color-white;
-    border: 0;
+    box-shadow: $button-stroke $color-gray-lighter;
+    color: $color-gray-lighter;
+    cursor: not-allowed;
   }
 }
 
@@ -256,5 +257,10 @@ html .usa-button-secondary-inverse-disabled,  // Deprecated
     background-color: transparent;
     opacity: .5;
     text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
   }
 }
