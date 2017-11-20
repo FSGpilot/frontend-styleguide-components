@@ -1,6 +1,5 @@
-<!--
+{% from "atoms/icons.njk" import icon as icon_ %}
 
--->
 {% macro accordion(variant, items, id_prefix, multiselectable) %}
 <ul class="usa-accordion{%
   if accordion_example.variant %}-{{ accordion_example.variant }}{% endif %}"{%
@@ -11,6 +10,12 @@
       aria-expanded="{{ item.expanded | default('false') }}"
       aria-controls="{{ accordion_example.id_prefix }}{{ item.id }}">
       {{ item.title }}
+
+      {% if item.icon %}
+        <span class="accordion-icon{% if item.iconclass %} {{ item.iconclass }} {% endif %}">
+          {{ icon_(item.icon) }}
+        </span>
+      {% endif %}
     </button>
     <div id="{{ accordion_example.id_prefix }}{{ item.id }}" class="usa-accordion-content">
       {{ item.content }}
@@ -18,8 +23,6 @@
   </li>
   {% endfor %}
 </ul>
-
 {% endmacro %}
 
 {{ accordion(accordion_example.variant, accordion_example.items, accordion_example.id_prefix, accordion_example.multiselectable) }}
-

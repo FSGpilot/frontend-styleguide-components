@@ -27,6 +27,7 @@ $v-padding: $spacing-md-small;
 // scss-lint:disable PropertyCount
 @mixin accordion-button-styles {
   @include button-unstyled;
+  display: flex;
   background-color: $color-gray-lightest;
   background-image: url('#{$image-path}/minus.png');
   background-image: url('#{$image-path}/minus.svg');
@@ -35,7 +36,7 @@ $v-padding: $spacing-md-small;
   background-size: $icon-size;
   color: $color-base;
   cursor: pointer;
-  display: inline-block;
+  //display: inline-block;
   font-family: $font-sans;
   font-weight: $font-bold;
   margin: 0;
@@ -143,8 +144,46 @@ $v-padding: $spacing-md-small;
 
 .usa-accordion-button {
   @include accordion-button-styles;
+
+  .accordion-icon {
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    text-align: center;
+
+    i.fa {
+      color: #fff;
+    }
+
+    &.icon-bg-primary {
+      background-color: $color-primary;
+    }
+
+    &.icon-bg-secondary {
+      background-color: $color-secondary;
+    }
+
+    &.icon-bg-success {
+      background-color: $color-success;
+    }
+
+    &.icon-bg-info {
+      background-color: $color-info;
+    }
+
+    &.icon-bg-warning {
+      background-color: $color-warning;
+    }
+
+    &.icon-bg-error {
+      background-color: $color-error;
+    }
+  }
 }
 
 .usa-accordion-button[aria-expanded=false] {
   @include accordion-button-unopened-styles;
+  display: flex;
 }
