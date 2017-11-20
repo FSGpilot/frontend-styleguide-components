@@ -1,100 +1,29 @@
+{% import "02-buttons/buttons.njk" as button %}
+
+{% macro card(size, fit, header, subheader, cardcontent, cardactions) %}
+
+<div class="card {{size}} {% if fit %}card-fit{% endif %}">
+  <div class="card-header">
+    <h2>{{header}}</h2>
+    <p>{{subheader}}</p>
+  </div>
+  <div class="card-block card-content">
+      {{cardcontent}}
+  </div>
+  {% for actionblock in cardactions %}
+    <div class="card-action">
+      {{actionblock.content}}
+    </div>
+  {% endfor %}
+</div>  
+{% endmacro %}
+
 <div class="container">
   <div class="row">
-      
-          <div class="card">
-            <div class="card-header">
-              <h2>Praktikplads-AUB</h2>
-              <p>2019<p>
-            </div>
-            <div class="card-block card-content">
-              <p style="display: inline">I skal betale:</p><h2 style="display: inline" class="error-text"> 62.153 kr.</h2>
-            </div>
-            <div class="card-block">
-              <p class="card-text">Integer posuere erat a ante venenatis dapiasd asd asd asd asd asd asd asd asd asd asd bus posuere velit aliquet. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-          </div>
-      
-    
-          
-        <div class="card">
-          <div class="card-header">
-            <h2>Praktikplads-AUB</h2>
-            <p>2019<p>
-          </div>
-          <div class="card-block card-content">
-              <p style="display: inline">I skal betale:</p><h2 style="display: inline" class="error-text"> 62.153 kr.</h2>
-          </div>
-          <div class="card-block card-info">
-            <h4 class="card-title">Card image top</h4>
-            <p class="card-text">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-header">
-            <h2>Praktikplads-AUB</h2>
-            <p>2019<p>
-          </div>
-          <div class="card-block card-content">
-              <p style="display: inline">I skal betale:</p><h2 style="display: inline" class="error-text"> 62.153 kr.</h2>
-          </div>
-          <div class="card-block card-info">
-            <h4 class="card-title">Card image top</h4>
-            <p class="card-text">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-          <div class="card-block">
-            <a href="#" class="card-link">Card link</a>
-          </div>
-        </div>
+    {% for item in cards_example.items %}
+      {{ card(item.size, item.fit, item.header,item.subheader, item.content, item.cardactions ) }}
+    {% endfor %}
 
-        <div class="card">
-            <div class="card-header">
-              <h2>Praktikplads-AUB</h2>
-              <p>2019<p>
-            </div>
-            <div class="card-block card-content">
-                <p style="display: inline">I skal betale:</p><h2 style="display: inline" class="error-text"> 62.153 kr.</h2>
-            </div>
-            <div class="card-block card-info">
-              <h4 class="card-title">Card image top</h4>
-              <p class="card-text">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-            <div class="card-block">
-              <a href="#" class="card-link">Card link</a>
-            </div>
-          </div>
   </div>
 </div>
