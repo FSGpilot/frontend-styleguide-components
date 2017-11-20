@@ -1,106 +1,71 @@
-/*.card{
-    width: 350px;
-    border: 1px solid gray;
-    box-shadow: 1px 1px 3px #888;
-    border-top: 10px solid green;
-    min-height: 250px;
-    padding-: 10px;
-    margin: 10px;
-    }
-    
-    img{
-      border-radius: 50%;
-      width: 70px;
-      margin: 10px;
-    }
-    
-    h1{
-      font-weight: lighter;
-      margin-left: 100px;
-      margin-top: -70px;
-    }
-    
-    p{
-      margin: 10px;
-      font-family: segoe ui;
-      line-height: 1.4em;
-      font-size: 1.2em;
-    }
-    
-    #mainbox{
-      font-family: calibri;
-      box-sizing: border-box;
-      justify-content: center;
-      display: flex;
-    flex-wrap: wrap;
-    }
-
-*/
-/* Bootstrap 4.0 card backport
-*  Modified, with original source by Martin Bean
-*  The MIT License (MIT)
-*
-* Copyright (c) 2015 Martin Bean
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all
-* copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*/
 .card {
   position: relative;
-  margin-bottom: 12px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  margin: 10px;
-  border-radius: 5px;
+  margin-bottom: $spacing-md-small;
+  border-radius: $spacing-x-small;
+  border: 1px solid $color-gray;
+  margin: $spacing-md-small;
   overflow: hidden;
 
-  .card-large {
+  &-large {
     width: 700px;
   }
 
-  .card-medium {
+  &-medium {
     width: 340px;
   }
 
-  .card-small {
+  &-small {
     width: 220px;
   }
 
+  &-fit {
+    height: 100%;
+  }
+
   p {
-    max-width: 75ch;
+    margin: 0px;
+    margin-bottom: $spacing-small;     
+    max-width: 60ch;
+  }
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+  }
+}
+
+.card-header {
+  background-color: $color-white;
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: $color-gray-medium;
   }
 }
 
 .card-content {
-  background-color: #F1F1F1;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid lightgray;
-  border-top: 1px solid lightgray;
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  
 } 
 
+.card-action {
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+
 .card-text:last-child {
-  margin-bottom: 16px;
+  margin-bottom: $spacing-md-small;
 }
 
 .card-link {
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: $spacing-small;
 }
 
 .card-link:first-child {
@@ -108,29 +73,15 @@
 }
 
 
-
-
-.card-block {
-  padding: 16px;
-  border-bottom: 1px solid lightgray;
-  
-  &:last-child {
-    border-bottom: 0;
-  }
-}
-
 .card-title {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: $spacing-small;
 }
 
 .card-subtitle {
   margin-top: 0;
   margin-bottom: 0;
 }
-
-
-
 
 .card {
   > .list-group:first-child {
@@ -151,62 +102,23 @@
 // Optional textual caps
 //
 
-.card-header {
-  background-color: white;
-  padding: 10px;
-  border-bottom: 0;
-  h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-  p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color:#727272;
-  }
-}
+
 
 .card-footer {
-  padding: 5px;
-  background-color: white;
-  border-top: 1px solid black;
+  padding: $spacing-x-small;
+  background-color: $color-white;
+  border-top: 1px solid $color-black;
 
   &:last-child {
       border-radius: 0px;
   }
 }
 
-
-//
-// Background variations
-//
-.card {
-  &-primary {
-      background-color: #FBD3D3;
-      border-color: #E92021;
-  }
-  &-success {
-      background-color: #E7FBE4;
-      border-color: #87C51C;
-  }
-  &-info {
-      //background-color: #E2F2FB;
-      //border-color: #1B86C3;
-  }
-  &-warning {
-      background-color: #FFEECC;
-      border-color: #FEBB30;
-  }
-  &-error {
-      background-color: #FBD3D3;
-      border-color: #E92021;
-  }
-}
-
+//Extra functionality for cards that can be implemented later on - from USPTO        
 //
 // Inverse text within a card for use with dark backgrounds
 //
-
+/*
 .card-inverse {
   .card-header,
   .card-footer {
@@ -230,11 +142,11 @@
       }
   }
 }
-
+*/
 //
 // Blockquote
 //
-
+/*
 .card-blockquote {
   padding: 0;
   margin-bottom: 0;
@@ -333,11 +245,6 @@
   }
 }
 
-
-//
-// Card
-//
-
 .card-columns {
   column-count: 3;
   column-gap: 8px;
@@ -346,17 +253,4 @@
       width: 100%; // Don't let them exceed the column width
   }
 }
-
-
-//Test values --Edit before deploy
-.error-text {
-  color: #BC3444;
-}
-.plain-text {
-  color: black;
-  size: 12px;
-}
-.card-text {
-  margin: 16px 0;
-}
-
+*/
