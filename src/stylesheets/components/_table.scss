@@ -1,0 +1,79 @@
+.dt-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.dt-menu {
+    display: flex;
+    height: 50px;
+}
+
+.dt-selected-rows-menu {
+    width: 100%;
+    display: flex;    
+    background: $color-primary;
+}
+
+.dt-default-menu {
+    width: 100%;
+    display: flex;  
+}
+
+.dt-button {
+    align-self: center; // center vertically   
+    background: inherit;     
+}
+
+.dt-selected-items-counter {
+    margin-left: auto; // adjust to the right
+    align-self: center; // center vertically
+    color: $color-white;
+}
+
+.dt-filter {
+    margin-right: auto; // adjust to the left
+    margin-left: 20px;
+    height: 30px;
+    align-self: center;
+}
+
+.dt-checkbox {
+    position: initial;
+    left: 0px;
+    -webkit-appearance: checkbox;
+    height: auto;
+    width: auto;
+}
+
+.dt-button-img {
+    width: 16px;
+    height: 16px;
+    fill-rule: evenodd;
+}
+
+.dt-hidden {
+    display: none;
+}
+
+.dt-table {
+    margin: 0;
+}
+
+.dt-sort-button {
+    background: none;
+    color: inherit;
+    white-space: nowrap;    
+}
+
+.dt-sort-button-svg {
+    width: 10px;
+    height: 6px;
+    fill-rule: evenodd;
+    fill: black;
+    margin-bottom: 2px;
+}
+
+.dt-svg-rotate {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,22 @@
+label: Tables
+status: wip
+preview: '@dkwds-framed'
+
+variants:
+  - name: default
+    label: Plain
+
+  - name: datatable
+    label: Data Table
+
+  - name: expandable
+    label: Expandable Data Table
+
+  - name: pagination
+    label: Data Table with Pagination
+
+  - name: small
+    label: Small Data Table
+
+  - name: toolbar
+    label: Toolbar
