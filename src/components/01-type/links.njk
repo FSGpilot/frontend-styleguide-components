@@ -1,9 +1,13 @@
-<p><a href="javascript:void(0);">This</a> is a text link on a light background.</p>
+{% macro link(url, class, text) %}
+  <a href="{{url}}" class="{{class}}">{{text}}</a>
+{% endmacro %}
 
-<p><a class="usa-color-text-visited" href="javascript:void(0);">This</a> is a visited link.</p>
+<p>{{ link('javascript:void(0);', '', 'This') }} is a text link on a light background.</p>
 
-<p>This is a link that goes to an <a class="usa-external_link" href="http://media.giphy.com/media/8sgNa77Dvj7tC/giphy.gif">external website</a>.</p>
+<p>{{ link('javascript:void(0);', 'usa-color-text-visited', 'This') }} is a visited link.</p>
+
+<p>This is a link that goes to an {{ link('http://media.giphy.com/media/8sgNa77Dvj7tC/giphy.gif', 'usa-external_link', 'external website') }}.
 
 <div class="usa-background-dark">
-  <p><a href="javascript:void(0);">This</a> is a text link on a dark background.</p>
+  <p>{{ link ('javascript:void(0);', '', 'This') }} is a text link on a dark background.</p>
 </div>

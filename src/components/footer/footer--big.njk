@@ -1,0 +1,87 @@
+{# 
+  Alle the footer have most of their code from the USWD footer--big-variant.
+
+  @param agency: f.eks. "Styrelsen for Institutioner og Uddannelsesstøtte"
+  @param contact: e.g. {tel:'70707070', mail:'info@agency.gov' }
+  @param subjects: [{title: 'Myndighedslink', link: 'javascript:void(0);'},{title: 'Myndighedslink', link: 'javascript:void(0);'}]
+  @param subjects: [{title: 'Myndighedslink', link: 'javascript:void(0);'},{title: 'Myndighedslink', link: 'javascript:void(0);'}]
+
+
+  @usage: 
+    {% import "footer/footer--big.njk" as footerbig %}
+    ...
+    {{ footerbig(<see input params above>) }}
+
+  @return: the HTML for a big footer.
+#}
+{% macro footerBig(agency, contact, subjects1, subjects2) %}
+  
+<footer class="footer" role="contentinfo">
+  <div class="container footer-return-to-top">
+    <a href="#">Return to top</a>
+  </div>
+  <div class="footer-primary-section">
+    <div class="container">
+      <nav class="footer-nav row">
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Ansvarlig myndighed</h4>
+            </li>
+            <li><a href="javascript:void(0);">{{ agency }}</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Kontakt</h4>
+            </li>
+            <address>
+              <li><a href="tel:{{ contact.tel }}">{{ contact.tel }}</a></li>
+              <li><a href="mailto:{{ contact.mail }}">{{ contact.mail }}</a></li>
+            </address>
+          </ul>
+          
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Lovgivning og jura</h4> 
+            </li>
+            {% for subject in subjects1 %}
+            <li><a href="{{ subject.link }}">{{ subject.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+          <ul class="usa-unstyled-list footer-primary-content">
+            <li class="footer-primary-link">
+              <h4>Hjælp</h4> 
+            </li>
+            {% for subject in subjects2 %}
+            <li><a href="{{ subject.link }}">{{ subject.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="footer-secondary_section">
+    <div class="container">
+      <div class="footer-logo row">
+        <div class="footer-logo-img col-12">En del af</div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endmacro %}
+
+{{ footerBig("Styrelsen for Institutioner og Uddannelsesstøtte",  
+                {tel:'70707070', mail:'kontakt@mailadresse.dk' }, 
+                [{title: 'Dette er reglerne for denne løsning', link: 'javascript:void(0);'},{title: 'Hvis du vil klage og lidt om dine pligter og rettigheder for at gøre linket langt', link: 'javascript:void(0);'}, {title: 'Og et kort link', link: 'javascript:void(0);'} ],
+                [{title: 'Link der kan hjælpe brugere', link: 'javascript:void(0);'},{title: 'Et kort link', link: 'javascript:void(0);'},{title: 'Endnu et link til et hjælpested', link: 'javascript:void(0);'}]) }}
+

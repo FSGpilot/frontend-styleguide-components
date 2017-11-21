@@ -1,45 +1,59 @@
 label: Buttons
 status: ready
+preview: '@dkwds-framed'
 
 variants:
-  - name: primary
-    context:
-      category: primary
-      label: Primary buttons
-      classes: 'usa-button'
+  - name: default
+    label: Examples
 
-  - name: secondary
-    context:
-      category: secondary
-      label: Secondary buttons
-      classes: 'usa-button-secondary'
 
-  - name: secondary-inverse
-    context:
-      category: secondary-inverse
-      label: Secondary inverse buttons
-      classes: 'usa-button-secondary-inverse'
+context:
+  button_example:
+    items:
+      - class: 'primary'
+        label: 'Primary buttons'
+        state: 'default'
+      - class: 'primary'
+        state: 'hover'
+      - class: 'primary'
+        state: 'active'
+      - class: 'primary'
+        state: 'focus'
+      - class: 'primary'
+        state: 'disabled'
 
-  - name: aqua
-    context:
-      category: alternate
-      label: Aqua buttons
-      classes: 'usa-button-primary-alt'
+      - class: 'secondary'
+        label: 'Secondary buttons'
+        state: 'default'
+      - class: 'secondary'
+        state: 'hover'
+      - class: 'secondary'
+        state: 'active'
+      - class: 'secondary'
+        state: 'focus'
+      - class: 'secondary'
+        state: 'disabled'
 
-  - name: gray
-    context:
-      category: alternate
-      label: Gray buttons
-      classes: 'usa-button-gray'
+      - class: 'ghost'
+        label: 'Ghost buttons'
+        state: 'default'
+      - class: 'ghost'
+        state: 'hover'
+      - class: 'ghost'
+        state: 'active'
+      - class: 'ghost'
+        state: 'focus'
+      - class: 'ghost'
+        state: 'disabled'
 
-  - name: red
-    context:
-      category: alternate
-      label: Red buttons
-      classes: 'usa-button-red'
-
-  - name: big
-    context:
-      category: 'big'
-      label: Big button
-      classes: 'usa-button-big'
+      - class: 'small'
+        label: 'Small buttons'
+        state: 'default'
+      - class: 'small'
+        state: 'hover'
+      - class: 'small'
+        state: 'active'
+      - class: 'small'
+        state: 'focus'
+      - class: 'small'
+        state: 'disabled'

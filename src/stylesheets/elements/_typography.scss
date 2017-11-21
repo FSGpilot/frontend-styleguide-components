@@ -1,3 +1,7 @@
+@import '../core/mixins/text-color';
+
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
 html {
   font-family: $font-sans;
   font-size: $em-base;
@@ -26,9 +30,15 @@ a {
     @include focus;
   }
 
-  &:visited {
+  &:visited,
+  &.usa-color-text-visited {
     color: $color-visited;
   }
+}
+
+// Text colors
+@each $color, $value in $colors {
+  @include text-color('.usa-color-text-#{$color}', $value);
 }
 
 @mixin external-link($external-link, $external-link-hover) {
@@ -62,43 +72,43 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
   clear: both;
-  font-family: $font-serif;
+  font-family: $font-heading;
   line-height: $heading-line-height;
   margin-bottom: .5em;
   margin-top: 1.5em;
 }
 
-h6 {
+h6, .h6 {
   font-family: $font-sans;
 }
 
-h1 {
+h1, .h1 {
   @include h1();
 }
 
-h2 {
+h2, .h2 {
   @include h2();
 }
 
-h3 {
+h3, .h3 {
   @include h3();
 }
 
-h4 {
+h4, .h4 {
   @include h4();
 }
 
-h5 {
+h5, .h5 {
   @include h5();
 }
 
-h6 {
+h6, .h6 {
   @include h6();
 }
 
@@ -125,6 +135,16 @@ dfn {
   max-width: $text-max-width;
 }
 
+.usa-heading {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-heading;
+  }
+}
+
+
 .usa-sans {
   p,
   a,
@@ -144,7 +164,30 @@ dfn {
   a,
   li,
   span {
-    font-family: $font-serif;
+    font-family: $font-heading;
+  }
+}
+
+.usa-sans-source {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-sans-source;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-bold;
+  }
+}
+
+.usa-serif-merri {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-serif-merri;
   }
 }
 
@@ -162,7 +205,7 @@ dfn {
 }
 
 .usa-font-lead {
-  font-family: $font-serif;
+  font-family: $font-heading;
   font-size: $lead-font-size;
   font-weight: $font-normal;
   line-height: $lead-line-height;
@@ -257,4 +300,16 @@ dfn {
       margin-bottom: 0;
     }
   }
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

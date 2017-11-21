@@ -1,0 +1,260 @@
+.card {
+  position: relative;
+  margin-bottom: $spacing-md-small;
+  border-radius: $spacing-x-small;
+  border: 1px solid $color-gray;
+  margin: $spacing-md-small;
+  overflow: hidden;
+
+  &-large {
+    width: 700px;
+  }
+
+  &-medium {
+    width: 340px;
+  }
+
+  &-small {
+    width: 220px;
+  }
+
+  &-fit {
+    height: 100%;
+  }
+
+  p {
+    margin: 0px;
+    margin-bottom: $spacing-small;     
+    max-width: 60ch;
+  }
+  h1, .h1, 
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5 {
+    margin: 0;
+  }
+}
+
+.card-header {
+  background-color: $color-white;
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: $color-gray-medium;
+  }
+}
+
+.card-content {
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  
+} 
+
+.card-action {
+  padding: $spacing-md-small;
+  border-bottom: 1px solid $color-gray-light;
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+.card-text:last-child {
+  margin-bottom: $spacing-md-small;
+}
+
+.card-link {
+  text-decoration: none;
+  margin-left: $spacing-small;
+}
+
+.card-link:first-child {
+  margin-left: 0px;
+}
+
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: $spacing-small;
+}
+
+.card-subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card {
+  > .list-group:first-child {
+      .list-group-item:first-child {
+          border-radius: 0px;
+      }
+  }
+
+  > .list-group:last-child {
+      .list-group-item:last-child {
+          border-radius: 0px;
+      }
+  }
+}
+
+
+//
+// Optional textual caps
+//
+
+
+
+.card-footer {
+  padding: $spacing-x-small;
+  background-color: $color-white;
+  border-top: 1px solid $color-black;
+
+  &:last-child {
+      border-radius: 0px;
+  }
+}
+
+//Extra functionality for cards that can be implemented later on - from USPTO        
+//
+// Inverse text within a card for use with dark backgrounds
+//
+/*
+.card-inverse {
+  .card-header,
+  .card-footer {
+      border-bottom: 1px solid rgba(255,255,255,.2);
+  }
+  .card-header,
+  .card-footer,
+  .card-title,
+  .card-blockquote {
+      color: white;
+  }
+  .card-link,
+  .card-text,
+  .card-blockquote > footer {
+      color: rgba(255,255,255,.65);
+  }
+  .card-link {
+      &:hover,
+      &:focus {
+          color: white;
+      }
+  }
+}
+*/
+//
+// Blockquote
+//
+/*
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+// Card image
+.card-img {
+  border-radius: 2px;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+}
+
+
+
+// Card image caps
+.card-img {
+  &-top {
+    border-radius: 2px 2px 0 0;
+  }
+  &-bottom {
+    border-radius: 0 0 2px 2px;
+  }
+}
+
+//
+// Card set
+//
+
+.card-deck {
+  display: table;
+  table-layout: fixed;
+  border-spacing: 8px 0;
+
+  .card {
+      display: table-cell;
+      width: 1%;
+      vertical-align: top;
+  }
+}
+.card-deck-wrapper {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+//
+// Card groups
+//
+
+.card-group {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  .card {
+      display: table-cell;
+      vertical-align: top;
+
+      + .card {
+          margin-left: 0;
+          border-left: 0;
+      }
+
+      // Handle rounded corners
+      &:first-child {
+          .card-img-top {
+              border-top-right-radius: 0;
+          }
+          .card-img-bottom {
+              border-bottom-right-radius: 0;
+          }
+      }
+      &:last-child {
+          .card-img-top {
+              border-top-left-radius: 0;
+          }
+          .card-img-bottom {
+              border-bottom-left-radius: 0;
+          }
+      }
+
+      &:not(:first-child):not(:last-child) {
+          border-radius: 0;
+
+          .card-img-top,
+          .card-img-bottom {
+              border-radius: 0;
+          }
+      }
+  }
+}
+
+.card-columns {
+  column-count: 3;
+  column-gap: 8px;
+  .card {
+      display: inline-block;
+      width: 100%; // Don't let them exceed the column width
+  }
+}
+*/

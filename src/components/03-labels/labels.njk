@@ -1,1 +1,16 @@
-<span class="usa-label {{ label.classes }}">New</span>
+{% macro label(classes, text) %}
+  <span class="usa-label{% if classes %} {{classes}}{% endif %}">{{text}}</span>
+{% endmacro %}
+
+<ul class="usa-unstyled-list">
+  {% for labels in label_example.items %}
+    <li><h4>{{labels.label}}</h4></li>
+    <li>{{ label(labels.classes, labels.label) }}</li>
+  {% endfor %}
+</ul>
+
+<style scoped>
+  h4 {
+    margin-bottom: 10px;
+  }
+</style>

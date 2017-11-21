@@ -1,35 +1,20 @@
-{% import "alerts/alerts.njk" as alerts %}
-{% import "accordion/accordion.njk" as accordions %}
-
-{{ accordions.accordion('bordered', '', '', 'Some content') }}
-
-
-
-{% if (classes == 'usa-button-secondary-inverse') %}
-  <div class="dark-bg">
-{%- endif %}
-
-<button class="{{ classes }}">Default</button>
-{% if (category != 'disabled') and (category != 'big') -%}
-  <button class="{{ classes }} usa-button-hover">Hover</button>
-  <button class="{{ classes }} usa-button-active">Active</button>
-  <button class="{{ classes }} usa-focus">Focus</button>
-  <button class="{{ classes }}" disabled>Disabled</button>
-  {% if (category == 'primary') -%}
-    <button class="usa-button-disabled" disabled>Disabled (deprecated)</button>
-  {%- elif (category == 'secondary') -%}
-    <button class="usa-button-secondary-disabled" disabled>Disabled (deprecated)</button>
-  {%- elif (category == 'secondary-inverse') -%}
-    <button class="usa-button-secondary-inverse-disabled" disabled>Disabled (deprecated)</button>
+{%- macro button(class, state) -%}
+  {%- if (state == 'default') -%}
+    <button class="usa-button-{{class}}">Default</button>
+  {%- elif (state == 'hover') -%}
+    <button class="usa-button-{{class}} usa-button-hover">Hover</button>
+  {%- elif (state == 'active') -%}
+    <button class="usa-button-{{class}} usa-button-active">Active</button>
+  {%- elif (state == 'focus') -%}
+    <button class="usa-button-{{class}} usa-focus">Focus</button>
+  {%- elif (state == 'disabled') -%}
+    <button class="usa-button-{{class}}" disabled>Disabled</button>
   {%- endif %}
-{%- endif %}
+{%- endmacro -%}
 
-{% if (classes == 'usa-button-secondary-inverse') %}
-</div>
-{%- endif %}
-
-<style scoped>
-  .dark-bg {
-    background-color: #212121;
-  }
-</style>
+{%- for buttons in button_example.items -%}
+{%- if buttons.label %} 
+<h4>{{ buttons.label }}</h4> 
+{% endif -%}
+{{ button(buttons.class, buttons.state) }}
+{% endfor -%}

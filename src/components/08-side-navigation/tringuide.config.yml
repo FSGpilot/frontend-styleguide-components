@@ -1,0 +1,20 @@
+label: Tringuide
+status: ready
+
+context:
+  tringuiden:
+    trinlisten: &default_links
+      - text: Trin 1
+        icon: check
+        iconclass: icon-bg-success
+      - text: Trin 2 (valgt)
+        icon: exclamation
+        iconclass: icon-bg-primary
+        current: true
+      - text: Trin 3
+        icon: close
+        iconclass: icon-bg-warning
+      - text: Trin 4
+        icon: question
+        iconclass: icon-bg-secondary
+        disabled: true

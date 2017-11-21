@@ -1,6 +1,68 @@
 
 .usa-sidenav-list {
   @include usa-sidenav-list;
+
+  li {
+    &.usa-disabled {
+      background: $color-gray-lightest;
+
+      a, a:hover, a:focus {
+        color: $color-gray-light;
+        cursor: not-allowed;
+      }
+
+      .sidenav-icon {
+        &.icon-bg-primary,
+        &.icon-bg-secondary,
+        &.icon-bg-success,
+        &.icon-bg-warning,
+        &.icon-bg-error {
+          background-color: $color-gray-lighter;
+        }
+      }
+    }
+
+    a {
+      display: flex;
+
+      .sidenav-icon {
+        margin-left: auto;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 50%;
+        text-align: center;
+
+        i.fa {
+          color: #fff;
+        }
+
+        &.icon-bg-primary {
+          background-color: $color-primary;
+        }
+
+        &.icon-bg-secondary {
+          background-color: $color-secondary;
+        }
+
+        &.icon-bg-success {
+          background-color: $color-success;
+        }
+
+        &.icon-bg-info {
+          background-color: $color-info;
+        }
+
+        &.icon-bg-warning {
+          background-color: $color-warning;
+        }
+
+        &.icon-bg-error {
+          background-color: $color-error;
+        }
+      }
+    }
+  }
 }
 
 .usa-sidenav-sub_list {
