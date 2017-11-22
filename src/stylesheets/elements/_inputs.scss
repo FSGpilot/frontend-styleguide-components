@@ -36,13 +36,13 @@ select {
   width: 100%;
 
   &.usa-input-success {
-    border: 3px solid $color-green-light;
+    border: 3px solid $color-success;
   }
 }
 /* stylelint-enable */
 
 .usa-input-error {
-  border-left: 4px solid $color-secondary-dark;
+  border-left: 4px solid $color-error;
   margin-top: 3rem;
   padding-bottom: 0.8rem;
   padding-left: 1.5rem;
@@ -53,7 +53,7 @@ select {
   input,
   textarea,
   select {
-    border: 3px solid $color-secondary-dark;
+    border: 3px solid $color-error;
     width: calc(100% + 1.9rem); // 1.5rem left padding + 4px border from input error spacing
   }
 
@@ -67,7 +67,7 @@ select {
   }
 
   .usa-input-inline-error {
-    border: 3px solid $color-secondary-dark;
+    border: 3px solid $color-error;
   }
 }
 
@@ -78,7 +78,7 @@ select {
 }
 
 .usa-input-error-message {
-  color: $color-secondary-dark;
+  color: $color-error;
   display: block;
   font-size: $base-font-size;
   font-weight: $font-bold;
@@ -87,12 +87,12 @@ select {
 }
 
 .usa-input-required:after {
-  color: $color-secondary-darkest;
+  color: $color-required;
   content: ' (*required)';
 }
 
 .usa-input-optional:after {
-  color: $color-gray-medium;
+  color: $color-gray;
   content: ' (optional)';
 }
 
@@ -152,7 +152,7 @@ legend {
 // Hint text
 
 .usa-form-hint {
-  color: $color-gray-medium;
+  color: $color-gray;
   font-family: $font-sans;
   margin-bottom: 0;
 }
@@ -185,7 +185,7 @@ legend {
 [type=radio] + label::before {
   background: $color-white;
   border-radius: $checkbox-border-radius;
-  box-shadow: 0 0 0 1px $color-gray-medium;
+  box-shadow: 0 0 0 1px $color-gray;
   content: '\a0';
   display: inline-block;
   height: $spacing-medium;
@@ -198,7 +198,7 @@ legend {
 
 [type=radio] + label::before {
   border-radius: 100%;
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray-medium;
+  box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray;
   height: 1.4rem; // Size overrides to account for shape + checked styling
   line-height: 1.4rem;
   margin-right: 0.75em;
@@ -255,7 +255,7 @@ legend {
 
 [type=range]::-webkit-slider-runnable-track {
   background: $color-gray-light;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   cursor: pointer;
   height: 1.2rem;
   width: 100%;
@@ -263,7 +263,7 @@ legend {
 
 [type=range]::-moz-range-track {
   background: $color-primary;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   cursor: pointer;
   height: 1.2rem;
   width: 100%;
@@ -279,7 +279,7 @@ legend {
 
 [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   height: 2.2rem;
   border-radius: 1.5rem;
   background: $color-gray-lightest;
@@ -290,7 +290,7 @@ legend {
 
 [type=range]::-moz-range-thumb {
   background: $color-gray-lightest;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -299,7 +299,7 @@ legend {
 
 [type=range]::-ms-thumb {
   background: $color-gray-lightest;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -308,13 +308,13 @@ legend {
 
 [type=range]::-ms-fill-lower {
   background: $color-gray-light;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   border-radius: 2rem;
 }
 
 [type=range]::-ms-fill-upper {
   background: $color-gray-light;
-  border: 1px solid $color-gray-medium;
+  border: 1px solid $color-gray;
   border-radius: 2rem;
 }
 

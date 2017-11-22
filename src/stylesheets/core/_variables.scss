@@ -1,11 +1,9 @@
-// These variables drive almost every aspect of the U.S. Web Design
-// system. Every variable is declared as !default so that it can be
-// overridden by a previous import.
+// These variables drive almost every aspect of the Frontend Styleguide.
+// Every variable is declared as !default so that it can be overridden 
+// by a previous import.
 //
 // XXX Do not modify this file!
 //
-// If you want to override a variable, set that variable in one of your
-// own partials, then @import '{path/to/uswds/}core/variables'.
 
 // Typography
 // Removing the !default from $em-base so we are not inheriting that
@@ -36,107 +34,78 @@ $font-normal:                 400 !default;
 $font-bold:                   700 !default;
 
 
-// Colors
-$lighter:                     30% !default;
-$lightest:                    56% !default;
-$darker:                      10% !default;
-$darkest:                     22% !default;
-
-$color-virk:                  #000 !default; // Overwritten in _themes
-$color-borger:                #000 !default; // Overwritten in _themes
-
+// Base colors
 $color-white:                 #ffffff !default;
 $color-base:                  #212121 !default;
-
 $color-black:                 #000000 !default;
 
-$color-gray:                  #5b616b !default;
-$color-gray-light:            #aeb0b5 !default;
-$color-gray-medium:           #757575 !default;
+// Gray-scales
+$color-gray-darkest:          #212121 !default;
 $color-gray-dark:             #323a45 !default;
+$color-gray:                  #5b616b !default;
+$color-gray-light:            #AEB0B5 !default;
+$color-gray-lighter:          #D6D7D9 !default;
+$color-gray-lightest:         #f1f1f1 !default;
+$color-gray-brightest:        #ffffff !default;
 
-$color-blue:                  #0071bc !default;
-$color-success:               #588012 !default;
-$color-info:                  #027091 !default;
-$color-info-lighter:          #b4e3f4 !default;
-$color-warning:               #fdb81e !default;
-$color-error:                 #e31c3d !default;
+// Text color
+$color-text:                  $color-base !default;
+$color-text-secondary:        #5b616b !default;
+$color-text-bright:           $color-white !default;
 
-// USWD Color leftovers
-// TODO: Rework or remove these
-$color-blue-darker:           #205493 !default;
-$color-blue-darkest:          #112e51 !default;
-
-$color-aqua:                  #02bfe7 !default;
-$color-aqua-dark:             darken($color-aqua, $darker) !default;
-$color-aqua-darkest:          darken($color-aqua, $darkest) !default;
-$color-aqua-light:            lighten($color-aqua, $lighter) !default;
-$color-aqua-lightest:         lighten($color-aqua, $lightest) !default;
-
-$color-red:                   $color-error !default;
-$color-red-dark:              darken($color-red, $darker) !default;
-$color-red-darkest:           darken($color-red, $darkest) !default;
-$color-red-light:             lighten($color-red, $lighter) !default;
-$color-red-lightest:          lighten($color-red, $lightest) !default;
-
-$color-gray-lighter:          #d6d7d9 !default; //lighten($color-gray, $lighter) !default;
-$color-gray-lightest:         #F1F1F1 !default;//lighten($color-gray, $lightest) !default;
-$color-gray-warm-dark:        #494440 !default;
-$color-gray-warm-light:       #e4e2e0 !default;
-$color-gray-cool-light:       #dce4ef !default;
-
-$color-gold:                  $color-virk !default;
-$color-gold-light:            #f9c642 !default;
-$color-gold-lighter:          lighten($color-gold, $lighter) !default;
-$color-gold-lightest:         lighten($color-gold, $lightest) !default;
-
-$color-green:                 #2e8540 !default;
-$color-green-light:           #4aa564 !default;
-$color-green-lighter:         lighten($color-green, $lighter) !default;
-$color-green-lightest:        lighten($color-green, $lightest) !default;
-
-$color-cool-blue:             #205493 !default;
-$color-cool-blue-light:       #4773aa !default;
-$color-cool-blue-lighter:     lighten($color-cool-blue, $lighter) !default;
-$color-cool-blue-lightest:    lighten($color-cool-blue, $lightest) !default;
-
-$color-purple:                #4c2c92 !default;
-
-// Functional colors
-$color-primary:               $color-blue !default;
-$color-primary-darker:        $color-blue-darker !default;
-$color-primary-darkest:       $color-blue-darkest !default;
-
-$color-primary-alt:           $color-aqua !default;
-$color-primary-alt-dark:      $color-aqua-dark !default;
-$color-primary-alt-darkest:   $color-aqua-darkest !default;
-$color-primary-alt-light:     $color-aqua-light !default;
-$color-primary-alt-lightest:  $color-aqua-lightest !default;
-
-$color-secondary:             $color-red !default;
-$color-secondary-dark:        $color-red-dark !default;
-$color-secondary-darkest:     $color-red-darkest !default;
-$color-secondary-light:       $color-red-light !default;
-$color-secondary-lightest:    $color-red-lightest !default;
-
-// Color map
-// TODO: Might need the leftover colors
-//       and the functional colors from USWD
-$colors: ();
-$colors: map-merge((
-    white: $color-white,
-    base: $color-base,
-    gray: $color-gray,
-    blue: $color-blue,
-    success: $color-success,
-    info: $color-info,
-    purple: $color-purple,
-    warning: $color-warning,
-    error: $color-error
-), $colors);
-
+//Links color
+$color-link:                  #125880 !default;
+$color-link-hover:            #1B86C3 !default;
 $color-focus:                 $color-gray-light !default;
-$color-visited:               $color-purple !default;
+$color-visited:               #801258 !default;
+
+// Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
+$color-neutral:               #0071bc !default;
+$color-neutral-darker:        #205493 !default;
+$color-neutral-darkest:       #112e51 !default;
+$color-neutral-lightest:      #0071bc !default; //todo, need base color for lightest
+
+// Functional theme colors
+$color-primary:               $color-neutral !default;
+$color-primary-darker:        $color-neutral-darker !default;
+$color-primary-darkest:       $color-neutral-darkest !default;
+$color-primary-lightest:      $color-neutral-lightest !default; 
+$color-background:            #f1f1f1 !default; 
+ 
+// Special text colors
+$color-text-neutral-18:       #1B86C3 !default; // must be over 18px in font-size to be accessible
+$color-text-positive:         #588012 !default;
+$color-text-negative:         #CE1415 !default;
+
+// Colors used for alert boxes
+$color-error:                 #E92021 !default;
+$color-success:               #87C51C !default;
+$color-warning:               #FEBB30 !default;
+$color-info:                  #1B86C3 !default;
+
+$color-error-background:      #FBD3D3 !default;
+$color-success-background:    #E7FBE4 !default;
+$color-warning-background:    #FFEECC !default;
+$color-info-background:       #E2F2FB !default;
+
+// Header, footer & navigation colors
+$color-header-background:     $color-background !default;
+$color-footer-background:     $color-gray-dark !default;
+$color-topmenu-background:    $color-gray-dark !default;
+$color-page:                  $color-white !default;
+
+// Colors for borders
+$color-border:                $color-gray !default;
+$color-border-light:          $color-gray-lightest !default;
+$color-border-bright:         $color-gray-brightest !default;
+$color-border-focus:          $color-gray-light !default;
+
+// Special colors
+$color-alt-background:        #F5FBFE !default;
+$color-alt-background-hover:  #E2F2FB !default;
+$color-alt-table-header:      #0D405E !default;
+$color-required:              #981b1e !default;      
+
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
