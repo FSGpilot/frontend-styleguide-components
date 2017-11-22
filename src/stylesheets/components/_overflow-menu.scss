@@ -1,6 +1,8 @@
 .overflow-menu {
     cursor: pointer;
     width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .overflow-menu-btn {
@@ -23,6 +25,8 @@
     box-shadow: 0 4px 8px 0 $color-gray-light;
     background: white;
     padding: 0;
+    align-self: flex-end;
+    margin-top: 40px;
 }
 
 .overflow-menu-options-open {
