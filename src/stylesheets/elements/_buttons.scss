@@ -67,21 +67,21 @@ button,
     background-color: $color-primary-darkest;
   }
 
-  &.usa-button-primary-alt {
-    background-color: $color-primary-alt;
-    color: $color-base;
+  // &.usa-button-primary-alt {
+  //   background-color: $color-primary-alt;
+  //   color: $color-base;
 
-    &:hover,
-    &.usa-button-hover {
-      background-color: $color-primary-alt-dark;
-    }
+  //   &:hover,
+  //   &.usa-button-hover {
+  //     background-color: $color-primary-alt-dark;
+  //   }
 
-    &:active,
-    &.usa-button-active {
-      background-color: $color-primary-alt-darkest;
-      color: $color-white;
-    }
-  }
+  //   &:active,
+  //   &.usa-button-active {
+  //     background-color: $color-primary-alt-darkest;
+  //     color: $color-white;
+  //   }
+  // }
 
   &.usa-button-secondary {
     background-color: $color-white;
@@ -134,19 +134,19 @@ button,
     }
   }
 
-  &.usa-button-red {
-    background-color: $color-secondary;
+  // &.usa-button-red {
+  //   background-color: $color-secondary;
 
-    &:hover,
-    &.usa-button-hover {
-      background-color: $color-secondary-dark;
-    }
+  //   &:hover,
+  //   &.usa-button-hover {
+  //     background-color: $color-secondary-dark;
+  //   }
 
-    &:active,
-    &.usa-button-active {
-      background-color: $color-secondary-darkest;
-    }
-  }
+  //   &:active,
+  //   &.usa-button-active {
+  //     background-color: $color-secondary-darkest;
+  //   }
+  // }
 
   &.usa-button-big {
     font-size: 1.9rem;

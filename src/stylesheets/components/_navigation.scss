@@ -229,14 +229,14 @@
       background-size: 1rem;
 
       @include media($nav-width) {
-        background-color: $color-primary-darkest;
+        background-color: $color-gray-dark;
         color: $color-white;
         background-image: url('#{$image-path}/angle-arrow-down-hover.png');
         background-image: url('#{$image-path}/angle-arrow-down-hover.svg');
         background-position: right 1.5rem top $button-vertical-offset;
 
         &:hover {
-          background-color: $color-primary-darkest;
+          background-color: $color-gray-dark;
         }
 
         span {
@@ -390,7 +390,7 @@
   @include media($nav-width) {
     @include unstyled-list;
     @include padding(0.75rem null 0.9rem null);
-    background-color: $color-primary-darkest;
+    background-color: $color-gray-dark;
     width: 21.5rem;
     position: absolute;
   }
@@ -407,7 +407,7 @@
 
     &:hover {
       @include media($nav-width) {
-        background-color: $color-primary-darkest;
+        background-color: $color-gray-dark;
         color: $color-white;
         padding-left: 1.5rem;
         text-decoration: underline;
@@ -456,7 +456,7 @@
 // Navigation mega menu -------- //
 
 @mixin outer-megamenu {
-  background-color: $color-primary-darkest;
+  background-color: $color-gray-dark;
   content: '';
   display: block;
   height: 100%;
