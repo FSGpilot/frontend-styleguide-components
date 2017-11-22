@@ -7,5 +7,6 @@ module.exports = {
   search:     require('./search'),
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
+  validator:  require('./table'),
 };
 
