@@ -1,0 +1,27 @@
+{% from "atoms/icons.njk" import icon as icon_ %}
+
+{% macro sidebar(sidebar) %}
+<div class="usa-grid-full col-12">
+  <ul class="usa-sidebar">
+    {% for item in sidebarlist.items %}
+    <li{%if item.disabled %} class="usa-disabled"{% endif %}{% if item.current %} class="usa-current"{% endif %}>
+      <a href="{{item.href}}">
+        <div class="sidebar-icon">
+          {{ icon_(item.largeicon) }}
+        </div>
+        <div class="sidebar-text">
+          <span class="sidebar-header">{{ item.header }}</span>
+          {% if item.subtext %}
+          <span class="sidebar-subtext">{{ item.subtext }}</span>
+          {% endif %}
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endmacro %}
+
+<div class="col-md-3">
+  {{ sidebar(sidebarlist.items) }}
+</div>

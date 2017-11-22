@@ -15,6 +15,6 @@ context:
         icon: close
         iconclass: icon-bg-warning
       - text: Trin 4
-        icon: question
+        icon: help
         iconclass: icon-bg-secondary
         disabled: true
