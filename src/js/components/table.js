@@ -76,12 +76,11 @@ $('.dt-filter').on('input', function() {
     rows.slice(1).forEach(function(row) {
         $(row).hide();
     });
-    
+
     // Show filtered rows
     rows.slice(1).filter(function(row) {
         return $(row).text().includes(text);
     }).forEach(function(row) {
         $(row).show();
-    });
-    
+    });    
 });

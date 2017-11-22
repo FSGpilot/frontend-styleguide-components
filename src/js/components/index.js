@@ -8,5 +8,6 @@ module.exports = {
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
   validator:  require('./table'),
+  validator:  require('./overflow-menu'),
 };
 
