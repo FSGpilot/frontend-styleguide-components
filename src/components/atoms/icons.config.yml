@@ -5,19 +5,19 @@ preview: '@dkwds-framed'
 context:
   icons_example:
     items:
-      - icon: address-book
+      - icon: book-open-variant
       - icon: telegram
-      - icon: user-o
-      - icon: id-card-o
-      - icon: bar-chart
-      - icon: ban
+      - icon: account
+      - icon: account-card-details
+      - icon: chart-bar
+      - icon: minus-circle
       - icon: barcode
-      - icon: area-chart
-      - icon: assistive-listening-systems
+      - icon: chart-areaspline
+      - icon: ear-hearing
       - icon: anchor
-      - icon: calendar-check-o
-      - icon: check-square
-      - icon: child
-      - icon: file-code-o
-      - icon: fire-extinguisher
-      - icon: group
+      - icon: calendar-check
+      - icon: checkbox-marked
+      - icon: human-child
+      - icon: file-xml
+      - icon: clipboard-text
+      - icon: account-multiple-plus

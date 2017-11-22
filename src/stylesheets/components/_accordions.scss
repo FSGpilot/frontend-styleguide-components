@@ -28,6 +28,7 @@ $v-padding: $spacing-md-small;
 @mixin accordion-button-styles {
   @include button-unstyled;
   display: flex;
+  align-items: center;
   background-color: $color-gray-lightest;
   background-image: url('#{$image-path}/minus.png');
   background-image: url('#{$image-path}/minus.svg');
@@ -48,7 +49,7 @@ $v-padding: $spacing-md-small;
     color: $color-base;
   }
 
-  h1, .h1, 
+  h1, .h1,
   h2, .h2,
   h3, .h3,
   h4, .h4,
@@ -153,7 +154,7 @@ $v-padding: $spacing-md-small;
     border-radius: 50%;
     text-align: center;
 
-    i.fa {
+    i {
       color: #fff;
     }
 

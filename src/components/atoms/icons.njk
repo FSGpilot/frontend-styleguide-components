@@ -1,9 +1,9 @@
 {% macro icon(icon, classes) %}
-  <i class="fa fa-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>
+  <i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>
 {% endmacro %}
 
-<p>Full list here: <a href="http://fontawesome.io/icons/">http://fontawesome.io/icons/</a></p>
-<div class="usa-grid fontawesome-icon-list row">
+<p>Full list here: <a href="https://materialdesignicons.com">http://https://materialdesignicons.com</a></p>
+<div class="usa-grid icon-list row">
   {% for icons in icons_example.items %}
     <div class="col-md-3">
       <div class="icon-box">
@@ -25,7 +25,7 @@
     flex-direction: column;
   }
 
-  .icon-box i.fa {
+  .icon-box i {
     font-size: 3rem;
     margin-bottom: 5px;
   }

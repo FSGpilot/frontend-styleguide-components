@@ -1,0 +1,25 @@
+label: Sidebar
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  sidebarlist:
+    items: &default_links
+      - header: Forskudsopgørelse
+        subtext: |
+          Se forskudsopgørelsen for jeres virksomhed
+        largeicon: file-outline
+        current: true
+      - header: Elever
+        subtext: |
+          Oversigt over elever til jeres virksomhed
+        largeicon: account-multiple
+      - header: Erhvervsuddannelse
+        subtext: |
+          Oversigt over jeres erhvervsuddannede medarbejdere
+        largeicon: account
+      - header: Disabled
+        subtext: |
+          Dette menupunkt er disabled
+        largeicon: close
+        disabled: true
