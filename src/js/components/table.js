@@ -64,3 +64,24 @@ function getCellValue(row, column) {
     return $(row).children('td').eq(column).text();
 }
 
+////////////////////////////////
+/////////// Filtering //////////
+////////////////////////////////
+
+$('.dt-filter').on('input', function() {
+    var rows = $('.dt-table').find('tr').toArray();
+    var text = $(this).val();
+
+    // Hide all rows
+    rows.slice(1).forEach(function(row) {
+        $(row).hide();
+    });
+    
+    // Show filtered rows
+    rows.slice(1).filter(function(row) {
+        return $(row).text().includes(text);
+    }).forEach(function(row) {
+        $(row).show();
+    });
+    
+});
