@@ -12,6 +12,7 @@ $z-index-nav:     9000;
 
 .header {
   width: 100%;
+  background-color: $color-gray-lightest;
   z-index: $z-index-header;
 
   @include media($nav-width) {
@@ -31,12 +32,23 @@ $z-index-nav:     9000;
       max-width: 21.5rem;
     }
   }
+
+  .logo{
+    //background-image is set by the themes in the "themes"-scss-files.
+    background-position: 0rem 3.0rem;
+    background-repeat: no-repeat;
+    min-height: 95px;
+    display: inline-block;
+  }
 }
 
-.logo {
+
+
+.solution-heading {
   float: left;
   line-height: 4rem;
   margin-left: 1.5rem;
+  
 
   @include media($nav-width) {
     line-height: 7.5rem;
@@ -57,7 +69,7 @@ $z-index-nav:     9000;
   }
 }
 
-.logo-text {
+.heading-text {
   display: block;
   font-size: $h5-font-size;
   font-style: normal;
@@ -118,7 +130,7 @@ $z-index-nav:     9000;
 // Basic header ----------- //
 
 .header-basic {
-  .logo {
+  .solution-heading {
     @include media($nav-width) {
       bottom: 0;
       position: absolute;
@@ -143,7 +155,7 @@ $z-index-nav:     9000;
     padding: 0;
     display: block;
     height: auto;
-    border-bottom: 1px solid #d6d7d9;
+    border-bottom: 1px solid $color-white;
 
     // @include media($nav-width) {
       &:after{
@@ -170,7 +182,7 @@ $z-index-nav:     9000;
     }
   }
 
-  .logo {
+  .solution-heading {
     @include media($nav-width) {
       @include margin(3rem null);
     }
@@ -195,7 +207,8 @@ $z-index-nav:     9000;
 
   .nav {
     @include media($nav-width) {
-      border-top: 1px solid $color-gray-lighter;
+      background-color: $color-gray-lightest;
+      border-top: 1px solid $color-white;
       float: none;
       padding: 0;
       width: 100%;

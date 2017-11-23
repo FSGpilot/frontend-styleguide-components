@@ -4,15 +4,11 @@
 {% macro portal_header(portal_header) %}
   <div class="portal-header">
     <div class="portal-header-inner">
-      <div class="logo" id="{{ portal_header.id_prefix }}logo">
-        <em class="logo-text">
-          <a href="{{ portal_header.link.href | default('/') }}"
-            title="{{ portal_header.link.title | default('Home') }}"
-            aria-label="{{ portal_header.link.label | default('Home') }}">
-            {{ portal_header.title | default(site.title) }}
-          </a>
-        </em>
-      </div>
+      <a href="{{ portal_header.link.href | default('/') }}"
+          title="{{ portal_header.link.title | default('Home') }}"
+          aria-label="{{ portal_header.link.label | default('Home') }}">
+          <div class="logo" id="{{ portal_header.id_prefix }}logo"></div>
+      </a>
     </div>
   </div>
 {% endmacro %}

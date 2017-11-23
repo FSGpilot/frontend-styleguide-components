@@ -3,8 +3,8 @@
 #}
 {% macro solution_header(solution_header) %}
   <div class="navbar solution-header">
-    <div class="logo" id="{{ solution_header.id_prefix }}logo">
-      <em class="logo-text">
+    <div class="solution-heading">
+      <em class="heading-text">
         <a href="{{ solution_header.link.href | default('/') }}"
           title="{{ solution_header.link.title | default('Home') }}"
           aria-label="{{ solution_header.link.label | default('Home') }}">

@@ -351,6 +351,9 @@
       text-decoration: underline;
     }
   }
+  a.button{
+    display: inline;
+  }
 
   .header-search-button {
     @include button-unstyled;
