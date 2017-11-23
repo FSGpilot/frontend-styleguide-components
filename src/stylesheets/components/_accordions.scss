@@ -79,13 +79,13 @@ $v-padding: $spacing-md-small;
   }
 }
 
-.usa-accordion,
-.usa-accordion-bordered {
+.accordion,
+.accordion-bordered {
   @include accordion-list-styles;
   @include accordion-nested-list;
 
-  + .usa-accordion,
-  + .usa-accordion-bordered {
+  + .accordion,
+  + .accordion-bordered {
     margin-top: $spacing-small;
   }
 
@@ -115,15 +115,15 @@ $v-padding: $spacing-md-small;
 
 }
 
-.usa-accordion-bordered {
-  .usa-accordion-content {
+.accordion-bordered {
+  .accordion-content {
     border-bottom: $accordion-border;
     border-left: $accordion-border;
     border-right: $accordion-border;
   }
 }
 
-.usa-accordion-content {
+.accordion-content {
   background-color: $color-white;
   overflow: auto;
   padding: $spacing-md-small $spacing-medium;
@@ -143,7 +143,7 @@ $v-padding: $spacing-md-small;
   @include accessibly-hidden();
 }
 
-.usa-accordion-button {
+.accordion-button {
   @include accordion-button-styles;
 
   .accordion-icon {
@@ -180,7 +180,7 @@ $v-padding: $spacing-md-small;
   }
 }
 
-.usa-accordion-button[aria-expanded=false] {
+.accordion-button[aria-expanded=false] {
   @include accordion-button-unopened-styles;
   // display: flex;
 }

@@ -20,22 +20,22 @@ There are a few different ways to use the Standards within your project. Which o
 
 ### Download
 
-1. Download the [Standards zip file](https://github.com/18F/web-design-standards/releases/download/v1.0.0/uswds-1.0.0.zip) and open that file.
+1. Download the [Standards zip file](https://github.com/18F/web-design-standards/releases/download/v1.0.0/dkwds-1.0.0.zip) and open that file.
 
   After extracting the zip file you should see the following file and folder structure:
 
   ```
-  uswds-1.0.0/
+  dkwds-1.0.0/
   ├── css/
-  │   ├── uswds.min.css.map
-  │   ├── uswds.min.css
-  │   └── uswds.css
+  │   ├── dkwds.min.css.map
+  │   ├── dkwds.min.css
+  │   └── dkwds.css
   ├── fonts/
   ├── html/
   └── js/
-      ├── uswds.min.js.map
-      ├── uswds.min.js
-      └── uswds.js
+      ├── dkwds.min.js.map
+      ├── dkwds.min.js
+      └── dkwds.js
 
   ```
 
@@ -44,7 +44,7 @@ There are a few different ways to use the Standards within your project. Which o
   ```
   example-project/
   ├── assets/
-  │   ├── uswds-1.0.0/
+  │   ├── dkwds-1.0.0/
   │   ├── stylesheets/
   │   ├── images/
   │   └── javascript/

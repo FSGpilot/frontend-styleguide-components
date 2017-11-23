@@ -1,15 +1,15 @@
 {% extends '_dkwds.njk' %}
 {% block body %}
-<header class="usa-header usa-header-extended" role="banner">
+<header class="header header-extended" role="banner">
   {% render '@site-title' %}
-  <nav role="navigation" class="usa-nav">
+  <nav role="navigation" class="nav">
     <div class="header-mask"></div>
-    <div class="usa-nav-inner">
+    <div class="nav-inner">
       {{ yield }}
     </div>
   </nav>
 </header>
-<div class="usa-overlay"></div>
+<div class="overlay"></div>
 
 <style scoped>
   .header-mask {
@@ -22,8 +22,8 @@
     z-index: 999;
   }
 
-  .usa-nav-inner,
-  .usa-nav-secondary {
+  .nav-inner,
+  .nav-secondary {
     background-color: white;
     z-index: 1000;
   }

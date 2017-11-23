@@ -1,8 +1,8 @@
 {% macro textinput(id, label, class, error, errormsg, name, classlabel) %}
   {% if error %}
-  <div class="usa-input-error">
-    <label class="usa-input-error-label" for="{{id}}">{{label}}</label>
-    <span class="usa-input-error-message" id="input-error-message" role="alert">{{errormsg}}</span>
+  <div class="input-error">
+    <label class="input-error-label" for="{{id}}">{{label}}</label>
+    <span class="input-error-message" id="input-error-message" role="alert">{{errormsg}}</span>
     <input id="{{id}}" name="{{name}}" type="text" aria-describedby="input-error-message">
   </div>
   {% else %} 

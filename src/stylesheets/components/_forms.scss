@@ -1,4 +1,4 @@
-$usa-form-width: 32rem;
+$form-width: 32rem;
 
 form {
   a {
@@ -24,13 +24,13 @@ form {
   }
 }
 
-.usa-form {
+.form {
   @include media($medium-screen) {
-    max-width: $usa-form-width;
+    max-width: $form-width;
   }
 }
 
-.usa-form-note {
+.form-note {
   float: right;
   font-family: $font-sans;
   font-size: $h5-font-size;
@@ -47,39 +47,39 @@ fieldset {
   padding: 0;
 }
 
-.usa-form-large {
+.form-large {
   @include media($medium-screen) {
     max-width: 46rem;
   }
 }
 
 input {
-  &.usa-input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
+  &.input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
     @include media($medium-screen) {
       max-width: 6rem;
     }
   }
 
-  &.usa-input-medium { /* stylelint-disable-line selector-no-qualifying-type */
+  &.input-medium { /* stylelint-disable-line selector-no-qualifying-type */
     @include media($medium-screen) {
       max-width: 12rem;
     }
   }
 }
 
-.usa-input-grid {
+.input-grid {
   @include media($medium-screen) {
     padding-right: 5%;
   }
 }
 
-.usa-input-grid:last-of-type {
+.input-grid:last-of-type {
   @include media($medium-screen) {
     padding-right: 0;
   }
 }
 
-.usa-input-grid-small {
+.input-grid-small {
   @include media($medium-screen) {
     float: left;
     width: 35%;
@@ -94,7 +94,7 @@ input {
   }
 }
 
-.usa-input-grid-medium {
+.input-grid-medium {
   @include media($medium-screen) {
     float: left;
     width: 65%;
@@ -109,7 +109,7 @@ input {
   }
 }
 
-.usa-input-grid-large {
+.input-grid-large {
   @include media($medium-screen) {
     float: left;
     width: 100%;
@@ -124,13 +124,13 @@ input {
   }
 }
 
-.usa-additional_text {
+.additional_text {
   font-weight: normal;
 }
 
 // Reset password checklist
 
-.usa-checklist {
+.checklist {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -153,7 +153,7 @@ input {
   }
 }
 
-.usa-checklist-checked {
+.checklist-checked {
   &::before {
     background-image: url('#{$image-path}/correct9.png');
     background-image: url('#{$image-path}/correct9.svg');

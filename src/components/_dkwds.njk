@@ -2,11 +2,11 @@
 <html lang="en-US">
   <head>
     <title>{{ _self.title }}</title>
-    <link rel="stylesheet" href="{{ uswds.path }}/css/dkwds-virkdk.min.css">
+    <link rel="stylesheet" href="{{ dkwds.path }}/css/dkwds-virkdk.min.css">
   </head>
   <body>
     {% block body %}{{ yield }}{% endblock %}
-    <script src="{{ uswds.path }}/js/dkwds.min.js"></script>
+    <script src="{{ dkwds.path }}/js/dkwds.js"></script>
     <script>
     window.addEventListener('load', function() {
       document.body.addEventListener('submit', function(e) {

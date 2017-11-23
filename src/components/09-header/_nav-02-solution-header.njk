@@ -2,9 +2,9 @@
 
 #}
 {% macro solution_header(solution_header) %}
-  <div class="usa-navbar solution-header">
-    <div class="usa-logo" id="{{ solution_header.id_prefix }}logo">
-      <em class="usa-logo-text">
+  <div class="navbar solution-header">
+    <div class="logo" id="{{ solution_header.id_prefix }}logo">
+      <em class="logo-text">
         <a href="{{ solution_header.link.href | default('/') }}"
           title="{{ solution_header.link.title | default('Home') }}"
           aria-label="{{ solution_header.link.label | default('Home') }}">
@@ -12,7 +12,7 @@
         </a>
       </em>
     </div>
-    <button class="usa-menu-btn">Menu</button>
+    <button class="menu-btn">Menu</button>
   </div>
 {% endmacro %}
 
@@ -21,19 +21,19 @@
 #}
 {% macro solution_header_nav(nav) %}
 
-<div class="usa-nav-secondary">
+<div class="nav-secondary">
   {# {% if nav.search %}
     {% render '@search--header', {search: nav.search, search_js: true, id_prefix: id_prefix} %} 
   {% endif %} #}
-  <ul class="usa-unstyled-list usa-nav-secondary-links">
+  <ul class="unstyled-list nav-secondary-links">
     {% if nav.search %}
     <li class="js-search-button-container">
-      <button class="usa-header-search-button js-search-button">Search</button>
+      <button class="header-search-button js-search-button">Search</button>
     </li>
     {% endif %}
     {% for link in nav.links %}
     <li> 
-      <a href="{{ link.href }}"{% if link.current %} class="usa-current"{% endif %}>
+      <a href="{{ link.href }}"{% if link.current %} class="current"{% endif %}>
         {{ link.text }}
       </a>
     </li>

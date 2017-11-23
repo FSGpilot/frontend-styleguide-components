@@ -12,16 +12,16 @@ before(function () {
 
 describe('build output', function () {
 
-  it('generates CSS at dist/css/uswds.css', function () {
-    const distFilename = path.join(distCssPath, 'uswds.css');
+  it('generates CSS at dist/css/dkwds.css', function () {
+    const distFilename = path.join(distCssPath, 'dkwds.css');
     assert.ok(
       fs.existsSync(distFilename),
       'the file does not exist: ' + distFilename
     );
   });
 
-  it('generates minified CSS at dist/css/uswds.min.css', function () {
-    const distFilename = path.join(distCssPath, 'uswds.min.css');
+  it('generates minified CSS at dist/css/dkwds.min.css', function () {
+    const distFilename = path.join(distCssPath, 'dkwds.min.css');
     assert.ok(
       fs.existsSync(distFilename),
       'the file does not exist: ' + distFilename
@@ -31,7 +31,7 @@ describe('build output', function () {
 });
 
 describe('version output', function () {
-  const versionString = '/*! uswds v' + pkg.version + ' */';
+  const versionString = '/*! dkwds v' + pkg.version + ' */';
 
   const checkVersion = (filename, done) => {
     return new Promise((resolve, reject) => {
@@ -51,13 +51,13 @@ describe('version output', function () {
     });
   };
 
-  it('includes the current version text in uswds.css', function () {
-    const distFilename = path.join(distCssPath, 'uswds.css');
+  it('includes the current version text in dkwds.css', function () {
+    const distFilename = path.join(distCssPath, 'dkwds.css');
     return checkVersion(distFilename);
   });
 
-  it('includes the current version text in uswds.min.css', function () {
-    const distFilename = path.join(distCssPath, 'uswds.min.css');
+  it('includes the current version text in dkwds.min.css', function () {
+    const distFilename = path.join(distCssPath, 'dkwds.min.css');
     return checkVersion(distFilename);
   });
 

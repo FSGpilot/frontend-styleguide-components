@@ -6,8 +6,8 @@
 {% endmacro %}
 
 <div class="container">
-  <fieldset class="usa-fieldset-inputs usa-sans">
-    <ul class="usa-unstyled-list">
+  <fieldset class="fieldset-inputs sans">
+    <ul class="unstyled-list">
       {% for item in radiobuttons_example.items %}
         {{ radiobutton(item.id, item.name, item.value, item.checked, item.text) }}
       {% endfor %}

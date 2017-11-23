@@ -31,14 +31,14 @@ a {
   }
 
   &:visited,
-  &.usa-color-text-visited {
+  &.color-text-visited {
     color: $color-visited;
   }
 }
 
 // Text colors
 // @each $color, $value in $colors {
-//   @include text-color('.usa-color-text-#{$color}', $value);
+//   @include text-color('.color-text-#{$color}', $value);
 // }
 
 @mixin external-link($external-link, $external-link-hover) {
@@ -64,11 +64,11 @@ a {
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
 
-.usa-external_link {
+.external_link {
   @include external-link(external-link, external-link-hover);
 }
 
-.usa-external_link-alt {
+.external_link-alt {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
@@ -123,19 +123,19 @@ dfn {
 
 // Custom typography
 
-.usa-content {
+.content {
   p,
-  ul:not(.usa-accordion):not(.usa-accordion-bordered),
-  ol:not(.usa-accordion):not(.usa-accordion-bordered) {
+  ul:not(.accordion):not(.accordion-bordered),
+  ol:not(.accordion):not(.accordion-bordered) {
     max-width: $text-max-width;
   }
 }
 
-.usa-content-list {
+.content-list {
   max-width: $text-max-width;
 }
 
-.usa-heading {
+.heading {
   p,
   a,
   li,
@@ -145,7 +145,7 @@ dfn {
 }
 
 
-.usa-sans {
+.sans {
   p,
   a,
   li,
@@ -159,7 +159,7 @@ dfn {
   }
 }
 
-.usa-serif {
+.serif {
   p,
   a,
   li,
@@ -168,7 +168,7 @@ dfn {
   }
 }
 
-.usa-sans-source {
+.sans-source {
   p,
   a,
   li,
@@ -182,7 +182,7 @@ dfn {
   }
 }
 
-.usa-serif-merri {
+.serif-merri {
   p,
   a,
   li,
@@ -191,7 +191,7 @@ dfn {
   }
 }
 
-.usa-display {
+.display {
   @include h3();
   margin-bottom: 0;
 
@@ -204,7 +204,7 @@ dfn {
   }
 }
 
-.usa-font-lead {
+.font-lead {
   font-family: $font-heading;
   font-size: $lead-font-size;
   font-weight: $font-normal;
@@ -212,11 +212,11 @@ dfn {
   max-width: $lead-max-width;
 }
 
-.usa-image-block {
+.image-block {
   position: relative;
 }
 
-.usa-image-text-block {
+.image-text-block {
   color: $color-white;
   left: 0;
   margin-left: 8%;
@@ -224,15 +224,15 @@ dfn {
   top: 0;
 }
 
-.usa-image-text {
+.image-text {
   margin-top: 0;
 }
 
-.usa-drop_text {
+.drop_text {
   margin-bottom: 0;
 }
 
-.usa-background-dark {
+.background-dark {
   background-color: $color-gray-dark;
 
   p,
@@ -249,7 +249,7 @@ dfn {
   }
 }
 
-.usa-text-small {
+.text-small {
   font-size: $h6-font-size;
   margin-top: 0;
 }

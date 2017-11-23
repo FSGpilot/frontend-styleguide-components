@@ -12,7 +12,7 @@ context:
         content: |
           <p>De oplysninger, som du typisk finder på din lønseddel, findes også i SKATs eIndkomstsystem</p>
           <p>I oversigten kan du se nogle tal, som SKAT har registreret som din samlede indkosmt gennem de seneste måneder. Tallene er rundet op til nærmeste hele beløb.</p>
-          <table class="usa-table-borderless">
+          <table class="table-borderless">
             <caption>April 2017:</caption>
             <tbody>
               <tr>
@@ -29,7 +29,7 @@ context:
               </tr>
             </tbody>
           </table>
-          <table class="usa-table-borderless">
+          <table class="table-borderless">
             <caption>Marts 2017:</caption>
             <tbody>
               <tr>
@@ -47,14 +47,14 @@ context:
             </tbody>
           </table>
         cardactions: 
-          - content: '<button class="usa-button-primary">Se beregning</button>'
-          - content: '<button class="usa-button-secondary">Læs mere</button>'
+          - content: '<button class="button-primary">Se beregning</button>'
+          - content: '<button class="button-secondary">Læs mere</button>'
       - size: "card-large"
         fit: true
         header: 'Personoplysninger'
         subheader: ''
         content: |
-          <table class="usa-table-borderless">
+          <table class="table-borderless">
             <caption>April 2017:</caption>
             <thead>
               <tr>
@@ -72,7 +72,7 @@ context:
             </tbody>
           </table>
         cardactions: 
-          - content: '<button class="usa-button-primary">Se flere informationer</button>'
+          - content: '<button class="button-primary">Se flere informationer</button>'
       - size: "card-large"
         fit: true
         header: 'Vaccinationsprogram'
@@ -80,7 +80,7 @@ context:
         content: |
           <p><strong>Huskeliste</strong></p>
           <p>Gælder, hvis barnet følger <a href="#">programmet</a>.</p>
-          <table class="usa-table-borderless">
+          <table class="table-borderless">
             <tbody>
               <tr>
                 <th scope="row"><strong>4 år:</strong></th>
@@ -99,4 +99,4 @@ context:
           <p>Det er Cecilies læge, der skal give vaccinen.</p>
           <p>Du kan se, hvilke vacciner børn født efter 27. maj 2004 har fået i <a href="#">Det fælles medicinkort (nytvindue)</a>
         cardactions: 
-          - content: '<button class="usa-button-primary">Læs mere</button>'
+          - content: '<button class="button-primary">Læs mere</button>'

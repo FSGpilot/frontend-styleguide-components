@@ -8,7 +8,7 @@ const context = {
     name: pkg.name,
     version: pkg.version,
   },
-  uswds: {
+  dkwds: {
     path: '../../dist',
   },
 };

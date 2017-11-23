@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ meta.title | default('Styleguide Fractal example document') }}</title>
-    <link rel="stylesheet" href="{{ uswds.path }}/css/dkwds-virkdk.min.css">
+    <link rel="stylesheet" href="{{ dkwds.path }}/css/dkwds-virkdk.min.css">
     {% block styles %}{% endblock %}
   </head>
   <body>
     {% block skipnav -%}
-      <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+      <a class="skipnav" href="#main-content">Skip to main content</a>
     {% endblock %}
 
     {% block banner -%}
@@ -31,7 +31,7 @@
       {% render '@footer' %}
     {% endblock %}
 
-    <script src="{{ uswds.path }}/js/dkwds.min.js"></script>
+    <script src="{{ dkwds.path }}/js/dkwds.min.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

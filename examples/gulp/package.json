@@ -22,6 +22,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "uswds": "^1.1.0"
+    "dkwds": "^1.1.0"
   }
 }

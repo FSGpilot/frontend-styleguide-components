@@ -35,13 +35,13 @@ select {
   padding: $input-padding-vertical 0.7em;
   width: 100%;
 
-  &.usa-input-success {
+  &.input-success {
     border: 3px solid $color-success;
   }
 }
 /* stylelint-enable */
 
-.usa-input-error {
+.input-error {
   border-left: 4px solid $color-error;
   margin-top: 3rem;
   padding-bottom: 0.8rem;
@@ -61,23 +61,23 @@ select {
     margin-top: 0;
   }
 
-  .usa-input-inline {
+  .input-inline {
     border: $input-border-width solid $color-gray;
     width: inherit;
   }
 
-  .usa-input-inline-error {
+  .input-inline-error {
     border: 3px solid $color-error;
   }
 }
 
-.usa-input-error-label {
+.input-error-label {
   display: block;
   font-size: $base-font-size;
   font-weight: $font-bold;
 }
 
-.usa-input-error-message {
+.input-error-message {
   color: $color-error;
   display: block;
   font-size: $base-font-size;
@@ -86,12 +86,12 @@ select {
   padding-top: 3px;
 }
 
-.usa-input-required:after {
+.input-required:after {
   color: $color-required;
   content: ' (*required)';
 }
 
-.usa-input-optional:after {
+.input-optional:after {
   color: $color-gray;
   content: ' (optional)';
 }
@@ -143,7 +143,7 @@ legend {
   font-weight: $font-bold;
 }
 
-.usa-fieldset-inputs {
+.fieldset-inputs {
   label {
     margin-top: 0;
   }
@@ -151,7 +151,7 @@ legend {
 
 // Hint text
 
-.usa-form-hint {
+.form-hint {
   color: $color-gray;
   font-family: $font-sans;
   margin-bottom: 0;
@@ -320,7 +320,7 @@ legend {
 
 // Memorable dates
 
-.usa-date-of-birth {
+.date-of-birth {
   label {
     margin-top: 0;
   }
@@ -337,15 +337,15 @@ legend {
   }
 }
 
-.usa-form-group-day,
-.usa-form-group-month,
-.usa-form-group-year {
+.form-group-day,
+.form-group-month,
+.form-group-year {
   clear: none;
   float: left;
   margin-right: 1.5rem;
   width: 5rem;
 }
 
-.usa-form-group-year {
+.form-group-year {
   width: 7rem;
 }

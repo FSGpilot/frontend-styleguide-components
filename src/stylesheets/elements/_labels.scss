@@ -1,4 +1,4 @@
-.usa-label {
+.label {
   background-color: $color-gray;
   border-radius: $label-border-radius;
   color: $color-white;
@@ -12,8 +12,8 @@
   }
 }
 
-.usa-label-big {
-  @extend .usa-label;
+.label-big {
+  @extend .label;
   font-size: $base-font-size;
   padding-left: 0.9rem;
   padding-right: 0.9rem;
