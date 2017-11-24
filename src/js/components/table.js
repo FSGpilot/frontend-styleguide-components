@@ -84,3 +84,14 @@ $('.dt-filter').on('input', function() {
         $(row).show();
     });    
 });
+
+////////////////////////////////
+////////// Expandable //////////
+////////////////////////////////
+
+$('.dt-expand-button').on('click', function() {
+    var svg = $(this).find('.dt-expand-button-svg')[0];
+    $(svg).toggleClass('dt-svg-rotate90');
+    var trRow = $(this).closest('tr').next('.dt-expand-row')
+    trRow.toggleClass('dt-hidden');    
+});
