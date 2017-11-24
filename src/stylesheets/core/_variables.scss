@@ -1,5 +1,5 @@
 // These variables drive almost every aspect of the Frontend Styleguide.
-// Every variable is declared as !default so that it can be overridden 
+// Every variable is declared as !default so that it can be overridden
 // by a previous import.
 //
 // XXX Do not modify this file!
@@ -69,9 +69,9 @@ $color-neutral-lightest:      #0071bc !default; //todo, need base color for ligh
 $color-primary:               $color-neutral !default;
 $color-primary-darker:        $color-neutral-darker !default;
 $color-primary-darkest:       $color-neutral-darkest !default;
-$color-primary-lightest:      $color-neutral-lightest !default; 
-$color-background:            #f1f1f1 !default; 
- 
+$color-primary-lightest:      $color-neutral-lightest !default;
+$color-background:            #f1f1f1 !default;
+
 // Special text colors
 $color-text-neutral-18:       #1B86C3 !default; // must be over 18px in font-size to be accessible
 $color-text-positive:         #588012 !default;
@@ -104,7 +104,7 @@ $color-border-focus:          $color-gray-light !default;
 $color-alt-background:        #F5FBFE !default;
 $color-alt-background-hover:  #E2F2FB !default;
 $color-alt-table-header:      #0D405E !default;
-$color-required:              #981b1e !default;      
+$color-required:              #981b1e !default;
 
 
 $color-shadow:                rgba(#000, 0.3) !default;
@@ -231,6 +231,7 @@ $label-border-radius:           2px !default;
 $checkbox-border-radius:        2px !default;
 $border-radius:                 3px !default;
 $button-border-radius:          5px !default;
+$button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 1px solid $color-gray-light;
 $focus-spacing:                 2px;
