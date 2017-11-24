@@ -3,11 +3,11 @@
 {% endmacro %}
 
 <p>Full list here: <a href="https://materialdesignicons.com">http://https://materialdesignicons.com</a></p>
-<div class="usa-grid icon-list row">
+<div class="icon-list row">
   {% for icons in icons_example.items %}
     <div class="col-md-3">
       <div class="icon-box">
-        <div>{{ icon(icons.icon, "usa-color-text-blue") }}</div>
+        <div>{{ icon(icons.icon, "color-text-blue") }}</div>
         <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
       </div>
     </div>

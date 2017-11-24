@@ -25,7 +25,7 @@ gulp.task(task, function (done) {
   });
 
   var stream = defaultStream.bundle()
-    .pipe(source('uswds.js')) // XXX why is this necessary?
+    .pipe(source('dkwds.js')) // XXX why is this necessary?
     .pipe(buffer())
     .pipe(rename({ basename: dutil.pkg.name }))
     .pipe(gulp.dest('dist/js'));

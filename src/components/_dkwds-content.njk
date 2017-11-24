@@ -1,8 +1,10 @@
 {% extends '_dkwds.njk' %}
 {% block body %}
-  <div class="usa-grid" style="padding: 2em">
-    <div class="usa-width-one-whole">
-      {{ yield }}
+  <div class="container" style="padding: 2em">
+    <div class="row">
+      <div class="col-12">
+        {{ yield }}
+      </div>
     </div>
   </div>
 {% endblock %}

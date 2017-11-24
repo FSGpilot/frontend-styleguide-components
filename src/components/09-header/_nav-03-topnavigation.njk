@@ -2,17 +2,17 @@
 
 #}
 {% macro topnavigation(nav) %}
-<button class="usa-nav-close">
-  <img src="{{ uswds.path }}/img/close.svg" alt="close">
+<button class="nav-close">
+  <img src="{{ dkwds.path }}/img/close.svg" alt="close">
 </button>
-<ul class="usa-nav-primary usa-accordion">
+<ul class="nav-primary accordion">
   {%- for link in nav.links -%}
   <li>
     {%- if link.links -%}
-    <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="{{ nav.id_prefix }}{{ link.id }}">
+    <button class="accordion-button nav-link" aria-expanded="false" aria-controls="{{ nav.id_prefix }}{{ link.id }}">
       <span>{{ link.text }}</span>
     </button>
-    <ul id="{{ nav.id_prefix }}{{ link.id }}" class="usa-nav-submenu{% if nav.mega %} usa-megamenu usa-grid-full{% endif %}">
+    <ul id="{{ nav.id_prefix }}{{ link.id }}" class="nav-submenu{% if nav.mega %} megamenu grid-full{% endif %}">
       {%- if nav.id_prefix == "basic-" or nav.id_prefix == "extended-" -%}
         {%- for child in link.links -%}
           {%- if loop.index < 4 -%}
@@ -23,7 +23,7 @@
         {%- endfor -%}
       {%- else -%}
         {%- for group in link.links | batch(3) -%}
-          <div class="usa-megamenu-col">
+          <div class="megamenu-col">
             {%- for child in group -%}
               <li>
                 <a href="{{ child.href }}">{{ child.text }}</a>
@@ -34,7 +34,7 @@
       {%- endif -%}
     </ul>
     {%- else -%}
-    <a class="usa-nav-link{% if link.current %} usa-current{% endif %}" href="{{ link.href }}">
+    <a class="nav-link{% if link.current %} current{% endif %}" href="{{ link.href }}">
       <span>{{ link.text }}</span>
     </a>
     {%- endif -%}

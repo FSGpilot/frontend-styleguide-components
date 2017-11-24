@@ -11,7 +11,7 @@ const BUTTON = '.js-search-button';
 const FORM = '.js-search-form';
 const INPUT = '[type=search]';
 const CONTEXT = 'header'; // XXX
-const VISUALLY_HIDDEN = `${PREFIX}-sr-only`;
+const VISUALLY_HIDDEN = `${PREFIX}sr-only`;
 
 let lastButton;
 

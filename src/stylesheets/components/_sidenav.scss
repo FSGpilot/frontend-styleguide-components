@@ -1,8 +1,8 @@
-.usa-sidenav-list {
-  @include usa-sidenav-list;
+.sidenav-list {
+  @include sidenav-list;
 
   li {
-    &.usa-disabled {
+    &.disabled {
       background: $color-gray-lightest;
 
       a, a:hover, a:focus {
@@ -60,6 +60,6 @@
   }
 }
 
-.usa-sidenav-sub_list {
-  @include usa-sidenav-sublist;
+.sidenav-sub_list {
+  @include sidenav-sublist;
 }

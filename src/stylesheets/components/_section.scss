@@ -1,4 +1,4 @@
-.usa-section {
+.section {
   @include padding($site-margins null);
 
   @include media($medium-screen) {
@@ -6,11 +6,11 @@
   }
 }
 
-.usa-section-light {
+.section-light {
   background-color: $color-gray-lightest;
 }
 
-// .usa-section-dark {
+// .section-dark {
 //   background-color: $color-primary-darkest;
 //   color: $color-white;
 

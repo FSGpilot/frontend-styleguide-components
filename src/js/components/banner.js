@@ -5,8 +5,8 @@ const toggle = require('../utils/toggle');
 const CLICK = require('../events').CLICK;
 const PREFIX = require('../config').prefix;
 
-const HEADER = `.${PREFIX}-banner-header`;
-const EXPANDED_CLASS = `${PREFIX}-banner-header-expanded`;
+const HEADER = `.${PREFIX}banner-header`;
+const EXPANDED_CLASS = `${PREFIX}banner-header-expanded`;
 
 const toggleBanner = function (event) {
   event.preventDefault();

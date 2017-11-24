@@ -3,7 +3,7 @@ const dataset = require('elem-dataset');
 
 const PREFIX = require('../config').prefix;
 const CHECKED = 'aria-checked';
-const CHECKED_CLASS = `${PREFIX}-checklist-checked`;
+const CHECKED_CLASS = `${PREFIX}checklist-checked`;
 
 module.exports = function validate (el) {
   const data = dataset(el);

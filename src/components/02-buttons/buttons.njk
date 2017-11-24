@@ -1,14 +1,14 @@
 {%- macro button(class, state) -%}
   {%- if (state == 'default') -%}
-    <button class="usa-button-{{class}}">Default</button>
+    <button class="button-{{class}}">Default</button>
   {%- elif (state == 'hover') -%}
-    <button class="usa-button-{{class}} usa-button-hover">Hover</button>
+    <button class="button-{{class}} button-hover">Hover</button>
   {%- elif (state == 'active') -%}
-    <button class="usa-button-{{class}} usa-button-active">Active</button>
+    <button class="button-{{class}} button-active">Active</button>
   {%- elif (state == 'focus') -%}
-    <button class="usa-button-{{class}} usa-focus">Focus</button>
+    <button class="button-{{class}} focus">Focus</button>
   {%- elif (state == 'disabled') -%}
-    <button class="usa-button-{{class}}" disabled>Disabled</button>
+    <button class="button-{{class}}" disabled>Disabled</button>
   {%- endif %}
 {%- endmacro -%}
 

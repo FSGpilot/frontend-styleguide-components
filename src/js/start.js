@@ -7,10 +7,10 @@ const domready = require('domready');
  */
 require('./polyfills');
 
-const uswds = require('./config');
+const dkwds = require('./config');
 
 const components = require('./components');
-uswds.components = components;
+dkwds.components = components;
 
 domready(() => {
   const target = document.body;
@@ -20,4 +20,4 @@ domready(() => {
   }
 });
 
-module.exports = uswds;
+module.exports = dkwds;

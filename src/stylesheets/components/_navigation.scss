@@ -10,7 +10,7 @@
   padding-bottom: 0.9rem;
 }
 
-.usa-navbar {
+.navbar {
   border-bottom: 1px solid $color-gray-light;
   height: 4rem;
 
@@ -21,7 +21,7 @@
   }
 }
 
-.usa-nav-link {
+.nav-link {
   @include font-smoothing;
 
   &:hover {
@@ -32,7 +32,7 @@
     }
   }
 
-  &.usa-accordion-button {
+  &.accordion-button {
     span {
       @include media($nav-width) {
         margin-right: 0;
@@ -42,7 +42,7 @@
   }
 }
 
-.usa-nav-container {
+.nav-container {
   @include media($nav-width) {
     @include outer-container();
     @include padding(null $site-margins);
@@ -50,7 +50,7 @@
   }
 }
 
-.usa-nav {
+.nav {
   $sliding-panel-width: 26rem;
 
   @include position(fixed, 0 0 0 auto);
@@ -91,7 +91,7 @@
     }
   }
 
-  .usa-current {
+  .current {
     border-left: 4px solid $color-primary;
     color: $color-primary;
     font-weight: $font-bold;
@@ -102,11 +102,11 @@
     }
   }
 
-  .usa-button {
+  .button {
     width: 100%;
   }
 
-  .usa-search {
+  .search {
     @include media($nav-width) {
       margin-left: 1.5rem; // XXX magic number
       top: 4px;
@@ -116,8 +116,8 @@
 
 // Primary navigation ------------- //
 
-.usa-nav-primary {
-  @include usa-sidenav-list;
+.nav-primary {
+  @include sidenav-list;
   order: 2;
 
   @include media($nav-width) {
@@ -248,8 +248,8 @@
   }
 
   @include media($nav-width) {
-    a.usa-current,
-    .usa-current { // stylelint-disable-line selector-no-qualifying-type
+    a.current,
+    .current { // stylelint-disable-line selector-no-qualifying-type
       // undo the sidenav style
       border-left: 0;
       padding-left: 1.5rem;
@@ -270,8 +270,8 @@
 
 // Extended header navigation ------- //
 
-.usa-header-extended {
-  .usa-nav-link {
+.header-extended {
+  .nav-link {
     &:hover {
       span {
         @include media($nav-width) {
@@ -281,7 +281,7 @@
     }
   }
 
-  .usa-nav-primary {
+  .nav-primary {
     button[aria-expanded=true] { /* stylelint-disable-line selector-no-qualifying-type */
       span {
         @include media($nav-width) {
@@ -290,7 +290,7 @@
       }
     }
 
-    .usa-current {
+    .current {
       @include media($nav-width) {
         span {
           @include nav-border-thick;
@@ -302,14 +302,14 @@
 
 // Secondary navigation ----------- //
 
-.usa-nav-secondary {
+.nav-secondary {
   @include media($nav-width) {
     position: absolute;
     right: $site-margins;
     top: -5.7rem; // XXX magic number
   }
 
-  .usa-search {
+  .search {
     @include margin(3rem null);
 
     @include media($nav-width) {
@@ -319,7 +319,7 @@
   }
 }
 
-.usa-nav-secondary-links {
+.nav-secondary-links {
   @include media($nav-width) {
     float: left;
   }
@@ -340,7 +340,7 @@
   }
 
   a,
-  .usa-header-search-button {
+  .header-search-button {
     color: $color-gray;
     display: inline-block;
     font-size: $h5-font-size;
@@ -351,8 +351,11 @@
       text-decoration: underline;
     }
   }
+  a.button{
+    display: inline;
+  }
 
-  .usa-header-search-button {
+  .header-search-button {
     @include button-unstyled;
     display: none;
 
@@ -374,7 +377,7 @@
   }
 
   @include media($nav-width) {
-    a.usa-current { // stylelint-disable-line selector-no-qualifying-type
+    a.current { // stylelint-disable-line selector-no-qualifying-type
       // undo the sidenav style
       border-left: 0;
       padding-left: 0;
@@ -384,8 +387,8 @@
 
 // Navigation submenu (dropdown and mega menu) ----- //
 
-.usa-nav-submenu {
-  @include usa-sidenav-sublist;
+.nav-submenu {
+  @include sidenav-sublist;
 
   @include media($nav-width) {
     @include unstyled-list;
@@ -414,10 +417,10 @@
       }
     }
 
-    // this used to be necessary to undo the `usa-sidenav-sublist`
+    // this used to be necessary to undo the `sidenav-sublist`
     // include, above
     // &:hover,
-    // &.usa-current { /* stylelint-disable-line selector-no-qualifying-type */
+    // &.current { /* stylelint-disable-line selector-no-qualifying-type */
     //   @include media($nav-width) {
     //     padding-left: 1.8rem;
     //   }
@@ -432,7 +435,7 @@
 
 // Navigation close button -------- //
 
-.usa-nav-close {
+.nav-close {
   @include button-unstyled;
   @include margin(-1.2rem -1.5rem 2.4rem auto);
   float: right;
@@ -449,7 +452,7 @@
   }
 }
 
-.usa-mobile_nav-active {
+.mobile_nav-active {
   overflow: hidden;
 }
 
@@ -465,12 +468,12 @@
   width: 1000%;
 }
 
-.usa-megamenu {
+.megamenu {
   @include media($nav-width) {
     @include padding(3.15rem null); // XXX magic number
     // XXX this is the difference between the 2rem padding-left
-    // of .usa-nav-inner and the $site-margins (3rem) padding-left
-    // of .usa-megamenu
+    // of .nav-inner and the $site-margins (3rem) padding-left
+    // of .megamenu
     left: -1rem;
     width: 100%;
   }
@@ -490,8 +493,8 @@
   }
 }
 
-.usa-header-basic-megamenu {
-  .usa-nav {
+.header-basic-megamenu {
+  .nav {
     @include media($nav-width) {
       padding-left: 0;
       padding-top: 0;
@@ -499,7 +502,7 @@
     }
   }
 
-  .usa-nav-inner {
+  .nav-inner {
     display: flex;
     flex-direction: column;
 
@@ -510,8 +513,8 @@
     }
   }
 
-  .usa-nav-submenu {
-    .usa-grid-full {
+  .nav-submenu {
+    .grid-full {
       @include media($nav-width) {
         margin-left: -1.8rem; // XXX magic number
       }
@@ -519,7 +522,7 @@
   }
 }
 
-.usa-megamenu-col {
+.megamenu-col {
   @include media($nav-width) {
     @include span-columns(3);
 

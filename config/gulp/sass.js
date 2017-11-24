@@ -13,7 +13,7 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var task = 'sass';
 
-var entryFileFilter = filter('uswds.scss', { restore: true });
+var entryFileFilter = filter('dkwds.scss', { restore: true });
 var normalizeCssFilter = filter('normalize.css', { restore: true });
 
 gulp.task('stylelint',
@@ -75,7 +75,7 @@ gulp.task(task, [ 'copy-vendor-sass' ], function () {
         cascade: false,
       })
     )
-    // 4. write dist/css/uswds.css
+    // 4. write dist/css/dkwds.css
     .pipe(gulp.dest('dist/css'));
 
   // we can reuse this stream for minification!
@@ -88,13 +88,13 @@ gulp.task(task, [ 'copy-vendor-sass' ], function () {
       // XXX see https://github.com/ben-eb/cssnano/issues/340
       mergeRules: false,
     }))
-    // 3. rename to uswds.min.css
+    // 3. rename to dkwds.min.css
     .pipe(rename({
       suffix: '.min',
     }))
-    // 4. write dist/css/uswds.min.css.map
+    // 4. write dist/css/dkwds.min.css.map
     .pipe(sourcemaps.write('.'))
-    // 5. write dist/css/uswds.min.css
+    // 5. write dist/css/dkwds.min.css
     .pipe(gulp.dest('dist/css'));
 
   return stream;
