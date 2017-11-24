@@ -78,3 +78,21 @@
 .dt-svg-rotate {
     transform: rotate(180deg);
 }
+
+.dt-expand-button {
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: transparent;
+}
+
+.dt-expand-button-svg {
+    width: 8px;
+    height: 12px;
+}
+
+.dt-svg-rotate90 {
+    transform: rotate(90deg);
+}
