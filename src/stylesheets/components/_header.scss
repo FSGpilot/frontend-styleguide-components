@@ -195,7 +195,7 @@ $z-index-nav:     9000;
     }
   }
 
-  .navbar {
+  .navbar { //TODO: rename, it is no longer a "navbar" as it no longer holds any navigation
     @include media($nav-width) {
       @include outer-container();
       @include padding(null $site-margins);
@@ -257,6 +257,15 @@ $z-index-nav:     9000;
   .megamenu {
     @include media($nav-width) {
       padding-left: $site-margins;
+    }
+  }
+
+  .nav-tertiary {
+    margin-bottom: 1.5rem;
+
+    @include media($nav-width) {
+      float: right;
+      margin-bottom: 0;
     }
   }
 }

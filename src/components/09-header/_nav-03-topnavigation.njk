@@ -1,10 +1,38 @@
 {# 
 
 #}
-{% macro topnavigation(nav) %}
+{% macro topnavigation(nav, nav_tertiary) %}
+{%- if nav_tertiary -%}
+<div class="nav-tertiary">
+  <ul class="unstyled-list nav-secondary-links">
+    {% for link in nav_tertiary.links %}
+    <li> 
+      {%- if link.type == "link" -%}
+      <a href="{{ link.href }}">
+        {{ link.text }}
+      </a>
+      {%- elif link.type == "button" -%}
+      <a href="{{ link.href }}" class="button button-small">
+        {{ link.text }}
+      </a>
+      {%- else -%}
+      <select name="options" id="options">
+        <option value>- Vælg -</option>
+        <option value="option1">Mulighed 1</option>
+        <option value="option2">Mulighed 2</option>
+        <option value="option3">Mulighed 3</option>
+      </select>
+      {%- endif -%}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{%- endif -%}
+
 <button class="nav-close">
   <img src="{{ dkwds.path }}/img/close.svg" alt="close">
 </button>
+
 <ul class="nav-primary accordion">
   {%- for link in nav.links -%}
   <li>
@@ -41,8 +69,5 @@
   </li>
   {%- endfor -%}
 </ul>
-{%- if nav.search -%}
-  {% render '@search--header', {search: nav.search, id_prefix: nav.id_prefix}, true %}
-{%- endif -%}
-
 {% endmacro %}
+

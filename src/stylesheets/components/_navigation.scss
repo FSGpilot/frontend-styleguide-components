@@ -385,6 +385,32 @@
   }
 }
 
+.nav-tertiary{
+  padding-top: 1.4rem;
+
+  button{
+    margin-right: 0;
+  }
+
+  select {
+    display: inline;
+    width: auto;
+    height: auto;
+    padding: .3rem 3rem .3rem 0.3rem;
+    font-size: 1.4rem;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    text-align-last: right;
+    background-image: url(../img/angle-arrow-down.png);
+    background-image: url(../img/angle-arrow-down.svg);
+
+    option {
+      direction: rtl;
+    }
+  }
+}
+
 // Navigation submenu (dropdown and mega menu) ----- //
 
 .nav-submenu {
