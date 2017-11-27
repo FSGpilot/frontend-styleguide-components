@@ -221,7 +221,7 @@ $mdi-font-path:                 $font-path;
 $asset-pipeline:                false !default;
 
 // Magic Numbers
-$text-max-width:                53rem !default;
+$text-max-width:                76ch !default;
 $lead-max-width:                77rem !default;
 $site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  3rem !default;
