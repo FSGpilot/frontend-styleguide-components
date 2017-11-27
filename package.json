@@ -16,7 +16,7 @@
     "cracks": "cracks --paths package.json,spec",
     "federalist": "npm install --dev && gulp build && fractal build",
     "mocha": "mocha --opts spec/mocha.opts",
-    "prepublish": "gulp build release",
+    "prepublish": "gulp build",
     "preversion": "npm test",
     "release": "gulp release",
     "spec": "npm run mocha -- 'spec/**/*.spec.js'",
