@@ -1,7 +1,6 @@
 {% import "02-buttons/buttons.njk" as button %}
 
 {% macro card(size, fit, header, subheader, cardcontent, cardactions) %}
-
 <div class="card {{size}} {% if fit %}card-fit{% endif %}">
   <div class="card-header">
     <h2>{{header}}</h2>
@@ -10,20 +9,18 @@
   <div class="card-block card-content">
       {{cardcontent}}
   </div>
-  {% for actionblock in cardactions %}
+  {% for actionblock in cardactions -%}
     <div class="card-action">
       {{actionblock.content}}
     </div>
-  {% endfor %}
+  {%- endfor %}
 </div>  
 {% endmacro %}
 
 <div class="container">
   <div class="row">
-
-    {% for item in cards_example.items %}
+    {% for item in cards_example.items -%}
       {{ card(item.size, item.fit, item.header,item.subheader, item.content, item.cardactions ) }}
-    {% endfor %}
-
+    {%- endfor %}
   </div>
 </div>
