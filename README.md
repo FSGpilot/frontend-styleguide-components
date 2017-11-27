@@ -1,11 +1,15 @@
-# POC version 1.0 - Frontend styleguide
+# Frontend Styleguide
 
-This repo includes code for the proof of concept for a Frontend Styleguide based on [U.S. Web Design Standards](https://standards.usa.gov/).
-Based on USWD 6. july develop branch.
+This repo is part of the pilot-project for a Frontend Styleguide based on [U.S. Web Design Standards](https://standards.usa.gov/).
 
 ## Getting started
 
-Todo
+We’re glad you’d like to use the Standards — here’s how you can get started:
+
+* Designers: [Check out our Getting Started for Designers information](https://jonasjensen77.github.io/frontend-styleguide-poc/getting-started/designers/).
+  <!-- * [Design files of all the assets included in the Standards are available for download](https://github.com/18F/web-design-standards-assets/archive/master.zip). -->
+* Developers: [Follow the instructions in this README to get started.](#using-the-standards)
+  * [CSS, JavaScript, image, and font files of all the assets on this site are available for download](https://github.com/jonasjensen77/frontend-styleguide-components/releases/download/v1.0.1/dkwds-1.0.1.zip).
 
 ## Using the Standards
 
@@ -20,12 +24,12 @@ There are a few different ways to use the Standards within your project. Which o
 
 ### Download
 
-1. Download the [Standards zip file](https://github.com/18F/web-design-standards/releases/download/v1.0.0/dkwds-1.0.0.zip) and open that file.
+1. Download the [Standards zip file](https://github.com/jonasjensen77/frontend-styleguide-components/releases/download/v1.0.1/dkwds-1.0.1.zip) and open that file.
 
   After extracting the zip file you should see the following file and folder structure:
 
   ```
-  dkwds-1.0.0/
+  dkwds-1.0.1/
   ├── css/
   │   ├── dkwds.min.css.map
   │   ├── dkwds.min.css
@@ -44,7 +48,7 @@ There are a few different ways to use the Standards within your project. Which o
   ```
   example-project/
   ├── assets/
-  │   ├── dkwds-1.0.0/
+  │   ├── dkwds-1.0.1/
   │   ├── stylesheets/
   │   ├── images/
   │   └── javascript/
@@ -64,11 +68,11 @@ There are a few different ways to use the Standards within your project. Which o
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Example Project</title>
-    <link rel="stylesheet" href="assets/uswds-1.0.0/css/uswds.min.css">
+    <link rel="stylesheet" href="assets/uswds-1.0.1/css/dkwds.min.css">
   </head>
   <body>
 
-    <script src="assets/uswds-1.0.0/js/uswds.min.js"></script>
+    <script src="assets/dkwds-1.0.1/js/dkwds.min.js"></script>
   </body>
   </html>
   ```
@@ -79,7 +83,7 @@ And that’s it — you should now be able to copy our code samples into our `in
 
 ### Install using npm
 
-`npm` is a package manager for Node based projects. The U.S. Web Design Standards maintains a [`uswds` package](https://www.npmjs.com/package/uswds) for you to utilize both the pre-compiled and compiled files on your project.
+`npm` is a package manager for Node based projects. The U.S. Web Design Standards maintains a [`dkwds` package](https://www.npmjs.com/package/uswds) for you to utilize both the pre-compiled and compiled files on your project.
 
 1. Install `Node/npm`. Below is a link to find the install method that coincides with your operating system:
 
@@ -96,16 +100,16 @@ And that’s it — you should now be able to copy our code samples into our `in
 
 3. Create a `package.json` file. You can do this manually, but an easier method is to use the `npm init` command. This command will prompt you with a few questions to create your `package.json` file.
 
-4. Add `uswds` to your project’s `package.json`:
+4. Add `dkwds` to your project’s `package.json`:
 
   ```shell
-  npm install --save uswds
+  npm install --save dkwds
   ```
 
-The `uswds` module is now installed as a dependency. You can use the un-compiled files found in the `src/` or the compiled files in the `dist/` directory.
+The `dkwds` module is now installed as a dependency. You can use the un-compiled files found in the `src/` or the compiled files in the `dist/` directory.
 
 ```
-node_modules/uswds/
+node_modules/dkwds/
 ├── dist/
 │   ├── css/
 │   ├── fonts/
@@ -122,7 +126,7 @@ node_modules/uswds/
 
 #### Importing assets
 
-Since you are already using `npm`, the U.S. Web Design Standards team recommends leveraging the ability to write custom scripts. Here are some links to how we do this with our docs website using `npm` + [`gulp`](http://gulpjs.com/):
+Since you are already using `npm`, the Frontend Styleguide team recommends leveraging the ability to write custom scripts. Here are some links to how we do this with our docs website using `npm` + [`gulp`](http://gulpjs.com/):
 
 [Link to `npm` scripts example in `web-design-standards-docs`](https://github.com/18F/web-design-standards-docs/blob/develop/package.json#L4)
 
@@ -136,7 +140,7 @@ The Standards are easily customizable using the power of [Sass (Syntactically Aw
 node_modules/uswds/src/stylesheets/uswds.scss
 ```
 
-Global variables are defined in the `node_modules/uswds/src/stylesheets/core/_variables.scss` file. Custom theming can be done by copying the `_variables.scss` file into your own project’s Sass folder, changing applicable variable values, and importing it before `uswds.scss`.
+Global variables are defined in the `node_modules/dkwds/src/stylesheets/core/_variables.scss` file. Custom theming can be done by copying the `_variables.scss` file into your own project’s Sass folder, changing applicable variable values, and importing it before `dkwds.scss`.
 
 Below is an example of how you might setup your main Sass file to achieve this:
 
@@ -149,7 +153,7 @@ Below is an example of how you might setup your main Sass file to achieve this:
 You can now use your copied version of `_variables.scss` to override any styles to create a more custom look and feel to your application.
 
 #### JavaScript
-`require('uswds')` will load all of the U.S. Web Design Standards’ JavaScript onto the page. Add this line to whatever initializer you use to load JavaScript into your application.
+`require('dkwds')` will load all of the U.S. Web Design Standards’ JavaScript onto the page. Add this line to whatever initializer you use to load JavaScript into your application.
 
 ### Use another framework or package manager
 
