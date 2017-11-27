@@ -215,6 +215,7 @@ $large:                         new-breakpoint(min-width $large-screen $grid-col
 // Relative font and image file paths
 $font-path:                     '../fonts' !default;
 $image-path:                    '../img' !default;
+$mdi-font-path:                 $font-path;
 
 // Set $asset-pipeline to true if you're using the Rails Asset Pipeline
 $asset-pipeline:                false !default;
