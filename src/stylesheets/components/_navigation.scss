@@ -339,10 +339,10 @@
     }
   }
 
-  a,
+  a:not(.button),
   .header-search-button {
-    color: $color-gray;
     display: inline-block;
+    color: $color-gray;
     font-size: $h5-font-size;
     text-decoration: none;
 
@@ -402,8 +402,8 @@
     border: 0;
     background-color: transparent;
     text-align-last: right;
-    background-image: url(../img/angle-arrow-down.png);
-    background-image: url(../img/angle-arrow-down.svg);
+    background-image: url('#{$image-path}/angle-arrow-down.png');
+    background-image: url('#{$image-path}/angle-arrow-down.svg');
 
     option {
       direction: rtl;
@@ -468,6 +468,12 @@
   height: $hit-area;
   text-align: center;
   width: $hit-area;
+
+  background-image: url('#{$image-path}/close.png');
+  background-image: url('#{$image-path}/close.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 2rem;
 
   @include media($nav-width) {
     display: none;
