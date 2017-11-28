@@ -49,7 +49,6 @@ button,
   line-height: 1;
   text-align: center;
   text-decoration: none;
-  box-shadow: inset 0 -4px 0 darken($color-primary, 7%);
   cursor: pointer;
 
   @include media($small-screen) {
@@ -85,6 +84,9 @@ button,
   //     color: $color-white;
   //   }
   // }
+  &.button-primary {
+    box-shadow: inset 0 -4px 0 darken($color-primary, 7%);
+  }
 
   &.button-secondary {
     background-color: transparent;
