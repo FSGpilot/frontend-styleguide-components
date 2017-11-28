@@ -313,3 +313,17 @@ dfn {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+
+.step-title {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.field-group-title {
+  font-weight: 400;
+
+  ~ hr {
+    border: 2px solid $color-base;
+  }
+}

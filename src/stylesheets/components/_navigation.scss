@@ -571,3 +571,39 @@
     @include unstyled-list;
   }
 }
+
+
+// Navbar inner
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.nav-info-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: right;
+
+    &.clear {
+      display: block;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
