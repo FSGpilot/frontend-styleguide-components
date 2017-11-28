@@ -31,7 +31,7 @@ select {
   height: $input-height;
   line-height: $input-line-height;
   margin: 0.2em 0;
-  max-width: $input-max-width;
+  //max-width: $input-max-width;
   padding: $input-padding-vertical 0.7em;
   width: 100%;
 
@@ -348,4 +348,10 @@ legend {
 
 .form-group-year {
   width: 7rem;
+}
+
+
+// Required
+.required {
+  color: $color-error;
 }

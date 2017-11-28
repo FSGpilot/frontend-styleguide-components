@@ -269,3 +269,10 @@ html .button-secondary-inverse-disabled,  // Deprecated
     }
   }
 }
+
+
+// Button row
+.button-row {
+  display: flex;
+  margin: 2rem 0 1rem;
+}

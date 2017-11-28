@@ -34,3 +34,11 @@
     margin-top: 0;
   }
 }
+
+// Info row
+.info-row {
+  display: flex;
+  padding: 1rem 1.5rem;
+  background-color: $color-gray-lightest;
+  border-top: 1px solid $color-gray-lighter;
+}
