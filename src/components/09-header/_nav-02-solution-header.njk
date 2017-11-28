@@ -15,30 +15,25 @@
     <button class="menu-btn">Menu</button>
   </div>
 {% endmacro %}
-
 {# 
+
 
 #}
 {% macro solution_header_nav(nav) %}
-
 <div class="nav-secondary">
-  {# {% if nav.search %}
-    {% render '@search--header', {search: nav.search, search_js: true, id_prefix: id_prefix} %} 
-  {% endif %} #}
   <ul class="unstyled-list nav-secondary-links">
-    {% if nav.search %}
+    {% if nav.search -%}
     <li class="js-search-button-container">
       <button class="header-search-button js-search-button">Search</button>
     </li>
-    {% endif %}
-    {% for link in nav.links %}
+    {%- endif %}
+    {% for link in nav.links -%}
     <li> 
-      <a href="{{ link.href }}"{% if link.current %} class="current"{% endif %}>
+      <a href="{{ link.href }}" class="{{ link.class }}{% if link.current %}current{% endif %}">
         {{ link.text }}
       </a>
     </li>
-    {% endfor %}
+    {%- endfor %}
   </ul>
 </div>
-
 {% endmacro %}

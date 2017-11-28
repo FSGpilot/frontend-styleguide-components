@@ -20,7 +20,8 @@ context:
     search: false
     links:
       - text: Secondary priority link
-      - text: Easy to comprehend
+        class: button button-primary
+      - text: Easy to comprehend link
   top_nav:
     search: false
     id_prefix: extended-mega-
