@@ -44,7 +44,7 @@ button,
   font-family: $font-sans;
   font-size: $base-font-size;
   font-weight: $font-bold;
-  color: $color-white;
+  color: $color-primary-button-text;
   @include font-smoothing;
   line-height: 1;
   text-align: center;
@@ -59,7 +59,6 @@ button,
   &.button-hover {
     background-color: $color-primary-darker;
     border-bottom: 0;
-    color: $color-white;
     text-decoration: none;
     box-shadow: none;
   }
