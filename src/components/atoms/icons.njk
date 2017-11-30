@@ -1,8 +1,4 @@
-{% macro icon(icon, classes) %}
-  <i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>
-{% endmacro %}
-
-<p>Full list here: <a href="https://materialdesignicons.com">http://https://materialdesignicons.com</a></p>
+{% macro icon(icon, classes) %}<i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>{% endmacro %}
 <div class="icon-list row">
   {% for icons in icons_example.items %}
     <div class="col-md-3">

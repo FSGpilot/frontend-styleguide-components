@@ -1,23 +1,21 @@
 {% from "atoms/icons.njk" import icon as icon_ %}
 
 {% macro tringuide(trinliste) %}
-  <div class="grid-full">
-      <ul class="sidenav-list">
-        {% for trin in trinliste %}
-          <li{% if trin.disabled %} class="disabled"{% endif %}>
-            <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
-              {{loop.index}}. {{trin.text}}
+  <ul class="sidenav-list">
+    {% for trin in trinliste %}
+      <li{% if trin.disabled %} class="disabled"{% endif %}>
+        <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
+          {{loop.index}}. {{trin.text}}
 
-              {% if trin.icon %}
-              <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
-                {{ icon_(trin.icon) }}
-              </span>
-              {% endif %}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-  </div>
+          {% if trin.icon %}
+          <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
+            {{ icon_(trin.icon) }}
+          </span>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endmacro %}
 
 {{ tringuide(tringuiden.trinlisten) }}

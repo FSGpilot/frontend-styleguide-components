@@ -11,11 +11,11 @@
       aria-controls="{{ accordion_example.id_prefix }}{{ item.id }}">
       {{ item.title }}
 
-      {% if item.icon %}
+      {%- if item.icon %}
         <span class="accordion-icon{% if item.iconclass %} {{ item.iconclass }} {% endif %}">
           {{ icon_(item.icon) }}
         </span>
-      {% endif %}
+      {% endif -%}
     </button>
     <div id="{{ accordion_example.id_prefix }}{{ item.id }}" class="accordion-content">
       {{ item.content }}

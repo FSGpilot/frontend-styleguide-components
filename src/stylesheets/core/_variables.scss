@@ -60,10 +60,10 @@ $color-focus:                 $color-gray-light !default;
 $color-visited:               #801258 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
-$color-neutral:               #0071bc !default;
-$color-neutral-darker:        #205493 !default;
-$color-neutral-darkest:       #112e51 !default;
-$color-neutral-lightest:      #0071bc !default; //todo, need base color for lightest
+$color-neutral:               #323A45 !default;
+$color-neutral-darker:        #212121 !default;
+$color-neutral-darkest:       #212121 !default;
+$color-neutral-lightest:      #AEB0B5 !default; //todo, need base color for lightest
 
 // Functional theme colors
 $color-primary:               $color-neutral !default;
