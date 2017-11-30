@@ -1,4 +1,4 @@
-{% import "08-navigation/tringuide.njk" as tringuiden %}
+{% import "08-side-navigation/tringuide.njk" as tringuiden %}
 {% import "07-form/templates/address-form.njk" as adresse  %}
 {% import "07-form/templates/name-form.njk" as navn %}
 {% import "07-form/controls/date-input.njk" as dato %}
@@ -9,7 +9,7 @@
 {% extends 'layouts/_base.njk' %}
 
 {% block header %}
-    {% render '@header--extended' %}
+    {% render '@header--simpel' %}
 {% endblock %}
 
 
@@ -40,14 +40,14 @@
                             {{radiob.radiobutton("valg-ja", "valg", "valg-ja", true, "Ja")}}
                             {{radiob.radiobutton("valg-nej", "valg", "valg-nej", false, "Nej")}}
                         </ul>
-                    </div> 
+                    </div>
                 </fieldset>
             </form>
             <div class="row">
-                <button class="button button-primary">Næste</button>                    
+                <button class="button button-primary">Næste</button>
             </div>
             <div class="row">
-                 <a href="" >Forrige</a>                
+                 <a href="" >Forrige</a>
             </div>
         </div>
         </div>
