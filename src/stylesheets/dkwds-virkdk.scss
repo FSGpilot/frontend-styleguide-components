@@ -1,5 +1,8 @@
-// borgerdk and virkdk shares all the css
+// virkdk theme
 
+@import 'dkwds-vendor';
+@import './core/functions';
+@import './core/variables';
 @import './themes/virkdk';  //import variable-overrides specific to this theme 
-@import 'dkwds'; //imports everything thats shared between all themes (the above theme handles making things specific to that theme).
+@import 'dkwds-base';
 

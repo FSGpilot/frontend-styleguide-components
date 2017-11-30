@@ -1,0 +1,21 @@
+label: Eksempel-A - Side 1
+handle: layout--example-a-page1
+
+context:
+  user:
+    name: Christian Emil Vestergaard Christiansen
+    company: Københavns Urmager Værksted v/Martin Elsig
+
+  portal_header:
+    title: Indberet
+
+  sub_header:
+    title: Titel på løsning
+    entity: Navn på myndighed
+    entity-link: https://#!
+    phone: 11 22 33 44
+    email: virk@virk.dk
+
+  fieldgroup:
+    title: Titel på feltgruppe
+    text: Indledende brødtekst til feltgruppe Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.

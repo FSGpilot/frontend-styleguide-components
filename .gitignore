@@ -12,8 +12,8 @@ coverage/
 dist/
 
 # ignore the generated dkwds directory
-dkwds-1.4.2/
-dkwds-1.4.1/
+dkwds-*/
+dkwds-*.zip
 
 # ignore the generated builds directory
 #build/components/detail/

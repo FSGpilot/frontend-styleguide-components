@@ -20,7 +20,8 @@ context:
     search: false
     links:
       - text: Secondary priority link
-      - text: Easy to comprehend
+        class: button button-primary
+      - text: Easy to comprehend link
   top_nav:
     search: false
     id_prefix: extended-mega-
@@ -52,6 +53,14 @@ context:
         links: *subnav_links
       - text: Distinct from each other
         href: 'javascript:void(0)'
+  top_nav_buttons:
+    links:
+      - text: Secondary priority link
+        type: link
+      - text: Easy to comprehend
+        type: button
+      - text: Dropdown
+        type: dropdown
 
 variants:
   - name: default
