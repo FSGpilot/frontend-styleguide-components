@@ -1,3 +1,15 @@
+$color-row-hover: #EEF4FC;
+$color-header: 	#f1f1f1;
+$color-row: #FFFFFF;
+
+$border-row-hover: 1px solid #5596E6;
+$border-row: 1px solid #D6D7D9; 
+
+$row-height-compact: 24px;
+$row-height-short: 32px;
+$row-height-default: 48px;
+$row-height-tall: 64px;
+
 .dt-container {
     display: flex;
     flex-direction: column;
@@ -96,3 +108,95 @@
 .dt-svg-rotate90 {
     transform: rotate(90deg);
 }
+
+.dk-table {
+    cursor: pointer;    
+
+    // It is necessary to set 1px transprarent border in order to prevent table moving when hovering over row
+    td, th {
+        border: 1px transparent;
+        padding: 0px 20px;
+    }
+
+    &.bordered {
+        tr {
+            border: $border-row;
+        }
+    }
+
+    &.borderless {
+        tr {
+            border: $border-row;            
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+    }
+
+    &.zebra {
+        tr:nth-child(even) {
+            td {
+                background-color: $color-header;
+            }
+        }
+        
+        tbody > tr:not(:last-child) {
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }        
+
+        &.borderless {
+            tr,th {
+                border-color: transparent;
+            }
+        }
+    }
+
+    th {
+        background-color: $color-header;
+    } 
+
+
+    tbody {
+        td {
+            background-color: $color-row;
+        }
+
+        tr:hover { 
+            td {
+                background-color: $color-row-hover;
+                border-top: $border-row-hover;
+                border-bottom: $border-row-hover;
+            }
+            td:first-child {
+                border-left: $border-row-hover;
+            }
+            td:last-child {
+                border-right: $border-row-hover;
+            }
+        }    
+    }
+    
+    tr { 
+        height: $row-height-default;
+    }
+    &.compact {
+        tbody > tr {
+            height: $row-height-compact;
+        }
+    }
+    &.short {
+        tbody > tr {
+            height: $row-height-short;
+        }
+    }
+    &.tall {
+        tbody > tr {
+            height: $row-height-tall;
+        }
+    }
+   
+   
+
+}
+
+
