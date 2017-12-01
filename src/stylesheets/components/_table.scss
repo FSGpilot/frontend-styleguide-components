@@ -1,6 +1,10 @@
 $color-row-hover: #EEF4FC;
 $color-header: 	#f1f1f1;
 $color-row: #FFFFFF;
+$color-buttons: #8c9ba5;
+$color-menu: #323a44;
+$color-checkbox: #3e72b5;
+$color-search-input: #ebf0f7;
 
 $border-row-hover: 1px solid #5596E6;
 $border-row: 1px solid #D6D7D9; 
@@ -10,32 +14,11 @@ $row-height-short: 32px;
 $row-height-default: 48px;
 $row-height-tall: 64px;
 
-.dt-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
 .dt-menu {
     display: flex;
     height: 50px;
 }
 
-.dt-selected-rows-menu {
-    width: 100%;
-    display: flex;    
-    background: $color-primary;
-}
-
-.dt-default-menu {
-    width: 100%;
-    display: flex;  
-}
-
-.dt-button {
-    align-self: center; // center vertically   
-    background: inherit;     
-}
 
 .dt-selected-items-counter {
     margin-left: auto; // adjust to the right
@@ -43,53 +26,11 @@ $row-height-tall: 64px;
     color: $color-white;
 }
 
-.dt-filter {
-    margin-right: auto; // adjust to the left
-    margin-left: 20px;
-    height: 30px;
-    align-self: center;
-}
-
-.dt-checkbox {
-    position: initial;
-    left: 0px;
-    -webkit-appearance: checkbox;
-    height: auto;
-    width: auto;
-}
-
-.dt-button-img {
-    width: 16px;
-    height: 16px;
-    fill-rule: evenodd;
-}
-
 .dt-hidden {
     display: none;
 }
 
-.dt-table {
-    margin: 0;
-    width: 100%;
-}
 
-.dt-sort-button {
-    background: none;
-    color: inherit;
-    white-space: nowrap;    
-}
-
-.dt-sort-button-svg {
-    width: 10px;
-    height: 6px;
-    fill-rule: evenodd;
-    fill: black;
-    margin-bottom: 2px;
-}
-
-.dt-svg-rotate {
-    transform: rotate(180deg);
-}
 
 .dt-expand-button {
     width: fit-content;
@@ -110,12 +51,14 @@ $row-height-tall: 64px;
 }
 
 .dk-table {
-    cursor: pointer;    
+    cursor: pointer;   
+    margin: 0; 
 
     // It is necessary to set 1px transprarent border in order to prevent table moving when hovering over row
     td, th {
         border: 1px transparent;
         padding: 0px 20px;
+        background-color: inherit;
     }
 
     &.bordered {
@@ -134,9 +77,7 @@ $row-height-tall: 64px;
 
     &.zebra {
         tr:nth-child(even) {
-            td {
-                background-color: $color-header;
-            }
+            background-color: $color-header;
         }
         
         tbody > tr:not(:last-child) {
@@ -157,7 +98,7 @@ $row-height-tall: 64px;
 
 
     tbody {
-        td {
+        tr {
             background-color: $color-row;
         }
 
@@ -175,7 +116,7 @@ $row-height-tall: 64px;
             }
         }    
     }
-    
+
     tr { 
         height: $row-height-default;
     }
@@ -194,9 +135,144 @@ $row-height-tall: 64px;
             height: $row-height-tall;
         }
     }
-   
-   
+
+    /****************************************
+     ************* Sort buttons *************
+     ****************************************/
+
+    button.table-sort-button {
+        background: none;
+        color: inherit;
+        white-space: nowrap;  
+        padding: 0;
+        svg {
+            width: 10px;
+            height: 6px;
+            fill-rule: evenodd;
+            fill: $color-buttons;
+            margin-bottom: 2px;
+            display: none;
+        }
+
+        .svg-rotate {
+            transform: rotate(180deg);
+        }
+    }
+
+    /****************************************
+     ************** Checkbox ****************
+     ****************************************/
+    .row-selection-checkbox {
+        position: static;
+        height: auto;
+        width: auto;
+        border: none;
+    }
+    .row-selection-checkbox:after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid $color-buttons;
+    }
+    .row-selection-checkbox:checked:after {
+        content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
+        border-color:  $color-checkbox;
+        background: $color-checkbox;    
+    }
+    tr.row-selected {        
+        background-color: $color-row-hover;        
+    }
 
 }
 
 
+.table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .search {
+        margin-right: auto; // adjust to the left
+        margin-left: 0;
+        height: 30px;
+        width: 300px;
+        align-self: center;
+        background: $color-search-input;
+        border: none;
+        padding: 0px 30px
+    }
+
+    .menu-button {
+        align-self: center; // center vertically   
+        background: inherit;   
+        padding: 1px 6px;
+        svg {
+            width: 16px;
+            height: 16px;
+            align-self: center;
+            fill: $color-buttons;
+        }
+    }
+
+    .default-menu, .selected-rows-menu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    } 
+
+    .selected-rows-menu {
+        display: none;
+        background: $color-menu;
+
+        .menu-selection-button {
+            width: 100px;
+            height: 30px;
+            background-color: transparent;
+            color: #FFFFFF;
+            white-space: nowrap; 
+            align-self: center;
+            border-radius: 0;
+            padding: 0 0.5em;
+            margin: 0.5em 1em;
+    
+            svg {
+                width: 16px;
+                height: 16px;
+                align-self: center;
+                fill: #FFFFFF;
+            }
+    
+            &:hover {
+                color: $color-checkbox;
+                background-color: #FFFFFF;
+                svg {
+                    fill: $color-checkbox;
+                }
+            }
+    
+            &:focus {
+                color: $color-checkbox;
+                background-color: #FFFFFF;
+                outline: 2px solid;
+                outline-offset: -4px;
+                svg {
+                    fill: $color-checkbox;
+                }
+            }
+        }
+
+        .cancel {
+            color: #FFFFFF;
+            text-decoration: underline;
+            align-self: center;
+            margin: 0 15px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    
+}

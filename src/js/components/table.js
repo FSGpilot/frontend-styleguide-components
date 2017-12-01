@@ -6,48 +6,56 @@ var $ = require('jquery');
 
 function showActionButtons(checkedCount) {
     $('.dt-selected-items-counter-value').text(checkedCount);
-    $('.dt-selected-rows-menu').removeClass('dt-hidden');
-    $('.dt-default-menu').addClass('dt-hidden');
+    $('.selected-rows-menu').show().css('display', 'flex');;
+    $('.default-menu').hide();
 };
 
 function hideActionButtons() {
-    $('.dt-selected-rows-menu').addClass('dt-hidden');
-    $('.dt-default-menu').removeClass('dt-hidden');
+    $('.selected-rows-menu').hide();
+    $('.default-menu').show();
 };
 
-$('.dt-checkbox').on('change', function () {
-    var checkedCount = $('.dt-checkbox:checked').length;
+$('.row-selection-checkbox').on('change', function () {
+    var checkedCount = $('.row-selection-checkbox:checked').length;
     if (checkedCount > 0) {
         showActionButtons(checkedCount);
     } else {
         hideActionButtons();
     }
+    var row = $(this).closest('tr');//.toggleClass('row-selected');
+    if (this.checked) {
+        row.addClass('row-selected');
+    } else {
+        row.removeClass('row-selected');        
+    }
 });
 
-$('.dt-cancel-button').on('click', function () {
-    $('.dt-checkbox').prop('checked', false);
-    hideActionButtons();
+$('.cancel').on('click', function () {
+    $('.row-selection-checkbox:checked').each(function() {
+       $(this).prop('checked', false);
+       $(this).trigger('change');
+    });
 });
 
 ////////////////////////////////
 /////////// Sorting ////////////
 ////////////////////////////////
 
-$('.dt-sort-button').on('click', function() {
-    var svg = $(this).find('.dt-sort-button-svg')[0];
-    $(svg).toggleClass('dt-svg-rotate');
+$('.table-sort-button').on('click', function() {
+    var svg = $(this).find('svg')[0];
+    $(svg).toggleClass('svg-rotate');
 
-    $('.dt-sort-button-svg').addClass('dt-hidden');
-    $(svg).removeClass('dt-hidden');    
+    $('.table-sort-button').find('svg').hide();
+    $(svg).show();
 
     var index = $(this).parent().index();
-    var asc = $(svg).hasClass('dt-svg-rotate');
+    var asc = $(svg).hasClass('svg-rotate');
 
     sortTable(index,asc);
 });
 
 function sortTable(column, asc) {
-    var table = $('.dt-table');
+    var table = $('.dk-table');
     var rows = table.find('tr').toArray();
     rows = rows.slice(1).sort(function (a, b) {
         return getCellValue(a, column) > getCellValue(b, column);
