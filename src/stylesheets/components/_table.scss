@@ -192,29 +192,6 @@ $row-height-tall: 64px;
     flex-direction: column;
     width: 100%;
 
-    .search {
-        margin-right: auto; // adjust to the left
-        margin-left: 0;
-        height: 30px;
-        width: 300px;
-        align-self: center;
-        background: $color-search-input;
-        border: none;
-        padding: 0px 30px
-    }
-
-    .menu-button {
-        align-self: center; // center vertically   
-        background: inherit;   
-        padding: 1px 6px;
-        svg {
-            width: 16px;
-            height: 16px;
-            align-self: center;
-            fill: $color-buttons;
-        }
-    }
-
     .default-menu, .selected-rows-menu {
         display: flex;
         flex-direction: row;
@@ -272,6 +249,42 @@ $row-height-tall: 64px;
             }
         }
 
+    }
+
+    .default-menu {
+        .search-svg {
+            position: absolute;
+            align-self: center;
+            margin-left: 7px;
+            fill: $color-buttons;
+            z-index: 1;
+            width: 16px;
+            height: 16px;
+        }
+
+        .search {
+            margin-right: auto; // adjust to the left
+            margin-left: 0;
+            height: 30px;
+            width: 300px;
+            align-self: center;
+            background-color: $color-search-input;
+            border: none;
+            padding: 0px 30px; 
+            color: $color-buttons;     
+        }
+
+        .menu-button {
+            align-self: center; 
+            background: inherit;   
+            padding: 1px 6px;
+            svg {
+                width: 16px;
+                height: 16px;
+                align-self: center;
+                fill: $color-buttons;
+            }
+        }
     }
 
     

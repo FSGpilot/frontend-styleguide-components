@@ -76,8 +76,8 @@ function getCellValue(row, column) {
 /////////// Filtering //////////
 ////////////////////////////////
 
-$('.dt-filter').on('input', function() {
-    var rows = $('.dt-table').find('tr').toArray();
+$('.search').on('input', function() {
+    var rows = $('.dk-table').find('tr').toArray();
     var text = $(this).val();
 
     // Hide all rows
