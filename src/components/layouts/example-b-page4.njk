@@ -1,9 +1,9 @@
-{% import "08-navigation/tringuide.njk" as tringuiden %}
+{% import "08-side-navigation/tringuide.njk" as tringuiden %}
 
 {% extends 'layouts/_base.njk' %}
 
 {% block header %}
-    {% render '@header--extended' %}
+    {% render '@header--simpel' %}
 {% endblock %}
 
 
@@ -16,7 +16,7 @@
     <section class="container">
         <div class="row">
             <div class="col-sm-4">
-            </div>  
+            </div>
             <div class="col-sm-8">
                 <div class="alert alert-success">
                     <div class="alert-body">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <p>Du kan forvente en afgørelse i løbet af 10 dage. Afgørelsen vil blive sendt via Digital Post, som du kan se på <a href="#">borger.dk</a> eller <a href="#">e-boks.dk</a>.</p>
-            
+
                     <h3>Kvittering</h3>
                     <p>Referencenummer: 2243-5628-1987</p>
                     <label for="vej">Navn</label>

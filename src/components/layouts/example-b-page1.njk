@@ -1,9 +1,9 @@
-{% import "08-navigation/tringuide.njk" as tringuiden %}
+{% import "08-side-navigation/tringuide.njk" as tringuiden %}
 
 {% extends 'layouts/_base.njk' %}
 
 {% block header %}
-    {% render '@header--extended' %}
+    {% render '@header--simpel' %}
 {% endblock %}
 
 
@@ -30,7 +30,7 @@
                     </li>
                 </ul>
                 <h4>Hvis du vil klage:</h4>
-                <p>Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p> 
+                <p>Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
                 <button class="button button-primary">Næste</button>
             </div>
         </div>
