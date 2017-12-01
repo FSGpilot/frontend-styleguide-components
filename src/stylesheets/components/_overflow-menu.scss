@@ -3,48 +3,83 @@
     width: fit-content;
     display: flex;
     flex-direction: column;
-}
-
-.overflow-menu-btn {
-    background-color: transparent;
-    width: 20px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-.overflow-menu-options {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
     position: absolute;
-    z-index: 1;
-    width: auto;
-    list-style: none;
-    border: 1px solid $color-gray-light;
-    box-shadow: 0 4px 8px 0 $color-gray-light;
-    background: white;
-    padding: 0;
-    align-self: flex-end;
-    margin-top: 40px;
-}
+    left: 50%;
 
-.overflow-menu-options-open {
-    display: flex;
-}
+    .overflow-menu-btn {
+        background-color: transparent;
+        width: 20px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
 
-.overflow-menu-options-btn {
-    width: 100%;
-    height: 30px;
-    display: inline-block;
-    background-color: transparent;
-    color: $color-primary-darkest;
-    text-align: left;
-    cursor: pointer;
-    white-space: nowrap;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    padding-left: 15px;
-    padding-right: 15px;
+        svg {
+            width: 4px;
+            height: 20px;
+            fill-rule: evenodd;
+        }
+    }
+
+    .overflow-menu-options {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        z-index: 1;
+        width: auto;
+        list-style: none;
+        border: 1px solid $color-gray-light;
+        box-shadow: 0 4px 8px 0 $color-gray-light;
+        background: white;
+        padding: 0;
+        margin-top: 40px;
+        
+        button {
+            width: 100%;
+            height: 30px;
+            display: inline-block;
+            background-color: transparent;
+            color: $color-primary-darkest;
+            text-align: left;
+            cursor: pointer;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        &:after {
+            content: " ";
+            position: absolute;
+            
+            top: -5px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $color-gray-light transparent transparent $color-gray-light;
+            transform: rotate(45deg);
+            background: white;
+            width: 10px;
+            height: 10px;
+        }      
+        
+        &.position-right {
+            align-self: flex-start;
+            &:after {
+                left: 4px;
+            }    
+        }
+        &.position-left {
+            align-self: flex-end; 
+            &:after {
+                right: 4px;
+            }       
+        }
+
+    }
+
+    .overflow-menu-options-open {
+        display: flex;
+    }
 }
