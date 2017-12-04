@@ -25,4 +25,8 @@
 {% endmacro %}
 
 {{ alert(alert_example.classes, alert_example.role, alert_example.title, alert_example.content) }}
-
+{{ alert("alert-success", alert_example.role,"Success Status", alert_example.content) }}
+{{ alert("alert-warning", alert_example.role,"Warning Status", alert_example.content) }}
+{{ alert("alert-error", "alert","Error Status", alert_example.content) }}
+{{ alert("alert-info alert-paragraph", alert_example.role,"Information Status - Paragraph Width", "Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui atione voluptatem sequi nesciunt. Neque porro quisquam est, qui doloremipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.") }}
+{{ alert("alert-info alert-slim", alert_example.role,"", "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.") }}
