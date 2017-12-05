@@ -169,21 +169,23 @@ $row-height-tall: 64px;
         border: none;
     }
     .row-selection-checkbox:after {
-        content: '';
-        display: block;
+        display: flex;    
         width: 16px;
         height: 16px;
         border: 2px solid $color-buttons;
+
+        // Fixed Chrome bug with focusing input. To revisit in future
+        content: '&#8203;';
+        color: transparent;
     }
     .row-selection-checkbox:checked:after {
-        content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
         border-color:  $color-checkbox;
-        background: $color-checkbox;    
+        background-color: $color-checkbox;
+        background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
     }
     tr.row-selected {        
         background-color: $color-row-hover;        
     }
-
 }
 
 
@@ -323,7 +325,6 @@ $row-height-tall: 64px;
 
     }
     input:checked:before {
-        content: '';
         display: block;
         position: absolute;
         width: 8px;
@@ -331,6 +332,10 @@ $row-height-tall: 64px;
         border: none;
         border-radius: 50%;
         background: $color-checkbox;
+
+        // Fixed Chrome bug with focusing input. To revisit in future
+        content: '&#8203;';
+        color: transparent;
     }
 
     &>span {
