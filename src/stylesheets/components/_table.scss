@@ -32,23 +32,13 @@ $row-height-tall: 64px;
 
 
 
-.dt-expand-button {
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background: transparent;
-}
+
 
 .dt-expand-button-svg {
     width: 8px;
     height: 12px;
 }
 
-.dt-svg-rotate90 {
-    transform: rotate(90deg);
-}
 
 .dk-table {
     cursor: pointer;   
@@ -102,7 +92,7 @@ $row-height-tall: 64px;
             background-color: $color-row;
         }
 
-        tr:hover { 
+        tr:hover:not(.expandable-row) { 
             td {
                 background-color: $color-row-hover;
                 border-top: $border-row-hover;
@@ -190,6 +180,45 @@ $row-height-tall: 64px;
     tr.row-selected {        
         background-color: $color-row-hover;        
     }
+
+    /****************************************
+     ************* Expandable ***************
+     ****************************************/
+    .expand-button {
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background: transparent;        
+        svg {
+            width: 8px;
+            height: 12px;
+        }
+
+        &:hover {
+            background-color: transparent;
+            svg {
+                fill: $color-checkbox;
+            }
+        }
+
+        &.expanded svg{
+            transform: rotate(90deg);            
+        }
+    }
+
+    tr.expandable-row {
+        display: none;
+        background: transparent;
+        &.expanded {
+            display: table-row;
+            box-shadow: 4px 0px 0px 0px $color-checkbox inset;
+        }
+
+    }
+    
+    
 }
 
 

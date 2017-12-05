@@ -97,11 +97,10 @@ $('.search').on('input', function () {
 ////////// Expandable //////////
 ////////////////////////////////
 
-$('.dt-expand-button').on('click', function () {
-    var svg = $(this).find('.dt-expand-button-svg')[0];
-    $(svg).toggleClass('dt-svg-rotate90');
-    var trRow = $(this).closest('tr').next('.dt-expand-row')
-    trRow.toggleClass('dt-hidden');
+$('.expand-button').on('click', function () {
+    var trRow = $(this).closest('tr').next('.expandable-row')
+    trRow.toggleClass('expanded');
+    $(this).toggleClass('expanded')
 });
 
 ////////////////////////////////
