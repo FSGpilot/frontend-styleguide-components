@@ -115,6 +115,10 @@ $row-height-tall: 64px;
                 border-right: $border-row-hover;
             }
         }    
+
+        tr:not(:hover) .overflow-menu .overflow-menu-btn:not(:focus) {
+            visibility: hidden;
+        }
     }
 
     tr { 
@@ -288,9 +292,25 @@ $row-height-tall: 64px;
             }
         }
 
+        .overflow-menu.open .menu-button svg,
+        .menu-button:hover svg {
+            fill: $color-checkbox;
+        }
+
         .settings {
             padding: 15px;
             width: 130px;
+        }
+
+        .primary-button {
+            display: flex;
+            border-radius: 0;
+
+            svg {
+                margin-left: 6px;
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 

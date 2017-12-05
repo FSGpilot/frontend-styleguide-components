@@ -22,6 +22,12 @@
         }
     }
 
+    &.open {
+        .overflow-menu-options {
+            display: flex;
+        }
+    }
+
 
 
     .overflow-menu-options {
@@ -80,11 +86,6 @@
                 right: 13px;
             }       
         }
-
-        &.open {
-            display: flex;
-        }
-
     }
 
 }
