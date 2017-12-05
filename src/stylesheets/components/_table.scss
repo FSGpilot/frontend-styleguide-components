@@ -285,7 +285,55 @@ $row-height-tall: 64px;
                 fill: $color-buttons;
             }
         }
+
+        .settings {
+            padding: 15px;
+            width: 130px;
+        }
     }
 
     
+}
+
+
+.radiobutton {
+    display: flex;
+    flex-direction: row;
+
+    input {
+        position: static;
+        height: auto;
+        width: auto;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    input:after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid $color-buttons;
+        border-radius: 50%;
+    }
+    input:checked:after {
+       // content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
+        border-color:  $color-checkbox;
+
+    }
+    input:checked:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: none;
+        border-radius: 50%;
+        background: $color-checkbox;
+    }
+
+    &>span {
+        margin-left: 10px;
+    }
 }
