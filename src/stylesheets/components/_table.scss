@@ -202,7 +202,7 @@ $border-row: 1px solid $color-gray-lighter;
             width: 100px;
             height: 30px;
             background-color: transparent;
-            color: #FFFFFF;
+            color: $color-white;
             white-space: nowrap; 
             align-self: center;
             border-radius: 0;
@@ -213,12 +213,12 @@ $border-row: 1px solid $color-gray-lighter;
                 width: 16px;
                 height: 16px;
                 align-self: center;
-                fill: #FFFFFF;
+                fill: $color-white;
             }
     
             &:hover {
                 color: $color-primary;
-                background-color: #FFFFFF;
+                background-color: $color-white;
                 svg {
                     fill: $color-primary;
                 }
@@ -226,7 +226,7 @@ $border-row: 1px solid $color-gray-lighter;
     
             &:focus {
                 color: $color-primary;
-                background-color: #FFFFFF;
+                background-color: $color-white;
                 outline: 2px solid;
                 outline-offset: -4px;
                 svg {
@@ -236,7 +236,7 @@ $border-row: 1px solid $color-gray-lighter;
         }
 
         .cancel {
-            color: #FFFFFF;
+            color: $color-white;
             text-decoration: underline;
             align-self: center;
             margin: 0 15px;
