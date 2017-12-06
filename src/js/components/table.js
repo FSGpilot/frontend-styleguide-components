@@ -42,14 +42,14 @@ $('.cancel').on('click', function () {
 ////////////////////////////////
 
 $('.table-sort-button').on('click', function () {
-    var svg = $(this).find('svg')[0];
-    $(svg).toggleClass('svg-rotate');
+    var icon = $(this).find('i')[0];
+    $(icon).toggleClass('icon-rotate');
 
-    $('.table-sort-button').find('svg').hide();
-    $(svg).show();
+    $('.table-sort-button').find('i').removeAttr('style');
+    $(icon).css('visibility','visible');
 
     var index = $(this).parent().index();
-    var asc = $(svg).hasClass('svg-rotate');
+    var asc = $(icon).hasClass('icon-rotate');
 
     sortTable(index, asc);
 });

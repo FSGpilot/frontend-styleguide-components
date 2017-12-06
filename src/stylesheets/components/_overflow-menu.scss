@@ -1,6 +1,7 @@
 .overflow-menu {
     cursor: pointer;
     width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -16,10 +17,6 @@
             fill-rule: evenodd;
             fill: #8c9ba5;
         }   
-
-        &.rotate {
-            transform: rotate(90deg);
-        }
     }
 
     &.open {
@@ -42,7 +39,7 @@
         box-shadow: 0 4px 8px 0 $color-gray-light;
         background: white;
         padding: 0;
-        top: 100%;
+        top: calc(100% + 5px);
         
         button {
             width: 100%;

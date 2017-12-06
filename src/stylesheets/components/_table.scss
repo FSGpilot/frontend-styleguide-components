@@ -100,18 +100,20 @@ $border-row: 1px solid $color-gray-lighter;
         color: inherit;
         white-space: nowrap;  
         padding: 0;
-        svg {
-            width: 10px;
-            height: 6px;
-            fill-rule: evenodd;
-            fill: $color-gray-dark;
-            margin-bottom: 2px;
-            display: none;
+        i {
+            color: $color-gray-dark;
+            display: inline-block;
+            visibility: hidden;
+            transform: scale(1.5);
+            &.icon-rotate {
+                transform: rotate(180deg) scale(1.5);
+            }
+        }
+        &:hover i {
+            visibility: visible;
         }
 
-        .svg-rotate {
-            transform: rotate(180deg);
-        }
+
     }
 
     /****************************************
@@ -151,20 +153,15 @@ $border-row: 1px solid $color-gray-lighter;
         margin: 0;
         padding: 0;
         display: flex;
-        background: transparent;        
-        svg {
-            width: 8px;
-            height: 12px;
-        }
+        background: transparent; 
 
+        i {
+            transform: scale(1.5)
+        }
         &:hover {
             background-color: transparent;
-            svg {
-                fill: $color-primary;
-            }
         }
-
-        &.expanded svg{
+        &.expanded {
             transform: rotate(90deg);            
         }
     }
@@ -209,19 +206,9 @@ $border-row: 1px solid $color-gray-lighter;
             padding: 0 0.5em;
             margin: 0.5em 1em;
     
-            svg {
-                width: 16px;
-                height: 16px;
-                align-self: center;
-                fill: $color-white;
-            }
-    
             &:hover {
                 color: $color-primary;
                 background-color: $color-white;
-                svg {
-                    fill: $color-primary;
-                }
             }
     
             &:focus {
@@ -252,10 +239,8 @@ $border-row: 1px solid $color-gray-lighter;
             position: absolute;
             align-self: center;
             margin-left: 7px;
-            fill: $color-gray-dark;
+            color: $color-gray-dark;
             z-index: 1;
-            width: 16px;
-            height: 16px;
         }
 
         .search {
@@ -274,17 +259,16 @@ $border-row: 1px solid $color-gray-lighter;
             align-self: center; 
             background: inherit;   
             padding: 1px 6px;
-            svg {
-                width: 16px;
-                height: 16px;
-                align-self: center;
-                fill: $color-gray-dark;
-            }
+            color: $color-gray-dark;
         }
 
-        .overflow-menu.open .menu-button svg,
-        .menu-button:hover svg {
-            fill: $color-primary;
+        .overflow-menu.open .menu-button i,
+        .menu-button:hover i {
+            color: $color-primary;
+        }
+
+        .overflow-menu {
+            align-self: center;
         }
 
         .settings {
@@ -294,11 +278,8 @@ $border-row: 1px solid $color-gray-lighter;
 
         .primary-button {
             display: flex;
-            svg {
+            i {
                 margin-left: 6px;
-                width: 16px;
-                height: 16px;
-                fill: $color-gray-dark;
             }
         }
     }
