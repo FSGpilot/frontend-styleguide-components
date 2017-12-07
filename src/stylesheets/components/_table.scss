@@ -1,54 +1,5 @@
-$color-row-hover: #EEF4FC;
-$color-header: 	#f1f1f1;
-$color-row: #FFFFFF;
-$color-buttons: #8c9ba5;
-$color-menu: #323a44;
-$color-checkbox: #3e72b5;
-$color-search-input: #ebf0f7;
-
-$border-row-hover: 1px solid #5596E6;
-$border-row: 1px solid #D6D7D9; 
-
-$row-height-compact: 24px;
-$row-height-short: 32px;
-$row-height-default: 48px;
-$row-height-tall: 64px;
-
-.dt-menu {
-    display: flex;
-    height: 50px;
-}
-
-
-.dt-selected-items-counter {
-    margin-left: auto; // adjust to the right
-    align-self: center; // center vertically
-    color: $color-white;
-}
-
-.dt-hidden {
-    display: none;
-}
-
-
-
-.dt-expand-button {
-    width: fit-content;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background: transparent;
-}
-
-.dt-expand-button-svg {
-    width: 8px;
-    height: 12px;
-}
-
-.dt-svg-rotate90 {
-    transform: rotate(90deg);
-}
+$border-row-hover: 1px solid  $color-primary-lightest;
+$border-row: 1px solid $color-gray-lighter; 
 
 .dk-table {
     cursor: pointer;   
@@ -77,7 +28,7 @@ $row-height-tall: 64px;
 
     &.zebra {
         tr:nth-child(even) {
-            background-color: $color-header;
+            background-color: $color-gray-light;
         }
         
         tbody > tr:not(:last-child) {
@@ -93,18 +44,24 @@ $row-height-tall: 64px;
     }
 
     th {
-        background-color: $color-header;
+        background-color: $color-gray-light;
     } 
 
 
     tbody {
         tr {
-            background-color: $color-row;
+            background-color: $color-white;
+            .overflow-menu {
+                align-self: center;
+                .overflow-menu-btn {
+                    color: $color-gray-dark;
+                }
+            }
         }
 
-        tr:hover { 
+        tr:hover:not(.expandable-row) { 
             td {
-                background-color: $color-row-hover;
+                background-color:  $color-primary-lightest;
                 border-top: $border-row-hover;
                 border-bottom: $border-row-hover;
             }
@@ -115,24 +72,28 @@ $row-height-tall: 64px;
                 border-right: $border-row-hover;
             }
         }    
+
+        tr:not(:hover) .overflow-menu .overflow-menu-btn:not(:focus) {
+            visibility: hidden;
+        }
     }
 
     tr { 
-        height: $row-height-default;
+        height: $spacing-x-large;
     }
     &.compact {
         tbody > tr {
-            height: $row-height-compact;
+            height: $spacing-medium;
         }
     }
     &.short {
         tbody > tr {
-            height: $row-height-short;
+            height: $spacing-large;
         }
     }
     &.tall {
         tbody > tr {
-            height: $row-height-tall;
+            height: $spacing-xx-large;
         }
     }
 
@@ -145,18 +106,20 @@ $row-height-tall: 64px;
         color: inherit;
         white-space: nowrap;  
         padding: 0;
-        svg {
-            width: 10px;
-            height: 6px;
-            fill-rule: evenodd;
-            fill: $color-buttons;
-            margin-bottom: 2px;
-            display: none;
+        i {
+            color: $color-gray-dark;
+            display: inline-block;
+            visibility: hidden;
+            transform: scale(1.5);
+            &.icon-rotate {
+                transform: rotate(180deg) scale(1.5);
+            }
+        }
+        &:hover i {
+            visibility: visible;
         }
 
-        .svg-rotate {
-            transform: rotate(180deg);
-        }
+
     }
 
     /****************************************
@@ -167,23 +130,61 @@ $row-height-tall: 64px;
         height: auto;
         width: auto;
         border: none;
+        -webkit-appearance: none;
     }
     .row-selection-checkbox:after {
-        content: '';
-        display: block;
+        display: flex;    
         width: 16px;
         height: 16px;
-        border: 2px solid $color-buttons;
+        border: 2px solid $color-gray-dark;
+
+        // Fixed Chrome bug with focusing input. To revisit in future
+        content: '&#8203;';
+        color: transparent;
     }
     .row-selection-checkbox:checked:after {
-        content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
-        border-color:  $color-checkbox;
-        background: $color-checkbox;    
+        border-color:  $color-primary;
+        background-color: $color-primary;
+        background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' fill='white' style='margin-top: 2px'><path d='M4.1 6.1L1.4 3.4 0 4.9 4.1 9l7.6-7.6L10.3 0z'></path></svg>");
     }
     tr.row-selected {        
-        background-color: $color-row-hover;        
+        background-color:  $color-primary-lightest;        
     }
 
+    /****************************************
+     ************* Expandable ***************
+     ****************************************/
+    .expand-button {
+        width: fit-content;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background: transparent; 
+
+        i {
+            transform: scale(1.5);
+            color: $color-gray-dark;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+        &.expanded {
+            transform: rotate(90deg);            
+        }
+    }
+
+    tr.expandable-row {
+        display: none;
+        background: transparent;
+        &.expanded {
+            display: table-row;
+            box-shadow: 4px 0px 0px 0px $color-primary inset;
+        }
+
+    }
+    
+    
 }
 
 
@@ -200,50 +201,41 @@ $row-height-tall: 64px;
 
     .selected-rows-menu {
         display: none;
-        background: $color-menu;
+        background: $color-gray-darkest;
 
         .menu-selection-button {
             width: 100px;
             height: 30px;
             background-color: transparent;
-            color: #FFFFFF;
+            color: $color-white;
             white-space: nowrap; 
             align-self: center;
             border-radius: 0;
             padding: 0 0.5em;
             margin: 0.5em 1em;
     
-            svg {
-                width: 16px;
-                height: 16px;
-                align-self: center;
-                fill: #FFFFFF;
-            }
-    
             &:hover {
-                color: $color-checkbox;
-                background-color: #FFFFFF;
-                svg {
-                    fill: $color-checkbox;
-                }
+                color: $color-primary;
+                background-color: $color-white;
             }
     
             &:focus {
-                color: $color-checkbox;
-                background-color: #FFFFFF;
+                color: $color-primary;
+                background-color: $color-white;
                 outline: 2px solid;
                 outline-offset: -4px;
                 svg {
-                    fill: $color-checkbox;
+                    fill: $color-primary;
                 }
             }
         }
 
         .cancel {
-            color: #FFFFFF;
+            color: $color-white;
             text-decoration: underline;
             align-self: center;
             margin: 0 15px;
+            background-color: inherit;
             &:hover {
                 cursor: pointer;
             }
@@ -256,10 +248,8 @@ $row-height-tall: 64px;
             position: absolute;
             align-self: center;
             margin-left: 7px;
-            fill: $color-buttons;
+            color: $color-gray-dark;
             z-index: 1;
-            width: 16px;
-            height: 16px;
         }
 
         .search {
@@ -268,24 +258,110 @@ $row-height-tall: 64px;
             height: 30px;
             width: 300px;
             align-self: center;
-            background-color: $color-search-input;
+            background-color: $color-white;
             border: none;
             padding: 0px 30px; 
-            color: $color-buttons;     
+            color: $color-gray-dark;     
         }
 
         .menu-button {
             align-self: center; 
             background: inherit;   
             padding: 1px 6px;
-            svg {
-                width: 16px;
-                height: 16px;
-                align-self: center;
-                fill: $color-buttons;
+            color: $color-gray-dark;
+        }
+
+        .overflow-menu.open .overflow-menu-btn i,
+        .menu-button:hover i {
+            color: $color-gray-dark;
+        }
+
+        .overflow-menu {
+            align-self: center;
+        }
+
+        .settings {
+            padding: 15px;
+            width: 130px;
+        }
+
+        .primary-button {
+            margin-left: 5px;
+            display: flex;
+            i {
+                margin-left: 6px;
             }
         }
     }
 
     
+}
+
+
+.radiobutton {
+    display: flex;
+    flex-direction: row;
+
+    input {
+        position: static;
+        height: auto;
+        width: auto;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-appearance: none;
+    }
+    input:after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid $color-gray-dark;
+        border-radius: 50%;
+    }
+    input:checked:after {
+        border-color:  $color-primary;
+
+    }
+    input:checked:before {
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: none;
+        border-radius: 50%;
+        background: $color-primary;
+
+        // Fixed Chrome bug with focusing input. To revisit in future
+        content: '&#8203;';
+        color: transparent;
+    }
+
+    &>span {
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+}
+
+
+.dt-menu {
+    display: flex;
+    height: 50px;
+}
+
+
+.dt-selected-items-counter {
+    margin-left: auto; // adjust to the right
+    align-self: center; // center vertically
+    color: $color-white;
+}
+
+.dt-hidden {
+    display: none;
+}
+
+.dt-expand-button-svg {
+    width: 8px;
+    height: 12px;
 }
