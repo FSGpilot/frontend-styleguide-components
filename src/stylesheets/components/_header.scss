@@ -292,7 +292,7 @@ $z-index-nav:     9000;
   }
   @include media($nav-width) {
     li:first-child > .nav-link {
-      padding-left: 0;
+      margin-left: -1.5rem;
     }
   }
 
