@@ -83,7 +83,7 @@
   }
 
   nav {
-    margin-top: 6rem; // XXX magic number
+    margin-top: 4rem; // XXX magic number
     min-height: 100%;
 
     @include media($nav-width) {
@@ -141,8 +141,8 @@
     > a {
       @include media($nav-width) {
         @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
-        color: $color-gray;
-        font-size: $h5-font-size;
+        color: $color-gray-darkest;
+        font-size: $base-font-size;
         font-weight: $font-bold;
         line-height: 1;
       }

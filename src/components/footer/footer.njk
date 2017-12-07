@@ -24,7 +24,7 @@
         <div class="col-12 col-sm-4 col-md-6">
           <ul class="unstyled-list footer-primary-content">
             <li class="footer-primary-link">
-              <h4>Ansvarlig myndighed</h4>
+              <h5>Ansvarlig myndighed</h5>
             </li>
             <li><a href="javascript:void(0);">{{ agency }}</a></li>
           </ul>
@@ -33,7 +33,7 @@
         <div class="col-12 col-sm-4 col-md-3">
           <ul class="unstyled-list footer-primary-content">
             <li class="footer-primary-link">
-              <h4>Kontakt</h4>
+              <h5>Kontakt</h5>
             </li>
             <address>
               <li><a href="tel:{{ contact.tel }}">{{ contact.tel }}</a></li>
@@ -46,7 +46,7 @@
         <div class="col-12 col-sm-4 col-md-3">
           <ul class="unstyled-list footer-primary-content">
             <li class="footer-primary-link">
-              <h4>Emne</h4> 
+              <h5>Emne</h5> 
             </li>
             {% for subject in subjects %}
             <li><a href="{{ subject.link }}">{{ subject.title }}</a></li>

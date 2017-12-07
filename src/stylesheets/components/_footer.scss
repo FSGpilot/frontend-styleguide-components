@@ -39,7 +39,10 @@
   background-color: $color-gray-dark;
 
   a {
-    color: $color-info-background;
+    color: $color-white;
+    &:hover {
+      color: $color-gray-light;
+    }
   }
 
   .footer-primary-content {
@@ -83,8 +86,8 @@ li.footer-primary-content {
 
 .footer-secondary_section {
   background-color: $color-gray-lightest;
-  padding-bottom: $spacing-medium;
-  padding-top: $spacing-medium;
+  padding-bottom: $spacing-md-small;
+  padding-top: $spacing-md-small;
 
   a {
     color: $color-base;
