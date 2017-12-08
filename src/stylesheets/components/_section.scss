@@ -2,7 +2,7 @@
   @include padding($site-margins null);
 
   @include media($medium-screen) {
-    @include padding(6rem null);
+    @include padding(4rem null);
   }
 }
 
