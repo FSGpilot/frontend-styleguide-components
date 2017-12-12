@@ -1,6 +1,5 @@
 {%- from "08-side-navigation/tringuide.njk" import tringuide as tringuide -%}
 
-
 {% extends 'layouts/_base.njk' %}
 
 {% block header %}
@@ -20,7 +19,7 @@
 
         {% if logoutbutton %}
 
-        <button class="button button-primary">
+        <button class="button button-primary signout-button">
           <ul class="unstyled-list">
             <li>Sign out</li>
             <li>{{ user.name }}</li>

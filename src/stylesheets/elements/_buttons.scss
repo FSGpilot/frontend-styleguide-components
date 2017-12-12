@@ -270,6 +270,16 @@ html .button-secondary-inverse-disabled,  // Deprecated
   }
 }
 
+.signout-button {
+  margin-left: auto;
+  font-size: 1.3rem;
+  font-weight: 400;
+
+  ul > li:first-of-type {
+    font-weight: 700;
+  }
+}
+
 
 // Button row
 .button-row {
