@@ -10,6 +10,8 @@
         background-color: transparent;
         margin: auto;
         padding: 0;
+        width: $hit-area;
+        height: $hit-area;
 
         svg {
             width: 4px;
@@ -24,9 +26,7 @@
             display: flex;
         }
     }
-
-
-
+    
     .overflow-menu-options {
         display: none;
         flex-direction: column;

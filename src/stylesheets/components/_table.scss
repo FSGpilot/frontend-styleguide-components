@@ -55,6 +55,10 @@ $border-row: 1px solid $color-gray-lighter;
                 align-self: center;
                 .overflow-menu-btn {
                     color: $color-gray-dark;
+                    width: $hit-area;
+                    height: $hit-area;
+                    position: absolute; // hit-area might be bigger than row's height
+                    transform: translate(-50%,-50%);
                 }
             }
         }
@@ -155,12 +159,15 @@ $border-row: 1px solid $color-gray-lighter;
      ************* Expandable ***************
      ****************************************/
     .expand-button {
-        width: fit-content;
-        height: fit-content;
+        width: $hit-area;
+        height: $hit-area;
+        justify-content: center;
         margin: 0;
         padding: 0;
         display: flex;
         background: transparent; 
+        position: absolute; // hit-area might be bigger than row's height
+        transform: translate(-50%,-50%);
 
         i {
             transform: scale(1.5);
@@ -170,7 +177,7 @@ $border-row: 1px solid $color-gray-lighter;
             background-color: transparent;
         }
         &.expanded {
-            transform: rotate(90deg);            
+            transform: translate(-50%,-50%) rotate(90deg);            
         }
     }
 
