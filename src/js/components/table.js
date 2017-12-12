@@ -5,7 +5,7 @@ var $ = require('jquery');
 ////////////////////////////////
 
 function showActionButtons(checkedCount) {
-    $('.dt-selected-items-counter-value').text(checkedCount);
+    $('.selected-items-counter-value').text(checkedCount);
     $('.selected-rows-menu').show().css('display', 'flex');;
     $('.default-menu').hide();
 };

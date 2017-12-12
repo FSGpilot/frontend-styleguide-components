@@ -135,6 +135,7 @@ $border-row: 1px solid $color-gray-lighter;
         width: auto;
         border: none;
         -webkit-appearance: none;
+        margin: 0;
     }
     .row-selection-checkbox:after {
         display: flex;    
@@ -188,17 +189,19 @@ $border-row: 1px solid $color-gray-lighter;
             display: table-row;
             box-shadow: 4px 0px 0px 0px $color-primary inset;
         }
-
-    }
-    
-    
+    }       
 }
 
 
 .table-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100%;    
+
+    .menu {
+        display: flex;
+        height: 50px;
+    }
 
     .default-menu, .selected-rows-menu {
         display: flex;
@@ -235,6 +238,12 @@ $border-row: 1px solid $color-gray-lighter;
                     fill: $color-primary;
                 }
             }
+        }
+
+        .selected-items-counter {
+            margin-left: auto; // adjust to the right
+            align-self: center;
+            color: $color-white;
         }
 
         .cancel {
@@ -349,26 +358,4 @@ $border-row: 1px solid $color-gray-lighter;
         margin-left: 10px;
         margin-top: 5px;
     }
-}
-
-
-.dt-menu {
-    display: flex;
-    height: 50px;
-}
-
-
-.dt-selected-items-counter {
-    margin-left: auto; // adjust to the right
-    align-self: center; // center vertically
-    color: $color-white;
-}
-
-.dt-hidden {
-    display: none;
-}
-
-.dt-expand-button-svg {
-    width: 8px;
-    height: 12px;
 }

@@ -1,7 +1,7 @@
 {% from "atoms/icons.njk" import icon as icon %}
 <div class="table-container">
   <h5>Table title</h5>
-  <section class="dt-menu">
+  <section class="menu">
     <div class="selected-rows-menu">
       <button class="menu-selection-button" type="button">
         <span>Delete</span>
@@ -15,8 +15,8 @@
         <span>Pause</span>
         {{ icon('pause-circle') }}
       </button>
-      <div class="dt-selected-items-counter">
-        <span class="dt-selected-items-counter-value"></span>
+      <div class="selected-items-counter">
+        <span class="selected-items-counter-value"></span>
         <span> items selected</span>
       </div>
       <button class="cancel">
