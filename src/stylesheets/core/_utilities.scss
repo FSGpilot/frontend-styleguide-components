@@ -196,7 +196,6 @@
 
     &:hover {
       background-color: $color-gray-lightest;
-      color: $color-primary;
       text-decoration: none;
     }
 
@@ -208,7 +207,7 @@
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
       border-left: 0.4rem solid $color-primary;
-      color: $color-primary;
+      color: $color-text;
       font-weight: $font-bold;
       padding-left: 1.4rem;
     }

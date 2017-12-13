@@ -18,13 +18,7 @@ p {
 }
 
 a {
-  color: $color-primary;
-  text-decoration: underline;
 
-  &:hover,
-  &:active {
-    color: $color-primary-darker;
-  }
 
   &:focus {
     @include focus;
