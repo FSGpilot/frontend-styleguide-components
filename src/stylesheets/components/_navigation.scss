@@ -29,13 +29,6 @@
 .nav-link {
   @include font-smoothing;
 
-  &:hover {
-    span {
-      @include media($nav-width) {
-        @include nav-border;
-      }
-    }
-  }
 
   &.accordion-button {
     span {
@@ -276,15 +269,6 @@
 // Extended header navigation ------- //
 
 .header-extended {
-  .nav-link {
-    &:hover {
-      span {
-        @include media($nav-width) {
-          @include nav-border-x-thick;
-        }
-      }
-    }
-  }
 
   .nav-primary {
     button[aria-expanded=true] { /* stylelint-disable-line selector-no-qualifying-type */
@@ -302,6 +286,17 @@
         }
       }
     }
+
+    .nav-link {
+      &:hover {
+        span {
+          @include media($nav-width) {
+            @include nav-border-x-thick;
+          }
+        }
+      }
+    }
+
   }
 }
 
