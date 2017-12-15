@@ -10,6 +10,11 @@
   padding-bottom: 0.9rem;
 }
 
+@mixin nav-border-x-thick {
+  border-bottom: 0.9rem solid $color-primary;
+  padding-bottom: 0.5rem;
+}
+
 .navbar {
   border-bottom: 1px solid $color-gray-light;
   height: 4rem;
@@ -253,7 +258,6 @@
       // undo the sidenav style
       border-left: 0;
       padding-left: 1.5rem;
-      border-bottom: 0.7rem solid $color-primary;
 
       &:hover {
         span {
@@ -276,7 +280,7 @@
     &:hover {
       span {
         @include media($nav-width) {
-          @include nav-border-thick;
+          @include nav-border-x-thick;
         }
       }
     }
@@ -294,7 +298,7 @@
     .current {
       @include media($nav-width) {
         span {
-          @include nav-border-thick;
+          @include nav-border-x-thick;
         }
       }
     }
