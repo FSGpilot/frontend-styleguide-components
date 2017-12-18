@@ -13,3 +13,7 @@ $color-primary-button-text:   $color-base;
     background-size: 6.2rem;
     min-width: 70px;
 }
+
+.footer-logo-img {
+    background-image: url('#{$image-path}/logo-virk.svg');
+}

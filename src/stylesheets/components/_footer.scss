@@ -151,7 +151,7 @@ li.footer-primary-content {
       &:not(.footer-primary-link) {
         line-height: $heading-line-height;
         padding-bottom: $spacing-x-small;
-        padding-top: $spacing-x-small;     
+        padding-top: $spacing-x-small;
       }
     }
 
@@ -199,7 +199,6 @@ li.footer-primary-content {
 }
 
 .footer-logo-img {
-  background-image: url('#{$image-path}/logo-virk.svg');
   background-position: 9rem 0rem;
   background-repeat: no-repeat;
   background-size: 6.2rem;

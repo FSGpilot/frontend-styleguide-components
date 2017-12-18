@@ -11,3 +11,7 @@ $color-primary-lightest:      #BEE678;
     background-size: 17.2rem;
     min-width: 175px
 }
+
+.footer-logo-img {
+    background-image: url('#{$image-path}/logo-borgerdk.svg');
+}
