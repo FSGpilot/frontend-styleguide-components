@@ -132,15 +132,12 @@ $enable-uswd-grid:            false !default; // Enable USWD grid
 // This is where you define the breakpoints.
 // These will be reflected in both Bootstrap and USWD grid variants,
 // so you only have to change these at one place.
-//
-// These needs to be inserted twice at the moment,
-// as we have both grid variants included.
 
-$grid-xs: 0 !default;
-$grid-sm: 576px !default;
-$grid-md: 768px !default;
-$grid-lg: 992px !default;
-$grid-xl: 1200px !default;
+$grid-xs:                     0 !default;
+$grid-sm:                     576px !default;
+$grid-md:                     768px !default;
+$grid-lg:                     992px !default;
+$grid-xl:                     1200px !default;
 
 // Bootstrap Grid
 //
@@ -150,7 +147,7 @@ $grid-xl: 1200px !default;
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 
-$spacer: 1rem !default;
+$spacer: 1.6rem !default;
 $spacers: (
   0: 0,
   1: ($spacer * .25),
