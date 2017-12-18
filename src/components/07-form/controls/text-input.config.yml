@@ -10,7 +10,7 @@ context:
         name: input-type-text
       - id: input-focus
         label: Text input focused
-        class: usa-focus
+        class: focus
         name: input-focus
       - id: input-error
         name: input-error
@@ -19,7 +19,7 @@ context:
         errormsg: Helpful error message
       - id: input-success
         label: Text input success
-        class: usa-input-success
+        class: input-success
         name: input-success
       - id: input-type-textarea
         label: Text area label
