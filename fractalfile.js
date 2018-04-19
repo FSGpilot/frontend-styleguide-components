@@ -32,6 +32,8 @@ components.engine(require('@frctl/nunjucks')({
   ]
 }));
 
+
+
 const docs = fractal.docs;
 docs.set('path', 'docs');
 
