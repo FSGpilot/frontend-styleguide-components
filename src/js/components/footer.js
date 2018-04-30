@@ -21,7 +21,7 @@ const showPanel = function () {
   const small_screen = window.innerWidth < HIDE_MAX_WIDTH;
   if(small_screen){
     const list = this.closest(LIST);
-    list.classList.remove(HIDDEN);
+    list.classList.toggle(HIDDEN);
 
     // NB: this *should* always succeed because the button
     // selector is scoped to ".{prefix}-footer-big nav"

@@ -1,6 +1,6 @@
 # Frontend Styleguide
 
-This repo is part of the pilot-project for a Frontend Styleguide based on [U.S. Web Design Standards](https://standards.usa.gov/).
+This repo is part of the project for a Frontend Styleguide based on [U.S. Web Design Standards](https://standards.usa.gov/).
 
 ## Getting started
 
