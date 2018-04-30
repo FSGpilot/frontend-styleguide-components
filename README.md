@@ -6,10 +6,10 @@ This repo is part of the pilot-project for a Frontend Styleguide based on [U.S. 
 
 We’re glad you’d like to use the Standards — here’s how you can get started:
 
-* Designers: [Check out our Getting Started for Designers information](https://jonasjensen77.github.io/frontend-styleguide-poc/getting-started/designers/).
+* Designers: [Check out our Getting Started for Designers information](https://fsgpilot.github.io/frontend-styleguide/getting-started/designers).
   <!-- * [Design files of all the assets included in the Standards are available for download](https://github.com/18F/web-design-standards-assets/archive/master.zip). -->
 * Developers: [Follow the instructions in this README to get started.](#using-the-standards)
-  * [CSS, JavaScript, image, and font files of all the assets on this site are available for download](https://github.com/jonasjensen77/frontend-styleguide-components/releases/download/v1.0.1/dkwds-1.0.1.zip).
+  * [CSS, JavaScript, image, and font files of all the assets on this site are available for download](https://github.com/FSGpilot/frontend-styleguide-components/releases/download/v2.0.0/dkwds-2.0.0.zip).
 
 ## Using the Standards
 
@@ -24,12 +24,12 @@ There are a few different ways to use the Standards within your project. Which o
 
 ### Download
 
-1. Download the [Standards zip file](https://github.com/jonasjensen77/frontend-styleguide-components/releases/download/v1.0.1/dkwds-1.0.1.zip) and open that file.
+1. Download the [Standards zip file](https://github.com/FSGpilot/frontend-styleguide-components/releases/download/v2.0.0/dkwds-2.0.0.zip) and open that file.
 
   After extracting the zip file you should see the following file and folder structure:
 
   ```
-  dkwds-1.0.1/
+  dkwds-2.0.0/
   ├── css/
   │   ├── dkwds.min.css.map
   │   ├── dkwds.min.css
@@ -137,7 +137,7 @@ Since you are already using `npm`, the Frontend Styleguide team recommends lever
 The Standards are easily customizable using the power of [Sass (Syntactically Awesome Style Sheets)](http://sass-lang.com/). The main Sass (SCSS) source file is located here:
 
 ```
-node_modules/uswds/src/stylesheets/uswds.scss
+node_modules/dkwds/src/stylesheets/dkwds.scss
 ```
 
 Global variables are defined in the `node_modules/dkwds/src/stylesheets/core/_variables.scss` file. Custom theming can be done by copying the `_variables.scss` file into your own project’s Sass folder, changing applicable variable values, and importing it before `dkwds.scss`.
@@ -146,11 +146,13 @@ Below is an example of how you might setup your main Sass file to achieve this:
 
 ```
 @import 'variables.scss' # Custom Sass variables file
-@import 'node_modules/uswds/src/stylesheets/uswds.scss';
+@import 'node_modules/dkwds/src/stylesheets/dkwds.scss';
 
 ```
 
 You can now use your copied version of `_variables.scss` to override any styles to create a more custom look and feel to your application.
+
+The Design System uses [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) to automatically add vendor prefixes to the precompiled stylesheets (`css/dkwds.min.css` and `css/dkwds.css`) however prefixes will not be applied when using the Sass source files directly. If your project requires the use of Sass and vendor prefixes we recommend incorportaing a plugin such as [Autoprefixer](https://github.com/postcss/autoprefixer) into your build process.
 
 #### JavaScript
 `require('dkwds')` will load all of the U.S. Web Design Standards’ JavaScript onto the page. Add this line to whatever initializer you use to load JavaScript into your application.

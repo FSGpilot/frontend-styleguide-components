@@ -13,19 +13,6 @@ li {
   }
 }
 
-h1, .h1, 
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6, 
-p {
-  + ul,
-  + ol {
-    margin-top: 0;
-  }
-}
-
 // Unstyled lists
 .unstyled-list {
   @include unstyled-list;

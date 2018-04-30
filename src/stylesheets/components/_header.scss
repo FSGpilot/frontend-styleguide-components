@@ -213,10 +213,9 @@ $z-index-nav:     9000;
   }
   .portal-header-inner{
     @include media($nav-width) {
-      @include outer-container();
+      @include outer-container($site-max-width);
       @include padding(null $site-margins);
       margin-top: -1px;
-      max-width: $site-max-width;
       position: relative;
     }
   }
@@ -242,11 +241,10 @@ $z-index-nav:     9000;
 
   .navbar { //TODO: rename, it is no longer a "navbar" as it no longer holds any navigation
     @include media($nav-width) {
-      @include outer-container();
+      @include outer-container($site-max-width);
       @include padding(null $site-margins);
       display: block;
       height: auto;
-      max-width: $site-max-width;
     }
   }
 
@@ -262,10 +260,9 @@ $z-index-nav:     9000;
 
   .nav-inner {
     @include media($nav-width) {
-      @include outer-container();
+      @include outer-container($site-max-width);
       @include padding(null $site-margins null 1.5rem);
       margin-top: -1px;
-      max-width: $site-max-width;
       position: relative;
     }
   }
