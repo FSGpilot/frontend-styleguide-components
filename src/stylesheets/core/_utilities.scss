@@ -206,10 +206,11 @@
     }
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-      border-left: 0.4rem solid $color-primary;
+      border-left: $sidenav-current-border-width solid $color-primary;
       color: $color-text;
       font-weight: $font-bold;
       padding-left: 1.4rem;
+      padding-left: $site-margins-mobile - $sidenav-current-border-width;
     }
   }
 }

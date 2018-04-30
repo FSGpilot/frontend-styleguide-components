@@ -27,7 +27,7 @@
   }
 
   > *:first-child {
-    @include margin(0 null $site-margins null);
+    @include margin(0 null $spacing-medium null);
   }
 
   .button {
