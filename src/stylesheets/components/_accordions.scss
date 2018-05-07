@@ -30,7 +30,7 @@ $v-padding: $spacing-md-small;
   background-color: $color-gray-lightest;
   background-image: url('#{$image-path}/minus.png');
   background-image: url('#{$image-path}/minus.svg');
-  background-position: right $h-padding center;
+  background-position: right $h-padding center; 
   background-repeat: no-repeat;
   background-size: $icon-size;
   color: $color-base;
