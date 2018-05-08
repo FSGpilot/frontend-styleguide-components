@@ -74,14 +74,12 @@ select {
 .input-error-label {
   display: block;
   font-size: $base-font-size;
-  font-weight: $font-bold;
 }
 
 .input-error-message {
   color: $color-error;
   display: block;
   font-size: $base-font-size;
-  font-weight: $font-bold;
   padding-bottom: 3px;
   padding-top: 3px;
 }
@@ -134,12 +132,10 @@ select {
 }
 
 option:first-child {
-  font-weight: $font-bold;
 }
 
 legend {
   font-size: $h2-font-size;
-  font-weight: $font-bold;
 }
 
 .fieldset-inputs {
@@ -152,7 +148,6 @@ legend {
 
 .form-hint {
   color: $color-gray;
-  font-family: $font-sans;
   margin-bottom: 0;
 }
 

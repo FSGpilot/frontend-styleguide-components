@@ -18,7 +18,6 @@ $v-padding: $spacing-md-small;
 
 @mixin accordion-list-item-styles {
   background-color: $color-gray-lightest;
-  font-family: $font-sans;
   list-style: none;
   margin-bottom: $spacing-x-small;
   width: 100%;
@@ -36,8 +35,6 @@ $v-padding: $spacing-md-small;
   color: $color-base;
   cursor: pointer;
   display: inline-block;
-  font-family: $font-sans;
-  font-weight: $font-bold;
   margin: 0;
   padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
   width: 100%;

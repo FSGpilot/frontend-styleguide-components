@@ -98,7 +98,6 @@ h6, .h6{
 
 
 html {
-  font-family: $font-sans;
   font-size: $em-base;
 }
 
@@ -161,45 +160,16 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-// h1, .h1,
-// h2, .h2,
-// h3, .h3,
-// h4, .h4,
-// h5, .h5 {
-//   clear: both;
-//   font-family: $font-heading;
-//   line-height: $heading-line-height;
-//   margin-bottom: .8em;
-//   margin-top: 1.6em;
-// }
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  clear: both;
+  margin-bottom: .8em;
+  margin-top: 1.6em;
+}
 
-// h6, .h6 {
-//   font-family: $font-sans;
-// }
-
-// h1, .h1 {
-//   @include h1();
-// }
-
-// h2, .h2 {
-//   @include h2();
-// }
-
-// h3, .h3 {
-//   @include h3();
-// }
-
-// h4, .h4 {
-//   @include h4();
-// }
-
-// h5, .h5 {
-//   @include h5();
-// }
-
-// h6, .h6 {
-//   @include h6();
-// }
 
 // Remove user agent styles
 
@@ -224,61 +194,8 @@ dfn {
   max-width: $text-max-width;
 }
 
-.heading {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-heading;
-  }
-}
 
 
-.sans {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-sans;
-  }
-
-  a {
-    border-bottom: none;
-    font-weight: $font-bold;
-  }
-}
-
-.serif {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-heading;
-  }
-}
-
-.sans-source {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-sans-source;
-  }
-
-  a {
-    border-bottom: none;
-    font-weight: $font-bold;
-  }
-}
-
-.serif-merri {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-serif-merri;
-  }
-}
 
 .display {
   @include h3();
@@ -294,9 +211,7 @@ dfn {
 }
 
 .font-lead {
-  font-family: $font-heading;
   font-size: $lead-font-size;
-  font-weight: $font-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
 }
