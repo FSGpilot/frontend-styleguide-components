@@ -47,7 +47,7 @@
 .banner-header {
   @include padding(0.55rem null);
   font-size: 1.2rem;
-  font-weight: $font-normal;
+  font-weight: $font-weight-normal;
 
   @include media($small-screen) {
     @include padding(0 null);
@@ -90,7 +90,7 @@
     border-bottom: none;
     display: block;
     font-size: 1.2rem;
-    font-weight: $font-normal;
+    font-weight: $font-weight-normal;
     min-height: 0;
     padding-right: 0;
   }

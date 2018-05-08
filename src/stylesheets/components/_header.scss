@@ -118,7 +118,7 @@ $z-index-nav:     9000;
   display: block;
   font-size: $h5-font-size;
   font-style: normal;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
   margin: 0;
 
   @include media($nav-width) {

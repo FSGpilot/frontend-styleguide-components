@@ -13,8 +13,8 @@
 {%- endmacro -%}
 
 {%- for buttons in button_example.items -%}
-{%- if buttons.label %} 
-<h4>{{ buttons.label }}</h4> 
+{%- if buttons.label %}
+<h4>{{ buttons.label }}</h4>
 {% endif -%}
 {{ button(buttons.class, buttons.state) }}
 {% endfor -%}

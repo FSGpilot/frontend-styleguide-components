@@ -1,37 +1,37 @@
 // Heading mixins
 @mixin title {
   font-size: $title-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h1 {
   font-size: $h1-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h2 {
   font-size: $h2-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h3 {
   font-size: $h3-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h4 {
   font-size: $h4-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h5 {
   font-size: $h5-font-size;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
 }
 
 @mixin h6 {
   font-size: $h6-font-size;
-  font-weight: $font-normal;
+  font-weight: $font-weight-normal;
   line-height: $base-line-height;
   text-transform: uppercase;
 }
@@ -208,7 +208,7 @@
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
       border-left: $sidenav-current-border-width solid $color-primary;
       color: $color-text;
-      font-weight: $font-bold;
+      font-weight: $font-weight-bold;
       padding-left: 1.4rem;
       padding-left: $site-margins-mobile - $sidenav-current-border-width;
     }

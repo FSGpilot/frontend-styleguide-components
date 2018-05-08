@@ -1,5 +1,4 @@
 // Variables
-
 $accordion-border: 3px solid $color-gray-lightest;
 
 // Accordion Styles
@@ -13,7 +12,7 @@ $v-padding: $spacing-md-small;
   color: $color-base;
   margin: 0;
   padding: 0;
-  width: 100%; 
+  width: 100%;
 }
 
 @mixin accordion-list-item-styles {
@@ -30,14 +29,14 @@ $v-padding: $spacing-md-small;
   background-color: $color-gray-lightest;
   background-image: url('#{$image-path}/minus.png');
   background-image: url('#{$image-path}/minus.svg');
-  background-position: right $h-padding center; 
+  background-position: right $h-padding center;
   background-repeat: no-repeat;
   background-size: $icon-size;
   color: $color-base;
   cursor: pointer;
   display: inline-block;
   font-family: $font-sans;
-  font-weight: $font-bold;
+  font-weight: $font-weight-bold;
   margin: 0;
   padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
   width: 100%;

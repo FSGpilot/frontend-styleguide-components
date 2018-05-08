@@ -149,7 +149,7 @@ dfn {
 
   a {
     border-bottom: none;
-    font-weight: $font-bold;
+    font-weight: $font-weight-bold;
   }
 }
 
@@ -172,7 +172,7 @@ dfn {
 
   a {
     border-bottom: none;
-    font-weight: $font-bold;
+    font-weight: $font-weight-bold;
   }
 }
 
@@ -201,7 +201,7 @@ dfn {
 .font-lead {
   font-family: $font-heading;
   font-size: $lead-font-size;
-  font-weight: $font-normal;
+  font-weight: $font-weight-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
 }
