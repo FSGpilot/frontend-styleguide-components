@@ -1,142 +1,70 @@
 /* stylelint-disable at-rule-empty-line-before */
-// Raleway
-@include font-face(
-  'Raleway',
-  '#{$font-path}/raleway/Raleway-ExtraLight',
-  200,
-  normal,
-  $file-formats: ttf
-);
+// IBMPlexSans
+$fontpath : '../fonts/IBMPlexSans/'; 
+// IBMPlexSans
+$fontTextRegular: 'IBMPlexSans-Text' !default;
+$fontRegular: 'IBMPlexSans-Regular' !default;
+$fontMedium: 'IBMPlexSans-Medium' !default;
+$fontSemiBold: 'IBMPlexSans-SemiBold' !default;
+$fontBold: 'IBMPlexSans-Bold' !default;
 
-@include font-face(
-  'Raleway',
-  '#{$font-path}/raleway/Raleway-Light',
-  300,
-  normal,
-  $file-formats: ttf
-);
+@font-face {
+font-family: 'IBMPlexSans-Text';
+src: url($fontpath + $fontTextRegular+'.eot'); /* IE9 Compat Modes */
+src: url($fontpath + $fontTextRegular+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url($fontpath + $fontTextRegular+'.woff') format('woff'), /* Modern Browsers */
+     url($fontpath + $fontTextRegular+'.woff2') format('woff2'), /* Modern Browsers */
+     url($fontpath + $fontTextRegular+'.ttf') format('truetype'); /* Safari, Android, iOS */
 
-@include font-face(
-  'Raleway',
-  '#{$font-path}/raleway/Raleway-Regular',
-  400,
-  normal,
-  $file-formats: ttf
-);
+  font-style:   normal;
+  font-weight:  300;
+}
 
-@include font-face(
-  'Raleway',
-  '#{$font-path}/raleway/Raleway-SemiBold',
-  600,
-  normal,
-  $file-formats: ttf
-);
+@font-face {
+font-family: 'IBMPlexSans-Regular';
+src: url($fontpath + $fontRegular+'.eot'); /* IE9 Compat Modes */
+src: url($fontpath + $fontRegular+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url($fontpath + $fontRegular+'.woff') format('woff'), /* Modern Browsers */
+     url($fontpath + $fontRegular+'.woff2') format('woff2'), /* Modern Browsers */
+     url($fontpath + $fontRegular+'.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url($fontpath + $fontRegular+'.svg#52bc9fd504b621176d57f308965c98a4') format('svg'); /* Legacy iOS */
 
-@include font-face(
-  'Raleway',
-  '#{$font-path}/raleway/Raleway-Bold',
-  700,
-  normal,
-  $file-formats: ttf
-);
+  font-style:   normal;
+  font-weight:  400;
+}
+@font-face {
+font-family: 'IBMPlexSans-Medium';
+src: url($fontpath + $fontMedium+'.eot'); /* IE9 Compat Modes */
+src: url($fontpath + $fontMedium+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url($fontpath + $fontMedium+'.woff') format('woff'), /* Modern Browsers */
+     url($fontpath + $fontMedium+'.woff2') format('woff2'), /* Modern Browsers */
+     url($fontpath + $fontMedium+'.ttf') format('truetype'), /* Safari, Android, iOS */
+     url($fontpath + $fontMedium+'.svg#52bc9fd504b621176d57f308965c98a4') format('svg'); /* Legacy iOS */
 
+  font-style:   normal;
+  font-weight:  500;
+}
+@font-face {
+font-family: 'IBMPlexSans-SemiBold';
+src: url($fontpath + $fontSemiBold+'.eot'); /* IE9 Compat Modes */
+src: url($fontpath + $fontSemiBold+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url($fontpath + $fontSemiBold+'.woff') format('woff'), /* Modern Browsers */
+     url($fontpath + $fontSemiBold+'.woff2') format('woff2'), /* Modern Browsers */
+     url($fontpath + $fontSemiBold+'.ttf') format('truetype'), /* Safari, Android, iOS */
+     url($fontpath + $fontSemiBold+'.svg#52bc9fd504b621176d57f308965c98a4') format('svg'); /* Legacy iOS */
 
-// Open Sans
-@include font-face(
-  'Open Sans',
-  '#{$font-path}/opensans/OpenSans-Light',
-  300,
-  normal,
-  $file-formats: ttf
-);
-
-@include font-face(
-  'Open Sans',
-  '#{$font-path}/opensans/OpenSans-Regular',
-  400,
-  normal,
-  $file-formats: ttf
-);
-
-@include font-face(
-  'Open Sans',
-  '#{$font-path}/opensans/OpenSans-SemiBold',
-  600,
-  normal,
-  $file-formats: ttf
-);
-
-@include font-face(
-  'Open Sans',
-  '#{$font-path}/opensans/OpenSans-Bold',
-  700,
-  normal,
-  $file-formats: ttf
-);
-
-// Source Sans Pro
-@include font-face(
-  'Source Sans Pro',
-  '#{$font-path}/sourcesanspro/sourcesanspro-light-webfont',
-  300,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Source Sans Pro',
-  '#{$font-path}/sourcesanspro/sourcesanspro-regular-webfont',
-  400,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Source Sans Pro',
-  '#{$font-path}/sourcesanspro/sourcesanspro-italic-webfont',
-  400,
-  italic,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Source Sans Pro',
-  '#{$font-path}/sourcesanspro/sourcesanspro-bold-webfont',
-  700,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-
-// Merriweather
-@include font-face(
-  'Merriweather',
-  '#{$font-path}/merriweather/merriweather-light-webfont',
-  300,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Merriweather',
-  '#{$font-path}/merriweather/merriweather-regular-webfont',
-  400,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Merriweather',
-  '#{$font-path}/merriweather/merriweather-italic-webfont',
-  400,
-  italic,
-  $file-formats: eot woff2 woff ttf
-);
-
-@include font-face(
-  'Merriweather',
-  '#{$font-path}/merriweather/merriweather-bold-webfont',
-  700,
-  normal,
-  $file-formats: eot woff2 woff ttf
-);
-/* stylelint-enable */
+  font-style:   normal;
+  font-weight:  600;
+}
+@font-face {
+  font-family: 'IBMPlexSans-Bold';
+  src: url($fontpath + $fontBold+'.eot'); /* IE9 Compat Modes */
+  src: url($fontpath + $fontBold+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url($fontpath + $fontBold+'.woff') format('woff'), /* Modern Browsers */
+       url($fontpath + $fontBold+'.woff2') format('woff2'), /* Modern Browsers */
+       url($fontpath + $fontBold+'.ttf') format('truetype'), /* Safari, Android, iOS */
+       url($fontpath + $fontBold+'.svg#52bc9fd504b621176d57f308965c98a4') format('svg'); /* Legacy iOS */
+  
+    font-style:   normal;
+    font-weight:  700;
+  }

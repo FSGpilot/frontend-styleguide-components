@@ -4,4 +4,5 @@ var gulp = require('gulp');
 gulp.task('watch', function () {
     gulp.watch(["src/stylesheets/**/*.scss", '!src/stylesheets/lib/**/*.scss'],['sass']);
     gulp.watch("src/js/**/*.js",['javascript']);
+    gulp.watch("src/fonts/**/*.*",['fonts']);
 });

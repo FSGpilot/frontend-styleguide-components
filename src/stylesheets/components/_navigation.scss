@@ -101,7 +101,6 @@
   .current {
     border-left: 4px solid $color-primary;
     color: $color-primary;
-    font-weight: $font-bold;
     padding-left: 1.4rem;
 
     @include media($nav-width) {
@@ -150,7 +149,6 @@
         @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
         color: $color-gray-darkest;
         font-size: $base-font-size;
-        font-weight: $font-bold;
         line-height: 1;
       }
 
@@ -179,7 +177,6 @@
 
     @include button-unstyled;
     @include font-smoothing;
-    font-weight: $font-normal;
     line-height: 1.3;
     padding: 0.85rem 1.5rem 0.85rem 1.8rem;
 
@@ -187,7 +184,6 @@
       @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
       color: $color-gray;
       font-size: $h5-font-size;
-      font-weight: $font-bold;
       line-height: 1;
       width: initial;
     }
