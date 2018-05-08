@@ -2,6 +2,101 @@
 
 //@import '../../node_modules/mdi/scss/materialdesignicons';
 
+@mixin h1{ 
+  font-family: $fontBold;
+  font-size: $h1-font-size; //43px
+  line-height: $h1-line-height; //48px
+}
+@mixin h2 {
+  font-family: $fontSemiBold;
+  font-size: $h2-font-size; //33px
+  line-height: $h2-line-height; //40px
+}
+@mixin h3 {
+  font-family: $fontSemiBold; 
+  font-size: $h3-font-size; //26px
+  line-height: $h3-line-height; //32px
+}
+@mixin sub-header{
+  font-family: $fontTextRegular;
+  font-size: $sub-header; //25px
+  line-height: $sub-header-line-height; //32px
+}
+@mixin h4{
+  font-family: $fontSemiBold;
+  font-size: $h4-font-size; //22px
+  line-height: $h4-line-height; //24px
+}
+@mixin h5 {
+  font-family: $fontTextRegular;
+  font-size: $h5-font-size; //20px
+  line-height: $h5-line-height; //24px
+}
+@mixin body-text {
+  font-family: $fontRegular;
+  font-size: $body-text; //18px
+  line-height: $body-text-line-height; //24px
+}
+@mixin form-label-text {
+  font-family: $fontMedium;
+  font-size: $form-label;
+  // line-height:;
+}
+@mixin h6 {
+  font-family: $fontSemiBold;
+  font-size: $h6-font-size; //16px
+  line-height: $h6-line-height; //24px
+}
+@mixin small-text {
+  font-family: $fontMedium;
+  font-size: $small-text; //13px
+  line-height: $small-text-line-height; //16
+
+}
+
+
+h1, .h1 {
+  @include h1;
+}
+h2, .h2{
+  @include h2;
+}
+
+h3, .h3 {
+  @include h3;
+}
+
+.sub-header-text {
+  @include sub-header;
+}
+
+h4, .h4{ 
+  @include h4;
+}
+
+h5, .h5{
+  @include h5;
+}
+
+.body-text{
+  @include body-text;
+}
+
+.form-label {
+  @include form-label-text
+}
+
+h6, .h6{
+  @include h6;
+}
+
+.small-text{
+  @include small-text;
+}
+
+
+
+
 html {
   font-family: $font-sans;
   font-size: $em-base;
@@ -66,45 +161,45 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5 {
-  clear: both;
-  font-family: $font-heading;
-  line-height: $heading-line-height;
-  margin-bottom: .8em;
-  margin-top: 1.6em;
-}
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4,
+// h5, .h5 {
+//   clear: both;
+//   font-family: $font-heading;
+//   line-height: $heading-line-height;
+//   margin-bottom: .8em;
+//   margin-top: 1.6em;
+// }
 
-h6, .h6 {
-  font-family: $font-sans;
-}
+// h6, .h6 {
+//   font-family: $font-sans;
+// }
 
-h1, .h1 {
-  @include h1();
-}
+// h1, .h1 {
+//   @include h1();
+// }
 
-h2, .h2 {
-  @include h2();
-}
+// h2, .h2 {
+//   @include h2();
+// }
 
-h3, .h3 {
-  @include h3();
-}
+// h3, .h3 {
+//   @include h3();
+// }
 
-h4, .h4 {
-  @include h4();
-}
+// h4, .h4 {
+//   @include h4();
+// }
 
-h5, .h5 {
-  @include h5();
-}
+// h5, .h5 {
+//   @include h5();
+// }
 
-h6, .h6 {
-  @include h6();
-}
+// h6, .h6 {
+//   @include h6();
+// }
 
 // Remove user agent styles
 
