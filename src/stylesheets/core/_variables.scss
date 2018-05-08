@@ -284,7 +284,7 @@ $medium:                        new-breakpoint(min-width $medium-screen $grid-co
 $large:                         new-breakpoint(min-width $large-screen $grid-columns-large) !default;
 
 // Relative font and image file paths
-$font-path:                     '../fonts' !default;
+$font-path:                     '../fonts/IBMPlexSans/' !default;
 $image-path:                    '../img' !default;
 $mdi-font-path:                 $font-path;
 
