@@ -33,7 +33,6 @@ $font-heading:                'Raleway', $helvetica !default;
 $font-normal:                 400 !default;
 $font-bold:                   700 !default;
 
-
 // Base colors
 $color-white:                 #ffffff !default;
 $color-base:                  #212121 !default;
@@ -112,9 +111,15 @@ $color-primary-button-text:   $color-white !default;
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
+//Borders
+$outer-border: 1px solid $color-gray;
+$inner-border: 1px solid $color-gray-lighter;
+$focus-border: 2px dashed $color-gray-light;
+$button-border: 2px solid $color-gray; 
 
-// Grid
-// ----------------
+// ----------------------------------------
+//----------------- Grid ------------------
+// ----------------------------------------
 $enable-bs-grid:              true !default;  // Enable Bootstrap grid
 $enable-uswd-grid:            false !default; // Enable USWD grid
 
@@ -210,6 +215,9 @@ $grid-columns-large:            12 !default;
 $small:                         new-breakpoint(min-width $small-screen $grid-columns-small) !default;
 $medium:                        new-breakpoint(min-width $medium-screen $grid-columns-medium) !default;
 $large:                         new-breakpoint(min-width $large-screen $grid-columns-large) !default;
+
+//----------------- End grid configuration ------------------
+
 
 // Relative font and image file paths
 $font-path:                     '../fonts' !default;
