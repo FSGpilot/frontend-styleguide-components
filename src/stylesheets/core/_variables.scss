@@ -5,7 +5,7 @@
 // XXX Do not modify this file!
 //
 
-// Typography
+// Typography font-size and line-height
 
 $h1-font-size:                43px !default;
 $h1-line-height:              48px !default;
@@ -36,13 +36,6 @@ $h6-line-height:              16px !default;
 
 $small-text:                  13px !default;
 $small-text-line-height:      16px !default;
-
-
-//Line height
-
-
-
-
 
 // Removing the !default from $em-base so we are not inheriting that
 // value from Bourbon.

@@ -2,6 +2,34 @@
 
 //@import '../../node_modules/mdi/scss/materialdesignicons';
 
+html {
+  font-size: $em-base;
+}
+
+body {
+  font-size: $base-font-size;
+}
+
+p {
+  line-height: $base-line-height;
+  margin-bottom: 0.8em;
+  margin-top: 1.6em;
+}
+
+a {
+
+
+  &:focus {
+    @include focus;
+  }
+
+  &:visited,
+  &.color-text-visited {
+    color: $color-visited;
+  }
+}
+
+//font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
 @mixin h1{ 
   font-family: $fontBold;
   font-size: $h1-font-size; //43px
@@ -54,6 +82,56 @@
 
 }
 
+// Text colors
+// @each $color, $value in $colors {
+//   @include text-color('.color-text-#{$color}', $value);
+// }
+
+@mixin external-link($external-link, $external-link-hover) {
+  &::after {
+    background: url('#{$image-path}/#{$external-link}.png') no-repeat 0 0;
+    background: url('#{$image-path}/#{$external-link}.svg') no-repeat 0 0;
+    background-size: 100%;
+    content: '';
+    display: inline-block;
+    height: 0.65em;
+    margin-bottom: -1px;
+    margin-left: 4px;
+    width: 0.65em;
+  }
+
+  &:hover::after {
+    background-image: url('#{$image-path}/#{$external-link-hover}.png');
+    background-image: url('#{$image-path}/#{$external-link-hover}.svg');
+  }
+}
+
+// External link consider "effortless style approach":
+// [href^="http:"]:not([href*="my-domain.com"])
+// [href^="https:"]:not([href*="my-domain.com"])
+
+.external_link {
+  @include external-link(external-link, external-link-hover);
+}
+
+.external_link-alt {
+  @include external-link(external-link-alt, external-link-alt-hover);
+}
+
+//margin top and bottom for text
+h1, .h1,
+h2, .h2,
+h3, .h3,
+.sub-header-text,
+h4, .h4,
+h5, .h5,
+.body-text, 
+h6, .h6,
+.small-text{
+  clear: both;
+  margin-top: map-get($spacers, 3); 
+  margin-bottom: map-get($spacers, 7); 
+}
 
 h1, .h1 {
   @include h1;
@@ -92,82 +170,6 @@ h6, .h6{
 
 .small-text{
   @include small-text;
-}
-
-
-
-
-html {
-  font-size: $em-base;
-}
-
-body {
-  font-size: $base-font-size;
-}
-
-p {
-  line-height: $base-line-height;
-  margin-bottom: 0.8em;
-  margin-top: 1.6em;
-}
-
-a {
-
-
-  &:focus {
-    @include focus;
-  }
-
-  &:visited,
-  &.color-text-visited {
-    color: $color-visited;
-  }
-}
-
-// Text colors
-// @each $color, $value in $colors {
-//   @include text-color('.color-text-#{$color}', $value);
-// }
-
-@mixin external-link($external-link, $external-link-hover) {
-  &::after {
-    background: url('#{$image-path}/#{$external-link}.png') no-repeat 0 0;
-    background: url('#{$image-path}/#{$external-link}.svg') no-repeat 0 0;
-    background-size: 100%;
-    content: '';
-    display: inline-block;
-    height: 0.65em;
-    margin-bottom: -1px;
-    margin-left: 4px;
-    width: 0.65em;
-  }
-
-  &:hover::after {
-    background-image: url('#{$image-path}/#{$external-link-hover}.png');
-    background-image: url('#{$image-path}/#{$external-link-hover}.svg');
-  }
-}
-
-// External link consider "effortless style approach":
-// [href^="http:"]:not([href*="my-domain.com"])
-// [href^="https:"]:not([href*="my-domain.com"])
-
-.external_link {
-  @include external-link(external-link, external-link-hover);
-}
-
-.external_link-alt {
-  @include external-link(external-link-alt, external-link-alt-hover);
-}
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5 {
-  clear: both;
-  margin-bottom: .8em;
-  margin-top: 1.6em;
 }
 
 
