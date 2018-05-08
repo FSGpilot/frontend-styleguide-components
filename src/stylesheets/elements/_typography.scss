@@ -3,6 +3,7 @@
 //@import '../../node_modules/mdi/scss/materialdesignicons';
 
 html {
+  font-family: $font-sans;
   font-size: $em-base;
 }
 
@@ -25,59 +26,6 @@ a {
   &.color-text-visited {
     color: $color-visited;
   }
-}
-
-//font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
-@mixin h1{ 
-  font-family: $font-bold;
-  font-size: $h1-font-size; //4.3rem
-  line-height: $h1-line-height; //4.8rem
-}
-@mixin h2 {
-  font-family: $font-semibold;
-  font-size: $h2-font-size; //3.3rem
-  line-height: $h2-line-height; //4.0rem
-}
-@mixin h3 {
-  font-family: $font-semibold; 
-  font-size: $h3-font-size; //2.6rem
-  line-height: $h3-line-height; //3.2rem
-}
-@mixin sub-header{
-  font-family: $font-text-regular;
-  font-size: $sub-header; //2.5rem
-  line-height: $sub-header-line-height; //3.2rem
-}
-@mixin h4{
-  font-family: $font-semibold;
-  font-size: $h4-font-size; //2.2rem
-  line-height: $h4-line-height; //2.4rem
-}
-@mixin h5 {
-  font-family: $font-text-regular;
-  font-size: $h5-font-size; //2.0rem
-  line-height: $h5-line-height; //2.4rem
-}
-@mixin body-copy-text {
-  font-family: $font-regular;
-  font-size: $body-text; //1.8rem
-  line-height: $body-text-line-height; //2.4rem
-}
-@mixin form-label-text {
-  font-family: $font-medium;
-  font-size: $form-label;
-  // line-height:;
-}
-@mixin h6 {
-  font-family: $font-semibold;
-  font-size: $h6-font-size; //1.6rem
-  line-height: $h6-line-height; //2.4rem
-}
-@mixin small-text {
-  font-family: $font-medium;
-  font-size: $small-text; //1.3rem
-  line-height: $small-text-line-height; //1.6rem
-
 }
 
 // Text colors
@@ -116,60 +64,45 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-//margin top and bottom for text
 h1, .h1,
 h2, .h2,
 h3, .h3,
-.sub-header-text,
 h4, .h4,
-h5, .h5,
-.body-text, 
-h6, .h6,
-.small-text{
+h5, .h5 {
   clear: both;
-  margin-top: map-get($spacers, 3); 
-  margin-bottom: map-get($spacers, 7); 
+  font-family: $font-heading;
+  line-height: $heading-line-height;
+  margin-bottom: .8em;
+  margin-top: 1.6em;
+}
+
+h6, .h6 {
+  font-family: $font-sans;
 }
 
 h1, .h1 {
-  @include h1;
+  @include h1();
 }
-h2, .h2{
-  @include h2;
+
+h2, .h2 {
+  @include h2();
 }
 
 h3, .h3 {
-  @include h3;
+  @include h3();
 }
 
-.sub-header-text {
-  @include sub-header;
+h4, .h4 {
+  @include h4();
 }
 
-h4, .h4{ 
-  @include h4;
+h5, .h5 {
+  @include h5();
 }
 
-h5, .h5{
-  @include h5;
+h6, .h6 {
+  @include h6();
 }
-
-.body-copy-text{
-  @include body-copy-text;
-}
-
-.form-label {
-  @include form-label-text
-}
-
-h6, .h6{
-  @include h6;
-}
-
-.small-text{
-  @include small-text;
-}
-
 
 // Remove user agent styles
 
@@ -194,8 +127,61 @@ dfn {
   max-width: $text-max-width;
 }
 
+.heading {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-heading;
+  }
+}
 
 
+.sans {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-sans;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.serif {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-heading;
+  }
+}
+
+.sans-source {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-sans-source;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.serif-merri {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-serif-merri;
+  }
+}
 
 .display {
   @include h3();
@@ -211,7 +197,9 @@ dfn {
 }
 
 .font-lead {
+  font-family: $font-heading;
   font-size: $lead-font-size;
+  font-weight: $font-weight-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
 }
