@@ -67,21 +67,6 @@ button,
     background-color: $color-primary-darkest;
   }
 
-  // &.button-primary-alt {
-  //   background-color: $color-primary-alt;
-  //   color: $color-base;
-
-  //   &:hover,
-  //   &.button-hover {
-  //     background-color: $color-primary-alt-dark;
-  //   }
-
-  //   &:active,
-  //   &.button-active {
-  //     background-color: $color-primary-alt-darkest;
-  //     color: $color-white;
-  //   }
-  // }
   &.button-primary {
     box-shadow: inset 0 -4px 0 darken($color-primary, 7%);
   }
@@ -94,13 +79,11 @@ button,
     &:hover,
     &.button-hover {
       box-shadow: $button-stroke $color-primary-darker;
-      //color: $color-primary-darker;
     }
 
     &:active,
     &.button-active {
       box-shadow: $button-stroke $color-primary-darkest;
-      //color: $color-primary-darkest;
     }
   }
 
@@ -136,20 +119,6 @@ button,
       background-color: $color-base;
     }
   }
-
-  // &.button-red {
-  //   background-color: $color-secondary;
-
-  //   &:hover,
-  //   &.button-hover {
-  //     background-color: $color-secondary-dark;
-  //   }
-
-  //   &:active,
-  //   &.button-active {
-  //     background-color: $color-secondary-darkest;
-  //   }
-  // }
 
   &.button-big {
     border-radius: 8px;
@@ -225,7 +194,6 @@ html .button-secondary-inverse-disabled,  // Deprecated
   font-size: $small-font-size;
 }
 
-
 .button-ghost {
   border: 0;
   background-color: transparent;
@@ -279,7 +247,6 @@ html .button-secondary-inverse-disabled,  // Deprecated
     font-weight: 700;
   }
 }
-
 
 // Button row
 .button-row {
