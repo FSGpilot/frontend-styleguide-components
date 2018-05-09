@@ -23,7 +23,7 @@ textarea,
 select {
   appearance: none;
   border: $input-border-width solid $color-gray;
-  border-radius: 0;
+  border-radius: 4px;
   box-sizing: border-box;
   color: $color-base; // standardize on firefox
   display: block;
@@ -34,6 +34,7 @@ select {
   //max-width: $input-max-width;
   padding: $input-padding-vertical 0.7em;
   width: 100%;
+  
 
   &.input-success {
     border: 3px solid $color-success;
