@@ -79,8 +79,8 @@ a {
 @mixin form-label-text {
   font-family: $font-name;
   font-size: $form-label;
-  // line-height:;
-  font-weight: $font-weight-medium;
+  line-height: $body-text-line-height; //2.4rem
+  font-weight: $font-weight-semibold;
   color: $color-base;
 }
 @mixin h6 {

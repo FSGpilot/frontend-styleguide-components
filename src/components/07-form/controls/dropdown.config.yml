@@ -6,7 +6,7 @@ context:
   dropdown_example:
     name: options
     id: options
-    label: Dropdown titel
+    label: Dropdown label
     options:
       - value: "option1"
         text: "Mulighed 1"

@@ -1,11 +1,12 @@
 // scss-lint:disable QualifyingElement, PropertyCount
 
-$input-line-height: 1.33;
+$input-line-height: 1.34;
 $input-border-radius: 4px;
 $input-border-width: 1px;
 $input-top-bottom-padding: map-get($spacers, 3);
 $input-left-right-padding: map-get($spacers, 4);
 $input-height: 40px;
+$input-font-size: 1.8rem;
 
 // Block form elements
 /* stylelint-disable selector-no-qualifying-type */
@@ -17,25 +18,31 @@ select {
   border-radius: $input-border-radius;
   color: $color-base; // standardize on firefox
   display: block;
-  font-size: $base-font-size;
+  font-size: $input-font-size;
   line-height: $input-line-height;
   padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
+  margin-top: map-get($spacers, 3);
 
   &.input-success {
     border: 3px solid $color-success;
   }
 }
-
 input, select{
   height: $input-height;
 }
 textarea{
-  min-height: $input-height;
+  height: 16rem;
 }
 
+label {
+  display: block;
+  max-width: $input-max-width;
+  margin-top: map-get($spacers, 4);
+  @include form-label-text();
+}
 
-/* stylelint-enable */
+/* stylelint-enablex */
 .input-error {
   border-left: 4px solid $color-error;
   margin-top: 3rem;
@@ -91,15 +98,6 @@ textarea{
   content: ' (optional)';
 }
 
-label {
-  display: block;
-  margin-top: 3rem;
-  max-width: $input-max-width;
-}
-
-textarea {
-  height: 16rem;
-}
 
 select {
   appearance: none;
