@@ -154,7 +154,7 @@
   }
 
   &[aria-expanded=false] {
-    @include display-icon(angle-arrow-down-primary, after, 1rem, 0, hover);
+    //@include display-icon(angle-arrow-down-primary, after, 1rem, 0, hover);
     background-image: none;
 
     &::after {
@@ -163,12 +163,12 @@
   }
 
   &[aria-expanded=true] {
-    @include display-icon(close, after, 1.3rem, 0, no-hover);
+    //@include display-icon(close, after, 1.3rem, 0, no-hover);
     background-image: none;
     height: 5.6rem;
 
     @include media($small-screen) {
-      @include display-icon(angle-arrow-up-primary, after, 1rem, 0, hover);
+      //@include display-icon(angle-arrow-up-primary, after, 1rem, 0, hover);
       height: initial;
       padding: 0;
       position: relative;
