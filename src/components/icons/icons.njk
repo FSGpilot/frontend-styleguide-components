@@ -1,4 +1,9 @@
-{% macro icon(icon, classes) %}<i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>{% endmacro %}
+{% macro icon(iconname, classes, aria) %}
+  <i class="icon icon-{{iconname}} {{ classes }}" {% if aria %}aria-label ="{{aria}}"{% endif %}></i>
+{% endmacro %}
+
+{% macro icon_old(icon, classes) %}<i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>{% endmacro %}
+
 <div class="icon-list row">
   {% for icons in icons_example.items %}
     <div class="col-md-3">
@@ -8,7 +13,7 @@
       </div>
     </div>
   {% endfor %}
-</div>
+</div> 
 
 <style scoped>
   .icon-box {
@@ -24,9 +29,5 @@
   .icon-box i {
     font-size: 3rem;
     margin-bottom: 5px;
-  }
-
-  .col-md-3 {
-    float: left;
   }
 </style>

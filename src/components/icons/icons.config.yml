@@ -1,0 +1,20 @@
+label: Icons
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  icons_example:
+    items:
+      - icon: alert-outline
+      - icon: angle-arrow-down
+      - icon: angle-arrow-up
+      - icon: calendar
+      - icon: check
+      - icon: check-circle-outline
+      - icon: content-save
+      - icon: delete
+      - icon: help-circle-outline
+      - icon: information-outline
+      - icon: magnify
+      - icon: pencil
+      - icon: refresh
