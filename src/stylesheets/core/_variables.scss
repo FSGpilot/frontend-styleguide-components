@@ -41,7 +41,6 @@ $small-text-line-height:      1.6rem !default;
 // Removing the !default from $em-base so we are not inheriting that
 // value from Bourbon.
 $em-base:                     10px;
-$em-base:                     10px;
 $base-font-size:              1.6rem !default;
 $small-font-size:             1.2rem !default;
 $lead-font-size:              2rem !default;
@@ -327,8 +326,8 @@ $border-radius:                 3px !default;
 $button-border-radius:          5px !default;
 $button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
-$focus-outline:                 1px solid $color-gray-light;
-$focus-spacing:                 2px;
+$focus-outline:                 4px solid $color-orange-004;
+$focus-spacing:                 0px;
 $nav-width:                     $grid-lg !default; // 992px
 $sidenav-current-border-width:  0.4rem !default; // must be in rem for math
 
