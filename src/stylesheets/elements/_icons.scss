@@ -1,0 +1,40 @@
+//@import '../../node_modules/mdi/scss/materialdesignicons';
+
+$icons-folder-path: "../img/svg-icons/" !default;
+$icons: (
+    "alert-outline",
+    "angle-arrow-down",
+    "angle-arrow-up",
+    "calendar",
+    "check",
+    "check-circle-outline",
+    "content-save",
+    "delete",
+    "help-circle-outline",
+    "information-outline",
+    "magnify",
+    "pencil",
+    "refresh"
+) !default;
+
+.icon{
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: 100%;
+}
+.icon-svg{
+    height: 24px;
+    width: 24px;
+}
+
+@each $icon in $icons {
+    .icon-#{$icon} {
+        background-image: url($icons-folder-path + $icon + ".svg");
+    }
+}  
+
+.hide-base-svg{ //hide inline svgs
+    display: none;
+}

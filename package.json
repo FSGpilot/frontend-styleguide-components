@@ -33,19 +33,20 @@
     "@types/node": "^8.5.5",
     "array-filter": "^1.0.0",
     "array-foreach": "^1.0.2",
+    "bourbon": "4.2.7",
+    "bourbon-neat": "https://github.com/thoughtbot/neat/archive/neat-1.8.0-node-sass.tar.gz",
     "browserify": "^13.0.0",
+    "choices.js": "^3.0.4",
     "classlist-polyfill": "^1.0.3",
     "domready": "^1.0.8",
     "elem-dataset": "^1.1.1",
     "lodash.debounce": "^4.0.7",
+    "mdi": "^2.0.46",
     "object-assign": "^4.1.1",
     "receptor": "^1.0.0",
     "resolve-id-refs": "^0.1.0",
     "typescript": "^2.4.1",
-    "yargs": "^8.0.2",
-    "mdi": "^2.0.46",
-    "bourbon": "4.2.7",
-    "bourbon-neat": "https://github.com/thoughtbot/neat/archive/neat-1.8.0-node-sass.tar.gz"
+    "yargs": "^8.0.2"
   },
   "devDependencies": {
     "@18f/stylelint-rules": "^1.2.0",
@@ -93,6 +94,9 @@
     "sinon": "^2.3.8",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^1.1.2",
-    "zip-folder": "^1.0.0"
+    "zip-folder": "^1.0.0",
+    "gulp-svgmin": "^1.2.0",
+    "gulp-svgstore": "^5.0.5",
+    "path": "^0.12.7"
   }
 }

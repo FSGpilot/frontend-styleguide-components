@@ -22,6 +22,7 @@ components.set('default.preview', '@dkwds');
 components.set('default.context', context);
 
 // use Nunjucks as the templating engine
+// path: when doing {{ include 'filename'}}, fractal should search in these folders. Exmaple {% include "all-svg-icons.svg"  %}
 components.engine(require('@frctl/nunjucks')({
   filters: {
     jsonify: d => JSON.stringify(d, null, '  '),
@@ -29,6 +30,7 @@ components.engine(require('@frctl/nunjucks')({
   },
   paths: [
     'src/components',
+    'src/img'
   ]
 }));
 

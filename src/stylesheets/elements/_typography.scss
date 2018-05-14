@@ -1,9 +1,7 @@
 @import '../core/mixins/text-color';
 
-//@import '../../node_modules/mdi/scss/materialdesignicons';
-
 html {
-  font-family: $font-text-regular;
+  font-family: $font-name, system;
   font-size: $em-base;
 }
 
@@ -30,55 +28,74 @@ a {
 
 //font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
 @mixin h1{ 
-  font-family: $font-bold;
+  font-family: $font-name;
   font-size: $h1-font-size; //4.3rem
   line-height: $h1-line-height; //4.8rem
+  font-weight: $font-weight-bold;
+  color: $color-base;
 }
 @mixin h2 {
-  font-family: $font-semibold;
+  font-family: $font-name;
   font-size: $h2-font-size; //3.3rem
   line-height: $h2-line-height; //4.0rem
+  font-weight: $font-weight-semibold;
+  color: $color-base;
 }
 @mixin h3 {
-  font-family: $font-semibold; 
+  font-family: $font-name; 
   font-size: $h3-font-size; //2.6rem
   line-height: $h3-line-height; //3.2rem
+  font-weight: $font-weight-semibold;
+  color: $color-base;
 }
 @mixin sub-header{
-  font-family: $font-text-regular;
+  font-family: $font-name;
   font-size: $sub-header; //2.5rem
   line-height: $sub-header-line-height; //3.2rem
+  font-weight: $font-weight-normal;
+  color: $color-gray-dark;
 }
 @mixin h4{
-  font-family: $font-semibold;
+  font-family: $font-name;
   font-size: $h4-font-size; //2.2rem
   line-height: $h4-line-height; //2.4rem
+  font-weight: $font-weight-semibold;
+  color: $color-base;
 }
 @mixin h5 {
-  font-family: $font-text-regular;
+  font-family: $font-name;
   font-size: $h5-font-size; //2.0rem
   line-height: $h5-line-height; //2.4rem
+  font-weight: $font-weight-normal;
+  color: $color-base;
 }
 @mixin body-copy-text {
-  font-family: $font-regular;
+  font-family: $font-name;
   font-size: $body-text; //1.8rem
   line-height: $body-text-line-height; //2.4rem
+  font-weight: $font-weight-normal;
+  color: $color-gray-dark;
 }
 @mixin form-label-text {
-  font-family: $font-medium;
+  font-family: $font-name;
   font-size: $form-label;
-  // line-height:;
+  line-height: $body-text-line-height; //2.4rem
+  font-weight: $font-weight-semibold;
+  color: $color-base;
 }
 @mixin h6 {
-  font-family: $font-semibold;
+  font-family: $font-name;
   font-size: $h6-font-size; //1.6rem
   line-height: $h6-line-height; //2.4rem
+  font-weight: $font-weight-semibold;
+  color: $color-base;
 }
 @mixin small-text {
-  font-family: $font-medium;
+  font-family: $font-name;
   font-size: $small-text; //1.3rem
   line-height: $small-text-line-height; //1.6rem
-
+  font-weight: $font-weight-medium;
+  color: $color-base;
 }
 
 // Text colors
@@ -203,6 +220,53 @@ dfn {
   }
 }
 
+.sans {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-name;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.serif {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-heading;
+  }
+}
+
+.sans-source {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-name;
+  }
+
+  a {
+    border-bottom: none;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.serif-merri {
+  p,
+  a,
+  li,
+  span {
+    font-family: $font-name;
+  }
+}
+
+
 
 
 .display {
@@ -210,11 +274,11 @@ dfn {
   margin-bottom: 0;
 
   @include media($small-screen) {
-    @include h1();
+    @include h2();
   }
 
   @include media($medium-screen) {
-    @include title();
+    @include h1();
   }
 }
 
@@ -251,67 +315,6 @@ dfn {
   font-size: $h6-font-size;
   margin-top: 0;
 }
-
-// Removes top margin from first child and bottom margin from last child on
-// elements when they are within those layout elements.
-.usa-section,
-.usa-grid,
-.usa-grid-full {
-  > :first-child {
-    margin-top: 0;
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-.usa-width-one-whole,
-.usa-width-one-half,
-.usa-width-one-third,
-.usa-width-two-thirds,
-.usa-width-one-fourth,
-.usa-width-three-fourths,
-.usa-width-one-sixth,
-.usa-width-five-sixths,
-.usa-width-one-twelfth {
-  &:first-child {
-    > :first-child {
-      margin-top: 0;
-    }
-  }
-
-  > :first-child {
-    @include media($medium-screen) {
-      margin-top: 0;
-    }
-  }
-
-  &:last-child {
-    > :last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  > :last-child {
-    @include media($medium-screen) {
-      margin-bottom: 0;
-    }
-  }
-}
-
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 
 .step-title {
   margin-top: 0;

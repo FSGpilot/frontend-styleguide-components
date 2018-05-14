@@ -21,6 +21,3 @@ context:
         label: Text input success
         class: input-success
         name: input-success
-      - id: input-type-textarea
-        label: Text area label
-        name: input-type-textarea

@@ -8,13 +8,14 @@
 
 // Elements -------------- //
 // Styles basic HTML elements
+@import 'elements/typography';
 @import 'elements/buttons';
 @import 'elements/embed';
 @import 'elements/figure';
+@import 'elements/icons';
 @import 'elements/inputs';
 @import 'elements/labels';
 @import 'elements/list';
-@import 'elements/typography';
 
 // Components -------------- //
 @import 'components/accordions';
