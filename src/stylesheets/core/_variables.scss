@@ -51,7 +51,7 @@ $lead-line-height:            1.5 !default;
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
 $font-weight-semibold:        600 !default;
-$font-weight-bold:            700 !default; 
+$font-weight-bold:            700 !default;
 $font-style-normal:           normal !default;
 $font-style-italic:           italic !default;
 
@@ -124,7 +124,7 @@ $color-text-bright:           $color-base-001 !default;
 //Links color
 $color-link:                  $color-blue-002 !default;
 $color-link-hover:            $color-blue-003 !default;
-$color-focus:                 $color-gray-004 !default;
+$color-focus:                 $color-orange-004 !default;
 $color-visited:               $color-purple-001 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
@@ -328,7 +328,7 @@ $border-radius:                 3px !default;
 $button-border-radius:          4px !default;
 $button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
-$focus-outline:                 4px solid $color-orange-004;
+$focus-outline:                 4px solid $color-warning;
 $focus-spacing:                 0px;
 $nav-width:                     $grid-lg !default; // 992px
 $sidenav-current-border-width:  0.4rem !default; // must be in rem for math

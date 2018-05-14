@@ -46,6 +46,18 @@ context:
       - class: 'ghost'
         state: 'disabled'
 
+      - class: 'tertiary'
+        label: 'Tertiary buttons'
+        state: 'default'
+      - class: 'tertiary'
+        state: 'hover'
+      - class: 'tertiary'
+        state: 'active'
+      - class: 'tertiary'
+        state: 'focus'
+      - class: 'tertiary'
+        state: 'disabled'
+
       - class: 'small'
         label: 'Small buttons'
         state: 'default'
