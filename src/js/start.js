@@ -6,8 +6,6 @@ const domready = require('domready');
  * older browsers, so must be loaded first.
  */
 require('./polyfills');
-//Polyfill ES6 --> ES5
-require('../../node_modules/babel-polyfill/dist/polyfill'); 
 
 const dkwds = require('./config');
 
