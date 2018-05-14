@@ -98,6 +98,67 @@ a {
   color: $color-base;
 }
 
+h1, .h1 {
+  @include h1;
+}
+h2, .h2{
+  @include h2;
+}
+
+h3, .h3 {
+  @include h3;
+}
+
+h4, .h4{ 
+  @include h4;
+}
+
+h5, .h5{
+  @include h5;
+}
+
+h6, .h6{
+  @include h6;
+}
+
+.sub-header-text {
+  @include sub-header;
+}
+
+.body-copy-text{
+  @include body-copy-text;
+}
+
+.form-label {
+  @include form-label-text
+}
+
+small, .small-text{
+  @include small-text;
+}
+
+//margin top and bottom for text
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.sub-header-text{
+  clear: both;
+  margin-top: map-get($spacers, 7); 
+  margin-bottom: map-get($spacers, 4); 
+  &:first-child{
+    margin-top: 0;
+  }
+}
+p, .body-text,
+.lead{
+  clear: both;
+  margin-top: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 4); 
+}
+
 // Text colors
 // @each $color, $value in $colors {
 //   @include text-color('.color-text-#{$color}', $value);
@@ -134,60 +195,6 @@ a {
   @include external-link(external-link-alt, external-link-alt-hover);
 }
 
-//margin top and bottom for text
-h1, .h1,
-h2, .h2,
-h3, .h3,
-.sub-header-text,
-h4, .h4,
-h5, .h5,
-.body-text, 
-h6, .h6,
-.small-text{
-  clear: both;
-  margin-top: map-get($spacers, 3); 
-  margin-bottom: map-get($spacers, 7); 
-}
-
-h1, .h1 {
-  @include h1;
-}
-h2, .h2{
-  @include h2;
-}
-
-h3, .h3 {
-  @include h3;
-}
-
-.sub-header-text {
-  @include sub-header;
-}
-
-h4, .h4{ 
-  @include h4;
-}
-
-h5, .h5{
-  @include h5;
-}
-
-.body-copy-text{
-  @include body-copy-text;
-}
-
-.form-label {
-  @include form-label-text
-}
-
-h6, .h6{
-  @include h6;
-}
-
-.small-text{
-  @include small-text;
-}
-
 // Remove user agent styles
 
 cite,
@@ -220,55 +227,6 @@ dfn {
   }
 }
 
-.sans {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-name;
-  }
-
-  a {
-    border-bottom: none;
-    font-weight: $font-weight-bold;
-  }
-}
-
-.serif {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-heading;
-  }
-}
-
-.sans-source {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-name;
-  }
-
-  a {
-    border-bottom: none;
-    font-weight: $font-weight-bold;
-  }
-}
-
-.serif-merri {
-  p,
-  a,
-  li,
-  span {
-    font-family: $font-name;
-  }
-}
-
-
-
-
 .display {
   @include h3();
   margin-bottom: 0;
@@ -282,7 +240,7 @@ dfn {
   }
 }
 
-.font-lead {
+.lead {
   font-family: $font-heading;
   font-size: $lead-font-size;
   font-weight: $font-weight-normal;
@@ -309,11 +267,6 @@ dfn {
       color: $color-white;
     }
   }
-}
-
-.text-small {
-  font-size: $h6-font-size;
-  margin-top: 0;
 }
 
 .step-title {
