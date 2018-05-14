@@ -130,7 +130,7 @@ $color-neutral-darkest:       $color-gray-001 !default;
 $color-neutral-lightest:      $color-gray-004 !default; //TODO, need base color for lightest
 
 // Functional theme colors
-$color-primary:               $color-gray-002 !default;
+$color-primary:               $color-gray-003 !default;
 $color-primary-darker:        $color-gray-001 !default;
 $color-primary-darkest:       $color-gray-001 !default;
 $color-primary-lightest:      $color-gray-004 !default;
@@ -172,6 +172,9 @@ $color-required:              $color-red-001 !default;
 
 // Button colors
 $color-primary-button-text:   $color-base-001 !default;
+$color-primary-button-hover:  $color-gray-002 !default;
+$color-primary-button-active: $color-gray-001 !default;
+$color-primary-button-focus:  $color-gray-002 !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
@@ -180,12 +183,12 @@ $color-transparent:           rgba(#000, 0) !default;
 $outer-border: 1px solid $color-gray;
 $inner-border: 1px solid $color-gray-lighter;
 $focus-border: 2px dashed $color-gray-light;
-$button-border: 2px solid $color-gray; 
+$button-border: 2px solid $color-gray;
 
 
 // Spacing helpers
 //
-// Mostly used to control spacing. 
+// Mostly used to control spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 // How to use: map-get($spacers, 2); This will give 4px (8*0.5).
 
@@ -201,7 +204,7 @@ $spacers: (
   7: ($spacer * 5)
 ) !default;
 
-//Translate $spacer 
+//Translate $spacer
 $spacing-x-small:               0.4rem;
 $spacing-small:                 0.8rem;
 $spacing-md-small:              1.6rem;
@@ -318,7 +321,7 @@ $input-max-width:               46rem !default;
 $label-border-radius:           2px !default;
 $checkbox-border-radius:        2px !default;
 $border-radius:                 3px !default;
-$button-border-radius:          5px !default;
+$button-border-radius:          4px !default;
 $button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 1px solid $color-gray-light;
