@@ -1,0 +1,14 @@
+{% macro dropdown(name, id, label, options) %}
+  <label for="{{name}}">{{label}}</label>
+  <select name="{{name}}" id="{{id}}" class="js-multiselect" multiple> 
+    {% for option in options %}
+      <option value="{{option.value}}">{{option.text}}</option>
+    {% endfor %}
+  </select>
+{% endmacro %}
+
+<div class="container">
+  <form class="form">
+    {{dropdown(dropdown_example.name, dropdown_example.id, dropdown_example.label, dropdown_example.options)}}
+  </form>
+</div>

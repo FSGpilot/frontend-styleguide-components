@@ -7,7 +7,8 @@ module.exports = {
   search:     require('./search'),
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
-  table:      require('./table'),
-  overflow:   require('./overflow-menu'),
+  validator:  require('../components-advanced/multi-select'),
+  //table:      require('./table'),
+  //overflow:   require('./overflow-menu'),
 };
 
