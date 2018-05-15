@@ -8,7 +8,7 @@
   {%- elif (state == 'focus') -%}
     <button class="button-{{class}} focus">Focus</button>
   {%- elif (state == 'disabled') -%}
-    <button class="button-{{class}}" disabled>Disabled</button>
+    <button class="button-{{class}}" disabled tab-index="-1" aria-disabled="true">Disabled</button>
   {%- endif %}
 {%- endmacro -%}
 

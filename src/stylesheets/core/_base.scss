@@ -33,6 +33,5 @@ body {
 
 *:focus,
 .focus {
-  outline: $focus-outline;
-  outline-offset: $focus-spacing;
+  outline: $focus-outline; 
 }
