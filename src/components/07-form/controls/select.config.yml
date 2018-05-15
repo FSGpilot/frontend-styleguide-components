@@ -1,12 +1,12 @@
-label: Dropdown
+label: Select
 status: ready
 preview: '@dkwds-framed'
 
 context:
-  dropdown_example:
+  select_example:
     name: options
     id: options
-    label: Dropdown label
+    label: Select label
     options:
       - value: "option1"
         text: "Mulighed 1"
@@ -14,4 +14,15 @@ context:
         text: "Mulighed 2"
       - value: "option3"
         text: "Mulighed 3"
+  select_multiple_example:
+    name: options
+    id: options
+    label: Select label
+    options:
+      - value: "option1"
+        text: "Mulighed 1 Mulighed 1 Mulighed 1Mulighed 1 Mulighed 1"
+      - value: "option2"
+        text: "Mulighed 2"
+      - value: "option3"
+        text: "Mulighed 3"    
       

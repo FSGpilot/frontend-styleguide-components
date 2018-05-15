@@ -91,12 +91,15 @@ input[type=search] { /* stylelint-disable-line selector-no-qualifying-type */
   border-right: none;
   border-top-right-radius: 0;
   box-sizing: border-box;
-  float: left;
   font-size: $small-font-size;
   height: 3.3rem;
   margin: 0;
   width: calc(100% - #{$btn-small-width});
 
+  @if($enable-uswd-grid == true){
+    float: left; //from USWD, used by uswd-grid 
+  }
+ 
   @include media($small-screen) {
     width: calc(100% - #{$btn-medium-width});
   }

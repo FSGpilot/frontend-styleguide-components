@@ -3,6 +3,13 @@
 // by a previous import.
 //
 
+// Paths
+// Relative font and image file paths
+$font-path:                     '../fonts/IBMPlexSans/' !default;
+$image-path:                    '../img' !default;
+$mdi-font-path:                 $font-path;
+$node-modules-path:             '../../../node_modules';
+
 // Typography
 // Typography font-size and line-height
 
@@ -211,11 +218,6 @@ $spacing-medium:                2.4rem;
 $spacing-large:                 3.2rem;
 $spacing-x-large:               4.8rem;
 $spacing-xx-large:              6.4rem;
-
-// Relative font and image file paths
-$font-path:                     '../fonts/IBMPlexSans/' !default;
-$image-path:                    '../img' !default;
-$mdi-font-path:                 $font-path;
 
 
 //----------------
