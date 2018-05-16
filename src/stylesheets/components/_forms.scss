@@ -5,15 +5,16 @@ form {
     border-bottom: 0;
   }
 
-  [name=password],
-  [name=confirmPassword] {
-    margin-bottom: 1rem;
-  }
-  [type=submit] {
-    @include media($medium-screen) {
-      margin-top: calc(3rem - .2em); // Label margin minus input bottom margin
-    }
-  }
+  //TODO: Change to not show: ??
+  // [name=password],
+  // [name=confirmPassword] {
+  //   margin-bottom: 1rem;
+  // }
+  // [type=submit] {
+  //   @include media($medium-screen) {
+  //     margin-top: calc(3rem - .2em); // Label margin minus input bottom margin
+  //   }
+  // }
 }
 
 .form {
