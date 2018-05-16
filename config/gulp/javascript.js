@@ -9,39 +9,44 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var eslint = require('gulp-eslint');
+var es = require('event-stream');
 var task = 'javascript';
 
 gulp.task(task, function (done) {
 
   dutil.logMessage(task, 'Compiling JavaScript');
+  
+  var files = [
+      'dkwds.js',
+      'dkwds-advanced.js'
+  ];
 
-  var defaultStream = browserify({
-    entries: 'src/js/start.js',
-    debug: true,
-  })
-  .transform('babelify', {
-    global: true,
-    presets: ['es2015'],
+  //Create a bundle for each starting file in the list above. 
+  var tasks = files.map(function(entry) {
+    return browserify({ 
+          entries: ['src/js/'+ entry],
+          //debug: true //Sourcemaps generated below, no need to inline sourcemaps inside files. 
+        })
+        .transform('babelify', {
+          global: true,
+          presets: ['es2015'],
+        })
+        .bundle()
+        .pipe(source(entry))
+        .pipe(buffer())
+        //.pipe(rename({ basename: dutil.pkg.name }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(uglify())
+        .on('error', gutil.log)
+        .pipe(rename({
+          suffix: '.min',
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/js'))
   });
-
-  var stream = defaultStream.bundle()
-    .pipe(source('dkwds.js')) // XXX why is this necessary?
-    .pipe(buffer())
-    .pipe(rename({ basename: dutil.pkg.name }))
-    .pipe(gulp.dest('dist/js'));
-
-  stream
-    .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(uglify())
-    .on('error', gutil.log)
-    .pipe(rename({
-      suffix: '.min',
-    }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/js'));
-
-  return stream;
-
+  // create a merged stream
+  return es.merge.apply(null, tasks);
 });
 
 gulp.task('typecheck', function () {

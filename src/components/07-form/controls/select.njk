@@ -1,5 +1,3 @@
-{# {%- from "07-form/controls/select-multi.njk" import select2 as select2 -%} #}
-
 {% macro select(name, id, label, options) %}
   <label for="{{name}}">{{label}}</label>
   <select name="{{name}}" id="{{id}}">
@@ -10,22 +8,8 @@
   </select>
 {% endmacro %}
 
-{% macro select2(name, id, label, options, multiple) %}
-  <label for="{{name}}">{{label}}</label>
-  <select class="js-select2" name="{{name}}" id="{{id}}" {% if multiple %}multiple{% endif %}>
-    {% for option in options %}
-      <option value="{{option.value}}">{{option.text}}</option>
-    {% endfor %}
-  </select>
-{% endmacro %}
-
 <div class="container">
   <form class="form mb-7">
-    <h3>Normal select:</h2>
     {{select(select_example.name, select_example.id, select_example.label, select_example.options)}}
-    <br>
-    <br>
-    <h3>Select2 - multiple select:</h2>
-    {{select2(select_multiple_example.name, select_multiple_example.id, select_multiple_example.label, select_multiple_example.options, true)}}
   </form>
 </div>

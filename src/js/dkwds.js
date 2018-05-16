@@ -10,18 +10,12 @@ require('./polyfills');
 const dkwds = require('./config');
 
 const components = require('./components');
-const components_advanced = require('./components-advanced');
 dkwds.components = components;
-dkwds.components_advanced = components_advanced;
 
 domready(() => {
   const target = document.body;
   for (let name in components) {
     const behavior = components[ name ];
-    behavior.on(target);
-  }
-  for (let name in components_advanced) {
-    const behavior = components_advanced[ name ];
     behavior.on(target);
   }
 });
