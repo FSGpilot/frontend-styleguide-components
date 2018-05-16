@@ -7,14 +7,16 @@
     <button class="button-{{class}} button-active">Active</button>
   {%- elif (state == 'focus') -%}
     <button class="button-{{class}} focus">Focus</button>
+  {%- elif (state == 'tertiary') -%}
+    <button class="button-{{class}} tertiary">Tertiary</button> 
   {%- elif (state == 'disabled') -%}
     <button class="button-{{class}}" disabled tab-index="-1" aria-disabled="true">Disabled</button>
   {%- endif %}
 {%- endmacro -%}
 
 {%- for buttons in button_example.items -%}
-{%- if buttons.label %}
-<h4>{{ buttons.label }}</h4>
-{% endif -%}
-{{ button(buttons.class, buttons.state) }}
+  {%- if buttons.label %}
+    <h4>{{ buttons.label }}</h4>
+  {% endif -%}
+  {{ button(buttons.class, buttons.state) }}
 {% endfor -%}
