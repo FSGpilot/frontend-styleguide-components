@@ -23,16 +23,9 @@
   <form class="form mb-7">
     <h3>Normal select:</h2>
     {{select(select_example.name, select_example.id, select_example.label, select_example.options)}}
+    <br>
+    <br>
+    <h3>Select2 - multiple select:</h2>
+    {{select2(select_multiple_example.name, select_multiple_example.id, select_multiple_example.label, select_multiple_example.options, true)}}
   </form>
-  
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <h3>Select2 - Single:</h2>
-      {{select2(select_multiple_example.name, select_multiple_example.id, select_multiple_example.label, select_multiple_example.options, false)}}
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <h3>Select2 - multiple:</h2>
-      {{select2(select_multiple_example.name, select_multiple_example.id, select_multiple_example.label, select_multiple_example.options, true)}}
-    </div>
-  </div>
 </div>

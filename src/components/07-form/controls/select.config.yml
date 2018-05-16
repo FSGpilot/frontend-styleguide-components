@@ -20,7 +20,7 @@ context:
     label: Select label
     options:
       - value: "option1"
-        text: "Mulighed 1 Mulighed 1 Mulighed 1Mulighed 1 Mulighed 1"
+        text: "Mulighed 1"
       - value: "option2"
         text: "Mulighed 2"
       - value: "option3"
