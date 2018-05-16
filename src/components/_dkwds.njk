@@ -10,7 +10,10 @@
       {% include "all-svg-icons.svg"  %}
     </div>
     {% block body %}{{ yield }}{% endblock %}
-    <script src="{{ dkwds.path }}/js/dkwds.js"></script>
+    <script src="{{ dkwds.path }}/js/dkwds.min.js"></script>
+    <script src="{{ dkwds.path }}/js/dkwds.min.js.map"></script>
+    <script src="{{ dkwds.path }}/js/dkwds-advanced.min.js"></script>
+    <script src="{{ dkwds.path }}/js/dkwds-advanced.min.js.map"></script>
     <script>
     window.addEventListener('load', function() {
       document.body.addEventListener('submit', function(e) {
