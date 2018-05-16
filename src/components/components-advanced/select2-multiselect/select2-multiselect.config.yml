@@ -1,9 +1,9 @@
-label: Select
+label: Multi Select (Select2)
 status: ready
 preview: '@dkwds-framed'
 
 context:
-  select_example:
+  select_multiple_example:
     name: options
     id: options
     label: Select label
@@ -13,5 +13,5 @@ context:
       - value: "option2"
         text: "Mulighed 2"
       - value: "option3"
-        text: "Mulighed 3"
+        text: "Mulighed 3"    
       
