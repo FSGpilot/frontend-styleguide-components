@@ -3,45 +3,139 @@
 // by a previous import.
 //
 
+//----------------
+// -to-rem
+//----------------
+$global-font-size:  100% !default;
+// Removing the !default from $em-base so we are not inheriting that
+// value from Bourbon.
+$em-base:           10px;
+$base-font-size:    18px; //1.8rem !default;
+
+/*
+Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+@param {Number} $num - Number to strip unit from.
+@returns {Number} The same number, sans unit.
+*/
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+/*
+Converts one or more pixel values into matching rem values.
+@param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+
+@param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+
+@returns {List} A list of converted values.
+*/
+
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+
+  /* If no base is defined, defer to the global font size */
+  @if $base == null {
+    $base: $em-base; //TODO
+  }
+
+  /* If the base font size is a %, then multiply it by 16px
+     This is because 100% font size = 16px in most all browsers
+  */
+  @if unit($base) == '%' {
+    $base: ($base / 100%) * $em-base;
+  }
+
+  /* Using rem as base allows correct scaling */
+  @if unit($base) == 'rem' {
+    $base: strip-unit($base) * $em-base;
+  }
+
+  @if $count == 1 {
+    @return -to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, -to-rem(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+/*
+Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
+
+@access private
+@param {Number} $value - Pixel value to convert.
+@param {Number} $base [null] - Base for pixel conversion.
+
+@returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
+*/
+@function -to-rem($value, $base: null) {
+  /* Check if the value is a number */
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  /* Transform em into rem if someone hands over 'em's */
+  @if unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  }
+
+  /* Calculate rem if units for $value is not rem or em */
+  @if unit($value) != 'rem' {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  /* Turn 0rem into 0 */
+  @if $value == 0rem {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
 // Typography
 // Typography font-size and line-height
 
-$h1-font-size:                4.3rem !default;
-$h1-line-height:              4.8rem !default;
+$h1-font-size:                rem-calc(43) !default; //4.3rem !default;
+$h1-line-height:              rem-calc(48) !default; //4.8rem !default;
 
-$h2-font-size:                3.3rem !default;
-$h2-line-height:              4rem   !default;
+$h2-font-size:                rem-calc(33) !default; //3.3rem !default;
+$h2-line-height:              rem-calc(40) !default; //4rem   !default;
 
-$h3-font-size:                2.6rem !default;
-$h3-line-height:              3.2rem !default;
+$h3-font-size:                rem-calc(26) !default;//2.6rem !default;
+$h3-line-height:              rem-calc(32) !default;//3.2rem !default;
 
-$sub-header:                  2.5rem !default;
-$sub-header-line-height:      3.2rem !default;
+$sub-header:                  rem-calc(25) !default;//2.5rem !default;
+$sub-header-line-height:      rem-calc(32) !default;//3.2rem !default;
 
-$h4-font-size:                2.2rem !default;
-$h4-line-height:              2.4rem !default;
+$h4-font-size:                rem-calc(22) !default;//2.2rem !default;
+$h4-line-height:              rem-calc(24) !default;//2.4rem !default;
 
-$h5-font-size:                2rem   !default;
-$h5-line-height:              2.4rem !default;
+$h5-font-size:                rem-calc(20) !default;//2rem   !default;
+$h5-line-height:              rem-calc(24) !default;//2.4rem !default;
 
-$body-text:                   1.8rem !default;
-$body-text-line-height:       2.4rem !default;
+$body-text:                   rem-calc(18) !default;//1.8rem !default;
+$body-text-line-height:       rem-calc(24) !default;//2.4rem !default;
 
-$form-label:                  1.8rem !default;
+$form-label:                  rem-calc(18) !default;//1.8rem !default;
 
-$h6-font-size:                1.4rem !default;
-$h6-line-height:              1.6rem !default;
+$h6-font-size:                rem-calc(14) !default;////1.4rem !default;
+$h6-line-height:              rem-calc(16) !default;//1.6rem !default;
 
-$small-text:                  1.3rem !default;
-$small-text-line-height:      1.6rem !default;
+$small-text:                  rem-calc(13) !default;//1.3rem !default;
+$small-text-line-height:      rem-calc(16) !default;//1.6rem !default;
 
-// Removing the !default from $em-base so we are not inheriting that
-// value from Bourbon.
-$em-base:                     10px;
-$base-font-size:              1.6rem !default;
-$small-font-size:             1.2rem !default;
-$lead-font-size:              2rem !default;
-$title-font-size:             5.2rem !default;
+
+
+
+
+$small-font-size:             rem-calc(12) !default; //1.2rem !default;
+$lead-font-size:              rem-calc(20) !default; //2rem !default;
+$title-font-size:             rem-calc(52) !default; //5.2rem !default;
 $base-line-height:            1.5 !default;
 $heading-line-height:         1.3 !default;
 $lead-line-height:            1.5 !default;
@@ -207,19 +301,29 @@ $spacers: (
 ) !default;
 
 //Translate $spacer
-$spacing-x-small:               0.4rem;
-$spacing-small:                 0.8rem;
-$spacing-md-small:              1.6rem;
-$spacing-medium:                2.4rem;
-$spacing-large:                 3.2rem;
-$spacing-x-large:               4.8rem;
-$spacing-xx-large:              6.4rem;
+$spacing-x-small:               rem-calc(4) !default;  //0.4rem;
+$spacing-small:                 rem-calc(8) !default;  //0.8rem;
+$spacing-md-small:              rem-calc(16) !default; //1.6rem;
+$spacing-medium:                rem-calc(24) !default; //2.4rem;
+$spacing-large:                 rem-calc(32) !default; //3.2rem;
+$spacing-x-large:               rem-calc(48) !default; //4.8rem;
+$spacing-xx-large:              rem-calc(64) !default; //6.4rem;
 
 // Relative font and image file paths
 $font-path:                     '../fonts/IBMPlexSans/' !default;
 $image-path:                    '../img' !default;
 $mdi-font-path:                 $font-path;
 
+//----------------
+//input
+//----------------
+$input-line-height: 1.34;
+$input-border-radius: 4px;
+$input-border-width: 1px;
+$input-top-bottom-padding: map-get($spacers, 3);
+$input-left-right-padding: map-get($spacers, 4);
+$input-height: 40px;
+$input-font-size: 1.8rem;
 
 //----------------
 // Grid
