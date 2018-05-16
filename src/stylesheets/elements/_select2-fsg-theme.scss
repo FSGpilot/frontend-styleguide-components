@@ -25,6 +25,9 @@ $select2-selected-choise-bg: black;
 $select2-selected-choise-color: #fff;
 $select2-selected-choise-remove-hovercolor: $color-gray-004;
 
+.js-select2[multiple]{
+  visibility: hidden; //avoid fouc on multiselect
+}
 
 .select2-container {
   box-sizing: border-box;
@@ -378,6 +381,11 @@ $select2-selected-choise-remove-hovercolor: $color-gray-004;
       margin-top: 5px;
       margin-bottom: 0;
       padding: 0 5px;
+
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   
     .select2-selection__choice__remove {
@@ -397,7 +405,7 @@ $select2-selected-choise-remove-hovercolor: $color-gray-004;
 
   //Add checkboxes to options for multiselect
   .select2-results__options[aria-multiselectable="true"] {
-    .select2-results__option{
+    .select2-results__option:not(.loading-results):not(.select2-results__option--load-more){
       padding-left: 48px;
       vertical-align:middle;
       position: relative;
