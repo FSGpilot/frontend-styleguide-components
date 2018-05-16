@@ -10,6 +10,13 @@ $global-font-size:  100% !default;
 // Removing the !default from $em-base so we are not inheriting that
 // value from Bourbon.
 $em-base:           10px;
+// Paths
+// Relative font and image file paths
+$font-path:                     '../fonts/IBMPlexSans/' !default;
+$image-path:                    '../img' !default;
+$mdi-font-path:                 $font-path;
+$node-modules-path:             '../../../node_modules';
+
 $base-font-size:    18px; //1.8rem !default;
 
 /*
@@ -308,11 +315,6 @@ $spacing-medium:                rem-calc(24) !default; //2.4rem;
 $spacing-large:                 rem-calc(32) !default; //3.2rem;
 $spacing-x-large:               rem-calc(48) !default; //4.8rem;
 $spacing-xx-large:              rem-calc(64) !default; //6.4rem;
-
-// Relative font and image file paths
-$font-path:                     '../fonts/IBMPlexSans/' !default;
-$image-path:                    '../img' !default;
-$mdi-font-path:                 $font-path;
 
 //----------------
 //input

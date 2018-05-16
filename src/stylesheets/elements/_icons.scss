@@ -33,7 +33,7 @@ $icons: (
     .icon-#{$icon} {
         background-image: url($icons-folder-path + $icon + ".svg");
     }
-}  
+}
 
 .hide-base-svg{ //hide inline svgs
     display: none;

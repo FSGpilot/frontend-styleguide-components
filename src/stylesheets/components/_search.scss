@@ -1,10 +1,14 @@
+$btn-small-width:   4.5rem;
+$btn-medium-width:  8.5rem;
+$btn-big-width:     11.6rem;
+
 @mixin search-icon {
   background-image: url('#{$image-path}/search.png');
   background-image: url('#{$image-path}/search.svg');
   background-position: 50%;
   background-repeat: no-repeat;
 }
-//$color-primary
+
 .search {
   @include clearfix;
   max-width: none;
@@ -15,12 +19,63 @@
     @include search-icon;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+    height: 3.3rem;
+    margin: 0;
+    padding: 0;
+    width: $btn-small-width;
 
     @include media($small-screen) {
       background-image: none;
+      width: $btn-medium-width;
     }
   }
 
+  &.search-big {
+    @include media($small-screen) {
+      $height: 4.4rem;
+      $width: $btn-big-width;
+
+      [type=search],
+      .search-input {
+        font-size: $base-font-size;
+        height: $height;
+        width: calc(100% - #{$width});
+      }
+
+      [type=submit],
+      .search-submit {
+        font-size: $h3-font-size;
+        height: $height;
+        width: $width;
+      }
+    }
+  }
+
+  &.search-small {
+    @include media($small-screen) {
+      $width: $btn-small-width;
+
+      [type=search],
+      .search-input {
+        width: calc(100% - #{$width});
+      }
+
+      [type=submit],
+      .search-submit {
+        @include search-icon;
+        width: $width;
+      }
+    }
+
+    $lt-nav-width: $nav-width - 1px;
+
+    @media screen and (max-width: $lt-nav-width) {
+      &.sr-only {
+        left: auto;
+        position: relative;
+      }
+    }
+  }
 }
 
 // Extra specificity to override rules set in reset.css.
@@ -32,20 +87,21 @@ input[type=search] { /* stylelint-disable-line selector-no-qualifying-type */
 [type=search],
 .search-input {
   @include padding(0 null);
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    box-sizing: border-box;
-    float: left;
-    //font-size: 16px;
-    //height: 3.3rem;
-    border-right: none;
-    margin:0;
-    width: 90%;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  border-top-right-radius: 0;
+  box-sizing: border-box;
+  font-size: $small-font-size;
+  height: 3.3rem;
+  margin: 0;
+  width: calc(100% - #{$btn-small-width});
 
-
-
+  @if($enable-uswd-grid == true){
+    float: left; //from USWD, used by uswd-grid 
+  }
+ 
   @include media($small-screen) {
-
+    width: calc(100% - #{$btn-medium-width});
   }
 }
 
