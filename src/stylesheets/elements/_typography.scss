@@ -27,7 +27,7 @@ a {
 }
 
 //font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
-@mixin h1{ 
+@mixin h1{
   font-family: $font-name;
   font-size: $h1-font-size; //4.3rem
   line-height: $h1-line-height; //4.8rem
@@ -42,7 +42,7 @@ a {
   color: $color-base;
 }
 @mixin h3 {
-  font-family: $font-name; 
+  font-family: $font-name;
   font-size: $h3-font-size; //2.6rem
   line-height: $h3-line-height; //3.2rem
   font-weight: $font-weight-semibold;
@@ -97,6 +97,18 @@ a {
   font-weight: $font-weight-medium;
   color: $color-base;
 }
+@mixin bold {
+  font-family: $font-name;
+  font-weight: $font-weight-bold;
+}
+
+@mixin color-text-positive {
+  color:$color-text-positive;
+}
+
+@mixin color-text-negative {
+  color:$color-text-negative;
+}
 
 h1, .h1 {
   @include h1;
@@ -109,7 +121,7 @@ h3, .h3 {
   @include h3;
 }
 
-h4, .h4{ 
+h4, .h4{
   @include h4;
 }
 
@@ -146,8 +158,8 @@ h5, .h5,
 h6, .h6,
 .sub-header-text{
   clear: both;
-  margin-top: map-get($spacers, 7); 
-  margin-bottom: map-get($spacers, 4); 
+  margin-top: map-get($spacers, 7);
+  margin-bottom: map-get($spacers, 4);
   &:first-child{
     margin-top: 0;
   }
@@ -156,7 +168,7 @@ p, .body-text,
 .lead{
   clear: both;
   margin-top: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 4); 
+  margin-bottom: map-get($spacers, 4);
 }
 
 // Text colors
@@ -227,17 +239,42 @@ dfn {
   }
 }
 
-.display {
-  @include h3();
-  margin-bottom: 0;
+.displaytext {
+  &__splash {
+    @include bold();
+    font-size: rem-calc(80);
+    line-height: rem-calc(88);
+    margin-bottom: 0;
 
-  @include media($small-screen) {
-    @include h2();
-  }
+    @include media($small-screen) {
+      //@include h2();
+    }
 
-  @include media($medium-screen) {
-    @include h1();
+    @include media($medium-screen) {
+      //@include h1();
+    }
   }
+  &__large {
+    @include bold();
+    font-size: rem-calc(60);
+    line-height: rem-calc(72);
+    margin-bottom: 0;
+    @include media($small-screen) {
+      //@include h2();
+    }
+
+    @include media($medium-screen) {
+      //@include h1();
+    }
+  }
+}
+
+.text-positive {
+  @include color-text-positive();
+}
+
+.text-negative {
+  @include color-text-negative();
 }
 
 .font-lead{

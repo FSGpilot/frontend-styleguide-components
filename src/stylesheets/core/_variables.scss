@@ -242,7 +242,7 @@ $color-primary-lightest:      $color-gray-004 !default;
 $color-background:            $color-gray-006 !default;
 
 // Special text colors
-$color-text-neutral-18:       $color-blue-003 !default; // must be over 18px in font-size to be accessible
+$color-text-neutral-18:       $color-blue-003 !default; //TODO: delete me!
 $color-text-positive:         $color-green-002 !default;
 $color-text-negative:         $color-red-001 !default;
 
