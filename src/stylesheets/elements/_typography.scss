@@ -11,19 +11,49 @@ body {
 
 p {
   line-height: $base-line-height;
-  margin-bottom: 0.8em;
-  margin-top: 1.6em;
+  margin-bottom: rem-calc(8); //0.8em;
+  margin-top: rem-calc(16); //1.6em;
 }
 
+
 a {
-  &:focus {
-    @include focus;
+  color: $color-link;
+  padding:rem-calc(4);
+
+  &:hover,
+  &.link-hover {
+    color:$color-link-hover;
+
+    &:disabled,
+    .disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  &:active,
+  &.link-active {
+    color: $color-active;
+  }
+
+  &:focus,
+  &.link-focus {
+    background-color: $color-focus;
   }
 
   &:visited,
   &.color-text-visited {
     color: $color-visited;
   }
+
+  &:disabled,
+  &.disabled {
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    color:$color-gray-004 !important;
+    box-shadow: none !important;
+    outline-offset: inherit !important;
+  }
+
 }
 
 //font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
@@ -97,9 +127,14 @@ a {
   font-weight: $font-weight-medium;
   color: $color-base;
 }
-@mixin bold {
+
+@mixin font-weight-bold {
   font-family: $font-name;
   font-weight: $font-weight-bold;
+}
+
+@mixin font-style-italic {
+  font-style: $font-style-italic;
 }
 
 @mixin color-text-positive {
@@ -142,10 +177,10 @@ h6, .h6{
 }
 
 .form-label {
-  @include form-label-text
+  @include form-label-text;
 }
 
-small, .small-text{
+small, .small-text {
   @include small-text;
 }
 
@@ -171,6 +206,20 @@ p, .body-text,
   margin-bottom: map-get($spacers, 4);
 }
 
+
+strong,
+b,
+.bold {
+  @include font-weight-bold;
+}
+
+em {
+  @include font-style-italic;
+}
+ 
+
+
+
 // Text colors
 // @each $color, $value in $colors {
 //   @include text-color('.color-text-#{$color}', $value);
@@ -183,10 +232,10 @@ p, .body-text,
     background-size: 100%;
     content: '';
     display: inline-block;
-    height: 0.65em;
-    margin-bottom: -1px;
-    margin-left: 4px;
-    width: 0.65em;
+    height: rem-calc(16);
+    margin-bottom: rem-calc(-4);
+    margin-left: rem-calc(4);
+    width: rem-calc(13);
   }
 
   &:hover::after {
@@ -200,6 +249,7 @@ p, .body-text,
 // [href^="https:"]:not([href*="my-domain.com"])
 
 .external_link {
+  //color: $color-link-hover;
   @include external-link(external-link, external-link-hover);
 }
 
@@ -241,7 +291,7 @@ dfn {
 
 .displaytext {
   &__splash {
-    @include bold();
+    @include font-weight-bold();
     font-size: rem-calc(80);
     line-height: rem-calc(88);
     margin-bottom: 0;
@@ -255,7 +305,7 @@ dfn {
     }
   }
   &__large {
-    @include bold();
+    @include font-weight-bold();
     font-size: rem-calc(60);
     line-height: rem-calc(72);
     margin-bottom: 0;
@@ -276,6 +326,7 @@ dfn {
 .text-negative {
   @include color-text-negative();
 }
+
 
 .font-lead {
   font-family: $font-heading;

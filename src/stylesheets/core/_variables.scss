@@ -142,7 +142,7 @@ $small-text-line-height:      rem-calc(16) !default;//1.6rem !default;
 
 
 
-$small-font-size:             rem-calc(12) !default; //1.2rem !default;
+$small-font-size:             rem-calc(12) !default; //1.2rem !default; //TODO: see $small-text??
 $lead-font-size:              rem-calc(25) !default; //2rem !default;
 $title-font-size:             rem-calc(52) !default; //5.2rem !default;
 $base-line-height:            1.5 !default;
@@ -225,6 +225,7 @@ $color-text-bright:           $color-base-001 !default;
 //Links color
 $color-link:                  $color-blue-002 !default;
 $color-link-hover:            $color-blue-003 !default;
+$color-active:                $color-gray-001 !default;
 $color-focus:                 $color-orange-004 !default;
 $color-visited:               $color-purple-001 !default;
 
