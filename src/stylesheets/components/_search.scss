@@ -13,9 +13,14 @@ $btn-big-width:     11.6rem;
   @include clearfix;
   max-width: none;
   position: relative;
+  margin:   rem-calc(3);
 
   &__item-wrapper {
     display: flex!important;
+  }
+
+  &__text_submit {
+    background-image: none !important;
   }
 
   [type=submit],
@@ -29,12 +34,12 @@ $btn-big-width:     11.6rem;
     width: $btn-small-width;
 
     @include media($small-screen) {
-      background-image: none;
+      //background-image: none;
       width: $btn-medium-width;
     }
   }
 
-  &.search-big {
+   &.search-big {
     @include media($small-screen) {
       $height: 4.4rem;
       $width: $btn-big-width;
@@ -42,7 +47,7 @@ $btn-big-width:     11.6rem;
       [type=search],
       .search-input {
         font-size: $base-font-size;
-        height: $height;
+        //height: $height;
         width: calc(100% - #{$width});
       }
 
@@ -80,6 +85,7 @@ $btn-big-width:     11.6rem;
       }
     }
   }
+
 }
 
 // Extra specificity to override rules set in reset.css.
@@ -96,7 +102,7 @@ input[type=search] { /* stylelint-disable-line selector-no-qualifying-type */
   border-top-right-radius: 0;
   box-sizing: border-box;
   font-size: $small-font-size;
-  height: 3.3rem;
+  //height: 3.3rem;
   margin: 0;
   width: calc(100% - #{$btn-small-width});
 
