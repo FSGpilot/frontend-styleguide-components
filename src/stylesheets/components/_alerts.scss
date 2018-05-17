@@ -37,31 +37,22 @@ $icon-size: 24px;
 
   border-left: $bar-size solid darken($color-gray-lightest, 40%);
 
-  /*a {
-    color: $color-primary-darker;
-
-    &:focus,
-    &:hover {
-      color: $color-primary-darkest;
-    }
-  }*/
-}
-
-&.alert--paragraph {
-  width: $text-max-width;
-}
-
-.alert-heading {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.33;
-}
-
-.alert-text {
-  margin-bottom: 0;
-  margin-top: 0;
+  &.alert--paragraph {
+    width: $text-max-width;
+  }
+  
+  .alert-heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+  }
+  
+  .alert-text {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
 @each $name, $bgcolor in $alerts {
@@ -77,6 +68,6 @@ $icon-size: 24px;
 }
 
 .alert + .alert{
-  margin-top: map-get($spacers, 7);
+  margin-top: map-get($spacers, 4);
 }
 
