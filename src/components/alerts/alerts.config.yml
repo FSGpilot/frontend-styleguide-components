@@ -3,57 +3,72 @@ status: ready
 preview: '@dkwds-framed'
 context:
   alert_example:
-    content: "Lorem ipsum dolor sit amet, <a href=\"javascript:void(0);\">consectetur adipiscing</a> elit, sed do eiusmod."
-
-variants:
-  - name: default
-    label: Info
-    context:
-      alert_example:
+    items:
+      - name: info
         classes: "alert-info"
-        title: Information Status
-
-  - name: info
-    label: Success
-    context:
-      alert_example:
-        classes: "alert-success"
-        title: Success Status
-
-
-  - name: warning
-    label: Warning
-    context:
-      alert_example:
-        classes: "alert-warning"
-        title: Warning Status
-
-  - name: error
-    label: Error
-    context:
-      alert_example:
-        classes: "alert-error"
-        title: Error Status
         role: "alert"
-
-  - name: paragraph
-    label: Paragraph
-    context:
-      alert_example:
-        classes: " alert-info alert-paragraph"
-        title: Information Status - Paragraph Width
+        title: "Information alert"
         content: "Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui atione voluptatem sequi nesciunt. Neque porro quisquam est, qui doloremipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        aria: "Beskedbox der viser information"
 
-  - name: no-header
-    label: No header
-    context:
-      alert_example:
-        classes: " alert-info"
-        content: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+      - name: success
+        classes: "alert-success"
+        role: "alert"
+        title: Success alert
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser succes"
+            
+      - name: warning
+        classes: "alert-warning"
+        role: "alert"
+        title: Warning alert
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser en advarsel"
 
-  - name: slim
-    label: Slim
-    context:
-      alert_example:
-        classes: "alert-info alert-slim"
-        content: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+      - name: error
+        classes: "alert-error"
+        role: "alert"
+        title: Error alert
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser en fejlmeddelselse"
+        
+      - name: info with icon
+        classes: "alert-info alert--show-icon"
+        role: "alert"
+        title: "Information alert - with icon"
+        content: "Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui atione voluptatem sequi nesciunt. Neque porro quisquam est, qui doloremipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        aria: "Beskedbox der viser information"
+
+      - name: success with icon
+        classes: "alert-success alert--show-icon"
+        role: "alert"
+        title: "Success alert - with icon"
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser succes"
+            
+      - name: warning with icon
+        classes: "alert-warning alert--show-icon"
+        role: "alert"
+        title: "Warning alert - with icon"
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser en advarsel"
+
+      - name: error with icon
+        classes: "alert-error alert--show-icon"
+        role: "alert"
+        title: "Error alert - with icon"
+        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+        aria: "Beskedbox der viser en fejlmeddelselse"
+      
+      - name: info no text
+        classes: "alert-info alert--show-icon"
+        role: "alert"
+        title: "Information alert - heading only"
+        aria: "Beskedbox der viser information"
+
+      - name: Info paragraph
+        classes: "alert-info alert--paragraph"
+        role: "alert"
+        title: Info paragraph
+        content: "Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui atione voluptatem sequi nesciunt. Neque porro quisquam est, qui doloremipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        aria: "Beskedbox der viser information"
