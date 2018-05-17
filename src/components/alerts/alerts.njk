@@ -11,9 +11,9 @@
 
   @return: the HTML for an alert-box.
 #}
-{% macro alert(classes, role, title, content) %}
+{% macro alert(classes, role, title, content, aria) %}
 
-<div class="alert {{ classes }}" {% if role %}role="{{role}}"{% endif %}>
+<div class="alert {{ classes }}" {% if role %}role="{{role}}"{% endif %} aria-label ="{{ aria }}">
   <div class="alert-body">
     {%- if title -%}
     <h3 class="alert-heading">{{ title }}</h3>
@@ -25,18 +25,5 @@
 {% endmacro %}
 
 {% for item in alert_example.items -%}
-  {{ alert(item.classes, item.role, item.title, item.content ) }}
+  {{ alert(item.classes, item.role, item.title, item.content, item.aria ) }}
 {%- endfor %}
-{#
-{{ alert("alert-info", "alert", alert_example.title, alert_example.content) }}
-<br><br>
-{{ alert("alert-success", "alert" ,"Success Status", alert_example.content) }}
-<br><br>
-{{ alert("alert-warning", "alert" ,"Warning Status", alert_example.content) }}
-<br><br>
-{{ alert("alert-error", "alert","Error Status", alert_example.content) }}
-<br><br>
-{{ alert("alert-error alert-showicon", "alert","Error Status", alert_example.content) }}
-<br><br>
-{{ alert("alert-info alert-paragraph", "alert","Information Status - Paragraph Width", "Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui atione voluptatem sequi nesciunt. Neque porro quisquam est, qui doloremipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.") }}
-#}
