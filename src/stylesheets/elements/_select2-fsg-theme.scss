@@ -14,7 +14,7 @@ $select2-padding-right: 16px;
 $select2-padding-withicon: 28px;
 $select2-padding-top: 8px;
 $select2-padding-bottom: 8px;
-$select2-focus-bg-color: $color-orange-004;
+$select2-hover-bg-color: #f5f5f5;
 $select2-checkbox-border:  2px solid black;
 $select2-checkbox-border-radius: $checkbox-border-radius;
 $select2-checkbox-bg-unchecked: #fff;
@@ -563,7 +563,7 @@ $select2-selected-choise-remove-hovercolor: $color-gray-004;
   }
 
   .select2-results__option--highlighted[aria-selected] {
-    background-color: $select2-focus-bg-color;
+    background-color: $select2-hover-bg-color;
     //color: white;
   }
 
