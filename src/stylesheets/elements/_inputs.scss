@@ -28,10 +28,10 @@ select {
     border: 3px solid $color-success;
   }
 }
-input, select{
+input, select {
   height: $input-height;
 }
-textarea{
+textarea {
   height: 16rem;
 }
 
@@ -51,6 +51,7 @@ label {
   padding-top: 0.8rem;
   position: relative;
   right: 1.9rem;
+  margin-left: rem-calc(16);
 
   input,
   textarea,
@@ -105,7 +106,7 @@ select {
   background-image: url('#{$image-path}/svg-icons/angle-arrow-down.svg');
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
-  background-size: 24px; 
+  background-size: 24px;
   padding-right: 5rem;
 
   &::-ms-expand {

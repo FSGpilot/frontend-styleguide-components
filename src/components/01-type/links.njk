@@ -1,13 +1,19 @@
-{% macro link(url, class, text) %}
-  <a href="{{url}}" class="{{class}}">{{text}}</a>
+{% macro link(url, class, text, attr) %}
+  <a href="{{url}}" class="{{class}}" {{attr}}>{{text}}</a>
 {% endmacro %}
 
-<p>{{ link('javascript:void(0);', '', 'This') }} is a text link on a light background.</p>
+<p>This is a text {{ link('javascript:void(0);', '', 'Default link state','') }} on a light background.</p>
 
-<p>{{ link('javascript:void(0);', 'usa-color-text-visited', 'This') }} is a visited link.</p>
+<p>This is a {{ link('javascript:void(0);', '', 'hover link state','') }} </p>
 
-<p>This is a link that goes to an {{ link('http://media.giphy.com/media/8sgNa77Dvj7tC/giphy.gif', 'usa-external_link', 'external website') }}.
+<p>This is a {{ link('javascript:void(0);', 'color-text-visited', 'Active link state','') }}</p>
 
-<div class="usa-background-dark">
+<p>This is a {{ link('javascript:void(0);', 'link-focus', 'Focus link state','') }}</p>
+
+<p>This is a link that goes to an {{ link('http://media.giphy.com/media/8sgNa77Dvj7tC/giphy.gif', 'external_link', 'external website','')}}
+
+<p>This is a text {{ link('javascript:void(0);', 'disabled', 'Disabled link state','disabled="disabled"') }}</p>
+
+<div class="background-dark">
   <p>{{ link ('javascript:void(0);', '', 'This') }} is a text link on a dark background.</p>
 </div>

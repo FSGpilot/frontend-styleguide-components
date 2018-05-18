@@ -11,23 +11,53 @@ body {
 
 p {
   line-height: $base-line-height;
-  margin-bottom: 0.8em;
-  margin-top: 1.6em;
+  margin-bottom: rem-calc(8); //0.8em;
+  margin-top: rem-calc(16); //1.6em;
 }
 
+
 a {
-  &:focus {
-    @include focus;
+  color: $color-link;
+  padding:rem-calc(4);
+
+  &:hover,
+  &.link-hover {
+    color:$color-link-hover;
+
+    &:disabled,
+    .disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  &:active,
+  &.link-active {
+    color: $color-active;
+  }
+
+  &:focus,
+  &.link-focus {
+    background-color: $color-focus;
   }
 
   &:visited,
   &.color-text-visited {
     color: $color-visited;
   }
+
+  &:disabled,
+  &.disabled {
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    color:$color-gray-004 !important;
+    box-shadow: none !important;
+    outline-offset: inherit !important;
+  }
+
 }
 
 //font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
-@mixin h1{ 
+@mixin h1{
   font-family: $font-name;
   font-size: $h1-font-size; //4.3rem
   line-height: $h1-line-height; //4.8rem
@@ -42,7 +72,7 @@ a {
   color: $color-base;
 }
 @mixin h3 {
-  font-family: $font-name; 
+  font-family: $font-name;
   font-size: $h3-font-size; //2.6rem
   line-height: $h3-line-height; //3.2rem
   font-weight: $font-weight-semibold;
@@ -98,6 +128,23 @@ a {
   color: $color-base;
 }
 
+@mixin font-weight-bold {
+  font-family: $font-name;
+  font-weight: $font-weight-bold;
+}
+
+@mixin font-style-italic {
+  font-style: $font-style-italic;
+}
+
+@mixin color-text-positive {
+  color:$color-text-positive;
+}
+
+@mixin color-text-negative {
+  color:$color-text-negative;
+}
+
 h1, .h1 {
   @include h1;
 }
@@ -109,7 +156,7 @@ h3, .h3 {
   @include h3;
 }
 
-h4, .h4{ 
+h4, .h4{
   @include h4;
 }
 
@@ -130,10 +177,10 @@ h6, .h6{
 }
 
 .form-label {
-  @include form-label-text
+  @include form-label-text;
 }
 
-small, .small-text{
+small, .small-text {
   @include small-text;
 }
 
@@ -146,8 +193,8 @@ h5, .h5,
 h6, .h6,
 .sub-header-text{
   clear: both;
-  margin-top: map-get($spacers, 7); 
-  margin-bottom: map-get($spacers, 4); 
+  margin-top: map-get($spacers, 7);
+  margin-bottom: map-get($spacers, 4);
   &:first-child{
     margin-top: 0;
   }
@@ -156,8 +203,22 @@ p, .body-text,
 .lead{
   clear: both;
   margin-top: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 4); 
+  margin-bottom: map-get($spacers, 4);
 }
+
+
+strong,
+b,
+.bold {
+  @include font-weight-bold;
+}
+
+em {
+  @include font-style-italic;
+}
+ 
+
+
 
 // Text colors
 // @each $color, $value in $colors {
@@ -171,10 +232,10 @@ p, .body-text,
     background-size: 100%;
     content: '';
     display: inline-block;
-    height: 0.65em;
-    margin-bottom: -1px;
-    margin-left: 4px;
-    width: 0.65em;
+    height: rem-calc(16);
+    margin-bottom: rem-calc(-4);
+    margin-left: rem-calc(4);
+    width: rem-calc(13);
   }
 
   &:hover::after {
@@ -188,6 +249,7 @@ p, .body-text,
 // [href^="https:"]:not([href*="my-domain.com"])
 
 .external_link {
+  //color: $color-link-hover;
   @include external-link(external-link, external-link-hover);
 }
 
@@ -227,20 +289,46 @@ dfn {
   }
 }
 
-.display {
-  @include h3();
-  margin-bottom: 0;
+.displaytext {
+  &__splash {
+    @include font-weight-bold();
+    font-size: rem-calc(80);
+    line-height: rem-calc(88);
+    margin-bottom: 0;
 
-  @include media($small-screen) {
-    @include h2();
+    @include media($small-screen) {
+      //@include h2();
+    }
+
+    @include media($medium-screen) {
+      //@include h1();
+    }
   }
+  &__large {
+    @include font-weight-bold();
+    font-size: rem-calc(60);
+    line-height: rem-calc(72);
+    margin-bottom: 0;
+    @include media($small-screen) {
+      //@include h2();
+    }
 
-  @include media($medium-screen) {
-    @include h1();
+    @include media($medium-screen) {
+      //@include h1();
+    }
   }
 }
 
-.font-lead{
+.text-positive {
+  @include color-text-positive();
+}
+
+.text-negative {
+  @include color-text-negative();
+}
+
+
+.font-lead {
   font-family: $font-heading;
   font-size: $lead-font-size;
   font-weight: $font-weight-normal;
