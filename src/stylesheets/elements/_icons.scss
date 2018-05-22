@@ -18,15 +18,21 @@ $icons: (
 ) !default;
 
 .icon{
-    height: 24px;
-    width: 24px;
+    height: $body-text-line-height;
+    width: $body-text-line-height;
     background-repeat: no-repeat;
     display: inline-block;
     background-size: 100%;
 }
-.icon-svg{
-    height: 24px;
-    width: 24px;
+.icon-svg {
+    height: $body-text-line-height;
+    width: $body-text-line-height;
+
+    &-input {
+      position: absolute;
+      margin-top: 40px;
+      cursor: pointer;
+    }
 }
 
 @each $icon in $icons {

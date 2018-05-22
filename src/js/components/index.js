@@ -7,6 +7,7 @@ module.exports = {
   search:     require('./search'),
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
+  datepicker:  require('./datepicker'),
   //table:      require('./table'),
   //overflow:   require('./overflow-menu'),
 };

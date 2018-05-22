@@ -20,9 +20,10 @@ select {
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  padding: $input-top-bottom-padding $input-left-right-padding;
+  //padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
   margin-top: map-get($spacers, 3);
+  text-align: center;
 
   &.input-success {
     border: 3px solid $color-success;
@@ -144,7 +145,8 @@ legend {
 
 .form-hint {
   color: $color-gray;
-  margin-bottom: 0;
+  margin-bottom: rem-calc(8);
+  display: block;
 }
 
 // Custom checkboxes
@@ -315,7 +317,7 @@ legend {
 
 // Memorable dates
 
-.date-of-birth {
+.date-group {
   label {
     margin-top: 0;
   }
