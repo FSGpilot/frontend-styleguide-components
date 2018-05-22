@@ -164,51 +164,72 @@ $font-heading:                'IBMPlexSans', 'system' !default;
 
 //############################### Swatches and Theming ####################
 //###########################################################################
+
+//NEW
+
+
+////////////////////////////////////////////////////////////////////////////
 //color contrasting
-$color-base-001:              #ffffff !default;
-$color-base-002:              #000000 !default;
+$color-base-001:              #ffffff !default; //DONE
+$color-base-002:              #1a1a1a !default; //DONE
 
 //Gray
-$color-gray-001:              #212121 !default;
-$color-gray-002:              #323a44 !default;
-$color-gray-003:              #5b616a !default;
-$color-gray-004:              #aeb0b5 !default;
-$color-gray-005:              #d6d7d9 !default;
-$color-gray-006:              #f1f1f1 !default;
+//$color-gray-001:            #212121 !default;
+$color-gray-002:              #454545 !default; //DONE
+$color-gray-003:              #747474 !default; //DONE
+$color-gray-004:              #999999 !default; //DONE
+$color-gray-005:              #BFBFBF !default; //DONE
+$color-gray-006:              #F5F5F5 !default; //DONE
 
 //Greeen
-$color-green-001:             #405e0d !default;
-$color-green-002:             #588012 !default;
-$color-green-003:             #87c51c !default;
-$color-green-004:             #e7fbe4 !default;
+$color-green-001:             #568331 !default; //DONE ~ Borger primary
+$color-green-002:             #3C5C22 !default; //DONE ~ Borger medium
+$color-green-021:             #233614 !default; //DONE ~ Borger Dark
+$color-green-003:             #87c51c !default; //DONE
+$color-green-004:             #e7fbe4 !default; //DONE
+$color-green-005:             #3F9800 !default; //DONE ~ Value colour (green)
 
 //orange
-$color-orange-001:            #b4630c !default;
-$color-orange-002:            #d8770e !default;
-$color-orange-003:            #f08b1e !default;
-$color-orange-004:            #febb30 !default;
-$color-orange-005:            #ffeecc !default;
+//$color-orange-001:            #b4630c !default;
+//$color-orange-002:            #d8770e !default;
+//$color-orange-003:            #f08b1e !default;
+$color-orange-004:            #febb30 !default; //DONE
+$color-orange-005:            #ffeecc !default; //DONE
 
 //red
-$color-red-001:               #ce1415 !default;
-$color-red-002:               #e92021 !default;
-$color-red-003:               #fbd3d3 !default;
+$color-red-001:               #CC0000 !default; //DONE
+$color-red-002:               #E92021 !default; //DONE
+$color-red-003:               #fbd3d3 !default; //DONE
 
 //blue
-$color-blue-001:              #0d405e !default;
-$color-blue-002:              #125880 !default;
-$color-blue-003:              #1b86c3 !default;
-$color-blue-004:              #e2f2fb !default;
+$color-blue-001:              #1B86C3 !default; //DONE
+$color-blue-002:              #125880 !default; //DONE
+$color-blue-003:              #1b86c3 !default; //DONE
+$color-blue-004:              #e2f2fb !default; //DONE
 
 //purple
-$color-purple-001:            #801258 !default;
+$color-purple-001:            #801258 !default; //DONE
+
+//Data visualisation colors
+$color-data-green-001:        #2eab22 !default;
+$color-data-moss-001:         #275e00 !default;
+$color-data-teal-001:         #15B094 !default;
+$color-data-turqoice-001:     #56D4D6 !default;
+$color-data-violet-001:       #474E95 !default;
+$color-data-purple-001:       #8F2B8F !default;
+$color-data-yellow-001:       #EBE049 !default;
+$color-data-khaki-001:        #B89E5E !default;
+$color-data-brown-001:        #6B4A21 !default;
+$color-data-orange-001:       #FF531A !default;
+$color-data-cyklamen-001:     #E64969 !default;
+$color-data-megenta-001:      #E50081 !default;
 
 //############################### colors variables ####################
 //#####################################################################
 
 // Base colors
 $color-white:                 $color-base-001 !default;
-$color-base:                  $color-gray-001 !default;
+$color-base:                  $color-base-002 !default;
 $color-black:                 $color-base-002 !default;
 
 // Gray-scales
@@ -220,33 +241,33 @@ $color-gray-lightest:         $color-gray-006 !default;
 $color-gray-brightest:        $color-base-001 !default;
 
 // Text color
-$color-text:                  $color-gray-001 !default;
+$color-text:                  $color-base-002 !default;
 $color-text-secondary:        $color-gray-003 !default;
-$color-text-bright:           $color-base-001 !default;
+$color-text-bright:           $color-gray-006 !default;
 
 //Links color
 $color-link:                  $color-blue-002 !default;
 $color-link-hover:            $color-blue-003 !default;
-$color-active:                $color-gray-001 !default;
+$color-active:                $color-base-002 !default;
 $color-focus:                 $color-orange-004 !default;
 $color-visited:               $color-purple-001 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
 $color-neutral:               $color-gray-002 !default;
-$color-neutral-darker:        $color-gray-001 !default;
-$color-neutral-darkest:       $color-gray-001 !default;
+$color-neutral-darker:        $color-base-002 !default;
+$color-neutral-darkest:       $color-base-002 !default;
 $color-neutral-lightest:      $color-gray-004 !default; //TODO, need base color for lightest
 
 // Functional theme colors
 $color-primary:               $color-gray-003 !default;
-$color-primary-darker:        $color-gray-001 !default;
-$color-primary-darkest:       $color-gray-001 !default;
+$color-primary-darker:        $color-base-002 !default;
+$color-primary-darkest:       $color-base-002 !default;
 $color-primary-lightest:      $color-gray-004 !default;
 $color-background:            $color-gray-006 !default;
 
 // Special text colors
 $color-text-neutral-18:       $color-blue-003 !default; //TODO: delete me!
-$color-text-positive:         $color-green-002 !default;
+$color-text-positive:         $color-green-005 !default;
 $color-text-negative:         $color-red-001 !default;
 
 // Colors used for alert boxes
@@ -281,7 +302,7 @@ $color-required:              $color-red-001 !default;
 // Button colors
 $color-primary-button-text:   $color-base-001 !default;
 $color-primary-button-hover:  $color-gray-002 !default;
-$color-primary-button-active: $color-gray-001 !default;
+$color-primary-button-active: $color-base-002 !default;
 $color-primary-button-focus:  $color-gray-002 !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;

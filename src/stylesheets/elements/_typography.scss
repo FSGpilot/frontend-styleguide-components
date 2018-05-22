@@ -215,8 +215,9 @@ b,
 
 em {
   @include font-style-italic;
+  line-height: $base-line-height;
 }
- 
+
 
 
 
