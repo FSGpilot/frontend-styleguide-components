@@ -6,15 +6,12 @@ context:
     trinlisten: &default_links
       - text: Trin 1
         icon: check
-        iconclass: icon-bg-success
-      - text: Trin 2 (valgt)
-        icon: exclamation
-        iconclass: icon-bg-primary
+      - text: Trin 2
+        icon: check
+      - text: Trin 3 (valgt)
         current: true
-      - text: Trin 3
-        icon: close
-        iconclass: icon-bg-warning
       - text: Trin 4
-        icon: help
-        iconclass: icon-bg-secondary
-        disabled: true
+      - text: Trin 5
+
+
+

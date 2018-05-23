@@ -2,22 +2,52 @@
   @include sidenav-list;
 
   li {
-    &.disabled {
-      background: $color-gray-lightest;
+    // &.disabled {
+    //   background: $color-gray-lightest;
 
-      a, a:hover, a:focus {
-        color: $color-gray-light;
-        cursor: not-allowed;
-      }
+    //   a, a:hover, a:focus {
+    //     color: $color-gray-light;
+    //     cursor: not-allowed;
+    //   }
+
+    //   .sidenav-icon {
+    //     &.icon-bg-primary,
+    //     &.icon-bg-secondary,
+    //     &.icon-bg-success,
+    //     &.icon-bg-warning,
+    //     &.icon-bg-error {
+    //       background-color: $color-gray-lighter;
+    //     }
+    //   }
+    // }
+
+    a {
+      display: flex;
 
       .sidenav-icon {
-        &.icon-bg-primary,
-        &.icon-bg-secondary,
-        &.icon-bg-success,
-        &.icon-bg-warning,
-        &.icon-bg-error {
-          background-color: $color-gray-lighter;
+        margin-left: auto;
+        width: 22px;
+        height: 22px;
+        line-height: 23px;
+        border-radius: 50%;
+        text-align: center;
+
+        i {
+          color: #fff;
         }
+      }
+    }
+  }
+}
+.sidenav-list-locked {
+  @include sidenav-list-locked;
+
+  li {
+
+    &.disabled {
+      cursor: not-allowed;
+      a {
+        cursor: not-allowed;
       }
     }
 
@@ -34,26 +64,6 @@
 
         i {
           color: #fff;
-        }
-
-        &.icon-bg-primary {
-          background-color: $color-primary;
-        }
-
-        &.icon-bg-success {
-          background-color: $color-success;
-        }
-
-        &.icon-bg-info {
-          background-color: $color-info;
-        }
-
-        &.icon-bg-warning {
-          background-color: $color-warning;
-        }
-
-        &.icon-bg-error {
-          background-color: $color-error;
         }
       }
     }

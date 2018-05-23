@@ -116,9 +116,12 @@
 @mixin sidenav-list {
   @include unstyled-list();
 
+  border-top: 1px solid $color-border-focus;
+  border-bottom: 1px solid $color-border-focus;
+
   > li {
     background-color: transparent;
-    border-top: 1px solid $color-gray;
+    border-top: 1px solid $color-border-focus;
     font-size: $base-font-size;
 
     &:first-child {
@@ -137,6 +140,7 @@
     &:hover {
       background-color: $color-gray-lightest;
       text-decoration: none;
+      color: $color-link;
     }
 
     &:focus {
@@ -147,10 +151,60 @@
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
       border-left: $sidenav-current-border-width solid $color-primary;
-      color: $color-text;
-      font-weight: $font-weight-bold;
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
       padding-left: 1.4rem;
       padding-left: $site-margins-mobile - $sidenav-current-border-width;
+    }
+  }
+}
+
+@mixin sidenav-list-locked {
+  @include unstyled-list();
+
+  border-top: 1px solid $color-border-focus;
+  border-bottom: 1px solid $color-border-focus;
+
+  > li {
+    background-color: transparent;
+    border-top: 1px solid $color-border-focus;
+    font-size: $base-font-size;
+    cursor:default;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  a {
+    border: none;
+    color: $color-base;
+    display: block;
+    line-height: 1.3;
+    padding: 0.85rem 1rem 0.85rem 1.8rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $color-white;
+      text-decoration: none;
+      color: $color-base;
+      cursor:default;
+      
+    }
+
+    &:focus {
+      outline-offset: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    &.current { /* stylelint-disable-line selector-no-qualifying-type */
+      border-left: $sidenav-current-border-width solid $color-primary;
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+      padding-left: 1.4rem;
+      padding-left: $site-margins-mobile - $sidenav-current-border-width;
+      cursor:default;
     }
   }
 }
