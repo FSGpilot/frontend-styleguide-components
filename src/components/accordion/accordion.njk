@@ -8,12 +8,13 @@
   <li>
     <button class="accordion-button"
       aria-expanded="{{ item.expanded | default('false') }}"
+      {% if item.error_message %} aria-describedby="error-message" {% endif %}
       aria-controls="{{ accordion_example.id_prefix }}{{ item.id }}">
       {{ item.title }}
 
       {%- if item.icon %}
         <span class="accordion-icon {% if item.iconclass %} {% endif %}">
-          <span class="icon_text">{{ item.icontext }}</span>  {{ icon_svg(item.icon)}} 
+          <span class="icon_text">{{ item.icontext }}</span>  {{ icon_svg(item.icon)}}
         </span>
       {% endif -%}
     </button>
