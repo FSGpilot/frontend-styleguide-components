@@ -25,8 +25,9 @@ gulp.task(task, function (done) {
   var tasks = files.map(function(entry) {
     return browserify({ 
           entries: ['src/js/'+ entry],
-          //debug: true //Sourcemaps generated below, no need to inline sourcemaps inside files. 
+          debug: true //adds sourcemaps at the end of file.
         })
+        .ignore('moment') //we use pikaday.js (without moment.js), //https://github.com/dbushell/Pikaday#commonjs-module-support
         .transform('babelify', {
           global: true,
           presets: ['es2015'],
@@ -36,13 +37,13 @@ gulp.task(task, function (done) {
         .pipe(buffer())
         //.pipe(rename({ basename: dutil.pkg.name }))
         .pipe(gulp.dest('dist/js'))
-        .pipe(sourcemaps.init({ loadMaps: true }))
+        //.pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
         .on('error', gutil.log)
         .pipe(rename({
           suffix: '.min',
         }))
-        .pipe(sourcemaps.write('.'))
+        //.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js'))
   });
   // create a merged stream
