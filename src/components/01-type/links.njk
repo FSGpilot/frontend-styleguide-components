@@ -1,3 +1,4 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 {% macro link(url, class, text, attr) %}
   <a href="{{url}}" class="{{class}}" {{attr}}>{{text}}</a>
 {% endmacro %}
@@ -10,9 +11,10 @@
 
 <p>This is a {{ link('javascript:void(0);', 'link-focus', 'Focus link state','') }}</p>
 
-<p>This is a link that goes to an {{ link('http://media.giphy.com/media/8sgNa77Dvj7tC/giphy.gif', 'external_link', 'external website','')}}
+<p>This is a link that goes to an {{ link('', 'textlink-icon external_link', 'external website','')}}
 
 <p>This is a text {{ link('javascript:void(0);', 'disabled', 'Disabled link state','disabled="disabled"') }}</p>
+
 
 <div class="background-dark">
   <p>{{ link ('javascript:void(0);', '', 'This') }} is a text link on a dark background.</p>

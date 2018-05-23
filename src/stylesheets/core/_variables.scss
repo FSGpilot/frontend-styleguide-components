@@ -105,7 +105,7 @@ $font-path:                     '../fonts/IBMPlexSans/' !default;
 $image-path:                    '../img' !default;
 $mdi-font-path:                 $font-path;
 $node-modules-path:             '../../../node_modules';
-
+$icons-folder-path:             "../img/svg-icons/" !default;
 // Typography
 // Typography font-size and line-height
 
@@ -190,9 +190,9 @@ $color-green-004:             #e7fbe4 !default; //DONE
 $color-green-005:             #3F9800 !default; //DONE ~ Value colour (green)
 
 //orange
-//$color-orange-001:            #b4630c !default;
-//$color-orange-002:            #d8770e !default;
-//$color-orange-003:            #f08b1e !default;
+//$color-orange-001:          #b4630c !default;
+//$color-orange-002:          #d8770e !default;
+//$color-orange-003:          #f08b1e !default;
 $color-orange-004:            #febb30 !default; //DONE
 $color-orange-005:            #ffeecc !default; //DONE
 
