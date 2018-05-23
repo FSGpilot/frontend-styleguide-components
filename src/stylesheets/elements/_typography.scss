@@ -211,44 +211,39 @@ em {
   margin-bottom: map-get($spacers, 4);
 }
 
-
-
-
 // Text colors
 // @each $color, $value in $colors {
 //   @include text-color('.color-text-#{$color}', $value);
 // }
 
-@mixin external-link($external-link, $external-link-hover) {
+@mixin textlink_icon($iconname) {
   &::after {
-    background: url('#{$image-path}/#{$external-link}.png') no-repeat 0 0;
-    background: url('#{$image-path}/#{$external-link}.svg') no-repeat 0 0;
+    background: url('#{$icons-folder-path}/#{$iconname}.svg') no-repeat 0 0;
     background-size: 100%;
     content: '';
     display: inline-block;
-    height: rem-calc(16);
-    margin-bottom: rem-calc(-4);
-    margin-left: rem-calc(4);
-    width: rem-calc(13);
+    height: rem-calc(24);
+    margin-bottom: rem-calc(-6);
+    margin-left: rem-calc(6);
+    width: rem-calc(24);
   }
 
-  &:hover::after {
-    background-image: url('#{$image-path}/#{$external-link-hover}.png');
-    background-image: url('#{$image-path}/#{$external-link-hover}.svg');
-  }
+  // &:hover::after {
+  //   background-image: url('#{$icons-folder-path}/#{$external-link-hover}.svg');
+  // }
 }
 
 // External link consider "effortless style approach":
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
-
-.external_link {
-  //color: $color-link-hover;
-  @include external-link(external-link, external-link-hover);
-}
-
-.external_link-alt {
-  @include external-link(external-link-alt, external-link-alt-hover);
+.textlink-icon {
+  &.external_link {
+    //color: $color-link-hover;
+    @include textlink_icon("open-in-new");
+  }
+  &.print_link {
+    @include textlink_icon("printer-icon");
+  }
 }
 
 // Remove user agent styles

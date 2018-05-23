@@ -1,3 +1,4 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 {%- macro button(class, state) -%}
   {%- if (state == 'default') -%}
     <button class="button-{{class}}">Default</button>
@@ -8,10 +9,13 @@
   {%- elif (state == 'focus') -%}
     <button class="button-{{class}} focus">Focus</button>
   {%- elif (state == 'tertiary') -%}
-    <button class="button-{{class}} tertiary">Tertiary</button> 
+    <button class="button-{{class}} tertiary">Tertiary</button>
   {%- elif (state == 'disabled') -%}
     <button class="button-{{class}}" disabled tab-index="-1" aria-disabled="true">Disabled</button>
+  {%- elif (state == 'icon') -%}
+  <button class="button-{{class}}">Refresh {{ icon_svg('refresh')}}</button>
   {%- endif %}
+
 {%- endmacro -%}
 
 {%- for buttons in button_example.items -%}
