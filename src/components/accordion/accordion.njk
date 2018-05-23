@@ -1,5 +1,5 @@
 {% from "icons/icons.njk" import icon as icon_ %}
-
+<div class="container">
 {% macro accordion(variant, items, id_prefix, multiselectable) %}
 <ul class="accordion{%
   if accordion_example.variant %}-{{ accordion_example.variant }}{% endif %}"{%
@@ -12,8 +12,8 @@
       {{ item.title }}
 
       {%- if item.icon %}
-        <span class="accordion-icon{% if item.iconclass %} {{ item.iconclass }} {% endif %}">
-          {{ icon_(item.icon) }}
+        <span class="accordion-icon {% if item.iconclass %} {% endif %}">
+          <span class="icon_text">{{ item.icontext }}</span> {{ icon_(item.icon) }}
         </span>
       {% endif -%}
     </button>
@@ -26,3 +26,4 @@
 {% endmacro %}
 
 {{ accordion(accordion_example.variant, accordion_example.items, accordion_example.id_prefix, accordion_example.multiselectable) }}
+</div>

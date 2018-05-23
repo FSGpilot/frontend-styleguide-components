@@ -18,24 +18,63 @@
 
 <div class="usa-grid-full">
   <div class="usa-width-one-third">
-
     <h4 class="usa-heading-alt">Unordered list</h4>
     <ul>
-      {{ listitem('','Unordered list item') }}
-      {{ listitem('','Unordered list item') }}
-      {{ listitem('','Unordered list item') }}
+      <li>Unordered list item
+        <ul>
+          <li>Unordered sublist item</li>
+        </ul>
+      </li>
+      <li>Unordered list item
+        <ul>
+          <li>Unordered sublist item</li>
+          <li>Unordered sublist item</li>
+        </ul>
+      </li>
     </ul>
-
   </div>
   <div class="usa-width-one-third">
-
     <h4 class="usa-heading-alt">Ordered list</h4>
     <ol>
-      {{ listitem('','Ordered list item') }}
-      {{ listitem('','Ordered list item') }}
-      {{ listitem('','Ordered list item') }}
+      <li>Ordered list item
+        <ol>
+          <li>Ordered sublist item</li>
+        </ol>
+      </li>
+      <li>Ordered list item
+        <ol>
+          <li>Ordered sublist item</li>
+          <li>Ordered sublist item</li>
+        </ol>
+      </li>
     </ol>
-
+  </div>
+  <div class="usa-width-one-third">
+    <h4 class="usa-heading-alt">Mixed ordered and unordered list</h4>
+    <ol>
+      <li>Ordered list item
+        <ul>
+          <li>Unordered sublist item</li>
+          <li>Unordered sublist item</li>
+        </ul>
+        <ol>
+          <li>Ordered sublist item</li>
+          <li>Ordered sublist item</li>
+        </ol>
+      </li>
+    </ol>
+    <ul>
+      <li>Unordered list item
+        <ol>
+          <li>Ordered sublist item</li>
+          <li>Ordered sublist item</li>
+        </ol>
+        <ul>
+          <li>Unordered sublist item</li>
+          <li>Unordered sublist item</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>
 

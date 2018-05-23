@@ -90,9 +90,8 @@ $z-index-nav:     9000;
 
 
 .solution-heading {
+  @include h3;
   float: left;
-  line-height: 4rem;
-  margin-left: 1.5rem;
 
 
   @include media($nav-width) {
@@ -115,6 +114,7 @@ $z-index-nav:     9000;
 }
 
 .heading-text {
+
   display: block;
   font-size: $h5-font-size;
   font-style: normal;

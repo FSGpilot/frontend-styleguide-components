@@ -34,6 +34,7 @@ form {
 }
 
 fieldset {
+  position: relative;
   border: none;
   margin: 0;
   padding: 0;
@@ -45,7 +46,8 @@ fieldset {
   }
 }
 
-input {
+input { 
+
   &.input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
     @include media($medium-screen) {
       max-width: 6rem;
@@ -57,6 +59,7 @@ input {
       max-width: 12rem;
     }
   }
+
 }
 
 .input-grid {

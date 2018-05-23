@@ -1,5 +1,5 @@
 // Variables
-$accordion-border: 3px solid $color-gray-lightest;
+$accordion-border: 1px solid $color-gray-lighter;
 
 // Accordion Styles
 
@@ -18,7 +18,7 @@ $v-padding: $spacing-md-small;
 @mixin accordion-list-item-styles {
   background-color: $color-gray-lightest;
   list-style: none;
-  margin-bottom: $spacing-x-small;
+  margin-bottom: $spacing-small;
   width: 100%;
 }
 
@@ -34,7 +34,7 @@ $v-padding: $spacing-md-small;
   color: $color-base;
   cursor: pointer;
   display: inline-block;
-  font-weight: $font-weight-bold;
+  //font-weight: $font-weight-bold;
   margin: 0;
   padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
   width: 100%;
@@ -78,11 +78,14 @@ $v-padding: $spacing-md-small;
 .accordion-bordered {
   @include accordion-list-styles;
   @include accordion-nested-list;
+  @include accordion-nested-list;
 
   + .accordion,
   + .accordion-bordered {
     margin-top: $spacing-small;
   }
+
+
 
   // TODO deprecated ruleset based on old accordion.
   > ul {
@@ -142,6 +145,9 @@ $v-padding: $spacing-md-small;
   @include accordion-button-styles;
   position: relative;
 
+  .icon_text {
+    font-weight:normal;
+  }
   .accordion-icon {
     position: absolute;
     top: 50%;
@@ -149,7 +155,6 @@ $v-padding: $spacing-md-small;
     width: 28px;
     height: 28px;
     line-height: 28px;
-    border-radius: 50%;
     text-align: center;
     transform: translateY(-50%);
 
@@ -157,6 +162,8 @@ $v-padding: $spacing-md-small;
       color: #fff;
     }
 
+
+    /*
     &.icon-bg-primary {
       background-color: $color-primary;
     }
@@ -175,10 +182,15 @@ $v-padding: $spacing-md-small;
 
     &.icon-bg-error {
       background-color: $color-error;
-    }
+    }*/
   }
 }
-
+.accordion-button[aria-describedby="error-message"] {
+  border: solid 2px $color-error;
+}
+.accordion-button[aria-expanded=true] {
+  font-weight: $font-weight-bold;
+}
 .accordion-button[aria-expanded=false] {
   @include accordion-button-unopened-styles;
   // display: flex;
