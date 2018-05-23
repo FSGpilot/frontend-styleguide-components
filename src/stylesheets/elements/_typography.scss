@@ -56,7 +56,7 @@ a {
 
 }
 
-//font-family, font-size and line-height for h1-h6 and subheader, bodytext and smalltext
+//font-family, font-size and line-height for h1-h6, bodytext and smalltext
 @mixin h1{
   font-family: $font-name;
   font-size: $h1-font-size; //4.3rem
@@ -77,13 +77,6 @@ a {
   line-height: $h3-line-height; //3.2rem
   font-weight: $font-weight-semibold;
   color: $color-base;
-}
-@mixin sub-header{
-  font-family: $font-name;
-  font-size: $sub-header; //2.5rem
-  line-height: $sub-header-line-height; //3.2rem
-  font-weight: $font-weight-normal;
-  color: $color-gray-dark;
 }
 @mixin h4{
   font-family: $font-name;
@@ -125,16 +118,18 @@ a {
   font-size: $small-text; //1.3rem
   line-height: $small-text-line-height; //1.6rem
   font-weight: $font-weight-medium;
-  color: $color-base;
+  color:$color-gray-dark;
 }
 
 @mixin font-weight-bold {
   font-family: $font-name;
   font-weight: $font-weight-bold;
+  color:$color-gray-dark;
 }
 
 @mixin font-style-italic {
   font-style: $font-style-italic;
+  color:$color-gray-dark
 }
 
 @mixin color-text-positive {
@@ -166,10 +161,6 @@ h5, .h5{
 
 h6, .h6{
   @include h6;
-}
-
-.sub-header-text {
-  @include sub-header;
 }
 
 .body-copy-text{
@@ -293,6 +284,7 @@ dfn {
     font-size: rem-calc(80);
     line-height: rem-calc(88);
     margin-bottom: 0;
+    color: $color-base;
 
     @include media($small-screen) {
       //@include h2();
@@ -307,6 +299,8 @@ dfn {
     font-size: rem-calc(60);
     line-height: rem-calc(72);
     margin-bottom: 0;
+    color: $color-base;
+
     @include media($small-screen) {
       //@include h2();
     }
@@ -332,6 +326,7 @@ dfn {
   font-weight: $font-weight-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
+  color:$color-gray-dark;
 }
 
 .drop_text {
