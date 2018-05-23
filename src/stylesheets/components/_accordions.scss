@@ -26,8 +26,7 @@ $v-padding: $spacing-md-small;
 @mixin accordion-button-styles {
   @include button-unstyled;
   background-color: $color-gray-lightest;
-  background-image: url('#{$image-path}/minus.png');
-  background-image: url('#{$image-path}/minus.svg');
+  background-image: url('#{$icons-folder-path}/minus.svg');
   background-position: right $h-padding center;
   background-repeat: no-repeat;
   background-size: $icon-size;
@@ -36,7 +35,8 @@ $v-padding: $spacing-md-small;
   display: inline-block;
   //font-weight: $font-weight-bold;
   margin: 0;
-  padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
+  line-height: $body-text-line-height;
+  padding: rem-calc(16); //padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
   width: 100%;
 
   &:hover {
@@ -56,8 +56,7 @@ $v-padding: $spacing-md-small;
 // scss-lint:enable PropertyCount
 
 @mixin accordion-button-unopened-styles {
-  background-image: url('#{$image-path}/plus.png');
-  background-image: url('#{$image-path}/plus.svg');
+  background-image: url('#{$icons-folder-path}/plus.svg');
   background-repeat: no-repeat;
   background-size: $icon-size;
 }
@@ -144,22 +143,22 @@ $v-padding: $spacing-md-small;
 .accordion-button {
   @include accordion-button-styles;
   position: relative;
-
+  transition: none;
   .icon_text {
-    font-weight:normal;
+    font-weight: $font-weight-bold;
   }
   .accordion-icon {
     position: absolute;
     top: 50%;
     right: 6.4rem; // Same padding-right as the accordion-button
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
+    //width: 28px;
+    height: 24px;
+    line-height: 24px;
     text-align: center;
     transform: translateY(-50%);
 
-    i {
-      color: #fff;
+    .icon-svg {
+      fill: $color-base;
     }
 
 
