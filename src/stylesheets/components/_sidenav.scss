@@ -1,7 +1,19 @@
 .sidenav-list {
   @include sidenav-list;
+      li {
+        a {
+        &.current{
+            &:last-child {
+              border-left: $sidenav-current-border-width solid $color-base;
+            }
+          }
+        }
+      }
+    
 
   li {
+    
+  
     // &.disabled {
     //   background: $color-gray-lightest;
 
