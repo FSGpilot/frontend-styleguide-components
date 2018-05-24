@@ -5,20 +5,22 @@ const toggle = require('../utils/toggle');
 const forEach = require('array-foreach');
 const select = require('../utils/select');
 
-const jsSelector = '.js-calendar';
-
+const jsSelector = '.js-calendar-group';
+const jsDatepickerSelector = '.js-calendar-datepicker';
 
 class datepickerGroup {
   constructor(el){
     
     var pikadayInstance = null;
+    var datepickerElement = select(jsDatepickerSelector, el)
 
-    this.initDatepicker(el);
+
+    this.initDatepicker(datepickerElement);
   }
 
-  initDatepicker(el){
+  initDatepicker(datepickerElement){
     this.pikadayInstance = new Pikaday({
-      field: el,
+      field: datepickerElement,
       format: 'D/M/YYYY',
       toString(date, format) {
           // you should do formatting based on the passed format,
@@ -43,7 +45,7 @@ class datepickerGroup {
 
 module.exports = behavior({
   init: (target) => {
-    forEach(root.querySelectorAll(jsSelector), calendarGroupElement => {
+    forEach(select(jsSelector), calendarGroupElement => {
       new datepickerGroup(calendarGroupElement);
     });
   },
