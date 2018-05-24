@@ -19,18 +19,18 @@ textarea{
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  //padding: $input-top-bottom-padding $input-left-right-padding;
+  padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
-  margin-top: map-get($spacers, 3);
-  text-align: center;
+  margin-top: $input-top-margin;
+  text-align: left;
 
   &.input-success {
     border: 3px solid $color-success;
   }
 }
-/*input, select {
-  height: $input-height;
-}*/
+input {
+  height: $input-standard-height;
+}
 textarea {
   height: 16rem;
 }
@@ -110,7 +110,7 @@ select {
   line-height: $input-line-height;
   height: $input-standard-height; //fixes bug in chrome where line-height is not respected. 
   width: 100%;
-  margin-top: map-get($spacers, 3);
+  margin-top: $input-top-margin;
   text-align: left;
   padding: $input-top-bottom-padding $input-left-right-padding;
 
@@ -120,10 +120,6 @@ select {
     text-shadow: 0 0 0 $color-black;
   }
 }
-
-/*option:first-child {
-  font-weight: $font-weight-bold;
-}*/
 
 legend {
   font-size: $h2-font-size;

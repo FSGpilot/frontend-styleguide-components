@@ -1,7 +1,7 @@
 {% macro select(name, id, label, options) %}
   <label for="{{name}}">{{label}}</label>
   <select name="{{name}}" id="{{id}}">
-    <option value>This is a drop down menu</option>
+    <option value>- Vælg -</option>
     {% for option in options %}
       <option value="{{option.value}}">{{option.text}}</option>
     {% endfor %}

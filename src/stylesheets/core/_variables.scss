@@ -354,6 +354,7 @@ $input-left-right-padding: calc(16px - #{$input-border-width}); //15px
 $input-font-size: $body-text;
 $input-line-height: $body-text-line-height;
 $input-standard-height: 40px;
+$input-top-margin: map-get($spacers, 3);
 
 //----------------
 // Grid
