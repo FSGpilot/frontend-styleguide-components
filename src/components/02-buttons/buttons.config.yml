@@ -21,8 +21,6 @@ context:
         state: 'focus'
       - class: 'primary'
         state: 'disabled'
-      - class: 'primary'
-        state: 'icon'
 
       - class: 'secondary'
         label: 'Secondary buttons'
@@ -59,3 +57,7 @@ context:
         state: 'focus'
       - class: 'tertiary'
         state: 'disabled'
+
+      - class: 'primary'
+        label: 'Button with icon'
+        state: 'icon'
