@@ -117,6 +117,7 @@ $v-padding: $spacing-md-small;
     border-bottom: $accordion-border;
     border-left: $accordion-border;
     border-right: $accordion-border;
+    border-radius: 0 0 $border-radius $border-radius;
   }
 }
 
@@ -144,8 +145,13 @@ $v-padding: $spacing-md-small;
   @include accordion-button-styles;
   position: relative;
   transition: none;
+  border:solid 1px #ccc !important;
+  border-radius: $border-radius $border-radius 0 0;
   .icon_text {
     font-weight: $font-weight-bold;
+    @include for-size(phone-only) {
+      float: left;
+    }
   }
   .accordion-icon {
     position: absolute;
@@ -157,8 +163,19 @@ $v-padding: $spacing-md-small;
     text-align: center;
     transform: translateY(-50%);
 
+    @include for-size(phone-only) {
+      position: initial !important;
+      text-align: left !important;
+      transform: none !important;
+      display: block !important;
+      margin-top: rem-calc(8) !important;
+    }
+
     .icon-svg {
       fill: $color-base;
+      @include for-size(phone-only) {
+        float: left;
+      }
     }
 
 
@@ -185,12 +202,13 @@ $v-padding: $spacing-md-small;
   }
 }
 .accordion-button[aria-describedby="error-message"] {
-  border: solid 2px $color-error;
+  border: solid 2px $color-error !important;
 }
 .accordion-button[aria-expanded=true] {
   font-weight: $font-weight-bold;
 }
 .accordion-button[aria-expanded=false] {
   @include accordion-button-unopened-styles;
+  border-radius: $border-radius $border-radius $border-radius $border-radius;
   // display: flex;
 }
