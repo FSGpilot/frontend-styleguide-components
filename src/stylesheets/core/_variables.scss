@@ -174,7 +174,7 @@ $color-base-001:              #ffffff !default; //DONE
 $color-base-002:              #1a1a1a !default; //DONE
 
 //Gray
-//$color-gray-001:            #212121 !default;
+$color-gray-001:              #212121 !default;
 $color-gray-002:              #454545 !default; //DONE
 $color-gray-003:              #747474 !default; //DONE
 $color-gray-004:              #999999 !default; //DONE
@@ -204,7 +204,7 @@ $color-red-003:               #fbd3d3 !default; //DONE
 //blue
 $color-blue-001:              #1B86C3 !default; //DONE
 $color-blue-002:              #125880 !default; //DONE
-$color-blue-003:              #1b86c3 !default; //DONE
+$color-blue-003:              #0d405e !default; //DONE
 $color-blue-004:              #e2f2fb !default; //DONE
 
 //purple
@@ -240,16 +240,20 @@ $color-gray-lighter:          $color-gray-005 !default;
 $color-gray-lightest:         $color-gray-006 !default;
 $color-gray-brightest:        $color-base-001 !default;
 
+//Focus
+$color-focus:                 $color-orange-004 !default;
+
 // Text color
 $color-text:                  $color-base-002 !default;
 $color-text-secondary:        $color-gray-003 !default;
 $color-text-bright:           $color-gray-006 !default;
 
 //Links color
-$color-link:                  $color-blue-002 !default;
-$color-link-hover:            $color-blue-003 !default;
-$color-active:                $color-base-002 !default;
-$color-focus:                 $color-orange-004 !default;
+$color-link:                  $color-blue-001 !default;
+$color-link-hover:            $color-blue-002 !default;
+$color-active:                $color-blue-003 !default;
+$color-link-focus:            $color-blue-001 !default;
+$color-link-focus-bg:         $color-focus !default;
 $color-visited:               $color-purple-001 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
