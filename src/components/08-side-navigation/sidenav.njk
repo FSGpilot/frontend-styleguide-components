@@ -1,7 +1,8 @@
+<h4>Side navigation</h4>
 {% macro nav_list(links, subclass) %}
   {% for item in links %}
   <li>
-    <a href="{{ item.href }}"{% if item.current %} class="current"{% endif %}>
+    <a href="{{ item.href }}"{% if item.current %} class="current" {% endif %}>
       {{ item.text }}
     </a>
     {% if item.current and item.links %}
