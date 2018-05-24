@@ -1,21 +1,51 @@
-{% from "icons/icons.njk" import icon as icon_ %}
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 
-{% macro tringuide(trinliste) %}
-  <ul class="sidenav-list">
-    {% for trin in trinliste %}
-      <li{% if trin.disabled %} class="disabled"{% endif %}>
-        <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
-          {{loop.index}}. {{trin.text}}
+<div class="container">
+  <div class="row">
+  {# Free step guide #}
+    <div class="col-4">
+    <h4>Free step guide</h4>
+      {% macro tringuide(trinliste) %}
+        <ul class="sidenav-list">
+          {% for trin in trinliste %}
+            <li{% if trin.disabled %} class="disabled"{% endif %}>
+              <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
+                {{loop.index}}. {{trin.text}}
 
-          {% if trin.icon %}
-          <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
-            {{ icon_(trin.icon) }}
-          </span>
-          {% endif %}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endmacro %}
+                {% if trin.icon %}
+                <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
+                  {{ icon_svg(trin.icon) }}
+                </span>
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endmacro %}
+      {{ tringuide(tringuiden.trinlisten) }}
+    </div>
+    {# Locked step guide #}
+    <div class="col-4">
+    <h4>Locked step guide</h4>
+      {% macro tringuide(trinliste) %}
+        <ul class="sidenav-list-locked">
+          {% for trin in trinliste %}
+            <li class="disabled">
+              <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
+                {{loop.index}}. {{trin.text}}
 
-{{ tringuide(tringuiden.trinlisten) }}
+                {% if trin.icon %}
+                <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
+                  {{ icon_svg(trin.icon) }}
+                </span>
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endmacro %}
+      {{ tringuide(tringuiden.trinlisten) }}
+    </div>
+  </div>
+</div>
+
