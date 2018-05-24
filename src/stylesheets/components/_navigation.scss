@@ -125,6 +125,7 @@
 
 .nav-primary {
   @include sidenav-list;
+  border: none; //TODO delete later, quick fix.
   order: 2;
 
   @include media($nav-width) {
