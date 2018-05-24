@@ -282,12 +282,13 @@ p, .body-text,
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
 .textlink-icon {
+  display: inline-block; //Bug fix: correct focus border. 
   &.external_link {
     //color: $color-link-hover;
     @include textlink_icon("open-in-new");
   }
   &.print_link {
-    @include textlink_icon("printer-icon");
+    @include textlink_icon("printer");
   }
 }
 
