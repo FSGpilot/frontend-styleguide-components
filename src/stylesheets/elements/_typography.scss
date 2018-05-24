@@ -180,8 +180,6 @@ small, .small-text {
   @include small-text;
 }
 
-
-
 .form-label {
   @include form-label-text;
 }
@@ -277,9 +275,9 @@ dfn {
   }
 }
 
-.displaytext {
-  &__splash {
-    @include font-weight-bold();
+.displayheading {
+  &-1 {
+    font-weight: 700;
     font-size: rem-calc(80);
     line-height: rem-calc(88);
     margin-bottom: 0;
@@ -293,8 +291,8 @@ dfn {
       //@include h1();
     }
   }
-  &__large {
-    @include font-weight-bold();
+  &-2 {
+    font-weight: 700;
     font-size: rem-calc(60);
     line-height: rem-calc(72);
     margin-bottom: 0;
