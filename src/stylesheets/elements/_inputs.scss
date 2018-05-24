@@ -1,12 +1,14 @@
 // scss-lint:disable QualifyingElement, PropertyCount
 
-/*$input-line-height: 1.34;
-$input-border-radius: 4px;
-$input-border-width: 1px;
-$input-top-bottom-padding: map-get($spacers, 3);
-$input-left-right-padding: map-get($spacers, 4);
-$input-height: 40px;
-$input-font-size: 1.8rem;*/
+.form-group{
+  margin-top: map-get($spacers, 4);
+}
+
+label {
+  display: block;
+  max-width: $input-max-width;
+  @include form-label-text();
+}
 
 // Block form elements
 /* stylelint-disable selector-no-qualifying-type */
@@ -23,80 +25,12 @@ textarea{
   width: 100%;
   margin-top: $input-top-margin;
   text-align: left;
-
-  &.input-success {
-    border: 3px solid $color-success;
-  }
 }
 input {
   height: $input-standard-height;
 }
 textarea {
   height: 16rem;
-}
-
-label {
-  display: block;
-  max-width: $input-max-width;
-  margin-top: map-get($spacers, 4);
-  @include form-label-text();
-}
-
-/* stylelint-enablex */
-.input-error {
-  border-left: 4px solid $color-error;
-  margin-top: 3rem;
-  padding-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  padding-top: 0.8rem;
-  position: relative;
-  right: 1.9rem;
-  margin-left: rem-calc(16);
-
-  input,
-  textarea,
-  select {
-    border: 3px solid $color-error;
-    width: calc(100% + 1.9rem); // 1.5rem left padding + 4px border from input error spacing
-  }
-
-  label {
-    margin-top: 0;
-  }
-
-  .input-inline {
-    border: $input-border-width solid $color-gray;
-    width: inherit;
-  }
-
-  .input-inline-error {
-    border: 3px solid $color-error;
-  }
-}
-
-.input-error-label {
-  display: block;
-  font-size: $base-font-size;
-  font-weight: $font-weight-bold;
-}
-
-.input-error-message {
-  color: $color-error;
-  display: block;
-  font-size: $base-font-size;
-  font-weight: $font-weight-bold;
-  padding-bottom: 3px;
-  padding-top: 3px;
-}
-
-.input-required:after {
-  color: $color-required;
-  content: ' (*required)';
-}
-
-.input-optional:after {
-  color: $color-gray;
-  content: ' (optional)';
 }
 
 //Note for select. Uses browser-specific styling for arrow. No custom. 
@@ -132,12 +66,54 @@ legend {
   }
 }
 
-// Hint text
+//////////////////////
+//** Input states **//
+//////////////////////
 
-.form-hint {
-  color: $color-gray;
-  margin-bottom: rem-calc(8);
+.form-group.input-error {
+  border-left: 4px solid $color-error;
+  padding-top: map-get($spacers, 3);
+  padding-left: calc(#{map-get($spacers, 4)} - 4px);
+  padding-bottom: map-get($spacers, 3);
+
+  input,
+  textarea,
+  select {
+    border: $input-border-width-feedback solid $color-error;
+    padding: $input-top-bottom-padding-feedback $input-left-right-padding-feedback;
+  }
+
+}
+.input-error-message {
+  @include form-label-text();
   display: block;
+  color: $color-error;
+}
+
+.form-group.input-success {
+  input,
+  textarea,
+  select {
+    border: $input-border-width-feedback solid $color-success;
+    padding: $input-top-bottom-padding-feedback $input-left-right-padding-feedback;
+  }
+}
+
+.input-required:after {
+  color: $color-required;
+  content: ' (*required)';
+}
+
+.input-optional:after {
+  color: $color-gray;
+  content: ' (optional)';
+}
+
+// Hint text
+.input-hint {
+  @include body-copy-text;
+  display: block;
+  color: $color-gray;
 }
 
 // Custom checkboxes
