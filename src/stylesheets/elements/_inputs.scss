@@ -1,18 +1,17 @@
 // scss-lint:disable QualifyingElement, PropertyCount
 
-$input-line-height: 1.34;
+/*$input-line-height: 1.34;
 $input-border-radius: 4px;
 $input-border-width: 1px;
 $input-top-bottom-padding: map-get($spacers, 3);
 $input-left-right-padding: map-get($spacers, 4);
 $input-height: 40px;
-$input-font-size: 1.8rem;
+$input-font-size: 1.8rem;*/
 
 // Block form elements
 /* stylelint-disable selector-no-qualifying-type */
 input,
-textarea,
-select {
+textarea{
   appearance: none;
   border: $outer-border;
   border-radius: $input-border-radius;
@@ -29,9 +28,9 @@ select {
     border: 3px solid $color-success;
   }
 }
-input, select {
+/*input, select {
   height: $input-height;
-}
+}*/
 textarea {
   height: 16rem;
 }
@@ -100,24 +99,20 @@ label {
   content: ' (optional)';
 }
 
-
+//Note for select. Uses browser-specific styling for arrow. No custom. 
 select {
-  appearance: none;
   background-color: $color-white;
-  background-image: url('#{$image-path}/svg-icons/angle-arrow-down.svg');
-  background-position: right 1.3rem center;
-  background-repeat: no-repeat;
-  background-size: 24px;
-  padding-right: 5rem;
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  // Show default webkit style on select element when autofilled to show icon
-  &:-webkit-autofill {
-    appearance: menulist;
-  }
+  border: $outer-border;
+  border-radius: $input-border-radius;
+  color: $color-base; // standardize on firefox
+  display: block;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  height: $input-standard-height; //fixes bug in chrome where line-height is not respected. 
+  width: 100%;
+  margin-top: map-get($spacers, 3);
+  text-align: left;
+  padding: $input-top-bottom-padding $input-left-right-padding;
 
   // Remove dotted outline from select element on focus in Firefox
   &:-moz-focusring {
@@ -126,9 +121,9 @@ select {
   }
 }
 
-option:first-child {
+/*option:first-child {
   font-weight: $font-weight-bold;
-}
+}*/
 
 legend {
   font-size: $h2-font-size;

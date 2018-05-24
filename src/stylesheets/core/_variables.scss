@@ -347,13 +347,13 @@ $spacing-xx-large:              rem-calc(64) !default; //6.4rem;
 //----------------
 //input
 //----------------
-$input-line-height: 1.34;
 $input-border-radius: 4px;
 $input-border-width: 1px;
-$input-top-bottom-padding: map-get($spacers, 3);
-$input-left-right-padding: map-get($spacers, 4);
-$input-height: 40px;
-$input-font-size: 1.8rem;
+$input-top-bottom-padding: calc(8px - #{$input-border-width}); //7px
+$input-left-right-padding: calc(16px - #{$input-border-width}); //15px
+$input-font-size: $body-text;
+$input-line-height: $body-text-line-height;
+$input-standard-height: 40px;
 
 //----------------
 // Grid
