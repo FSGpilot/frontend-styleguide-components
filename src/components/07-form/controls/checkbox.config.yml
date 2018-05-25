@@ -5,21 +5,31 @@ preview: '@dkwds-framed'
 context:
   checkbox_example:
     items:
-      - id: truth
-        name: historical-figures-1
-        value: truth
+      - id: Unchecked
+        name: unchecked
+        value: unchecked
+        checked: false
+        disabled: false
+        text: unchecked
+
+      - id: Checked
+        name: checked
+        value: checked
         checked: true
-        text: Sojourner Truth
-      - id: douglass
-        name: historical-figures-1
-        value: douglass
-        text: Frederick Douglass
-      - id: washington
-        name: historical-figures-1
-        value: washington
-        text: Booker T. Washington
-      - id: carver
-        name: historical-figures-1
-        value: carver
+        disabled: false
+        text: checked
+
+      - id: disabled
+        name: disabled
+        value: disabled
+        checked: false
         disabled: true
-        text: George Washington Carver
+        text: Disabled
+
+      - id: fokus
+        name: Focus
+        value: fokus
+        checked: false
+        disabled: false
+        text: Focus
+        class: focus
