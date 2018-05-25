@@ -136,6 +136,7 @@ button,
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
+    font-weight: $font-weight-normal;
 
     &:hover,
     &.button-hover {
@@ -169,8 +170,9 @@ button,
   //############### tertiary ############
   &.button-tertiary {
     border-color:$color-gray-005;
-    background-color: $color-white;
+    background-color: transparent;
     color: $color-base;
+    font-weight: $font-weight-normal;
 
     &:hover,
     &.button-hover {
@@ -179,13 +181,13 @@ button,
 
     &:active,
     &.button-active {
-      border-color:$color-base;
+      border-color: $color-gray-002;
     }
 
     &.focus,
     &:focus {
       border-color:$color-gray-lighter;
-      background-color: $color-white;
+      background-color: transparent;
     }
 
   }
