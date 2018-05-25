@@ -29,12 +29,7 @@ $button-stroke: inset 0 0 0 2px;
 }
 
 /* stylelint-disable selector-no-qualifying-type */
-.button,
-button,
-[type=button],
-[type=submit],
-[type=reset],
-[type=image] {
+.button{
   appearance: none;
   display: inline-block;
   width: 100%;
@@ -281,50 +276,6 @@ html .button-secondary-inverse-disabled,  // Deprecated
   padding: .5rem 1rem;
   font-size: $small-font-size;
 }
-
-/*
-.button-ghost {
-  border: 0;
-  background-color: transparent;
-  color: $color-gray-001;
-  text-decoration: underline;
-  box-shadow: none;
-
-  &:hover,
-  &.button-hover {
-    background-color: transparent;
-    color: $color-gray-001;
-    text-decoration: none;
-  }
-
-  &:active,
-  &.button-active {
-    background-color: transparent;
-    color: $color-gray-001;
-    text-decoration: none;
-  }
-
-  &:focus,
-  &.focus {
-    background-color: transparent;
-    color: $color-gray-001;
-    outline: 2px solid $color-primary-darker;
-    text-decoration: underline;
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: transparent;
-    opacity: .5;
-    text-decoration: underline;
-
-    &:hover,
-    &:focus {
-      background-color: transparent;
-    }
-  }
-}
-*/
 
 .signout-button {
   margin-left: auto;
