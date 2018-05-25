@@ -18,7 +18,6 @@ p {
 
 a {
   color: $color-link;
-  padding:rem-calc(4);
 
   &:hover,
   &.link-hover {
@@ -28,6 +27,7 @@ a {
     .disabled {
       background-color: transparent !important;
     }
+
   }
 
   &:active,
@@ -37,11 +37,13 @@ a {
 
   &:focus,
   &.link-focus {
+    color: $color-link-focus;
     background-color: $color-focus;
+    outline: 4px solid $color-link-focus-bg;
   }
 
   &:visited,
-  &.color-text-visited {
+  &.link-visited {
     color: $color-visited;
   }
 
@@ -49,11 +51,58 @@ a {
   &.disabled {
     box-shadow: none !important;
     cursor: not-allowed !important;
-    color:$color-gray-004 !important;
+    color: $color-gray-005 !important;
     box-shadow: none !important;
     outline-offset: inherit !important;
+    &:focus{
+      outline: none;
+      background-color: transparent;
+    }
   }
 
+  .background-dark &{
+    color: $color-gray-006;
+
+    &:hover,
+    &.link-hover {
+      color:#ffffff;
+
+      &:disabled,
+      .disabled {
+        background-color: transparent !important;
+      }
+    }
+
+    &:active,
+    &.link-active {
+      color: $color-gray-005;
+    }
+
+    &:focus,
+    &.link-focus {
+      color: $color-gray-001;
+      background-color: $color-focus;
+      outline: 4px solid $color-link-focus-bg;
+    }
+
+    &:visited,
+    &.link-visited {
+      color: $color-gray-006;
+    }
+
+    &:disabled,
+    &.disabled {
+      box-shadow: none !important;
+      cursor: not-allowed !important;
+      color: $color-gray-003 !important;
+      box-shadow: none !important;
+      outline-offset: inherit !important;
+      &:focus{
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 //font-family, font-size and line-height for h1-h6, bodytext and smalltext
@@ -89,7 +138,7 @@ a {
   font-family: $font-name;
   font-size: $h5-font-size; //2.0rem
   line-height: $h5-line-height; //2.4rem
-  font-weight: $font-weight-normal;
+  font-weight: $font-weight-semibold;
   color: $color-base;
 }
 @mixin body-copy-text {
@@ -123,7 +172,7 @@ a {
 
 @mixin font-weight-bold {
   font-family: $font-name;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
   color:$color-gray-dark;
 }
 
@@ -163,17 +212,29 @@ h6, .h6{
   @include h6;
 }
 
-.body-copy-text{
+p, .body-text, .body-copy-text{
   @include body-copy-text;
+}
+
+strong, b, .bold {
+  font-family: $font-name;
+  font-weight: $font-weight-semibold;
+}
+
+.italic, em {
+  font-style: $font-style-italic;
+}
+
+small, .small-text {
+  font-size: $small-text; //1.3rem
+  line-height: $small-text-line-height; //1.6rem
+  font-weight: $font-weight-medium;
 }
 
 .form-label {
   @include form-label-text;
 }
 
-small, .small-text {
-  @include small-text;
-}
 
 //margin top and bottom for text
 h1, .h1,
@@ -183,32 +244,16 @@ h4, .h4,
 h5, .h5,
 h6, .h6,
 .sub-header-text{
-  clear: both;
-  margin-top: map-get($spacers, 7);
-  margin-bottom: map-get($spacers, 4);
+  // margin-top: map-get($spacers, 7);
+  // margin-bottom: map-get($spacers, 4);
   &:first-child{
     margin-top: 0;
   }
 }
 p, .body-text,
 .lead, .font-lead{
-  clear: both;
-  margin-top: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 4);
-}
-
-
-strong,
-b,
-.bold {
-  @include font-weight-bold;
-}
-
-em {
-  @include font-style-italic;
-  line-height: $base-line-height;
-  margin-top: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 4);
+  // margin-top: map-get($spacers, 4);
+  // margin-bottom: map-get($spacers, 4);
 }
 
 // Text colors
@@ -237,12 +282,13 @@ em {
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
 .textlink-icon {
+  display: inline-block; //Bug fix: correct focus border. 
   &.external_link {
     //color: $color-link-hover;
     @include textlink_icon("open-in-new");
   }
   &.print_link {
-    @include textlink_icon("printer-icon");
+    @include textlink_icon("printer");
   }
 }
 
@@ -263,6 +309,9 @@ dfn {
   ol:not(.accordion):not(.accordion-bordered) {
     max-width: $text-max-width;
   }
+  .font-lead{
+    max-width: $lead-max-width;
+  }
 }
 
 .content-list {
@@ -278,9 +327,9 @@ dfn {
   }
 }
 
-.displaytext {
-  &__splash {
-    @include font-weight-bold();
+.displayheading {
+  &-1 {
+    font-weight: 700;
     font-size: rem-calc(80);
     line-height: rem-calc(88);
     margin-bottom: 0;
@@ -294,8 +343,8 @@ dfn {
       //@include h1();
     }
   }
-  &__large {
-    @include font-weight-bold();
+  &-2 {
+    font-weight: 700;
     font-size: rem-calc(60);
     line-height: rem-calc(72);
     margin-bottom: 0;
@@ -334,7 +383,7 @@ dfn {
 }
 
 .background-dark {
-  background-color: $color-gray-dark;
+  background-color: $color-black;
 
   p,
   span {

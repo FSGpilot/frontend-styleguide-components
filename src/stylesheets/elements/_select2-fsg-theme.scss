@@ -4,6 +4,7 @@ $select2-outer-border: $outer-border;
 $select2-inner-border: $inner-border;
 $select2-input-bg: #fff;
 $select2-input-minheight: 40px;
+$select2-top-margin: $input-top-margin;
 $select2-border-radius: $border-radius;
 $select2-text-color: $color-text;
 $select2-placeholder-color: $color-text;
@@ -34,6 +35,7 @@ $select2-selected-choise-remove-hovercolor: $color-gray-004;
 
   display: inline-block;
   margin: 0;
+  margin-top: $select2-top-margin;
   position: relative;
   vertical-align: middle;
 

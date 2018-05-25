@@ -8,6 +8,7 @@ context:
       - id: input-type-text
         label: Text input label
         name: input-type-text
+        hint: For example, VO123456D
       - id: input-focus
         label: Text input focused
         class: focus
@@ -15,9 +16,8 @@ context:
       - id: input-error
         name: input-error
         label: Text input error
-        error: true
-        errormsg: Helpful error message
+        error: Helpful error message
+        hint: For example, VO123456D
       - id: input-success
         label: Text input success
-        class: input-success
-        name: input-success
+        success: true

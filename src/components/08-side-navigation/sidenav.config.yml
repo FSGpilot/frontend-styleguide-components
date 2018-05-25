@@ -30,10 +30,10 @@ variants:
       sidenavs:
         - title: 1 level
           links:
+            - text: Parent link
             - text: Current page
               current: true
-            - text: Parent link
-            - text: Parent link
+            - text: Another link
 
         - title: 2 levels
           links:

@@ -27,7 +27,7 @@ gulp.task(task, function (done) {
           entries: ['src/js/'+ entry],
           debug: true //adds sourcemaps at the end of file.
         })
-        .ignore('moment') //we use pikaday.js (without moment.js), //https://github.com/dbushell/Pikaday#commonjs-module-support
+        .ignore('moment') //we use pikaday.js (without moment.js), tell browserify not to look for momentjs. //https://github.com/dbushell/Pikaday#commonjs-module-support
         .transform('babelify', {
           global: true,
           presets: ['es2015'],
