@@ -61,7 +61,7 @@ a {
   }
 
   .background-dark &{
-    color: $color-gray-006;
+    color: $color-gray-lightest;
 
     &:hover,
     &.link-hover {
@@ -87,7 +87,7 @@ a {
 
     &:visited,
     &.link-visited {
-      color: $color-gray-006;
+      color: $color-gray-lightest;
     }
 
     &:disabled,
@@ -388,14 +388,6 @@ dfn {
   p,
   span {
     color: $color-white;
-  }
-
-  a {
-    color: $color-gray-lighter;
-
-    &:hover {
-      color: $color-white;
-    }
   }
 }
 
