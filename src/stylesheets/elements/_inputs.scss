@@ -21,10 +21,10 @@ textarea{
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  padding: $input-top-bottom-padding $input-left-right-padding;
+  //padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
-  margin-top: $input-top-margin;
-  text-align: left;
+  margin-top: map-get($spacers, 3);
+  text-align: center;
 }
 input {
   height: $input-standard-height;
@@ -33,7 +33,7 @@ textarea {
   height: 16rem;
 }
 
-//Note for select. Uses browser-specific styling for arrow. No custom. 
+//Note for select. Uses browser-specific styling for arrow. No custom.
 select {
   background-color: $color-white;
   border: $outer-border;
@@ -42,7 +42,7 @@ select {
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  height: $input-standard-height; //fixes bug in chrome where line-height is not respected. 
+  height: $input-standard-height; //fixes bug in chrome where line-height is not respected.
   width: 100%;
   margin-top: $input-top-margin;
   text-align: left;
@@ -136,23 +136,34 @@ legend {
 [type=checkbox] + label,
 [type=radio] + label {
   cursor: pointer;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
   margin-bottom: 0.65em;
+  &.focus {
+    outline: none;
+
+     // &:before {
+     //   content: "";
+     //   outline: 4px solid $color-focus;
+     //   outline-offset: 0;
+     // }
+  }
 }
 
 [type=checkbox] + label::before,
 [type=radio] + label::before {
-  background: $color-white;
-  border-radius: $checkbox-border-radius;
-  box-shadow: 0 0 0 1px $color-gray;
+
+  //background: $color-white;
+  //border-radius: $checkbox-border-radius;
+  //box-shadow: 0 0 0 1px $color-gray;
   content: '\a0';
   display: inline-block;
   height: $spacing-medium;
   line-height: $spacing-medium;
-  margin-right: 0.6em;
-  text-indent: 0.15em;
-  vertical-align: middle\0; // Target IE 11 and below to vertically center inputs
+  //margin-right: 0.6em;
+  //text-indent: 0.15em;
+  //vertical-align: middle\0; // Target IE 11 and below to vertically center inputs
   width: $spacing-medium;
+  margin-right: rem-calc(8);
 }
 
 [type=radio] + label::before {
@@ -164,43 +175,66 @@ legend {
   width: 1.4rem;
 }
 
-[type=checkbox]:checked + label::before,
-[type=radio]:checked + label::before {
-  background-color: $color-primary;
-  box-shadow: 0 0 0 1px $color-primary;
-}
-
-[type=radio]:checked + label::before {
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
-}
-
-[type=checkbox]:checked + label::before,
-[type=checkbox]:checked:disabled + label::before {
-  background-image: url('#{$image-path}/correct8.png');
-  background-image: url('#{$image-path}/correct8.svg');
+[type=checkbox] + label::before {
+  background-image: url('#{$icons-folder-path}/check-box-unchecked.svg');
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-[type=radio]:focus + label::before {
-  outline: $focus-outline;
-  outline-offset: 5px;
+[type=checkbox]:checked + label::before,
+[type=radio]:checked + label::before {
+  //background-color: $color-primary;
+  //box-shadow: 0 0 0 1px $color-primary;
 }
 
-[type=checkbox]:disabled + label {
-  color: $color-gray-lighter;
+[type=radio]:checked + label::before {
+  //box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
+}
+
+[type=checkbox]:checked + label::before {
+  background-image: url('#{$icons-folder-path}/check-box-checked.svg') !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+[type=checkbox]:checked:disabled + label::before {
+  background-image: url('#{$icons-folder-path}/check-box-disabled.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.focus {
+  &:before {
+    background-image: url('#{$icons-folder-path}/check-box-focus.svg') !important;
+  }
 }
 
 [type=checkbox]:focus + label::before {
-  outline: $focus-outline;
-  outline-offset: $focus-spacing;
+  background-image: url('#{$icons-folder-path}/check-box-focus.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
+
+// [type=checkbox]:disabled + label {
+//   color: $color-gray-lighter;
+// }
+
+// [type=checkbox]:focus + label::before {
+//   outline: $focus-outline;
+//   outline-offset: $focus-spacing;
+// }
 
 [type=checkbox]:disabled + label::before,
 [type=radio]:disabled + label::before {
-  background: $color-gray-lightest;
-  box-shadow: 0 0 0 1px $color-gray-light;
+  //background: $color-gray-lightest;
+  //box-shadow: 0 0 0 1px $color-gray-light;
   cursor: not-allowed;
+}
+
+[type=checkbox]:disabled + label::before {
+  background-image: url('#{$icons-folder-path}/check-box-disabled.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 // Range inputs
