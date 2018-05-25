@@ -44,9 +44,9 @@ $icon-size: 24px;
   .alert-heading {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 18px;
+    font-size: rem-calc(18);
     font-weight: 600;
-    line-height: 1.33;
+    line-height: rem-calc(24);
     color: $color-gray-002;
   }
 
