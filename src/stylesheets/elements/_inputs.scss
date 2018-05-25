@@ -21,10 +21,10 @@ textarea{
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
-  //padding: $input-top-bottom-padding $input-left-right-padding;
+  padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
   margin-top: map-get($spacers, 3);
-  text-align: center;
+  text-align: left; 
 }
 input {
   height: $input-standard-height;
@@ -167,12 +167,15 @@ legend {
 }
 
 [type=radio] + label::before {
-  border-radius: 100%;
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray;
-  height: 1.4rem; // Size overrides to account for shape + checked styling
-  line-height: 1.4rem;
-  margin-right: 0.75em;
-  width: 1.4rem;
+  // border-radius: 100%;
+  // box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray;
+  // height: 1.4rem; // Size overrides to account for shape + checked styling
+  // line-height: 1.4rem;
+  // margin-right: 0.75em;
+  // width: 1.4rem;
+  background-image: url('#{$icons-folder-path}/check-box-unchecked.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 [type=checkbox] + label::before {

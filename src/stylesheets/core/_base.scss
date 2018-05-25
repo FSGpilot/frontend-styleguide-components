@@ -3,7 +3,7 @@
 
 html {
   box-sizing: border-box;
-  opacity: 1; //delete again test only
+  opacity: 1; //delete again test only 
 }
 
 *,
@@ -33,6 +33,6 @@ body {
 
 a:focus, button:focus, input:focus, select:focus,
 .focus {
-  outline: $focus-outline; 
+  outline: $focus-outline;
   outline-offset: 0;
 }
