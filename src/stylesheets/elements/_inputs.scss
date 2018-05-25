@@ -41,6 +41,14 @@ label {
   max-width: $input-max-width;
   margin-top: map-get($spacers, 4);
   @include form-label-text();
+  &.focus {
+    outline: none;
+    &:before {
+      content: "";
+      outline: 4px solid $color-focus;
+      outline-offset: 0;
+    }
+  }
 }
 
 /* stylelint-enablex */
@@ -169,8 +177,8 @@ legend {
 [type=checkbox] + label,
 [type=radio] + label {
   cursor: pointer;
-  font-weight: 400;
-  margin-bottom: 0.65em;
+  font-weight: $font-weight-normal;
+  margin-bottom: rem-calc(8);
 }
 
 [type=checkbox] + label::before,
@@ -180,12 +188,13 @@ legend {
   box-shadow: 0 0 0 1px $color-gray;
   content: '\a0';
   display: inline-block;
-  height: $spacing-medium;
-  line-height: $spacing-medium;
+  height: $checkbox-small-height;
+  line-height: $checkbox-small-lineheight;
   margin-right: 0.6em;
   text-indent: 0.15em;
   vertical-align: middle\0; // Target IE 11 and below to vertically center inputs
-  width: $spacing-medium;
+  width: $checkbox-small-width;
+
 }
 
 [type=radio] + label::before {
@@ -199,18 +208,20 @@ legend {
 
 [type=checkbox]:checked + label::before,
 [type=radio]:checked + label::before {
-  background-color: $color-primary;
-  box-shadow: 0 0 0 1px $color-primary;
+  background-color: $color-black;
+  box-shadow: 0 0 0 1px $color-black;
 }
 
 [type=radio]:checked + label::before {
-  box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
+  //box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-black;
+  background-image: url('#{$icons-folder-path}/checkbox-blank-outline.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 
 [type=checkbox]:checked + label::before,
 [type=checkbox]:checked:disabled + label::before {
-  background-image: url('#{$image-path}/correct8.png');
-  background-image: url('#{$image-path}/correct8.svg');
+  background-image: url('#{$icons-folder-path}/checkbox-marked.svg');
   background-position: 50%;
   background-repeat: no-repeat;
 }
