@@ -319,7 +319,7 @@ $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
 //Borders
-$outer-border:            1px solid $color-gray;
+$outer-border:            1px solid $color-gray-light;
 $inner-border:            1px solid $color-gray-lighter;
 $focus-border:            2px dashed $color-gray-light;
 $button-border-width:     2px;
