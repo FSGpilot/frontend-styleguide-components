@@ -43,16 +43,30 @@ class datepickerGroup {
         }
       });
 
+      pikadayInstance.gotoToday();
+      /*var date = pikadayInstance.getDate();
+      var day = date.getDate();
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      dayInputElement.value = day;
+      monthInputElement.value = month;
+      yearInputElement.value = year;*/
+
       dayInputElement.addEventListener("blur", function(){
-        pikadayInstance.setDate('2015-01-01')
+        var curDate = pikadayInstance.getDate();
+        var newDate = new Date(curDate.getFullYear(), curDate.getMonth() + 1, this.value);
+        pikadayInstance.setDate(newDate);
       });
       monthInputElement.addEventListener("blur", function(){
-        console.log('day blue')
+        var curDate = pikadayInstance.getDate();
+        var newDate = new Date(curDate.getFullYear(), this.value + 1, curDate.getDay());
+        pikadayInstance.setDate(newDate);
       });
       yearInputElement.addEventListener("blur", function(){
-        console.log('day blue')
+        var curDate = pikadayInstance.getDate();
+        var newDate = new Date(this.value, curDate.getMonth() + 1, curDate.getDay());
+        pikadayInstance.setDate(newDate);
       });
-
     }
   }
 }
