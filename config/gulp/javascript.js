@@ -18,7 +18,7 @@ gulp.task(task, function (done) {
   
   var files = [
       'dkwds.js',
-      'dkwds-advanced.js'
+      'dkwds-vendor-examples.js'
   ];
 
   //Create a bundle for each starting file in the list above. 
