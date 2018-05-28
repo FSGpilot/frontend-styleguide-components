@@ -484,7 +484,7 @@ $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 4px solid $color-warning;
 $focus-spacing:                 0px;
 $nav-width:                     $grid-lg !default; // 992px
-$sidenav-current-border-width:  0.4rem !default; // must be in rem for math
+$sidenav-current-border-width:  4px !default; // must be in rem for math
 
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines
