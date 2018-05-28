@@ -38,6 +38,7 @@
     "browserify": "^13.0.0",
     "choices.js": "^3.0.4",
     "classlist-polyfill": "^1.0.3",
+    "datatables.net-dt": "^1.10.16",
     "domready": "^1.0.8",
     "elem-dataset": "^1.1.1",
     "lodash.debounce": "^4.0.7",
@@ -47,6 +48,7 @@
     "receptor": "^1.0.0",
     "resolve-id-refs": "^0.1.0",
     "select2": "^4.0.6-rc.1",
+    "slickgrid": "^2.3.19",
     "typescript": "^2.4.1",
     "yargs": "^8.0.2"
   },

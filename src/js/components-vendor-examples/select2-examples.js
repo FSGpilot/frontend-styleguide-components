@@ -1,6 +1,4 @@
 'use strict';
-const behavior = require('../utils/behavior');
-const toggle = require('../utils/toggle');
 const forEach = require('array-foreach');
 const $ = require('jquery');
 const select2 = require('select2')();
