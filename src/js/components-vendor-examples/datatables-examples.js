@@ -3,270 +3,158 @@ const forEach = require('array-foreach');
 const $  = require( 'jquery' );
 window.$ = $;
 const dt = require( 'datatables.net' )( window, $ );
+const dt_select =require( 'datatables.net-select' )( window, $ );
+const dt_edit = require( './datatables-editable' );
 
-const jsSelectorDatatable_Example1 = `#js-datatable-example1`;
+const jsSelectorDatatable_Example_basic = "#js-datatable-example-basic";
+const jsSelectorDatatable_Example_extra_pagination = "#js-datatable-example-extra_pagination";
+const jsSelectorDatatable_Example_ajax = "#js-datatable-example-ajax";
+const jsSelectorDatatable_Example_detailsrow = "#js-datatable-example-detailsrow";
+const jsSelectorDatatable_Example_selectable = "#js-datatable-example-selectable";
+const jsSelectorDatatable_Example_rowedit = "#js-datatable-example-rowedit";
 
 class datatablesExamples {
   constructor(el){
 
     //NOTE: you only need to externally include the javascript. A theme is shipped with DKWDS.
-        
+     
+    //////////////////////////////////////
+    //Init a datatable with no configuration
+    //////////////////////////////////////
+    var table_basic = $(jsSelectorDatatable_Example_basic).DataTable();
 
-    /*! CellEdit 1.0.19
-    * ©2016 Elliott Beaty - datatables.net/license
-    */
+    
+    //////////////////////////////////////
+    //Init a datatable with ajax data
+    //////////////////////////////////////
+    var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
+        "processing": true,
+        "ajax": {
+            "url": "https://jsonplaceholder.typicode.com/users",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "name" },
+            { "data": "email" },
+            { "data": "address.street" },
+            { "data": "address.city" },
+            { "data": "phone" },
+            { "data": "company.name" }
+        ]
+    } );
 
-    /**
-     * @summary     CellEdit
-     * @description Make a cell editable when clicked upon
-     * @version     1.0.19
-     * @file        dataTables.editCell.js
-     * @author      Elliott Beaty
-     * @contact     elliott@elliottbeaty.com
-     * @copyright   Copyright 2016 Elliott Beaty
-     *
-     * This source file is free software, available under the following license:
-     *   MIT license - http://datatables.net/license/mit
-     *
-     * This source file is distributed in the hope that it will be useful, but
-     * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-     * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
-     *
-     * For details please refer to: http://www.datatables.net
-     */
+    //////////////////////////////////////
+    //Init a datatable with full pagination settings and language settings
+    //////////////////////////////////////    
+    var table_extra_pagination = $(jsSelectorDatatable_Example_extra_pagination).DataTable({
+            "pagingType": "full_numbers",
+            "language": {
+                "lengthMenu": "Viser _MENU_ elementer pr side",
+                "zeroRecords": "Der blev fundet intet resultat",
+                "info": "Viser sider _PAGE_ af _PAGES_",
+                "infoEmpty": "Intet resultat",
+                "infoFiltered": "(filtreret fra _MAX_ elementer)",
+                "emptyTable": "Ingen data",
+                "search": "Søg:",
+                "paginate": {
+                    "first":      "Første",
+                    "last":       "Sidste",
+                    "next":       "Næste",
+                    "previous":   "Forrige"
+                },
+            }
+        }
+    );
 
-    jQuery.fn.dataTable.Api.register('MakeCellsEditable()', function (settings) {
-      var table = this.table();
-
-      jQuery.fn.extend({
-          // UPDATE
-          updateEditableCell: function (callingElement) {
-              // Need to redeclare table here for situations where we have more than one datatable on the page. See issue6 on github
-              var table = $(callingElement).closest("table").DataTable().table();
-              var row = table.row($(callingElement).parents('tr'));
-              var cell = table.cell($(callingElement).parent());
-              var columnIndex = cell.index().column;
-              var inputField =getInputField(callingElement);
-
-              // Update
-              var newValue = inputField.val();
-              if (!newValue && ((settings.allowNulls) && settings.allowNulls != true)) {
-                  // If columns specified
-                  if (settings.allowNulls.columns) {
-                      // If current column allows nulls
-                      if (settings.allowNulls.columns.indexOf(columnIndex) > -1) {
-                          _update(newValue);
-                      } else {
-                          _addValidationCss();
-                      }
-                      // No columns allow null
-                  } else if (!newValue) {
-                      _addValidationCss();
-                  }
-                  //All columns allow null
-              } else {
-                  _update(newValue);
-              }
-              function _addValidationCss() {
-                  // Show validation error
-                  if (settings.allowNulls.errorClass) {
-                      $(inputField).addClass(settings.allowNulls.errorClass)
-                  } else {
-                      $(inputField).css({ "border": "red solid 1px" });
-                  }
-              }
-              function _update(newValue) {
-                  var oldValue = cell.data();
-                  cell.data(newValue);
-                  //Return cell & row.
-                  settings.onUpdate(cell, row, oldValue);
-              }
-              // Get current page
-              var currentPageIndex = table.page.info().page;
-
-              //Redraw table
-              table.page(currentPageIndex).draw(false);
-          },
-          // CANCEL
-          cancelEditableCell: function (callingElement) {
-              var table = $(callingElement.closest("table")).DataTable().table();
-              var cell = table.cell($(callingElement).parent());
-              // Set cell to it's original value
-              cell.data(cell.data());
-
-              // Redraw table
-              table.draw();
-          }
-      });
-
-      // Destroy
-      if (settings === "destroy") {
-          $(table.body()).off("click", "td");
-          table = null;
-      }
-
-      if (table != null) {
-          // On cell click
-          $(table.body()).on('click', 'td', function () {
-
-              var currentColumnIndex = table.cell(this).index().column;
-
-              // DETERMINE WHAT COLUMNS CAN BE EDITED
-              if ((settings.columns && settings.columns.indexOf(currentColumnIndex) > -1) || (!settings.columns)) {
-                  var row = table.row($(this).parents('tr'));
-                  //editableCellsRow = row;
-
-                  var cell = table.cell(this).node();
-                  var oldValue = table.cell(this).data();
-                  // Sanitize value
-                  oldValue = sanitizeCellValue(oldValue);
-
-                  // Show input
-                  if (!$(cell).find('input').length && !$(cell).find('select').length && !$(cell).find('textarea').length) {
-                      // Input CSS
-                      var input = getInputHtml(currentColumnIndex, settings, oldValue);
-                      $(cell).html(input.html);
-                      if (input.focus) {
-                          $('#ejbeatycelledit').focus();
-                      }
-                  }
-              }
-          });
-      }
-
+    //////////////////////////////////////
+    //Init a datatable with selectable rows
+    //////////////////////////////////////
+    var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
+        columnDefs: [ {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        } ],
+        select: {
+            style:    'single',
+            selector: 'td:first-child'
+        },
+        order: [[ 1, 'asc' ]]
     });
 
-    function getInputHtml(currentColumnIndex, settings, oldValue) {
-      var inputSetting, inputType, input, inputCss, confirmCss, cancelCss;
+    //////////////////////////////////////
+    //Init a datatable with expand row
+    //////////////////////////////////////
+  
+    // Formatting function for row details - modify as you need 
+    /*function format ( d ) {
+        // `d` is the original data object for the row
+        return '<table>'+
+            '<tr>'+
+                '<td>Full name:</td>'+
+                '<td>'+d.name+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Email:</td>'+
+                '<td>'+d.email+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Extra info:</td>'+
+                '<td>And any further details here (images etc)...</td>'+
+            '</tr>'+
+        '</table>';
+    }
+    
 
-      input = {"focus":true,"html":null}
+    var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
+        "ajax": {
+            "url": "https://jsonplaceholder.typicode.com/users",
+            "dataSrc": ""
+        },
+        "columns": [
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": ''
+            },
+            { "data": "name" },
+            { "data": "email" },
+            { "data": "address.street" },
+            { "data": "address.city" },
+            { "data": "phone" },
+            { "data": "company.name" }
+        ],
+        "order": [[1, 'asc']]
+    } );
+    
+    // Add event listener for opening and closing details
+    $(jsSelectorDatatable_Example_detailsrow).on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table_detailsrow.row( tr );
 
-      if(settings.inputTypes){
-      $.each(settings.inputTypes, function (index, setting) {
-        if (setting.column == currentColumnIndex) {
-          inputSetting = setting;
-          inputType = inputSetting.type.toLowerCase();
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
         }
-      });
-    }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );*/
 
-      if (settings.inputCss) { inputCss = settings.inputCss; }
-      if (settings.confirmationButton) {
-          confirmCss = settings.confirmationButton.confirmCss;
-          cancelCss = settings.confirmationButton.cancelCss;
-          inputType = inputType + "-confirm";
-      }
-      switch (inputType) {
-          case "list":
-              input.html = "<select class='" + inputCss + "' onchange='$(this).updateEditableCell(this);'>";
-              $.each(inputSetting.options, function (index, option) {
-                  if (oldValue == option.value) {
-                    input.html = input.html + "<option value='" + option.value + "' selected>" + option.display + "</option>"
-                  } else {
-                    input.html = input.html + "<option value='" + option.value + "' >" + option.display + "</option>"
-                  }
-              });
-              input.html = input.html + "</select>";
-              input.focus = false;
-              break;
-          case "list-confirm": // List w/ confirm
-              input.html = "<select class='" + inputCss + "'>";
-              $.each(inputSetting.options, function (index, option) {
-                  if (oldValue == option.value) {
-                    input.html = input.html + "<option value='" + option.value + "' selected>" + option.display + "</option>"
-                  } else {
-                    input.html = input.html + "<option value='" + option.value + "' >" + option.display + "</option>"
-                  }
-              });
-              input.html = input.html + "</select>&nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this);'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a> ";
-              input.focus = false;
-              break;
-          case "datepicker": //Both datepicker options work best when confirming the values
-          case "datepicker-confirm":
-              // Makesure jQuery UI is loaded on the page
-              if (typeof jQuery.ui == 'undefined') {
-                  alert("jQuery UI is required for the DatePicker control but it is not loaded on the page!");
-                  break;
-              }
-            jQuery(".datepick").datepicker("destroy");
-            input.html = "<input id='ejbeatycelledit' type='text' name='date' class='datepick " + inputCss + "'   value='" + oldValue + "'></input> &nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a>";
-            setTimeout(function () { //Set timeout to allow the script to write the input.html before triggering the datepicker
-                var icon = "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif";
-                  // Allow the user to provide icon
-                if (typeof inputSetting.options !== 'undefined' && typeof inputSetting.options.icon !== 'undefined') {
-                    icon = inputSetting.options.icon;
-                }
-                var self = jQuery('.datepick').datepicker(
-                      {
-                          showOn: "button",
-                          buttonImage: icon,
-                          buttonImageOnly: true,
-                          buttonText: "Select date"
-                      });
-            },100);
-            break;
-          case "text-confirm": // text input w/ confirm
-              input.html = "<input id='ejbeatycelledit' class='" + inputCss + "' value='"+oldValue+"'></input>&nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a> ";
-              break;
-          case "undefined-confirm": // text input w/ confirm
-              input.html = "<input id='ejbeatycelledit' class='" + inputCss + "' value='" + oldValue + "'></input>&nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a> ";
-              break;
-          case "textarea":
-          case "textarea-confirm":
-              input.html = "<textarea id='ejbeatycelledit' class='" + inputCss + "'>"+oldValue+"</textarea><a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a>";
-              break;
-          default: // text input
-              input.html = "<input id='ejbeatycelledit' class='" + inputCss + "' onfocusout='$(this).updateEditableCell(this)' value='" + oldValue + "'></input>";
-              break;
-      }
-      return input;
-    }
-
-    function getInputField(callingElement) {
-      // Update datatables cell value
-      var inputField;
-      switch ($(callingElement).prop('nodeName').toLowerCase()) {
-          case 'a': // This means they're using confirmation buttons
-              if ($(callingElement).siblings('input').length > 0) {
-                  inputField = $(callingElement).siblings('input');
-              }
-              if ($(callingElement).siblings('select').length > 0) {
-                  inputField = $(callingElement).siblings('select');
-              }
-              if ($(callingElement).siblings('textarea').length > 0) {
-                  inputField = $(callingElement).siblings('textarea');
-              }
-          break;
-          default:
-              inputField = $(callingElement);
-      }
-      return inputField;
-    }
-
-    function sanitizeCellValue(cellValue) {
-      if (typeof (cellValue) === 'undefined' || cellValue === null || cellValue.length < 1) {
-          return "";
-      }
-
-      // If not a number
-      if (isNaN(cellValue)) {
-          // escape single quote
-          cellValue = cellValue.replace(/'/g, "&#39;");
-      }
-      return cellValue;
-    }
-
-    //Init a datatable with no configuration
-    var table = $(jsSelectorDatatable_Example1).DataTable();
-
-    function myCallbackFunction (updatedCell, updatedRow, oldValue) {
+    
+    
+    /*function myCallbackFunction (updatedCell, updatedRow, oldValue) {
       console.log("The new value for the cell is: " + updatedCell.data());
       console.log("The values for each cell in that row are: " + updatedRow.data());
     }
 
     table.MakeCellsEditable({
         "onUpdate": myCallbackFunction
-    });
+    });*/
     
 
   }
