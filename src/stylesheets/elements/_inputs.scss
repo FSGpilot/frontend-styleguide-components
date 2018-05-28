@@ -17,14 +17,14 @@ textarea{
   appearance: none;
   border: $outer-border;
   border-radius: $input-border-radius;
-  color: $color-base; // standardize on firefox
+  color: $color-black; // standardize on firefox
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
   padding: $input-top-bottom-padding $input-left-right-padding;
   width: 100%;
   margin-top: map-get($spacers, 3);
-  text-align: left; 
+  text-align: left;
 }
 input:not([type='file']) {
   height: $input-standard-height;
@@ -38,7 +38,7 @@ select {
   background-color: $color-white;
   border: $outer-border;
   border-radius: $input-border-radius;
-  color: $color-base; // standardize on firefox
+  color: $color-black; // standardize on firefox
   display: block;
   font-size: $input-font-size;
   line-height: $input-line-height;
@@ -105,7 +105,7 @@ legend {
 }
 
 .input-optional:after {
-  color: $color-gray;
+  color: $color-gray-medium-dark;
   content: ' (optional)';
 }
 
@@ -113,7 +113,7 @@ legend {
 .input-hint {
   @include body-copy-text;
   display: block;
-  color: $color-gray;
+  color: $color-gray-medium-dark;
 }
 
 // Custom checkboxes
@@ -154,7 +154,7 @@ legend {
 
   //background: $color-white;
   //border-radius: $checkbox-border-radius;
-  //box-shadow: 0 0 0 1px $color-gray;
+  //box-shadow: 0 0 0 1px $color-gray-medium-dark;
   content: '\a0';
   display: inline-block;
   height: $spacing-medium;
@@ -168,7 +168,7 @@ legend {
 
 [type=radio] + label::before {
   // border-radius: 100%;
-  // box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray;
+  // box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray-medium-dark;
   // height: 1.4rem; // Size overrides to account for shape + checked styling
   // line-height: 1.4rem;
   // margin-right: 0.75em;
@@ -219,7 +219,7 @@ legend {
 }
 
 // [type=checkbox]:disabled + label {
-//   color: $color-gray-lighter;
+//   color: $color-gray-light;
 // }
 
 // [type=checkbox]:focus + label::before {
@@ -229,8 +229,8 @@ legend {
 
 [type=checkbox]:disabled + label::before,
 [type=radio]:disabled + label::before {
-  //background: $color-gray-lightest;
-  //box-shadow: 0 0 0 1px $color-gray-light;
+  //background: $color-gray-pale;
+  //box-shadow: 0 0 0 1px $color-gray-pale;
   cursor: not-allowed;
 }
 
@@ -251,7 +251,7 @@ legend {
 
 [type=range]::-webkit-slider-runnable-track {
   background: $color-gray-light;
-  border: 1px solid $color-gray;
+  border: 1px solid $color-gray-medium-dark;
   cursor: pointer;
   height: 1.2rem;
   width: 100%;
@@ -259,7 +259,7 @@ legend {
 
 [type=range]::-moz-range-track {
   background: $color-primary;
-  border: 1px solid $color-gray;
+  border: 1px solid $color-gray-medium-dark;
   cursor: pointer;
   height: 1.2rem;
   width: 100%;
@@ -275,18 +275,18 @@ legend {
 
 [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid $color-gray;
+  border: 1px solid $color-gray-medium-dark;
   height: 2.2rem;
   border-radius: 1.5rem;
-  background: $color-gray-lightest;
+  background: $color-gray-pale;
   cursor: pointer;
   margin-top: -.65rem;
   width: 2.2rem;
 }
 
 [type=range]::-moz-range-thumb {
-  background: $color-gray-lightest;
-  border: 1px solid $color-gray;
+  background: $color-gray-pale;
+  border: 1px solid $color-gray-medium-dark;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -294,8 +294,8 @@ legend {
 }
 
 [type=range]::-ms-thumb {
-  background: $color-gray-lightest;
-  border: 1px solid $color-gray;
+  background: $color-gray-pale;
+  border: 1px solid $color-gray-medium-dark;
   border-radius: 1.5rem;
   cursor: pointer;
   height: 2.2rem;
@@ -304,13 +304,13 @@ legend {
 
 [type=range]::-ms-fill-lower {
   background: $color-gray-light;
-  border: 1px solid $color-gray;
+  border: 1px solid $color-gray-medium-dark;
   border-radius: 2rem;
 }
 
 [type=range]::-ms-fill-upper {
   background: $color-gray-light;
-  border: 1px solid $color-gray;
+  border: 1px solid $color-gray-medium-dark;
   border-radius: 2rem;
 }
 

@@ -12,11 +12,11 @@ $z-index-nav:     9000;
 
 .header {
   width: 100%;
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-pale;
   z-index: $z-index-header;
 
   @include media($nav-width) {
-    border-bottom: 1px solid $color-gray-lighter;
+    border-bottom: 1px solid $color-gray-light;
   }
 
   a {
@@ -100,7 +100,7 @@ $z-index-nav:     9000;
   }
 
   a {
-    color: $color-base;
+    color: $color-black;
     text-decoration: none;
   }
 
@@ -250,7 +250,7 @@ $z-index-nav:     9000;
 
   .nav {
     @include media($nav-width) {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       border-top: 1px solid $color-white;
       float: none;
       padding: 0;

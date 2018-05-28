@@ -7,10 +7,10 @@ $button-stroke: inset 0 0 0 2px;
 // This mixin is only needed until we fully remove the
 // deprecated button-disabled style.
 @mixin disabledesque {
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-light;
   box-shadow: none;
   cursor: not-allowed;
-  color:$color-gray;
+  color:$color-gray-medium-dark;
 
   &:hover,
   &.button-hover,
@@ -20,8 +20,8 @@ $button-stroke: inset 0 0 0 2px;
   &.focus,
   &.disabled,
   &:disabled {
-    background-color: $color-gray-lightest !important;
-    color:$color-gray-004 !important;
+    background-color: $color-gray-light !important;
+    color:$color-gray-medium-light !important;
     border: none !important;
     box-shadow: none !important;
 
@@ -101,33 +101,33 @@ $button-stroke: inset 0 0 0 2px;
 
   //############ Secondary ##############
   &.button-secondary {
-    color: $color-base;
-    background-color: $color-gray-lightest;
-    border-color: $color-gray-lighter;
+    color: $color-black;
+    background-color: $color-gray-pale;
+    border-color: $color-gray-light;
 
     &:hover,
     &.button-hover {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       border-color: $color-border;
     }
 
     &:active,
     &.button-active {
-      background-color: $color-gray-lighter;
-      border-color: $color-base;
+      background-color: $color-gray-light;
+      border-color: $color-black;
     }
 
     &.focus,
     &:focus {
-      background-color: $color-gray-lightest;
-      border-color: $color-gray-lighter;
+      background-color: $color-gray-pale;
+      border-color: $color-gray-light;
     }
 
   }
 
   //############ Ghost #################
   &.button-ghost {
-    color: $color-gray-darkest;
+    color: $color-gray-dark;
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
@@ -135,21 +135,21 @@ $button-stroke: inset 0 0 0 2px;
 
     &:hover,
     &.button-hover {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       box-shadow:none;
       text-decoration: underline;
     }
 
     &:active,
     &.button-active {
-      background-color: $color-gray-lighter;
+      background-color: $color-gray-light;
       box-shadow:none;
       text-decoration: underline;
     }
 
     &.focus,
     &:focus {
-      color: $color-gray-darkest;
+      color: $color-black;
       background-color:$color-focus;
       box-shadow:none;
       border-color: $color-focus;
@@ -158,7 +158,7 @@ $button-stroke: inset 0 0 0 2px;
     &:disabled,
     .disabled {
       background-color: transparent !important;
-      color: $color-gray-lighter !important;
+      color: $color-gray-light !important;
     }
   }
 
@@ -166,12 +166,12 @@ $button-stroke: inset 0 0 0 2px;
   &.button-tertiary {
     border-color:$color-gray-005;
     background-color: transparent;
-    color: $color-base;
+    color: $color-black;
     font-weight: $font-weight-normal;
 
     &:hover,
     &.button-hover {
-      border-color: $color-gray;
+      border-color: $color-gray-medium-dark;
     }
 
     &:active,
@@ -181,33 +181,33 @@ $button-stroke: inset 0 0 0 2px;
 
     &.focus,
     &:focus {
-      border-color:$color-gray-lighter;
+      border-color:$color-gray-light;
       background-color: transparent;
     }
 
   }
 
   &.button-small {
-    color: $color-base;
-    background-color: $color-gray-lightest;
-    border-color: $color-gray-lighter;
+    color: $color-black;
+    background-color: $color-gray-pale;
+    border-color: $color-gray-light;
 
     &:hover,
     &.button-hover {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       border-color: $color-border;
     }
 
     &:active,
     &.button-active {
-      background-color: $color-gray-lighter;
-      border-color: $color-base;
+      background-color: $color-gray-light;
+      border-color: $color-black;
     }
 
     &.focus,
     &:focus {
-      background-color: $color-gray-lightest;
-      border-color: $color-gray-lighter;
+      background-color: $color-gray-pale;
+      border-color: $color-gray-light;
     }
 
   }
@@ -225,8 +225,8 @@ $button-stroke: inset 0 0 0 2px;
 .button-secondary:disabled,
 .button-secondary-inverse:disabled,
 .button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
-  box-shadow: $button-stroke $color-gray-lighter;
-  color: lighten($color-base, 40%);
+  box-shadow: $button-stroke $color-gray-light;
+  color: lighten($color-black, 40%);
 
   &:hover,
   &.button-hover,
@@ -235,8 +235,8 @@ $button-stroke: inset 0 0 0 2px;
   &:focus,
   &.focus {
     background-color: $color-white;
-    //box-shadow: $button-stroke $color-gray-lighter;
-    color: $color-gray-lighter;
+    //box-shadow: $button-stroke $color-gray-light;
+    color: $color-gray-light;
     cursor: not-allowed;
   }
 }
@@ -249,8 +249,8 @@ html .button-secondary-disabled,          // Deprecated
 html .button-secondary-inverse-disabled,  // Deprecated
 .button-secondary-inverse:disabled {
   background-color: transparent;
-  color: $color-gray;
-  box-shadow: $button-stroke $color-gray;
+  color: $color-gray-medium-dark;
+  box-shadow: $button-stroke $color-gray-medium-dark;
 }
 
 @mixin button-unstyled {

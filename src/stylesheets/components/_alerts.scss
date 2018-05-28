@@ -25,7 +25,7 @@ $left-padding: map-get($spacers, 9);
 $icon-size: 24px;
 
 .alert {
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-pale;
   background-position: 16px 16px;
   background-repeat: no-repeat;
   background-size: 24px;
@@ -35,7 +35,7 @@ $icon-size: 24px;
   padding-top: $padding;
   position: relative;
 
-  border-left: $bar-size solid darken($color-gray-lightest, 40%);
+  border-left: $bar-size solid darken($color-gray-pale, 40%);
 
   &.alert--paragraph {
     width: $text-max-width;

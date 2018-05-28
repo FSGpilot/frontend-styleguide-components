@@ -4,16 +4,16 @@
         a {
         &.current{
             &:last-child {
-              border-left: $sidenav-current-border-width solid $color-base;
+              border-left: $sidenav-current-border-width solid $color-black;
             }
           }
         }
       }
-    
+
 
   li {
-    
-  
+
+
     // &.disabled {
     //   background: $color-gray-lightest;
 
@@ -28,7 +28,7 @@
     //     &.icon-bg-success,
     //     &.icon-bg-warning,
     //     &.icon-bg-error {
-    //       background-color: $color-gray-lighter;
+    //       background-color: $color-gray-light
     //     }
     //   }
     // }

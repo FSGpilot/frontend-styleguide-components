@@ -51,7 +51,7 @@ a {
   &.disabled {
     box-shadow: none !important;
     cursor: not-allowed !important;
-    color: $color-gray-005 !important;
+    color: $color-gray-light !important;
     box-shadow: none !important;
     outline-offset: inherit !important;
     &:focus{
@@ -61,7 +61,7 @@ a {
   }
 
   .background-dark &{
-    color: $color-gray-lightest;
+    color: $color-gray-pale;
 
     &:hover,
     &.link-hover {
@@ -75,7 +75,7 @@ a {
 
     &:active,
     &.link-active {
-      color: $color-gray-005;
+      color: $color-gray-light;
     }
 
     &:focus,
@@ -87,7 +87,7 @@ a {
 
     &:visited,
     &.link-visited {
-      color: $color-gray-lightest;
+      color: $color-gray-pale;
     }
 
     &:disabled,
@@ -111,35 +111,35 @@ a {
   font-size: $h1-font-size; //4.3rem
   line-height: $h1-line-height; //4.8rem
   font-weight: $font-weight-bold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin h2 {
   font-family: $font-name;
   font-size: $h2-font-size; //3.3rem
   line-height: $h2-line-height; //4.0rem
   font-weight: $font-weight-semibold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin h3 {
   font-family: $font-name;
   font-size: $h3-font-size; //2.6rem
   line-height: $h3-line-height; //3.2rem
   font-weight: $font-weight-semibold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin h4{
   font-family: $font-name;
   font-size: $h4-font-size; //2.2rem
   line-height: $h4-line-height; //2.4rem
   font-weight: $font-weight-semibold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin h5 {
   font-family: $font-name;
   font-size: $h5-font-size; //2.0rem
   line-height: $h5-line-height; //2.4rem
   font-weight: $font-weight-medium;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin body-copy-text {
   font-family: $font-name;
@@ -153,14 +153,14 @@ a {
   font-size: $form-label;
   line-height: $form-label-line-height; //2.4rem
   font-weight: $font-weight-semibold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin h6 {
   font-family: $font-name;
   font-size: $h6-font-size; //1.6rem
   line-height: $h6-line-height; //2.4rem
   font-weight: $font-weight-semibold;
-  color: $color-base;
+  color: $color-black;
 }
 @mixin small-text {
   font-family: $font-name;
@@ -282,7 +282,7 @@ p, .body-text,
 // [href^="http:"]:not([href*="my-domain.com"])
 // [href^="https:"]:not([href*="my-domain.com"])
 .textlink-icon {
-  display: inline-block; //Bug fix: correct focus border. 
+  display: inline-block; //Bug fix: correct focus border.
   &.external_link {
     //color: $color-link-hover;
     @include textlink_icon("open-in-new");
@@ -333,7 +333,7 @@ dfn {
     font-size: rem-calc(80);
     line-height: rem-calc(88);
     margin-bottom: 0;
-    color: $color-base;
+    color: $color-black;
 
     @include media($small-screen) {
       //@include h2();
@@ -348,7 +348,7 @@ dfn {
     font-size: rem-calc(60);
     line-height: rem-calc(72);
     margin-bottom: 0;
-    color: $color-base;
+    color: $color-black;
 
     @include media($small-screen) {
       //@include h2();
@@ -400,6 +400,6 @@ dfn {
   font-weight: 400;
 
   ~ hr {
-    border: 2px solid $color-base;
+    border: 2px solid $color-black;
   }
 }
