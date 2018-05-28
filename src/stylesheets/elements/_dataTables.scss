@@ -385,9 +385,36 @@ table.dataTable {
 table.dataTable,
 table.dataTable th,
 table.dataTable td {
-            box-sizing: content-box;
+    box-sizing: content-box;
 }
- 
+
+//Row selected checkbox
+table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox{
+    position: relative;
+}
+table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before{
+    content: ' ';
+    margin-top: -6px;
+    margin-left: -6px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after{
+    display: block;
+    position: absolute;
+    top: 1.2em;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+}
+table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after{
+    content: '\2714';
+    margin-top: -11px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+}
  
 /*
  * Control feature layout
@@ -592,6 +619,23 @@ table.dataTable td {
  
         .dataTables_filter {
             margin-top: 0.5em;
+        }
+    }
+}
+
+tbody{
+    .details-control{
+        cursor: pointer;
+        &:after{
+            content: '+';
+            color: green;
+            font-weight: 600;
+        }
+    }
+    tr.shown .details-control{
+        &:after{
+            content: '-';
+            color: red;
         }
     }
 }
