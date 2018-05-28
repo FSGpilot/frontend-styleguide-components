@@ -47,7 +47,7 @@ $sidebar-chevron-icon-size: 24px !default;
 
     &:hover,
     &:focus {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
 
       a {
         &:after {
@@ -70,7 +70,7 @@ $sidebar-chevron-icon-size: 24px !default;
     }
 
     &.current {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       border-left: 6px solid $color-primary;
 
       a {
@@ -85,18 +85,18 @@ $sidebar-chevron-icon-size: 24px !default;
     }
 
     &.disabled {
-      background-color: $color-gray-lighter;
+      background-color: $color-gray-light;
 
       a {
         .sidebar-text {
           .sidebar-header {
-            color: $color-gray;
+            color: $color-gray-medium-dark;
           }
         }
 
         &:hover,
         &:focus {
-          background-color: $color-gray-lighter;
+          background-color: $color-gray-light;
           cursor: not-allowed;
         }
 
@@ -118,12 +118,12 @@ $sidebar-chevron-icon-size: 24px !default;
     .sidebar-header {
       font-size: 1.6rem;
       font-weight: 700;
-      color: $color-base;
+      color: $color-black;
     }
 
     .sidebar-subtext {
       font-size: 1.6rem;
-      color: $color-gray;
+      color: $color-gray-medium-dark;
     }
   }
 }

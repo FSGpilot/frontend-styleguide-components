@@ -1,8 +1,9 @@
 .sidenav-list {
   @include sidenav-list;
   li {
-    
-  
+
+
+
     // &.disabled {
     //   background: $color-gray-lightest;
 
@@ -17,7 +18,7 @@
     //     &.icon-bg-success,
     //     &.icon-bg-warning,
     //     &.icon-bg-error {
-    //       background-color: $color-gray-lighter;
+    //       background-color: $color-gray-light
     //     }
     //   }
     // }

@@ -105,7 +105,7 @@
     padding-left: 1.4rem;
 
     @include media($nav-width) {
-      color: $color-base;
+      color: $color-black;
     }
   }
 
@@ -149,7 +149,7 @@
     > a {
       @include media($nav-width) {
         @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
-        color: $color-base;
+        color: $color-black;
         font-size: $base-font-size;
         font-weight: $font-weight-bold;
         line-height: 1;
@@ -170,7 +170,6 @@
 
     &:hover {
       @include media($nav-width) {
-        // color: $color-base;
       }
     }
   }
@@ -186,7 +185,7 @@
 
     @include media($nav-width) {
       @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
-      color: $color-gray;
+      color: $color-gray-medium-dark;
       font-size: $h5-font-size;
       font-weight: $font-weight-bold;
       line-height: 1;
@@ -199,12 +198,11 @@
     }
 
     &:hover {
-      background-color: $color-gray-lightest;
+      background-color: $color-gray-pale;
       color: $color-primary;
 
       @include media($nav-width) {
         background-color: transparent;
-        // color: $color-base;
       }
     }
 
@@ -237,14 +235,14 @@
       background-size: 1rem;
 
       @include media($nav-width) {
-        background-color: $color-gray-dark;
+        background-color: $color-gray-medium-dark;
         color: $color-white;
         background-image: url('#{$image-path}/angle-arrow-down-hover.png');
         background-image: url('#{$image-path}/angle-arrow-down-hover.svg');
         background-position: right 1.5rem top $button-vertical-offset;
 
         &:hover {
-          background-color: $color-gray-dark;
+          background-color: $color-gray-medium-dark;
         }
 
         span {
@@ -270,7 +268,7 @@
 
       span {
         @include nav-border;
-        color: $color-base;
+        color: $color-black;
       }
     }
   }
@@ -342,7 +340,7 @@
 
     &:not(:last-child)::after {
       @include media($nav-width) {
-        color: $color-gray-lighter;
+        color: $color-gray-light;
         content: '|';
         padding-left: 0.5rem;
       }
@@ -352,7 +350,7 @@
   a:not(.button),
   .header-search-button {
     display: inline-block;
-    color: $color-gray;
+    color: $color-gray-medium-dark;
     font-size: $h5-font-size;
     text-decoration: none;
 
@@ -429,7 +427,7 @@
   @include media($nav-width) {
     @include unstyled-list;
     @include padding(0.75rem null 0.9rem null);
-    background-color: $color-gray-dark;
+    background-color: $color-gray-medium-dark;
     width: 21.5rem;
     position: absolute;
   }
@@ -446,7 +444,7 @@
 
     &:hover {
       @include media($nav-width) {
-        background-color: $color-gray-dark;
+        background-color: $color-gray-medium-dark;
         color: $color-white;
         padding-left: 1.5rem;
         text-decoration: underline;
@@ -506,7 +504,7 @@
 // Navigation mega menu -------- //
 
 @mixin outer-megamenu {
-  background-color: $color-gray-dark;
+  background-color: $color-gray-medium-dark;
   content: '';
   display: block;
   height: 100%;

@@ -229,17 +229,23 @@ $color-data-megenta-001:      #E50081 !default;
 
 // Base colors
 $color-white:                 $color-base-001 !default;
-$color-base:                  $color-base-002 !default;
 $color-black:                 $color-base-002 !default;
 
 // Gray-scales
-$color-gray-darkest:          $color-gray-001 !default;
+//new
 $color-gray-dark:             $color-gray-002 !default;
-$color-gray:                  $color-gray-003 !default;
-$color-gray-light:            $color-gray-004 !default;
-$color-gray-lighter:          $color-gray-005 !default;
-$color-gray-lightest:         $color-gray-006 !default;
-$color-gray-brightest:        $color-base-001 !default;
+$color-gray-medium-dark:      $color-gray-003 !default;
+$color-gray-medium-light:     $color-gray-004 !default;
+$color-gray-light:            $color-gray-005 !default;
+$color-gray-pale:             $color-gray-006 !default;
+//old
+//$color-gray-darkest:          $color-base-002 !default;
+//$color-gray-dark:             $color-gray-002 !default;
+//$color-gray:                  $color-gray-003 !default;
+//$color-gray-light:            $color-gray-004 !default;
+//$color-gray-lighter:          $color-gray-005 !default;
+//$color-gray-lightest:         $color-gray-006 !default;
+//$color-gray-brightest:        $color-base-001 !default;
 
 //Focus
 $color-focus:                 $color-orange-004 !default;
@@ -309,18 +315,18 @@ $button-primary-color: $color-white !default;
 $button-primary-bg: $color-primary !default;
 $button-primary-border-color: $color-gray-dark !default;
 $button-primary-hover-bg: $color-gray-002 !default;
-$button-primary-hover-border-color: $color-base !default;
+$button-primary-hover-border-color: $color-black !default;
 $button-primary-active-bg: $color-base-002 !default;
-$button-primary-active-border-color: $color-base !default;
+$button-primary-active-border-color: $color-black !default;
 $button-primary-focus-bg:  $color-primary !default;
-$button-primary-focus-border-color: $color-base !default;
+$button-primary-focus-border-color: $color-black !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
 //Borders
 $outer-border:            1px solid $color-gray-light;
-$inner-border:            1px solid $color-gray-lighter;
+$inner-border:            1px solid $color-gray-light;
 $focus-border:            2px dashed $color-gray-light;
 $button-border-width:     2px;
 $button-border:           $button-border-width solid $button-primary-border-color;

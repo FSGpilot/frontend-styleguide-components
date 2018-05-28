@@ -1,5 +1,5 @@
 // Variables
-$accordion-border: 1px solid $color-gray-lighter;
+$accordion-border: 1px solid $color-gray-light;
 
 // Accordion Styles
 
@@ -9,14 +9,14 @@ $v-padding: $spacing-md-small;
 
 @mixin accordion-list-styles {
   @include unstyled-list;
-  color: $color-base;
+  color: $color-black;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
 @mixin accordion-list-item-styles {
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-pale;
   list-style: none;
   margin-bottom: $spacing-small;
   width: 100%;
@@ -25,12 +25,12 @@ $v-padding: $spacing-md-small;
 // scss-lint:disable PropertyCount
 @mixin accordion-button-styles {
   @include button-unstyled;
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-pale;
   background-image: url('#{$icons-folder-path}/minus.svg');
   background-position: right $h-padding center;
   background-repeat: no-repeat;
   background-size: $icon-size;
-  color: $color-base;
+  color: $color-black;
   cursor: pointer;
   display: inline-block;
   //font-weight: $font-weight-bold;
@@ -40,8 +40,8 @@ $v-padding: $spacing-md-small;
   width: 100%;
 
   &:hover {
-    background-color: $color-gray-lighter;
-    color: $color-base;
+    background-color: $color-gray-light;
+    color: $color-black;
   }
 
   h1, .h1,
@@ -172,7 +172,7 @@ $v-padding: $spacing-md-small;
     }
 
     .icon-svg {
-      fill: $color-base;
+      fill: $color-black;
       @include for-size(phone-only) {
         float: left;
       }

@@ -18,7 +18,7 @@
             height: 20px;
             fill-rule: evenodd;
             fill: #8c9ba5;
-        }   
+        }
     }
 
     &.open {
@@ -26,7 +26,7 @@
             display: flex;
         }
     }
-    
+
     .overflow-menu-options {
         display: none;
         flex-direction: column;
@@ -40,12 +40,12 @@
         background: white;
         padding: 0;
         top: calc(100% + 5px);
-        
+
         button {
             &:hover {
                 background-color: $color-primary;
                 color: $color-white;
-                border-color: transparent; 
+                border-color: transparent;
                 z-index: 2;
             }
             width: 100%;
@@ -63,13 +63,13 @@
             padding-right: 15px;
             font-weight: normal;
             font-size: $small-font-size;
-            border: 1px solid $color-gray-lighter;
-        }    
+            border: 1px solid $color-gray-light;
+        }
 
         &:after {
             content: " ";
             position: absolute;
-            
+
             top: -5px;
             border-width: 1px;
             border-style: solid;
@@ -77,20 +77,20 @@
             transform: rotate(45deg);
             background: $color-white;
             width: 10px;
-            height: 10px;            
-        }      
-        
+            height: 10px;
+        }
+
         &.position-right {
             left: calc(50% - 19px);
             &:after {
                 left: 13px;
-            }    
+            }
         }
         &.position-left {
             right: calc(50% - 19px);
             &:after {
                 right: 13px;
-            }       
+            }
         }
     }
 
