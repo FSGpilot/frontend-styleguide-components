@@ -3,10 +3,10 @@ $custom-alerts: () !default;
 $custom-alerts-bar: () !default;
 
 $alerts: (
-  success: $color-success-background,
-  warning: $color-warning-background,
-  error: $color-error-background,
-  info: $color-info-background
+  success: $color-success-light,
+  warning: $color-warning-light,
+  error: $color-error-light,
+  info: $color-info-light
 );
 
 $alerts-bar: (
