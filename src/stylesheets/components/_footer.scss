@@ -39,7 +39,7 @@
 }
 
 .footer-primary-section {
-  background-color: $color-gray-dark;
+  background-color: $color-gray-medium-dark;
 
   a {
     color: $color-white;
@@ -88,12 +88,12 @@ li.footer-primary-content {
 /* stylelint-enable */
 
 .footer-secondary_section {
-  background-color: $color-gray-lightest;
+  background-color: $color-gray-pale;
   padding-bottom: $spacing-md-small;
   padding-top: $spacing-md-small;
 
   a {
-    color: $color-base;
+    color: $color-black;
   }
 }
 

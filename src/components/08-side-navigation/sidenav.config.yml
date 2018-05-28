@@ -15,7 +15,7 @@ context:
               - text: Grandchild link
               - text: Grandchild link
               - text: Grandchild link
-                current: true
+                active: true
               - text: Grandchild link
           - text: Child link
           - text: Child link
@@ -32,7 +32,7 @@ variants:
           links:
             - text: Parent link
             - text: Current page
-              current: true
+              active: true
             - text: Another link
 
         - title: 2 levels
@@ -41,6 +41,9 @@ variants:
             - text: Current page
               current: true
               links:
+                - text: Child link
+                - text: Child link
+                  active: true
                 - text: Child link
                 - text: Child link
                 - text: Child link
@@ -59,7 +62,7 @@ variants:
                     - text: Grandchild link
                     - text: Grandchild link
                     - text: Grandchild link
-                      current: true
+                      active: true
                     - text: Grandchild link
                 - text: Child link
                 - text: Child link

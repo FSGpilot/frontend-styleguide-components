@@ -1,19 +1,9 @@
 .sidenav-list {
   @include sidenav-list;
-      li {
-        a {
-        &.current{
-            &:last-child {
-              border-left: $sidenav-current-border-width solid $color-base;
-            }
-          }
-        }
-      }
-    
-
   li {
-    
-  
+
+
+
     // &.disabled {
     //   background: $color-gray-lightest;
 
@@ -28,7 +18,7 @@
     //     &.icon-bg-success,
     //     &.icon-bg-warning,
     //     &.icon-bg-error {
-    //       background-color: $color-gray-lighter;
+    //       background-color: $color-gray-light
     //     }
     //   }
     // }

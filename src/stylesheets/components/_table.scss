@@ -1,5 +1,5 @@
 $border-row-hover: 1px solid  $color-primary-lightest;
-$border-row: 1px solid $color-gray-lighter;
+$border-row: 1px solid $color-gray-light;
 
 .table {
     cursor: pointer;
@@ -55,7 +55,7 @@ $border-row: 1px solid $color-gray-lighter;
             .overflow-menu {
                 align-self: center;
                 .overflow-menu-btn {
-                    color: $color-gray-dark;
+                    color: $color-gray-medium-dark;
                     width: $hit-area;
                     height: $hit-area;
                     position: absolute; // hit-area might be bigger than row's height

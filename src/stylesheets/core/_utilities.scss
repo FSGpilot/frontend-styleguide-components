@@ -116,31 +116,39 @@
 @mixin sidenav-list {
   @include unstyled-list();
 
-  border-top: 1px solid $color-border-focus;
   border-bottom: 1px solid $color-border-focus;
 
   > li {
     background-color: transparent;
     border-top: 1px solid $color-border-focus;
     font-size: $base-font-size;
-
-    &:first-child {
-      border-top: none;
+    &:last-child {
+      a {
+        padding-bottom: $input-top-bottom-padding;
+      }
     }
   }
 
   a {
     border: none;
-    color: $color-base;
+
+    color: $color-black;
     display: block;
     line-height: 1.3;
-    padding: 0.85rem 1rem 0.85rem 1.8rem;
+    padding: $spacer;
+    padding-top:$input-top-bottom-padding;
+    padding-left: map-get($spacers, 4);
+    padding-right: map-get($spacers, 4);
     text-decoration: none;
 
+    
+
     &:hover {
-      background-color: $color-gray-lightest;
+
+      background-color: $color-gray-pale;
       text-decoration: none;
-      color: $color-link;
+
+      color: $color-link-hover;
     }
 
     &:focus {
@@ -150,11 +158,15 @@
     }
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-      
-      color: $color-base;
+      color: $color-black;
       font-weight: $font-weight-semibold;
-      padding-left: 1.4rem;
-      padding-left: $site-margins-mobile - $sidenav-current-border-width;
+      padding-left: map-get($spacers, 4);
+    }
+    &.active { 
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
+      border-left: $sidenav-current-border-width solid $color-primary;
     }
   }
 }
@@ -174,22 +186,29 @@
     &:first-child {
       border-top: none;
     }
+    &:last-child {
+      a {
+        padding-bottom: $spacer;
+      }
+    }
   }
 
   a {
     border: none;
-    color: $color-base;
+    color: $color-black;
     display: block;
     line-height: 1.3;
     padding: 0.85rem 1rem 0.85rem 1.8rem;
     text-decoration: none;
 
+
     &:hover {
       background-color: $color-white;
       text-decoration: none;
-      color: $color-base;
+
+      color: $color-black;
       cursor:default;
-      
+
     }
 
     &:focus {
@@ -199,12 +218,20 @@
     }
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-      color: $color-base;
+
+      color: $color-black;
       font-weight: $font-weight-semibold;
-      padding-left: 1.4rem;
-      padding-left: $site-margins-mobile - $sidenav-current-border-width;
+
+      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
       cursor:default;
-      
+    }
+     &.active { /* stylelint-disable-line selector-no-qualifying-type */
+
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
+      cursor:default;
+
     }
   }
 }
@@ -217,30 +244,46 @@
   li {
     border: none;
     //font-size: $h5-font-size;
+
+    &:last-child {
+      a {
+        padding-bottom: $spacer;
+      }
+    }
   }
 
   a {
-    padding-left: 2.8rem;
+
+    padding-left: map-get($spacers, 6);
+    padding-top: $spacer;
     line-height: $heading-line-height;
 
     
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
       border: none;
-      padding-left: 2.8rem;
-      
+      padding-left: map-get($spacers, 6);
+
+    }
+    &.active { /* stylelint-disable-line selector-no-qualifying-type */
+      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
     }
   }
 
   .sidenav-sub_list {
     a {
-      padding-left: 3.8rem;
+      padding-left: map-get($spacers, 8);
 
       &:focus {
         outline-offset: 0;
       }
 
-      &:hover {
-        padding-left: 3.8rem;
+      &.current { /* stylelint-disable-line selector-no-qualifying-type */
+        border: none;
+        padding-left: map-get($spacers, 8);
+        
+      }
+      &.active { /* stylelint-disable-line selector-no-qualifying-type */
+        padding-left: map-get($spacers, 8) - $sidenav-current-border-width;
       }
     }
   }
