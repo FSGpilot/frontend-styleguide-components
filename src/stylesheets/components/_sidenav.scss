@@ -1,17 +1,7 @@
 .sidenav-list {
   @include sidenav-list;
-      li {
-        a {
-        &.current{
-            &:last-child {
-              border-left: $sidenav-current-border-width solid $color-black;
-            }
-          }
-        }
-      }
-
-
   li {
+
 
 
     // &.disabled {
