@@ -165,7 +165,7 @@
     &.active { 
       color: $color-primary;
       font-weight: $font-weight-semibold;
-      padding-left: map-get($spacers, 4) - 4px;
+      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
       border-left: $sidenav-current-border-width solid $color-primary;
     }
   }
@@ -222,14 +222,14 @@
       color: $color-black;
       font-weight: $font-weight-semibold;
 
-      padding-left: map-get($spacers, 4) - 4px;
+      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
       cursor:default;
     }
      &.active { /* stylelint-disable-line selector-no-qualifying-type */
 
       color: $color-primary;
       font-weight: $font-weight-semibold;
-      padding-left: map-get($spacers, 6) - 4px;
+      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
       cursor:default;
 
     }
@@ -265,7 +265,7 @@
 
     }
     &.active { /* stylelint-disable-line selector-no-qualifying-type */
-      padding-left: map-get($spacers, 6) - 4px;
+      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
     }
   }
 
@@ -283,7 +283,7 @@
         
       }
       &.active { /* stylelint-disable-line selector-no-qualifying-type */
-        padding-left: map-get($spacers, 8) - 4px;
+        padding-left: map-get($spacers, 8) - $sidenav-current-border-width;
       }
     }
   }
