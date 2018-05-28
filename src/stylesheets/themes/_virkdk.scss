@@ -1,12 +1,19 @@
 // These variables overwrite the default values, giving the style the virk.dk theme
 
 // Overwriting default values
-$color-primary:               #f08b1e;
-$color-primary-darker:        #D8760E;
-$color-primary-darkest:       #B1610B;
-$color-primary-lightest:      #f8c996;
+$color-primary:               #067293;
+$color-primary-darker:        #04556E;
+$color-primary-darkest:       #033747;
 
-$color-primary-button-text:   $color-base;
+$button-primary-color: $color-white;
+$button-primary-bg: $color-primary;
+$button-primary-border-color: $color-primary-darkest;
+$button-primary-hover-bg: $color-primary-darker;
+$button-primary-hover-border-color: $color-primary-darkest;
+$button-primary-active-bg: $color-primary-darkest;
+$button-primary-active-border-color: $color-primary-darkest;
+$button-primary-focus-bg:  $color-primary;
+$button-primary-focus-border-color: $color-primary-darkest;
 
 .header .logo{
     background-image: url('#{$image-path}/logo-virk.svg');

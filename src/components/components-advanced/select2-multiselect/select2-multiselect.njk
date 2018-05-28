@@ -1,6 +1,6 @@
 {% macro select2(name, id, label, options, multiple) %}
   <label for="{{name}}">{{label}}</label>
-  <select class="js-select2" name="{{name}}" id="{{id}}" {% if multiple %}multiple{% endif %}>
+  <select class="js-select2-example1" name="{{name}}" id="{{id}}" {% if multiple %}multiple{% endif %}>
     {% for option in options %}
       <option value="{{option.value}}">{{option.text}}</option>
     {% endfor %}

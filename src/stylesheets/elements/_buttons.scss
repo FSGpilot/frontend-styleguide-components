@@ -29,32 +29,24 @@ $button-stroke: inset 0 0 0 2px;
 }
 
 /* stylelint-disable selector-no-qualifying-type */
-.button,
-.button-primary,
-.button:visited,
-.button-primary:visited,
-button,
-[type=button],
-[type=submit],
-[type=reset],
-[type=image] {
+.button{
   appearance: none;
   display: inline-block;
   width: 100%;
   //@include margin(0.5em 0.5em 0.5em null);
-  padding: 6px 16px;
+  padding: calc(#{map-get($spacers, 3)} - #{$button-border-width}) calc(#{map-get($spacers, 4)} - #{$button-border-width});
   border-radius: $button-border-radius;
+  border: $button-border;
   font-size: $base-font-size;
   font-weight: 500;
   min-height: 40px;
-  color: $color-primary-button-text;
+  color: $button-primary-color;
   @include font-smoothing;
   line-height: $body-text-line-height;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: all .2s ease-in-out;
-  border: solid 2px transparent;
 
   @include media($small-screen) {
     width: auto;
@@ -77,33 +69,33 @@ button,
     }
   }
 
+  &:disabled,
+  .disabled {
+    @include disabledesque;
+  }
 
   //############ Primary ###############
   &.button-primary {
-    color: $color-white;
-    background-color: $color-primary;
-    border-color: $color-gray-dark;
+    color: $button-primary-color;
+    background-color: $button-primary-bg;
+    border-color: $button-primary-border-color;
 
     &:hover,
     &.button-hover {
-      background-color:$color-primary-button-hover;
-      border-color: $color-base;
+      background-color: $button-primary-hover-bg;
+      border-color: $button-primary-hover-border-color;
     }
 
     &:active,
     &.button-active {
-      background-color: $color-primary-button-active;
-      border-color: $color-base;
+      background-color: $button-primary-active-bg;
+      border-color: $button-primary-active-border-color;
     }
 
     &.focus,
     &:focus {
-      background-color: $color-primary-button-focus;
-    }
-
-    &:disabled,
-    .disabled {
-      @include disabledesque;
+      background-color: $button-primary-focus-bg;
+      border-color: $button-primary-focus-border-color;
     }
   }
 
@@ -131,18 +123,15 @@ button,
       border-color: $color-gray-lighter;
     }
 
-    &:disabled,
-    .disabled {
-      @include disabledesque;
-    }
   }
 
   //############ Ghost #################
   &.button-ghost {
-    color: $color-base;
+    color: $color-gray-darkest;
     background-color: transparent;
     border-color: transparent;
     text-decoration: underline;
+    font-weight: $font-weight-normal;
 
     &:hover,
     &.button-hover {
@@ -160,24 +149,25 @@ button,
 
     &.focus,
     &:focus {
+      color: $color-gray-darkest;
       background-color:$color-focus;
       box-shadow:none;
       border-color: $color-focus;
-      outline:none;
-
     }
 
     &:disabled,
     .disabled {
-      @include disabledesque;
+      background-color: transparent !important;
+      color: $color-gray-lighter !important;
     }
   }
 
   //############### tertiary ############
   &.button-tertiary {
     border-color:$color-gray-005;
-    background-color: $color-white;
+    background-color: transparent;
     color: $color-base;
+    font-weight: $font-weight-normal;
 
     &:hover,
     &.button-hover {
@@ -186,19 +176,15 @@ button,
 
     &:active,
     &.button-active {
-      border-color:$color-base;
+      border-color: $color-gray-002;
     }
 
     &.focus,
     &:focus {
       border-color:$color-gray-lighter;
-      background-color: $color-white;
+      background-color: transparent;
     }
 
-    &:disabled,
-    .disabled {
-      @include disabledesque;
-    }
   }
 
   &.button-small {
@@ -224,18 +210,13 @@ button,
       border-color: $color-gray-lighter;
     }
 
-    &:disabled,
-    .disabled {
-      @include disabledesque;
-    }
   }
 
   .icon-svg {
     float: right;
-    margin: -1px 0px 0px 6px;
+    margin: 0px 0px 0px 4px;
     fill: white;
   }
-
 }
 
 /* stylelint-disable */
@@ -294,50 +275,6 @@ html .button-secondary-inverse-disabled,  // Deprecated
 .button-small {
   padding: .5rem 1rem;
   font-size: $small-font-size;
-}
-
-.button-ghost {
-  border: 0;
-  background-color: transparent;
-  color: $color-primary;
-  text-decoration: underline;
-  box-shadow: none;
-
-  &:hover,
-  &.button-hover {
-    background-color: transparent;
-    color: $color-primary;
-    box-shadow: $button-stroke $color-primary;
-    text-decoration: none;
-  }
-
-  &:active,
-  &.button-active {
-    background-color: transparent;
-    color: $color-primary;
-    box-shadow: $button-stroke $color-primary-darkest;
-    text-decoration: none;
-  }
-
-  &:focus,
-  &.focus {
-    background-color: transparent;
-    color: $color-primary;
-    outline: 2px solid $color-primary-darker;
-    text-decoration: underline;
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: transparent;
-    opacity: .5;
-    text-decoration: underline;
-
-    &:hover,
-    &:focus {
-      background-color: transparent;
-    }
-  }
 }
 
 .signout-button {

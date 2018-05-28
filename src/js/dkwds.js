@@ -1,5 +1,8 @@
 'use strict';
 const domready = require('domready');
+const forEach = require('array-foreach');
+const select = require('./utils/select');
+const datepicker = require('./components/datepicker');
 
 /**
  * The 'polyfills' define key ECMAScript 5 methods that may be missing from
@@ -8,6 +11,8 @@ const domready = require('domready');
 require('./polyfills');
 
 const dkwds = require('./config');
+
+const jsSelectorDatepicker = '.js-calendar-group';
 
 const components = require('./components');
 dkwds.components = components;
@@ -18,6 +23,11 @@ domready(() => {
     const behavior = components[ name ];
     behavior.on(target);
   }
+
+  //Init datepicker.  (Note: above 'behavior.on' does not work with pikaday -> seperate initialization)
+  forEach(select(jsSelectorDatepicker), calendarGroupElement => {
+    new datepicker(calendarGroupElement);
+  });
 });
 
 module.exports = dkwds;

@@ -174,7 +174,7 @@ $color-base-001:              #ffffff !default; //DONE
 $color-base-002:              #1a1a1a !default; //DONE
 
 //Gray
-//$color-gray-001:            #212121 !default;
+$color-gray-001:              #212121 !default;
 $color-gray-002:              #454545 !default; //DONE
 $color-gray-003:              #747474 !default; //DONE
 $color-gray-004:              #999999 !default; //DONE
@@ -204,7 +204,7 @@ $color-red-003:               #fbd3d3 !default; //DONE
 //blue
 $color-blue-001:              #1B86C3 !default; //DONE
 $color-blue-002:              #125880 !default; //DONE
-$color-blue-003:              #1b86c3 !default; //DONE
+$color-blue-003:              #0d405e !default; //DONE
 $color-blue-004:              #e2f2fb !default; //DONE
 
 //purple
@@ -233,6 +233,7 @@ $color-base:                  $color-base-002 !default;
 $color-black:                 $color-base-002 !default;
 
 // Gray-scales
+$color-gray-darkest:          $color-gray-001 !default;
 $color-gray-dark:             $color-gray-002 !default;
 $color-gray:                  $color-gray-003 !default;
 $color-gray-light:            $color-gray-004 !default;
@@ -240,16 +241,20 @@ $color-gray-lighter:          $color-gray-005 !default;
 $color-gray-lightest:         $color-gray-006 !default;
 $color-gray-brightest:        $color-base-001 !default;
 
+//Focus
+$color-focus:                 $color-orange-004 !default;
+
 // Text color
 $color-text:                  $color-base-002 !default;
 $color-text-secondary:        $color-gray-003 !default;
 $color-text-bright:           $color-gray-006 !default;
 
 //Links color
-$color-link:                  $color-blue-002 !default;
-$color-link-hover:            $color-blue-003 !default;
-$color-active:                $color-base-002 !default;
-$color-focus:                 $color-orange-004 !default;
+$color-link:                  $color-blue-001 !default;
+$color-link-hover:            $color-blue-002 !default;
+$color-active:                $color-blue-003 !default;
+$color-link-focus:            $color-blue-001 !default;
+$color-link-focus-bg:         $color-focus !default;
 $color-visited:               $color-purple-001 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
@@ -274,7 +279,7 @@ $color-text-negative:         $color-red-001 !default;
 $color-error:                 $color-red-002 !default;
 $color-success:               $color-green-003 !default;
 $color-warning:               $color-orange-004 !default;
-$color-info:                  $color-blue-003 !default;
+$color-info:                  $color-blue-001 !default;
 
 $color-error-background:      $color-red-003 !default;
 $color-success-background:    $color-green-004 !default;
@@ -300,19 +305,25 @@ $color-alt-table-header:      $color-gray-004 !default;
 $color-required:              $color-red-001 !default;
 
 // Button colors
-$color-primary-button-text:   $color-base-001 !default;
-$color-primary-button-hover:  $color-gray-002 !default;
-$color-primary-button-active: $color-base-002 !default;
-$color-primary-button-focus:  $color-gray-002 !default;
+$button-primary-color: $color-white !default;
+$button-primary-bg: $color-primary !default;
+$button-primary-border-color: $color-gray-dark !default;
+$button-primary-hover-bg: $color-gray-002 !default;
+$button-primary-hover-border-color: $color-base !default;
+$button-primary-active-bg: $color-base-002 !default;
+$button-primary-active-border-color: $color-base !default;
+$button-primary-focus-bg:  $color-primary !default;
+$button-primary-focus-border-color: $color-base !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
 //Borders
-$outer-border: 1px solid $color-gray;
-$inner-border: 1px solid $color-gray-lighter;
-$focus-border: 2px dashed $color-gray-light;
-$button-border: 2px solid $color-gray;
+$outer-border:            1px solid $color-gray-light;
+$inner-border:            1px solid $color-gray-lighter;
+$focus-border:            2px dashed $color-gray-light;
+$button-border-width:     2px;
+$button-border:           $button-border-width solid $button-primary-border-color;
 
 
 // Spacing helpers
@@ -347,13 +358,18 @@ $spacing-xx-large:              rem-calc(64) !default; //6.4rem;
 //----------------
 //input
 //----------------
-$input-line-height: 1.34;
 $input-border-radius: 4px;
 $input-border-width: 1px;
-$input-top-bottom-padding: map-get($spacers, 3);
-$input-left-right-padding: map-get($spacers, 4);
-$input-height: 40px;
-$input-font-size: 1.8rem;
+$input-top-bottom-padding: calc(8px - #{$input-border-width}); //7px
+$input-left-right-padding: calc(16px - #{$input-border-width}); //15px
+$input-font-size: $body-text;
+$input-line-height: $body-text-line-height;
+$input-standard-height: 40px;
+$input-top-margin: map-get($spacers, 3);
+
+$input-border-width-feedback: 2px;
+$input-top-bottom-padding-feedback: calc(8px - #{$input-border-width-feedback});
+$input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback});
 
 //----------------
 // Grid
@@ -456,6 +472,9 @@ $article-max-width:             600px !default;
 $input-max-width:               46rem !default;
 $label-border-radius:           2px !default;
 $checkbox-border-radius:        2px !default;
+$checkbox-small-height:         rem-calc(18) !default;
+$checkbox-small-width:          rem-calc(18) !default;
+$checkbox-small-lineheight:      rem-calc(24) !default;
 $border-radius:                 3px !default;
 $button-border-radius:          4px !default;
 $button-box-shadow:             rgba(0,0,0,.4) !default;
