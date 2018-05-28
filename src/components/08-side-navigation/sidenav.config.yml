@@ -44,6 +44,9 @@ variants:
                 - text: Child link
                 - text: Child link
                   active: true
+                - text: Child link
+                - text: Child link
+                - text: Child link
             - text: Another link
 
         - title: 3 levels
