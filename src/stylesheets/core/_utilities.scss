@@ -116,17 +116,12 @@
 @mixin sidenav-list {
   @include unstyled-list();
 
-  border-top: 1px solid $color-border-focus;
   border-bottom: 1px solid $color-border-focus;
 
   > li {
     background-color: transparent;
     border-top: 1px solid $color-border-focus;
     font-size: $base-font-size;
-
-    &:first-child {
-      border-top: none;
-    }
   }
 
   a {
@@ -134,7 +129,8 @@
     color: $color-base;
     display: block;
     line-height: 1.3;
-    padding: 0.85rem 1rem 0.85rem 1.8rem;
+    padding: $spacer;
+    padding-left: map-get($spacers, 4);
     text-decoration: none;
 
     &:hover {
@@ -150,11 +146,15 @@
     }
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-      
       color: $color-base;
       font-weight: $font-weight-semibold;
-      padding-left: 1.4rem;
-      padding-left: $site-margins-mobile - $sidenav-current-border-width;
+      padding-left: map-get($spacers, 4);
+    }
+    &.active { 
+      color: $color-base;
+      font-weight: $font-weight-semibold;
+      padding-left: map-get($spacers, 4) - 4px;
+      border-left: $sidenav-current-border-width solid $color-base;
     }
   }
 }
@@ -202,9 +202,15 @@
       color: $color-base;
       font-weight: $font-weight-semibold;
       padding-left: 1.4rem;
-      padding-left: $site-margins-mobile - $sidenav-current-border-width;
+      padding-left: map-get($spacers, 4) - 4px;
       cursor:default;
-      
+    }
+     &.active { /* stylelint-disable-line selector-no-qualifying-type */
+      color: $color-base;
+      font-weight: $font-weight-semibold;
+      padding-left: 1.4rem;
+      padding-left: map-get($spacers, 4) - 4px;
+      cursor:default;
     }
   }
 }
@@ -220,27 +226,35 @@
   }
 
   a {
-    padding-left: 2.8rem;
+    padding-left: 32px;
     line-height: $heading-line-height;
 
     
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
       border: none;
-      padding-left: 2.8rem;
+      padding-left: map-get($spacers, 6);
       
+    }
+    &.active { /* stylelint-disable-line selector-no-qualifying-type */
+      padding-left: map-get($spacers, 6) - 4px;
     }
   }
 
   .sidenav-sub_list {
     a {
-      padding-left: 3.8rem;
+      padding-left: map-get($spacers, 8);
 
       &:focus {
         outline-offset: 0;
       }
 
-      &:hover {
-        padding-left: 3.8rem;
+      &.current { /* stylelint-disable-line selector-no-qualifying-type */
+        border: none;
+        padding-left: map-get($spacers, 8);
+        
+      }
+      &.active { /* stylelint-disable-line selector-no-qualifying-type */
+        padding-left: map-get($spacers, 8) - 4px;
       }
     }
   }
