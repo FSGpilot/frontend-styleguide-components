@@ -31,16 +31,37 @@ class datepickerGroup {
     
     this.dayInputElement.addEventListener("blur", function(){
       var curDate = that.pikadayInstance.getDate();
-      that.updateDatepickerDate(curDate.getFullYear(), curDate.getMonth(), this.value)
+
+      //validate day
+      var newDay = parseInt(this.value);
+      var lastDay = new Date(curDate.getFullYear(), curDate.getMonth() + 1, 0).getDate();
+      if(newDay> lastDay){
+        newDay = lastDay;
+      }
+      var newDate = new Date(curDate.getFullYear(), curDate.getMonth(), newDay);
+
+      //update pikaday
+      that.updateDatepickerDate(newDate)
     });
 
     this.monthInputElement.addEventListener("blur", function(){
       var curDate = that.pikadayInstance.getDate();
-      that.updateDatepickerDate(curDate.getFullYear(), parseInt(this.value)-1, curDate.getDate())
+
+      //validate month
+      var newMonth = parseInt(this.value)-1;
+      if(newMonth >= 12){
+        newMonth = 11;
+      }
+      
+      var newDate = new Date(curDate.getFullYear(), newMonth, curDate.getDate());
+
+      that.updateDatepickerDate(newDate)
     });
+
     this.yearInputElement.addEventListener("blur", function(){
       var curDate = that.pikadayInstance.getDate();
-      that.updateDatepickerDate(this.value, curDate.getMonth(), curDate.getDate())
+      var newDate = new Date(this.value, curDate.getMonth(), curDate.getDate());
+      that.updateDatepickerDate(newDate)
     });
   }
 
@@ -51,6 +72,15 @@ class datepickerGroup {
       this.pikadayInstance = new Pikaday({
         field: el,
         format: 'DD/MM/YYYY',
+        firstDay: 1, //mandag
+        i18n: {
+          previousMonth : 'Forrige måned',
+          nextMonth     : 'Næste måned',
+          months        : ['Januar','Februar','Marth','April','Maj','Juni','July','August','September','Oktober','November','December'],
+          weekdays      : ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'],
+          weekdaysShort : ['Søn','Man','Tir','Ons','Tor','Fre','Lør']
+        },
+        minDate: new Date(),
         onSelect: function(date) {
           that.updateDateInputs(date)
         }
@@ -72,8 +102,7 @@ class datepickerGroup {
     this.yearInputElement.value = year;
   }
 
-  updateDatepickerDate(year, month, day){
-    var newDate = new Date(year, month, day);
+  updateDatepickerDate(newDate){
     this.pikadayInstance.setDate(newDate);
   }
 }

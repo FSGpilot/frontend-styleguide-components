@@ -323,7 +323,7 @@ dfn {
   a,
   li,
   span {
-    font-family: $font-heading;
+    font-family: $font-family;
   }
 }
 
@@ -370,7 +370,7 @@ dfn {
 
 
 .font-lead {
-  font-family: $font-heading;
+  font-family: $font-family;
   font-size: $lead-font-size;
   font-weight: $font-weight-normal;
   line-height: $lead-line-height;
