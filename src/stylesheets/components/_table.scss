@@ -5,17 +5,26 @@ $border-row: 1px solid $color-gray-light;
     cursor: pointer;
     margin: 0;
 
+    thead {
+      tr {
+        border-bottom: solid 1px $border-row !important;
+      }
+    }
+
     // It is necessary to set 1px transprarent border in order to prevent table moving when hovering over row
     td, th {
-        border: 1px transparent;
-        padding: 0px 20px;
+        //border: 1px transparent;
+        padding: rem-calc(16);
         background-color: inherit;
     }
 
     &.bordered {
-        tr {
-            border: $border-row;
-        }
+      thead {
+        background-color: $color-gray-pale;
+      }
+      td, th {
+          border: $border-row;
+      }
     }
 
     &.borderless {
@@ -23,12 +32,23 @@ $border-row: 1px solid $color-gray-light;
             border: $border-row;
             border-left-color: transparent;
             border-right-color: transparent;
+            &:first-child {
+              border-top-color: transparent;
+              border-top-color: transparent;
+            }
+            &:last-child {
+              border-bottom-color: transparent;
+              border-bottom-color: transparent;
+            }
         }
     }
 
     &.zebra {
+        thead {
+          background-color: $color-gray-pale;
+        }
         tr:nth-child(even) {
-            background-color: $color-gray-light;
+            background-color: $color-gray-pale;
         }
 
         tbody > tr:not(:last-child) {
@@ -44,7 +64,7 @@ $border-row: 1px solid $color-gray-light;
     }
 
     th {
-        background-color: $color-gray-light;
+        //background-color: $color-gray-light;
         text-align: left;
     }
 
@@ -66,15 +86,15 @@ $border-row: 1px solid $color-gray-light;
 
         tr:hover:not(.expandable-row) {
             td {
-                background-color:  $color-primary-lightest;
-                border-top: $border-row-hover;
-                border-bottom: $border-row-hover;
+                background-color:  $color-gray-pale;
+                //border-top: $border-row-hover;
+                //border-bottom: $border-row-hover;
             }
             td:first-child {
-                border-left: $border-row-hover;
+                //border-left: $border-row-hover;
             }
             td:last-child {
-                border-right: $border-row-hover;
+                //border-right: $border-row-hover;
             }
         }
 
@@ -84,21 +104,21 @@ $border-row: 1px solid $color-gray-light;
     }
 
     tr {
-        height: $spacing-x-large;
+        //height: $spacing-x-large;
     }
     &.compact {
         tbody > tr {
-            height: $spacing-medium;
+            //height: $spacing-medium;
         }
     }
     &.short {
         tbody > tr {
-            height: $spacing-large;
+            //height: $spacing-large;
         }
     }
     &.tall {
         tbody > tr {
-            height: $spacing-xx-large;
+            //height: $spacing-xx-large;
         }
     }
 }
