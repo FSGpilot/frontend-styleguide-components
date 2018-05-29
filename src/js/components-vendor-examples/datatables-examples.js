@@ -87,7 +87,7 @@ class datatablesExamples {
     //////////////////////////////////////
   
     // Formatting function for row details - modify as you need 
-    /*function format ( d ) {
+    function format ( d ) {
         // `d` is the original data object for the row
         return '<table>'+
             '<tr>'+
@@ -143,7 +143,7 @@ class datatablesExamples {
             row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
-    } );*/
+    } );
 
     
     
