@@ -29,7 +29,7 @@
   <ul class="sidenav-list-locked">
     {% for trin in trinliste %}
       <li class="disabled">
-        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
+        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %} disabled tab-index="-1" aria-disabled="true">
           {{loop.index}}. {{trin.text}}
 
           {% if trin.icon %}

@@ -1,0 +1,294 @@
+// Buttons variables
+
+$button-stroke: inset 0 0 0 2px;
+
+// Buttons
+
+// This mixin is only needed until we fully remove the
+// deprecated button-disabled style.
+@mixin disabledesque {
+  background-color: $color-gray-light;
+  box-shadow: none;
+  cursor: not-allowed;
+  color:$color-gray-medium-dark;
+
+  &:hover,
+  &.button-hover,
+  &:active,
+  &.button-active,
+  &:focus,
+  &.focus,
+  &.disabled,
+  &:disabled {
+    background-color: $color-gray-light !important;
+    color:$color-gray-medium-light !important;
+    border: none !important;
+    box-shadow: none !important;
+
+  }
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+.button{
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  //@include margin(0.5em 0.5em 0.5em null);
+  padding: calc(#{map-get($spacers, 3)} - #{$button-border-width}) calc(#{map-get($spacers, 4)} - #{$button-border-width});
+  border-radius: $button-border-radius;
+  border: $button-border;
+  font-size: $base-font-size;
+  font-weight: 500;
+  min-height: 40px;
+  color: $button-primary-color;
+  @include font-smoothing;
+  line-height: $body-text-line-height;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  @include media($small-screen) {
+    width: auto;
+  }
+
+  &.focus,
+  &:focus {
+    border-color: $color-focus;
+    outline-color: $color-focus;
+    position: relative;
+    &:after {
+      content: "";
+      background: $color-focus;
+        position: absolute;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        left: -2px;
+        top: -2px;
+        z-index: -1;
+    }
+  }
+
+  &:disabled,
+  .disabled {
+    @include disabledesque;
+  }
+
+  //############ Primary ###############
+  &.button-primary {
+    color: $button-primary-color;
+    background-color: $button-primary-bg;
+    border-color: $button-primary-border-color;
+
+    &:hover,
+    &.button-hover {
+      background-color: $button-primary-hover-bg;
+      border-color: $button-primary-hover-border-color;
+    }
+
+    &:active,
+    &.button-active {
+      background-color: $button-primary-active-bg;
+      border-color: $button-primary-active-border-color;
+    }
+
+    &.focus,
+    &:focus {
+      background-color: $button-primary-focus-bg;
+      border-color: $button-primary-focus-border-color;
+    }
+  }
+
+  //############ Secondary ##############
+  &.button-secondary {
+    color: $color-black;
+    background-color: $color-gray-pale;
+    border-color: $color-gray-light;
+
+    &:hover,
+    &.button-hover {
+      background-color: $color-gray-pale;
+      border-color: $color-border;
+    }
+
+    &:active,
+    &.button-active {
+      background-color: $color-gray-light;
+      border-color: $color-black;
+    }
+
+    &.focus,
+    &:focus {
+      background-color: $color-gray-pale;
+      border-color: $color-gray-light;
+    }
+
+  }
+
+  //############ Ghost #################
+  &.button-ghost {
+    color: $color-gray-dark;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+    font-weight: $font-weight-normal;
+
+    &:hover,
+    &.button-hover {
+      background-color: $color-gray-pale;
+      box-shadow:none;
+      text-decoration: underline;
+    }
+
+    &:active,
+    &.button-active {
+      background-color: $color-gray-light;
+      box-shadow:none;
+      text-decoration: underline;
+    }
+
+    &.focus,
+    &:focus {
+      color: $color-black;
+      background-color:$color-focus;
+      box-shadow:none;
+      border-color: $color-focus;
+    }
+
+    &:disabled,
+    .disabled {
+      background-color: transparent !important;
+      color: $color-gray-light !important;
+    }
+  }
+
+  //############### tertiary ############
+  &.button-tertiary {
+    border-color:$color-gray-005;
+    background-color: transparent;
+    color: $color-black;
+    font-weight: $font-weight-normal;
+
+    &:hover,
+    &.button-hover {
+      border-color: $color-gray-medium-dark;
+    }
+
+    &:active,
+    &.button-active {
+      border-color: $color-gray-002;
+    }
+
+    &.focus,
+    &:focus {
+      border-color:$color-gray-light;
+      background-color: transparent;
+    }
+
+  }
+
+  &.button-small {
+    color: $color-black;
+    background-color: $color-gray-pale;
+    border-color: $color-gray-light;
+
+    &:hover,
+    &.button-hover {
+      background-color: $color-gray-pale;
+      border-color: $color-border;
+    }
+
+    &:active,
+    &.button-active {
+      background-color: $color-gray-light;
+      border-color: $color-black;
+    }
+
+    &.focus,
+    &:focus {
+      background-color: $color-gray-pale;
+      border-color: $color-gray-light;
+    }
+
+  }
+
+  .icon-svg {
+    float: right;
+    margin: 0px 0px 0px 4px;
+    fill: white;
+  }
+}
+
+/* stylelint-disable */
+.button-secondary-disabled,          // Deprecated
+.button-secondary-inverse-disabled,  // Deprecated
+.button-secondary:disabled,
+.button-secondary-inverse:disabled,
+.button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
+  box-shadow: $button-stroke $color-gray-light;
+  color: lighten($color-black, 40%);
+
+  &:hover,
+  &.button-hover,
+  &:active,
+  &.button-active,
+  &:focus,
+  &.focus {
+    background-color: $color-white;
+    //box-shadow: $button-stroke $color-gray-light;
+    color: $color-gray-light;
+    cursor: not-allowed;
+  }
+}
+
+html .button-secondary-disabled,          // Deprecated
+.button-secondary:disabled {
+  background-color: $color-white;
+}
+
+html .button-secondary-inverse-disabled,  // Deprecated
+.button-secondary-inverse:disabled {
+  background-color: transparent;
+  color: $color-gray-medium-dark;
+  box-shadow: $button-stroke $color-gray-medium-dark;
+}
+
+@mixin button-unstyled {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: $font-weight-normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.button-unstyled {
+  @include button-unstyled;
+}
+
+.button-small {
+  padding: .5rem 1rem;
+  font-size: $small-font-size;
+}
+
+.signout-button {
+  margin-left: auto;
+  font-size: 1.3rem;
+  font-weight: 400;
+
+  ul > li:first-of-type {
+    font-weight: 700;
+  }
+}
+
+// Button row
+.button-row {
+  display: flex;
+  margin: 2rem 0 1rem;
+}
