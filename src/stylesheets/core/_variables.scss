@@ -397,6 +397,11 @@ $input-top-bottom-padding-feedback: calc(8px - #{$input-border-width-feedback});
 $input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback});
 
 //----------------
+//Tabs
+//----------------
+$tabs-border-bottom: solid 7px $color-primary;
+
+//----------------
 // Grid
 // ----------------
 $enable-bs-grid:              true !default;  // Enable Bootstrap grid

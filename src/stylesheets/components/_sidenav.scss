@@ -2,27 +2,6 @@
   @include sidenav-list;
   li {
 
-
-
-    // &.disabled {
-    //   background: $color-gray-lightest;
-
-    //   a, a:hover, a:focus {
-    //     color: $color-gray-light;
-    //     cursor: not-allowed;
-    //   }
-
-    //   .sidenav-icon {
-    //     &.icon-bg-primary,
-    //     &.icon-bg-secondary,
-    //     &.icon-bg-success,
-    //     &.icon-bg-warning,
-    //     &.icon-bg-error {
-    //       background-color: $color-gray-light
-    //     }
-    //   }
-    // }
-
     a {
       display: flex;
 
