@@ -5,9 +5,9 @@ preview: '@dkwds-framed'
 context:
   tabnavlist:
     items: &default_links
-      - title: tabnav 1
-      - title: tabnav 2 (valgt)
+      - title: Tabnav 1
+      - title: Tabnav 2 (valgt)
         active: true
-      - title: tabnav 3
-      - title: tabnav 4
-      - title: tabnav 5
+      - title: Tabnav 3
+      - title: Tabnav 4
+      - title: Tabnav 5

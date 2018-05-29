@@ -399,6 +399,7 @@ $input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback})
 //Tabs
 //----------------
 $tabs-border-bottom: solid 7px $color-primary;
+$tabs-active-border-color: $color-primary !default;
 
 //----------------
 // Grid
