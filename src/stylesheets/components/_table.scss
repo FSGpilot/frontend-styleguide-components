@@ -2,112 +2,132 @@ $border-row-hover: 1px solid  $color-primary-lightest;
 $border-row: 1px solid $color-gray-light;
 
 .table {
-    cursor: pointer;
     margin: 0;
     line-height: $body-text-line-height;
 
     thead {
-      tr {
-        border-bottom: solid 1px $border-row !important;
-      }
-    }
-
-    // It is necessary to set 1px transprarent border in order to prevent table moving when hovering over row
-    td, th {
-        //border: 1px transparent;
-        padding: rem-calc(16);
-        background-color: inherit;
-    }
-
-    &.bordered {
-      thead {
         background-color: $color-gray-pale;
-      }
-      td, th {
-          border: $border-row;
-      }
+        tr {
+            border-bottom: solid 1px $border-row;
+        }
+        th{
+            font-weight: $font-weight-semibold;
+            text-align: left;
+        }
+    }
+    tbody{
+        tr {
+            background-color: $color-white;
+        }
     }
 
-    &.borderless {
-        tr {
-            border: $border-row;
-            border-left-color: transparent;
-            border-right-color: transparent;
-            &:first-child {
-              border-top-color: transparent;
-              border-top-color: transparent;
-            }
-            &:last-child {
-              border-bottom-color: transparent;
-              border-bottom-color: transparent;
+    td, th {
+        padding: calc(#{map-get($spacers, 4)} - 1px); //16px -1px (for the border)
+        background-color: inherit;
+        border: $border-row;
+    }
+
+    //hover on row
+    &.row-hover{
+        tr:hover{
+            td {
+                background-color:  $color-gray-pale;
             }
         }
     }
 
-    &.zebra {
-        border: $border-row;
+    //no border
+    &.borderless {
         thead {
-          background-color: $color-gray-pale;
+            background-color: transparent;
+            th{
+                background-color: transparent;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-right-color: transparent;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+        tbody{
+            tr{
+                td {
+                    border: $border-row;
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                    &:last-child{
+                        padding-right: 0;
+                    }
+                }
+                &:first-child td{
+                    border-top-color: transparent;
+                    border-top-color: transparent;
+                }
+                &:last-child td{
+                    border-bottom-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
+
+    //zebra lines
+    &.zebra {
+        thead {
+          th{
+              border-right-color: transparent;
+              &:last-child{
+                border-right: $border-row;
+              }
+          }
         }
         tr:nth-child(even) {
             background-color: $color-gray-pale;
         }
 
-        tbody > tr:not(:last-child) {
-            border-top-color: transparent;
-            border-bottom-color: transparent;
+        tbody{
+            td{
+                border-color: transparent;
+                &:first-child{
+                    border-left: $border-row;;
+                }
+                &:last-child{
+                    border-right: $border-row;;
+                }
+            }
+            tr:last-child td{
+                border-bottom: $border-row;;
+            }
         }
 
         &.borderless {
-            tr,th {
-                border-color: transparent;
+            thead{
+                background-color: $color-gray-pale;
             }
-        }
-    }
-
-    th {
-        //background-color: $color-gray-light;
-        text-align: left;
-    }
-
-
-    tbody {
-        tr {
-            background-color: $color-white;
-            .overflow-menu {
-                align-self: center;
-                .overflow-menu-btn {
-                    color: $color-gray-medium-dark;
-                    width: $hit-area;
-                    height: $hit-area;
-                    position: absolute; // hit-area might be bigger than row's height
-                    transform: translate(-50%,-50%);
+            td,th {
+                border-color: transparent;
+                &:first-child{
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+                }
+                &:last-child{
+                    border-left-color: transparent;
+                    border-right-color: transparent;
                 }
             }
-        }
-
-        tr:hover:not(.expandable-row) {
-            td {
-                background-color:  $color-gray-pale;
-                //border-top: $border-row-hover;
-                //border-bottom: $border-row-hover;
+            tr:last-child td{
+                border-bottom-color: transparent
             }
-            td:first-child {
-                //border-left: $border-row-hover;
-            }
-            td:last-child {
-                //border-right: $border-row-hover;
-            }
-        }
-
-        tr:not(:hover) .overflow-menu .overflow-menu-btn:not(:focus) {
-            visibility: hidden;
         }
     }
 
-    tr {
-        //height: $spacing-x-large;
-    }
     &.compact {
         tbody > tr {
             //height: $spacing-medium;
