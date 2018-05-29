@@ -4,16 +4,13 @@
   margin-top: map-get($spacers, 4);
 }
 
-label {
+.form-label {
   display: block;
   max-width: $input-max-width;
   @include form-label-text();
 }
 
-// Block form elements
-/* stylelint-disable selector-no-qualifying-type */
-input:not([type='file']),
-textarea{
+.form-input{
   appearance: none;
   border: $outer-border;
   border-radius: $input-border-radius;
@@ -25,16 +22,14 @@ textarea{
   width: 100%;
   margin-top: map-get($spacers, 3);
   text-align: left;
-}
-input:not([type='file']) {
   height: $input-standard-height;
 }
-textarea {
+textarea.form-input{
   height: 16rem;
 }
 
 //Note for select. Uses browser-specific styling for arrow. No custom.
-select {
+.form-select{
   background-color: $color-white;
   border: $outer-border;
   border-radius: $input-border-radius;
@@ -55,16 +50,12 @@ select {
   }
 }
 
+
 legend {
   font-size: $h2-font-size;
   font-weight: $font-weight-bold;
 }
 
-.fieldset-inputs {
-  label {
-    margin-top: 0;
-  }
-}
 
 //////////////////////
 //** Input states **//
@@ -76,9 +67,8 @@ legend {
   padding-left: calc(#{map-get($spacers, 4)} - 4px);
   padding-bottom: map-get($spacers, 3);
 
-  input,
-  textarea,
-  select {
+  .form-input,
+  .form-select {
     border: $input-border-width-feedback solid $color-error;
     padding: $input-top-bottom-padding-feedback $input-left-right-padding-feedback;
   }
@@ -91,9 +81,8 @@ legend {
 }
 
 .form-group.input-success {
-  input,
-  textarea,
-  select {
+  .form-input,
+  .form-select {
     border: $input-border-width-feedback solid $color-success;
     padding: $input-top-bottom-padding-feedback $input-left-right-padding-feedback;
   }
@@ -110,7 +99,7 @@ legend {
 }
 
 // Hint text
-.input-hint {
+.form-hint {
   @include body-copy-text;
   display: block;
   color: $color-gray-medium-dark;
@@ -137,15 +126,9 @@ legend {
 [type=radio] + label {
   cursor: pointer;
   font-weight: $font-weight-normal;
-  margin-bottom: 0.65em;
+  margin-bottom: 0;
   &.focus {
     outline: none;
-
-     // &:before {
-     //   content: "";
-     //   outline: 4px solid $color-focus;
-     //   outline-offset: 0;
-     // }
   }
 }
 
@@ -317,8 +300,26 @@ legend {
 // Memorable dates
 
 .date-group {
+  display: flex;
+  align-items: flex-end;
   label {
     margin-top: 0;
+  }
+
+  .form-group-day,
+  .form-group-month,
+  .form-group-year {
+    margin-right: map-get($spacers, 4);
+    margin-top: map-get($spacers, 3);
+  }
+  .form-group-day,
+  .form-group-month,
+  .form-group-year {
+    width: calc(#{map-get($spacers, 4)} + #{map-get($spacers, 4)} + 4ch)
+  }
+
+  .icon-svg {
+    margin-bottom: 8px;
   }
 
   [type=number]::-webkit-inner-spin-button,
@@ -326,24 +327,12 @@ legend {
     appearance: none;
     margin: 0;
   }
-
   [type=number] {
     -moz-appearance: textfield;
   }
 }
 
-.form-group-day,
-.form-group-month,
-.form-group-year {
-  clear: none;
-  float: left;
-  margin-right: 1.5rem;
-  width: 5rem;
-}
 
-.form-group-year {
-  width: 7rem;
-}
 
 
 // Required

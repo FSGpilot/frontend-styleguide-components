@@ -1,15 +1,17 @@
 {% macro radiobutton(id, name, value, checked, text) %}
-  <li>
+  <div class="form-group">
     <input id="{{id}}" type="radio" name="{{name}}" value="{{value}}" {% if checked %}checked{% endif %}>
     <label for="{{id}}">{{text}}</label>
-  </li>
+  </div>
 {% endmacro %}
 
 <div class="container">
   <fieldset class="fieldset-inputs sans">
     <ul class="unstyled-list">
       {% for item in radiobuttons_example.items %}
+      <li>
         {{ radiobutton(item.id, item.name, item.value, item.checked, item.text) }}
+      </li>
       {% endfor %}
     </ul>
   </fieldset>
