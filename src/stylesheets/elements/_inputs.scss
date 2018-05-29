@@ -333,6 +333,9 @@ $radio-size: 18px;
 }
 
 
+.form-label + input[type=file]{
+  margin-top: map-get($spacers, 3);
+}
 
 
 // Required
