@@ -7,7 +7,6 @@
 const domready = require('domready');
 const select2Examples = require('./components-vendor-examples/select2-examples');
 const datatablesExamples = require('./components-vendor-examples/datatables-examples');
-const slickgridExamples = require('./components-vendor-examples/slickgrid-examples');
 
 require('./polyfills');
 
@@ -18,6 +17,4 @@ domready(() => {
   new select2Examples();
 
   new datatablesExamples();
-
-  new slickgridExamples();
 });
