@@ -1,6 +1,6 @@
 // scss-lint:disable QualifyingElement, PropertyCount
 
-.form-group{
+.form-group + .form-group{
   margin-top: map-get($spacers, 4);
 }
 
@@ -105,7 +105,11 @@ legend {
   color: $color-gray-medium-dark;
 }
 
-// Custom checkboxes
+/////////////////////////////////
+// Custom checkboxes & radios
+/////////////////////////////////
+$checkbox-size: 18px;
+$radio-size: 18px;
 
 [type=checkbox],
 [type=radio] {
@@ -126,105 +130,93 @@ legend {
 [type=radio] + label {
   cursor: pointer;
   font-weight: $font-weight-normal;
+  line-height: $body-text-line-height;
   margin-bottom: 0;
-  &.focus {
-    outline: none;
-  }
+  display: block;
+  outline: none;
+  color: $color-gray-dark;
 }
 
+//Outline for checkbox and radio
 [type=checkbox] + label::before,
 [type=radio] + label::before {
-
-  //background: $color-white;
-  //border-radius: $checkbox-border-radius;
-  //box-shadow: 0 0 0 1px $color-gray-medium-dark;
   content: '\a0';
   display: inline-block;
-  height: $spacing-medium;
-  line-height: $spacing-medium;
-  //margin-right: 0.6em;
-  //text-indent: 0.15em;
-  //vertical-align: middle\0; // Target IE 11 and below to vertically center inputs
-  width: $spacing-medium;
-  margin-right: rem-calc(8);
+  background: $color-white;
+  border-radius: $checkbox-border-radius;
+  border: 2px solid $color-text;
+  height: $checkbox-size;
+  line-height: $body-text-line-height;
+  margin-right: map-get($spacers, 3);
+  width: $checkbox-size;
+  position: relative;
+  top: 4px;
 }
 
+//extra for radio outline
 [type=radio] + label::before {
-  // border-radius: 100%;
-  // box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-gray-medium-dark;
-  // height: 1.4rem; // Size overrides to account for shape + checked styling
-  // line-height: 1.4rem;
-  // margin-right: 0.75em;
-  // width: 1.4rem;
-  background-image: url('#{$icons-folder-path}/check-box-unchecked.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
+  border-radius: 100%;
+  height: $radio-size;
+  width: $radio-size;
 }
 
-[type=checkbox] + label::before {
-  background-image: url('#{$icons-folder-path}/check-box-unchecked.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
+//checked checkbox
+[type=checkbox]:checked + label{
+  position: relative;
+  &:before{
+    background-color: $color-text;
+  }
+  &:after{
+    content: "";
+    height: 7px;
+    width: 12px;
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    box-shadow: -2px 2px 0 0 #fff;
+    transform: rotate(-46deg);
+  }
 }
-
-[type=checkbox]:checked + label::before,
-[type=radio]:checked + label::before {
-  //background-color: $color-primary;
-  //box-shadow: 0 0 0 1px $color-primary;
-}
-
-[type=radio]:checked + label::before {
-  //box-shadow: 0 0 0 2px $color-white, 0 0 0 4px $color-primary;
-}
-
-[type=checkbox]:checked + label::before {
-  background-image: url('#{$icons-folder-path}/check-box-checked.svg') !important;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-[type=checkbox]:checked:disabled + label::before {
-  background-image: url('#{$icons-folder-path}/check-box-disabled.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-.focus {
-  &:before {
-    background-image: url('#{$icons-folder-path}/check-box-focus.svg') !important;
+//checked radio
+[type=radio]:checked + label{
+  position: relative;
+  &:after{
+    content: "";
+    height: calc(#{$radio-size}-10px);
+    width: calc(#{$radio-size}-10px);
+    background-color: $color-text;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    border-radius: 100%;
   }
 }
 
-[type=checkbox]:focus + label::before {
-  background-image: url('#{$icons-folder-path}/check-box-focus.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-// [type=checkbox]:disabled + label {
-//   color: $color-gray-light;
-// }
-
-// [type=checkbox]:focus + label::before {
-//   outline: $focus-outline;
-//   outline-offset: $focus-spacing;
-// }
-
-[type=checkbox]:disabled + label::before,
-[type=radio]:disabled + label::before {
-  //background: $color-gray-pale;
-  //box-shadow: 0 0 0 1px $color-gray-pale;
+//Disable
+[type=checkbox]:disabled + label,
+[type=radio]:disabled + label {
+  color: $color-gray-medium-light;
   cursor: not-allowed;
+  &:before{
+    border-color: $color-gray-light;
+    background-color: $color-gray-pale;
+  }
 }
 
-[type=checkbox]:disabled + label::before {
-  background-image: url('#{$icons-folder-path}/check-box-disabled.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
+// checkbox focus
+[type=checkbox]:focus + label::before, 
+[type=checkbox].focus + label::before{
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
+}
+[type=radio]:focus + label::before, 
+[type=radio].focus + label::before {
+  box-shadow: 0 0 0 3px $color-focus;
 }
 
+/////////////////////////
 // Range inputs
-
+/////////////////////////
 [type=range] {
   appearance: none;
   border: none;

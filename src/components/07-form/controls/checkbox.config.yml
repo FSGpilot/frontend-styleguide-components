@@ -31,5 +31,6 @@ context:
         value: fokus
         checked: false
         disabled: false
+        focus: true
         text: Focus
-        class: focus
+        class:
