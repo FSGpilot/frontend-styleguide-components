@@ -320,6 +320,9 @@ legend {
 
   .icon-svg {
     margin-bottom: 8px;
+    &.js-calendar-datepicker:focus{
+      outline: $focus-outline;
+    }
   }
 
   [type=number]::-webkit-inner-spin-button,
