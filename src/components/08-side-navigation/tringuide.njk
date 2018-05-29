@@ -9,7 +9,7 @@
         <ul class="sidenav-list">
           {% for trin in trinliste %}
             <li{% if trin.disabled %} class="disabled"{% endif %}>
-              <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
+              <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
                 {{loop.index}}. {{trin.text}}
 
                 {% if trin.icon %}
@@ -24,6 +24,7 @@
       {% endmacro %}
       {{ tringuide(tringuiden.trinlisten) }}
     </div>
+    
     {# Locked step guide #}
     <div class="col-4">
     <h4>Locked step guide</h4>
@@ -31,7 +32,7 @@
         <ul class="sidenav-list-locked">
           {% for trin in trinliste %}
             <li class="disabled">
-              <a href="{{trin.href}}" {% if trin.current %} class="current" {% endif %}>
+              <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
                 {{loop.index}}. {{trin.text}}
 
                 {% if trin.icon %}

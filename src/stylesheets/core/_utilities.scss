@@ -131,7 +131,6 @@
 
   a {
     border: none;
-
     color: $color-black;
     display: block;
     line-height: 1.3;
@@ -144,10 +143,8 @@
     
 
     &:hover {
-
       background-color: $color-gray-pale;
       text-decoration: none;
-
       color: $color-link-hover;
     }
 
@@ -165,8 +162,8 @@
     &.active { 
       color: $color-primary;
       font-weight: $font-weight-semibold;
-      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
-      border-left: $sidenav-current-border-width solid $color-primary;
+      padding-left: map-get($spacers, 4) - $sidenav-active-border-width;
+      border-left: $sidenav-active-border-width solid $color-primary;
     }
   }
 }
@@ -198,15 +195,17 @@
     color: $color-black;
     display: block;
     line-height: 1.3;
-    padding: 0.85rem 1rem 0.85rem 1.8rem;
+    padding: $spacer;
+    padding-top:$input-top-bottom-padding;
+    padding-left: map-get($spacers, 4);
+    padding-right: map-get($spacers, 4);
     text-decoration: none;
 
 
     &:hover {
       background-color: $color-white;
       text-decoration: none;
-
-      color: $color-black;
+      color: $color-link-hover;
       cursor:default;
 
     }
@@ -218,20 +217,15 @@
     }
 
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-
       color: $color-black;
       font-weight: $font-weight-semibold;
-
-      padding-left: map-get($spacers, 4) - $sidenav-current-border-width;
-      cursor:default;
+      padding-left: map-get($spacers, 4);
     }
-     &.active { /* stylelint-disable-line selector-no-qualifying-type */
-
+    &.active { 
       color: $color-primary;
       font-weight: $font-weight-semibold;
-      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
-      cursor:default;
-
+      padding-left: map-get($spacers, 4) - $sidenav-active-border-width;
+      border-left: $sidenav-active-border-width solid $color-primary;
     }
   }
 }
@@ -265,7 +259,7 @@
 
     }
     &.active { /* stylelint-disable-line selector-no-qualifying-type */
-      padding-left: map-get($spacers, 6) - $sidenav-current-border-width;
+      padding-left: map-get($spacers, 6) - $sidenav-active-border-width;
     }
   }
 
@@ -283,7 +277,7 @@
         
       }
       &.active { /* stylelint-disable-line selector-no-qualifying-type */
-        padding-left: map-get($spacers, 8) - $sidenav-current-border-width;
+        padding-left: map-get($spacers, 8) - $sidenav-active-border-width;
       }
     }
   }

@@ -9,7 +9,7 @@ context:
       - text: Trin 2
         icon: check
       - text: Trin 3 (valgt)
-        current: true
+        active: true
       - text: Trin 4
       - text: Trin 5
 

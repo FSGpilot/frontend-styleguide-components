@@ -1,4 +1,4 @@
-<h4>Side navigation</h4>
+
 {% macro nav_list(links, subclass) %}
   {% for item in links %}
   <li>
@@ -19,8 +19,10 @@
   {% endfor %}
 {% endmacro %}
 
-<nav>
-  <ul class="sidenav-list">
-    {{ nav_list(sidenav.links, 'sidenav-sub_list') }}
-  </ul>
-</nav>
+<div class="col-4">
+  <nav>
+    <ul class="sidenav-list">
+      {{ nav_list(sidenav.links, 'sidenav-sub_list') }}
+    </ul>
+  </nav>
+</div>
