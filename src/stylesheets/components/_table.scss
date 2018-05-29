@@ -4,6 +4,7 @@ $border-row: 1px solid $color-gray-light;
 .table {
     cursor: pointer;
     margin: 0;
+    line-height: $body-text-line-height;
 
     thead {
       tr {
