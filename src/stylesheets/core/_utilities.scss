@@ -117,11 +117,15 @@
   @include unstyled-list();
 
   border-bottom: 1px solid $color-border-focus;
+  border-top: 1px solid $color-border-focus;
 
   > li {
     background-color: transparent;
-    border-top: 1px solid $color-border-focus;
     font-size: $base-font-size;
+    border-top: $inner-border;
+    &:first-child {
+        border-top: none;
+    }
     &:last-child {
       a {
         padding-bottom: $input-top-bottom-padding;
@@ -176,7 +180,7 @@
 
   > li {
     background-color: transparent;
-    border-top: 1px solid $color-border-focus;
+    border-top: $inner-border;
     font-size: $base-font-size;
     cursor:default;
 

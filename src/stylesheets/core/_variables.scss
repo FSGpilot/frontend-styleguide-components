@@ -206,9 +206,6 @@ $color-blue-001:              #1B86C3 !default; //DONE
 $color-blue-002:              #125880 !default; //DONE
 $color-blue-003:              #0d405e !default; //DONE
 $color-blue-004:              #e2f2fb !default; //DONE
-$color-blue-005:              #067293 !default; //DONE
-$color-blue-006:              #04556E !default; //DONE
-$color-blue-007:              #033747 !default; //DONE
 
 //purple
 $color-purple-001:            #801258 !default; //DONE
@@ -225,7 +222,7 @@ $color-data-khaki-001:        #B89E5E !default;
 $color-data-brown-001:        #6B4A21 !default;
 $color-data-orange-001:       #FF531A !default;
 $color-data-cyklamen-001:     #E64969 !default;
-$color-data-magenta-001:      #E50081 !default;
+$color-data-megenta-001:      #E50081 !default;
 
 //############################### colors variables ####################
 //#####################################################################
@@ -265,14 +262,7 @@ $color-neutral-darkest:       $color-base-002 !default;
 $color-neutral-lightest:      $color-gray-004 !default; //TODO, need base color for lightest
 
 // Functional theme colors
-$color-primary:               $color-gray-002 !default;
-$color-primary-medium:        $color-gray-003 !default;
-$color-primary-dark:          $color-gray-002 !default;
-
-$color-positive:              $color-green-005 !default;
-$color-negative:              $color-red-001 !default;
-
-//$color-primary-dark:
+$color-primary:               $color-gray-003 !default;
 $color-primary-darker:        $color-base-002 !default;
 $color-primary-darkest:       $color-base-002 !default;
 $color-primary-lightest:      $color-gray-004 !default;
@@ -292,19 +282,6 @@ $color-error:                 $color-red-002 !default;
 $color-error-light:           $color-red-003 !default;
 $color-info:                  $color-blue-001 !default;
 $color-info-light:            $color-blue-004 !default;
-
-$color-data-green:            $color-data-green-001 !default;
-$color-data-moss:             $color-data-moss-001 !default;
-$color-data-teal:             $color-data-teal-001 !default;
-$color-data-turqoice:         $color-data-turqoice-001 !default;
-$color-data-violet:           $color-data-violet-001 !default;
-$color-data-purple:           $color-data-purple-001 !default;
-$color-data-yellow:           $color-data-yellow-001 !default;
-$color-data-brown:            $color-data-brown-001 !default;
-$color-data-khaki:            $color-data-khaki-001 !default;
-$color-data-orange:           $color-data-orange-001 !default;
-$color-data-magenta:          $color-data-magenta-001 !default;
-$color-data-cyklamen:         $color-data-cyklamen-001 !default;
 
 //$color-error-background:      $color-red-003 !default;
 //$color-success-background:    $color-green-004 !default;
