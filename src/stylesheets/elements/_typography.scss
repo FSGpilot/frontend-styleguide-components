@@ -237,24 +237,24 @@ small, .small-text {
 
 
 //margin top and bottom for text
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6,
-.sub-header-text{
-  // margin-top: map-get($spacers, 7);
-  // margin-bottom: map-get($spacers, 4);
-  // &:first-child{
-  //   margin-top: 0;
-  // }
-}
-p, .body-text,
-.lead, .font-lead{
-  // margin-top: map-get($spacers, 4);
-  // margin-bottom: map-get($spacers, 4);
-}
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4,
+// h5, .h5,
+// h6, .h6,
+// .sub-header-text{
+//   margin-top: map-get($spacers, 7);
+//   margin-bottom: map-get($spacers, 4);
+//   &:first-child{
+//     margin-top: 0;
+//   }
+// }
+// p, .body-text,
+// .lead, .font-lead{
+//   margin-top: map-get($spacers, 4);
+//   margin-bottom: map-get($spacers, 4);
+// }
 
 // Text colors
 // @each $color, $value in $colors {

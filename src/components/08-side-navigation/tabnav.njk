@@ -1,19 +1,19 @@
 
-<h4>Tab navigation</h4>
+
 {% macro tabnav(tabnav) %}
 
 <ul class="tabnav">
   {% for item in tabnavlist.items %}
   <li>
     <a href="{{item.href}}" {% if item.active %} class="active"{% endif %}>
-        <span class="tabnav-title">{{ item.title }}</span>
+      {{ item.title }}
     </a>
   </li>
   {% endfor %}
 </ul>
-
 {% endmacro %}
 
-<div class="col-12">
+<div class="col-12 col-sm-12 col-md-12 col-lg-9">
+<h4>Tab navigation</h4>
   {{ tabnav(tabnavlist.items) }}
 </div> 
