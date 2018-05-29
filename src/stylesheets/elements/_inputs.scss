@@ -320,8 +320,13 @@ legend {
 
   .icon-svg {
     margin-bottom: 8px;
-    &.js-calendar-datepicker:focus{
-      outline: $focus-outline;
+    &.js-calendar-datepicker{
+      &:hover{
+        cursor: pointer;
+      }
+      &:focus{
+        outline: $focus-outline;
+      }
     }
   }
 
