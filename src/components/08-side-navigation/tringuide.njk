@@ -4,7 +4,7 @@
   <div class="row">
   {# Free step guide #}
     <div class="col-4">
-    <h4>Free step guide</h4>
+    <h4>Klikbar trinindikator</h4>
       {% macro tringuide(trinliste) %}
         <ul class="sidenav-list">
           {% for trin in trinliste %}
@@ -24,10 +24,10 @@
       {% endmacro %}
       {{ tringuide(tringuiden.trinlisten) }}
     </div>
-    
+
     {# Locked step guide #}
     <div class="col-4">
-    <h4>Locked step guide</h4>
+    <h4>Tvunget trinindikator</h4>
       {% macro tringuide(trinliste) %}
         <ul class="sidenav-list-locked">
           {% for trin in trinliste %}
