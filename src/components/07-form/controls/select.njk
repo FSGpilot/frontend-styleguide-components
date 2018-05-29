@@ -1,11 +1,13 @@
 {% macro select(name, id, label, options) %}
-  <label for="{{name}}">{{label}}</label>
-  <select name="{{name}}" id="{{id}}">
-    <option value>- Vælg -</option>
-    {% for option in options %}
-      <option value="{{option.value}}">{{option.text}}</option>
-    {% endfor %}
-  </select>
+  <div class="form-group">
+    <label class="form-label" for="{{name}}">{{label}}</label>
+    <select class="form-select" name="{{name}}" id="{{id}}">
+      <option value>- Vælg -</option>
+      {% for option in options %}
+        <option value="{{option.value}}">{{option.text}}</option>
+      {% endfor %}
+    </select>
+  </div> 
 {% endmacro %}
 
 <div class="container">

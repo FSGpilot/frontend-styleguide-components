@@ -1,52 +1,49 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 
-<div class="container">
-  <div class="row">
-  {# Free step guide #}
-    <div class="col-4">
-    <h4>Klikbar trinindikator</h4>
-      {% macro tringuide(trinliste) %}
-        <ul class="sidenav-list">
-          {% for trin in trinliste %}
-            <li{% if trin.disabled %} class="disabled"{% endif %}>
-              <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
-                {{loop.index}}. {{trin.text}}
+{# Free step guide #}
+{% macro tringuide(trinliste) %}
+  <ul class="sidenav-list">
+    {% for trin in trinliste %}
+      <li{% if trin.disabled %} class="disabled"{% endif %}>
+        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
+          {{loop.index}}. {{trin.text}}
 
-                {% if trin.icon %}
-                <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
-                  {{ icon_svg(trin.icon) }}
-                </span>
-                {% endif %}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endmacro %}
-      {{ tringuide(tringuiden.trinlisten) }}
-    </div>
+          {% if trin.icon %}
+          <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
+            {{ icon_svg(trin.icon) }}
+          </span>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
 
-    {# Locked step guide #}
-    <div class="col-4">
-    <h4>Tvunget trinindikator</h4>
-      {% macro tringuide(trinliste) %}
-        <ul class="sidenav-list-locked">
-          {% for trin in trinliste %}
-            <li class="disabled">
-              <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
-                {{loop.index}}. {{trin.text}}
-
-                {% if trin.icon %}
-                <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
-                  {{ icon_svg(trin.icon) }}
-                </span>
-                {% endif %}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endmacro %}
-      {{ tringuide(tringuiden.trinlisten) }}
-    </div>
-  </div>
+<div class="col-4">
+  <h4>Klikbar trinindikator</h4>
+{{ tringuide(tringuiden.trinlisten) }}
 </div>
 
+{# Locked step guide #}
+{% macro tringuide(trinliste) %}
+  <ul class="sidenav-list-locked">
+    {% for trin in trinliste %}
+      <li class="disabled">
+        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
+          {{loop.index}}. {{trin.text}}
+
+          {% if trin.icon %}
+          <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
+            {{ icon_svg(trin.icon) }}
+          </span>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+<div class="col-4">
+  <h4>Tvunget trinindikator</h4>
+  {{ tringuide(tringuiden.trinlisten) }}
+</div>

@@ -158,8 +158,7 @@ $font-weight-bold:            700 !default;
 $font-style-normal:           normal !default;
 $font-style-italic:           italic !default;
 
-
-$font-heading:                'IBMPlexSans', 'system' !default;
+$font-family:                'IBMPlexSans', 'system' !default;
 
 
 //############################### Swatches and Theming ####################
@@ -344,7 +343,7 @@ $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
 //Borders
-$outer-border:            1px solid $color-gray-light;
+$outer-border:            1px solid $color-gray-medium-light;
 $inner-border:            1px solid $color-gray-light;
 $focus-border:            2px dashed $color-gray-light;
 $button-border-width:     2px;
@@ -395,6 +394,11 @@ $input-top-margin: map-get($spacers, 3);
 $input-border-width-feedback: 2px;
 $input-top-bottom-padding-feedback: calc(8px - #{$input-border-width-feedback});
 $input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback});
+
+//----------------
+//Tabs
+//----------------
+$tabs-border-bottom: solid 7px $color-primary;
 
 //----------------
 // Grid

@@ -8,28 +8,31 @@
 // Variables are namespaced with the pd (pikaday) prefix
 
 // Colours
-$pd-text-color: #333 !default;
-$pd-title-color: #333 !default;
-$pd-title-bg: #fff !default;
+$pd-text-color: $color-gray-001 !default;
+$pd-title-color: $color-gray-001 !default;
+$pd-title-bg: $color-gray-006 !default;
 $pd-picker-bg: #fff !default;
-$pd-picker-border: #ccc !default;
-$pd-picker-border-bottom: #bbb !default;
+$pd-picker-border: $outer-border !default;
+$pd-picker-border-inner: $inner-border !default;
+$pd-picker-border-bottom: $outer-border !default;
 $pd-picker-shadow: rgba(0,0,0,.5) !default;
-$pd-th-color: #999 !default;
-$pd-day-color: #666 !default;
-$pd-day-bg: #f5f5f5 !default;
+$pd-body-bg: $color-gray-006 !default;
+$pd-th-color: $color-gray-001 !default;
+$pd-day-color: $color-gray-001!default;
+$pd-day-bg: #fff !default;
 $pd-day-hover-color: #fff !default;
-$pd-day-hover-bg: #ff8000 !default;
-$pd-day-today-color: #33aaff !default;
+$pd-day-hover-bg: $color-black !default;
+$pd-day-today-color: $color-black!default;
 $pd-day-selected-color: #fff !default;
-$pd-day-selected-bg: #33aaff !default;
-$pd-day-selected-shadow: #178fe5 !default;
-$pd-day-disabled-color: #999 !default;
+$pd-day-selected-bg: $color-black !default;
+$pd-day-disabled-color: #aeb0b5 !default;
 $pd-week-color: #999 !default;
+$pd-next-icon: $icons-folder-path + "/arrow-left.svg" !default;
+$pd-previous-icon: $icons-folder-path + "/arrow-right.svg" !default;
 
 // Font
-$pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-
+$pd-font-family: $font-family !default;
+$pd-font-size: $body-text;
 
 .pika-single {
     z-index: 9999;
@@ -37,8 +40,8 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
     position: relative;
     color: $pd-text-color;
     background: $pd-picker-bg;
-    border: 1px solid $pd-picker-border;
-    border-bottom-color: $pd-picker-border-bottom;
+    border: $pd-picker-border;
+    border-bottom: $pd-picker-border-bottom;
     font-family: $pd-font-family;
 
     &.is-hidden {
@@ -67,13 +70,16 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 .pika-lendar {
     float: left;
-    width: 240px;
-    margin: 8px;
+    //width: 240px;
+    //margin: 8px;
 }
 
 .pika-title {
     position: relative;
     text-align: center;
+    max-height: 38px;
+    border-bottom: 1px solid $inner-border;
+    background-color: $pd-title-bg;
 
     select {
         cursor: pointer;
@@ -89,17 +95,13 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 .pika-label {
     display: inline-block;
-    *display: inline;
     position: relative;
     z-index: 9999;
     overflow: hidden;
     margin: 0;
-    padding: 5px 3px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: bold;
+    padding: 7px 3px;
     color: $pd-title-color;
-    background-color: $pd-title-bg;
+    @include form-label-text();
 }
 
 .pika-prev,
@@ -110,16 +112,15 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
     outline: none;
     border: 0;
     padding: 0;
-    width: 20px;
-    height: 30px;
-    text-indent: 20px; // hide text using text-indent trick, using width value (it's enough)
+    width: 37px;
+    height: 37px;
+    text-indent: 37px; // hide text using text-indent trick, using width value (it's enough)
     white-space: nowrap;
     overflow: hidden;
     background-color: transparent;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 75% 75%;
-    opacity: .5;
+    background-size: 20px;
     *position: absolute;
     *top: 0;
 
@@ -136,14 +137,14 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 .pika-prev,
 .is-rtl .pika-next {
     float: left;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==');
+    background-image: url($pd-next-icon);
     *left: 0;
 }
 
 .pika-next,
 .is-rtl .pika-prev {
     float: right;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=');
+    background-image: url($pd-previous-icon);
     *right: 0;
 }
 
@@ -157,24 +158,32 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
     border-collapse: collapse;
     border-spacing: 0;
     border: 0;
-
+    
+    tbody{
+        background-color: $pd-body-bg;
+    }
     th,
     td {
-        width: 14.285714285714286%;
-        padding: 0;
+        min-width: 50px;
+        //padding: 8px;
     }
 
     th {
         color: $pd-th-color;
-        font-size: 12px;
-        line-height: 25px;
-        font-weight: bold;
+        font-size: $pd-font-size;
+        font-weight: 400;
         text-align: center;
+        padding: 8px;
+        border-bottom: $pd-picker-border-inner;
+    }
+    td:not(.is-disabled):not(.is-empty){
+        border: $pd-picker-border-inner;
+        background-color: #fff;
     }
 
     abbr {
         border-bottom: none;
-        cursor: help;
+        text-decoration: none;
     }
 }
 
@@ -187,30 +196,28 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
     border: 0;
     margin: 0;
     width: 100%;
-    padding: 5px;
+    padding: 8px;
     color: $pd-day-color;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: $pd-font-size;
+    //line-height: 15px;
     text-align: right;
     background: $pd-day-bg;
+    font-weight: $font-weight-semibold;
 
     .is-today & {
         color: $pd-day-today-color;
-        font-weight: bold;
     }
 
     .is-selected & {
         color: $pd-day-selected-color;
-        font-weight: bold;
         background: $pd-day-selected-bg;
-        box-shadow: inset 0 1px 3px $pd-day-selected-shadow;
-        border-radius: 3px;
     }
 
     .is-disabled &,
     .is-outside-current-month & {
         color: $pd-day-disabled-color;
-        opacity: .3;
+        font-weight: $font-weight-normal;
+        background-color: transparent;
     }
 
     .is-disabled & {
@@ -222,7 +229,6 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
         color: $pd-day-hover-color;
         background: $pd-day-hover-bg;
         box-shadow: none;
-        border-radius: 3px;
     }
 
     .is-selection-disabled {
@@ -244,12 +250,10 @@ $pd-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
     color: #fff;
     background: #6CB31D;
     box-shadow: none;
-    border-radius: 3px;
 }
 
 .is-endrange .pika-button {
     color: #fff;
     background: #33aaff;
     box-shadow: none;
-    border-radius: 3px;
 }
