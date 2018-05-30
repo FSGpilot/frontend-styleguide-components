@@ -340,6 +340,13 @@ $button-primary-active-border-color: $color-black !default;
 $button-primary-focus-bg:  $color-primary !default;
 $button-primary-focus-border-color: $color-black !default;
 
+// Tag colors
+$tag-primary-color: $color-white !default;
+$tag-primary-bg: $color-primary !default;
+$tag-primary-hover-bg: $color-gray-003 !default;
+$tag-primary-active-bg: $color-base-002 !default;
+$tag-primary-focus-bg:  $color-primary !default;
+
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
