@@ -5,15 +5,15 @@
  //
 
 // Border between the header (and footer) and the table body
-$table-header-border: 1px solid $color-gray-light !default;
+$table-header-border: 1px solid #111111 !default;
 
 // Border of rows / cells
-$table-body-border: 1px solid $color-gray-light !default;
+$table-body-border: 1px solid #dddddd !default;
 
 // Row background colour (hover, striping etc are all based on this colour and
 // calculated automatically)
 $table-row-background: #ffffff !default;
-
+ 
 // Row colour, when selected (tr.selected)
 $table-row-selected: #b0bed9 !default;
 
@@ -48,17 +48,17 @@ $jqueryui: false !default;
 
 @mixin gradient( $from, $to ) {
     background-color: $from;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); // Chrome,Safari4+
-    background: -webkit-linear-gradient(top,     $from 0%, $to 100%); // Chrome10+,Safari5.1+
-    background:    -moz-linear-gradient(top,     $from 0%, $to 100%); // FF3.6+
-    background:     -ms-linear-gradient(top,     $from 0%, $to 100%); // IE10+
-    background:      -o-linear-gradient(top,     $from 0%, $to 100%); // Opera 11.10+
-    background:         linear-gradient(to bottom, $from 0%, $to 100%); // W3C
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,     $from 0%, $to 100%); /* Chrome10+,Safari5.1+ */
+    background:    -moz-linear-gradient(top,     $from 0%, $to 100%); /* FF3.6+ */
+    background:     -ms-linear-gradient(top,     $from 0%, $to 100%); /* IE10+ */
+    background:      -o-linear-gradient(top,     $from 0%, $to 100%); /* Opera 11.10+ */
+    background:         linear-gradient(to bottom, $from 0%, $to 100%); /* W3C */
 }
 
-
- // Table styles
-
+/*
+ * Table styles
+ */
 table.dataTable {
     width: 100%;
     margin: 0 auto;
@@ -66,9 +66,9 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0;
 
-
-     // Header and footer styles
-
+    /*
+     * Header and footer styles
+     */
     thead,
     tfoot {
         th {
@@ -78,11 +78,11 @@ table.dataTable {
 
     thead th,
     thead td {
-        padding: rem-calc(16);
+        padding: 10px 18px;
 
-        // @if not $jqueryui { // jQuery UI defines its own border
-        //     border-bottom: $table-header-border;
-        // }
+        @if not $jqueryui { // jQuery UI defines its own border
+            border-bottom: $table-header-border;
+        }
 
         &:active {
             outline: none;
@@ -91,7 +91,7 @@ table.dataTable {
 
     tfoot th,
     tfoot td {
-        padding: rem-calc(16); //10px 18px 6px 18px;
+        padding: 10px 18px 6px 18px;
 
         @if not $jqueryui { // jQuery UI defines its own border
             border-top: $table-header-border;
@@ -131,9 +131,9 @@ table.dataTable {
     }
 
 
-
-    //Body styles
-
+    /*
+     * Body styles
+     */
     tbody {
         tr {
             background-color: $table-row-background;
@@ -200,8 +200,7 @@ table.dataTable {
     &.hover tbody,
     &.display tbody {
         tr:hover {
-          background-color: red;
-             //background-color: shade($table-row-background, 3.6%); // shade by f5
+            background-color: shade($table-row-background, 3.6%); // shade by f5
 
             &.selected {
                 background-color: shade($table-row-selected, 3.6%);
@@ -417,9 +416,9 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
 }
 
-
- //Control feature layout
-
+/*
+ * Control feature layout
+ */
 .dataTables_wrapper {
     position: relative;
     clear: both;
