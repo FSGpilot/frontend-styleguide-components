@@ -13,7 +13,7 @@ $btn-big-width:     11.6rem;
   @include clearfix;
   max-width: none;
   position: relative;
-  margin:   rem-calc(3);
+  margin:   0.4rem;
 
   &__item-wrapper {
     display: flex!important;
@@ -30,8 +30,8 @@ $btn-big-width:     11.6rem;
 
   &__text_submit {
     background-image: none !important;
-    padding-left: rem-calc(16);
-    padding-right: rem-calc(16);
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
 
   [type=submit],

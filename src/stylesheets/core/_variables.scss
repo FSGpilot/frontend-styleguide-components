@@ -9,10 +9,9 @@
 $global-font-size:  100% !default;
 // Removing the !default from $em-base so we are not inheriting that
 // value from Bourbon.
-$em-base:           10px;
+$em-base:           62.5%; //-> 10px for standard browsers, now 'Font size' from the browser setting works correctly if the uses specifies a bigger standard font-size. 
 
-
-$base-font-size:    18px; //1.8rem !default;
+$base-font-size:    1.8rem !default;
 
 /*
 Removes the unit (e.g. px, em, rem) from a value, returning the number only.
@@ -109,47 +108,49 @@ $icons-folder-path:             "../img/svg-icons/" !default;
 // Typography
 // Typography font-size and line-height
 
-$h1-font-size:                rem-calc(43) !default; //4.3rem !default;
-$h1-line-height:              rem-calc(48) !default; //4.8rem !default;
+$h1-font-size:                4.3rem !default; //rem-calc(43) !default; //4.3rem !default;
+$h1-line-height:              4.8rem !default; //4.8rem !default;rem-calc(48) !default
 
-$h2-font-size:                rem-calc(33) !default; //3.3rem !default;
-$h2-line-height:              rem-calc(40) !default; //4rem   !default;
+$h2-font-size:                3.3rem !default; //rem-calc(33) !default; 
+$h2-line-height:              4rem   !default; //rem-calc(40) !default; 
 
-$h3-font-size:                rem-calc(26) !default;//2.6rem !default;
-$h3-line-height:              rem-calc(32) !default;//3.2rem !default;
+$h3-font-size:                2.6rem !default; //rem-calc(26) !default
+$h3-line-height:              3.2rem !default; //rem-calc(32) !default;
 
-$sub-header:                  rem-calc(25) !default;//2.5rem !default;
-$sub-header-line-height:      rem-calc(32) !default;//3.2rem !default;
+$sub-header:                  2.5rem !default; //rem-calc(25) !default;
+$sub-header-line-height:      3.2rem !default; //rem-calc(32) !default;
 
-$h4-font-size:                rem-calc(22) !default;//2.2rem !default;
-$h4-line-height:              rem-calc(24) !default;//2.4rem !default;
+$h4-font-size:                2.2rem !default; //rem-calc(22) !default;
+$h4-line-height:              2.4rem !default; //rem-calc(24) !default;
 
-$h5-font-size:                rem-calc(20) !default;//2rem   !default;
-$h5-line-height:              rem-calc(24) !default;//2.4rem !default;
+$h5-font-size:                2rem   !default; //rem-calc(20) !default;
+$h5-line-height:              2.4rem !default; //rem-calc(24) !default;
 
-$body-text:                   rem-calc(18) !default;//1.8rem !default;
-$body-text-line-height:       rem-calc(24) !default;//2.4rem !default;
+$h6-font-size:                1.4rem !default; //rem-calc(14) !default;
+$h6-line-height:              1.6rem !default; //rem-calc(16) !default;
 
-$form-label:                  rem-calc(18) !default;//1.8rem !default;
-$form-label-line-height:      rem-calc(24) !default;//2.4rem !default;
+$display-1-heading-size:        8.0rem !default;
+$display-1-heading-line-height: 8.8rem !default;
+
+$display-2-heading-size:        6.0rem !default;
+$display-2-heading-line-height: 7.2rem !default;
+
+$body-text:                   1.8rem !default; //rem-calc(18) !default;
+$body-text-line-height:       2.4rem !default; //rem-calc(24) !default;
+
+$form-label:                  1.8rem !default; //rem-calc(18) !default;
+$form-label-line-height:      2.4rem !default; //rem-calc(24) !default;
+
+$small-text:                  1.3rem !default; //rem-calc(13) !default;
+$small-text-line-height:      1.6rem !default; //rem-calc(16) !default;
 
 
-$h6-font-size:                rem-calc(14) !default;////1.4rem !default;
-$h6-line-height:              rem-calc(16) !default;//1.6rem !default;
-
-$small-text:                  rem-calc(13) !default;//1.3rem !default;
-$small-text-line-height:      rem-calc(16) !default;//1.6rem !default;
-
-
-
-
-
-$small-font-size:             rem-calc(12) !default; //1.2rem !default; //TODO: see $small-text??
-$lead-font-size:              rem-calc(25) !default; //2rem !default;
-$title-font-size:             rem-calc(52) !default; //5.2rem !default;
-$base-line-height:            1.5 !default;
-$heading-line-height:         1.3 !default;
-$lead-line-height:            rem-calc(32) !default; //1.5 !default;
+$small-font-size:             1.2rem !default; //rem-calc(12) !default;
+$lead-font-size:              2rem !default; //rem-calc(25) !default;
+$lead-line-height:            3.2rem !default; //rem-calc(32) !default;
+$title-font-size:             5.2rem !default; //rem-calc(52) !default;
+$base-line-height:            2.4rem !default;
+$heading-line-height:         1.3rem !default;
 
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
@@ -365,19 +366,19 @@ $spacers: (
   4: ($spacer * 2),     //16px
   5: ($spacer * 3),     //24px
   6: ($spacer * 4),     //32px
-  7: ($spacer * 5),      //40px
-  8: ($spacer * 6),      //48px
+  7: ($spacer * 5),     //40px
+  8: ($spacer * 6),     //48px
   9: ($spacer * 7)      //56px
 ) !default;
 
-//Translate $spacer
-$spacing-x-small:               rem-calc(4) !default;  //0.4rem;
-$spacing-small:                 rem-calc(8) !default;  //0.8rem;
-$spacing-md-small:              rem-calc(16) !default; //1.6rem;
-$spacing-medium:                rem-calc(24) !default; //2.4rem;
-$spacing-large:                 rem-calc(32) !default; //3.2rem;
-$spacing-x-large:               rem-calc(48) !default; //4.8rem;
-$spacing-xx-large:              rem-calc(64) !default; //6.4rem;
+//Translate $spacer into rem
+$spacing-small:                 0.4rem !default; //rem-calc(4)
+$spacing:                       0.8rem !default; //0.8rem;
+$spacing-md-small:              1.6rem !default; //1.6rem;
+$spacing-medium:                2.4rem !default; //2.4rem;
+$spacing-large:                 3.2rem !default; //3.2rem;
+$spacing-x-large:               4.0rem !default; //4.0rem;
+$spacing-xx-large:              4.8rem !default; //6.4rem;
 
 //----------------
 //input
@@ -388,7 +389,7 @@ $input-top-bottom-padding: calc(8px - #{$input-border-width}); //7px
 $input-left-right-padding: calc(16px - #{$input-border-width}); //15px
 $input-font-size: $body-text;
 $input-line-height: $body-text-line-height;
-$input-standard-height: 40px;
+$input-standard-height: 4.0rem;
 $input-top-margin: map-get($spacers, 3);
 
 $input-border-width-feedback: 2px;
@@ -493,8 +494,8 @@ $asset-pipeline:                false !default;
 
 // Magic Numbers
 //
-$text-max-width:                rem-calc(496) !default; //76ch !default;
-$lead-max-width:                rem-calc(672) !default;
+$text-max-width:                496px !default; //76ch !default;
+$lead-max-width:                672px !default;
 $site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  ($grid-gutter-width / 2) !default;
 $site-margins-mobile:           1.5rem !default;

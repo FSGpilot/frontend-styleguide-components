@@ -78,7 +78,7 @@ table.dataTable {
 
     thead th,
     thead td {
-        padding: rem-calc(16);
+        padding: 1.6rem;
 
         // @if not $jqueryui { // jQuery UI defines its own border
         //     border-bottom: $table-header-border;
@@ -91,7 +91,7 @@ table.dataTable {
 
     tfoot th,
     tfoot td {
-        padding: rem-calc(16); //10px 18px 6px 18px;
+        padding: 1.6rem; //10px 18px 6px 18px;
 
         @if not $jqueryui { // jQuery UI defines its own border
             border-top: $table-header-border;
