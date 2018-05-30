@@ -32,7 +32,7 @@
   <ul class="sidenav-list-locked">
     {% for trin in trinliste %}
       <li class="disabled">
-        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %} disabled tab-index="-1" aria-disabled="true">
+        <a  {% if trin.active %} class="active" {% endif %} disabled tab-index="-1" aria-disabled="true">
           {{loop.index}}. {{trin.text}}
 
           {% if trin.icon %}
@@ -46,10 +46,10 @@
   </ul>
 {% endmacro %}
 
-<div class="container">
+<div class="container mt-6">
   <div class="row">
     <div class="col-12 sidebar-col">
-      <h4>Tvunget trinindikator</h4>
+      <h4>Låst trinindikator</h4>
       {{ tringuide(tringuiden.trinlisten) }}
     </div>
   </div>
