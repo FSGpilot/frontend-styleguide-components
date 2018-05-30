@@ -182,8 +182,8 @@ $radio-size: 18px;
   position: relative;
   &:after{
     content: "";
-    height: calc(#{$radio-size}-10px);
-    width: calc(#{$radio-size}-10px);
+    height: calc(#{$radio-size} - 10px);
+    width: calc(#{$radio-size} - 10px);
     background-color: $color-text;
     position: absolute;
     left: 5px;
@@ -303,6 +303,7 @@ $radio-size: 18px;
   .form-group-year {
     margin-right: map-get($spacers, 4);
     margin-top: map-get($spacers, 3);
+
   }
   .form-group-day,
   .form-group-month,
@@ -321,15 +322,16 @@ $radio-size: 18px;
       }
     }
   }
+}
 
-  [type=number]::-webkit-inner-spin-button,
-  [type=number]::-webkit-outer-spin-button {
-    appearance: none;
-    margin: 0;
-  }
-  [type=number] {
-    -moz-appearance: textfield;
-  }
+
+input[type='number'] {
+  -moz-appearance:textfield !important;
+}
+//Below fix bug where date-inputs to number-wheels in chrome. 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
 }
 
 

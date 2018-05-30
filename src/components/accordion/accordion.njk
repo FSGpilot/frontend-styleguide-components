@@ -1,15 +1,14 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 <div class="container">
 {% macro accordion(variant, items, id_prefix, multiselectable) %}
-<ul class="accordion{%
-  if accordion_example.variant %}-{{ accordion_example.variant }}{% endif %}"{%
-  if accordion_example.multiselectable == true %} aria-multiselectable="true"{% endif %}>
-  {% for item in accordion_example.items %}
+<ul class="accordion {% if variant %}accordion-{{ variant }}{% endif %}"
+  {% if multiselectable == true %} aria-multiselectable="true"{% endif %}>
+  {% for item in items %}
   <li>
     <button class="accordion-button"
       aria-expanded="{{ item.expanded | default('false') }}"
       {% if item.error_message %} aria-describedby="error-message" {% endif %}
-      aria-controls="{{ accordion_example.id_prefix }}{{ item.id }}">
+      aria-controls="{{ id_prefix }}{{ item.id }}">
       {{ item.title }}
 
       {%- if item.icon %}
@@ -18,7 +17,7 @@
         </span>
       {% endif -%}
     </button>
-    <div id="{{ accordion_example.id_prefix }}{{ item.id }}" class="accordion-content">
+    <div id="{{ id_prefix }}{{ item.id }}" class="accordion-content">
       <p>{{ item.content }}</p>
     </div>
   </li>
@@ -27,4 +26,11 @@
 {% endmacro %}
 
 {{ accordion(accordion_example.variant, accordion_example.items, accordion_example.id_prefix, accordion_example.multiselectable) }}
+
+<p class="mt-6">Add the `accordion-bordered` class to your `.accordion` to enable the visual border.:</p>
+{{ accordion(accordion_example2.variant, accordion_example2.items, accordion_example2.id_prefix, accordion_example2.multiselectable) }}
+
+<p class="mt-6">You can allow multiple sections to remain open at the same time by adding the `aria-multiselectable="true"` attribute to your `.accordion`.
+    context:</p>
+{{ accordion(accordion_example3.variant, accordion_example3.items, accordion_example3.id_prefix, accordion_example3.multiselectable) }}
 </div>
