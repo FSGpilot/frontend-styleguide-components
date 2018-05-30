@@ -3,8 +3,8 @@ $accordion-border: 1px solid $color-gray-light;
 
 // Accordion Styles
 
-$icon-size: $spacing-md-small;
-$h-padding: $spacing-medium;
+$icon-size: $spacing-medium;
+$h-padding: $spacing-md-small;
 $v-padding: $spacing-md-small;
 
 @mixin accordion-list-styles {
@@ -36,12 +36,12 @@ $v-padding: $spacing-md-small;
   //font-weight: $font-weight-bold;
   margin: 0;
   line-height: $body-text-line-height;
-  padding: rem-calc(16); //padding: $v-padding ($h-padding * 2 + $icon-size) $v-padding $h-padding;
+  padding: $h-padding $v-padding;
   width: 100%;
 
   &:hover {
-    background-color: $color-gray-light;
-    color: $color-black;
+    //background-color: $color-gray-light;
+    //color: $color-black;
   }
 
   h1, .h1,
@@ -73,82 +73,16 @@ $v-padding: $spacing-md-small;
   }
 }
 
-.accordion,
-.accordion-bordered {
-  @include accordion-list-styles;
-  @include accordion-nested-list;
-  @include accordion-nested-list;
 
-  + .accordion,
-  + .accordion-bordered {
-    margin-top: $spacing-small;
-  }
-
-
-
-  // TODO deprecated ruleset based on old accordion.
-  > ul {
-    @include accordion-list-styles;
-
-    // TODO deprecated ruleset based on old accordion.
-    > li {
-      @include accordion-list-item-styles;
-    }
-
-    // TODO deprecated ruleset based on old accordion.
-    button {
-      @include accordion-button-styles;
-    }
-
-    // TODO deprecated ruleset based on old accordion.
-    [aria-expanded=false] {
-      @include accordion-button-unopened-styles;
-    }
-  }
-
-  > li {
-    @include accordion-list-item-styles;
-  }
-
-}
-
-.accordion-bordered {
-  .accordion-content {
-    border-bottom: $accordion-border;
-    border-left: $accordion-border;
-    border-right: $accordion-border;
-    border-radius: 0 0 $border-radius $border-radius;
-  }
-}
-
-.accordion-content {
-  background-color: $color-white;
-  overflow: auto;
-  padding: $spacing-md-small $spacing-medium;
-
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  > *:last-child {
-    margin-bottom: 0;
-  }
-
-  &:not([aria-hidden]) {
-    @include sr-only();
-  }
-
-  @include accessibly-hidden();
-}
 
 .accordion-button {
   @include accordion-button-styles;
   position: relative;
   transition: none;
-  border:solid 1px #ccc !important;
-  border-radius: $border-radius $border-radius 0 0;
+  border-radius: $border-radius;
   .icon_text {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
+    margin-right: map-get($spacers, 3);
     @include for-size(phone-only) {
       float: left;
     }
@@ -156,12 +90,12 @@ $v-padding: $spacing-md-small;
   .accordion-icon {
     position: absolute;
     top: 50%;
-    right: 6.4rem; // Same padding-right as the accordion-button
-    //width: 28px;
+    right: calc(16px + 16px + 24px); //2x padding + 24px icon
     height: 24px;
     line-height: 24px;
     text-align: center;
     transform: translateY(-50%);
+    display: flex;
 
     @include for-size(phone-only) {
       position: initial !important;
@@ -177,35 +111,61 @@ $v-padding: $spacing-md-small;
         float: left;
       }
     }
-
-
-    /*
-    &.icon-bg-primary {
-      background-color: $color-primary;
-    }
-
-    &.icon-bg-success {
-      background-color: $color-success;
-    }
-
-    &.icon-bg-info {
-      background-color: $color-info;
-    }
-
-    &.icon-bg-warning {
-      background-color: $color-warning;
-    }
-
-    &.icon-bg-error {
-      background-color: $color-error;
-    }*/
   }
+}
+.accordion-bordered .accordion-button{
+  border:solid 1px #ccc;
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+.accordion,
+.accordion-bordered {
+  @include accordion-list-styles;
+  @include accordion-nested-list;
+  @include accordion-nested-list;
+
+  + .accordion,
+  + .accordion-bordered {
+    margin-top: $spacing-small;
+  }
+  > li {
+    @include accordion-list-item-styles;
+  }
+}
+
+.accordion-bordered {
+  .accordion-content {
+    border-bottom: $accordion-border;
+    border-left: $accordion-border;
+    border-right: $accordion-border;
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+.accordion-content {
+  background-color: $color-white;
+  overflow: auto;
+  padding: $spacing-md-small;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &:not([aria-hidden]) {
+    @include sr-only();
+  }
+
+  @include accessibly-hidden();
 }
 .accordion-button[aria-describedby="error-message"] {
   border: solid 2px $color-error !important;
 }
 .accordion-button[aria-expanded=true] {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold;
 }
 .accordion-button[aria-expanded=false] {
   @include accordion-button-unopened-styles;

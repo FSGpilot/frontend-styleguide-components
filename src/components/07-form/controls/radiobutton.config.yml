@@ -8,17 +8,28 @@ context:
       - id: truth
         name: historical-figures-1
         value: truth
-        checked: true
         text: Sojourner Truth
+        checked: false
+        disabled: false
+
       - id: douglass
         name: historical-figures-1
         value: douglass
         text: Frederick Douglass
+        checked: true
+        disabled: false
+
       - id: washington
         name: historical-figures-1
         value: washington
         text: Booker T. Washington
-      - id: washington
+        checked: false
+        disabled: true
+
+      - id: carver
         name: historical-figures-1
         value: carver
         text: George Washington Carver
+        checked: false
+        disabled: false
+        focus: true
