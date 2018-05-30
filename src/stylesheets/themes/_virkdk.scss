@@ -4,23 +4,3 @@
 $color-primary:               #067293;
 $color-primary-medium:        #04556E;
 $color-primary-dark:          #033747;
-
-$button-primary-color: $color-white;
-$button-primary-bg: $color-primary;
-$button-primary-border-color: $color-primary-darkest;
-$button-primary-hover-bg: $color-primary-darker;
-$button-primary-hover-border-color: $color-primary-darkest;
-$button-primary-active-bg: $color-primary-darkest;
-$button-primary-active-border-color: $color-primary-darkest;
-$button-primary-focus-bg:  $color-primary;
-$button-primary-focus-border-color: $color-primary-darkest;
-
-.header .logo{
-    background-image: url('#{$image-path}/logo-virk.svg');
-    background-size: 6.2rem;
-    min-width: 70px;
-}
-
-.footer-logo-img {
-    background-image: url('#{$image-path}/logo-virk.svg');
-}

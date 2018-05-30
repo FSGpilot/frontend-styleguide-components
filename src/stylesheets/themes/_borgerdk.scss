@@ -5,27 +5,3 @@ $color-primary:               #568331;
 $color-primary-medium:        #3C5C22;
 $color-primary-dark:          #233614;
 $color-primary-lightest:      #BEE678;
-
-$button-primary-color: $color-white;
-$button-primary-bg: $color-primary;
-$button-primary-border-color: $color-primary-darkest;
-$button-primary-hover-bg: $color-primary-darker;
-$button-primary-hover-border-color: $color-primary-darkest;
-$button-primary-active-bg: $color-primary-darkest;
-$button-primary-active-border-color: $color-primary-darkest;
-$button-primary-focus-bg:  $color-primary;
-$button-primary-focus-border-color: $color-primary-darkest;
-
-.header .logo{
-    background-image: url('#{$image-path}/logo-borgerdk.svg');
-    background-size: 17.2rem;
-    min-width: 175px
-}
-
-.footer .footer-logo .footer-logo-img {
-    background-image: url('#{$image-path}/logo-borgerdk.svg');
-    background-position: 9rem 1.8rem;
-    background-size: 8.2rem;
-    background-clip: padding-box;
-    padding-bottom: 1.5rem;
-}

@@ -300,6 +300,10 @@ $color-primary:               $color-gray-003 !default;
 $color-primary-medium:        $color-gray-002 !default;
 $color-primary-dark:          $color-gray-001 !default;
 
+$color-primary:               #067293;
+$color-primary-medium:        #04556E;
+$color-primary-dark:          #033747;
+
 $color-positive:              $color-green-005 !default;
 $color-negative:              $color-red-001 !default;
 
@@ -363,13 +367,14 @@ $color-required:              $color-red-001 !default;
 // Button colors
 $button-primary-color: $color-white !default;
 $button-primary-bg: $color-primary !default;
-$button-primary-border-color: $color-gray-dark !default;
-$button-primary-hover-bg: $color-gray-002 !default;
-$button-primary-hover-border-color: $color-black !default;
-$button-primary-active-bg: $color-base-002 !default;
-$button-primary-active-border-color: $color-black !default;
+$button-primary-border-color: $color-primary-medium !default;
+$button-primary-hover-bg: $color-primary-medium !default;
+$button-primary-hover-border-color: $color-primary-dark !default;
+$button-primary-active-bg: $color-primary-dark !default;
+$button-primary-active-border-color: $color-primary-dark !default;
 $button-primary-focus-bg:  $color-primary !default;
-$button-primary-focus-border-color: $color-black !default;
+$button-primary-focus-border-color: $color-primary-medium !default;
+$button-disabled-bg: $color-gray-pale !default;
 
 // Tag colors
 $tag-primary-color: $color-white !default;
@@ -396,7 +401,6 @@ $input-top-bottom-padding-feedback: calc(8px - #{$input-border-width-feedback});
 $input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback});
 
 //Tabs
-$tabs-border-bottom: solid 7px $color-primary;
 $tabs-active-border-color: $color-primary !default;
 
 //Sidenavigation
