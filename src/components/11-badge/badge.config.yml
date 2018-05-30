@@ -29,3 +29,13 @@ context:
         state: 'icon-active'
       - class: 'primary'
         state: 'icon-focus'
+
+      # - class: 'primary'
+      #   label: 'Button with icon'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
