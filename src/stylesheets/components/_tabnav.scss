@@ -1,43 +1,52 @@
-// tab navigation
 
 .tabnav {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    border-bottom: 1px solid $color-border-focus;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid $color-border-focus;
 
-    li {
-      float: left;  
-      margin-bottom: 0;
+  li {
+    float: left;  
+    margin-bottom: 0;
 
-      @include for-size(phone-only) {
-        float: none; 
+    @include for-size(phone-only) {
+      float: none; 
+    }
+
+    a {
+      display: block;
+      color: $color-gray-001;
+      text-align: center;
+      text-decoration: none;
+      padding: map-get($spacers, 3);
+      @include media($grid-sm) {
+        margin: map-get($spacers, 3);
+        margin-right: 0;
+        margin-bottom:0;
+      }
+      
+      
+      &:hover {
+        color: $color-primary;
       }
 
-      a {
-        display: block;
-        color: $color-black;
-        text-align: center;
-        padding: map-get($spacers, 3);
-        margin: map-get($spacers, 3);
-        margin-bottom:0;
-        text-decoration: none;
-        @include for-size(phone-only) {
-          border-bottom:7px solid $color-white;
-        }
+      &:focus{
+        outline: 0px solid $color-focus;
+      }
 
-        &:hover {
-          color: $color-link-hover;
-          border-bottom: $tabs-border-bottom;
-        }
-
-        &.active {
-          color: $color-primary;
-          border-bottom: $tabs-border-bottom;
-          font-weight: $font-weight-bold;
-        }
+      &.active {
+        color: $color-primary;
+        box-shadow: inset 0px -7px 0px 0px $tabs-active-border-color;
+        font-weight: $font-weight-semibold;
       }
     }
 
-  
+    @include media($grid-sm) {
+      &:last-child{
+        a{
+          margin-right: map-get($spacers, 3);
+        }
+      }
+    }
+  }
 }

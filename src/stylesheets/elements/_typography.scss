@@ -261,34 +261,29 @@ small, .small-text {
 //   @include text-color('.color-text-#{$color}', $value);
 // }
 
-@mixin textlink_icon($iconname) {
-  &::after {
-    background: url('#{$icons-folder-path}/#{$iconname}.svg') no-repeat 0 0;
-    background-size: 100%;
-    content: '';
-    display: inline-block;
-    height: rem-calc(24);
-    margin-bottom: rem-calc(-6);
-    margin-left: rem-calc(6);
-    width: rem-calc(24);
+//a function link, does not look like a link
+.function-link{
+  @include body-copy-text;
+  display: inline-flex;
+  text-decoration: none;
+  &:hover, &:visited, &:focus{
+    color: $color-text;
   }
-
-  // &:hover::after {
-  //   background-image: url('#{$icons-folder-path}/#{$external-link-hover}.svg');
-  // }
+  .icon-svg{
+    margin-left: map-get($spacers, 2);
+    .background-dark &{
+      fill: white;
+    } 
+  }
 }
 
-// External link consider "effortless style approach":
-// [href^="http:"]:not([href*="my-domain.com"])
-// [href^="https:"]:not([href*="my-domain.com"])
-.textlink-icon {
-  display: inline-block; //Bug fix: correct focus border.
-  &.external_link {
-    //color: $color-link-hover;
-    @include textlink_icon("open-in-new");
-  }
-  &.print_link {
-    @include textlink_icon("printer");
+.icon-link{
+  display: inline-flex;
+  .icon-svg{
+    margin-left: map-get($spacers, 2);
+    .background-dark &{
+      fill: white;
+    } 
   }
 }
 

@@ -1,0 +1,41 @@
+label: Tags
+status: ready
+preview: '@dkwds-framed'
+
+variants:
+  - name: default
+    label: Examples
+
+
+context:
+  tag_example:
+    items:
+      - class: 'primary'
+        label: 'Tags'
+        state: 'default'
+      - class: 'primary'
+        state: 'hover'
+      - class: 'primary'
+        state: 'active'
+      - class: 'primary'
+        state: 'focus'
+
+      - class: 'primary'
+        label: 'Tags with icons'
+        state: 'icon-default'
+      - class: 'primary'
+        state: 'icon-hover'
+      - class: 'primary'
+        state: 'icon-active'
+      - class: 'primary'
+        state: 'icon-focus'
+
+      # - class: 'primary'
+      #   label: 'Button with icon'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
+      # - class: 'primary'
+      #   icon: 'icon'
