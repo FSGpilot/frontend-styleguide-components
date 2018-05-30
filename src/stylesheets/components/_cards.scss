@@ -1,7 +1,7 @@
 .card {
   position: relative;
   //margin-bottom: $spacing-md-small;
-  border-radius: $spacing-x-small;
+  border-radius: $spacing-small;
   border: 1px solid $color-gray-medium-dark;
   //margin: $spacing-md-small;
   overflow: hidden;
@@ -24,7 +24,7 @@
 
   p {
     margin: 0px;
-    margin-bottom: $spacing-small;
+    margin-bottom: $spacing;
     max-width: 60ch;
   }
   h1, .h1,
@@ -69,7 +69,7 @@
 
 .card-link {
   text-decoration: none;
-  margin-left: $spacing-small;
+  margin-left: $spacing;
 }
 
 .card-link:first-child {
@@ -79,7 +79,7 @@
 
 .card-title {
   margin-top: 0;
-  margin-bottom: $spacing-small;
+  margin-bottom: $spacing;
 }
 
 .card-subtitle {
@@ -109,7 +109,7 @@
 
 
 .card-footer {
-  padding: $spacing-x-small;
+  padding: $spacing-small;
   background-color: $color-white;
   border-top: 1px solid $color-black;
 

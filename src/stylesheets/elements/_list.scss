@@ -1,12 +1,12 @@
 ul,
 ol {
-  margin: map-get($spacers, 3) 0;
-  padding-left: map-get($spacers, 4);
+  margin: $spacing 0;
+  padding-left: $spacing-md-small;
 }
 
 li {
   line-height: $base-line-height;
-  margin-bottom: map-get($spacers, 3);
+  margin-bottom: $spacing;
 
   &:last-child {
     margin-bottom: 0;
@@ -15,8 +15,8 @@ li {
   //ul and ol inside li
   ul,
   ol{
-    margin-top: map-get($spacers, 3);
-    margin-bottom: map-get($spacers, 3);
+    margin-top: $spacing;
+    margin-bottom: $spacing;
   }
 }
 
@@ -26,7 +26,7 @@ li {
 
   &.bottom-spacing{
     li{
-      margin-bottom: map-get($spacers, 3);
+      margin-bottom: $spacing;
     }
   }
 }

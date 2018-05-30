@@ -18,7 +18,7 @@ $v-padding: $spacing-md-small;
 @mixin accordion-list-item-styles {
   background-color: $color-gray-pale;
   list-style: none;
-  margin-bottom: $spacing-small;
+  margin-bottom: $spacing;
   width: 100%;
 }
 
@@ -91,8 +91,8 @@ $v-padding: $spacing-md-small;
     position: absolute;
     top: 50%;
     right: calc(16px + 16px + 24px); //2x padding + 24px icon
-    height: 24px;
-    line-height: 24px;
+    height: 2.4rem;
+    line-height: 2.4rem;
     text-align: center;
     transform: translateY(-50%);
     display: flex;
@@ -102,7 +102,7 @@ $v-padding: $spacing-md-small;
       text-align: left !important;
       transform: none !important;
       display: block !important;
-      margin-top: rem-calc(8) !important;
+      margin-top: 0.8rem !important;
     }
 
     .icon-svg {
@@ -126,7 +126,7 @@ $v-padding: $spacing-md-small;
 
   + .accordion,
   + .accordion-bordered {
-    margin-top: $spacing-small;
+    margin-top: $spacing;
   }
   > li {
     @include accordion-list-item-styles;
