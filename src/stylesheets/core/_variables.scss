@@ -141,8 +141,8 @@ $body-text-line-height:       2.4rem !default; //rem-calc(24) !default;
 $form-label:                  1.8rem !default; //rem-calc(18) !default;
 $form-label-line-height:      2.4rem !default; //rem-calc(24) !default;
 
-$small-text:                  1.3rem !default; //rem-calc(13) !default;
-$small-text-line-height:      1.6rem !default; //rem-calc(16) !default;
+$small-text:                  1.6rem !default; //rem-calc(13) !default;
+$small-text-line-height:      2.4rem !default; //rem-calc(16) !default;
 
 
 $small-font-size:             1.2rem !default; //rem-calc(12) !default;
@@ -249,7 +249,7 @@ $color-gray-pale:             $color-gray-006 !default;
 $color-focus:                 $color-orange-004 !default;
 
 // Text color
-$color-text:                  $color-base-002 !default;
+$color-text:                  $color-gray-002 !default;
 $color-text-secondary:        $color-gray-003 !default;
 $color-text-bright:           $color-gray-006 !default;
 
