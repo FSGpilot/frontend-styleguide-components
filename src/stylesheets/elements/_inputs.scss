@@ -376,9 +376,6 @@ input::-webkit-inner-spin-button {
 .form-label + input[type=file]{
   margin-top: map-get($spacers, 3);
 }
-input[type=file]{
-  height: $input-standard-height; // IE 11 fix where the button was very slim.
-}
 
 
 // Required
