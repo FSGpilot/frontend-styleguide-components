@@ -115,13 +115,16 @@ table.dataTable {
             }
 
             .sorting {
-                background-image: url('../images/sort_both.png');
+                //background-image: url('#{$icons-folder-path}/menu-up.svg');
+                //background-image: url('../images/sort_both.png');
             }
             .sorting_asc {
-                background-image: url('../images/sort_asc.png');
+                background-image: url('#{$icons-folder-path}/menu-up.svg');
+                //background-image: url('../images/sort_asc.png');
             }
             .sorting_desc {
-                background-image: url('../images/sort_desc.png');
+                background-image: url('#{$icons-folder-path}/menu-down.svg');
+                //background-image: url('../images/sort_desc.png');
             }
             .sorting_asc_disabled {
                 background-image: url('../images/sort_asc_disabled.png');
