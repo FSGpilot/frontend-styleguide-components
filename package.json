@@ -44,6 +44,7 @@
     "elem-dataset": "^1.1.1",
     "lodash.debounce": "^4.0.7",
     "mdi": "^2.0.46",
+    "micromodal": "^0.3.2",
     "moment": "^2.22.1",
     "object-assign": "^4.1.1",
     "receptor": "^1.0.0",

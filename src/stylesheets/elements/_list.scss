@@ -1,24 +1,117 @@
-ul,
-ol {
-  margin: $spacing 0;
-  padding-left: $spacing-md-small;
-}
+.lists {
+  //Ul lists
+  &.ul-lists, ul {
+    padding-left: 0;
+    li { 
+      margin-top:map-get($spacers, 3);
+      line-height: $lead-line-height;
+      color:$color-text;
+      &:before {
+        content: "\2022";
+        // font-size: 26px;
+        padding-right: 8px;
+      }
+      ul {
+        list-style-type: disc;
+        li {
+          &:before{
+          content: "\2022";
+          // font-size: 24px;
+          padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+  //Ol lists
+  &.ol-lists, ol {
+    padding-left: 0;
+    counter-reset: item;
+    li {
+      display: block;
+      margin-top:map-get($spacers, 3);
+      line-height: $lead-line-height;
+      color:$color-text;
+      &:before { 
+        content: counters(item, ".") "."; 
+        counter-increment: item; 
+      }
+      ol{
 
-li {
-  line-height: $base-line-height;
-  margin-bottom: $spacing;
+        li {
 
-  &:last-child {
-    margin-bottom: 0;
+          }
+        }
+      }
+    }
+  
+
+  //Body lists
+  &.body-list {
+    font-size: $h5-font-size;
+    line-height: $lead-line-height;
+    li {
+      &:before {
+        width: 46px;
+        display: inline-block;
+        text-align: right;
+      }
+      ol, ul {
+        li {
+          &:before { 
+            width: 92px;
+            display: inline-block;
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 
-  //ul and ol inside li
-  ul,
-  ol{
-    margin-top: $spacing;
-    margin-bottom: $spacing;
+  //Small lists
+  &.small-list {
+    font-size: $small-text;
+    line-height: $small-text-line-height;
+    li {
+      &:before {
+        width: 37px;
+        display: inline-block;
+        text-align: right;
+      }
+      ol, ul {
+        li {
+          &:before { 
+            width: 74px;
+            display: inline-block;
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 }
+  // ul,
+  // ol {
+  //   margin: $spacing 0;
+  //   padding-left: $spacing-md-small;
+  // }
+
+  // li {
+  //   line-height: $base-line-height;
+  //   margin-bottom: map-get($spacers, 3);
+
+  //   &:last-child {
+  //     margin-bottom: 0;
+  //   }
+
+  //   //ul and ol inside li
+  //   ul,
+  //   ol{
+  //     margin-top: map-get($spacers, 3);;
+  //     margin-bottom: map-get($spacers, 3);;
+  //   }
+  // }
+
 
 // Unstyled lists
 .unstyled-list {

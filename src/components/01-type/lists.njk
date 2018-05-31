@@ -1,89 +1,55 @@
-{% macro list(type, content) %}
-  {% if (type == 'ul') -%}
-    <ul>
-      {{content}}
+{# Unordered list #}
+{% macro ul_list(list_ul, subclass) %}
+  {% for item in list_ul %}
+  <li>
+    {{ item.text }}
+    {% if item.list_ul %}
+    <ul class="{{ subclass }}">
+      {{ ul_list(item.list_ul, subclass) }}
     </ul>
-  {%- elif (type == 'ol') -%}
-    <ol>
-      {{content}}
+    {% endif %}
+  </li>
+  {% endfor %}
+{% endmacro %}
+
+{# Ordered list #}
+{% macro ol_list(list_ol, subclass) %}
+  {% for item in list_ol %}
+  <li>
+    {{ item.text }}
+    {% if item.list_ol %}
+    <ol class="{{ subclass }}">
+      {{ ol_list(item.list_ol, subclass) }}
     </ol>
-  {%- endif %}
+    {% endif %}
+  </li>
+  {% endfor %}
 {% endmacro %}
-
-
-{% macro listitem(class, text) %}
-  <li{%- if class -%} class="{{class}}"{%- endif -%}>{{text}}</li>
-{% endmacro %}
-
 
 <div class="row">
-  <div class="col-12 col-md-8">
-    <h4 class="h4">Unordered list</h4>
-    <ul>
-      <li>Unordered list item
-        <ul>
-          <li>Unordered sublist item</li>
-        </ul>
-      </li>
-      <li>Unordered list item
-        <ul>
-          <li>Unordered sublist item</li>
-          <li>Unordered sublist item</li>
-        </ul>
-      </li>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    <h4>Unorderedeeeee body list</h4>
+    <ul class="lists ul-lists body-list">
+      {{ ul_list(lists.list_ul, 'sub_list') }}
     </ul>
   </div>
-  <div class="col-12 col-md-8">
-    <h4 class="h4">Ordered list</h4>
-    <ol>
-      <li>Ordered list item
-        <ol>
-          <li>Ordered sublist item</li>
-        </ol>
-      </li>
-      <li>Ordered list item
-        <ol>
-          <li>Ordered sublist item</li>
-          <li>Ordered sublist item</li>
-        </ol>
-      </li>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    <h4>Ordered body list</h4>
+    <ol class="lists ol-lists body-list">
+      {{ ol_list(lists.list_ol, 'sub_list') }}
     </ol>
   </div>
-  <div class="col-12 col-md-8">
-    <h4 class="h4">Mixed ordered and unordered list</h4>
-    <ol>
-      <li>Ordered list item
-        <ul>
-          <li>Unordered sublist item</li>
-          <li>Unordered sublist item</li>
-        </ul>
-        <ol>
-          <li>Ordered sublist item</li>
-          <li>Ordered sublist item</li>
-        </ol>
-      </li>
-    </ol>
-    <ul>
-      <li>Unordered list item
-        <ol>
-          <li>Ordered sublist item</li>
-          <li>Ordered sublist item</li>
-        </ol>
-        <ul>
-          <li>Unordered sublist item</li>
-          <li>Unordered sublist item</li>
-        </ul>
-      </li>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    <h4>Unordered small list</h4>
+    <ul class="lists ul-lists small-list">
+      {{ ul_list(lists.list_ul, 'sub_list') }}
     </ul>
   </div>
-  <div class="col-12 col-md-8">
-    <h4 class="h4">Unstyled list</h4>
-    <ul class="unstyled-list">
-      <li>Unstyled list item</li>
-      <li>Unstyled list item</li>
-      <li>Unstyled list item</li>
-      <li>Unstyled list item</li>
-    </ul>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    <h4>Ordered small list</h4>
+    <ol class="lists ol-lists small-list">
+      {{ ol_list(lists.list_ol, 'sub_list') }}
+    </ol>
   </div>
 </div>
 
