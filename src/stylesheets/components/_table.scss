@@ -25,6 +25,7 @@ $border-row: 1px solid $color-gray-light;
         padding: calc(#{map-get($spacers, 4)} - 1px); //16px -1px (for the border)
         background-color: inherit;
         border: $border-row;
+        vertical-align: top;
     }
 
     //hover on row
