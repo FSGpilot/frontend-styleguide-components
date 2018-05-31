@@ -5,63 +5,63 @@ preview: '@dkwds-framed'
 context:
   radiobuttons_example:
     items:
-      - id: truth
-        name: historical-figures-1
+      - id: unchecked
+        name: unchecked
         value: truth
-        text: Sojourner Truth
+        text: Unchecked
         checked: false
         disabled: false
 
-      - id: douglass
-        name: historical-figures-1
-        value: douglass
-        text: Frederick Douglass
+      - id: Checked
+        name: Checked
+        value: Checked
+        text: Checked
         checked: true
         disabled: false
 
-      - id: washington
-        name: historical-figures-1
-        value: washington
-        text: Booker T. Washington
+      - id: Disabled
+        name: Disabled
+        value: Disabled
+        text: Disabled
         checked: false
         disabled: true
 
-      - id: carver
-        name: historical-figures-1
-        value: carver
-        text: George Washington Carver
+      - id: Focus
+        name: Focus
+        value: Focus
+        text: Focus
         checked: false
         disabled: false
         focus: true
 
-      - id: truth-large
-        name: historical-figures-1-large
-        value: truth-large
-        text: Sojourner Truth
+      - id: Unchecked-large
+        name: Unchecked-large
+        value: Unchecked-large
+        text: Unchecked-large
         checked: false
         disabled: false
         large: true
 
-      - id: douglass-large
-        name: historical-figures-1-large
-        value: douglass-large
-        text: Frederick Douglass
+      - id: Checked-large
+        name: Checked-large
+        value: Checked-large
+        text: Checked-large
         checked: true
         disabled: false
         large: true
 
-      - id: washington-large
-        name: historical-figures-1-large
-        value: washington-large
-        text: Booker T. Washington
+      - id: Disabled-large
+        name: Disabled-large
+        value: Disabled-large
+        text: Disabled-large
         checked: false
         disabled: true
         large: true
 
-      - id: carver-large
-        name: historical-figures-1-large
-        value: carver-large
-        text: George Washington Carver
+      - id: Focus-large
+        name: Focus-large
+        value: Focus-large
+        text: Focus-large
         checked: false
         disabled: false
         focus: true

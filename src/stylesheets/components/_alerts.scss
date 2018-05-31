@@ -44,16 +44,16 @@ $icon-size: 24px;
   .alert-heading {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.8rem;
+    font-size: $alert-heading-fontsize;
     font-weight: 600;
-    line-height: 2.4rem;
-    color: $color-gray-002;
+    line-height: $alert-heading-lineheight;
+    color: $color-gray-dark;
   }
 
   .alert-text {
     margin-bottom: 0;
     margin-top: 0;
-    color: $color-gray-002;
+    color: $color-gray-dark;
     max-width: $lead-max-width;
   }
 }

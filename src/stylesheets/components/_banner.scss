@@ -112,7 +112,7 @@
   }
 
   p {
-    line-height: $heading-line-height;
+    line-height: $base-line-height;
     vertical-align: top;
 
     @include media($small-screen) {

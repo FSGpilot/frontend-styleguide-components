@@ -10,7 +10,7 @@
   background: $color-black;
   @include font-smoothing;
   text-align: center;
-  text-transform: $uppercase;
+  text-transform: uppercase;
   display: inline-block;
 
   //############ Large badge ###############

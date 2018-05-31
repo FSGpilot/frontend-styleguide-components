@@ -154,7 +154,7 @@ $radio-size-large: 34px;
   margin-right: map-get($spacers, 3);
   width: $checkbox-size;
   position: relative;
-  top: 4px;
+  top: 3px;
 }
 //outline large
 [type=checkbox].checkbox-large + label {
@@ -191,7 +191,7 @@ $radio-size-large: 34px;
     width: 12px;
     position: absolute;
     left: 3px;
-    top: 5px;
+    top: 4px;
     box-shadow: -2px 2px 0 0 #fff;
     transform: rotate(-46deg);
   }
@@ -217,7 +217,7 @@ $radio-size-large: 34px;
     background-color: $color-text;
     position: absolute;
     left: 5px;
-    top: 9px;
+    top: 8px;
     border-radius: 100%;
   }
 }
@@ -228,7 +228,7 @@ $radio-size-large: 34px;
     height: calc(#{$radio-size-large} - 16px);
     width: calc(#{$radio-size-large} - 16px);
     left: 8px;
-    top: 12px;
+    top: 11px;
   }
 }
 

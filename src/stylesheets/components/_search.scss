@@ -20,7 +20,7 @@ $btn-big-width:     11.6rem;
 
 
     .search__submit {
-      width: rem-calc(16 + 16 + 24px); //2 x padding + 24 icon-size
+      width: calc(16px + 16px + 24px); //2 x padding + 24 icon-size
     }
 
     .search__text_submit{
