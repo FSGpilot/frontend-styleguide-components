@@ -376,11 +376,11 @@ $button-primary-focus-border-color: $color-primary-medium !default;
 $button-disabled-bg: $color-gray-pale !default;
 
 // Tag colors
-$tag-primary-color: $color-white !default;
-$tag-primary-bg: $color-primary !default;
-$tag-primary-hover-bg: $color-gray-003 !default;
-$tag-primary-active-bg: $color-base-002 !default;
-$tag-primary-focus-bg:  $color-primary !default;
+$tag-color: $color-white !default;
+$tag-bg: $color-gray-dark !default;
+$tag-hover-bg: $color-gray-medium-dark !default;
+$tag-active-bg: $color-black !default;
+$tag-focus-bg: $color-gray-dark !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
