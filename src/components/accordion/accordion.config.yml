@@ -20,6 +20,7 @@ context:
         id: a2
         icon: close-circle-outline
         icontext: Error
+        error_message: true
         content: |
           A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
       - title: Third Amendment
@@ -38,7 +39,6 @@ context:
         id: a5
         icon:
         icontext:
-        error_message: true
         content: |
           No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.
   
@@ -58,6 +58,7 @@ context:
         id: a2
         icon: close-circle-outline
         icontext: Error
+        error_message: true
         content: |
           A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
       - title: Third Amendment
@@ -76,7 +77,6 @@ context:
         id: a5
         icon:
         icontext:
-        error_message: true
         content: |
           No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.
 
@@ -95,6 +95,7 @@ context:
         id: a2
         icon: close-circle-outline
         icontext: Error
+        error_message: true
         content: |
           A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
       - title: Third Amendment
@@ -113,6 +114,5 @@ context:
         id: a5
         icon:
         icontext:
-        error_message: true
         content: |
           No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.

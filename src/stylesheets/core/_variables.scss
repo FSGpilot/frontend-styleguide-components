@@ -165,6 +165,37 @@ $uppercase:                   uppercase;
 $lowercase:                   lowercase;
 
 
+///////////////////////////////////////////////////////////////////
+// Spacing helpers
+//
+// Mostly used to control spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+// How to use: map-get($spacers, 2); This will give 4px (8*0.5).
+
+$spacer: 8px !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),   //2px
+  2: ($spacer * .5),    //4px
+  3: $spacer,           //8px
+  4: ($spacer * 2),     //16px
+  5: ($spacer * 3),     //24px
+  6: ($spacer * 4),     //32px
+  7: ($spacer * 5),     //40px
+  8: ($spacer * 6),     //48px
+  9: ($spacer * 7)      //56px
+) !default;
+
+//Translate $spacer into rem
+$spacing-small:                 0.4rem !default; //rem-calc(4)
+$spacing:                       0.8rem !default; //0.8rem;
+$spacing-md-small:              1.6rem !default; //1.6rem;
+$spacing-medium:                2.4rem !default; //2.4rem;
+$spacing-large:                 3.2rem !default; //3.2rem;
+$spacing-x-large:               4.0rem !default; //4.0rem;
+$spacing-xx-large:              4.8rem !default; //6.4rem;
+
+
 //############################### Swatches and Theming ####################
 //###########################################################################
 
@@ -177,7 +208,7 @@ $color-base-001:              #ffffff !default; //DONE
 $color-base-002:              #1a1a1a !default; //DONE
 
 //Gray
-$color-gray-001:              #212121 !default;
+$color-gray-001:              $color-base-002 !default;
 $color-gray-002:              #454545 !default; //DONE
 $color-gray-003:              #747474 !default; //DONE
 $color-gray-004:              #999999 !default; //DONE
@@ -230,8 +261,8 @@ $color-data-orange-001:       #FF531A !default;
 $color-data-cyklamen-001:     #E64969 !default;
 $color-data-magenta-001:      #E50081 !default;
 
-//############################### colors variables ####################
-//#####################################################################
+//############################### Component variables ####################
+//########################################################################
 
 // Base colors
 $color-white:                 $color-base-001 !default;
@@ -268,9 +299,9 @@ $color-neutral-darkest:       $color-base-002 !default;
 $color-neutral-lightest:      $color-gray-004 !default; //TODO, need base color for lightest
 
 // Functional theme colors
-$color-primary:               $color-gray-002 !default;
-$color-primary-medium:        $color-gray-003 !default;
-$color-primary-dark:          $color-gray-002 !default;
+$color-primary:               $color-gray-003 !default;
+$color-primary-medium:        $color-gray-002 !default;
+$color-primary-dark:          $color-gray-001 !default;
 
 $color-positive:              $color-green-005 !default;
 $color-negative:              $color-red-001 !default;
@@ -335,64 +366,26 @@ $color-required:              $color-red-001 !default;
 // Button colors
 $button-primary-color: $color-white !default;
 $button-primary-bg: $color-primary !default;
-$button-primary-border-color: $color-gray-dark !default;
-$button-primary-hover-bg: $color-gray-002 !default;
-$button-primary-hover-border-color: $color-black !default;
-$button-primary-active-bg: $color-base-002 !default;
-$button-primary-active-border-color: $color-black !default;
+$button-primary-border-color: $color-primary-medium !default;
+$button-primary-hover-bg: $color-primary-medium !default;
+$button-primary-hover-border-color: $color-primary-dark !default;
+$button-primary-active-bg: $color-primary-dark !default;
+$button-primary-active-border-color: $color-primary-dark !default;
 $button-primary-focus-bg:  $color-primary !default;
-$button-primary-focus-border-color: $color-black !default;
+$button-primary-focus-border-color: $color-primary-medium !default;
+$button-disabled-bg: $color-gray-pale !default;
 
 // Tag colors
-$tag-primary-color: $color-white !default;
-$tag-primary-bg: $color-primary !default;
-$tag-primary-hover-bg: $color-gray-003 !default;
-$tag-primary-active-bg: $color-base-002 !default;
-$tag-primary-focus-bg:  $color-primary !default;
+$tag-color: $color-white !default;
+$tag-bg: $color-gray-dark !default;
+$tag-hover-bg: $color-gray-medium-dark !default;
+$tag-active-bg: $color-black !default;
+$tag-focus-bg: $color-gray-dark !default;
 
 $color-shadow:                rgba(#000, 0.3) !default;
 $color-transparent:           rgba(#000, 0) !default;
 
-//Borders
-$outer-border:            1px solid $color-gray-medium-light;
-$inner-border:            1px solid $color-gray-light;
-$focus-border:            2px dashed $color-gray-light;
-$button-border-width:     2px;
-$button-border:           $button-border-width solid $button-primary-border-color;
-
-
-// Spacing helpers
-//
-// Mostly used to control spacing.
-// You can add more entries to the $spacers map, should you need more variation.
-// How to use: map-get($spacers, 2); This will give 4px (8*0.5).
-
-$spacer: 8px !default;
-$spacers: (
-  0: 0,
-  1: ($spacer * .25),   //2px
-  2: ($spacer * .5),    //4px
-  3: $spacer,           //8px
-  4: ($spacer * 2),     //16px
-  5: ($spacer * 3),     //24px
-  6: ($spacer * 4),     //32px
-  7: ($spacer * 5),     //40px
-  8: ($spacer * 6),     //48px
-  9: ($spacer * 7)      //56px
-) !default;
-
-//Translate $spacer into rem
-$spacing-small:                 0.4rem !default; //rem-calc(4)
-$spacing:                       0.8rem !default; //0.8rem;
-$spacing-md-small:              1.6rem !default; //1.6rem;
-$spacing-medium:                2.4rem !default; //2.4rem;
-$spacing-large:                 3.2rem !default; //3.2rem;
-$spacing-x-large:               4.0rem !default; //4.0rem;
-$spacing-xx-large:              4.8rem !default; //6.4rem;
-
-//----------------
 //input
-//----------------
 $input-border-radius: 4px;
 $input-border-width: 1px;
 $input-top-bottom-padding: calc(8px - #{$input-border-width}); //7px
@@ -406,11 +399,23 @@ $input-border-width-feedback: 2px;
 $input-top-bottom-padding-feedback: calc(8px - #{$input-border-width-feedback});
 $input-left-right-padding-feedback: calc(16px - #{$input-border-width-feedback});
 
-//----------------
 //Tabs
-//----------------
-$tabs-border-bottom: solid 7px $color-primary;
 $tabs-active-border-color: $color-primary !default;
+
+//Sidenavigation
+$sidenav-link-color: $color-gray-001 !default;
+$sidenav-link-color-hover: $color-primary-dark !default;
+$sidenav-link-current-color: $color-gray-001 !default;
+$sidenav-link-active-color: $color-primary !default;
+$sidenav-active-border-width: 4px !default;
+
+//Borders
+$outer-border:            1px solid $color-gray-medium-light;
+$inner-border:            1px solid $color-gray-light;
+$focus-border:            2px dashed $color-gray-light;
+$button-border-width:     2px;
+$button-border:           $button-border-width solid $button-primary-border-color;
+
 
 //----------------
 // Grid
@@ -523,7 +528,6 @@ $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 4px solid $color-warning;
 $focus-spacing:                 0px;
 $nav-width:                     $grid-lg !default; // 992px
-$sidenav-active-border-width:  4px !default; // must be in rem for math
 
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines

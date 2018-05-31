@@ -29,7 +29,7 @@ textarea.form-input{
 }
 
 //Note for select. Uses browser-specific styling for arrow. No custom.
-.form-select{
+.form-select {
   background-color: $color-white;
   border: $outer-border;
   border-radius: $input-border-radius;
@@ -244,12 +244,12 @@ $radio-size-large: 34px;
 }
 
 // checkbox focus
-[type=checkbox]:focus + label::before, 
+[type=checkbox]:focus + label::before,
 [type=checkbox].focus + label::before{
   outline: $focus-outline;
   outline-offset: $focus-spacing;
 }
-[type=radio]:focus + label::before, 
+[type=radio]:focus + label::before,
 [type=radio].focus + label::before {
   box-shadow: 0 0 0 3px $color-focus;
 }
@@ -364,16 +364,14 @@ $radio-size-large: 34px;
   }
 }
 
-
 input[type='number'] {
   -moz-appearance:textfield !important;
 }
-//Below fix bug where date-inputs to number-wheels in chrome. 
+//Below fix bug where date-inputs to number-wheels in chrome.
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
 }
-
 
 .form-label + input[type=file]{
   margin-top: map-get($spacers, 3);
