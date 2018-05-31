@@ -71,7 +71,10 @@ $button-stroke: inset 0 0 0 2px;
 
   &:disabled,
   .disabled {
-    @include disabledesque;
+    background-color: $button-disabled-bg !important;
+    border-color: $button-disabled-bg !important;
+    color: $color-gray-medium-light !important;
+    box-shadow: none !important;
   }
 
   //############ Primary ###############
@@ -122,7 +125,6 @@ $button-stroke: inset 0 0 0 2px;
       background-color: $color-gray-pale;
       border-color: $color-gray-light;
     }
-
   }
 
   //############ Ghost #################
@@ -154,12 +156,6 @@ $button-stroke: inset 0 0 0 2px;
       box-shadow:none;
       border-color: $color-focus;
     }
-
-    &:disabled,
-    .disabled {
-      background-color: transparent !important;
-      color: $color-gray-light !important;
-    }
   }
 
   //############### tertiary ############
@@ -184,7 +180,6 @@ $button-stroke: inset 0 0 0 2px;
       border-color:$color-gray-light;
       background-color: transparent;
     }
-
   }
 
   &.button-small {
@@ -209,7 +204,6 @@ $button-stroke: inset 0 0 0 2px;
       background-color: $color-gray-pale;
       border-color: $color-gray-light;
     }
-
   }
 
   .icon-svg {

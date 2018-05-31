@@ -10,7 +10,7 @@
   border-radius: $button-border-radius;
   border: none;
   font-size: $base-font-size;
-  font-weight: 500;
+  font-weight: $font-weight-medium;
   min-height: 24px;
   color: $button-primary-color;
   @include font-smoothing;

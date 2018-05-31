@@ -14,7 +14,7 @@
 
     @include media($medium-screen) {
       border-top: none;
-      padding-top: $spacing-small;
+      padding-top: $spacing;
     }
 
     &:hover {
@@ -99,7 +99,7 @@ li.footer-primary-content {
 
 .footer {
   .footer-logo {
-    padding: $spacing-small 0;
+    padding: $spacing 0;
   }
 
   .footer-primary-section {
@@ -153,14 +153,14 @@ li.footer-primary-content {
     li {
       &:not(.footer-primary-link) {
         line-height: $heading-line-height;
-        padding-bottom: $spacing-x-small;
-        padding-top: $spacing-x-small;
+        padding-bottom: $spacing-small;
+        padding-top: $spacing-small;
       }
     }
 
     .footer-primary-link {
-      background-image: url('#{$image-path}/arrow-down-white.png');
-      background-image: url('#{$image-path}/arrow-down-white.svg');
+      // background-image: url('#{$image-path}/arrow-down-white.png');
+      // background-image: url('#{$image-path}/arrow-down-white.svg');
       background-position: 1.5rem center;
       background-repeat: no-repeat;
       background-size: 1.3rem;

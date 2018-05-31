@@ -9,7 +9,7 @@
   <div class="form-group{% if success %} input-success{% endif %}{% if error %} input-error{% endif %}">
      <label class="form-label {{classlabel}}" for="{{id}}">{{label}}</label>
       {% if error %}<span class="input-error-message" id="input-error-message-{{id}}" role="alert">{{error}}</span>{% endif %}
-      {% if hint %}<span class="input-hint" id="input-hint-message-{{id}}">{{hint}}</span>{% endif %}
+      {% if hint %}<span class="form-hint" id="input-hint-message-{{id}}">{{hint}}</span>{% endif %}
      <input class="form-input  {{class}}" id="{{id}}" name="{{name}}" type="text" {% if error %}aria-describedby="input-error-message-{{id}}"{% endif %} {% if error %}aria-describedby="input-hint-message-{{id}}"{% endif %}>
   </div>
   {% endif %}

@@ -10,14 +10,14 @@ context:
         value: unchecked
         checked: false
         disabled: false
-        text: unchecked
+        text: Unchecked
 
       - id: Checked
         name: checked
         value: checked
         checked: true
         disabled: false
-        text: checked
+        text: Checked
 
       - id: disabled
         name: disabled
@@ -34,3 +34,37 @@ context:
         focus: true
         text: Focus
         class:
+
+      - id: Unchecked-large
+        name: unchecked-large
+        value: unchecked-large
+        checked: false
+        disabled: false
+        text: Unchecked-large
+        large: true
+
+      - id: Checked-large
+        name: checked-large
+        value: checked-large
+        checked: true
+        disabled: false
+        text: Checked-large
+        large: true
+
+      - id: disabled-large
+        name: disabled-large
+        value: disabled-large
+        checked: false
+        disabled: true
+        text: Disabled-large
+        large: true
+
+      - id: fokus-large
+        name: Focus-large
+        value: fokus-large
+        checked: false
+        disabled: false
+        focus: true
+        text: Focus-large
+        class:
+        large: true

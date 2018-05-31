@@ -110,6 +110,10 @@ legend {
 /////////////////////////////////
 $checkbox-size: 18px;
 $radio-size: 18px;
+$checkbox-size-large: 34px;
+$checkbox-radio-line-height-large: 4.0rem;
+$radio-size-large: 34px;
+
 
 [type=checkbox],
 [type=radio] {
@@ -132,7 +136,7 @@ $radio-size: 18px;
   font-weight: $font-weight-normal;
   line-height: $body-text-line-height;
   margin-bottom: 0;
-  display: block;
+  display: flex;
   outline: none;
   color: $color-gray-dark;
 }
@@ -152,12 +156,27 @@ $radio-size: 18px;
   position: relative;
   top: 4px;
 }
+//outline large
+[type=checkbox].checkbox-large + label {
+  line-height: $checkbox-radio-line-height-large;
+  &:before{
+    height: $checkbox-size-large;
+    width: $checkbox-size-large;
+  }
+}
 
 //extra for radio outline
 [type=radio] + label::before {
   border-radius: 100%;
   height: $radio-size;
   width: $radio-size;
+}
+[type=radio].radio-large + label{
+  line-height: $checkbox-radio-line-height-large;
+  &:before{
+    height: $radio-size-large;
+    width: $radio-size-large;
+  }
 }
 
 //checked checkbox
@@ -177,6 +196,17 @@ $radio-size: 18px;
     transform: rotate(-46deg);
   }
 }
+//checkmark large
+[type=checkbox].checkbox-large:checked + label{
+  &:after{
+    height: 12px;
+    width: 22px;
+    left: 6px;
+    top: 8px;
+    box-shadow: -3px 3px 0 0 #fff;
+  }
+}
+
 //checked radio
 [type=radio]:checked + label{
   position: relative;
@@ -189,6 +219,16 @@ $radio-size: 18px;
     left: 5px;
     top: 9px;
     border-radius: 100%;
+  }
+}
+//checked radio large
+[type=radio].radio-large:checked + label{
+  &:after{
+    content: "";
+    height: calc(#{$radio-size-large} - 16px);
+    width: calc(#{$radio-size-large} - 16px);
+    left: 8px;
+    top: 12px;
   }
 }
 
@@ -324,7 +364,6 @@ $radio-size: 18px;
   }
 }
 
-
 input[type='number'] {
   -moz-appearance:textfield !important;
 }
@@ -334,9 +373,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
 }
 
-
 .form-label + input[type=file]{
   margin-top: map-get($spacers, 3);
+}
+input[type=file]{
+  height: $input-standard-height; // IE 11 fix where the button was very slim.
 }
 
 

@@ -9,13 +9,13 @@
   {%- elif (state == 'focus') -%}
     <button class="tag tag-{{class}} focus">Focus</button>
   {%- elif (state == 'icon-default') -%}
-    <button class="tag tag-icon tag-{{class}}">Default {{ icon_svg('close-circle-outline')}}</button>
+    <button class="tag tag-icon tag-{{class}}">Default {{ icon_svg('close-circle')}}</button>
   {%- elif (state == 'icon-hover') -%}
-    <button class="tag tag-icon tag-{{class}} tag-hover">Hover {{ icon_svg('close-circle-outline')}}</button>
+    <button class="tag tag-icon tag-{{class}} tag-hover">Hover {{ icon_svg('close-circle')}}</button>
   {%- elif (state == 'icon-active') -%}
-    <button class="tag tag-icon tag-{{class}} tag-active">Active {{ icon_svg('close-circle-outline')}}</button>
+    <button class="tag tag-icon tag-{{class}} tag-active">Active {{ icon_svg('close-circle')}}</button>
   {%- elif (state == 'icon-focus') -%}
-    <button class="tag tag-icon tag-{{class}} focus">Focus {{ icon_svg('close-circle-outline')}}</button>
+    <button class="tag tag-icon tag-{{class}} focus">Focus {{ icon_svg('close-circle')}}</button>
   {%- endif %}
 {%- endmacro -%}
 

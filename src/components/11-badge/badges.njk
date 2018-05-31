@@ -1,0 +1,15 @@
+{%- macro badge(class, state) -%}
+  {%- if (state == 'large') -%}
+    <label class="badge badge-{{class}}">Large</label>
+  {%- elif (state == 'small') -%}
+    <label class="badge badge-{{class}}">Small</label>
+  {%- endif %}
+{%- endmacro -%}
+
+{%- for badges in badge_example.items -%}
+  {%- if badges.label %}
+    <h4>{{ badges.label }}</h4>
+  {% endif -%}
+  {{ badge(badges.class, badges.state) }}
+{% endfor -%}
+

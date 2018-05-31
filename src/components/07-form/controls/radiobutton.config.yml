@@ -33,3 +33,36 @@ context:
         checked: false
         disabled: false
         focus: true
+
+      - id: truth-large
+        name: historical-figures-1-large
+        value: truth-large
+        text: Sojourner Truth
+        checked: false
+        disabled: false
+        large: true
+
+      - id: douglass-large
+        name: historical-figures-1-large
+        value: douglass-large
+        text: Frederick Douglass
+        checked: true
+        disabled: false
+        large: true
+
+      - id: washington-large
+        name: historical-figures-1-large
+        value: washington-large
+        text: Booker T. Washington
+        checked: false
+        disabled: true
+        large: true
+
+      - id: carver-large
+        name: historical-figures-1-large
+        value: carver-large
+        text: George Washington Carver
+        checked: false
+        disabled: false
+        focus: true
+        large: true

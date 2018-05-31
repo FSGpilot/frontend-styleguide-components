@@ -1,0 +1,20 @@
+label: Badge
+status: ready
+preview: '@dkwds-framed'
+
+variants:
+  - name: default
+    label: Examples
+
+
+context:
+  badge_example:
+    items:
+      - class: 'large'
+        label: 'Large badge'
+        state: 'large'
+
+
+      - class: 'small'
+        label: 'Small badge'
+        state: 'small'
