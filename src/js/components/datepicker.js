@@ -36,7 +36,7 @@ class datepickerGroup {
       var newDay = parseInt(this.value);
       var lastDay = new Date(curDate.getFullYear(), curDate.getMonth() + 1, 0).getDate();
       if(newDay> lastDay){
-        newDay = lastDay;
+        return; //no nothing, not valid.
       }
       var newDate = new Date(curDate.getFullYear(), curDate.getMonth(), newDay);
 
@@ -50,7 +50,7 @@ class datepickerGroup {
       //validate month
       var newMonth = parseInt(this.value)-1;
       if(newMonth >= 12){
-        newMonth = 11;
+        return; //no nothing, not valid.
       }
       
       var newDate = new Date(curDate.getFullYear(), newMonth, curDate.getDate());

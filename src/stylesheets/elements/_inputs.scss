@@ -52,8 +52,8 @@ textarea.form-input{
 
 
 legend {
-  font-size: $h2-font-size;
-  font-weight: $font-weight-bold;
+  font-size: $lead-font-size;
+  line-height: $lead-line-height;
 }
 
 
@@ -329,8 +329,9 @@ $radio-size-large: 34px;
   border-radius: 2rem;
 }
 
-// Memorable dates
-
+/////////////////////////
+//Date input
+/////////////////////////
 .date-group {
   display: flex;
   align-items: flex-end;
@@ -343,12 +344,15 @@ $radio-size-large: 34px;
   .form-group-year {
     margin-right: map-get($spacers, 4);
     margin-top: map-get($spacers, 3);
-
   }
+
   .form-group-day,
-  .form-group-month,
+  .form-group-month{
+    width: calc(2px + #{map-get($spacers, 4)} + #{map-get($spacers, 4)} + 2ch );
+  }
+
   .form-group-year {
-    width: calc(#{map-get($spacers, 4)} + #{map-get($spacers, 4)} + 4ch)
+    width: calc(2px + #{map-get($spacers, 4)} + #{map-get($spacers, 4)} + 4ch );
   }
 
   .icon-svg {
