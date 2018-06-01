@@ -4,8 +4,8 @@
     padding-left: 0;
     li { 
       margin-top:map-get($spacers, 3);
-      line-height: $lead-line-height;
-      color:$color-text;
+      line-height: $body-text-line-height;
+      
       &:before {
         content: "\2022";
         // font-size: 26px;
@@ -30,8 +30,8 @@
     li {
       display: block;
       margin-top:map-get($spacers, 3);
-      line-height: $lead-line-height;
-      color:$color-text;
+      line-height: $body-text-line-height;
+
       &:before { 
         content: counters(item, ".") "."; 
         counter-increment: item; 
@@ -47,9 +47,9 @@
   
 
   //Body lists
-  &.body-list {
-    font-size: $h5-font-size;
-    line-height: $lead-line-height;
+  &.paragraph-list {
+    font-size: $body-paragraph-size;
+    line-height: $body-paragraph-line-height;
     li {
       &:before {
         width: 46px;
@@ -60,28 +60,6 @@
         li {
           &:before { 
             width: 92px;
-            display: inline-block;
-            text-align: right;
-          }
-        }
-      }
-    }
-  }
-
-  //Small lists
-  &.small-list {
-    font-size: $small-text;
-    line-height: $small-text-line-height;
-    li {
-      &:before {
-        width: 37px;
-        display: inline-block;
-        text-align: right;
-      }
-      ol, ul {
-        li {
-          &:before { 
-            width: 74px;
             display: inline-block;
             text-align: right;
           }
