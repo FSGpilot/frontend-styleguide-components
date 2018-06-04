@@ -1,6 +1,6 @@
 
 //TODO: nedenstående fejler på sider uden modal, blev lige nød til udkommenterer
-/*function Dialog(dialogEl, overlayEl) {
+function Dialog(dialogEl, overlayEl) {
 
 	this.dialogEl = dialogEl;
 	this.overlayEl = overlayEl;
@@ -116,4 +116,3 @@ var dialogOverlay = document.querySelector('.dialog-overlay');
 var myDialog = new Dialog(navDialogEl, dialogOverlay);
 myDialog.addEventListeners('.open-dialog', '.close-dialog');
 
-*/
