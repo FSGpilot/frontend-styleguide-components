@@ -5,98 +5,21 @@ preview: '@dkwds-framed'
 context:
   cards_example:
     items:
+      - size: "card-small"
+        header: 'Header'
+        subheader: 'Supporting text'
+        headercontent: 'Body copy area'
+      - size: "card-medium"
+        cardcontentbefore: 'Content area <br> Can be anything really'
+        header: 'Header'
+        subheader: 'Supporting text'
+        headercontent: 'Body copy area'
       - size: "card-large"
-        fit: true
-        header: 'Min eIndkomst'
-        subheader: ''
-        content: |
-          <p>De oplysninger, som du typisk finder på din lønseddel, findes også i SKATs eIndkomstsystem</p>
-          <p>I oversigten kan du se nogle tal, som SKAT har registreret som din samlede indkosmt gennem de seneste måneder. Tallene er rundet op til nærmeste hele beløb.</p>
-          <table class="table-borderless">
-            <caption>April 2017:</caption>
-            <tbody>
-              <tr>
-                <th scope="row"><strong>Indkomst:</strong></th>
-                <td>32.000 kr.</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>AM-bidrag:</strong></th>
-                <td>2.819 kr.</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>A-skat:</strong></th>
-                <td>6.322 kr.</td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table-borderless">
-            <caption>Marts 2017:</caption>
-            <tbody>
-              <tr>
-                <th scope="row"><strong>Indkomst:</strong></th>
-                <td>32.000 kr.</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>AM-bidrag:</strong></th>
-                <td>2.819 kr.</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>A-skat:</strong></th>
-                <td>6.322 kr.</td>
-              </tr>
-            </tbody>
-          </table>
-        cardactions: 
-          - content: '<button class="button-primary">Se beregning</button>'
-          - content: '<button class="button-secondary">Læs mere</button>'
-      - size: "card-large"
-        fit: true
-        header: 'Personoplysninger'
-        subheader: ''
-        content: |
-          <table class="table-borderless">
-            <caption>April 2017:</caption>
-            <thead>
-              <tr>
-                <th scope="col">Navn</th>
-                <th scope="col">CPR</th>
-                <th scope="col">Navne- og adressebeskyttelse</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Cecilie Skovgaard</th>
-                <td>101011-2222</td>
-                <td>Nej</td>
-              </tr>
-            </tbody>
-          </table>
-        cardactions: 
-          - content: '<button class="button-primary">Se flere informationer</button>'
-      - size: "card-large"
-        fit: true
-        header: 'Vaccinationsprogram'
-        subheader: ''
-        content: |
-          <p><strong>Huskeliste</strong></p>
-          <p>Gælder, hvis barnet følger <a href="#">programmet</a>.</p>
-          <table class="table-borderless">
-            <tbody>
-              <tr>
-                <th scope="row"><strong>4 år:</strong></th>
-                <td>MFR 2 (børneundersøgelse)</td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>5 år:</strong></th>
-                <td><strong>Di-Te-Ki-Pol revaccination (børneundersøgelse)</strong></td>
-              </tr>
-              <tr>
-                <th scope="row"><strong>12 år:</strong></th>
-                <td>HPV 1 og 2</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Det er Cecilies læge, der skal give vaccinen.</p>
-          <p>Du kan se, hvilke vacciner børn født efter 27. maj 2004 har fået i <a href="#">Det fælles medicinkort (nytvindue)</a>
-        cardactions: 
-          - content: '<button class="button-primary">Læs mere</button>'
+        header: 'Header'
+        titlesize: large-text
+        subheader: 'Supporting text'
+        headercontent: 'Body copy area'
+        cardcontent: 'Content area <br> Can be anything really'
+        actionbuttons: '<button class="button button-primary">Læs mere</button> <button class="button button-ghost">Læs mere</button>'
+        actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li></ul>'
+        actionfunctionlinks: '<a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a><a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'

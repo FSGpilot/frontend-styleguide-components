@@ -179,7 +179,11 @@ $spacers: (
   6: ($spacer * 4),     //32px
   7: ($spacer * 5),     //40px
   8: ($spacer * 6),     //48px
-  9: ($spacer * 7)      //56px
+  9: ($spacer * 7),      //56px
+  10: ($spacer * 8),      //64px
+  11: ($spacer * 9),      //72px
+  12: ($spacer * 10),      //80px
+  13: ($spacer * 11)      //88px
 ) !default;
 
 //Translate $spacer into rem
