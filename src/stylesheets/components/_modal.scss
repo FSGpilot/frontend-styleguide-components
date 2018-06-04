@@ -5,21 +5,31 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-  background-color: $color-black;
-  opacity: 0.75;
+  	background-color: $color-black;
+  	opacity: 0.75;
 }
 
 .dialog {
 	z-index: 3;
-	background-color: #fff;
-	padding: 20px;
-	text-align: center;
-	width: 90%;
-	max-width: 400px;
+	background-color: $color-white;
+	padding:map-get($spacers, 8) map-get($spacers, 13) map-get($spacers, 8) map-get($spacers, 13);
+	width: 66.6%;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+
+	.close-dialog {
+		float: right;
+		right: map-get($spacers, 5);
+		position: absolute;
+		@include body-copy-text;
+		top:map-get($spacers, 5)
+	}
+	#dialog-title {
+		margin: 0 0 map-get($spacers, 3) 0;
+		font-weight: $font-weight-semibold;
+	}
 }
 
 .dialog-overlay[aria-hidden="true"],
