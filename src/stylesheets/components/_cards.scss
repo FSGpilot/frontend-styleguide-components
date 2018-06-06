@@ -117,7 +117,7 @@
   .actionlinks {
     margin-top:map-get($spacers, 4);
     ul {
-      list-style-type: none;
+      @include unstyled-list();
       padding-left: 0;
     }
   }
