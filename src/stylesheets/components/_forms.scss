@@ -39,6 +39,9 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+fieldset + fieldset{
+  margin-top: $spacing-x-large;
+}
 
 .form-large {
   @include media($medium-screen) {
