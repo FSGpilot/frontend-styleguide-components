@@ -53,6 +53,7 @@
         text-align: right;
       }
       ol, ul {
+        line-height: $body-paragraph-line-height;
         li {
           &:before { 
             width: 92px;
