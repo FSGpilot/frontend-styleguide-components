@@ -48,12 +48,12 @@
     line-height: $body-paragraph-line-height;
     li {
       padding-left: 46px;
+      line-height: $body-paragraph-line-height;
       &:before {
         left: 22px;
       }
 
       ul {
-        line-height: $body-paragraph-line-height;
         li {
           padding-left: 46px;
         }
