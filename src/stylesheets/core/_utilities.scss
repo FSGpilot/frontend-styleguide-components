@@ -51,6 +51,10 @@
 
   > li {
     margin-bottom: 0;
+    &:before {
+      content: "" !important;
+      padding-right: 0 !important;
+    }
   }
 }
 
