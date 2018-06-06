@@ -17,13 +17,13 @@ class datatablesExamples {
   constructor(el){
 
     //NOTE: you only need to externally include the javascript. A theme is shipped with DKWDS.
-     
+
     //////////////////////////////////////
     //Init a datatable with no configuration
     //////////////////////////////////////
     var table_basic = $(jsSelectorDatatable_Example_basic).DataTable();
 
-    
+
     //////////////////////////////////////
     //Init a datatable with ajax data
     //////////////////////////////////////
@@ -45,7 +45,7 @@ class datatablesExamples {
 
     //////////////////////////////////////
     //Init a datatable with full pagination settings and language settings
-    //////////////////////////////////////    
+    //////////////////////////////////////
     var table_extra_pagination = $(jsSelectorDatatable_Example_extra_pagination).DataTable({
             "pagingType": "full_numbers",
             "language": {
@@ -85,11 +85,11 @@ class datatablesExamples {
     //////////////////////////////////////
     //Init a datatable with expand row
     //////////////////////////////////////
-  
-    // Formatting function for row details - modify as you need 
+
+    // Formatting function for row details - modify as you need
     function format ( d ) {
         // `d` is the original data object for the row
-        return '<table>'+
+        return '<div class="details-row-content"><table>'+
             '<tr>'+
                 '<td>Full name:</td>'+
                 '<td>'+d.name+'</td>'+
@@ -102,9 +102,9 @@ class datatablesExamples {
                 '<td>Extra info:</td>'+
                 '<td>And any further details here (images etc)...</td>'+
             '</tr>'+
-        '</table>';
+        '</table></div>';
     }
-    
+
 
     var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
         "ajax": {
@@ -127,7 +127,7 @@ class datatablesExamples {
         ],
         "order": [[1, 'asc']]
     } );
-    
+
     // Add event listener for opening and closing details
     $(jsSelectorDatatable_Example_detailsrow).on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
@@ -145,8 +145,8 @@ class datatablesExamples {
         }
     } );
 
-    
-    
+
+
     /*function myCallbackFunction (updatedCell, updatedRow, oldValue) {
       console.log("The new value for the cell is: " + updatedCell.data());
       console.log("The values for each cell in that row are: " + updatedRow.data());
@@ -155,7 +155,7 @@ class datatablesExamples {
     table.MakeCellsEditable({
         "onUpdate": myCallbackFunction
     });*/
-    
+
 
   }
 }
