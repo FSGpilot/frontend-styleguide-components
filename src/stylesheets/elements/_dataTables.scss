@@ -150,7 +150,14 @@ table.dataTable {
 
         th,
         td {
-            padding: 8px 10px;
+            padding: 8px;
+
+        }
+        td[colspan] {
+          padding:0;
+          .details-row-content {
+            margin-left: 31px;
+          }
         }
     }
 
@@ -633,15 +640,33 @@ tbody{
     .details-control{
         cursor: pointer;
         &:after{
-            content: '+';
-            color: green;
-            font-weight: 600;
+          content: "";
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z' /%3E%3C/svg%3E");
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: 0px 0px;
+          margin-left: -1px;
+          margin-top: 3px;
+          // color: #fff;
         }
     }
+
     tr.shown .details-control{
         &:after{
-            content: '-';
-            color: red;
+            content: "";
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H5V11H19V13Z' /%3E%3C/svg%3E");
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0px 0px;
+            margin-left: -1px;
+            margin-top: 3px;
+            //color: #fff;
         }
     }
 }
