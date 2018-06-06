@@ -7,7 +7,8 @@ module.exports = {
   password:   require('./password'),
   search:     require('./search'),
   skipnav:    require('./skipnav'),
-  validator:  require('./validator')
+  validator:  require('./validator'),
+  regexmask:  require('./regex-input-mask')
   //table:      require('./table'),
   //overflow:   require('./overflow-menu'),
 };
