@@ -5,7 +5,7 @@ preview: '@dkwds-framed'
 context:
   lists:
     list_ul: &default_list
-      - text: Ordered liste
+      - text: Ordered list
       - text: Ordered list
       - text: Ordered list
       - text: Ordered list
