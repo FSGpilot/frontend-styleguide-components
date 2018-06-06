@@ -9,11 +9,15 @@ context:
         header: 'Header'
         subheader: 'Supporting text'
         headercontent: 'Body copy area'
+  cards_example2:
+    items:
       - size: "card-medium"
         cardcontentbefore: 'Content area <br> Can be anything really'
         header: 'Header'
         subheader: 'Supporting text'
         headercontent: 'Body copy area'
+  cards_example3:
+    items:
       - size: "card-large"
         header: 'Header'
         titlesize: large-text
@@ -23,3 +27,4 @@ context:
         actionbuttons: '<button class="button button-primary">Læs mere</button> <button class="button button-ghost">Læs mere</button>'
         actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li></ul>'
         actionfunctionlinks: '<a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a><a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'
+        
