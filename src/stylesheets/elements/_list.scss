@@ -1,8 +1,10 @@
+
  //Ul lists
   ul {
     padding-left: 0;
     list-style-type: none;
     color:$color-gray-dark;
+    line-height: $body-text-line-height;
     li { 
       margin-top:map-get($spacers, 3);
       list-style: none;
@@ -15,6 +17,7 @@
         left: 20px;
         
       }
+
     }
   }
   //Ol lists
@@ -38,6 +41,7 @@
   }
 
 
+
   //paragraph lists
   ul.paragraph-list {
     font-size: $body-paragraph-size;
@@ -47,7 +51,9 @@
       &:before {
         left: 22px;
       }
+
       ul {
+        line-height: $body-paragraph-line-height;
         li {
           padding-left: 46px;
         }
@@ -74,6 +80,7 @@
     }
   }
 
+
   //Body lists ul
   ul.body-list{
     font-size: $body-text;
@@ -81,12 +88,15 @@
     li {
       padding-left: 37px;
       &:before {
+
         left: 23px;
       }
+
       ul {
         li {
           padding-left: 37px;
           &:before { 
+
             left: 23px;
           }
         }
