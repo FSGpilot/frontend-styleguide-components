@@ -3,6 +3,7 @@
     padding-left: 0;
     list-style-type: none;
     color:$color-gray-dark;
+    line-height: $body-text-line-height;
     li { 
       margin-top:map-get($spacers, 3);
       
