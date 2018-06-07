@@ -1,10 +1,8 @@
 .card {
   position: relative;
-  //margin-bottom: $spacing-md-small;
-  border-radius: 0;
+  border-radius: map-get($spacers, 0);
   box-shadow: 0 2px 4px 0 $color-gray-light;
   border: 1px solid $color-gray-medium-light;
-  //margin: $spacing-md-small;
   overflow: hidden;
   margin-bottom: map-get($spacers, 5);
 
@@ -35,17 +33,12 @@
     }
   }
 
-
-
-  
-
   p {
-    // margin: 0px;
     max-width: 60ch;
     margin-top:map-get($spacers, 4);
-    margin-bottom: 0;
+    margin-bottom: map-get($spacers, 0);
     &:first-child {
-      margin-top:0;
+      margin-top:map-get($spacers, 0);
     }
   }
   h1, .h1,
@@ -53,7 +46,7 @@
   h3, .h3,
   h4, .h4,
   h5, .h5 {
-    margin: 0;
+    margin: map-get($spacers, 0);
   }
 }
 
@@ -64,7 +57,7 @@
     @include body-copy-text;
     font-weight: $font-weight-semibold;
     color: $color-black;
-    margin:0;
+    margin:map-get($spacers, 0);
 
     &.large-text {
       @include h1;
@@ -72,17 +65,17 @@
     }
   }
 
-  .subheader {
+  .sub-header {
     @include body-copy-text;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top:  map-get($spacers, 0);
+    margin-bottom: map-get($spacers, 0);
     color: $color-text-secondary;
   }
   .header-content {
     @include body-copy-text;
     margin-top: map-get($spacers, 4);
     color: $color-gray-dark;
-    margin-bottom: 0px;
+    margin-bottom: map-get($spacers, 0);
   }
 }
 
@@ -91,7 +84,7 @@
   padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 0) map-get($spacers, 5);
   background: $color-white;
   color: $color-gray-dark;
-  margin-bottom: 0px;
+  margin-bottom: map-get($spacers, 0);
 }
 
 .card-content {
@@ -99,9 +92,9 @@
   padding: map-get($spacers, 0) map-get($spacers, 5) map-get($spacers, 0) map-get($spacers, 5);
   background: $color-white;
   color: $color-gray-dark;
-  margin-bottom: 0px;
+  margin-bottom: map-get($spacers, 0);
   ul {
-    margin-bottom:0;
+    margin-bottom:map-get($spacers, 0);
   }
 }
 
@@ -110,14 +103,14 @@
   padding: map-get($spacers, 4) map-get($spacers, 5);
   border-bottom: 1px solid $color-gray-light;
   color: $color-gray-dark;
-  margin-bottom: 0px;
+  margin-bottom: map-get($spacers, 0);
 
   div:first-child {
-    margin-top:0;
+    margin-top:map-get($spacers, 0);
   }
 
   &:last-child {
-    border-bottom: 0;
+    border-bottom: map-get($spacers, 0);
   }
 
   .action-buttons {
@@ -128,7 +121,7 @@
     margin-top:map-get($spacers, 4);
     ul {
       @include unstyled-list();
-      padding-left: 0;
+      padding-left: map-get($spacers, 0);
     }
   }
   .action-functionlinks {
@@ -138,31 +131,6 @@
       margin-left: map-get($spacers, 4);
     }
   }
-}
-
-
-.card-text:last-child {
-  margin-bottom: $spacing-md-small;
-}
-
-.card-link {
-  text-decoration: none;
-  margin-left: $spacing;
-}
-
-.card-link:first-child {
-  margin-left: 0px;
-}
-
-
-.card-title {
-  margin-top: 0;
-  margin-bottom: $spacing;
-}
-
-.card-subtitle {
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .card {
@@ -176,23 +144,6 @@
       .list-group-item:last-child {
           border-radius: 0px;
       }
-  }
-}
-
-
-//
-// Optional textual caps
-//
-
-
-
-.card-footer {
-  padding: $spacing-small;
-  background-color: $color-white;
-  border-top: 1px solid $color-black;
-
-  &:last-child {
-      border-radius: 0px;
   }
 }
 

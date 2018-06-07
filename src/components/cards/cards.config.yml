@@ -3,20 +3,20 @@ status: ready
 preview: '@dkwds-framed'
 
 context:
-  cards_example:
+  cardsmall_example:
     items:
       - size: "card-small"
         header: 'Header'
         subheader: 'Understøttende tekst'
         headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
-  cards_example2:
+  cardmedium_example:
     items:
       - size: "card-medium"
         cardcontentbefore: 'Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik'
         header: 'Header'
         subheader: 'Understøttende tekst'
         headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
-  cards_example3:
+  cardlarge_example:
     items:
       - size: "card-large"
         header: 'Header'
