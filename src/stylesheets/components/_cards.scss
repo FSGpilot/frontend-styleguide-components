@@ -4,32 +4,34 @@
   box-shadow: 0 2px 4px 0 $color-gray-light;
   border: 1px solid $color-gray-medium-light;
   overflow: hidden;
-  margin-bottom: map-get($spacers, 5);
+  background: $color-white;
 
+  //small card
   &-small {
-    .card-content-before {
-      display:none;
-    }
     .card-content {
       display:none;
     }
     .card-action {
       display:none;
     }
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
+    }
   }
-
+  //medium card
   &-medium {
-    .card-content {
-      display:none;
-    }
     .card-action {
       display:none;
     }
+    //The last 
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
+    }
   }
-
+  //large card
   &-large {
-    .card-content-before {
-      display:none;
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
     }
   }
 
@@ -49,10 +51,10 @@
     margin: map-get($spacers, 0);
   }
 }
-
+//card-header
 .card-header {
   background-color: $color-white;
-  padding: map-get($spacers, 4) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
   .header-title {
     @include body-copy-text;
     font-weight: $font-weight-semibold;
@@ -64,7 +66,6 @@
       color: $color-gray-dark;
     }
   }
-
   .sub-header {
     @include body-copy-text;
     margin-top:  map-get($spacers, 0);
@@ -79,28 +80,33 @@
   }
 }
 
-.card-content-before {
-  @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 0) map-get($spacers, 5);
-  background: $color-white;
-  color: $color-gray-dark;
-  margin-bottom: map-get($spacers, 0);
-}
-
+//card-content
 .card-content {
   @include body-copy-text;
-  padding: map-get($spacers, 0) map-get($spacers, 5) map-get($spacers, 0) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
   background: $color-white;
   color: $color-gray-dark;
-  margin-bottom: map-get($spacers, 0);
   ul {
     margin-bottom:map-get($spacers, 0);
   }
-}
+  div:first-child {
+    margin-top:map-get($spacers, 0);
+  }
+  .content {
+    margin-top:map-get($spacers, 4);
+  }
 
+  .content-media {
+    margin-top:map-get($spacers, 4);
+    img {
+      width:100%;
+    }
+  }
+}
+//card-action
 .card-action {
   @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
   border-bottom: 1px solid $color-gray-light;
   color: $color-gray-dark;
   margin-bottom: map-get($spacers, 0);
@@ -115,6 +121,9 @@
 
   .action-buttons {
     margin-top:map-get($spacers, 5);
+    button {
+      margin-right: map-get($spacers, 3);
+    }
   }
 
   .action-links {
@@ -122,6 +131,9 @@
     ul {
       @include unstyled-list();
       padding-left: map-get($spacers, 0);
+      li {
+        margin-top:map-get($spacers, 3);
+      }
     }
   }
   .action-functionlinks {
@@ -132,6 +144,45 @@
     }
   }
 }
+
+//If header comes after content
+.card-content + .card-header {
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after header
+.card-header + .card-content{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after content
+.card-content + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after content
+.card-content + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after header
+.card-header + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+//If header comes after action
+.card-action + .card-header{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-header + .card-header{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-content + .card-content{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-action + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+
+
 
 .card {
   > .list-group:first-child {
