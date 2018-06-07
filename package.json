@@ -1,6 +1,6 @@
 {
   "name": "dkwds",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Open source UI components and visual style guide for UFrontend Styleguide",
   "engines": {
     "node": ">= 4"
