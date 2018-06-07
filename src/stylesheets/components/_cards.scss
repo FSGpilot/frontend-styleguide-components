@@ -8,21 +8,12 @@
 
   //small card
   &-small {
-    .card-content {
-      display:none;
-    }
-    .card-action {
-      display:none;
-    }
     > :last-of-type {
       padding-bottom:map-get($spacers, 5);
     }
   }
   //medium card
   &-medium {
-    .card-action {
-      display:none;
-    }
     //The last 
     > :last-of-type {
       padding-bottom:map-get($spacers, 5);
@@ -54,7 +45,7 @@
 //card-header
 .card-header {
   background-color: $color-white;
-  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5);
   .header-title {
     @include body-copy-text;
     font-weight: $font-weight-semibold;
@@ -83,7 +74,7 @@
 //card-content
 .card-content {
   @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5);
   background: $color-white;
   color: $color-gray-dark;
   ul {
@@ -106,7 +97,7 @@
 //card-action
 .card-action {
   @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5) map-get($spacers, 4) map-get($spacers, 5);
+  padding: map-get($spacers, 4) map-get($spacers, 5);
   border-bottom: 1px solid $color-gray-light;
   color: $color-gray-dark;
   margin-bottom: map-get($spacers, 0);
