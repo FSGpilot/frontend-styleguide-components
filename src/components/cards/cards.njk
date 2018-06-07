@@ -1,18 +1,51 @@
 {% import "02-buttons/buttons.njk" as button %}
 
-
-{% macro cards(size, cardcontentbefore, header, subheader, headercontent, cardcontent, actioncontent, actionbuttons, actionlinks, actionfunctionlinks) %}
+<!-- Small card -->
+{% macro cardsmall(size, header, subheader, headercontent) %}
+<h4>Lille card</h4>
 <div class="card {{size}}">
-  <div class="card-content-before">
-      {{cardcontentbefore}}
+  <div class="card-header">
+    <h6 class="header-title">{{header}}</h6>
+    <p class="sub-header">{{subheader}}</p>
+    <p class="header-content">{{headercontent}}</p>
+  </div>
+</div>  
+{% endmacro %}
+<!-- Medium card -->
+{% macro cardmedium(size, cardcontent, cardcontentmedia, header, subheader, headercontent) %}
+<h4>Mellem card</h4>
+<div class="card {{size}}">
+  <div class="card-content">
+     <div class="content">
+        <p>{{cardcontent}}</p>
+    </div>
+    <div class="content-media">
+      {{cardcontentmedia}}
+    </div>
   </div>
   <div class="card-header">
-    <p class="header-title">{{header}}</p>
-    <p class="subheader">{{subheader}}</p>
+    <h6 class="header-title">{{header}}</h6>
+    <p class="sub-header">{{subheader}}</p>
+    <p class="header-content">{{headercontent}}</p>
+  </div>
+</div>  
+{% endmacro %}
+<!-- Large card -->
+{% macro cardlarge(size, header, subheader, headercontent, cardcontent, cardcontentmedia, actioncontent, actionbuttons, actionlinks, actionfunctionlinks) %}
+<h4>Stort card</h4>
+<div class="card {{size}}">
+  <div class="card-header">
+    <h6 class="header-title">{{header}}</h6>
+    <p class="sub-header">{{subheader}}</p>
     <p class="header-content">{{headercontent}}</p>
   </div>
   <div class="card-content">
-      {{cardcontent}}
+     <div class="content">
+        <p>{{cardcontent}}</p>
+    </div>
+    <div class="content-media">
+      {{cardcontentmedia}}
+    </div>
   </div>
   <div class="card-action">
     <div class="action-content">
@@ -33,13 +66,13 @@
 
 
 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-  {% for card in cards_example.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+  {% for card in cardsmall_example.items -%}
+    {{ cardsmall(card.size, card.header, card.subheader, card.headercontent) }}
   {%- endfor %}
-  {% for card in cards_example2.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+  {% for card in cardmedium_example.items -%}
+    {{ cardmedium(card.size, card.cardcontent, card.cardcontentmedia, card.header, card.subheader, card.headercontent) }}
   {%- endfor %}
-  {% for card in cards_example3.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+  {% for card in cardlarge_example.items -%}
+    {{ cardlarge(card.size, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
   {%- endfor %}
 </div>
