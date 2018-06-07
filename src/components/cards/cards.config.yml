@@ -7,24 +7,24 @@ context:
     items:
       - size: "card-small"
         header: 'Header'
-        subheader: 'Supporting text'
-        headercontent: 'Body copy area'
+        subheader: 'Understøttende tekst'
+        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
   cards_example2:
     items:
       - size: "card-medium"
-        cardcontentbefore: 'Content area <br> Can be anything really'
+        cardcontentbefore: 'Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik'
         header: 'Header'
-        subheader: 'Supporting text'
-        headercontent: 'Body copy area'
+        subheader: 'Understøttende tekst'
+        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
   cards_example3:
     items:
       - size: "card-large"
         header: 'Header'
-        titlesize: large-text
-        subheader: 'Supporting text'
-        headercontent: 'Body copy area'
-        cardcontent: 'Content area <br> Can be anything really'
+        subheader: 'Understøttende tekst'
+        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
+        cardcontent: '<p>Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik</p> <ul><li>Liste element</li><li>Liste element</li><li>Liste element</li></ul>'
+        actioncontent: '<p>Dette <em>aktionsområde</em>, kan indeholde interaktioner, såsom knapper og links.</p>'
         actionbuttons: '<button class="button button-primary">Læs mere</button> <button class="button button-ghost">Læs mere</button>'
         actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li></ul>'
-        actionfunctionlinks: '<a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a><a href="#" class="function-link">Print entire guide<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'
+        actionfunctionlinks: '<a href="#" class="function-link">Tilføj til kalender<svg class="icon-svg "><use xlink:href="#calendar"></use></svg></a><a href="#" class="function-link">Print<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'
         
