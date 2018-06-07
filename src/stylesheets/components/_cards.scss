@@ -149,7 +149,7 @@
   padding-top:map-get($spacers, 0);
 }
 //If action comes after content
-.card-content + .card-action{
+.card-action + .card-content{
   padding-top:map-get($spacers, 0);
 }
 //If action comes after header
