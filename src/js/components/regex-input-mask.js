@@ -38,7 +38,12 @@ function inputRegexMask(event) {
     }
     if(newChar !== null && element !== null) {
         if(newChar.length > 0){
-            var newValue = this.value.slice(0, element.selectionStart) + this.value.slice(element.selectionEnd) + newChar; //Note input[type=number] does not have .selectionStart/End
+            if(element.type === "number"){
+                var newValue = this.value;//Note input[type=number] does not have .selectionStart/End (Chrome).
+            }else{
+                var newValue = this.value.slice(0, element.selectionStart) + this.value.slice(element.selectionEnd) + newChar; //removes the numbers selected by the user, then adds new char. 
+            }
+            
             var regexStr = this.getAttribute("data-input-regex");
             var r = new RegExp(regexStr);
             if(r.exec(newValue) === null){

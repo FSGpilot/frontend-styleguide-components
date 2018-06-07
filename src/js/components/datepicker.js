@@ -62,7 +62,6 @@ class datepickerGroup {
         },
         onSelect: function(date) {
           //selected new date in pikaday, update input fields. 
-          console.log('Pikaday onSelect --> updateDateInputs()');
           that.updateDateInputs(date);
           that.validateInputs();
         },
