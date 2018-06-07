@@ -127,10 +127,10 @@ table.dataTable {
                 //background-image: url('../images/sort_desc.png');
             }
             .sorting_asc_disabled {
-                background-image: url('../images/sort_asc_disabled.png');
+                background-image: url('#{$icons-folder-path}/menu-up.svg');
             }
             .sorting_desc_disabled {
-                background-image: url('../images/sort_desc_disabled.png');
+                background-image: url('#{$icons-folder-path}/menu-down.svg');
             }
         }
     }
