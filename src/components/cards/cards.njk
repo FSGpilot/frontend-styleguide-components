@@ -1,27 +1,30 @@
 {% import "02-buttons/buttons.njk" as button %}
 
 
-{% macro cards(size, cardcontentbefore, header, titlesize, subheader, headercontent, cardcontent, actionbuttons, actionlinks, actionfunctionlinks) %}
+{% macro cards(size, cardcontentbefore, header, subheader, headercontent, cardcontent, actioncontent, actionbuttons, actionlinks, actionfunctionlinks) %}
 <div class="card {{size}}">
   <div class="card-content-before">
-      <p>{{cardcontentbefore}}</p>
+      {{cardcontentbefore}}
   </div>
   <div class="card-header">
-    <p class="header-title {{titlesize}}">{{header}}</p>
+    <p class="header-title">{{header}}</p>
     <p class="subheader">{{subheader}}</p>
-    <p class="headercontent">{{headercontent}}</p>
+    <p class="header-content">{{headercontent}}</p>
   </div>
   <div class="card-content">
-      <p>{{cardcontent}}</p>
+      {{cardcontent}}
   </div>
   <div class="card-action">
-    <div class="actionbuttons">
+    <div class="action-content">
+      {{actioncontent}}
+    </div>
+    <div class="action-buttons">
     {{ actionbuttons }}
     </div>
-    <div class="actionlinks">
+    <div class="action-links">
     {{ actionlinks }}
     </div>
-    <div class="actionfunctionlinks">
+    <div class="action-functionlinks">
     {{ actionfunctionlinks }}  
     </div>
   </div>
@@ -31,12 +34,12 @@
 
 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
   {% for card in cards_example.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.titlesize, card.subheader, card.headercontent, card.cardcontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
   {%- endfor %}
   {% for card in cards_example2.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.titlesize, card.subheader, card.headercontent, card.cardcontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
   {%- endfor %}
   {% for card in cards_example3.items -%}
-    {{ cards(card.size, card.cardcontentbefore, card.header, card.titlesize, card.subheader, card.headercontent, card.cardcontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {{ cards(card.size, card.cardcontentbefore, card.header, card.subheader, card.headercontent, card.cardcontent, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
   {%- endfor %}
 </div>
