@@ -208,7 +208,7 @@ gulp.task('move:images', function() {
   console.log(color('::::::::::::::::::: Moving Images to Prototype :::::::::::::::::::', 'CYAN'));
   return gulp.src([
       paths.src.img + '/*.{jpg,jpeg,png,gif,svg}',
-      'node_modules/dkwds/src/img/*.{png,svg}'
+      'node_modules/dkwds/src/img/**/*.{png,svg}'
     ])
       .pipe(gulp.dest(paths.prototype.img))
 });
