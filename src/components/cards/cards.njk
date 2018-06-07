@@ -64,15 +64,20 @@
 </div>  
 {% endmacro %}
 
-
-<div class="col-12 col-sm-12 col-md-6 col-lg-6">
-  {% for card in cardsmall_example.items -%}
-    {{ cardsmall(card.size, card.header, card.subheader, card.headercontent) }}
-  {%- endfor %}
-  {% for card in cardmedium_example.items -%}
-    {{ cardmedium(card.size, card.cardcontent, card.cardcontentmedia, card.header, card.subheader, card.headercontent) }}
-  {%- endfor %}
-  {% for card in cardlarge_example.items -%}
-    {{ cardlarge(card.size, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
-  {%- endfor %}
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    {% for card in cardsmall_example.items -%}
+      {{ cardsmall(card.size, card.header, card.subheader, card.headercontent) }}
+    {%- endfor %}
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    {% for card in cardmedium_example.items -%}
+      {{ cardmedium(card.size, card.cardcontent, card.cardcontentmedia, card.header, card.subheader, card.headercontent) }}
+    {%- endfor %}
+      </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    {% for card in cardlarge_example.items -%}
+      {{ cardlarge(card.size, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
 </div>
