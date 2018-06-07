@@ -32,9 +32,13 @@ function inputRegexMask(event) {
             newChar = String.fromCharCode(event.charCode);
         }
     }
-    if(newChar !== null) {
+    var element = null;
+    if(event.target !== undefined){
+        element = event.target;
+    }
+    if(newChar !== null && element !== null) {
         if(newChar.length > 0){
-            var newValue = this.value + newChar;
+            var newValue = this.value.slice(0, element.selectionStart) + this.value.slice(element.selectionEnd) + newChar; //Note input[type=number] does not have .selectionStart/End
             var regexStr = this.getAttribute("data-input-regex");
             var r = new RegExp(regexStr);
             if(r.exec(newValue) === null){

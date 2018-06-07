@@ -60,11 +60,11 @@ class datepickerGroup {
           weekdays      : ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'],
           weekdaysShort : ['Søn','Man','Tir','Ons','Tor','Fre','Lør']
         },
-        //minDate: new Date(),
         onSelect: function(date) {
           //selected new date in pikaday, update input fields. 
           console.log('Pikaday onSelect --> updateDateInputs()');
           that.updateDateInputs(date);
+          that.validateInputs();
         },
         onOpen: function(){
           //update pikaday with values from input fields
