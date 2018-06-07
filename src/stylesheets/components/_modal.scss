@@ -26,9 +26,19 @@
 		@include body-copy-text;
 		top:map-get($spacers, 5)
 	}
-	#dialog-title {
-		margin: 0 0 map-get($spacers, 3) 0;
+	.dialog-title {
+		margin: 0;
 		font-weight: $font-weight-semibold;
+
+	}
+	.dialog-description {
+		margin:map-get($spacers, 3) 0 0 0;
+	}
+	.modalbuttons {
+		margin-top:map-get($spacers, 5);
+		.button {
+			margin-right: map-get($spacers, 4);
+		}
 	}
 }
 
