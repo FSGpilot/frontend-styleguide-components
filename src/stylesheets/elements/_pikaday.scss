@@ -34,6 +34,10 @@ $pd-previous-icon: $icons-folder-path + "/arrow-right.svg" !default;
 $pd-font-family: $font-family !default;
 $pd-font-size: $body-text;
 
+.js-calendar-datepicker{
+    cursor: pointer;
+}
+
 .pika-single {
     z-index: 9999;
     display: block;
@@ -164,7 +168,9 @@ $pd-font-size: $body-text;
     }
     th,
     td {
-        min-width: 50px;
+        @include media($medium-screen) {
+            min-width: 52px;
+        }
         //padding: 8px;
     }
 
@@ -173,12 +179,24 @@ $pd-font-size: $body-text;
         font-size: $pd-font-size;
         font-weight: 400;
         text-align: center;
-        padding: 8px;
+        padding: 8px 4px;
         border-bottom: $pd-picker-border-inner;
+        @include media($medium-screen) {
+            padding: 8px;
+        }
     }
     td:not(.is-disabled):not(.is-empty){
         border: $pd-picker-border-inner;
         background-color: #fff;
+        
+        &:first-child{
+            border-left: none;
+        }
+    }
+    tr:last-child{
+        td:not(.is-disabled):not(.is-empty){
+            border-bottom: none;
+        }
     }
 
     abbr {
@@ -202,7 +220,7 @@ $pd-font-size: $body-text;
     //line-height: 15px;
     text-align: right;
     background: $pd-day-bg;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-medium;
 
     .is-today & {
         color: $pd-day-today-color;
