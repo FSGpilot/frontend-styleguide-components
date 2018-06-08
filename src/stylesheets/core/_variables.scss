@@ -528,7 +528,7 @@ $button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 4px solid $color-warning;
 $focus-spacing:                 0px;
-$nav-width:                     $grid-lg !default; // 992px
+$nav-responsive-breakpoint:     $grid-lg !default; // 992px
 
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines

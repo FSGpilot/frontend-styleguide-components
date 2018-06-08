@@ -1,20 +1,148 @@
 {%- from "09-header/_nav-01-portal-header.njk"   import portal_header        as portal_header -%}
 {%- from "09-header/_nav-02-solution-header.njk" import solution_header      as solution_header -%}
-{%- from "09-header/_nav-02-solution-header.njk" import solution_header_nav  as solution_header_nav -%}
-{%- from "09-header/_nav-03-topnavigation.njk"   import topnavigation        as topnavigation -%}
+{%- from "09-header/_nav-03-main-navigation.njk"   import mainnavigation        as mainnavigation -%}
+{%- from "09-header/_nav-04-secondary-navigation.njk"   import secondarynavigation        as secondarynavigation -%}
+{%- from "09-header/_nav-05-toolbox.njk"   import toolbox        as toolbox -%}
+
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+
 {%- macro header_simple(portal_header_data, solution_header_data, solution_nav, top_nav, top_nav_buttons) -%}
 <header class="header header-extended" role="banner">
   {{ portal_header(portal_header_data) }}
   {{ solution_header(solution_header_data) }}
   <nav role="navigation" class="nav">
     <div class="nav-inner">
-      {{ solution_header_nav(solution_nav) }}
-      {{ topnavigation(top_nav, top_nav_buttons) }} 
-      {# {% render '@nav-02-solution-header', {nav: header.primary}, true %}
-      {% render '@nav-03-topnavigation', {nav: header.secondary, id_prefix: header.primary.id_prefix}, true %} #}
+      <button class="nav-close"> x </button>
+      {#{{ solution_header_nav(solution_nav) }}#}
+      {{ mainnavigation(top_nav, top_nav_buttons) }} 
+      {{ secondarynavigation() }} 
+      {{ toolbox() }} 
     </div>
   </nav>
 </header>
 <div class="overlay"></div>
 {%- endmacro -%}
+
+{#}
 {{ header_simple(portal_header_data, solution_header_data, solution_nav, top_nav, top_nav_buttons) }}
+#}
+
+<header class="header header-extended" role="banner">
+    <!--1A: Portal header -->
+    <div class="container portal-header">
+        <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
+        <button class="button button-secondary button-menu-open js-menu-open">Menu</button>
+    </div>
+     <!--2A: Portal header -->
+    <div class="container solution-header">
+        <div class="solution-heading">
+            <a href="/frontend-styleguide/" title="Home" aria-label="Home">Frontend Styleguide</a>
+        </div>
+    </div>
+
+    <nav role="navigation" class="container nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close">{{icon_svg("close")}}Luk</button>
+      <!-- 3: Main navigation-->
+      <div>
+        <!--3A: Main navigation-->
+        <ul class="nav-primary accordion">
+            <li>
+                <a href="/frontend-styleguide/components/" class="nav-link">
+                    <span>Designsystem</span>
+                </a>
+            </li>            
+            <li>
+                <a href="/frontend-styleguide/page-templates/" class="nav-link">
+                    <span>Eksempler</span>
+                </a>
+            </li>
+            <li>
+                <a href="/frontend-styleguide/getting-started/" class="nav-link">
+                    <span>Kom godt i gang</span>
+                </a>
+            </li>
+            <li>
+                <a href="/frontend-styleguide/faellesoffentlige-krav/" class="nav-link">
+                    <span>Fællesoffentlige krav</span>
+                </a>    
+            </li>
+            <li>
+                <a href="/frontend-styleguide/whats-new/" class="nav-link">
+                    <span>Om designsystemet</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 3B: Main navigation - secondary menu-->
+        <div class="nav-tertiary">
+          <ul class="unstyled-list nav-secondary-links">
+            <li> 
+              <select class="style-switcher" name="Style switcher">
+                <option value="">- Vælg tema -</option>
+                <option value="styleguide">Tema: Neutralt</option>
+                <option value="virkdk">Tema: Virk.dk</option>
+                <option value="borgerdk">Tema: Borger.dk</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 3: Main navigation end-->
+
+      <!-- 4: Contextual navigation-->
+      <div>
+        <div>
+          <!-- 4A: Contextual header-->
+          <h4>Solution variable</h4>
+          <button class="button button-primary">Toggle</button>
+        </div>
+        <div>
+          <!-- 4B: Contextual navigation -->
+          <ul class="unstyled-list">
+            <li>
+                <a href="/frontend-styleguide/components/" class="button button-ghost">Ghost</a>
+            </li>            
+            <li>
+                <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiary</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 4: Contextual header end-->
+
+      <!-- 5: contextual actions-->
+      <div>
+        <ul class="unstyled-list">
+          <li>
+            <a href="" class="icon-link">Print entire guide
+              <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg>
+            </a>
+          </li>            
+        </ul>
+      </div>
+
+      <!-- 1B: Portal header: info + actions-->
+      <div class="nav-secondary">
+          <ul class="unstyled-list nav-secondary-links">
+              <li> 
+                  <a href="/frontend-styleguide/getting-started/download/" class="button button-primary">
+                  Download kode og designfiler
+                  </a>
+              </li>
+              <li> 
+                  <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary">
+                  Se på GitHub
+                  </a>
+              </li>
+          </ul>
+      </div>
+
+      <!--2B: Solution header: Authority name + text-->
+      <div class="nav-secondary">
+          <h5>Erhvervsstyrelsen</h5>
+          <p>Support: 78 73 64 12</p>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+</header>
+<div class="overlay"></div>
