@@ -14,7 +14,7 @@ context:
       - icon: content-save
       - icon: delete
       - icon: help-circle-outline
-      - icon: information-outline
+      - icon: info
       - icon: magnify
       - icon: pencil
       - icon: refresh

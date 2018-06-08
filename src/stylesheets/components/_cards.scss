@@ -1,58 +1,48 @@
 .card {
   position: relative;
-  //margin-bottom: $spacing-md-small;
-  border-radius: 0;
+  border-radius: map-get($spacers, 0);
   box-shadow: 0 2px 4px 0 $color-gray-light;
   border: 1px solid $color-gray-medium-light;
-  //margin: $spacing-md-small;
   overflow: hidden;
-  margin-bottom: map-get($spacers, 5);
+  background: $color-white;
 
+  //small card
   &-small {
-    .card-content-before {
-      display:none;
-    }
-    .card-content {
-      display:none;
-    }
-    .card-action {
-      display:none;
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
     }
   }
-
+  //medium card
   &-medium {
-    .card-content {
-      display:none;
-    }
-    .card-action {
-      display:none;
+    //The last 
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
     }
   }
-
+  //large card
   &-large {
-    .card-content-before {
-      display:none;
+    > :last-of-type {
+      padding-bottom:map-get($spacers, 5);
     }
   }
-
-
-
-  
 
   p {
-    margin: 0px;
-    margin-bottom: $spacing;
     max-width: 60ch;
+    margin-top:map-get($spacers, 4);
+    margin-bottom: map-get($spacers, 0);
+    &:first-child {
+      margin-top:map-get($spacers, 0);
+    }
   }
   h1, .h1,
   h2, .h2,
   h3, .h3,
   h4, .h4,
   h5, .h5 {
-    margin: 0;
+    margin: map-get($spacers, 0);
   }
 }
-
+//card-header
 .card-header {
   background-color: $color-white;
   padding: map-get($spacers, 4) map-get($spacers, 5);
@@ -60,97 +50,130 @@
     @include body-copy-text;
     font-weight: $font-weight-semibold;
     color: $color-black;
-    margin:0;
+    margin:map-get($spacers, 0);
 
     &.large-text {
       @include h1;
       color: $color-gray-dark;
     }
   }
-
-  .subheader {
+  .sub-header {
     @include body-copy-text;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top:  map-get($spacers, 0);
+    margin-bottom: map-get($spacers, 0);
     color: $color-text-secondary;
   }
-  .headercontent {
+  .header-content {
     @include body-copy-text;
     margin-top: map-get($spacers, 4);
     color: $color-gray-dark;
-    margin-bottom: 0px;
+    margin-bottom: map-get($spacers, 0);
   }
 }
 
-.card-content-before {
-  @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5);
-  border-bottom: 1px solid $color-gray-light;
-  background: $color-gray-light;
-  color: $color-gray-dark;
-  margin-bottom: 0px;
-  min-height: 191px;
-}
-
+//card-content
 .card-content {
   @include body-copy-text;
   padding: map-get($spacers, 4) map-get($spacers, 5);
-  border-bottom: 1px solid $color-gray-light;
-  background: $color-gray-light;
+  background: $color-white;
   color: $color-gray-dark;
-  margin-bottom: 0px;
-  min-height: 191px;
-}
+  ul {
+    margin-bottom:map-get($spacers, 0);
+  }
+  div:first-child {
+    margin-top:map-get($spacers, 0);
+  }
+  .content {
+    margin-top:map-get($spacers, 4);
+  }
 
+  .content-media {
+    margin-top:map-get($spacers, 4);
+    img {
+      width:100%;
+    }
+  }
+}
+//card-action
 .card-action {
   @include body-copy-text;
   padding: map-get($spacers, 4) map-get($spacers, 5);
   border-bottom: 1px solid $color-gray-light;
   color: $color-gray-dark;
-  margin-bottom: 0px;
+  margin-bottom: map-get($spacers, 0);
 
-  &:last-child {
-    border-bottom: 0;
-    margin-top:map-get($spacers, 4);
+  div:first-child {
+    margin-top:map-get($spacers, 0);
   }
 
-  .actionlinks {
+  &:last-child {
+    border-bottom: map-get($spacers, 0);
+  }
+
+  .action-buttons {
+    margin-top:map-get($spacers, 5);
+    button {
+      margin-right: map-get($spacers, 3);
+    }
+  }
+
+  .action-links {
     margin-top:map-get($spacers, 4);
     ul {
       @include unstyled-list();
-      padding-left: 0;
+      padding-left: map-get($spacers, 0);
+      li {
+        margin-top:map-get($spacers, 3);
+      }
     }
   }
-  .actionfunctionlinks {
+  .action-functionlinks {
     margin-top:map-get($spacers, 4);
     text-align: right;
+    .function-link {
+      margin-left: map-get($spacers, 4);
+    }
   }
 }
 
-
-.card-text:last-child {
-  margin-bottom: $spacing-md-small;
+//If header comes after content
+.card-content + .card-header {
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after header
+.card-header + .card-content{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after content
+.card-content + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after content
+.card-action + .card-content{
+  padding-top:map-get($spacers, 0);
+}
+//If action comes after header
+.card-header + .card-action{
+  padding-top:map-get($spacers, 0);
+}
+//If header comes after action
+.card-action + .card-header{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-header + .card-header{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-content + .card-content{
+  padding-top:map-get($spacers, 0);
+}
+//If content comes after content
+.card-action + .card-action{
+  padding-top:map-get($spacers, 0);
 }
 
-.card-link {
-  text-decoration: none;
-  margin-left: $spacing;
-}
 
-.card-link:first-child {
-  margin-left: 0px;
-}
-
-
-.card-title {
-  margin-top: 0;
-  margin-bottom: $spacing;
-}
-
-.card-subtitle {
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 .card {
   > .list-group:first-child {
@@ -163,23 +186,6 @@
       .list-group-item:last-child {
           border-radius: 0px;
       }
-  }
-}
-
-
-//
-// Optional textual caps
-//
-
-
-
-.card-footer {
-  padding: $spacing-small;
-  background-color: $color-white;
-  border-top: 1px solid $color-black;
-
-  &:last-child {
-      border-radius: 0px;
   }
 }
 

@@ -7,7 +7,7 @@ const change = function (event) {
   return validate(this);
 };
 
-const validator = behavior({
+module.exports = behavior({
   'keyup change': {
     'input[data-validation-element]': change,
   },
@@ -18,8 +18,8 @@ const validator = behavior({
  *
  * module.exports = behavior({...});
  */
-const assign = require('object-assign');
+/*const assign = require('object-assign');
 module.exports = assign(
   el => validator.on(el),
   validator
-);
+);*/

@@ -1,26 +1,23 @@
-  //Ul lists
+
+ //Ul lists
   ul {
     padding-left: 0;
     list-style-type: none;
     color:$color-gray-dark;
+    line-height: $body-text-line-height;
     li { 
       margin-top:map-get($spacers, 3);
-      
+      list-style: none;
+      position: relative;
+      padding-left: 37px;
+      line-height: $body-text-line-height;
       &:before {
         content: "\2022";
-        // font-size: 26px;
-        padding-right: 8px;
+        position: absolute;
+        left: 20px;
+        
       }
-      ul {
-        list-style-type: none;
-        li {
-          &:before{
-          content: "\2022";
-          // font-size: 24px;
-          padding-right: 8px;
-          }
-        }
-      }
+
     }
   }
   //Ol lists
@@ -31,54 +28,95 @@
     li {
       display: block;
       margin-top:map-get($spacers, 3);
+      position: relative;
 
       &:before { 
         content: counters(item, ".") "."; 
         counter-increment: item; 
         font-weight: $font-weight-medium;
+        position: absolute;
+        
       }
     }
   }
 
 
-  //Body lists
-  .paragraph-list {
+
+  //paragraph lists
+  ul.paragraph-list {
     font-size: $body-paragraph-size;
     line-height: $body-paragraph-line-height;
     li {
+      padding-left: 46px;
+      line-height: $body-paragraph-line-height;
       &:before {
-        width: 46px;
-        display: inline-block;
-        text-align: right;
+        left: 22px;
       }
-      ol, ul {
+
+      ul {
+        li {
+          padding-left: 46px;
+        }
+      }
+    }
+  }
+
+  //paragraph lists
+  ol.paragraph-list {
+    font-size: $body-paragraph-size;
+    line-height: $body-paragraph-line-height;
+    li {
+      padding-left: 46px;
+      &:before {
+        left: 22px;
+      }
+      ol {
         li {
           &:before { 
-            width: 92px;
-            display: inline-block;
-            text-align: right;
+            left: 8px;
           }
         }
       }
     }
   }
 
-  //Body lists
-  .body-list {
+
+  //Body lists ul
+  ul.body-list{
     font-size: $body-text;
     line-height: $body-text-line-height;
     li {
+      padding-left: 37px;
       &:before {
-        width: 37px;
-        display: inline-block;
-        text-align: right;
+
+        left: 23px;
       }
-      ol, ul {
+
+      ul {
         li {
+          padding-left: 37px;
           &:before { 
-            width: 74px;
-            display: inline-block;
-            text-align: right;
+
+            left: 23px;
+          }
+        }
+      }
+    }
+  }
+  //Body lists ol
+  ol.body-list{
+    font-size: $body-text;
+    line-height: $body-text-line-height;
+    li {
+      padding-left: 37px;
+      &:before {
+        left: 20px;
+      }
+      ol {
+        li {
+          padding-left: 37px;
+          &:before { 
+            left: 6px;
           }
         }
       }

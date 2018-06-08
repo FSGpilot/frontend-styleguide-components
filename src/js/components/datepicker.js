@@ -2,6 +2,7 @@
 const Pikaday = require("../../vendor/pikaday.js");
 const behavior = require('../utils/behavior');
 const select = require('../utils/select');
+const closest = require('../utils/closest');
 
 const jsDatepickerSelector = '.js-calendar-datepicker';
 const jsDayInput = '.js-calendar-day-input';
@@ -14,9 +15,10 @@ class datepickerGroup {
     this.pikadayInstance = null;
     this.datepickerElement = select(jsDatepickerSelector, el);
     this.dateGroup = el;
+    this.formGroup = closest(el, '.form-group');
     this.dayInputElement = null;
     this.monthInputElement = null;
-    this.yearInputElement = null;
+    this.yearInputElement = null;   
 
     this.initDateInputs();
     this.initDatepicker(this.datepickerElement[0]);
@@ -30,43 +32,21 @@ class datepickerGroup {
     var that = this;
     
     this.dayInputElement.addEventListener("blur", function(){
-      var curDate = that.pikadayInstance.getDate();
-
-      //validate day
-      var newDay = parseInt(this.value);
-      var lastDay = new Date(curDate.getFullYear(), curDate.getMonth() + 1, 0).getDate();
-      if(newDay> lastDay){
-        return; //no nothing, not valid.
-      }
-      var newDate = new Date(curDate.getFullYear(), curDate.getMonth(), newDay);
-
-      //update pikaday
-      that.updateDatepickerDate(newDate)
+      that.validateInputs();
     });
 
     this.monthInputElement.addEventListener("blur", function(){
-      var curDate = that.pikadayInstance.getDate();
-
-      //validate month
-      var newMonth = parseInt(this.value)-1;
-      if(newMonth >= 12){
-        return; //no nothing, not valid.
-      }
-      
-      var newDate = new Date(curDate.getFullYear(), newMonth, curDate.getDate());
-
-      that.updateDatepickerDate(newDate)
+      that.validateInputs();
     });
 
     this.yearInputElement.addEventListener("blur", function(){
-      var curDate = that.pikadayInstance.getDate();
-      var newDate = new Date(this.value, curDate.getMonth(), curDate.getDate());
-      that.updateDatepickerDate(newDate)
+      that.validateInputs();
     });
   }
 
   initDatepicker(el){
     if(el){
+      //Note: el may not be a <svg>, IE11 does not add .blur() method to svg elements (--> esc and enter does not dismiss pikaday). 
       var that = this;
 
       this.pikadayInstance = new Pikaday({
@@ -80,9 +60,20 @@ class datepickerGroup {
           weekdays      : ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'],
           weekdaysShort : ['Søn','Man','Tir','Ons','Tor','Fre','Lør']
         },
-        minDate: new Date(),
         onSelect: function(date) {
-          that.updateDateInputs(date)
+          //selected new date in pikaday, update input fields. 
+          that.updateDateInputs(date);
+          that.validateInputs();
+        },
+        onOpen: function(){
+          //update pikaday with values from input fields
+          var day = parseInt(that.dayInputElement.value);
+          var month = parseInt(that.monthInputElement.value) -1;
+          var year = parseInt(that.yearInputElement.value);
+          var newDate = new Date(year, month, day);
+          if(that.validateInputs()){
+            that.updateDatepickerDate(newDate)
+          }
         }
       });
 
@@ -90,6 +81,40 @@ class datepickerGroup {
       this.pikadayInstance.setDate(initDate);
       this.updateDateInputs(initDate);
     }
+  }
+
+  validateInputs(){
+    var day = parseInt(this.dayInputElement.value)
+    var month = parseInt(this.monthInputElement.value);
+    var year = parseInt(this.yearInputElement.value);
+    var maxDay = new Date(year, month, 0).getDate();
+
+    var msg = "";
+    var isValid = true; 
+    if(day > maxDay){
+      isValid = false;
+      msg = "Hov, den dag findes ikke i den valgte måned."
+      this.showError(msg);
+    }else if(month > 12){
+      isValid = false;
+      msg = "Hov, den måned findes ikke."
+      this.showError(msg);
+    }
+
+    if(isValid){
+      this.removeError();
+    }
+
+    return isValid;
+  }
+
+  showError(msg){
+    this.formGroup.classList.add("input-error");
+    select(".input-error-message",  this.formGroup)[0].textContent = msg;
+  }
+  removeError(){
+    this.formGroup.classList.remove("input-error");
+    select(".input-error-message",  this.formGroup)[0].textContent = "";
   }
 
   updateDateInputs(date){

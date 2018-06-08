@@ -2,17 +2,16 @@ label: Modal
 status: ready
 preview: '@dkwds-framed'
 
-# variants:
-#   - name: default
-#     label: Example
-#
-# context:
-#   label_example:
-#     items:
-#       - name: default
-#         classes: ""
-#         label: Normal
-#
-#       - name: big
-#         classes: "usa-label-big"
-#         label: Big
+context:
+  modalpassive_example:
+    items:
+      - type: "passive"
+        close: 'Luk'
+        title: 'Modal titel for passive modal'
+        description: 'Her skal stå en form for beskrivelse'
+  modaltransactional_example:
+    items:
+      - type: "transactional"
+        close: 'Luk'
+        title: 'Modal titel for transactional modal'
+        description: 'Her skal stå en form for beskrivelse'
