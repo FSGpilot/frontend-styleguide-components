@@ -5,29 +5,29 @@
  //
 
 // Border between the header (and footer) and the table body
-$table-header-border: 1px solid #111111 !default;
+$table-header-border: 1px solid $color-gray-light !default;
 
 // Border of rows / cells
-$table-body-border: 1px solid #dddddd !default;
+$table-body-border: 1px solid $color-gray-light !default;
 
 // Row background colour (hover, striping etc are all based on this colour and
 // calculated automatically)
-$table-row-background: #ffffff !default;
+$table-row-background: $color-white !default;
 
 // Row colour, when selected (tr.selected)
-$table-row-selected: #b0bed9 !default;
+$table-row-selected: $color-gray-light !default;
 
 // Text colour of the interaction control elements (info, filter, paging etc)
-$table-control-color: #333333 !default;
+$table-control-color: $color-black !default;
 
 // Highlight colour of the paging button for the current page
-$table-paging-button-active: #dcdcdc !default;
+$table-paging-button-active: $color-gray-light !default;
 
 // Hover colour of paging buttons on mouse over
-$table-paging-button-hover: #111111 !default;
+$table-paging-button-hover: $color-gray-pale !default;
 
 // Colour to use when shading
-$table-shade: black !default;
+$table-shade: $color-black !default;
 
 // jQuery UI stylesheet imports this one - there are just two places where we
 // don't want DataTabels default styles assigned for jQuery UI, so rather than
@@ -150,13 +150,23 @@ table.dataTable {
 
         th,
         td {
-            padding: 8px;
+            padding: 16px; //8px;
 
         }
         td[colspan] {
           padding:0;
           .details-row-content {
-            margin-left: 31px;
+            background-color: $color-white;
+            .row {
+              margin-right: 32px;
+              margin-left: 32px;
+            }
+            .dataset {
+              .chart {
+                margin-top:32px;
+              }
+            }
+            //margin-left: 31px;
           }
         }
     }
@@ -406,27 +416,53 @@ table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkb
 }
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before{
     content: ' ';
-    margin-top: -6px;
-    margin-left: -6px;
-    border: 1px solid black;
-    border-radius: 3px;
+    // margin-top: -6px;
+    // margin-left: -6px;
+    // border: 1px solid black;
+    // border-radius: 3px;
+
+    display: inline-block;
+    background: #fff;
+    border-radius: 2px;
+    border: 2px solid #1a1a1a;
+    height: 18px;
+    line-height: 2.4rem;
+    width: 18px;
+    position: relative;
 }
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after{
-    display: block;
-    position: absolute;
-    top: 1.2em;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    box-sizing: border-box;
+    // display: block;
+    // position: absolute;
+    // top: 1.2em;
+    // left: 50%;
+    // width: 12px;
+    // height: 12px;
+    // box-sizing: border-box;
+
+    //content: "\a0";
+
 }
 table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after{
-    content: '\2714';
-    margin-top: -11px;
-    margin-left: -4px;
-    text-align: center;
-    text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+    // content: '\2714';
+    // margin-top: -11px;
+    // margin-left: -4px;
+    // text-align: center;
+    //text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+    content: "";
+    height: 7px;
+    width: 12px;
+    position: absolute;
+    left: 21px;
+    top: 19px;
+    box-shadow: -2px 2px 0 0 #fff;
+    transform: rotate(-46deg);
+    border-color: transparent;
+
 }
+
+ table.dataTable tr.selected .select-checkbox:before {
+   background-color: #333;
+ }
 
 /*
  * Control feature layout
@@ -439,15 +475,42 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     // Page length options
     .dataTables_length {
         float: left;
+
+        select {
+          box-sizing: border-box;
+          border: 1px solid #999;
+          border-radius: 4px;
+          color: #1a1a1a;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          padding: 7px 0 7px 15px;
+          text-align: left;
+          height: 4rem;
+          margin-left: .8rem;
+        }
     }
 
     // Filtering input
     .dataTables_filter {
         float: right;
         text-align: right;
+        margin-bottom: 8px;
 
-        input {
-            margin-left: 0.5em;
+        // input {
+        //     margin-left: 0.5em;
+        // }
+        input[type=search] {
+          box-sizing: border-box;
+          -webkit-appearance: none;
+          border: 1px solid #999;
+          border-radius: 4px;
+          color: #1a1a1a;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          padding: 7px 15px;
+          text-align: left;
+          height: 4rem;
+          margin-left: .8rem;
         }
     }
 
@@ -483,11 +546,12 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
             &.current,
             &.current:hover {
                 color: $table-control-color !important;
-                border: 1px solid darken( $table-paging-button-active, 27% );
-                @include gradient(
-                    lighten($table-paging-button-active, 28%),
-                    $table-paging-button-active
-                );
+                border: 1px solid $color-gray-light; //darken( $color-gray-medium-light, 27% );
+                // @include gradient(
+                //     lighten($table-paging-button-active, 28%),
+                //     $table-paging-button-active
+                // );
+                background: $color-gray-pale;
             }
 
             &.disabled,
@@ -501,21 +565,23 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
             }
 
             &:hover {
-                color: white !important;
+                color: $color-black !important;
                 border: 1px solid $table-paging-button-hover;
-                @include gradient(
-                    lighten($table-paging-button-hover, 28%),
-                    $table-paging-button-hover
-                );
+                // @include gradient(
+                //     lighten($table-paging-button-hover, 28%),
+                //     $table-paging-button-hover
+                // );
+                background: $table-paging-button-hover;
             }
 
             &:active {
                 outline: none;
-                @include gradient(
-                    lighten($table-paging-button-hover, 10%),
-                    darken($table-paging-button-hover, 2%)
-                );
-                box-shadow: inset 0 0 3px #111;
+                // @include gradient(
+                //     lighten($table-paging-button-hover, 10%),
+                //     darken($table-paging-button-hover, 2%)
+                // );
+                // box-shadow: inset 0 0 3px #111;
+                background: $table-paging-button-hover;
             }
         }
 
