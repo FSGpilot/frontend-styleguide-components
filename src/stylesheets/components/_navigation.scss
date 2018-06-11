@@ -236,10 +236,19 @@
 }
 
 .nav-secondary{
+  @include media($nav-responsive-breakpoint) {
+    display: flex;
+    align-items: center;
+  }
   .nav-secondary-heading{
     margin-bottom: map-get($spacers, 4);
     @include media($nav-responsive-breakpoint) {
       margin-bottom: 0;
+    }
+    + ul{
+      @include media($nav-responsive-breakpoint) {
+        margin-left: map-get($spacers, 4);
+      }
     }
   }
 }
