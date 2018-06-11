@@ -30,22 +30,29 @@
 <header class="header header-extended" role="banner">
     <!--1A: Portal header -->
     <div class="container portal-header">
-        <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
-        <button class="button button-secondary button-menu-open js-menu-open">Menu</button>
+      <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
+      <button class="button button-secondary button-menu-open js-menu-open">Menu</button>
     </div>
-     <!--2A: Portal header -->
-    <div class="container solution-header">
+
+     <!--2A: Solutiuon header -->
+    <div class="solution-header container">
         <div class="solution-heading">
             <a href="/frontend-styleguide/" title="Home" aria-label="Home">Frontend Styleguide</a>
+        </div>
+
+        <!--2B: Solution header: Authority name + text-->
+        <div class="solution-info"> <!-- nav-secondary -->
+            <h6 class="h6">Erhvervsstyrelsen</h6>
+            <p>Support: 78 73 64 12</p>
         </div>
     </div>
 
     <nav role="navigation" class="container nav"> <!-- collapsible-->
       <button class="button button-secondary button-menu-close js-menu-close">{{icon_svg("close")}}Luk</button>
       <!-- 3: Main navigation-->
-      <div>
+      <div class="navbar navbar-primary">
         <!--3A: Main navigation-->
-        <ul class="nav-primary accordion">
+        <ul class="nav-primary">
             <li>
                 <a href="/frontend-styleguide/components/" class="nav-link">
                     <span>Designsystem</span>
@@ -74,73 +81,50 @@
         </ul>
 
         <!-- 3B: Main navigation - secondary menu-->
-        <div class="nav-tertiary">
-          <ul class="unstyled-list nav-secondary-links">
-            <li> 
-              <select class="style-switcher" name="Style switcher">
-                <option value="">- Vælg tema -</option>
-                <option value="styleguide">Tema: Neutralt</option>
-                <option value="virkdk">Tema: Virk.dk</option>
-                <option value="borgerdk">Tema: Borger.dk</option>
-              </select>
-            </li>
-          </ul>
+        <div class="nav-actions">
+          <button class="button button-tertiary">Tertiary</button>
+          <select class="form-select style-switcher" name="Style switcher">
+            <option value="">- Vælg tema -</option>
+            <option value="styleguide">Tema: Neutralt</option>
+            <option value="virkdk">Tema: Virk.dk</option>
+            <option value="borgerdk">Tema: Borger.dk</option>
+          </select>
         </div>
       </div>
       <!-- 3: Main navigation end-->
 
       <!-- 4: Contextual navigation-->
-      <div>
-        <div>
+      <div class="navbar">
+        <div class="nav-secondary">
           <!-- 4A: Contextual header-->
-          <h4>Solution variable</h4>
+          <h4 class="nav-secondary-heading">Solution variable</h4>
           <button class="button button-primary">Toggle</button>
         </div>
-        <div>
+        <div class="nav-actions">
           <!-- 4B: Contextual navigation -->
-          <ul class="unstyled-list">
-            <li>
-                <a href="/frontend-styleguide/components/" class="button button-ghost">Ghost</a>
-            </li>            
-            <li>
-                <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiary</a>
-            </li>
-          </ul>
+          <a href="/frontend-styleguide/components/" class="button button-ghost">Ghost</a>
+          <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiary</a>
         </div>
       </div>
       <!-- 4: Contextual header end-->
 
       <!-- 5: contextual actions-->
-      <div>
-        <ul class="unstyled-list">
-          <li>
-            <a href="" class="icon-link">Print entire guide
-              <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg>
-            </a>
-          </li>            
-        </ul>
+      <div class="navbar">
+        <div class="nav-actions">
+          <a href="" class="icon-link">Print entire guide
+            {{icon_svg("printer")}}
+          </a>
+        </div>
       </div>
 
       <!-- 1B: Portal header: info + actions-->
-      <div class="nav-secondary">
-          <ul class="unstyled-list nav-secondary-links">
-              <li> 
-                  <a href="/frontend-styleguide/getting-started/download/" class="button button-primary">
-                  Download kode og designfiler
-                  </a>
-              </li>
-              <li> 
-                  <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary">
-                  Se på GitHub
-                  </a>
-              </li>
-          </ul>
-      </div>
-
-      <!--2B: Solution header: Authority name + text-->
-      <div class="nav-secondary">
-          <h5>Erhvervsstyrelsen</h5>
-          <p>Support: 78 73 64 12</p>
+      <div class="portal-info">
+        <a href="/frontend-styleguide/getting-started/download/" class="button button-primary">
+          Download kode og designfiler
+        </a>
+        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary">
+          Se på GitHub
+        </a>
       </div>
 
     </nav> <!-- collapsible nav end-->

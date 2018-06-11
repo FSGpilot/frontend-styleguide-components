@@ -10,20 +10,30 @@
   padding-bottom: 0.9rem;
 }
 
-@mixin nav-border-x-thick {
-  border-bottom: 0.9rem solid $color-primary;
-  padding-bottom: 0.5rem;
+@mixin nav-active {
+  border-bottom: 7px solid $color-primary;
+  padding-bottom: 12px;
 }
 
 .navbar {
-  border-bottom: 1px solid $color-gray-light;
-  height: 4rem;
+  width: 100%;
+  padding-left: map-get($spacers, 4);
+  padding-right: map-get($spacers, 4);
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
+  border-bottom: $inner-border;
+  display: flex;
+  flex-direction: column;
 
   @include media($nav-responsive-breakpoint) {
-    border-bottom: none;
-    display: inline-block;
-    height: 7.8rem; // XXX magic number
+    padding: 0;
+    border: 0;
+    flex-direction: row;
   }
+}
+.navbar-primary{
+  border-bottom: $inner-border;
+  padding-top: 0;
 }
 
 .nav-link {
@@ -41,36 +51,32 @@
 // Primary navigation ------------- //
 
 .nav-primary {
-  @include sidenav-list;
-  border: none; //TODO delete later, quick fix.
-  order: 2;
+  @include unstyled-list;
+  display: flex; 
+  flex-direction: column;
+  margin-top: 8px;
 
   @include media($nav-responsive-breakpoint) {
-    display: inline;
-  }
-
-  li {
-    @include media($nav-responsive-breakpoint) {
-      border-top: none;
-    }
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin-top: 0;
   }
 
   > li {
-    width: auto;
-
+    border-bottom: $inner-border;
     @include media($nav-responsive-breakpoint) {
-      display: inline-block;
-      // margin-left: -4px;
+      margin-right: map-get($spacers, 5);
+      border-bottom: 0;
     }
-
     > a {
-      @include media($nav-responsive-breakpoint) {
-        @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
-        color: $color-black;
-        font-size: $base-font-size;
-        font-weight: $font-weight-bold;
-        line-height: 1;
-      }
+      text-decoration: none;
+      color: $color-black;
+      font-size: $base-font-size;
+      line-height: $base-line-height;
+      display: block;
+      padding-top: calc(#{map-get($spacers, 4)} - 1px);
+      padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
 
       &:hover {
         @include media($nav-responsive-breakpoint) {
@@ -87,6 +93,32 @@
 
     &:hover {
       @include media($nav-responsive-breakpoint) {
+      }
+    }
+  }
+
+  button[aria-expanded=true] {
+    span {
+      @include media($nav-responsive-breakpoint) {
+        @include nav-active;
+      }
+    }
+  }
+
+  .current {
+    @include media($nav-responsive-breakpoint) {
+      span {
+        @include nav-active;
+      }
+    }
+  }
+
+  .nav-link {
+    &:hover {
+      span {
+        @include media($nav-responsive-breakpoint) {
+          @include nav-active;
+        }
       }
     }
   }
@@ -189,151 +221,34 @@
       }
     }
   }
+
+  .nav-primary {
+    button {
+      &[aria-expanded=false],
+      &[aria-expanded=true] {
+        @include media($nav-responsive-breakpoint) {
+          background-position: right 1.5rem top 53%;
+        }
+      }
+    }
+  }
+
 }
+
+.nav-secondary{
+  .nav-secondary-heading{
+    margin-bottom: map-get($spacers, 4);
+    @include media($nav-responsive-breakpoint) {
+      margin-bottom: 0;
+    }
+  }
+}
+
 
 // Extended header navigation ------- //
 
-.header-extended {
-
-  .nav-primary {
-    button[aria-expanded=true] {
-      span {
-        @include media($nav-responsive-breakpoint) {
-          @include nav-border-thick;
-        }
-      }
-    }
-
-    .current {
-      @include media($nav-responsive-breakpoint) {
-        span {
-          @include nav-border-x-thick;
-        }
-      }
-    }
-
-    .nav-link {
-      &:hover {
-        span {
-          @include media($nav-responsive-breakpoint) {
-            @include nav-border-x-thick;
-          }
-        }
-      }
-    }
-
-  }
-}
-
-// Secondary navigation ----------- //
-
-.nav-secondary {
-  @include media($nav-responsive-breakpoint) {
-    position: absolute;
-    right: $site-margins;
-    top: -5.7rem; // XXX magic number
-  }
-
-  .search {
-    @include margin(3rem null);
-
-    @include media($nav-responsive-breakpoint) {
-      @include margin(-0.9rem null 0 0);
-      float: left;
-    }
-  }
-}
-
-.nav-secondary-links {
-  @include media($nav-responsive-breakpoint) {
-    float: left;
-  }
-
-  li {
-    @include media($nav-responsive-breakpoint) {
-      display: inline;
-      padding-left: 0.5rem;
-    }
-
-    &:not(:last-child)::after {
-      @include media($nav-responsive-breakpoint) {
-        color: $color-gray-light;
-        content: '|';
-        padding-left: 0.5rem;
-      }
-    }
-  }
-
-  a:not(.button),
-  .header-search-button {
-    display: inline-block;
-    color: $color-gray-medium-dark;
-    font-size: $h5-font-size;
-    text-decoration: none;
-
-    &:hover {
-      color: $color-primary;
-      text-decoration: underline;
-    }
-  }
-  a.button{
-    display: inline;
-  }
-
-  .header-search-button {
-    @include button-unstyled;
-    display: none;
-
-    @include media($nav-responsive-breakpoint) {
-      background-image: url('#{$image-path}/search-alt.png');
-      background-image: url('#{$image-path}/search-alt.svg');
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 2.2rem;
-      display: inline-block;
-      padding-left: 2.3rem;
-    }
-
-    &.is-hidden {
-      @include media($nav-responsive-breakpoint) {
-        display: none;
-      }
-    }
-  }
-
-  @include media($nav-responsive-breakpoint) {
-    a.current { // stylelint-disable-line selector-no-qualifying-type
-      // undo the sidenav style
-      border-left: 0;
-      padding-left: 0;
-    }
-  }
-}
-
 .nav-tertiary{
   padding-top: 1.4rem;
-
-  button{
-    margin-right: 0;
-  }
-
-  select {
-    display: inline;
-    width: auto;
-    height: auto;
-    padding: .3rem 3rem .3rem 0.3rem;
-    font-size: 1.4rem;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
-    text-align-last: right;
-    //background-image: url('#{$image-path}/svg-icons/angle-arrow-down.png');
-    //background-image: url('#{$image-path}/svg-icons/angle-arrow-down.svg');
-
-    option {
-      direction: rtl;
-    }
-  }
 }
 
 // Navigation submenu (dropdown and mega menu) ----- //

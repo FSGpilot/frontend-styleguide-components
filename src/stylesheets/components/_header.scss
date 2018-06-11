@@ -1,6 +1,4 @@
 // Header variables ---------- //
-
-$height-nav-secondary: 5rem;
 $width-nav-sidebar:    250px;
 
 // z-indexes - TODO refactor to a site-wide z-index management approach
@@ -12,11 +10,13 @@ $z-index-nav:     9000;
 
 .header {
   width: 100%;
-  background-color: $color-gray-pale;
+  //background-color: $color-gray-pale;
   z-index: $z-index-header;
-
-  a {
-    border-bottom: none;
+  padding-left: calc(#{$grid-gutter-width}/2);
+  padding-right: calc(#{$grid-gutter-width}/2);
+  @include media($grid-xl){
+   padding-left: 0;
+   padding-right: 0;
   }
 
   .logo{
@@ -28,6 +28,26 @@ $z-index-nav:     9000;
     height: 60px;
     width: 200px;
   }
+  
+  .button{
+    width: 100%;
+    @include media($nav-responsive-breakpoint) {
+      width: auto;
+    }
+  }
+  h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  @include media($nav-responsive-breakpoint) {
+    .form-select, .form-input{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .form-select, .form-input{
+      width: auto; //overwrite width 100%
+    }
+  }
 
   .button-menu-open {
     @include media($nav-responsive-breakpoint) {
@@ -35,9 +55,10 @@ $z-index-nav:     9000;
     }
   }
   .button-menu-close {
-    display: inline-flex;
-    width: min-content;
-    align-self: flex-end;
+    width: unset;
+    margin-left: auto;
+    display: flex;
+    margin-right: map-get($spacers, 4);
     .icon-svg{
       margin: 0 8px 0 0;
     }
@@ -52,20 +73,57 @@ $z-index-nav:     9000;
 
   .portal-header{
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    display: block;
-    height: auto;
-    border-bottom: 1px solid $color-white;
+    padding-top: calc(#{map-get($spacers, 4)} - 1px);
+    padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+    border-bottom: $inner-border;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media($nav-responsive-breakpoint) {
+      align-items: center;
+      flex-direction: row;
+    }
+    
+    .portal-info{
+      @include media($nav-responsive-breakpoint) {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        max-width: 60%;
+      }
+    }
   }
 
   .solution-header{
-    .solution-heading {
+    border-bottom: $inner-border;
+    display: flex;
+    flex-direction: column;
+    padding-top: calc(#{map-get($spacers, 4)} - 1px);
+    padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media($nav-responsive-breakpoint) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .solution-heading{
       @include h3;
-      a {
+      a{
         color: $color-black;
         text-decoration: none;
+      }
+    }
+    .solution-info{
+      display: none;
+      @include media($nav-responsive-breakpoint) {
+        margin-left: auto;
+        text-align: right;
+        max-width: 60%;
+        display: block;
       }
     }
   }
@@ -85,12 +143,12 @@ $z-index-nav:     9000;
     @include position(fixed, 0 0 0 auto);
 
     background: $color-white;
-    //border-left: 1px solid $color-gray-light;
-    //border-right: 0;
     display: none;
     flex-direction: column;
     overflow-y: auto;
-    padding: map-get($spacers, 4);
+    padding: 0;
+    padding-top: map-get($spacers, 4);
+    padding-bottom: map-get($spacers, 4);
     width: $sliding-panel-width;
     z-index: $z-index-nav;
 
@@ -99,30 +157,19 @@ $z-index-nav:     9000;
       border-left: none;
       display: block;
       overflow-y: visible;
-      position: relative;
-      transform: translateX(0);
+      position: static;
+      //transform: translateX(0);
       width: auto;
     }
 
     @include media($nav-responsive-breakpoint) {
-      background-color: $color-gray-pale;
-      border-top: 1px solid $color-white;
       padding: 0;
       width: 100%;
     }
 
     &.is-visible {
       animation: slidein-left 0.3s ease-in-out;
-      display: flex;
-    }
-
-    nav {
-      margin-top: 4rem; // XXX magic number
-      min-height: 100%;
-
-      @include media($nav-responsive-breakpoint) {
-        margin-top: 0;
-      }
+      display: block;
     }
 
     .current {
@@ -137,17 +184,33 @@ $z-index-nav:     9000;
     }
   }
 
-  .nav-primary {
-    button {
-      &[aria-expanded=false],
-      &[aria-expanded=true] {
-        @include media($nav-responsive-breakpoint) {
-          background-position: right 1.5rem top 53%;
-        }
+  .nav-actions{
+    margin-top: map-get($spacers, 4);
+    &:first-child{
+      margin-top: 0;
+    }
+    & > *{
+      margin-top: map-get($spacers, 3);
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    
+    @include media($nav-responsive-breakpoint) {
+      margin-top: 0;
+      margin-left: auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-right: -4px;
+      & > *{
+        margin: calc(#{map-get($spacers, 3)} - 1px) 4px;
       }
     }
   }
 }
+
 .overlay {
   @include position(fixed, 0);
   background: $color-black;
