@@ -31,7 +31,7 @@
     <!--1A: Portal header -->
     <div class="container portal-header">
       <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
-      <button class="button button-secondary button-menu-open js-menu-open">Menu</button>
+      <button class="button button-secondary button-menu-open js-menu-open ml-auto">Menu</button>
 
       <!-- 1B: Portal header: info + actions-->
       <div class="portal-info">
@@ -133,9 +133,9 @@
       <!-- 4: Secondary header end-->
 
       <!-- 5: Contextual actions-->
-      <div class="navbar">
+      <div class="navbar navbar-context-actions">
         <div class="nav-actions">
-          <a href="" class="icon-link">Print entire guide
+          <a href="" class="function-link">Print entire guide
             {{icon_svg("printer")}}
           </a>
         </div>
@@ -145,9 +145,14 @@
       <div class="portal-info-mobile">
         <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
         <p>Københavns Urmager Værksted v/Martin Elsig</p>
-        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary">
+        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary button-signout">
           Sign out
         </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Styrelsen for International Rekruttering og Integration</b></p>
+        <p>Support: 12 34 56 78</p>
       </div>
 
     </nav> <!-- collapsible nav end-->

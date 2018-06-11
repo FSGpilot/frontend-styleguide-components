@@ -35,6 +35,11 @@
   border-bottom: $inner-border;
   padding-top: 0;
 }
+.navbar-context-actions{
+  @include media($nav-responsive-breakpoint) {
+    padding-top: map-get($spacers, 3);
+  }
+}
 
 .nav-link {
   @include font-smoothing;
