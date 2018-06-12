@@ -26,21 +26,24 @@
 {#}
 {{ header_simple(portal_header_data, solution_header_data, solution_nav, top_nav, top_nav_buttons) }}
 #}
+<header class="header header-extended" role="banner">
+  {{ portal_header(portal_header_data) }}
+</header>
 
 <header class="header header-extended" role="banner">
     <!--1A: Portal header -->
     <div class="container portal-header">
       <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
-      <button class="button button-secondary button-menu-open js-menu-open ml-auto">Menu</button>
+      <button class="button button-secondary button-menu-open js-menu-open ml-auto" aria-haspopup="menu" title="Åben mobil menu">Menu</button>
 
       <!-- 1B: Portal header: info + actions-->
       <div class="portal-info">
         <p class="user"><b>Lone Hansen</b> · Snedkeren fra Nordvest ApS</p>
 
-        <a href="/frontend-styleguide/getting-started/download/" class="button button-primary">
+        <a href="/frontend-styleguide/getting-started/download/" class="button button-primary" role="button">
           Download kode og designfiler
         </a>
-        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary">
+        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary" role="button">
           Se på GitHub
         </a>
        
@@ -61,33 +64,33 @@
     </div>
 
     <nav role="navigation" class="container nav"> <!-- collapsible-->
-      <button class="button button-secondary button-menu-close js-menu-close">{{icon_svg("close")}}Luk</button>
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
       <!-- 3: Main navigation-->
       <div class="navbar navbar-primary">
         <!--3A: Main navigation-->
         <ul class="nav-primary">
             <li>
-                <a href="/frontend-styleguide/components/" class="nav-link">
+                <a href="/frontend-styleguide/components/" class="nav-link" title="Designsystem">
                     <span>Designsystem</span>
                 </a>
             </li>            
             <li>
-                <a href="/frontend-styleguide/page-templates/" class="nav-link">
+                <a href="/frontend-styleguide/page-templates/" class="nav-link" title="Eksempler">
                     <span>Eksempler</span>
                 </a>
             </li>
             <li>
-                <a href="/frontend-styleguide/getting-started/" class="nav-link">
+                <a href="/frontend-styleguide/getting-started/" class="nav-link" title="Kom godt i gang">
                     <span>Kom godt i gang</span>
                 </a>
             </li>
             <li>
-                <a href="/frontend-styleguide/faellesoffentlige-krav/" class="nav-link">
+                <a href="/frontend-styleguide/faellesoffentlige-krav/" class="nav-link" title="Fællesoffentlige krav">
                     <span>Fællesoffentlige krav</span>
                 </a>    
             </li>
             <li>
-                <a href="/frontend-styleguide/whats-new/" class="nav-link">
+                <a href="/frontend-styleguide/whats-new/" class="nav-link" title="Om design systemet">
                     <span>Om designsystemet</span>
                 </a>
             </li>
@@ -99,7 +102,7 @@
             <button class="button button-tertiary">Tertiary</button>
           </li>
           <li>
-            <select class="form-select style-switcher" name="Style switcher">
+            <select class="form-select style-switcher" name="Style switcher" aria-label="Skift mellem temaer">
               <option value="">- Vælg tema -</option>
               <option value="styleguide">Tema: Neutralt</option>
               <option value="virkdk">Tema: Virk.dk</option>
