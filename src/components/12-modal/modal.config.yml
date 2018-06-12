@@ -9,7 +9,7 @@ context:
         close: 'Luk'
         title: 'Modal titel for passive modal'
         description: 'Her skal stå en form for beskrivelse'
-
+        modalbuttons: true;
       # - type: "modal"
       #   close: 'Luk'
       #   title: 'Modal titel for transactional modal'
