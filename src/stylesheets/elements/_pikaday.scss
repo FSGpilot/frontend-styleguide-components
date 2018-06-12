@@ -70,6 +70,10 @@ $pd-font-size: $body-text;
     }
 
     &:after { clear: both }
+
+    *:focus{
+        outline: none;
+    }
 }
 
 .pika-lendar {
