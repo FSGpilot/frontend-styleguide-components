@@ -1,6 +1,5 @@
 
 function Dialog(dialogEl, overlayEl) {
-
 	this.dialogEl = dialogEl;
 	this.overlayEl = overlayEl;
 	this.focusedElBeforeOpen;
@@ -109,9 +108,11 @@ Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
 };
 
 
-var navDialogEl = document.querySelector('.modal-js');
-var dialogOverlay = document.querySelector('.modal-js-overlay');
-
-var myDialog = new Dialog(navDialogEl, dialogOverlay);
-myDialog.addEventListeners('.open-js-modal', '.close-js-modal');
+var navDialogEl = document.querySelector('.js-modal');
+var dialogOverlay = document.querySelector('.js-modal-overlay');
+if(navDialogEl !== null && dialogOverlay !== null && navDialogEl !== undefined && dialogOverlay !== undefined){
+    var myDialog = new Dialog(navDialogEl, dialogOverlay);
+    myDialog.addEventListeners('.js-open-modal', '.js-close-modal');
+    
+}
 

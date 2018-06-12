@@ -14,7 +14,6 @@ require('./polyfills');
 const dkwds = require('./config');
 
 const jsSelectorDatepicker = '.js-calendar-group';
-const jsSelectorModal = '.modal-js';
 
 const components = require('./components');
 dkwds.components = components;
@@ -30,10 +29,7 @@ domready(() => {
   forEach(select(jsSelectorDatepicker), calendarGroupElement => {
     new datepicker(calendarGroupElement);
   });
-  //Init datepicker.  (Note: above 'behavior.on' does not work with pikaday -> seperate initialization)
-  forEach(select(jsSelectorModal), modalElement => {
-    new datepicker(modalElement);
-  });
+
 });
 
 module.exports = dkwds;
