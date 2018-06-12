@@ -4,11 +4,21 @@ status: ready
 context:
   portal_header_data:
     title: Portal Header from config
-    id_prefix: basic-
-    link: 
+    id_prefix: ''
+    user:
+      name: 'Lone hansen'
+      work: 'Snedkeren fra Nordvest ApS'
+    logolink: 
       - title: Distinct from each other
         href: 'javascript:void(0);'
         label: label
+    links:
+      - text: Download kode og designfiler
+        href: '#'
+        class: 'button-primary'
+      - text: Se på GitHub
+        href: '#'
+
   solution_header_data:
     title: Solution Header from config
     id_prefix: basic-

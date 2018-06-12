@@ -2,13 +2,30 @@
 
 #}
 {% macro portal_header(portal_header) %}
-  <div class="portal-header">
+  {#<div class="portal-header">
     <div class="portal-header-inner">
       <a href="{{ portal_header.link.href | default('/') }}"
           title="{{ portal_header.link.title | default('Home') }}"
           aria-label="{{ portal_header.link.label | default('Home') }}">
           <div class="logo" id="{{ portal_header.id_prefix }}logo"></div>
       </a>
+    </div>
+  </div>#}
+
+  <div class="container portal-header">
+    <a href="{{ portal_header.logolink.href | default('/') }}" title="{{ portal_header.logolink.title | default('Home') }}" aria-label="{{ portal_header.logolink.label | default('Home') }}" class="logo"></a>
+    <button class="button button-secondary button-menu-open js-menu-open ml-auto" aria-haspopup="menu" title="Åben mobil menu">Menu</button>
+    <!-- 1B: Portal header: info + actions-->
+    <div class="portal-info">
+      
+      {% if portal_header.user %}
+        <p class="user"><b>{{ portal_header.user.name}}</b> · {{ portal_header.user.work}}</p>
+      {% endif %}
+      {% for link in portal_header.links %}
+        <a href="{{ link.href }}" class="button {{ link.class | default('button-secondary') }}" role="button">
+          {{ link.text }}
+        </a>
+      {% endfor %}
     </div>
   </div>
 {% endmacro %}
