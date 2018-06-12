@@ -135,7 +135,12 @@ class datatablesExamples {
             { "data": "address.street" },
             { "data": "address.city" },
             { "data": "phone" },
-            { "data": "company.name" }
+            { "data": "company.name" },
+                {
+                "targets": -1,
+                "data": null,
+                "defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Hest</li><li class='deleterow'>Delete</li></ul></div>"
+            }
         ],
         "order": [[1, 'asc']]
     } );
@@ -159,14 +164,14 @@ class datatablesExamples {
 
 
 
-    /*function myCallbackFunction (updatedCell, updatedRow, oldValue) {
+    function myCallbackFunction (updatedCell, updatedRow, oldValue) {
       console.log("The new value for the cell is: " + updatedCell.data());
       console.log("The values for each cell in that row are: " + updatedRow.data());
     }
 
-    table.MakeCellsEditable({
-        "onUpdate": myCallbackFunction
-    });*/
+    // table_basic.MakeCellsEditable({
+    //     "onUpdate": myCallbackFunction
+    // });
 
 
   }
