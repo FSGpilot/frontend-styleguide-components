@@ -16,9 +16,11 @@ const toggle = function (event) {
         //remove all old opens
         forEach(select(jsOverflowMenu, 'body'), menuInstance => {
             menuInstance.classList.remove("open");
+            menuInstance.setAttribute("aria-expanded", "false");
         });
-        //add  new open
-        menu.classList.toggle("open");
+        //add new open
+        menu.classList.add("open");
+        menu.setAttribute("aria-expanded", "true");
     }
 };
 
@@ -28,6 +30,7 @@ const outsideClose = function(){
     if(menu === null || menu === undefined){
         forEach(select(jsOverflowMenu), menu => {
             menu.classList.remove("open");
+            menu.setAttribute("aria-expanded", "false");
         });
     }
 };
@@ -38,6 +41,7 @@ const itemClick = function(){
     if(menu !== null && menu !== undefined){
         forEach(select(jsOverflowMenu), menu => {
             menu.classList.remove("open");
+            menu.setAttribute("aria-expanded", "false");
         });
     }
 };
