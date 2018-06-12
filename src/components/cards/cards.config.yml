@@ -23,10 +23,10 @@ context:
         header: 'Header'
         subheader: 'Understøttende tekst'
         headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
-        cardcontent: 'Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik <ul><li>Liste element</li><li>Liste element</li><li>Liste element</li></ul>'
+        cardcontent: 'Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik <ul><li>Listeelement</li><li>Listeelement</li><li>Listeelement</li></ul>'
         cardcontentmedia: '<img src="http://via.placeholder.com/350x150">'
         actioncontent: '<p>Dette <em>aktionsområde</em>, kan indeholde interaktioner, såsom knapper og links.</p>'
         actionbuttons: '<button class="button button-primary">Indberet XYZ</button> <button class="button button-ghost">Se dit overblik</button>'
-        actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li><li><a href="javascript:void(0);" class="default link state">Informations link</a></li></ul>'
+        actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
         actionfunctionlinks: '<a href="#" class="function-link">Tilføj til kalender<svg class="icon-svg "><use xlink:href="#calendar"></use></svg></a><a href="#" class="function-link">Print<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'
         
