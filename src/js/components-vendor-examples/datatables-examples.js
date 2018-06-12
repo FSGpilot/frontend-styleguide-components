@@ -89,20 +89,32 @@ class datatablesExamples {
     // Formatting function for row details - modify as you need
     function format ( d ) {
         // `d` is the original data object for the row
-        return '<div class="details-row-content"><table>'+
-            '<tr>'+
-                '<td>Full name:</td>'+
-                '<td>'+d.name+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Email:</td>'+
-                '<td>'+d.email+'</td>'+
-            '</tr>'+
-            '<tr>'+
-                '<td>Extra info:</td>'+
-                '<td>And any further details here (images etc)...</td>'+
-            '</tr>'+
-        '</table></div>';
+        return '<div class="details-row-content">'+
+          // '<table>'+
+          //     '<tr>'+
+          //         '<td>Full name:</td>'+
+          //         '<td>'+d.name+'</td>'+
+          //     '</tr>'+
+          //     '<tr>'+
+          //         '<td>Email:</td>'+
+          //         '<td>'+d.email+'</td>'+
+          //     '</tr>'+
+          //     '<tr>'+
+          //         '<td>Extra info:</td>'+
+          //         '<td>And any further details here (images etc)...</td>'+
+          //     '</tr>'+
+          // '</table>'+
+          '<div class="dataset row">'+
+            '<div class="col-5">'+
+              '<h3>Headline</h3>' +
+              '<p>sdflkjsdflkj sdfs sd sdfsdflkjsd f lkjsdf sdflk lkjsdf lkjsdflkjsdflksdflk <a href="#">SDJSDKSDLKJH</a></p>'+
+            '</div>'+
+            '<div class="col-6">'+
+              '<div class="chart">' +
+                '<img src="https://ramen-files.s3.amazonaws.com/charturl-images/2017-01-26/9b64e497-3a7a-40c8-b7c7-322f84f84ba9.png"></div>' +
+              '</div>'+
+            '</div>' +
+        '</div>';
     }
 
 
