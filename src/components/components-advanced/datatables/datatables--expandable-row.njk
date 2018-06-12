@@ -1,59 +1,79 @@
+<!-- MODAL START -->
+<div class="modal-overlay js-modal-overlay-transactional" id="js-modal-overlay" tabindex="-1" aria-hidden="false">
+
+    <div class="modal js-modal-transactional" role="modal" aria-labelledby="modal-title" aria-describedby="modal-description">
+  		<button type="button" aria-label="Close Navigation" class="js-close-modal close-modal button button-ghost">Luk</button>
+  		<h3 class="modal-title" class="font-lead">Datatable details row</h3>
+  		<p class="modal-description">Suspendisse quis nisi vel ex condimentum vehicula. Donec fermentum sapien eget vehicula interdum. Integer mollis nibh faucibus ullamcorper varius</p>
+
+      <!-- EDIT FORM START -->
+      <div class="row">
+        <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <div class="alert alert-error alert--show-icon" role="alert" aria-label="Beskedbox der viser en fejlmeddelselse">
+                  <div class="alert-body"><h3 class="alert-heading">Error alert - with icon</h3><p class="alert-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form method="" name="" action="">
+
+              <div class="form-group">
+                <label class="form-label">Navn:</label>
+                <input class="form-input" name="" type="text">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email:</label>
+                <input class="form-input" name="" type="email">
+              </div> 
+              <div class="form-group input-error">
+                 <label class="form-label " for="input-error">Fejl i vejnavn</label>
+                  <span class="input-error-message" id="input-error-message-input-error" role="alert">Vejnavn</span>
+                  <span class="form-hint" id="input-hint-message-input-error">For example, lærkevej</span>
+                 <input class="form-input  " id="input-error" name="input-error" type="text" aria-describedby="input-error-message-input-error">
+              </div>
+              <div class="form-group">
+                  <label class="form-label">By:</label>
+                  <input class="form-input" name="" type="text">
+              </div>
+              <div class="form-group">
+                  <label class="form-label">Telefon:</label>
+                  <input class="form-input" name="" type="tel">
+              </div>
+              <div class="form-group">
+                  <label class="form-label">Firmanavn:</label>
+                  <input class="form-input" name="" type="text">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="button button-primary" value="Gem" />
+                <button class="button button-ghost">Annuller</button>
+              </div>
+          </form>
+        </div>
+      </div>
+      <!-- EDIT FORM END -->
+  	</div>
+</div>
+<!-- MODAL END -->
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-        <h3 class="h3">Datatable - expandable details row</h3>
-
-        <form method="" name="" action="">
-          <div class="form-group">
-            <label class="form-label">Navn:</label>
-            <input class="form-input" name="" type="text">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email:</label>
-            <input class="form-input" name="" type="email">
-          </div>
-          <div class="form-group">
-              <label class="form-label">Vejnavn:</label>
-              <input class="form-input" name="" type="text">
-          </div>
-          <div class="form-group">
-              <label class="form-label">By:</label>
-              <input class="form-input" name="" type="text">
-          </div>
-          <div class="form-group">
-              <label class="form-label">Telefon:</label>
-              <input class="form-input" name="" type="tel">
-          </div>
-          <div class="form-group">
-              <label class="form-label">Firmanavn:</label>
-              <input class="form-input" name="" type="text">
-          </div>
-          <div class="form-group">
-            <input type="submit" class="button button-primary" value="Submit" />
-            <button class="button button-ghost">Default</button>
-          </div>
-      </form>
-    </div>
-  </div>
-
-<div class="row">
-        <table id="js-datatable-example-detailsrow" class="table zebra hover">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Navn</th>
-                    <th>Email</th>
-                    <th>Vej</th>
-                    <th>By</th>
-                    <th>Telefon</th>
-                    <th>Firmanavn</th>
-                    <th>dots-vertical</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--Filled in by js-->
-            </tbody>
-        </table>
-    </div>
+    <div class="row">
+      <table id="js-datatable-example-detailsrow" class="table zebra hover">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Navn</th>
+                  <th>Email</th>
+                  <th>Vej</th>
+                  <th>By</th>
+                  <th>Telefon</th>
+                  <th>Firmanavn</th>
+                  <th>dots-vertical</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!--Filled in by js-->
+          </tbody>
+      </table>
   </div>
 </div>

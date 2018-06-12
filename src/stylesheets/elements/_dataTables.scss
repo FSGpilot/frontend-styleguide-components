@@ -81,7 +81,7 @@ table.dataTable {
       display: block;
       cursor:pointer;
       &.selected {
-        background-color: $color-white;
+        //background-color: $color-white;
       }
     }
     .dots-vertical-content {
@@ -124,7 +124,7 @@ table.dataTable {
           }
 
           &.selected {
-            border-left: solid 4px $color-gray-medium-dark; 
+            border-left: solid 4px $color-gray-medium-dark;
           }
 
           &.editrow {
@@ -396,22 +396,22 @@ table.dataTable {
         }
     }
 
-    &.compact {
-        thead th,
-        thead td {
-            padding: 4px 17px 4px 4px;
-        }
-
-        tfoot th,
-        tfoot td {
-            padding: 4px;
-        }
-
-        tbody th,
-        tbody td {
-            padding: 4px;
-        }
-    }
+    // &.compact {
+    //     thead th,
+    //     thead td {
+    //         padding: 4px 17px 4px 4px;
+    //     }
+    //
+    //     tfoot th,
+    //     tfoot td {
+    //         padding: 4px;
+    //     }
+    //
+    //     tbody th,
+    //     tbody td {
+    //         padding: 4px;
+    //     }
+    // }
 
 
     // Typography
