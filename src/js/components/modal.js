@@ -1,10 +1,10 @@
 
-function Dialog(dialogEl, overlayEl) {
-	this.dialogEl = dialogEl;
+function Modal(modalEl, overlayEl) {
+	this.modalEl = modalEl;
 	this.overlayEl = overlayEl;
 	this.focusedElBeforeOpen;
 
-	var focusableEls = this.dialogEl.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
+	var focusableEls = this.modalEl.querySelectorAll('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
 	this.focusableEls = Array.prototype.slice.call(focusableEls);
 
 	this.firstFocusableEl = this.focusableEls[0];
@@ -14,29 +14,29 @@ function Dialog(dialogEl, overlayEl) {
 }
 
 
-Dialog.prototype.open = function() {
+Modal.prototype.open = function() {
 
-	var Dialog = this;
+	var Modal = this;
 
-	this.dialogEl.removeAttribute('aria-hidden');
+	this.modalEl.removeAttribute('aria-hidden');
 	this.overlayEl.removeAttribute('aria-hidden');
 
 	this.focusedElBeforeOpen = document.activeElement;
 
-	this.dialogEl.addEventListener('keydown', function(e) {
-		Dialog._handleKeyDown(e);
+	this.modalEl.addEventListener('keydown', function(e) {
+		Modal._handleKeyDown(e);
 	});
 
 	this.overlayEl.addEventListener('click', function() {
-		Dialog.close();
+		Modal.close();
 	});
 
 	this.firstFocusableEl.focus();
 };
 
-Dialog.prototype.close = function() {
+Modal.prototype.close = function() {
 
-	this.dialogEl.setAttribute('aria-hidden', true);
+	this.modalEl.setAttribute('aria-hidden', true);
 	this.overlayEl.setAttribute('aria-hidden', true);
 
 	if ( this.focusedElBeforeOpen ) {
@@ -45,28 +45,28 @@ Dialog.prototype.close = function() {
 };
 
 
-Dialog.prototype._handleKeyDown = function(e) {
+Modal.prototype._handleKeyDown = function(e) {
 
-	var Dialog = this;
+	var Modal = this;
 	var KEY_TAB = 9;
 	var KEY_ESC = 27;
 
 	function handleBackwardTab() {
-		if ( document.activeElement === Dialog.firstFocusableEl ) {
+		if ( document.activeElement === Modal.firstFocusableEl ) {
 			e.preventDefault();
-			Dialog.lastFocusableEl.focus();
+			Modal.lastFocusableEl.focus();
 		}
 	}
 	function handleForwardTab() {
-		if ( document.activeElement === Dialog.lastFocusableEl ) {
+		if ( document.activeElement === Modal.lastFocusableEl ) {
 			e.preventDefault();
-			Dialog.firstFocusableEl.focus();
+			Modal.firstFocusableEl.focus();
 		}
 	}
 
 	switch(e.keyCode) {
 	case KEY_TAB:
-		if ( Dialog.focusableEls.length === 1 ) {
+		if ( Modal.focusableEls.length === 1 ) {
 			e.preventDefault();
 			break;
 		} 
@@ -77,7 +77,7 @@ Dialog.prototype._handleKeyDown = function(e) {
 		}
 		break;
 	case KEY_ESC:
-		Dialog.close();
+    Modal.close();
 		break;
 	default:
 		break;
@@ -87,32 +87,41 @@ Dialog.prototype._handleKeyDown = function(e) {
 };
 
 
-Dialog.prototype.addEventListeners = function(openDialogSel, closeDialogSel) {
+Modal.prototype.addEventListeners = function(openModalSel, closeModalSel) {
 
-	var Dialog = this;
+	var Modal = this;
 
-	var openDialogEls = document.querySelectorAll(openDialogSel);
-	for ( var i = 0; i < openDialogEls.length; i++ ) {
-		openDialogEls[i].addEventListener('click', function() { 
-			Dialog.open();
+	var openModalEls = document.querySelectorAll(openModalSel);
+	for ( var i = 0; i < openModalEls.length; i++ ) {
+		openModalEls[i].addEventListener('click', function() { 
+			Modal.open();
 		});
 	}
 
-	var closeDialogEls = document.querySelectorAll(closeDialogSel);
-	for ( var i = 0; i < closeDialogEls.length; i++ ) {
-		closeDialogEls[i].addEventListener('click', function() {
-			Dialog.close();
+	var closeModalEls = document.querySelectorAll(closeModalSel);
+	for ( var i = 0; i < closeModalEls.length; i++ ) {
+		closeModalEls[i].addEventListener('click', function() {
+			Modal.close();
 		});
 	}
 
 };
 
 
-var navDialogEl = document.querySelector('.js-modal');
-var dialogOverlay = document.querySelector('.js-modal-overlay');
-if(navDialogEl !== null && dialogOverlay !== null && navDialogEl !== undefined && dialogOverlay !== undefined){
-    var myDialog = new Dialog(navDialogEl, dialogOverlay);
-    myDialog.addEventListeners('.js-open-modal', '.js-close-modal');
+var navModalEl = document.querySelector('.js-modal-passive', );
+var modalOverlay = document.querySelector('.js-modal-overlay-passive');
+if(navModalEl !== null && modalOverlay !== null && navModalEl !== undefined && modalOverlay !== undefined){
+    var myModal = new Modal(navModalEl, modalOverlay);
+    myModal.addEventListeners('.js-open-modal-passive', '.js-close-modal-passive');
     
 }
+
+var navModalEl11 = document.querySelector('.js-modal-transactional', );
+var modalOverlay11 = document.querySelector('.js-modal-overlay-transactional');
+if(navModalEl11 !== null && modalOverlay11 !== null && navModalEl11 !== undefined && modalOverlay11 !== undefined){
+    var myModal = new Modal(navModalEl11, modalOverlay11);
+    myModal.addEventListeners('.js-open-modal-transactional', '.js-close-modal-transactional');
+    
+}
+
 

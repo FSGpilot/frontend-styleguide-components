@@ -5,13 +5,13 @@ preview: '@dkwds-framed'
 context:
   modalpassive_example:
     items:
-      - type: "modal"
+      - type: "passive"
         close: 'Luk'
         title: 'Modal titel for passive modal'
         description: 'Her skal stå en form for beskrivelse'
-  # modaltransactional_example:
-  #   items:
-  #     - type: "transactional"
-  #       close: 'Luk'
-  #       title: 'Modal titel for transactional modal'
-  #       description: 'Her skal stå en form for beskrivelse'
+  modaltransactional_example:
+    items:
+      - type: "transactional"
+        close: 'Luk'
+        title: 'Modal titel for transactional modal'
+        description: 'Her skal stå en form for beskrivelse'
