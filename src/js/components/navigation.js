@@ -7,12 +7,12 @@ const accordion = require('./accordion');
 const CLICK = require('../events').CLICK;
 const PREFIX = require('../config').prefix;
 
-const NAV = `.${PREFIX}-nav`;
+const NAV = `.nav`;
 const NAV_LINKS = `${NAV} a`;
-const OPENERS = `.${PREFIX}-menu-btn`;
-const CLOSE_BUTTON = `.${PREFIX}-nav-close`;
-const OVERLAY = `.${PREFIX}-overlay`;
-const CLOSERS = `${CLOSE_BUTTON}, .${PREFIX}-overlay`;
+const OPENERS = `.js-menu-open`;
+const CLOSE_BUTTON = `.js-menu-close`;
+const OVERLAY = `.overlay`;
+const CLOSERS = `${CLOSE_BUTTON}, .overlay`;
 const TOGGLES = [ NAV, OVERLAY ].join(', ');
 
 const ACTIVE_CLASS = 'usa-mobile_nav-active';
