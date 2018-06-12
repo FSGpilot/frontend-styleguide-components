@@ -21,8 +21,8 @@ context:
 
   solution_header_data:
     title: Solution Header from config
-    id_prefix: basic-
-    link: 
+    id_prefix: ''
+    titlelink: 
       - title: Distinct from each other
         href: 'javascript:void(0);'
         label: label
