@@ -6,8 +6,6 @@ const forEach = require('array-foreach');
 
 const jsDropdownTrigger = ".js-dropdown";
 const jsDropdownTarget = "data-js-target";
-//const jsDropdownItem = ".js-dropdown-item";
-
 
 const toggleDropdown = function (triggerEl, forceClose) {
     if(triggerEl !== null && triggerEl !== undefined){
@@ -64,6 +62,5 @@ module.exports = behavior({
   ['click']: {
     [ jsDropdownTrigger ]: toggle,
     ['body']: outsideClose,
-    //[jsDropdownItem]: itemClick
   },
 });

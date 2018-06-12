@@ -41,18 +41,6 @@
   }
 }
 
-.nav-link {
-  @include font-smoothing;
-  &.accordion-button {
-    span {
-      @include media($nav-responsive-breakpoint) {
-        margin-right: 0;
-        padding-right: 1.5rem;
-      }
-    }
-  }
-}
-
 // Primary navigation ------------- //
 
 .nav-primary {
@@ -129,21 +117,19 @@
   }
 
   button {
-    $button-vertical-offset: 40%;
-
     @include button-unstyled;
-    @include font-smoothing;
-    font-weight: $font-weight-normal;
-    line-height: 1.3;
-    padding: 0.85rem 1.5rem 0.85rem 1.8rem;
-
+    color: $color-black;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    display: block;
+    width: 100%;
+    padding-top: calc(#{map-get($spacers, 4)} - 1px);
+    padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
     @include media($nav-responsive-breakpoint) {
-      @include padding(1.3rem 1.5rem 2.2rem 1.5rem);
-      color: $color-gray-medium-dark;
-      font-size: $h5-font-size;
-      font-weight: $font-weight-bold;
-      line-height: 1;
-      width: initial;
+      width: unset;
+    }
+    span{
+      padding-right: map-get($spacers, 7);
     }
 
     &:focus,
@@ -151,80 +137,35 @@
       box-shadow: $focus-outline;
     }
 
-    &:hover {
-      background-color: $color-gray-pale;
-      color: $color-primary;
+    &[aria-expanded=false] {
+      background-image: url('#{$icons-folder-path}/plus.svg');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 24px;
 
       @include media($nav-responsive-breakpoint) {
-        background-color: transparent;
+        background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
+        background-position: right 1.5rem center;
       }
     }
 
-    &[aria-expanded=false] { /* stylelint-disable-line selector-no-qualifying-type */
-      background-image: url('#{$image-path}/plus-alt.png');
-      background-image: url('#{$image-path}/plus-alt.svg');
+    &[aria-expanded=true] { 
+      background-image: url('#{$icons-folder-path}/minus.svg');
       background-repeat: no-repeat;
-      background-position: right 0 center;
-      background-size: 1rem;
+      background-position: right 16px center;
+      background-size: 24px;
 
       @include media($nav-responsive-breakpoint) {
-        background-image: url('#{$image-path}/angle-arrow-down.png');
-        background-image: url('#{$image-path}/angle-arrow-down.svg');
-        background-position: right 1.5rem top $button-vertical-offset;
-      }
+        background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
+        background-position: right 1.5rem center;
 
-      &:hover {
-        @include media($nav-responsive-breakpoint) {
-          background-image: url('#{$image-path}/angle-arrow-down-primary.png');
-          background-image: url('#{$image-path}/angle-arrow-down-primary.svg');
-        }
-      }
-    }
-
-    &[aria-expanded=true] { /* stylelint-disable-line selector-no-qualifying-type */
-      background-image: url('#{$image-path}/minus-alt.png');
-      background-image: url('#{$image-path}/minus-alt.svg');
-      background-repeat: no-repeat;
-      background-position: right 0 center;
-      background-size: 1rem;
-
-      @include media($nav-responsive-breakpoint) {
-        background-color: $color-gray-medium-dark;
-        color: $color-white;
-        background-image: url('#{$image-path}/angle-arrow-down-hover.png');
-        background-image: url('#{$image-path}/angle-arrow-down-hover.svg');
-        background-position: right 1.5rem top $button-vertical-offset;
-
-        &:hover {
-          background-color: $color-gray-medium-dark;
-        }
-
-        span {
-          @include nav-border;
-          color: $color-white;
-        }
       }
     }
   }
 
-  @include media($nav-responsive-breakpoint) {
-    a.current,
-    .current { // stylelint-disable-line selector-no-qualifying-type
-      // undo the sidenav style
-      border-left: 0;
-      padding-left: 1.5rem;
-
-      &:hover {
-        span {
-          color: $color-primary;
-        }
-      }
-
-      span {
-        @include nav-border;
-        color: $color-black;
-      }
-    }
+  a.current, .current {
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
   }
 
   .nav-primary {
@@ -258,23 +199,22 @@
   }
 }
 
-
-// Extended header navigation ------- //
-
-.nav-tertiary{
-  padding-top: 1.4rem;
-}
-
-// Navigation submenu (dropdown and mega menu) ----- //
-
+// Navigation submenu (dropdown) ----- //
 .nav-submenu {
-  @include sidenav-sublist;
+  //@include sidenav-sublist;
+  @include unstyled-list;
+  font-size: $body-text;
+  line-height: $body-text-line-height;
+  color: $color-text;
+  background-color: #fff;
+  padding-left: 16px;
+  border-top: $inner-border;
 
   @include media($nav-responsive-breakpoint) {
-    @include unstyled-list;
-    @include padding(0.75rem null 0.9rem null);
-    background-color: $color-gray-medium-dark;
     width: 21.5rem;
+    border: $outer-border;
+    border-top: 0;
+    padding-left: 0;
     position: absolute;
   }
 
@@ -282,34 +222,34 @@
     display: none;
   }
 
-  a {
-    @include media($nav-responsive-breakpoint) {
-      color: $color-white;
-      padding-left: 1.5rem; // XXX magic number
-    }
-
-    &:hover {
-      @include media($nav-responsive-breakpoint) {
-        background-color: $color-gray-medium-dark;
-        color: $color-white;
-        padding-left: 1.5rem;
-        text-decoration: underline;
+  button{
+      @include button-unstyled;   
+  }
+  a{
+      @include body-copy-text;
+      display: block;
+      text-decoration: none;
+      &:hover, &:visited, &:focus{
+          color: $color-text;
       }
-    }
-
-    // this used to be necessary to undo the `sidenav-sublist`
-    // include, above
-    // &:hover,
-    // &.current { /* stylelint-disable-line selector-no-qualifying-type */
-    //   @include media($nav-responsive-breakpoint) {
-    //     padding-left: 1.8rem;
-    //   }
-    // }
   }
 
-  li {
-    font-size: $h5-font-size;
-    margin-bottom: 0;
+  button, a{
+    padding: 15px 0 15px 0;
+    border-top: $inner-border;
+    width: 100%;
+
+    @include media($nav-responsive-breakpoint) {
+      padding: 8px 16px;
+      margin: 0;
+      border: none;
+      &:hover{
+        background-color: $color-gray-pale;
+      }
+    }
+  }
+  li:first-child button, li:first-child a{
+    border-top: 0;
   }
 }
 

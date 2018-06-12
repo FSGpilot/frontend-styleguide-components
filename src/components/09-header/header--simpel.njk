@@ -90,10 +90,10 @@
                 </a>    
             </li>
             <li>
-                <button class="nav-link" title="Om design systemet" aria-expanded="false" aria-controls="extended-nav-section-two">
+                <button class="nav-link js-nav-submenu" title="Om design systemet" data-js-target="#dropdown-nav-section-one" aria-expanded="false" aria-controls="#dropdown-nav-section-one" aria-haspopup="true">
                     <span>Om designsystemet</span>
                 </button>
-                <ul id="extended-nav-section-two" class="nav-submenu" aria-hidden="true">
+                <ul id="dropdown-nav-section-one" class="nav-submenu" aria-hidden="true">
                   <li>
                     <a href="#">Subsection title</a>
                   </li>
@@ -172,26 +172,3 @@
     </nav> <!-- collapsible nav end-->
 </header>
 <div class="overlay"></div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<style>
-.collapsed{
-  display: none;
-}
-</style>
-<button class="button button-primary js-dropdown" data-js-target="#test" aria-controls="#test" aria-haspopup="true">Toggle</button>
-<div id="test" class="collapsed">
-  test test test test test test test.
-</div>
-<br>
-<br>
-<button class="button button-primary js-dropdown" data-js-target="#test1" aria-controls="#test1" aria-haspopup="true">Toggle</button>
-<div id="test1" class="collapsed">
-  test test test test test test test 1111111111
-</div>

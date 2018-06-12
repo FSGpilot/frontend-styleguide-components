@@ -204,17 +204,6 @@ $z-index-nav:     9000;
       animation: slidein-left 0.3s ease-in-out;
       display: block;
     }
-
-    .current {
-      border-left: 4px solid $color-primary;
-      color: $color-primary;
-      font-weight: $font-weight-bold;
-      padding-left: 1.4rem;
-
-      @include media($nav-responsive-breakpoint) {
-        color: $color-black;
-      }
-    }
   }
 
   .nav-actions{
