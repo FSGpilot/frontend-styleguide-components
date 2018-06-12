@@ -29,7 +29,7 @@ domready(() => {
   forEach(select(jsSelectorDatepicker), calendarGroupElement => {
     new datepicker(calendarGroupElement);
   });
-  
+
 });
 
 module.exports = dkwds;
