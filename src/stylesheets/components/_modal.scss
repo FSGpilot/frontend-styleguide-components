@@ -1,4 +1,4 @@
-.dialog-overlay {
+.modal-overlay {
 	z-index: 2;
 	position: fixed;
 	top: 0;
@@ -9,7 +9,7 @@
   	opacity: 0.75;
 }
 
-.dialog {
+.modal {
 	z-index: 3;
 	background-color: $color-white;
 	padding:map-get($spacers, 8) map-get($spacers, 13) map-get($spacers, 8) map-get($spacers, 13);
@@ -19,19 +19,19 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 
-	.close-dialog {
+	.close-modal {
 		float: right;
 		right: map-get($spacers, 5);
 		position: absolute;
 		@include body-copy-text;
 		top:map-get($spacers, 5)
 	}
-	.dialog-title {
+	.modal-title {
 		margin: 0;
 		font-weight: $font-weight-semibold;
 
 	}
-	.dialog-description {
+	.modal-description {
 		margin:map-get($spacers, 3) 0 0 0;
 	}
 	.modalbuttons {
@@ -42,13 +42,13 @@
 	}
 }
 
-.dialog-overlay[aria-hidden="true"],
-.dialog[aria-hidden="true"] {
+.modal-overlay[aria-hidden="true"],
+.modal[aria-hidden="true"] {
 	display: none;
 }
 
-.dialog-overlay:not([aria-hidden="true"]),
-.dialog:not([aria-hidden="true"]) {
+.modal-overlay:not([aria-hidden="true"]),
+.modal:not([aria-hidden="true"]) {
 	display: block;
 }
 

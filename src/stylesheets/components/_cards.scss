@@ -63,7 +63,12 @@
     margin-bottom: map-get($spacers, 0);
     color: $color-text-secondary;
   }
-  .header-content {
+}
+
+.card-content {
+  background-color: $color-white;
+  padding: map-get($spacers, 4) map-get($spacers, 5);
+  .content {
     @include body-copy-text;
     margin-top: map-get($spacers, 4);
     color: $color-gray-dark;
@@ -72,10 +77,10 @@
 }
 
 //card-content
-.card-content {
+.card-media {
   @include body-copy-text;
   padding: map-get($spacers, 4) map-get($spacers, 5);
-  background: $color-white;
+  background:$color-gray-light;
   color: $color-gray-dark;
   ul {
     margin-bottom:map-get($spacers, 0);
@@ -83,11 +88,11 @@
   div:first-child {
     margin-top:map-get($spacers, 0);
   }
-  .content {
+  .media-content {
     margin-top:map-get($spacers, 4);
   }
 
-  .content-media {
+  .media {
     margin-top:map-get($spacers, 4);
     img {
       width:100%;
@@ -144,6 +149,14 @@
 .card-header + .card-content{
   padding-top:map-get($spacers, 0);
 }
+// //If action comes after media
+// .card-media + .card-action {
+//   padding-top:map-get($spacers, 0);
+// }
+// //If media comes after header
+// .card-header + .card-media {
+//   padding-top:map-get($spacers, 0);
+// }
 //If action comes after content
 .card-content + .card-action{
   padding-top:map-get($spacers, 0);
@@ -160,7 +173,7 @@
 .card-action + .card-header{
   padding-top:map-get($spacers, 0);
 }
-//If content comes after content
+//If header comes after header
 .card-header + .card-header{
   padding-top:map-get($spacers, 0);
 }
@@ -168,7 +181,7 @@
 .card-content + .card-content{
   padding-top:map-get($spacers, 0);
 }
-//If content comes after content
+//If action comes after action
 .card-action + .card-action{
   padding-top:map-get($spacers, 0);
 }

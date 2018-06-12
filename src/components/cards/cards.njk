@@ -7,7 +7,9 @@
   <div class="card-header">
     <h6 class="header-title">{{header}}</h6>
     <p class="sub-header">{{subheader}}</p>
-    <p class="header-content">{{headercontent}}</p>
+  </div>
+  <div class="card-content">
+    <p class="content">{{headercontent}}</p>
   </div>
 </div>  
 {% endmacro %}
@@ -15,18 +17,20 @@
 {% macro cardmedium(size, cardcontent, cardcontentmedia, header, subheader, headercontent) %}
 <h4>Mellem card</h4>
 <div class="card {{size}}">
-  <div class="card-content">
-     <div class="content">
+  <div class="card-media">
+     <div class="media-content">
         <p>{{cardcontent}}</p>
     </div>
-    <div class="content-media">
+    <div class="media">
       {{cardcontentmedia}}
     </div>
   </div>
   <div class="card-header">
     <h6 class="header-title">{{header}}</h6>
     <p class="sub-header">{{subheader}}</p>
-    <p class="header-content">{{headercontent}}</p>
+  </div>
+  <div class="card-content">
+    <p class="content">{{headercontent}}</p>
   </div>
 </div>  
 {% endmacro %}
@@ -37,13 +41,15 @@
   <div class="card-header">
     <h6 class="header-title">{{header}}</h6>
     <p class="sub-header">{{subheader}}</p>
-    <p class="header-content">{{headercontent}}</p>
   </div>
   <div class="card-content">
-     <div class="content">
+    <p class="content">{{headercontent}}</p>
+  </div>
+  <div class="card-media">
+     <div class="media-content">
         <p>{{cardcontent}}</p>
     </div>
-    <div class="content-media">
+    <div class="media">
       {{cardcontentmedia}}
     </div>
   </div>

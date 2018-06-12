@@ -1,5 +1,4 @@
 
-// //TODO: nedenstående fejler på sider uden modal, blev lige nød til udkommenterer
 // function Dialog(dialogEl, overlayEl) {
 
 // 	this.dialogEl = dialogEl;
@@ -110,9 +109,9 @@
 // };
 
 
-// var navDialogEl = document.querySelector('.dialog');
-// var dialogOverlay = document.querySelector('.dialog-overlay');
+// var navDialogEl = document.querySelector('.modal-js');
+// var dialogOverlay = document.querySelector('.modal-js-overlay');
 
 // var myDialog = new Dialog(navDialogEl, dialogOverlay);
-// myDialog.addEventListeners('.open-dialog', '.close-dialog');
+// myDialog.addEventListeners('.open-js-modal', '.close-js-modal');
 
