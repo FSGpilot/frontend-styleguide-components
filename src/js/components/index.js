@@ -8,7 +8,7 @@ module.exports = {
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
   regexmask:  require('./regex-input-mask'),
-  overflow:   require('./overflow-menu')
+  dropdown:   require('./dropdown'),
   //table:      require('./table'),
   
 };

@@ -15,7 +15,7 @@ const OVERLAY = `.overlay`;
 const CLOSERS = `${CLOSE_BUTTON}, .overlay`;
 const TOGGLES = [ NAV, OVERLAY ].join(', ');
 
-const ACTIVE_CLASS = 'usa-mobile_nav-active';
+const ACTIVE_CLASS = 'mobile_nav-active';
 const VISIBLE_CLASS = 'is-visible';
 
 const isActive = () => document.body.classList.contains(ACTIVE_CLASS);

@@ -26,9 +26,9 @@
 {#}
 {{ header_simple(portal_header_data, solution_header_data, solution_nav, top_nav, top_nav_buttons) }}
 #}
-<header class="header header-extended" role="banner">
+{#<header class="header header-extended" role="banner">
   {{ portal_header(portal_header_data) }}
-</header>
+</header>#}
 
 <header class="header header-extended" role="banner">
     <!--1A: Portal header -->
@@ -90,9 +90,20 @@
                 </a>    
             </li>
             <li>
-                <a href="/frontend-styleguide/whats-new/" class="nav-link" title="Om design systemet">
+                <button class="nav-link" title="Om design systemet" aria-expanded="false" aria-controls="extended-nav-section-two">
                     <span>Om designsystemet</span>
-                </a>
+                </button>
+                <ul id="extended-nav-section-two" class="nav-submenu" aria-hidden="true">
+                  <li>
+                    <a href="#">Subsection title</a>
+                  </li>
+                  <li>
+                    <a href="#">Subsection title</a>
+                  </li>
+                  <li>
+                    <a href="#">Subsection title</a>
+                  </li>
+                </ul>
             </li>
         </ul>
 
@@ -161,3 +172,26 @@
     </nav> <!-- collapsible nav end-->
 </header>
 <div class="overlay"></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+.collapsed{
+  display: none;
+}
+</style>
+<button class="button button-primary js-dropdown" data-js-target="#test" aria-controls="#test" aria-haspopup="true">Toggle</button>
+<div id="test" class="collapsed">
+  test test test test test test test.
+</div>
+<br>
+<br>
+<button class="button button-primary js-dropdown" data-js-target="#test1" aria-controls="#test1" aria-haspopup="true">Toggle</button>
+<div id="test1" class="collapsed">
+  test test test test test test test 1111111111
+</div>
