@@ -69,26 +69,7 @@ $overflow-menu-dropdown-distance: 8px;
         padding-top: map-get($spacers, 3);
         padding-bottom: map-get($spacers, 3);
         top: calc(100% + #{$overflow-menu-dropdown-distance});
-        min-width: 183px;
-
-        
-    }
-    &--open-right {
-        .overflow-menu-inner{
-            left: calc(50% - 19px);
-            &:after {
-                left: 13px;
-            }
-        }
-        
-    }
-    &--open-left {
-        .overflow-menu-inner{
-            right: calc(50% - 19px);
-            &:after {
-                right: 13px;
-            }
-        }
+        min-width: 200px;       
     }
 
     .overflow-list{
@@ -119,5 +100,25 @@ $overflow-menu-dropdown-distance: 8px;
     .sidenav-list{
         border-top: 0;
         border-bottom: 0;
+    }
+
+    &--open-right {
+        .overflow-menu-inner{
+            left: calc(50% - 19px);
+            &:after {
+                left: 13px;
+            }
+        }
+    }
+    &--open-left {
+        .overflow-menu-inner{
+            right: calc(50% - 19px);
+            &:after {
+                right: 13px;
+            }
+            li, a, button{
+                text-align: right;
+            }
+        }
     }
 }
