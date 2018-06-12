@@ -68,78 +68,6 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0;
 
-
-    //
-    // Table icons
-    //
-    .dots-vertical {
-      background-image: url('#{$icons-folder-path}/dots-vertical.svg');
-      width: 24px;
-      height: 24px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      cursor:pointer;
-      &.selected {
-        background-color: $color-white;
-      }
-    }
-    .dots-vertical-content {
-      background-color: $color-white;
-      -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
-      -moz-box-shadow:    0px 3px 3px 0px rgba(50, 50, 50, 0.3);
-      box-shadow:         0px 3px 3px 0px rgba(50, 50, 50, 0.3);
-      position: absolute;
-      left:0px;
-      top: 0;
-      z-index: 100;
-      margin-top: 53px;
-
-      .triangle {
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid $color-white;
-        position: absolute;
-        margin-top: -10px;
-        right: 0;
-      }
-
-      ul {
-        margin:0;
-        li {
-          padding:0;
-          margin:0;
-          padding: 7px 15px 7px 15px;
-          cursor:pointer;
-          &::before {
-            content: '';
-            padding:0;
-            margin:0;
-          }
-
-          &:hover {
-            background-color: $color-gray-pale;
-          }
-
-          &.selected {
-            border-left: solid 4px $color-gray-medium-dark; 
-          }
-
-          &.editrow {
-            color:$color-positive;
-          }
-          &.deleterow {
-            color: $color-negative;
-          }
-
-
-        }
-      }
-    }
-
-
     //
     // Header and footer styles
     //
@@ -162,6 +90,16 @@ table.dataTable {
             outline: none;
         }
     } */
+
+    .overflow-menu{
+        &.editrow {
+            color:$color-positive;
+        }
+        &.deleterow {
+            color: $color-negative;
+        }
+    }
+   
 
     tfoot th,
     tfoot td {

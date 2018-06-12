@@ -1,12 +1,82 @@
-{% from "icons/icons.njk" import icon as icon %}
-<div class="overflow-menu">
-    <button class="overflow-menu-btn">
-        {{ icon('dots-vertical') }}
-    </button>
-    <div class="overflow-menu-options position-right">
-        <button>Option 1</button>
-        <button>Option 2</button>
-        <button>Option 3</button>
-        <button>Option 4 is longer text</button>
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+
+<div class="container pt-6">
+
+    <h5 class="h5">Overflow menu</h5>
+    <div class="overflow-menu js-overflow-menu overflow-menu--open-right">
+        <button class="button-overflow-menu js-overflow-menu-btn">
+            Overflow menu
+            {{ icon_svg('dots-vertical') }}
+        </button>
+        <div class="overflow-menu-inner">
+            <ul class="overflow-list">
+                <li><button class="js-overflow-menu-item">Option 1</button></li>
+                <li><button class="js-overflow-menu-item">Option 2</button></li>
+                <li><a href="#" class="js-overflow-menu-item">Option 3 as link</a></li>
+                <li><button class="js-overflow-menu-item">Option 4 is longer text</button></li>
+            </ul>
+        </div>
     </div>
+    <div style="padding-bottom: 50px;"></div>
+
+    <h5 class="h5">Overflow menu - åbner til venstre</h5>
+    <div class="overflow-menu js-overflow-menu overflow-menu--open-left">
+        <button class="button-overflow-menu js-overflow-menu-btn">
+            Overflow menu
+            {{ icon_svg('dots-vertical') }}
+        </button>
+        <div class="overflow-menu-inner">
+            <ul class="overflow-list">
+                <li><button class="js-overflow-menu-item">Option 1</button></li>
+                <li><button class="js-overflow-menu-item">Option 2</button></li>
+                <li><a href="#" class="js-overflow-menu-item">Option 3 as link</a></li>
+                <li><button class="js-overflow-menu-item">Option 4 is longer text</button></li>
+            </ul>
+        </div>
+    </div>
+    <div style="padding-bottom: 50px;"></div>
+
+    <h5 class="h5">Overflow menu - kun med dot-dot-dot ikon</h5>
+    <div class="overflow-menu js-overflow-menu overflow-menu--open-right">
+        <button class="button-overflow-menu js-overflow-menu-btn">
+            {{ icon_svg('dots-vertical') }}
+            <span class="sr-only">Åbner overflow menu</span>
+        </button>
+        <div class="overflow-menu-inner">
+            <ul class="sidenav-list">
+                <li>
+                    <a href="">
+                        1. Trin 1
+                        <span class="sidenav-icon">
+                            {{ icon_svg('check') }}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        2. Trin 2
+                        <span class="sidenav-icon">
+                            {{ icon_svg('check') }}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="active">
+                        3. Trin 3 (valgt)
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        4. Trin 4
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        5. Trin 5
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="padding-bottom: 240px;"></div>
 </div>
