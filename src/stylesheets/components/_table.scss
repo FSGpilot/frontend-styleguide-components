@@ -3,6 +3,17 @@
     line-height: $body-text-line-height;
     border: $outer-border;
 
+    &.compact {
+      td {
+        padding: calc(#{map-get($spacers, 3)} - 1px);
+      }
+    }
+
+    &.ultracompact {
+      td {
+        padding: 0;
+      }
+    }
 
     thead {
         background-color: $color-gray-pale;
@@ -25,6 +36,9 @@
         background-color: inherit;
         border-right: $inner-border;
         //vertical-align: top;
+
+
+
         &:last-child{
             border-right: none;
         }
