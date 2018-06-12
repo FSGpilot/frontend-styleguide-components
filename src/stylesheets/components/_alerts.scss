@@ -34,6 +34,7 @@ $icon-size: 24px;
   padding-right: $padding;
   padding-top: $padding;
   position: relative;
+  margin-bottom: map-get($spacers, 5);
 
   border-left: $bar-size solid darken($color-gray-pale, 40%);
 

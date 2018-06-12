@@ -5,8 +5,8 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-  	background-color: $color-black;
-  	opacity: 0.75;
+  	background-color: rgba(26, 26, 26, 0.75);
+
 }
 
 .modal {
@@ -18,13 +18,27 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	@include for-size(phone-only) {
+		width: 100%;
+		top:0;
+		bottom:0;
+		right:0;
+		left:0;
+		padding:map-get($spacers, 5) map-get($spacers, 7) map-get($spacers, 5) map-get($spacers, 7);
+		transform: none;
+	  }
 
 	.close-modal {
 		float: right;
 		right: map-get($spacers, 5);
 		position: absolute;
 		@include body-copy-text;
-		top:map-get($spacers, 5)
+		top:map-get($spacers, 5);
+
+		@include for-size(phone-only) {
+			position: initial;
+			margin-bottom: map-get($spacers, 5);
+		}
 	}
 	.modal-title {
 		margin: 0;
@@ -32,12 +46,16 @@
 
 	}
 	.modal-description {
-		margin:map-get($spacers, 3) 0 0 0;
+		margin:map-get($spacers, 3) 0 map-get($spacers, 5) 0;
+
 	}
 	.modalbuttons {
-		margin-top:map-get($spacers, 5);
 		.button {
 			margin-right: map-get($spacers, 4);
+			margin-top:map-get($spacers, 5);
+			@include for-size(phone-only) {
+				margin-right: map-get($spacers, 0);
+			}
 		}
 	}
 }

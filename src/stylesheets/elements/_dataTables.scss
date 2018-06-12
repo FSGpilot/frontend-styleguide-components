@@ -68,6 +68,17 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0;
 
+
+   .overflow-menu{
+        .editrow {
+            color:$color-positive;
+        }
+        .deleterow {
+            color: $color-negative;
+        }
+   }
+
+
     //
     // Header and footer styles
     //
@@ -90,16 +101,6 @@ table.dataTable {
             outline: none;
         }
     } */
-
-    .overflow-menu{
-        &.editrow {
-            color:$color-positive;
-        }
-        &.deleterow {
-            color: $color-negative;
-        }
-    }
-   
 
     tfoot th,
     tfoot td {
@@ -334,22 +335,22 @@ table.dataTable {
         }
     }
 
-    &.compact {
-        thead th,
-        thead td {
-            padding: 4px 17px 4px 4px;
-        }
-
-        tfoot th,
-        tfoot td {
-            padding: 4px;
-        }
-
-        tbody th,
-        tbody td {
-            padding: 4px;
-        }
-    }
+    // &.compact {
+    //     thead th,
+    //     thead td {
+    //         padding: 4px 17px 4px 4px;
+    //     }
+    //
+    //     tfoot th,
+    //     tfoot td {
+    //         padding: 4px;
+    //     }
+    //
+    //     tbody th,
+    //     tbody td {
+    //         padding: 4px;
+    //     }
+    // }
 
 
     // Typography
