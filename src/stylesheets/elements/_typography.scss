@@ -138,7 +138,7 @@ a {
   font-family: $font-name;
   font-size: $h5-font-size; //2.0rem
   line-height: $h5-line-height; //2.4rem
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-semibold;
   color: $color-black;
 }
 @mixin body-copy-text {
@@ -378,7 +378,7 @@ dfn {
 .font-lead {
   font-family: $font-family;
   font-size: $lead-font-size;
-  font-weight: $font-weight-normal;
+  font-weight: $font-weight-medium;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
   color:$color-gray-dark;
