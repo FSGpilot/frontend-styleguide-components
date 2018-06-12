@@ -139,7 +139,7 @@ class datatablesExamples {
                 {
                 "targets": -1,
                 "data": null,
-                "defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Hest</li><li class='deleterow'>Delete</li></ul></div>"
+                "defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Item</li><li class='selected'>Selected item</li><li class='deleterow'>Delete</li></ul></div>"
             }
         ],
         "order": [[1, 'asc']]

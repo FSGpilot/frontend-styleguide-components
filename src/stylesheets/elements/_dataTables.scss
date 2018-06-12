@@ -89,6 +89,11 @@ table.dataTable {
       -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
       -moz-box-shadow:    0px 3px 3px 0px rgba(50, 50, 50, 0.3);
       box-shadow:         0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+      position: absolute;
+      left:0px;
+      top: 0;
+      z-index: 100;
+      margin-top: 53px;
 
       .triangle {
         width: 0;
@@ -98,15 +103,15 @@ table.dataTable {
         border-bottom: 10px solid $color-white;
         position: absolute;
         margin-top: -10px;
-        margin-left: 28px;
+        right: 0;
       }
 
       ul {
-
+        margin:0;
         li {
           padding:0;
           margin:0;
-          padding: 7px 15px 7px 15px; 
+          padding: 7px 15px 7px 15px;
           cursor:pointer;
           &::before {
             content: '';
@@ -117,6 +122,11 @@ table.dataTable {
           &:hover {
             background-color: $color-gray-pale;
           }
+
+          &.selected {
+            border-left: solid 4px $color-gray-medium-dark; 
+          }
+
           &.editrow {
             color:$color-positive;
           }
@@ -219,6 +229,7 @@ table.dataTable {
         td {
             //padding: 16px; //8px;
             vertical-align: middle;
+            position: relative;
             &:last-child {
               padding-right: 32px;
             }

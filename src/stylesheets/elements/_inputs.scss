@@ -355,16 +355,9 @@ $radio-size-large: 34px;
     width: calc(2px + #{map-get($spacers, 4)} + #{map-get($spacers, 4)} + 4ch );
   }
 
-  .icon-svg {
-    margin-bottom: 4px;
-    &.js-calendar-datepicker{
-      &:hover{
-        cursor: pointer;
-      }
-      &:focus{
-        outline: $focus-outline;
-      }
-    }
+  .button-open-calendar{
+    margin-bottom: 8px;
+    display: inline-flex;
   }
 }
 
