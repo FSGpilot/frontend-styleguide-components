@@ -2,7 +2,7 @@
 <h4>Passive Modal</h4>
 <button type="button" aria-label="Open Modal" class="js-open-modal-passive open-modal button button-primary">Open passive modal </button>
  {%- if (type == 'passive') -%}
-	<div class="modal js-modal-passive" role="modal" aria-labelledby="modal-title" aria-describedby="modal-description">
+	<div class="modal js-modal-passive" role="modal">
 		<button type="button" aria-label="Close Modal" class="js-close-modal-passive close-modal button button-ghost">{{close}}</button>
 		<h3 class="modal-title font-lead">{{title}}</h3>
 		<p class="modal-description">{{description}}</p>
@@ -15,7 +15,7 @@
 <h4>Transactional Modal</h4>
 <button type="button" aria-label="Open Modal" class="js-open-modal-transactional open-modal button button-primary">Open transactional modal </button>
  {%- if (type == 'transactional') -%}
-	<div class="modal js-modal-transactional" role="modal" aria-labelledby="modal-title" aria-describedby="modal-description">
+	<div class="modal js-modal-transactional" role="modal">
 		<button type="button" aria-label="Close Modal" class="js-close-modal-transactional close-modal button button-ghost">{{close}}</button>
 		<h3 class="modal-title font-lead">{{title}}</h3>
 		<p class="modal-description">{{description}}</p>
