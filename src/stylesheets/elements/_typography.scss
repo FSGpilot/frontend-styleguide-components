@@ -216,9 +216,14 @@ p, .body-text, .body-copy-text{
   @include body-copy-text;
 }
 
-strong, b, .bold {
+.semibold {
   font-family: $font-name;
   font-weight: $font-weight-semibold;
+}
+
+strong, b, .bold {
+  font-family: $font-name;
+  font-weight: $font-weight-bold;
 }
 
 .italic, em {

@@ -1,0 +1,41 @@
+<!-- footer basic -->
+{% macro footerbasic(size, header, subheader, headercontent) %}
+<h4>Footer basic</h4>
+<footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 nopaddingleft">
+          <div class="align-left">
+            <ul class="unstyled-list inline-list">
+              <li class="semibold">Undervisningsministeriet</li>
+              <li>Styrelsen for IT og læring</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 nopaddingright">
+        <div class="align-right">
+            <ul class="unstyled-list inline-list">
+              <li><a href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a href="tel:004533925200" class="">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-theme">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 nopaddingleft">
+          <p>Sammen med <a href="javascript:void(0);">borger.dk</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endmacro %}
+
+{% for basic in footerbasic_example.items -%}
+      {{ footerbasic(basic.size, basic.header, basic.subheader, basic.headercontent) }}
+{%- endfor %}
