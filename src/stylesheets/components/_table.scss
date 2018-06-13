@@ -3,15 +3,32 @@
     line-height: $body-text-line-height;
     border: $outer-border;
 
+
     &.compact {
       td {
         padding: calc(#{map-get($spacers, 3)} - 1px);
+
+        &.select-checkbox {
+          &:after {
+            content: '';
+            left: 25px !important;
+            top: 11px !important;
+          }
+        }
       }
     }
 
     &.ultracompact {
       td {
         padding: 0;
+
+        &.select-checkbox {
+          &:after {
+            content: '';
+            left: 25px !important;
+            top: 4px !important;
+          }
+        }
       }
     }
 
@@ -23,6 +40,7 @@
         th{
             font-weight: $font-weight-semibold;
             text-align: left;
+            border-bottom: solid 1px $color-gray-light;
         }
     }
     tbody{
@@ -110,6 +128,27 @@
                 }
             }
         }
+    }
+
+    //lines
+    &.lines {
+      thead {
+        th{
+            border-right-color: transparent;
+            &:last-child{
+              //border-right: $inner-border;
+            }
+        }
+      }
+      tr:nth-child(even) {
+          //background-color: $color-gray-pale;
+      }
+
+      tbody{
+          td{
+              border-right: transparent;
+          }
+      }
     }
 
     //zebra lines

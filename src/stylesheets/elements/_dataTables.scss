@@ -239,6 +239,7 @@ table.dataTable {
           padding:0;
           .details-row-content {
             background-color: $color-white;
+            border-left: solid 2px $color-gray-dark;
             .row {
               margin-right: 32px;
               margin-left: 32px;
@@ -508,7 +509,11 @@ table.dataTable td {
 //Row selected checkbox
 table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox{
     position: relative;
+    line-height: 0;
+
 }
+
+
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before{
     content: ' ';
     // margin-top: -6px;
@@ -524,6 +529,9 @@ table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select
     line-height: 2.4rem;
     width: 15px;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after{
     // display: block;
@@ -547,8 +555,8 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     height: 7px;
     width: 12px;
     position: absolute;
-    left: 19px;
-    top: 17px;
+    left: 25px;
+    top: 19px;
     box-shadow: -2px 2px 0 0 #fff;
     transform: rotate(-46deg);
     border-color: transparent;
@@ -566,7 +574,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
     position: relative;
     clear: both;
     *zoom: 1;
-
+    margin-top:8px;
     // Page length options
     .dataTables_length {
         float: left;
@@ -809,7 +817,13 @@ tbody{
         }
     }
 
-    tr.shown .details-control{
+    tr.shown {
+      > td {
+          border-bottom-color:$color-gray-pale;
+      }
+
+      .details-control {
+        border-left: solid 2px #454545;
         &:after{
             content: "";
             background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H5V11H19V13Z' /%3E%3C/svg%3E");
@@ -817,5 +831,6 @@ tbody{
             height: 24px;
             display: block;
         }
+      }
     }
 }
