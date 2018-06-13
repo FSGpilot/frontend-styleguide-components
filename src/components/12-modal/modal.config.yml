@@ -7,11 +7,11 @@ context:
     items:
       - type: "passive"
         close: 'Luk'
-        title: 'Modal titel for passive modal'
-        description: 'Her skal stå en form for beskrivelse'
-  modaltransactional_example:
+        title: 'Modaltitel for passiv modal'
+        description: 'Beskrivelse af den passive modals inhold'
+  modalinteractive_example:
     items:
-      - type: "transactional"
+      - type: "interactive"
         close: 'Luk'
-        title: 'Modal titel for transactional modal'
-        description: 'Her skal stå en form for beskrivelse'
+        title: 'Modaltitel for interaktiv modal'
+        description: 'Beskrivelse af den interaktive modals inhold'
