@@ -4,3 +4,11 @@
 $color-primary:               #067293;
 $color-primary-medium:        #04556E;
 $color-primary-dark:          #033747;
+
+.portal-header{
+    .logo{
+        background-image: url('../img/logo-borgerdk.svg');
+        width: 200px;
+        height: 58px;
+    }    
+}
