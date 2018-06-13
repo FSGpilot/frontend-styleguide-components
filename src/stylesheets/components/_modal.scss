@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 100%;
   	background-color: rgba(26, 26, 26, 0.75);
-  	
+
 }
 
 .modal {
@@ -46,7 +46,8 @@
 
 	}
 	.modal-description {
-		margin:map-get($spacers, 3) 0 0 0;
+		margin:map-get($spacers, 3) 0 map-get($spacers, 5) 0;
+
 	}
 	.modalbuttons {
 		.button {

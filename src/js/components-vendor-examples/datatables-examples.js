@@ -139,7 +139,7 @@ class datatablesExamples {
                 {
                 "targets": -1,
                 "data": null,
-                "defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Item</li><li class='selected'>Selected item</li><li class='deleterow'>Delete</li></ul></div>"
+                "defaultContent": "<i class='dots-vertical selected js-edit-item'></i>" //"defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Item</li><li class='selected'>Selected item</li><li class='deleterow'>Delete</li></ul></div>"
             }
         ],
         "order": [[1, 'asc']]
@@ -162,7 +162,17 @@ class datatablesExamples {
         }
     } );
 
+    $(jsSelectorDatatable_Example_detailsrow).on('click', '.js-edit-item', function () {
+    //$('body').on('click', '.js-edit-item', function() {
+      var tr = $(this).closest('tr');
+      var data = table_detailsrow.row(tr).data();
 
+      //$('.js-modal-overlay-transactional').open();
+      //$('.js-modal-transactional').open();
+
+      console.log(data.id);
+      //alert( data[0] +"'s salary is: "+ data[ 5] );
+    } );
 
     function myCallbackFunction (updatedCell, updatedRow, oldValue) {
       console.log("The new value for the cell is: " + updatedCell.data());
@@ -176,6 +186,7 @@ class datatablesExamples {
 
   }
 }
+
 
 
 module.exports = datatablesExamples;

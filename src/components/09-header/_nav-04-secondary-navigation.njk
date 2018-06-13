@@ -1,9 +1,7 @@
-{%- macro toolbox() -%}
-  <div class="nav-secondary nav-toolbox">
-    toolbox
-  </div>
-  {# <div class="nav-secondary">
-    {% if nav.search %}
+{%- macro secondarynavigation() -%}
+  <div class="nav-secondary nav-subheader">
+    subheader
+    {# {% if nav.search %}
       {% render '@search--header', {search: nav.search, search_js: true, id_prefix: id_prefix} %}
     {% endif %}
     <ul class="unstyled-list nav-secondary-links">
@@ -19,6 +17,7 @@
         </a>
       </li>
       {% endfor %}
-    </ul>
-  </div> #}
+    </ul> #}
+  </div>
 {% endmacro -%}
+

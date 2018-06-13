@@ -2,6 +2,20 @@
 
 #}
 {% macro solution_header(solution_header) %}
+  <!--2A: Solutiuon header -->
+  <div class="solution-header container">
+    <div class="solution-heading">
+      <a href="/frontend-styleguide/" title="Home" aria-label="Home">Frontend Styleguide</a>
+    </div>
+
+    <!--2B: Solution header: Authority name + text-->
+    <div class="solution-info"> <!-- nav-secondary -->
+      <h6 class="h6">Erhvervsstyrelsen</h6>
+      <p>Support: 78 73 64 12</p>
+    </div>
+  </div>
+  
+  {#
   <div class="navbar solution-header">
     <div class="solution-heading">
         <a href="{{ solution_header.link.href | default('/') }}"
@@ -12,26 +26,27 @@
     </div>
     <button class="menu-btn">Menu</button>
   </div>
+  #}
 {% endmacro %}
 {#
 
 
 #}
 {% macro solution_header_nav(nav) %}
-      <div class="nav-secondary">
-        <ul class="unstyled-list nav-secondary-links">
-          {% if nav.search -%}
-          <li class="js-search-button-container">
-            <button class="header-search-button js-search-button">Search</button>
-          </li>
-          {%- endif -%}
-          {% for link in nav.links -%}
-          <li>
-            <a href="{{ link.href }}" class="{{ link.class }}{% if link.current %}current{% endif %}">
-              {{ link.text }}
-            </a>
-          </li>
-          {%- endfor %}
-        </ul>
-      </div>
+  {#<div class="nav-secondary">
+    <ul class="unstyled-list nav-secondary-links">
+      {% if nav.search -%}
+      <li class="js-search-button-container">
+        <button class="header-search-button js-search-button">Search</button>
+      </li>
+      {%- endif -%}
+      {% for link in nav.links -%}
+      <li>
+        <a href="{{ link.href }}" class="{{ link.class }}{% if link.current %}current{% endif %}">
+          {{ link.text }}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>#}
 {% endmacro %}

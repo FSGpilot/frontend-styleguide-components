@@ -1,97 +1,123 @@
+
+$overflow-menu-arrow-size: 8px;
+$overflow-menu-dropdown-distance: 8px;
+
 .overflow-menu {
     cursor: pointer;
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     position: relative;
 
-    .overflow-menu-btn {
-        background-color: transparent;
-        margin: auto;
-        padding: 0;
-        width: $hit-area;
-        height: $hit-area;
+    .button-overflow-menu{
+        position: relative;
+        @include button-unstyled;
+        min-height: 40px;
+        min-width: 40px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        svg {
-            width: 4px;
-            height: 20px;
-            fill-rule: evenodd;
-            fill: #8c9ba5;
+        &:hover{
+            background-color: $color-gray-pale;
+        }
+        //below: arrow with border
+        &:after, &:before {
+            display: none;
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+            bottom: calc(#{$overflow-menu-dropdown-distance} * -1 - 1px);
+        }
+        &:after {
+            border-bottom-color: #fff;
+            border-width: calc(#{$overflow-menu-arrow-size} - 1px);
+            margin-left: calc((#{$overflow-menu-arrow-size} - 1px)*-1);
+        }
+        &:before {
+            border-bottom-color: $color-gray-medium-light;
+            border-width: $overflow-menu-arrow-size;
+            margin-left: calc(#{$overflow-menu-arrow-size} *-1);
+        }
+
+        &[aria-expanded="true"]{
+            &:after, &:before{
+                display: block;
+            }
         }
     }
 
-    &.open {
-        .overflow-menu-options {
-            display: flex;
-        }
-    }
-
-    .overflow-menu-options {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
+    .overflow-menu-inner {
+        
         position: absolute;
         z-index: 1;
         width: auto;
-        list-style: none;
-        border: 1px solid $color-gray-light;
-        box-shadow: 0 4px 8px 0 $color-gray-light;
-        background: white;
-        padding: 0;
-        top: calc(100% + 5px);
+        border: $outer-border;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+        background: #fff;
+        padding-top: map-get($spacers, 3);
+        padding-bottom: map-get($spacers, 3);
+        top: calc(100% + #{$overflow-menu-dropdown-distance});
+        min-width: 200px;  
+        
+        &[aria-hidden="true"]{
+            display: none;
+        }
+    }
 
-        button {
-            &:hover {
-                background-color: $color-primary;
-                color: $color-white;
-                border-color: transparent;
-                z-index: 2;
+    .overflow-list{
+        @include unstyled-list;
+        font-size: $body-text; 
+        line-height: $body-text-line-height;
+        color: $color-text;
+        button{
+            @include button-unstyled;   
+        }
+        a{
+            @include body-copy-text;
+            display: block;
+            text-decoration: none;
+            &:hover, &:visited, &:focus{
+                color: $color-text;
             }
+        }
+
+        button, a{
+            padding: 8px 16px;
             width: 100%;
-            height: 30px;
-            display: inline-block;
-            background-color: transparent;
-            color: $color-black;
-            text-align: left;
-            cursor: pointer;
-            white-space: nowrap;
-            margin: 0;
-            padding: 0;
-            border-radius: 0;
-            padding-left: 15px;
-            padding-right: 15px;
-            font-weight: normal;
-            font-size: $small-text;
-            border: 1px solid $color-gray-light;
+            &:hover{
+                background-color: $color-gray-pale;
+            }
         }
+    }
 
-        &:after {
-            content: " ";
-            position: absolute;
+    .sidenav-list{
+        border-top: 0;
+        border-bottom: 0;
+    }
 
-            top: -5px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: $color-gray-light transparent transparent $color-gray-light;
-            transform: rotate(45deg);
-            background: $color-white;
-            width: 10px;
-            height: 10px;
-        }
-
-        &.position-right {
+    &--open-right {
+        .overflow-menu-inner{
             left: calc(50% - 19px);
             &:after {
                 left: 13px;
             }
         }
-        &.position-left {
+    }
+    &--open-left {
+        .overflow-menu-inner{
             right: calc(50% - 19px);
             &:after {
                 right: 13px;
             }
+            li, a, button{
+                text-align: right;
+            }
         }
     }
-
 }
