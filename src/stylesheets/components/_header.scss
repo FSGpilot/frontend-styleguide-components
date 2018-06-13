@@ -1,8 +1,4 @@
 // Header variables ---------- //
-
-$height-nav-secondary: 5rem;
-$width-nav-sidebar:    250px;
-
 // z-indexes - TODO refactor to a site-wide z-index management approach
 $z-index-header:  7000;
 $z-index-overlay: 8000;
@@ -12,149 +8,235 @@ $z-index-nav:     9000;
 
 .header {
   width: 100%;
-  background-color: $color-gray-pale;
+  //background-color: $color-gray-pale;
   z-index: $z-index-header;
-
-  @include media($nav-width) {
-    border-bottom: 1px solid $color-gray-light;
-  }
-
-  a {
-    border-bottom: none;
-  }
-
-  .search {
-    margin-bottom: 1.5rem;
-
-    @include media($nav-width) {
-      float: right;
-      margin-bottom: 0;
-      max-width: 21.5rem;
-    }
+  padding-left: calc(#{$grid-gutter-width}/2);
+  padding-right: calc(#{$grid-gutter-width}/2);
+  @include media($grid-xl){
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .logo{
     //background-image is set by the themes in the "themes"-scss-files.
-    background-position: 0rem 3.0rem;
+    background-image: url('http://via.placeholder.com/200x60');
+    background-size: contain;
     background-repeat: no-repeat;
-    min-height: 95px;
     display: inline-block;
+    height: 60px;
+    width: 200px;
   }
-
-  .portal-header-title {
-    margin-top: 1.5rem;
-
-    p {
-      margin: 0;
-      font-size: 1.8rem;
-      font-style: italic;
+  
+  .button{
+    width: 100%;
+    @include media($nav-responsive-breakpoint) {
+      width: auto;
     }
   }
-}
-
-
-.subheader {
-  display: flex;
-
-  @include media($nav-width) {
-    border-bottom: 1px solid $color-white;
+  h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0;
+    margin-bottom: 0;
   }
-
-  .subheader-inner {
-    display: flex;
-    align-items: center;
-  }
-
-  .subheader-title {
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 600;
+  @include media($nav-responsive-breakpoint) {
+    .form-select, .form-input{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .form-select, .form-input{
+      width: auto; //overwrite width 100%
     }
   }
 
-  .subheader-info {
+  .button-menu-open {
+    width: auto;
+    @include media($nav-responsive-breakpoint) {
+      display: none;
+    }
+  }
+  .button-menu-close {
+    width: unset;
     margin-left: auto;
+    display: flex;
+    margin-right: map-get($spacers, 4);
+    .icon-svg{
+      margin: 0 8px 0 0;
+    }
+    span{
+      position: relative;
+      top: 1px;
+    }
+    @include media($nav-responsive-breakpoint) {
+      display: none;
+    }
+  }
 
-    a {
-      font-weight: 400;
-      text-decoration: none;
+  .portal-header{
+      border-bottom: $inner-border;
+      width: 100%;
+    .portal-header-inner{
+      width: 100%;
+      padding-top: calc(#{map-get($spacers, 4)} - 1px);
+      padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+      display: flex;
+      align-items: flex-start;
+  
+      @include media($nav-responsive-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+    
+    .portal-info{
+      display: none;
+      @include media($nav-responsive-breakpoint) {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
 
-      &.subheader-link {
-        font-size: 1.8rem;
-        font-weight: 600;
+        & > *{
+          margin-left: map-get($spacers, 4);
+        }
       }
     }
   }
-}
 
+  .solution-header{
+    border-bottom: $inner-border;
+    width: 100%;
 
-.solution-heading {
-  @include h3;
-  float: left;
+    .solution-header-inner{
+      display: flex;
+      flex-direction: column;
+      padding-top: calc(#{map-get($spacers, 4)} - 1px);
+      padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
 
+      @include media($nav-responsive-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
 
-  @include media($nav-width) {
-    line-height: 7.5rem;
-    margin-left: 0;
+    .solution-heading{
+      font-size: 2.8rem; 
+      line-height: 3.2rem;
+      font-weight: $font-weight-semibold;
+      color: $color-black;
+      a{
+        color: $color-black;
+        text-decoration: none;
+      }
+    }
+    .solution-info{
+      display: none;
+      @include media($nav-responsive-breakpoint) {
+        margin-left: auto;
+        text-align: right;
+        max-width: 60%;
+        display: block;
+      }
+    }
   }
 
-  a {
-    color: $color-black;
-    text-decoration: none;
+  .portal-info-mobile{
+    padding: map-get($spacers, 5) map-get($spacers, 4);
+    border-bottom: $inner-border;
+    text-align: right;
+    p{
+      margin-bottom: map-get($spacers, 3);
+    }
+    .button-signin, .button-signout{
+      margin-top: 8px;
+      width: auto;
+    }
+    @include media($nav-responsive-breakpoint) {
+      display: none;
+    }
   }
 
-  br {
+  .solution-info-mobile{
+    padding: map-get($spacers, 5) map-get($spacers, 4);
+    text-align: right;
+    background-color: $color-gray-pale;
+    p{
+      margin-bottom: map-get($spacers, 3);
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    @include media($nav-responsive-breakpoint) {
+      display: none;
+    }
+  }
+
+
+  .nav {
+    $sliding-panel-width: 282px;
+    @keyframes slidein-left {
+      from {
+        transform: translateX($sliding-panel-width);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+    @include position(fixed, 0 0 0 auto);
+
+    background: $color-white;
     display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0;
+    padding-top: map-get($spacers, 4);
+    width: $sliding-panel-width;
+    z-index: $z-index-nav;
 
-    @include media($nav-width) {
+    @include media($nav-responsive-breakpoint) {
+      @include padding(4.5rem 0 0 null);
+      border-left: none;
+      display: block;
+      overflow-y: visible;
+      position: static;
+      //transform: translateX(0);
+      width: auto;
+    }
+
+    @include media($nav-responsive-breakpoint) {
+      padding: 0;
+      width: 100%;
+    }
+
+    &.is-visible {
+      animation: slidein-left 0.3s ease-in-out;
       display: block;
     }
   }
-}
 
-.heading-text {
+  .nav-actions{
+    margin-top: map-get($spacers, 3);
+    &:first-child{
+      margin-top: 0;
+    }
 
-  display: block;
-  font-size: $h5-font-size;
-  font-style: normal;
-  font-weight: $font-weight-bold;
-  margin: 0;
-
-  @include media($nav-width) {
-    display: block;
-    font-size: 2.4rem;
-    line-height: $base-line-height;
-  }
-}
-
-.menu-btn {
-  /* stylelint-disable declaration-block-no-ignored-properties */
-  @include button-unstyled;
-  background-color: $color-primary;
-  color: $color-white;
-  display: inline;
-  float: right;
-  font-size: $h6-font-size;
-  height: 4rem;
-  line-height: 4rem;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 5.8rem;
-  /* stylelint-enable */
-
-  @include media($nav-width) {
-    display: none;
-  }
-
-  &:hover {
-    color: $color-white;
-    background-color: $color-primary-darker;
-  }
-
-  &:visited {
-    color: $color-white;
+    & > li{
+      margin-top: map-get($spacers, 3);
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    
+    @include media($nav-responsive-breakpoint) {
+      margin-top: 0;
+      margin-left: auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-right: -4px;
+      & > li, & > li:first-child{
+        margin: calc(#{map-get($spacers, 3)} - 1px) 4px;
+      }
+    }
   }
 }
 
@@ -167,152 +249,7 @@ $z-index-nav:     9000;
   z-index: $z-index-overlay;
 
   &.is-visible {
-    opacity: 0.1;
+    opacity: 0.75;
     visibility: visible;
-  }
-}
-
-// Basic header ----------- //
-
-.header-basic {
-  .solution-heading {
-    @include media($nav-width) {
-      bottom: 0;
-      position: absolute;
-    }
-  }
-
-  .navbar {
-    @include media($nav-width) {
-      position: relative;
-      width: 18%; // TODO: review this more
-    }
-  }
-}
-
-// Extended header ----------- //
-
-.header-extended {
-  .portal-header{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    display: block;
-    height: auto;
-    border-bottom: 1px solid $color-white;
-
-    // @include media($nav-width) {
-      &:after{
-        clear: both;
-        content: "";
-        display: block;
-      }
-    // }
-
-  }
-  .portal-header-inner{
-    @include media($nav-width) {
-      @include outer-container($site-max-width);
-      @include padding(null $site-margins);
-      margin-top: -1px;
-      position: relative;
-    }
-  }
-
-  .header {
-    @include media($nav-width) {
-      border-bottom: none;
-    }
-  }
-
-  .solution-heading {
-    @include media($nav-width) {
-      @include margin(3rem null);
-    }
-  }
-
-  em {
-    @include media($nav-width) {
-      font-size: 3.2rem;
-      line-height: 1;
-    }
-  }
-
-  .navbar { //TODO: rename, it is no longer a "navbar" as it no longer holds any navigation
-    @include media($nav-width) {
-      @include outer-container($site-max-width);
-      @include padding(null $site-margins);
-      display: block;
-      height: auto;
-    }
-  }
-
-  .nav {
-    @include media($nav-width) {
-      background-color: $color-gray-pale;
-      border-top: 1px solid $color-white;
-      float: none;
-      padding: 0;
-      width: 100%;
-    }
-  }
-
-  .nav-inner {
-    @include media($nav-width) {
-      @include outer-container($site-max-width);
-      @include padding(null $site-margins null 1.5rem);
-      margin-top: -1px;
-      position: relative;
-    }
-  }
-
-  .nav-primary {
-    @include media($nav-width) {
-      @include clearfix;
-    }
-
-    button {
-      &[aria-expanded=false],
-      &[aria-expanded=true] { /* stylelint-disable-line selector-no-qualifying-type */
-        @include media($nav-width) { /* stylelint-disable-line selector-no-qualifying-type */
-          background-position: right 1.5rem top 53%;
-        }
-      }
-    }
-  }
-
-  .nav-link {
-    @include media($nav-width) {
-      @include padding($spacing-md-small null);
-    }
-  }
-  @include media($nav-width) {
-    li:first-child > .nav-link {
-      margin-left: -1.5rem;
-    }
-  }
-
-  .nav-submenu {
-    .grid-full {
-      @include media($nav-width) {
-        padding-left: 1.2rem;
-      }
-    }
-  }
-
-  .megamenu {
-    @include media($nav-width) {
-      padding-left: $site-margins;
-    }
-  }
-
-  .nav-tertiary {
-    margin-bottom: 1.5rem;
-
-    @include media($nav-width) {
-      float: right;
-      margin-bottom: 0;
-    }
   }
 }

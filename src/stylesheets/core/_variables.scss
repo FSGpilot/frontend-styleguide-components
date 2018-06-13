@@ -12,6 +12,7 @@ $global-font-size:  100% !default;
 $em-base:           62.5%; //-> 10px for standard browsers, now 'Font size' from the browser setting works correctly if the uses specifies a bigger standard font-size. 
 
 $base-font-size:    1.6rem !default;
+$base-line-height:  2.4rem !default;
 
 /*
 Removes the unit (e.g. px, em, rem) from a value, returning the number only.
@@ -146,8 +147,6 @@ $small-text-line-height:      2.4rem !default; //rem-calc(16) !default;
 
 $lead-font-size:              2.6rem !default; //rem-calc(25) !default;
 $lead-line-height:            4.0rem !default; //rem-calc(32) !default;
-
-$base-line-height:            2.4rem !default;
 
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
@@ -510,8 +509,8 @@ $asset-pipeline:                false !default;
 
 // Magic Numbers
 //
-$text-max-width:                496px !default; //76ch !default;
-$lead-max-width:                672px !default;
+$text-max-width:                75ch !default;
+$lead-max-width:                75ch !default;
 $site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  ($grid-gutter-width / 2) !default;
 $site-margins-mobile:           1.5rem !default;
@@ -528,7 +527,7 @@ $button-box-shadow:             rgba(0,0,0,.4) !default;
 $box-shadow:                    0 0 2px $color-shadow !default;
 $focus-outline:                 4px solid $color-warning;
 $focus-spacing:                 0px;
-$nav-width:                     $grid-lg !default; // 992px
+$nav-responsive-breakpoint:     $grid-lg !default; // 992px
 
 // 44 x 44 pixels hit target following Apple iOS Human Interface
 // Guidelines

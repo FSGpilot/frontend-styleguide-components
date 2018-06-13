@@ -20,7 +20,7 @@
     padding-top: 4rem;
   }
 
-  @include media($nav-width) {
+  @include media($nav-responsive-breakpoint) {
     @include padding(null $site-margins);
   }
 
@@ -39,7 +39,7 @@
   @include outer-container($site-max-width);
   @include padding(null $site-margins-mobile);
 
-  @include media($nav-width) {
+  @include media($nav-responsive-breakpoint) {
     @include padding(null $site-margins);
   }
 }
