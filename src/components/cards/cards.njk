@@ -1,8 +1,7 @@
 {% import "02-buttons/buttons.njk" as button %}
 
-<!-- Small card -->
+{# <!-- Small card -->
 {% macro cardsmall(size, header, subheader, headercontent) %}
-<h4>Lille card</h4>
 <div class="card {{size}}">
   <div class="card-header">
     <h6 class="header-title">{{header}}</h6>
@@ -15,7 +14,6 @@
 {% endmacro %}
 <!-- Medium card -->
 {% macro cardmedium(size, cardcontent, cardcontentmedia, header, subheader, headercontent) %}
-<h4>Mellem card</h4>
 <div class="card {{size}}">
   <div class="card-media">
      <div class="media-content">
@@ -33,45 +31,43 @@
     <p class="content">{{headercontent}}</p>
   </div>
 </div>  
-{% endmacro %}
-<!-- Large card -->
-{% macro cardlarge(size, header, subheader, headercontent, cardcontent, cardcontentmedia, actioncontent, actionbuttons, actionlinks, actionfunctionlinks) %}
-<h4>Stort card</h4>
-<div class="card {{size}}">
-  <div class="card-header">
-    <h6 class="header-title">{{header}}</h6>
-    <p class="sub-header">{{subheader}}</p>
-  </div>
-  <div class="card-content">
-    <p class="content">{{headercontent}}</p>
-  </div>
-  <div class="card-media">
-     <div class="media-content">
-        <p>{{cardcontent}}</p>
+{% endmacro %} #}
+{% macro cards(name, header, subheader, headercontent, cardcontent, cardcontentmedia, actioncontent, actionbuttons, actionlinks, actionfunctionlinks) %}
+<h4>card..</h4>
+{%- if (name == 'card') -%}
+  <div class="card">
+    <div class="card-header">
+      <h6 class="header-title">{{header}}</h6>
+      <p class="sub-header">{{subheader}}</p>
     </div>
-    <div class="media">
-      {{cardcontentmedia}}
+    <div class="card-content">
+      <p class="content">{{headercontent}}</p>
     </div>
-  </div>
-  <div class="card-action">
-    <div class="action-content">
-      {{actioncontent}}
+    <div class="card-media">
+      <div class="media-content">
+          <p>{{cardcontent}}</p>
+      </div>
+      <div class="media">
+        {{cardcontentmedia}}
+      </div>
     </div>
-    <div class="action-buttons">
-    {{ actionbuttons }}
+    <div class="card-action">
+      <div class="action-content">
+        {{actioncontent}}
+      </div>
+      <div class="action-buttons">
+      {{ actionbuttons }}
+      </div>
+      <div class="action-links">
+      {{ actionlinks }}
+      </div>
     </div>
-    <div class="action-links">
-    {{ actionlinks }}
-    </div>
-    <div class="action-functionlinks">
-    {{ actionfunctionlinks }}  
-    </div>
-  </div>
-</div>  
+  </div>  
+{%- endif %}
 {% endmacro %}
 
 <div class="row">
-  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+  {# <div class="col-12 col-sm-12 col-md-6 col-lg-6">
     {% for card in cardsmall_example.items -%}
       {{ cardsmall(card.size, card.header, card.subheader, card.headercontent) }}
     {%- endfor %}
@@ -80,10 +76,41 @@
     {% for card in cardmedium_example.items -%}
       {{ cardmedium(card.size, card.cardcontent, card.cardcontentmedia, card.header, card.subheader, card.headercontent) }}
     {%- endfor %}
-      </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-    {% for card in cardlarge_example.items -%}
-      {{ cardlarge(card.size, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    </div> #}
+    <div class="col-12">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
+  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
+    {%- endfor %}
+  </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+    {% for card in cards_example.items -%}
+      {{ cards(card.name, card.header, card.subheader, card.headercontent, card.cardcontent, card.cardcontentmedia, card.actioncontent, card.actionbuttons, card.actionlinks, card.actionfunctionlinks ) }}
     {%- endfor %}
   </div>
 </div>
