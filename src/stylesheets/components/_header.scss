@@ -238,6 +238,10 @@ $z-index-nav:     9000;
       }
     }
   }
+
+  .function-link + .function-link{
+    margin-left: map-get($spacers, 4);
+  }
 }
 
 .overlay {

@@ -81,12 +81,19 @@
           <!-- 3B: Main navigation - secondary menu-->
           <ul class="unstyled-list nav-actions">
             <li>
-              <select class="form-select" name="" aria-label="Skift mellem løsninger">
-                <option value="">Vælg løsning</option>
-                <option value="styleguide">Løsning 1</option>
-                <option value="virkdk">Løsning 2</option>
-                <option value="borgerdk">Løsning 3</option>
-              </select>
+              <div class="overflow-menu overflow-menu--open-left">
+                <button class="button-overflow-menu js-dropdown" data-js-target="#headeroverflow1" aria-haspopup="true" aria-expanded="false">
+                  Overflow menu
+                  {{ icon_svg('menu-down') }}
+                </button>
+                <div class="overflow-menu-inner" id="headeroverflow1" aria-hidden="true">
+                  <ul class="overflow-list">
+                      <li><a href="#">Menupunkt 1</a></li>
+                      <li><a href="#">Et menupunkt 2</a></li>
+                      <li><a href="#">Tredje menupunkt 3</a></li>
+                  </ul>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -99,7 +106,21 @@
           <div class="nav-secondary">
             <h4 class="nav-secondary-heading">Ekstra menu- og funktionslinje</h4>
             <ul class="unstyled-list nav-actions">
-              <li><button class="button button-tertiary">Knap</button></li>
+              <li>
+                <div class="overflow-menu overflow-menu--open-right">
+                  <button class="button-overflow-menu js-dropdown" data-js-target="#headeroverflow2" aria-haspopup="true" aria-expanded="false">
+                    Overflow menu
+                    {{ icon_svg('menu-down') }}
+                  </button>
+                  <div class="overflow-menu-inner" id="headeroverflow2" aria-hidden="true">
+                    <ul class="overflow-list">
+                      <li><a href="#">Menupunkt 1</a></li>
+                      <li><a href="#">Et menupunkt 2</a></li>
+                      <li><a href="#">Tredje menupunkt 3</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
           
