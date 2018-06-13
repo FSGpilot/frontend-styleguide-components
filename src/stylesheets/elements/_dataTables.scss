@@ -69,15 +69,22 @@ table.dataTable {
     border-spacing: 0;
 
 
-   .overflow-menu{
-        .editrow {
-            color:$color-positive;
+    .overflow-menu{
+        .overflow-menu-inner{
+            min-width: 150px;
         }
-        .deleterow {
-            color: $color-negative;
+        .overflow-list{
+            li{
+                display: flex; //fix text outside dropdown menu
+            }
         }
-   }
-
+        .danger-delete {
+            &:hover{
+                color: white;
+                background: $color-negative;
+            }
+        }
+    }
 
     //
     // Header and footer styles
@@ -88,19 +95,6 @@ table.dataTable {
             font-weight: bold;
         }
     }
-
-    /*thead th,
-    thead td {
-        //padding: 10px 18px;
-
-        @if not $jqueryui { // jQuery UI defines its own border
-            border-bottom: $table-header-border;
-        }
-
-        &:active {
-            outline: none;
-        }
-    } */
 
     tfoot th,
     tfoot td {
