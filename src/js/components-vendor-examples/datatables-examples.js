@@ -28,6 +28,7 @@ class datatablesExamples {
     //Init a datatable with ajax data
     //////////////////////////////////////
     var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
+
         "processing": true,
         "ajax": {
             "url": "https://jsonplaceholder.typicode.com/users",
@@ -63,6 +64,7 @@ class datatablesExamples {
                     "previous":   "Forrige"
                 },
             }
+
         }
     );
 
@@ -70,6 +72,11 @@ class datatablesExamples {
     //Init a datatable with selectable rows
     //////////////////////////////////////
     var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
+        "language": {
+            "search": "Søg i tabel:"
+        },
+        //"dom": '<"toolbar">frtip',
+
         columnDefs: [ {
             orderable: false,
             className: 'select-checkbox',
@@ -81,7 +88,7 @@ class datatablesExamples {
         },
         order: [[ 1, 'asc' ]]
     });
-
+    //$("div.toolbar").html('<b>Custom tool bar! Text/images etc.</b>');
     //////////////////////////////////////
     //Init a datatable with expand row
     //////////////////////////////////////
@@ -119,10 +126,12 @@ class datatablesExamples {
 
 
     var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
+
         "ajax": {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
+
         "columns": [
             {
                 "className":      'details-control',
