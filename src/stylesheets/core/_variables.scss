@@ -509,8 +509,8 @@ $asset-pipeline:                false !default;
 
 // Magic Numbers
 //
-$text-max-width:                75ch !default; //76ch !default;
-$lead-max-width:                672px !default;
+$text-max-width:                75ch !default;
+$lead-max-width:                75ch !default;
 $site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  ($grid-gutter-width / 2) !default;
 $site-margins-mobile:           1.5rem !default;
