@@ -121,7 +121,7 @@
 
 
 @mixin for-size($range) {
-  $phone-upper-boundary: 576px;
+  $phone-upper-boundary: 768px;
   $tablet-portrait-upper-boundary: 768px;
   $tablet-landscape-upper-boundary: 992px;
   $desktop-upper-boundary: 1800px;
