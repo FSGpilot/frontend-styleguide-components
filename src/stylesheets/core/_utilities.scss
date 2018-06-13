@@ -60,6 +60,15 @@
   }
 }
 
+@mixin inline-list() {
+  > li {
+    display:inline-block; 
+    @include for-size(phone-only) {
+      display: block;
+		}
+  }
+}
+
 // Font smoothing mixin
 // Only use for light text on dark background
 // TODO: Remove after adding PostCSS
