@@ -1,6 +1,6 @@
 {% macro modalpassive(type, close, title, description) %}
-<h4>Passive Modal</h4>
-<button type="button" aria-label="Open Modal" class="js-open-modal-passive open-modal button button-primary">Open passive modal </button>
+<h4>Passiv Modal</h4>
+<button type="button" aria-label="Open Modal" class="js-open-modal-passive open-modal button button-primary">Åben passiv modal </button>
  {%- if (type == 'passive') -%}
 	<div class="modal js-modal-passive" role="modal">
 		<button type="button" aria-label="Close Modal" class="js-close-modal-passive close-modal button button-ghost">{{close}}</button>
@@ -11,12 +11,12 @@
 {% endmacro %}
 
 
-{% macro modaltransactional(type, close, title, description, modalbuttons) %}
-<h4>Transactional Modal</h4>
-<button type="button" aria-label="Open Modal" class="js-open-modal-transactional open-modal button button-primary">Open transactional modal </button>
- {%- if (type == 'transactional') -%}
-	<div class="modal js-modal-transactional" role="modal">
-		<button type="button" aria-label="Close Modal" class="js-close-modal-transactional close-modal button button-ghost">{{close}}</button>
+{% macro modalinteractive(type, close, title, description, modalbuttons) %}
+<h4>Interaktiv Modal</h4>
+<button type="button" aria-label="Open Modal" class="js-open-modal-interactive open-modal button button-primary">Åben interaktiv modal </button>
+ {%- if (type == 'interactive') -%}
+	<div class="modal js-modal-interactive" role="modal">
+		<button type="button" aria-label="Close Modal" class="js-close-modal-interactive close-modal button button-ghost">{{close}}</button>
 		<h3 class="modal-title font-lead">{{title}}</h3>
 		<p class="modal-description">{{description}}</p>
 		<div class="modalbuttons">
@@ -28,12 +28,11 @@
 {% endmacro %}
 
 <div class="modal-overlay js-modal-overlay-passive" tabindex="-1"></div>
-<div class="modal-overlay js-modal-overlay-transactional" tabindex="-1"></div>
-{# <div class="modal-overlay js-modal-overlay-transactional" tabindex="-1"></div> #}
+<div class="modal-overlay js-modal-overlay-interactive" tabindex="-1"></div>
 
 {% for modal in modalpassive_example.items -%}
 	{{ modalpassive(modal.type, modal.close, modal.title, modal.description, modal.modalbuttons) }}
 {%- endfor %}
-{% for modal in modaltransactional_example.items -%}
-	{{ modaltransactional(modal.type, modal.close, modal.title, modal.description) }}
+{% for modal in modalinteractive_example.items -%}
+	{{ modalinteractive(modal.type, modal.close, modal.title, modal.description) }}
 {%- endfor %}

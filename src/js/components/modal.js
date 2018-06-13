@@ -116,11 +116,11 @@ if(navModalEl !== null && modalOverlay !== null && navModalEl !== undefined && m
     
 }
 
-var navModalEl11 = document.querySelector('.js-modal-transactional', );
-var modalOverlay11 = document.querySelector('.js-modal-overlay-transactional');
+var navModalEl11 = document.querySelector('.js-modal-interactive', );
+var modalOverlay11 = document.querySelector('.js-modal-overlay-interactive');
 if(navModalEl11 !== null && modalOverlay11 !== null && navModalEl11 !== undefined && modalOverlay11 !== undefined){
     var myModal = new Modal(navModalEl11, modalOverlay11);
-    myModal.addEventListeners('.js-open-modal-transactional', '.js-close-modal-transactional');
+    myModal.addEventListeners('.js-open-modal-interactive', '.js-close-modal-interactive');
     
 }
 
