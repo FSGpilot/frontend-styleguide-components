@@ -1,0 +1,11 @@
+label: Footer two line
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  footertwoline_example:
+    items:
+      - size: "card-small"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
