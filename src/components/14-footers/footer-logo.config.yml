@@ -1,0 +1,11 @@
+label: Footer with logo
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  footer_logo_example:
+    items:
+      - size: "card-small"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
