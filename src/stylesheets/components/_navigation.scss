@@ -17,8 +17,8 @@
 
 .navbar {
   width: 100%;
-  padding-left: map-get($spacers, 4);
-  padding-right: map-get($spacers, 4);
+  //padding-left: map-get($spacers, 4);
+  //padding-right: map-get($spacers, 4);
   padding-top: map-get($spacers, 5);
   padding-bottom: map-get($spacers, 5);
   border-bottom: $inner-border;
@@ -253,7 +253,6 @@
   }
 }
 
-
 .mobile_nav-active {
   overflow: hidden;
 }
@@ -261,8 +260,10 @@
 // Navbar inner
 .navbar-inner {
   display: flex;
-  align-items: center;
-  padding: 1.5rem;
+  flex-direction: column;
+  @include media($nav-responsive-breakpoint) {
+    flex-direction: row;
+  }
 }
 
 .nav-info-list {
