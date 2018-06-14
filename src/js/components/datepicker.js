@@ -32,14 +32,17 @@ class datepickerGroup {
     var that = this;
     
     this.dayInputElement.addEventListener("blur", function(){
+      that.formatInputs();
       that.validateInputs();
     });
 
     this.monthInputElement.addEventListener("blur", function(){
+      that.formatInputs();
       that.validateInputs();
     });
 
     this.yearInputElement.addEventListener("blur", function(){
+      that.formatInputs();
       that.validateInputs();
     });
   }
@@ -122,9 +125,24 @@ class datepickerGroup {
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
     
-    this.dayInputElement.value = day;
-    this.monthInputElement.value = month;
+    this.dayInputElement.value = this.dayFormat(day);
+    this.monthInputElement.value = this.monthFormat(month);
     this.yearInputElement.value = year;
+  }
+
+  //adds 0 at the front of day number
+  dayFormat(day){
+    return ("0" + day).slice(-2);
+  }
+  monthFormat(month){
+    return ("0" + month).slice(-2);
+  }
+  formatInputs(){
+    var day = parseInt(this.dayInputElement.value)
+    var month = parseInt(this.monthInputElement.value);
+
+    this.dayInputElement.value = this.dayFormat(day);
+    this.monthInputElement.value = this.monthFormat(month);
   }
 
   updateDatepickerDate(newDate){
