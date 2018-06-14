@@ -73,8 +73,10 @@ class datatablesExamples {
     //////////////////////////////////////
     var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
         "language": {
-            "search": "Søg i tabel:"
+            "search": "Søg i tabel:",
+            "Sort": true
         },
+
         //"dom": '<"toolbar">frtip',
 
         columnDefs: [ {
