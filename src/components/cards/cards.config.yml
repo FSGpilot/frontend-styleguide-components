@@ -3,16 +3,47 @@ status: ready
 preview: '@dkwds-framed'
 
 context:
-  cards_example:
+  cards1_example:
     items:
-      - name: "card"
+      - name: "card1"
         header: 'Header'
         subheader: 'Understøttende tekst'
-        headercontent: 'Dette er et <em>content område</em>, hvor du kan skrive hvad du har lyst til.'
-        cardcontent: 'Dette <em>medie område</em>, kan indeholde alt lige fra tekst til medier, såsom fotos og grafik <ul><li>Listeelement</li><li>Listeelement</li><li>Listeelement</li></ul>'
-        cardcontentmedia: '<img src="http://via.placeholder.com/350x150">'
-        actioncontent: '<p>Dette <em>aktionsområde</em>, kan indeholde interaktioner, såsom knapper og links.</p>'
-        actionbuttons: '<button class="button button-primary">Indberet XYZ</button> <button class="button button-ghost">Se dit overblik</button>'
-        actionlinks: '<ul><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
-        actionfunctionlinks: '<a href="#" class="function-link">Tilføj til kalender<svg class="icon-svg "><use xlink:href="#calendar"></use></svg></a><a href="#" class="function-link">Print<svg class="icon-svg "><use xlink:href="#printer"></use></svg></a>'
-        
+        cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'
+        cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
+        actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
+        actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
+  cards2_example:
+    items:
+      - name: "card2"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
+        cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'    
+  cards3_example:
+    items:
+      - name: "card3"
+        cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
+        actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
+  cards4_example:
+    items:
+      - name: "card4"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
+        actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
+        cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'
+  cards5_example:
+    items:
+      - name: "card5"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
+  cards6_example:
+    items:
+      - name: "card6"
+        header: 'Header'
+        subheader: 'Understøttende tekst'
+        cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'    
