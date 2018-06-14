@@ -64,8 +64,9 @@
 		top:map-get($spacers, 5);
 
 		@include for-size(phone-only) {
-			position: initial;
-			margin-bottom: map-get($spacers, 5);
+			top: 8px;
+			right: 24px;
+			width: inherit;
 		}
 	}
 	
