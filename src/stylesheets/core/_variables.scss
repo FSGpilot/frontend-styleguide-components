@@ -109,20 +109,20 @@ $icons-folder-path:             "../img/svg-icons/" !default;
 // Typography
 // Typography font-size and line-height
 
-$h1-font-size:                4.2rem !default; //rem-calc(43) !default; //4.3rem !default;
-$h1-line-height:              6.4rem !default; //4.8rem !default;rem-calc(48) !default
+$h1-font-size:                3.6rem !default; //rem-calc(43) !default; //4.3rem !default;
+$h1-line-height:              4.0rem !default; //4.8rem !default;rem-calc(48) !default
 
-$h2-font-size:                3.2rem !default; //rem-calc(33) !default; 
-$h2-line-height:              4.8rem   !default; //rem-calc(40) !default; 
+$h2-font-size:                2.7rem !default; //rem-calc(33) !default; 
+$h2-line-height:              3.2rem !default; //rem-calc(40) !default; 
 
-$h3-font-size:                2.6rem !default; //rem-calc(26) !default
-$h3-line-height:              4.0rem !default; //rem-calc(32) !default;
+$h3-font-size:                2.4rem !default; //rem-calc(26) !default
+$h3-line-height:              3.2rem !default; //rem-calc(32) !default;
 
-$h4-font-size:                2.1rem !default; //rem-calc(22) !default;
-$h4-line-height:              3.2rem !default; //rem-calc(24) !default;
+$h4-font-size:                2.2rem !default; //rem-calc(22) !default;
+$h4-line-height:              2.4rem !default; //rem-calc(24) !default;
 
-$h5-font-size:                1.8rem   !default; //rem-calc(20) !default;
-$h5-line-height:              3.2rem !default; //rem-calc(24) !default;
+$h5-font-size:                2.0rem   !default; //rem-calc(20) !default;
+$h5-line-height:              2.4rem !default; //rem-calc(24) !default;
 
 $h6-font-size:                1.6rem !default; //rem-calc(14) !default;
 $h6-line-height:              2.4rem !default; //rem-calc(16) !default;
@@ -505,8 +505,8 @@ $asset-pipeline:                false !default;
 
 // Magic Numbers
 //
-$text-max-width:                75ch !default;
-$lead-max-width:                75ch !default;
+$text-max-width:                66ch !default; //equivalent to 75 characters with spaces (ish).
+$lead-max-width:                66ch !default;
 $site-max-width:                $grid-xl !default; // 1200px
 $site-margins:                  ($grid-gutter-width / 2) !default;
 $site-margins-mobile:           1.5rem !default;
