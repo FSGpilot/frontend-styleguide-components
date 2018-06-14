@@ -11,6 +11,7 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 9999;
+		padding: 16px;
 	}
 
 	.modal__container {
@@ -58,13 +59,9 @@
 	}
 
 	.modal__close {
-		@include button-unstyled;
-		@include body-copy-text;
 		right: map-get($spacers, 6);
 		position: absolute;
 		top:map-get($spacers, 5);
-		width: 40px;
-		text-align: center;
 
 		@include for-size(phone-only) {
 			position: initial;
