@@ -1,78 +1,122 @@
-.modal-overlay {
-	z-index: 2;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-  	background-color: rgba(26, 26, 26, 0.75);
-
-}
-
 .modal {
-	z-index: 3;
-	background-color: $color-white;
-	padding:map-get($spacers, 8) map-get($spacers, 13) map-get($spacers, 8) map-get($spacers, 13);
-	width: 66.6%;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	@include for-size(phone-only) {
-		width: 100%;
-		top:0;
-		bottom:0;
-		right:0;
-		left:0;
-		padding:map-get($spacers, 5) map-get($spacers, 7) map-get($spacers, 5) map-get($spacers, 7);
-		transform: none;
-	  }
+		
+	.modal__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(26, 26, 26, 0.75);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+		padding: 16px;
+	}
 
-	.close-modal {
-		float: right;
-		right: map-get($spacers, 5);
+	.modal__container {
+		background-color: #fff;
+		padding: 16px 24px;
+		max-width: 800px;
+		max-height: calc(100vh - 32px);
+		overflow-y: auto;
+		position: relative;
+		@include media($medium-screen) {
+			padding: 28px 48px;
+		}
+		@include media($large-screen) {
+			padding: 48px 88px;
+		}
+	}
+
+	.modal__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.modal__title {
+		@include h3;
+		margin: 0;
+		font-weight: $font-weight-semibold;
+	}
+
+	.modal__content {
+		margin-top: 8px;
+		& > *:first-child{
+			margin-top: 0;
+		}
+	}
+
+	.modal__footer{
+		margin-top: 16px;
+		@include media($large-screen) {
+			display: flex;
+		}
+		.button {
+			margin-top: map-get($spacers, 3);
+			margin-right: map-get($spacers, 4);
+		}
+	}
+
+	.modal__close {
+		right: map-get($spacers, 6);
 		position: absolute;
-		@include body-copy-text;
 		top:map-get($spacers, 5);
 
 		@include for-size(phone-only) {
-			position: initial;
-			margin-bottom: map-get($spacers, 5);
+			top: 8px;
+			right: 24px;
+			width: inherit;
 		}
 	}
-	.modal-title {
-		margin: 0;
-		font-weight: $font-weight-semibold;
-
+	
+	/**************************\
+		Animation Style
+	\**************************/
+	@keyframes modalfadeIn {
+		from { opacity: 0; }
+			to { opacity: 1; }
 	}
-	.modal-description {
-		margin:map-get($spacers, 3) 0 0 0;
-
+	
+	@keyframes modalfadeOut {
+		from { opacity: 1; }
+			to { opacity: 0; }
 	}
-	.modalbuttons {
-		.button {
-			margin-right: map-get($spacers, 4);
-			margin-top:map-get($spacers, 5);
-			@include for-size(phone-only) {
-				margin-right: map-get($spacers, 0);
-			}
-		}
+	
+	@keyframes modalslideIn {
+		from { transform: translateY(15%); }
+		to { transform: translateY(0); }
 	}
-}
-
-.modal-overlay[aria-hidden="true"],
-.modal[aria-hidden="true"] {
+	
+	@keyframes modalslideOut {
+		from { transform: translateY(0); }
+		to { transform: translateY(-10%); }
+	}
+	
 	display: none;
-}
-
-.modal-overlay:not([aria-hidden="true"]),
-.modal:not([aria-hidden="true"]) {
-	display: block;
-}
-
-.sr-only {
-	opacity: 0;
-	position: absolute;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
+	
+	&.is-open {
+		display: block;
+	}
+	
+	&[aria-hidden="false"] .modal__overlay {
+		animation: modalfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+	}
+	
+	&[aria-hidden="false"] .modal__container {
+		animation: modalslideIn .3s cubic-bezier(0, 0, .2, 1);
+	}
+	
+	&[aria-hidden="true"] .modal__overlay {
+		animation: modalfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+	}
+	
+	&[aria-hidden="true"] .modal__container {
+		animation: modalslideOut .3s cubic-bezier(0, 0, .2, 1);
+	}
+	
+	& .modal__container,
+	& .modal__overlay {
+		will-change: transform;
+	}	
 }

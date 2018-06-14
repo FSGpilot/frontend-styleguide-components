@@ -1,6 +1,6 @@
 footer {
 
-  p {
+  p, h1, h2, h3, h4, h5, h6 {
     margin:0;
   }
 
@@ -16,12 +16,16 @@ footer {
       padding-right: map-get($spacers, 4);
 		}
   }
+  //generel for footer
   .footer {
     border-top: $outer-border;
     border-bottom: $inner-border;
     padding-top: calc(#{map-get($spacers, 4)} - 1px);
     padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
 
+    .footer-headline {
+      margin-bottom: map-get($spacers, 5);
+    }
 
     .align-left {
       text-align: left;
@@ -30,6 +34,20 @@ footer {
       text-align: right;
       @include for-size(phone-only) {
         text-align: left;
+      }
+    }
+
+    .footer-col {
+      @include for-size(phone-only) {
+        &:not(:first-child) {
+          margin-top: map-get($spacers, 5);
+        }
+      }
+    }
+
+    ul{
+      li {
+        margin-top:map-get($spacers, 3);
       }
     }
 
@@ -48,8 +66,9 @@ footer {
       }
     }
   }
+  //footer-theme
   .footer-theme {
-    padding-top: calc(#{map-get($spacers, 4)});
+    padding-top: map-get($spacers, 4);
     padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
   }
 }

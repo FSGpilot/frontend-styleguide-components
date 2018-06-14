@@ -2,9 +2,9 @@
 const forEach = require('array-foreach');
 const $  = require( 'jquery' );
 window.$ = $;
+const microModal = require("../../vendor/micromodal.js");
 const dt = require( 'datatables.net' )( window, $ );
 const dt_select =require( 'datatables.net-select' )( window, $ );
-const dt_edit = require( './datatables-editable' );
 
 const jsSelectorDatatable_Example_basic = "#js-datatable-example-basic";
 const jsSelectorDatatable_Example_extra_pagination = "#js-datatable-example-extra_pagination";
@@ -133,7 +133,7 @@ class datatablesExamples {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-
+        "rowId": "id",
         "columns": [
             {
                 "className":      'details-control',
@@ -150,11 +150,26 @@ class datatablesExamples {
                 {
                 "targets": -1,
                 "data": null,
-                "defaultContent": "<i class='dots-vertical selected js-edit-item'></i>" //"defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Item</li><li class='selected'>Selected item</li><li class='deleterow'>Delete</li></ul></div>"
+                "render": function ( data, type, full, meta ) {
+                    var overflowID = "overflow-table-"+full.id;
+                    return  `<div class="overflow-menu overflow-menu--open-left">
+                                <button class="button-overflow-menu js-dropdown" data-js-target="#`+ overflowID +`" aria-haspopup="true" aria-expanded="false">
+                                    <svg class="icon-svg"><use xlink:href="#dots-vertical"></use></svg>
+                                </button>
+                                <div class="overflow-menu-inner" id="`+ overflowID +`" aria-hidden="true">
+                                    <ul class="overflow-list">
+                                        <li><button class="js-edit-modal-trigger">Rediger</button></li>
+                                        <li><button class="js-delete-modal-trigger danger-delete">Slet</button></li>
+                                    </ul>
+                                </div>
+                            </div>`
+                }
             }
         ],
         "order": [[1, 'asc']]
     } );
+
+    //"defaultContent": "<i class='dots-vertical selected'></i><div class='dots-vertical-content'><span class='triangle'></span><ul><li class='editrow'>Edit</li><li>Item</li><li class='selected'>Selected item</li><li class='deleterow'>Delete</li></ul></div>"
 
     // Add event listener for opening and closing details
     $(jsSelectorDatatable_Example_detailsrow).on('click', 'td.details-control', function () {
@@ -173,28 +188,68 @@ class datatablesExamples {
         }
     } );
 
-    $(jsSelectorDatatable_Example_detailsrow).on('click', '.js-edit-item', function () {
-    //$('body').on('click', '.js-edit-item', function() {
-      var tr = $(this).closest('tr');
-      var data = table_detailsrow.row(tr).data();
+    var currentEditTr = null
 
-      //$('.js-modal-overlay-transactional').open();
-      //$('.js-modal-transactional').open();
+    //Open edit modal
+    $(jsSelectorDatatable_Example_detailsrow).on('click', '.js-edit-modal-trigger', function () {
 
-      console.log(data.id);
-      //alert( data[0] +"'s salary is: "+ data[ 5] );
-    } );
+        //get data from row
+        currentEditTr = $(this).closest('tr');
+        var data = table_detailsrow.row(currentEditTr).data();
+        var id = table_detailsrow.row(currentEditTr).id()
+        
+        //insert data in modal
+        $('#edit-row-id').val(id);
+        $('#edit-navn').val(data.name);
+        $('#edit-email').val(data.email);
+        $('#edit-vejnavn').val(data.address.street);
+        $('#edit-by').val(data.address.city);
+        $('#edit-telefon').val(data.phone);
+        $('#edit-firmanavn').val(data.company.name);
 
-    function myCallbackFunction (updatedCell, updatedRow, oldValue) {
-      console.log("The new value for the cell is: " + updatedCell.data());
-      console.log("The values for each cell in that row are: " + updatedRow.data());
-    }
+        //open modal
+         microModal.show('modal-edit');
+    });
 
-    // table_basic.MakeCellsEditable({
-    //     "onUpdate": myCallbackFunction
-    // });
+    //Update edit row
+    $('body').on('click', '.js-edit-save-trigger', function () {
 
+        //get row data
+        var data = table_detailsrow.row(currentEditTr).data();
+        
+        //update  data
+        data.name = $('#edit-navn').val();
+        data.email = $('#edit-email').val();
+        data.address.street = $('#edit-vejnavn').val();
+        data.address.city =  $('#edit-by').val();
+        data.phone = $('#edit-telefon').val();
+        data.company.name = $('#edit-firmanavn').val();
 
+        //Update row and redraw 
+        table_detailsrow.row(currentEditTr).data(data).draw();
+
+        //close modal
+        microModal.close('modal-edit');
+    });
+
+    var currentDeleteTr = null
+    //Open delete modal
+    $(jsSelectorDatatable_Example_detailsrow).on('click', '.js-delete-modal-trigger', function () {
+
+        currentDeleteTr = $(this).closest('tr');
+        
+        //open modal
+        microModal.show('modal-delete');
+    });
+    //do delete
+    $('body').on('click', '.js-delete-trigger', function () {
+
+        //delete row
+        table_detailsrow.row(currentDeleteTr).remove().draw();
+        
+        //close modal
+        microModal.close('modal-delete');
+    });
   }
 }
 
