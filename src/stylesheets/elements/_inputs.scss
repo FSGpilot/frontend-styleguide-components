@@ -338,13 +338,14 @@ $radio-size-large: 34px;
   align-items: flex-end;
   label {
     margin-top: 0;
+    font-weight: $font-weight-normal;
   }
 
   .form-group-day,
   .form-group-month,
   .form-group-year {
     margin-right: map-get($spacers, 4);
-    margin-top: map-get($spacers, 3);
+    margin-top: 0;
   }
 
   .form-group-day,
