@@ -3,4 +3,6 @@
 require('classlist-polyfill');
 // polyfills HTMLElement.prototype.hidden
 require('./element-hidden');
-require('./object-assign');
+
+require('core-js/fn/object/assign');
+require('core-js/fn/array/from');
