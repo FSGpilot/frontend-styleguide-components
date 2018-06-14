@@ -46,14 +46,14 @@ $button-stroke: inset 0 0 0 2px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: color .2s ease-in-out, background-color .2s ease-in-out, .2s ease-in-out; 
+  transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out; 
 
   @include media($small-screen) {
     width: auto;
   }
 
-  &.focus,
-  &:focus {
+  &:not(.button-ghost).focus,
+  &:not(.button-ghost):focus {
     border-color: $color-focus;
     outline-color: $color-focus;
     position: relative;
@@ -152,9 +152,7 @@ $button-stroke: inset 0 0 0 2px;
     &.focus,
     &:focus {
       color: $color-black;
-      background-color:$color-focus;
       box-shadow:none;
-      border-color: $color-focus;
     }
   }
 
