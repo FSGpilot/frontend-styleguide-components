@@ -9,9 +9,7 @@ context:
         header: 'Header'
         subheader: 'Understøttende tekst'
         cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'
-        contenttext: 'Dette <em>content område</em>, som for eksempel kan indeholde displaytekst.'
         cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
-        actioncontent: '<p>Dette <em>aktionsområde</em>, kan indeholde interaktioner, såsom knapper og links.</p>'
         actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
         actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
   cards2_example:
@@ -19,22 +17,21 @@ context:
       - name: "card2"
         header: 'Header'
         subheader: 'Understøttende tekst'
-        contenttext: 'Dette <em>content område</em>, som for eksempel kan indeholde displaytekst.'
         cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
         cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'    
   cards3_example:
     items:
       - name: "card3"
-        contenttext: 'Dette <em>content område</em>, som for eksempel kan indeholde displaytekst.'
         cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
         header: 'Header'
         subheader: 'Understøttende tekst'
+        actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
+        actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
   cards4_example:
     items:
       - name: "card4"
         header: 'Header'
         subheader: 'Understøttende tekst'
-        actioncontent: '<p>Dette <em>aktionsområde</em>, kan indeholde interaktioner, såsom knapper og links.</p>'
         actionbuttons: '<button class="button button-secondary">Indberet XYZ</button> <button class="button button-tertiary">Se dit overblik</button>'
         actionlinks: '<ul class="unstyled-list"><li><a href="javascript:void(0);" class="default link state">Informationslink til relevant tekst</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til visning af data</a></li><li><a href="javascript:void(0);" class="default link state">Informationslink til vigtige informationer</a></li></ul>'
         cardtext: 'Dette er et <em>tekst område</em>, hvor du kan skrive hvad du har lyst til.'
@@ -43,7 +40,6 @@ context:
       - name: "card5"
         header: 'Header'
         subheader: 'Understøttende tekst'
-        contenttext: 'Dette <em>content område</em>, som for eksempel kan indeholde displaytekst.'
         cardcontent: '<span class="displayheading-1 text-negative">100</span><span class="h2 text-negative"> kr.</span>'
   cards6_example:
     items:

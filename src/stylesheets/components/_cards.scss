@@ -79,8 +79,8 @@
 //card-content
 .card-content {
   @include body-copy-text;
-  padding: map-get($spacers, 4) map-get($spacers, 5);
-  background:$color-white;
+  padding: map-get($spacers, 0) map-get($spacers, 0);
+  background:$color-gray-light;
   color: $color-gray-dark;
   ul {
     margin-bottom:map-get($spacers, 0);
@@ -88,13 +88,16 @@
   div:first-child {
     margin-top:map-get($spacers, 0);
   }
-  .contenttext {
+  .content-text {
     margin-top:map-get($spacers, 4);
   }
   .content {
     text-align: center;
   }
 }
+
+
+
 //card-action
 .card-action {
   @include body-copy-text;
@@ -110,15 +113,19 @@
     border-bottom: map-get($spacers, 0);
   }
 
+ 
+
   .action-buttons {
     button {
       margin-right: map-get($spacers, 3);
-      margin-top:map-get($spacers, 5);
+      margin-top:map-get($spacers, 3);
       @include for-size(phone-only) {
         margin-right: map-get($spacers, 0);
+        margin-top:map-get($spacers, 3);
       }
     }
   }
+  
 
   .action-links {
     margin-top:map-get($spacers, 4);
@@ -139,8 +146,7 @@
   }
 }
 
-
-//If content comes after header
+//If text comes after header
 .card-header + .card-text{
   padding-top:map-get($spacers, 0);
 }
@@ -156,39 +162,39 @@
 .card-header + .card-header{
   padding-top:map-get($spacers, 0);
 }
-//If header comes after content
+//If header comes after text
 .card-text + .card-header {
   padding-top:map-get($spacers, 0);
 }
-//If media comes after header
+//If content comes after text
 .card-text + .card-content {
   padding-top:map-get($spacers, 0);
 }
-//If action comes after content
+//If action comes after text
 .card-text + .card-action{
   padding-top:map-get($spacers, 0);
 }
-//If action comes after content
+//If text comes after text
 .card-text + .card-text{
   padding-top:map-get($spacers, 0);
 }
-//If content comes after header
-.card-content + .card-text{
-  padding-top:map-get($spacers, 0);
-}
-//If action comes after media
-.card-content + .card-action {
-  padding-top:map-get($spacers, 0);
-}
-//If header comes after content
-.card-content + .card-header {
-  padding-top:map-get($spacers, 0);
-}
-//If header comes after content
-.card-content + .card-content {
-  padding-top:map-get($spacers, 0);
-}
-//If action comes after content
+//If text comes after content
+// .card-content + .card-text{
+//   padding-top:map-get($spacers, 0);
+// }
+// //If action comes after content
+// .card-content + .card-action {
+//   padding-top:map-get($spacers, 0);
+// }
+// //If header comes after content
+// .card-content + .card-header {
+//   padding-top:map-get($spacers, 0);
+// }
+// //If content comes after content
+// .card-content + .card-content {
+//   padding-top:map-get($spacers, 0);
+// }
+//If text comes after action
 .card-action + .card-text{
   padding-top:map-get($spacers, 0);
 }
@@ -196,7 +202,7 @@
 .card-action + .card-header{
   padding-top:map-get($spacers, 0);
 }
-//If action comes after action
+//If content comes after action
 .card-action + .card-content{
   padding-top:map-get($spacers, 0);
 }

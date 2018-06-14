@@ -16,15 +16,15 @@
     {% endif %}
     {%if (contenttext) or (cardcontent) %}
       <div class="card-content">
-        <div class="contenttext">
+        <div class="content-text">
           <p>{{contenttext}}</p>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="content">
-              {{cardcontent}}
+        <div class="content">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                {{cardcontent}}
+              </div>
             </div>
-          </div>
         </div>
       </div>
     {% endif %}
@@ -56,12 +56,12 @@
       {% endif %}
       {%if (contenttext) or (cardcontent) %}
         <div class="card-content">
-          <div class="contenttext">
+          <div class="content-text">
             <p>{{contenttext}}</p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="content">
+          <div class="content">
+            <div class="row justify-content-center">
+              <div class="col-12">
                 {{cardcontent}}
               </div>
             </div>
@@ -83,12 +83,12 @@
     <div class="card">
       {%if (contenttext) or (cardcontent) %}
         <div class="card-content">
-          <div class="contenttext">
+          <div class="content-text">
             <p>{{contenttext}}</p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="content">
+          <div class="content">
+            <div class="row justify-content-center">
+              <div class="col-12">
                 {{cardcontent}}
               </div>
             </div>
@@ -100,6 +100,19 @@
           <h6 class="header-title">{{header}}</h6>
           <p class="sub-header">{{subheader}}</p>
         </div>
+    {% endif %}
+    {%if (actioncontent) or (actionbuttons) or (actionlinks) %}
+      <div class="card-action">
+        <div class="action-content">
+          {{actioncontent}}
+        </div>
+        <div class="action-buttons">
+        {{ actionbuttons }}
+        </div>
+        <div class="action-links">
+        {{ actionlinks }}
+        </div>
+      </div>
     {% endif %}
     </div>
   {%- endif %}
@@ -147,12 +160,12 @@
       {% endif %}
       {%if (contenttext) or (cardcontent) %}
         <div class="card-content">
-          <div class="contenttext">
+          <div class="content-text">
             <p>{{contenttext}}</p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="content">
+          <div class="content">
+            <div class="row justify-content-center">
+              <div class="col-12">
                 {{cardcontent}}
               </div>
             </div>
@@ -181,45 +194,42 @@
   {%- endif %}
 {% endmacro %}
 
+<h4>Card med fuld bredde</h4>
 <div class="row">
   <div class="col-12">
-    <h4>Card med fuld bredde</h4>
     {% for card1 in cards1_example.items -%}
       {{ cards1(card1.name, card1.header, card1.subheader, card1.cardtext, card1.contenttext, card1.cardcontent, card1.actioncontent, card1.actionbuttons, card1.actionlinks ) }}
     {%- endfor %}
   </div>
 </div>
 
+<h4>Card med halv bredde</h4>
 <div class="row">
   <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-    <h4>Card med halv bredde</h4>
     {% for card2 in cards2_example.items -%}
       {{ cards2(card2.name, card2.header, card2.subheader, card2.cardtext, card2.contenttext, card2.cardcontent, card2.actioncontent, card2.actionbuttons, card2.actionlinks ) }}
     {%- endfor %}
   </div>
   <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-    <h4>Card med halv bredde</h4>
     {% for card3 in cards3_example.items -%}
       {{ cards3(card3.name, card3.header, card3.subheader, card3.cardtext, card3.contenttext, card3.cardcontent, card3.actioncontent, card3.actionbuttons, card3.actionlinks ) }}
     {%- endfor %}
   </div>
 </div>
 
+<h4>Card med en tredjedel bredde</h4>
 <div class="row">
   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-  <h4>Card med en tredjedel bredde</h4>
     {% for card4 in cards4_example.items -%}
       {{ cards4(card4.name, card4.header, card4.subheader, card4.cardtext, card4.contenttext, card4.cardcontent, card4.actioncontent, card4.actionbuttons, card4.actionlinks, card4.actionfunctionlinks ) }}
     {%- endfor %}
   </div>
   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-  <h4>Card med en tredjedel bredde</h4>
     {% for card5 in cards5_example.items -%}
       {{ cards5(card5.name, card5.header, card5.subheader, card5.cardtext, card5.contenttext, card5.cardcontent, card5.actioncontent, card5.actionbuttons, card5.actionlinks, card5.actionfunctionlinks ) }}
     {%- endfor %}
   </div>
-    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-    <h4>Card med en tredjedel bredde</h4>
+  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
     {% for card6 in cards6_example.items -%}
       {{ cards6(card6.name, card6.header, card6.subheader, card6.cardtext, card6.contenttext, card6.cardcontent, card6.actioncontent, card6.actionbuttons, card6.actionlinks, card6.actionfunctionlinks ) }}
     {%- endfor %}
