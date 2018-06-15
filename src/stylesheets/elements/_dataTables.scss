@@ -117,26 +117,49 @@ table.dataTable {
                 *cursor: hand;
                 background-repeat: no-repeat;
                 background-position: center right;
+                padding-left: 31px;
+                position: relative;
+
+                &:before {
+                  content: '';
+                  left:8px;
+                  position: absolute;
+                  height: 24px;
+                  width: 24px;
+
+                }
             }
 
             .sorting {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
-                //background-image: url('../images/sort_both.png');
+
+                 &:before {
+                   background-image: url('#{$icons-folder-path}/menu-up.svg');  //sort_both
+                   opacity: .2;
+                 }
             }
             .sorting_asc {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
-                //background-image: url('../images/sort_asc.png');
+                &:before {
+                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc
+                }
+                //background-image: url('../images/.png');
             }
             .sorting_desc {
-                background-image: url('#{$icons-folder-path}/menu-down.svg');
-                //background-image: url('../images/sort_desc.png');
+                &:before {
+                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc
+                }
             }
             .sorting_asc_disabled {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
+                &:before {
+                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc -> disabled
+                }
             }
             .sorting_desc_disabled {
-                background-image: url('#{$icons-folder-path}/menu-down.svg');
+                &:before {
+                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc -> disabled
+                }
             }
+
+
         }
     }
 

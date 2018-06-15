@@ -77,7 +77,7 @@ class datatablesExamples {
             "Sort": true
         },
 
-        //"dom": '<"toolbar">frtip',
+        "dom": '<"toolbar">frtip',  
 
         columnDefs: [ {
             orderable: false,
@@ -90,7 +90,8 @@ class datatablesExamples {
         },
         order: [[ 1, 'asc' ]]
     });
-    //$("div.toolbar").html('<b>Custom tool bar! Text/images etc.</b>');
+
+    //$("div.toolbar").append('<b>Custom tool bar! Text/images etc.</b>');
     //////////////////////////////////////
     //Init a datatable with expand row
     //////////////////////////////////////
@@ -197,7 +198,7 @@ class datatablesExamples {
         currentEditTr = $(this).closest('tr');
         var data = table_detailsrow.row(currentEditTr).data();
         var id = table_detailsrow.row(currentEditTr).id()
-        
+
         //insert data in modal
         $('#edit-row-id').val(id);
         $('#edit-navn').val(data.name);
@@ -216,7 +217,7 @@ class datatablesExamples {
 
         //get row data
         var data = table_detailsrow.row(currentEditTr).data();
-        
+
         //update  data
         data.name = $('#edit-navn').val();
         data.email = $('#edit-email').val();
@@ -225,7 +226,7 @@ class datatablesExamples {
         data.phone = $('#edit-telefon').val();
         data.company.name = $('#edit-firmanavn').val();
 
-        //Update row and redraw 
+        //Update row and redraw
         table_detailsrow.row(currentEditTr).data(data).draw();
 
         //close modal
@@ -237,7 +238,7 @@ class datatablesExamples {
     $(jsSelectorDatatable_Example_detailsrow).on('click', '.js-delete-modal-trigger', function () {
 
         currentDeleteTr = $(this).closest('tr');
-        
+
         //open modal
         microModal.show('modal-delete');
     });
@@ -246,7 +247,7 @@ class datatablesExamples {
 
         //delete row
         table_detailsrow.row(currentDeleteTr).remove().draw();
-        
+
         //close modal
         microModal.close('modal-delete');
     });
