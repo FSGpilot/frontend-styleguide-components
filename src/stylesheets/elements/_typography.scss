@@ -131,14 +131,14 @@ a {
   font-family: $font-name;
   font-size: $h4-font-size; //2.2rem
   line-height: $h4-line-height; //2.4rem
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   color: $color-black;
 }
 @mixin h5 {
   font-family: $font-name;
   font-size: $h5-font-size; //2.0rem
   line-height: $h5-line-height; //2.4rem
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   color: $color-black;
 }
 @mixin body-copy-text {
@@ -159,7 +159,7 @@ a {
   font-family: $font-name;
   font-size: $h6-font-size; //1.6rem
   line-height: $h6-line-height; //2.4rem
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   color: $color-black;
 }
 @mixin small-text {
@@ -384,7 +384,7 @@ dfn {
 .font-lead {
   font-family: $font-family;
   font-size: $lead-font-size;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
   color:$color-gray-dark;
