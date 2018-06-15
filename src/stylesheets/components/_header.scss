@@ -97,6 +97,10 @@ $z-index-nav:     9000;
           margin-left: map-get($spacers, 4);
         }
       }
+
+      .username{
+        font-weight: $font-weight-semibold;
+      }
     }
   }
 
@@ -117,13 +121,13 @@ $z-index-nav:     9000;
     }
 
     .solution-heading{
-      font-size: 2.8rem; 
-      line-height: 3.2rem;
-      font-weight: $font-weight-semibold;
-      color: $color-black;
       a{
+        font-size: 2.8rem; 
+        line-height: 3.2rem;
+        font-weight: $font-weight-semibold;
         color: $color-black;
         text-decoration: none;
+        display: inline-block;
       }
     }
     .solution-info{
@@ -133,6 +137,17 @@ $z-index-nav:     9000;
         text-align: right;
         max-width: 60%;
         display: block;
+      }
+
+      .authority-name{
+        color: $color-gray-dark;
+      }
+    }
+    .button-contact{
+      display: inline-flex;
+      .icon-svg{
+        position: relative;
+        top: -1px;
       }
     }
   }
