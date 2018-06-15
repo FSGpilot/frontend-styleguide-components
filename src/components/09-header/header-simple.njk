@@ -10,7 +10,7 @@
       <!-- 1B: Portal header: info + actions-->
       <div class="portal-info">
         {% if portal_header.user %}  
-          <p class="user"><b>{{ portal_header.user.name}}</b> {% if portal_header.user.work %}  · {{ portal_header.user.work}}  {% endif %}</p>
+          <p class="user"><b class="username">{{ portal_header.user.name}}</b> {% if portal_header.user.work %}· {{ portal_header.user.work}}  {% endif %}</p>
         {% endif %}
          <a href="{{ portal_header.link.href }}" class="button {{ portal_header.link.class | default('button-secondary') }}" role="button">
           {{ portal_header.link.text }}
@@ -33,7 +33,7 @@
       <!--2B: Solution header: Authority name + text-->
       <div class="solution-info"> <!-- nav-secondary -->
         {% if solution_header_data.authority.name %}  
-          <h6 class="h6"> {{ solution_header_data.authority.name }}</h6>
+          <h6 class="h6 authority-name"> {{ solution_header_data.authority.name }}</h6>
         {% endif %}
         {% if solution_header_data.authority.text %}  
           <p>{{ solution_header_data.authority.text }}</p>

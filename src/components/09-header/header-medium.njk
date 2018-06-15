@@ -10,7 +10,7 @@
 
         <!-- 1B: Portal header: info + actions-->
         <div class="portal-info">
-          <p class="user"><b>Ida Ester Petersen</b></p>
+          <p class="user"><b class="username">Christian Emil Vestergaard Christensen</b> · Københavns Urmager og Værksted v/Martin Elsig</p>
           <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary" role="button">
             Log ud
           </a>
@@ -27,8 +27,8 @@
 
           <!--2B: Solution header: Authority name + text-->
           <div class="solution-info"> <!-- nav-secondary -->
-              <h6 class="h6">Myndighedsnavn</h6>
-              <p>Support: 12 34 56 78</p>
+              <h6 class="h6 authority-name">Myndighedsnavn</h6>
+              <p>Support: 12 34 56 78 · <button class="button-unstyled button-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
           </div>
         </div>
     </div>
@@ -92,3 +92,5 @@
     </nav> <!-- collapsible nav end-->
 </header>
 <div class="overlay"></div>
+
+{{ modal(modal_data_contact) }}
