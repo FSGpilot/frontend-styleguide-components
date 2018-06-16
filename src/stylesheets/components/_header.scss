@@ -25,6 +25,7 @@ $z-index-nav:     9000;
     display: inline-block;
     height: 60px;
     width: 200px;
+    max-width: 60%;
   }
   
   .button{
@@ -79,7 +80,10 @@ $z-index-nav:     9000;
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
       display: flex;
       align-items: flex-start;
-  
+      @media (max-width: $nav-responsive-breakpoint) {
+        padding-left: 0;
+        padding-right: 0;
+      }
       @include media($nav-responsive-breakpoint) {
         align-items: center;
         flex-direction: row;
@@ -97,7 +101,9 @@ $z-index-nav:     9000;
           margin-left: map-get($spacers, 4);
         }
       }
-
+      .button{
+        white-space: nowrap;
+      }
       .username{
         font-weight: $font-weight-semibold;
       }
@@ -114,6 +120,10 @@ $z-index-nav:     9000;
       padding-top: calc(#{map-get($spacers, 4)} - 1px);
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
 
+      @media (max-width: $nav-responsive-breakpoint) {
+        padding-left: 0;
+        padding-right: 0;
+      }
       @include media($nav-responsive-breakpoint) {
         align-items: center;
         flex-direction: row;
@@ -138,17 +148,16 @@ $z-index-nav:     9000;
         max-width: 60%;
         display: block;
       }
-
-      .authority-name{
-        color: $color-gray-dark;
-      }
     }
-    .button-contact{
-      display: inline-flex;
-      .icon-svg{
-        position: relative;
-        top: -1px;
-      }
+  }
+  .authority-name{
+    color: $color-gray-dark;
+  }
+  .button-contact{
+    display: inline-flex;
+    .icon-svg{
+      position: relative;
+      top: -1px;
     }
   }
 
@@ -207,7 +216,6 @@ $z-index-nav:     9000;
     z-index: $z-index-nav;
 
     @include media($nav-responsive-breakpoint) {
-      @include padding(4.5rem 0 0 null);
       border-left: none;
       display: block;
       overflow-y: visible;
@@ -254,8 +262,22 @@ $z-index-nav:     9000;
     }
   }
 
+  .function-link {
+    @media (max-width: $nav-responsive-breakpoint) {
+      display: block;
+      margin-top: 8px;
+      .icon-svg {
+        float: left;
+        margin-left: 0;
+        margin-right: 4px;
+      }
+    }
+  }
   .function-link + .function-link{
-    margin-left: map-get($spacers, 4);
+    @include media($nav-responsive-breakpoint) {
+      margin-left: map-get($spacers, 4);
+      
+    }
   }
 }
 
