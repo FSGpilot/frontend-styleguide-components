@@ -40,3 +40,8 @@ a:focus, button:focus, input:focus, select:focus,
 .collapsed{
   display: none;
 }
+
+.page-container{
+  padding-top: $spacing-x-large;
+  padding-bottom: $spacing-xxx-large;
+}
