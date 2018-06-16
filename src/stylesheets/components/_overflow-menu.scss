@@ -118,6 +118,10 @@ $overflow-menu-dropdown-distance: 8px;
             }
             li, a, button{
                 text-align: right;
+                .icon-svg{
+                    float: right;
+                    margin-left: 4px;
+                }
             }
         }
     }
