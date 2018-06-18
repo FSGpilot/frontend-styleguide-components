@@ -68,6 +68,11 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0;
 
+    .toolbar {
+      float: left;
+      padding-top: 8px;
+      line-height: 24px;
+    }
 
     .overflow-menu{
         .overflow-menu-inner{
