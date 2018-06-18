@@ -180,9 +180,6 @@ table.dataTable {
             //padding: 16px; //8px;
             vertical-align: middle;
             position: relative;
-            &:last-child {
-              padding-right: 32px;
-            }
 
         }
         td[colspan] {
@@ -190,16 +187,10 @@ table.dataTable {
           .details-row-content {
             background-color: $color-white;
             box-shadow: inset 2px 0 0px 0px $color-gray-dark;
-            .row {
-              margin-right: 32px;
-              margin-left: 32px;
-            }
-            .dataset {
-              .chart {
-                margin-top:32px;
-              }
-            }
-            //margin-left: 31px;
+            padding-right: 32px;
+            padding-left: 54px;
+            padding-top: map-get($spacers, 4);
+            padding-bottom: map-get($spacers, 4);
           }
         }
     }
@@ -472,46 +463,6 @@ table.dataTable{
 table.dataTable tbody tr.selected-row{
     background-color: $color-gray-light !important;
 }
-
-/*//Row selected checkbox
-table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox{
-    position: relative;
-    line-height: 0;
-
-}
-
-
-table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before{
-    content: ' ';
-    display: inline-block;
-    background: $color-white;
-    border-radius: 2px;
-    border: 2px solid $color-gray-001;
-    height: 15px;
-    line-height: 2.4rem;
-    width: 15px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    cursor: pointer;
-}
-table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after{
-    content: "";
-    height: 7px;
-    width: 12px;
-    position: absolute;
-    left: 25px;
-    top: 19px;
-    box-shadow: -2px 2px 0 0 #fff;
-    transform: rotate(-46deg);
-    border-color: transparent;
-
-}
-
- table.dataTable tr.selected .select-checkbox:before {
-  background-color: $color-black;
- }*/
 
 /*
  * Control feature layout

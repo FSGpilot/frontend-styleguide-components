@@ -2,33 +2,20 @@
     margin: 0;
     line-height: $body-text-line-height;
     border: $outer-border;
+    width: 100%;
 
 
-    &.compact {
-      td {
-        padding: calc(#{map-get($spacers, 3)} - 1px);
-
-        &.select-checkbox {
-          &:after {
-            content: '';
-            left: 25px !important;
-            top: 11px !important;
-          }
-        }
+    &.table-compact {
+      th,td {
+        padding-top: calc(#{map-get($spacers, 3)} - 1px);
+        padding-bottom: calc(#{map-get($spacers, 3)} - 1px);
       }
     }
 
-    &.ultracompact {
-      td {
-        padding: 0;
-
-        &.select-checkbox {
-          &:after {
-            content: '';
-            left: 25px !important;
-            top: 4px !important;
-          }
-        }
+    &.table-extracompact {
+      th,td {
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
 
@@ -189,22 +176,6 @@
             tr:last-child td{
                 border-bottom-color: transparent
             }
-        }
-    }
-
-    &.compact {
-        tbody > tr {
-            //height: $spacing-medium;
-        }
-    }
-    &.short {
-        tbody > tr {
-            //height: $spacing-large;
-        }
-    }
-    &.tall {
-        tbody > tr {
-            //height: $spacing-xx-large;
         }
     }
 }

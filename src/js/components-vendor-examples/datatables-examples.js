@@ -28,19 +28,33 @@ class datatablesExamples {
     //Init a datatable with ajax data
     //////////////////////////////////////
     var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
-
-        "processing": true,
-        "ajax": {
+        language: {
+            "lengthMenu": "Viser _MENU_ elementer pr side",
+            "zeroRecords": "Der blev fundet intet resultat",
+            "info": "Viser sider _PAGE_ af _PAGES_",
+            "infoEmpty": "Intet resultat",
+            "infoFiltered": "(filtreret fra _MAX_ elementer)",
+            "emptyTable": "Ingen data",
+            "search": "Søg i tabel:",
+            "Sort": true,
+            "paginate": {
+                "first":      "Første",
+                "last":       "Sidste",
+                "next":       "Næste",
+                "previous":   "Forrige"
+            },
+        },
+        processing: true,
+        ajax: {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        "columns": [
+        columns: [
             { "data": "name" },
             { "data": "email" },
             { "data": "address.street" },
             { "data": "address.city" },
-            { "data": "phone" },
-            { "data": "company.name" }
+            { "data": "phone" }
         ]
     } );
 
@@ -100,28 +114,41 @@ class datatablesExamples {
     function format ( d ) {
         // `d` is the original data object for the row
         return '<div class="details-row-content">'+
-          '<div class="dataset row">'+
+          '<div class="row">'+
             '<div class="col-5">'+
               '<h3>Headline</h3>' +
               '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>'+
             '</div>'+
             '<div class="col-6">'+
-              '<div class="chart">' +
                 '<img src="https://ramen-files.s3.amazonaws.com/charturl-images/2017-01-26/9b64e497-3a7a-40c8-b7c7-322f84f84ba9.png"></div>' +
-              '</div>'+
             '</div>' +
         '</div>';
     }
 
 
     var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
-
-        "ajax": {
+        language: {
+            "lengthMenu": "Viser _MENU_ elementer pr side",
+            "zeroRecords": "Der blev fundet intet resultat",
+            "info": "Viser sider _PAGE_ af _PAGES_",
+            "infoEmpty": "Intet resultat",
+            "infoFiltered": "(filtreret fra _MAX_ elementer)",
+            "emptyTable": "Ingen data",
+            "search": "Søg i tabel:",
+            "Sort": true,
+            "paginate": {
+                "first":      "Første",
+                "last":       "Sidste",
+                "next":       "Næste",
+                "previous":   "Forrige"
+            },
+        },
+        ajax: {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        "rowId": "id",
-        "columns": [
+        rowId: "id",
+        columns: [
             {
                 "className":      'details-control',
                 "orderable":      false,
@@ -134,7 +161,7 @@ class datatablesExamples {
             { "data": "address.city" },
             { "data": "phone" },
         ],
-        "order": [[1, 'asc']]
+        order: [[1, 'asc']]
     } );
 
     // Add event listener for opening and closing details
@@ -161,12 +188,28 @@ class datatablesExamples {
 
 
     var table_edit = $(jsSelectorDatatable_Example_edit).DataTable( {
-        "ajax": {
+        language: {
+            "lengthMenu": "Viser _MENU_ elementer pr side",
+            "zeroRecords": "Der blev fundet intet resultat",
+            "info": "Viser sider _PAGE_ af _PAGES_",
+            "infoEmpty": "Intet resultat",
+            "infoFiltered": "(filtreret fra _MAX_ elementer)",
+            "emptyTable": "Ingen data",
+            "search": "Søg i tabel:",
+            "Sort": true,
+            "paginate": {
+                "first":      "Første",
+                "last":       "Sidste",
+                "next":       "Næste",
+                "previous":   "Forrige"
+            },
+        },
+        ajax: {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        "rowId": "id",
-        "columns": [
+        rowId: "id",
+        columns: [
             { "data": "name" },
             { "data": "address.street" },
             { "data": "address.city" },
@@ -192,7 +235,7 @@ class datatablesExamples {
                 }
             }
         ],
-        "order": [[1, 'asc']]
+        order: [[1, 'asc']]
     } );
 
     var currentEditTr = null
