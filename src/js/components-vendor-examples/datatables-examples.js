@@ -65,7 +65,7 @@ class datatablesExamples {
             },
         },
 
-        "dom": '<"toolbar">frtip',  
+        "dom": '<"toolbar">frtip',
 
         columnDefs: [ {
             orderable: false,
@@ -78,6 +78,8 @@ class datatablesExamples {
         },
         order: [[ 1, 'asc' ]]
     });
+
+      $("div.toolbar").html('<div class=""><svg class="icon-svg" alt="download som PDF"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Download som Excel"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Print side"><use xlink:href="#printer"></use></svg></div>');
 
     //////////////////////////////////////
     //Init a datatable with expand row
