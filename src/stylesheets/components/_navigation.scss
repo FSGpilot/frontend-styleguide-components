@@ -201,9 +201,8 @@
   .nav-secondary-heading{
     margin-bottom: map-get($spacers, 4);
     font-size: 17px;
-    @include media($nav-responsive-breakpoint) {
-      margin-bottom: 0;
-    }
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
     + ul{
       @include media($nav-responsive-breakpoint) {
         margin-left: map-get($spacers, 4);

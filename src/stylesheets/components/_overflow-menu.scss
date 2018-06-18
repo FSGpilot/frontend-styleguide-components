@@ -18,7 +18,7 @@ $overflow-menu-dropdown-distance: 8px;
         justify-content: center;
         color: $color-black;
 
-        &:hover{
+        .no-touchevents &:hover{
             background-color: $color-gray-pale;
         }
         //below: arrow with border
