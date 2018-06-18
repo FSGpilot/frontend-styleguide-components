@@ -1,17 +1,18 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
 
 <header class="header header-extended" role="banner">
 
     <!--1A: Portal header -->
     <div class="portal-header">
       <div class="container portal-header-inner">
-        <a href="/frontend-styleguide/" title="Home" aria-label="Home" class="logo"></a>
+        <a href="#" title="Home" aria-label="Home" class="logo"></a>
         <button class="button button-secondary button-menu-open js-menu-open ml-auto" aria-haspopup="menu" title="Åben mobil menu">Menu</button>
 
         <!-- 1B: Portal header: info + actions-->
         <div class="portal-info">
-          <p class="user"><b>Christian Emil Vestergaard Christensen</b>· Københavns Urmager og Værksted v/Martin Elsig</p>
-          <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary" role="button">
+          <p class="user"><b class="username">Christian Emil Vestergaard Christensen</b> · Københavns Urmager og Værksted v/Martin Elsig</p>
+          <a href="#" class="button button-secondary" role="button">
             Log ud
           </a>
         </div>
@@ -22,13 +23,13 @@
     <div class="solution-header">
         <div class="container solution-header-inner">
           <div class="solution-heading">
-            <a href="/frontend-styleguide/" title="Home" aria-label="Home">En langt langt længere løsningstitel</a>
+            <a href="#" title="Home" aria-label="Home">En langt langt længere løsningstitel</a>
           </div>
 
           <!--2B: Solution header: Authority name + text-->
           <div class="solution-info"> <!-- nav-secondary -->
-              <h6 class="h6">Myndighedsnavn</h6>
-              <p>Support: 12 34 56 78</p>
+              <h6 class="h6 authority-name">Myndighedsnavn</h6>
+              <p>Support: 12 34 56 78 · <button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
           </div>
         </div>
     </div>
@@ -41,32 +42,32 @@
         <div class="navbar-inner container">
           <ul class="nav-primary">
             <li>
-              <a href="/frontend-styleguide/components/" class="nav-link" title="Designsystem">
+              <a href="#" class="nav-link" title="Designsystem">
                   <span>Første menupunkt</span>
               </a>
             </li>            
             <li>
-                <a href="/frontend-styleguide/page-templates/" class="nav-link" title="Eksempler">
+                <a href="#" class="nav-link" title="Eksempler">
                     <span>Andet menupunkt</span>
                 </a>
             </li>
             <li>
-                <a href="/frontend-styleguide/getting-started/" class="nav-link" title="Kom godt i gang">
+                <a href="#" class="nav-link" title="Kom godt i gang">
                     <span>Tredje menupunkt</span>
                 </a>
             </li>
             <li>
-                <a href="/frontend-styleguide/faellesoffentlige-krav/" class="nav-link" title="Fællesoffentlige krav">
+                <a href="#" class="nav-link" title="Fællesoffentlige krav">
                     <span>Fjerde menupunkt</span>
                 </a>    
             </li>
             <li>
-              <button class="nav-link js-nav-submenu" title="Om design systemet" data-js-target="#dropdown-nav-section-one" aria-expanded="false" aria-controls="#dropdown-nav-section-one" aria-haspopup="true">
+              <button class="current nav-link js-nav-submenu" title="Om design systemet" data-js-target="#dropdown-nav-section-one" aria-expanded="false" aria-controls="#dropdown-nav-section-one" aria-haspopup="true">
                   <span>Femte menupunkt</span>
               </button>
               <ul id="dropdown-nav-section-one" class="nav-submenu" aria-hidden="true">
                 <li>
-                  <a href="#">Subsection title</a>
+                  <a class="current" href="#">Subsection title</a>
                 </li>
                 <li>
                   <a href="#">Subsection title</a>
@@ -126,13 +127,13 @@
           
           <ul class="unstyled-list nav-actions">
             <li>
-              <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiærknap</a>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
             </li>
             <li>
-              <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiærknap</a>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
             </li>
             <li>
-              <a href="/frontend-styleguide/page-templates/" class="button button-tertiary">Tertiærknap</a>
+              <a href="#" class="button button-tertiary">Tertiærknap</a>
             </li>
           </ul>
         </div>
@@ -147,7 +148,7 @@
               {{icon_svg("printer")}}
             </a>
             <a href="" class="function-link">Funktionsikon
-              {{icon_svg("open-in-new")}}
+              {{icon_svg("content-save")}}
             </a>
           </div>
         </div>
@@ -155,18 +156,20 @@
       <!-- 5: Contextual actions end-->
 
       <div class="portal-info-mobile">
-        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
-        <p>Københavns Urmager Værksted v/Martin Elsig</p>
-        <a href="https://github.com/FSGpilot/frontend-styleguide-components" class="button button-secondary button-signout">
+        <p class="user"><b class="username">Christian Emil Vestergaard Christensen</b></p>
+        <p>Københavns Urmager og Værksted v/Martin Elsig</p>
+        <a href="#" class="button button-secondary" role="button">
           Log ud
         </a>
       </div>
 
       <div class="solution-info-mobile">
-        <p><b>Myndighedsnavn</b></p>
-        <p>Support: 12 34 56 78</p>
+        <h6 class="h6 authority-name">Myndighedsnavn</h6>
+        <p>Support: 12 34 56 78 · <button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
       </div>
 
     </nav> <!-- collapsible nav end-->
 </header>
 <div class="overlay"></div>
+
+{{ modal('modal-contact', modal_contact_data) }}

@@ -33,11 +33,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include media($medium-screen) {
+			padding-right: 48px;
+		}
 	}
 	.modal__title {
-		@include h3;
 		margin: 0;
-		font-weight: $font-weight-semibold;
 	}
 
 	.modal__content {
@@ -65,7 +66,7 @@
 
 		@include for-size(phone-only) {
 			top: 8px;
-			right: 24px;
+			right: 8px;
 			width: inherit;
 		}
 	}

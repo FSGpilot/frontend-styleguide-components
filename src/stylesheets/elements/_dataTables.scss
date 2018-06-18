@@ -68,6 +68,11 @@ table.dataTable {
     border-collapse: separate;
     border-spacing: 0;
 
+    .toolbar {
+      float: left;
+      padding-top: 8px;
+      line-height: 24px;
+    }
 
     .overflow-menu{
         .overflow-menu-inner{
@@ -106,7 +111,7 @@ table.dataTable {
     }
 
     // Sorting
-    @if not $jqueryui { // jQuery UI defines its own sort icons
+    @if not $jqueryui {
         thead {
             .sorting,
             .sorting_asc,
@@ -117,25 +122,46 @@ table.dataTable {
                 *cursor: hand;
                 background-repeat: no-repeat;
                 background-position: center right;
+                padding-left: 31px;
+                position: relative;
+
+                &:after {
+                  content: '';
+                  position: absolute;
+                  height: 24px;
+                  width: 24px;
+                  background-repeat: no-repeat;
+                  background-position: center -2px;
+                }
             }
 
             .sorting {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
-                //background-image: url('../images/sort_both.png');
+
+                 &:after {
+                   background-image: url('#{$icons-folder-path}/menu-up.svg');  //sort_both
+                   opacity: .2;
+                 }
             }
             .sorting_asc {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
-                //background-image: url('../images/sort_asc.png');
+                &:after {
+                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc
+                }
+                //background-image: url('../images/.png');
             }
             .sorting_desc {
-                background-image: url('#{$icons-folder-path}/menu-down.svg');
-                //background-image: url('../images/sort_desc.png');
+                &:after {
+                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc
+                }
             }
             .sorting_asc_disabled {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');
+                &:after {
+                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc -> disabled
+                }
             }
             .sorting_desc_disabled {
-                background-image: url('#{$icons-folder-path}/menu-down.svg');
+                &:after {
+                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc -> disabled
+                }
             }
         }
     }
@@ -172,7 +198,7 @@ table.dataTable {
           padding:0;
           .details-row-content {
             background-color: $color-white;
-            border-left: solid 2px $color-gray-dark;
+            box-shadow: inset 2px 0 0px 0px $color-gray-dark;
             .row {
               margin-right: 32px;
               margin-left: 32px;
@@ -449,11 +475,6 @@ table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkb
 
 table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select-checkbox:before{
     content: ' ';
-    // margin-top: -6px;
-    // margin-left: -6px;
-    // border: 1px solid black;
-    // border-radius: 3px;
-
     display: inline-block;
     background: $color-white;
     border-radius: 2px;
@@ -465,25 +486,9 @@ table.dataTable tbody td.select-checkbox:before, table.dataTable tbody th.select
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
-table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after{
-    // display: block;
-    // position: absolute;
-    // top: 1.2em;
-    // left: 50%;
-    // width: 12px;
-    // height: 12px;
-    // box-sizing: border-box;
-
-    //content: "\a0";
-
+    cursor: pointer;
 }
 table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after{
-    // content: '\2714';
-    // margin-top: -11px;
-    // margin-left: -4px;
-    // text-align: center;
-    //text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
     content: "";
     height: 7px;
     width: 12px;
@@ -742,11 +747,12 @@ tbody{
     .details-control{
         cursor: pointer;
         &:after{
-          content: "";
-          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z' /%3E%3C/svg%3E");
-          width: 24px;
-          height: 24px;
-          display: block;
+            //plus icon
+            content: "";
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z' /%3E%3C/svg%3E");
+            width: 24px;
+            height: 24px;
+            display: block;
         }
     }
 
@@ -756,8 +762,9 @@ tbody{
       }
 
       .details-control {
-        border-left: solid 2px #454545;
+        box-shadow: inset 2px 0 0px 0px $color-gray-dark;
         &:after{
+            //minus icon
             content: "";
             background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19,13H5V11H19V13Z' /%3E%3C/svg%3E");
             width: 24px;

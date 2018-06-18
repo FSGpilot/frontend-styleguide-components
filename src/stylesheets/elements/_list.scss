@@ -41,46 +41,6 @@
   }
 
 
-
-  //paragraph lists
-  ul.paragraph-list {
-    font-size: $body-paragraph-size;
-    line-height: $body-paragraph-line-height;
-    li {
-      padding-left: 46px;
-      line-height: $body-paragraph-line-height;
-      &:before {
-        left: 22px;
-      }
-
-      ul {
-        li {
-          padding-left: 46px;
-        }
-      }
-    }
-  }
-
-  //paragraph lists
-  ol.paragraph-list {
-    font-size: $body-paragraph-size;
-    line-height: $body-paragraph-line-height;
-    li {
-      padding-left: 46px;
-      &:before {
-        left: 22px;
-      }
-      ol {
-        li {
-          &:before { 
-            left: 8px;
-          }
-        }
-      }
-    }
-  }
-
-
   //Body lists ul
   ul.body-list{
     font-size: $body-text;

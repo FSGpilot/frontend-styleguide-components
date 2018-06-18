@@ -1,0 +1,94 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
+{% from "07-form/controls/text-input.njk" import textinput as textinput %}
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container">
+    <div class="breadcrumb">
+      <a href="#">Tilbage</a>
+    </div>
+    
+    <div class="row page-container">
+      <div class="col-12">
+          {{overflowmenu("Trin 2 af 5","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='#'>
+                          1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' class='active'>
+                          2. Trin 2
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          3. Trin 3 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#'>
+                          4. Trin 4
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#'>
+                          5. Trin 5
+                      </a>
+                  </li>
+              </ul>
+              "
+          ) }}
+          <div class="content">
+            <h1>Oplysninger om dig</h1>
+            <form class="form">
+            <fieldset>
+              {{textinput("id-fornavn", "Fornavn", "", "", "Input til fornavn", "", false, "")}}
+            </fieldset>
+          </form>
+          <a href="#" class="button button-primary">Næste</a>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  {% render '@footer' %}
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}

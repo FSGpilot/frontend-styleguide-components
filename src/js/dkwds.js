@@ -2,6 +2,7 @@
 const domready = require('domready');
 const forEach = require('array-foreach');
 const select = require('./utils/select');
+const modernizr = require("../vendor/modernizr-custom.js");
 const datepicker = require('./components/datepicker');
 const modal = require('./components/modal');
 
@@ -12,8 +13,6 @@ const modal = require('./components/modal');
 require('./polyfills');
 
 const dkwds = require('./config');
-
-const jsSelectorDatepicker = '.js-calendar-group';
 
 const components = require('./components');
 dkwds.components = components;
@@ -26,6 +25,7 @@ domready(() => {
   }
 
   //Init datepicker.  (Note: above 'behavior.on' does not work with pikaday -> seperate initialization)
+  const jsSelectorDatepicker = '.js-calendar-group';
   forEach(select(jsSelectorDatepicker), calendarGroupElement => {
     new datepicker(calendarGroupElement);
   });
