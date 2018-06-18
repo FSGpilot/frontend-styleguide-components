@@ -1,22 +1,27 @@
-<!-- footer basic -->
-{% macro footer_header(size, header, subheader, headercontent) %}
-<h4>Footer with header</h4>
 <footer>
   <div class="footer">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-9 col-lg-9 nopaddingleft footer-col">
           <div class="align-left">
-            <h6 class="footer-headline">Ansvarlig myndighed</h6>
-            <p>Undervisningsministeriet</p>
-            <p>Styrelsen for IT og læring</p>
+            <ul class="unstyled-list">
+              <li><h6>Ansvarlig myndighed</h6></li>
+            </ul>
+            <ul class="unstyled-list">
+              <li><p>Undervisningsministeriet</p></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-3 col-lg-3 nopaddingright footer-col">
           <div class="align-left">
-            <h6 class="footer-headline">Kontakt</h6>
-            <p><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></p>
-            <p><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></p>
+            <ul class="unstyled-list">
+              <li><h6>Kontakt</h6></li>
+            </ul>
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -32,8 +37,3 @@
     </div>
   </div>
 </footer>
-{% endmacro %}
-
-{% for header in footer_header_example.items -%}
-      {{ footer_header(header.size, header.header, header.subheader, header.headercontent) }}
-{%- endfor %}

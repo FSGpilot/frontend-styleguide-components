@@ -1,4 +1,5 @@
 footer {
+  margin-top: map-get($spacers, 9);
 
   p, h1, h2, h3, h4, h5, h6 {
     margin:0;
@@ -23,10 +24,6 @@ footer {
     padding-top: calc(#{map-get($spacers, 4)} - 1px);
     padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
 
-    .footer-headline {
-      margin-bottom: map-get($spacers, 5);
-    }
-
     .align-left {
       text-align: left;
     }
@@ -45,9 +42,25 @@ footer {
       }
     }
 
+    .logo{
+      //background-image is set by the themes in the "themes"-scss-files.
+      background-image: url('http://via.placeholder.com/150x100');
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 100px;
+      width: 150px;
+    }
+
     ul{
-      li {
-        margin-top:map-get($spacers, 3);
+      &:not(:last-child) {
+        margin-bottom: map-get($spacers, 5);
+      }
+
+      &.footer-links {
+        li {
+          margin-top:map-get($spacers, 3);
+        }
       }
     }
 
@@ -69,7 +82,7 @@ footer {
   //footer-theme
   .footer-theme {
     padding-top: map-get($spacers, 4);
-    padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+    padding-bottom: map-get($spacers, 3);
   }
 }
 
