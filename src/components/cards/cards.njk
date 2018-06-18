@@ -5,7 +5,7 @@
     <div class="card">
     {%if (header) or (subheader) %}
       <div class="card-header">
-        <h6 class="header-title">{{header}}</h6>
+        <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
         <p class="sub-header">{{subheader}}</p>
       </div>
     {% endif %}
@@ -50,7 +50,7 @@
     <div class="card">
     {%if (header) or (subheader) %}
       <div class="card-header">
-        <h6 class="header-title">{{header}}</h6>
+        <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
         <p class="sub-header">{{subheader}}</p>
       </div>
       {% endif %}
@@ -97,7 +97,7 @@
       {% endif %}
     {%if (header) or (subheader) %}
         <div class="card-header">
-          <h6 class="header-title">{{header}}</h6>
+          <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
           <p class="sub-header">{{subheader}}</p>
         </div>
     {% endif %}
@@ -123,8 +123,13 @@
     <div class="card">
       {%if (header) or (subheader) %}
         <div class="card-header">
-          <h6 class="header-title">{{header}}</h6>
+          <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
           <p class="sub-header">{{subheader}}</p>
+        </div>
+      {% endif %}
+      {%if cardtext %} 
+        <div class="card-text">
+          <p class="text">{{cardtext}}</p>
         </div>
       {% endif %}
       {%if (actioncontent) or (actionbuttons) or (actionlinks) %}
@@ -140,11 +145,6 @@
           </div>
         </div>
       {% endif %}
-      {%if cardtext %} 
-        <div class="card-text">
-          <p class="text">{{cardtext}}</p>
-        </div>
-      {% endif %}
     </div>
   {%- endif %}
 {% endmacro %}
@@ -154,7 +154,7 @@
     <div class="card">
       {%if (header) or (subheader) %}
         <div class="card-header">
-          <h6 class="header-title">{{header}}</h6>
+          <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
           <p class="sub-header">{{subheader}}</p>
         </div>
       {% endif %}
@@ -181,7 +181,7 @@
     <div class="card">
       {%if (header) or (subheader) %}
         <div class="card-header">
-          <h6 class="header-title">{{header}}</h6>
+          <p class="h6 header-title" title="Card header" aria-label="Card header">{{header}}</p>
           <p class="sub-header">{{subheader}}</p>
         </div>
       {% endif %}
