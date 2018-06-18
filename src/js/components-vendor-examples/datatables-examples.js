@@ -48,7 +48,7 @@ class datatablesExamples {
     //Init a datatable with selectable rows
     //////////////////////////////////////
     var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
-        "language": {
+        language: {
             "lengthMenu": "Viser _MENU_ elementer pr side",
             "zeroRecords": "Der blev fundet intet resultat",
             "info": "Viser sider _PAGE_ af _PAGES_",
@@ -64,22 +64,33 @@ class datatablesExamples {
                 "previous":   "Forrige"
             },
         },
-
-        "dom": '<"toolbar">frtip',
-
         columnDefs: [ {
             orderable: false,
-            className: 'select-checkbox',
-            targets:   0
+            targets:   0,
+            render: function ( data, type, full, meta ) {
+                var checkboxid = "checkbox-"+ Math.random().toString(36).substring(7); 
+                return "<div class='form-group'>"+
+                            "<input id='"+checkboxid+"' type='checkbox' name='checked'>"+
+                            "<label for='"+checkboxid+"' ></label>" +
+                        "</div>"
+            }
         } ],
-        select: {
+        /*select: {
             style:    'single',
             selector: 'td:first-child'
-        },
+        },*/
         order: [[ 1, 'asc' ]]
     });
 
-      $("div.toolbar").html('<div class=""><svg class="icon-svg" alt="download som PDF"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Download som Excel"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Print side"><use xlink:href="#printer"></use></svg></div>');
+    $("table_selectable").on("click", "input[type='checkbox']", function (event) {
+        if (event.target.checked) {
+            $(event.target).closest("tr").removeClass("selected-row")
+        } else {
+            $(event.target).closest("tr").addCLass("selected-row")
+        }
+    } );
+
+    $("div.toolbar").html('<div class=""><svg class="icon-svg" alt="download som PDF"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Download som Excel"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Print side"><use xlink:href="#printer"></use></svg></div>');
 
     //////////////////////////////////////
     //Init a datatable with expand row
@@ -122,7 +133,6 @@ class datatablesExamples {
             { "data": "address.street" },
             { "data": "address.city" },
             { "data": "phone" },
-            { "data": "company.name" }
         ],
         "order": [[1, 'asc']]
     } );
@@ -158,13 +168,12 @@ class datatablesExamples {
         "rowId": "id",
         "columns": [
             { "data": "name" },
-            { "data": "email" },
             { "data": "address.street" },
             { "data": "address.city" },
-            { "data": "phone" },
             { "data": "company.name" },
             {
                 "targets": -1,
+                "className":      'row-control',
                 "data": null,
                 "orderable": false,
                 "render": function ( data, type, full, meta ) {
@@ -199,10 +208,8 @@ class datatablesExamples {
         //insert data in modal
         $('#edit-row-id').val(id);
         $('#edit-navn').val(data.name);
-        $('#edit-email').val(data.email);
         $('#edit-vejnavn').val(data.address.street);
         $('#edit-by').val(data.address.city);
-        $('#edit-telefon').val(data.phone);
         $('#edit-firmanavn').val(data.company.name);
 
         //open modal
@@ -217,10 +224,8 @@ class datatablesExamples {
 
         //update  data
         data.name = $('#edit-navn').val();
-        data.email = $('#edit-email').val();
         data.address.street = $('#edit-vejnavn').val();
         data.address.city =  $('#edit-by').val();
-        data.phone = $('#edit-telefon').val();
         data.company.name = $('#edit-firmanavn').val();
 
         //Update row and redraw

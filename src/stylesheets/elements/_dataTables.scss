@@ -29,11 +29,6 @@ $table-paging-button-hover: $color-gray-pale !default;
 // Colour to use when shading
 $table-shade: $color-black !default;
 
-// jQuery UI stylesheet imports this one - there are just two places where we
-// don't want DataTabels default styles assigned for jQuery UI, so rather than
-// duplicating the whole file, this is the best option
-$jqueryui: false !default;
-
 
 //
 // Functions / mixins
@@ -104,64 +99,60 @@ table.dataTable {
     tfoot th,
     tfoot td {
         padding: 10px 18px 6px 18px;
-
-        @if not $jqueryui { // jQuery UI defines its own border
-            border-top: $table-header-border;
-        }
+        border-top: $table-header-border;
     }
 
     // Sorting
-    @if not $jqueryui {
-        thead {
-            .sorting,
-            .sorting_asc,
-            .sorting_desc,
-            .sorting_asc_disabled,
-            .sorting_desc_disabled {
-                cursor: pointer;
-                *cursor: hand;
+
+    thead {
+        .sorting,
+        .sorting_asc,
+        .sorting_desc,
+        .sorting_asc_disabled,
+        .sorting_desc_disabled {
+            cursor: pointer;
+            *cursor: hand;
+            background-repeat: no-repeat;
+            background-position: center right;
+            position: relative;
+            padding-right: 32px; //make room for icon
+
+            &:after {
+                content: '';
+                position: absolute;
+                height: 24px;
+                width: 24px;
                 background-repeat: no-repeat;
-                background-position: center right;
-                padding-left: 31px;
-                position: relative;
+                background-position: center -2px;
+            }
+        }
+
+        .sorting {
 
                 &:after {
-                  content: '';
-                  position: absolute;
-                  height: 24px;
-                  width: 24px;
-                  background-repeat: no-repeat;
-                  background-position: center -2px;
+                background-image: url('#{$icons-folder-path}/menu-up.svg');  //sort_both
+                opacity: .2;
                 }
+        }
+        .sorting_asc {
+            &:after {
+                background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc
             }
-
-            .sorting {
-
-                 &:after {
-                   background-image: url('#{$icons-folder-path}/menu-up.svg');  //sort_both
-                   opacity: .2;
-                 }
+            //background-image: url('../images/.png');
+        }
+        .sorting_desc {
+            &:after {
+                background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc
             }
-            .sorting_asc {
-                &:after {
-                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc
-                }
-                //background-image: url('../images/.png');
+        }
+        .sorting_asc_disabled {
+            &:after {
+                background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc -> disabled
             }
-            .sorting_desc {
-                &:after {
-                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc
-                }
-            }
-            .sorting_asc_disabled {
-                &:after {
-                  background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc -> disabled
-                }
-            }
-            .sorting_desc_disabled {
-                &:after {
-                  background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc -> disabled
-                }
+        }
+        .sorting_desc_disabled {
+            &:after {
+                background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc -> disabled
             }
         }
     }
@@ -463,9 +454,22 @@ table.dataTable,
 table.dataTable th,
 table.dataTable td {
     box-sizing: content-box;
+
+    .form-group{
+        box-sizing: border-box;
+    }
 }
 
-//Row selected checkbox
+table.dataTable{
+    [type=checkbox]+label:before{
+        top: 0;
+    }
+    [type=checkbox]:checked+label:after{
+        top: 1px;
+    }
+}
+
+/*//Row selected checkbox
 table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox{
     position: relative;
     line-height: 0;
@@ -503,7 +507,7 @@ table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selecte
 
  table.dataTable tr.selected .select-checkbox:before {
   background-color: $color-black;
- }
+ }*/
 
 /*
  * Control feature layout
@@ -754,6 +758,9 @@ tbody{
             height: 24px;
             display: block;
         }
+    }
+    .row-control{
+        text-align: right;
     }
 
     tr.shown {
