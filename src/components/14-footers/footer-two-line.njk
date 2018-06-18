@@ -1,20 +1,21 @@
-<!-- footer basic -->
-{% macro footertwoline(size, header, subheader, headercontent) %}
-<h4>Footer two-line</h4>
 <footer>
   <div class="footer">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 nopaddingleft footer-col">
           <div class="align-left">
-              <h6>Undervisningsministeriet</h6>
-              <p>Styrelsen for IT og læring</p>
+            <ul class="unstyled-list">
+              <li><span class="h6">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 nopaddingright footer-col">
-        <div class="align-right">
-              <p><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></p>
-              <p><a class="function-link" href="tel:004533925200" class="">(+45) 33 92 52 00</a></p>
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -30,8 +31,3 @@
     </div>
   </div>
 </footer>
-{% endmacro %}
-
-{% for twoline in footertwoline_example.items -%}
-      {{ footertwoline(twoline.size, twoline.header, twoline.subheader, twoline.headercontent) }}
-{%- endfor %}

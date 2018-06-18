@@ -1,21 +1,23 @@
-<!-- footer basic -->
-{% macro footer_logo(size, header, subheader, headercontent) %}
-<h4>Footer with header, links and simple support</h4>
 <footer>
   <div class="footer">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 nopaddingleft footer-col">
           <div class="align-left">
-            <h6 class="footer-headline">Ansvarlig myndighed</h6>
-            <p>Undervisningsministeriet</p>
-            <p>Styrelsen for IT og læring</p>
+            <ul class="unstyled-list">
+              <li><h6>Ansvarlig myndighed</h6></li>
+            </ul>
+            <ul class="unstyled-list">
+              <li><span href="/frontend-styleguide/" class="logo"></span></li>
+            </ul>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-col">
           <div class="align-left">
-            <h6 class="footer-headline">Hjælpende links</h6>
             <ul class="unstyled-list">
+              <li><h6>Hjælpende links</h6></li>
+            </ul>
+            <ul class="unstyled-list footer-links">
               <li><a href="#">Læs lidt om STIL</a></li>
               <li><a href="#">Læs lidt om medarbejdere</li></p>
               <li><a href="#">Se ledige stillinger og hvordan det er at være ansat</a></li>
@@ -24,9 +26,13 @@
         </div>
         <div class="col-12 col-sm-12 col-md-3 col-lg-3 nopaddingright footer-col">
           <div class="align-left">
-            <h6 class="footer-headline">Skriftlig kontakt</h6>
-            <p><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></p>
-            <p>Vi besvarer e-mails så hurtigt vi kan, indenfor telefonisk åbningstid</p>
+            <ul class="unstyled-list">
+              <li><h6>Kontakt</h6></li>
+            </ul>
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -42,8 +48,3 @@
     </div>
   </div>
 </footer>
-{% endmacro %}
-
-{% for logo in footer_logo_example.items -%}
-      {{ footer_logo(logo.size, logo.header, logo.subheader, logo.headercontent) }}
-{%- endfor %}

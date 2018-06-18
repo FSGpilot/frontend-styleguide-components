@@ -1,6 +1,3 @@
-<!-- footer basic -->
-{% macro footerbasic(size, header, subheader, headercontent) %}
-<h4>Footer basic</h4>
 <footer>
   <div class="footer">
     <div class="container">
@@ -17,7 +14,7 @@
         <div class="align-right">
             <ul class="unstyled-list inline-list">
               <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
-              <li><a class="function-link" href="tel:004533925200" class="">(+45) 33 92 52 00</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
             </ul>
           </div>
         </div>
@@ -34,8 +31,3 @@
     </div>
   </div>
 </footer>
-{% endmacro %}
-
-{% for basic in footerbasic_example.items -%}
-      {{ footerbasic(basic.size, basic.header, basic.subheader, basic.headercontent) }}
-{%- endfor %}
