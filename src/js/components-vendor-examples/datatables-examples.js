@@ -116,7 +116,7 @@ class datatablesExamples {
         return '<div class="details-row-content">'+
           '<div class="row">'+
             '<div class="col-5">'+
-              '<h3>Headline</h3>' +
+              '<p class="h3">Headline</p>' +
               '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>'+
             '</div>'+
             '<div class="col-6">'+

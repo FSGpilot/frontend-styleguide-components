@@ -130,29 +130,29 @@ table.dataTable {
         .sorting {
 
                 &:after {
-                background-image: url('#{$icons-folder-path}/menu-up.svg');  //sort_both
+                background-image: url('#{$icons-folder-path}/sort-none.svg');  //sort_both
                 opacity: .2;
                 }
         }
         .sorting_asc {
             &:after {
-                background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc
+                background-image: url('#{$icons-folder-path}/sort-acending.svg'); //sort_asc
             }
             //background-image: url('../images/.png');
         }
         .sorting_desc {
             &:after {
-                background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc
+                background-image: url('#{$icons-folder-path}/sort-descending.svg'); //sort_desc
             }
         }
         .sorting_asc_disabled {
             &:after {
-                background-image: url('#{$icons-folder-path}/menu-up.svg'); //sort_asc -> disabled
+                background-image: url('#{$icons-folder-path}/sort-acending.svg'); //sort_asc -> disabled
             }
         }
         .sorting_desc_disabled {
             &:after {
-                background-image: url('#{$icons-folder-path}/menu-down.svg'); //sort_desc -> disabled
+                background-image: url('#{$icons-folder-path}/sort-descending.svg'); //sort_desc -> disabled
             }
         }
     }
