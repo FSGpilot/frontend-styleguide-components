@@ -1,3 +1,5 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+
 <footer>
   <div class="footer">
     <div class="container">
@@ -19,9 +21,11 @@
               <li><h6>Hjælpende links</h6></li>
             </ul>
             <ul class="unstyled-list footer-links">
-              <li><a href="#">Læs lidt om STIL</a></li>
-              <li><a href="#">Læs lidt om medarbejdere</p></li>
-              <li><a href="#">Se ledige stillinger og hvordan det er at være ansat</a></li>
+              <li><a href="#">Link til et sted på siden</a></li>
+              <li><a href="#">Link til et sted på siden</p></li>
+              <li><a href="#">Link til et sted på siden</p></li>
+              <li><a href="#" class="icon-link">Link til en ekstern side{{ icon_svg('open-in-new')}}</a></li>
+              <li><a href="#" class="icon-link">Link til en ekstern side{{ icon_svg('open-in-new')}}</a></li>
             </ul>
           </div>
         </div>
