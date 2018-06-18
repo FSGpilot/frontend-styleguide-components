@@ -469,6 +469,10 @@ table.dataTable{
     }
 }
 
+table.dataTable tbody tr.selected-row{
+    background-color: $color-gray-light !important;
+}
+
 /*//Row selected checkbox
 table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox{
     position: relative;

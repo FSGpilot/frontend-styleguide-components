@@ -82,11 +82,11 @@ class datatablesExamples {
         order: [[ 1, 'asc' ]]
     });
 
-    $("table_selectable").on("click", "input[type='checkbox']", function (event) {
+    $(jsSelectorDatatable_Example_selectable).on("click", "input[type='checkbox']", function (event) {
         if (event.target.checked) {
-            $(event.target).closest("tr").removeClass("selected-row")
+            $(event.target).closest("tr").addClass("selected-row");
         } else {
-            $(event.target).closest("tr").addCLass("selected-row")
+            $(event.target).closest("tr").removeClass("selected-row");
         }
     } );
 
