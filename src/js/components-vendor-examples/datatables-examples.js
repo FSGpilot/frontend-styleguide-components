@@ -77,8 +77,11 @@ class datatablesExamples {
             "Sort": true
         },
 
-        "dom": '<"toolbar">frtip',  
-
+        "dom": '<"toolbar">Bfrtip',
+      //  dom: 'Bfrtip',
+        // buttons: [
+        //     { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel', 'pdf', 'print'
+        // ],
         columnDefs: [ {
             orderable: false,
             className: 'select-checkbox',
@@ -91,7 +94,7 @@ class datatablesExamples {
         order: [[ 1, 'asc' ]]
     });
 
-    //$("div.toolbar").append('<b>Custom tool bar! Text/images etc.</b>');
+    $("div.toolbar").html('<div class=""><svg class="icon-svg" alt="download som PDF"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Download som Excel"><use xlink:href="#printer"></use></svg> <svg class="icon-svg" alt="Print side"><use xlink:href="#printer"></use></svg></div>');
     //////////////////////////////////////
     //Init a datatable with expand row
     //////////////////////////////////////
