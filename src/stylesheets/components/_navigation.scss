@@ -54,12 +54,12 @@
     flex-shrink: 0;
     flex-wrap: wrap;
     margin-top: 0;
+    margin-left: -12px;
   }
 
   > li {
     border-bottom: $inner-border;
     @include media($nav-responsive-breakpoint) {
-      margin-right: map-get($spacers, 5);
       border-bottom: 0;
     }
     > a {
@@ -70,22 +70,21 @@
       display: block;
       padding-top: calc(#{map-get($spacers, 4)} - 1px);
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+      white-space: nowrap;
 
-      &:hover {
+      .no-touchevents &:hover {
         @include media($nav-responsive-breakpoint) {
           background-color: transparent;
         }
       }
+      &:focus{
+        background-color: transparent;
+      }
     }
-  }
-
-  a {
-    @include media($nav-responsive-breakpoint) {
-      @include padding(0.75rem null);
-    }
-
-    &:hover {
+    & > a, & > button{
       @include media($nav-responsive-breakpoint) {
+        padding-left: 12px;
+        padding-right: 12px;
       }
     }
   }
@@ -107,7 +106,10 @@
   }
 
   .nav-link {
-    &:hover {
+    .no-touchevents &:hover {
+      @media (max-width: $nav-responsive-breakpoint) {
+        background-color: $color-gray-pale;
+      }
       span {
         @include media($nav-responsive-breakpoint) {
           @include nav-active;
@@ -129,7 +131,8 @@
       width: unset;
     }
     span{
-      padding-right: map-get($spacers, 7);
+      padding-right: 32px;
+      white-space: nowrap;
     }
 
     &:focus,
@@ -146,6 +149,8 @@
       @include media($nav-responsive-breakpoint) {
         background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
         background-position: right 1.5rem center;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
       }
     }
 
@@ -158,14 +163,21 @@
       @include media($nav-responsive-breakpoint) {
         background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
         background-position: right 1.5rem center;
+        //create borders:
+        border-left: 1px solid $color-gray-medium-light;
+        border-right: 1px solid $color-gray-medium-light;
+        //box-shadow: 0px 2px 0px -1px #fff; //hide nav bottom border.
 
       }
     }
   }
 
-  a.current, .current {
+  a.current{
     font-weight: $font-weight-semibold;
     color: $color-primary;
+  }
+  button.current{ //nav-submenu
+    font-weight: $font-weight-semibold;
   }
 
   .nav-primary {
@@ -188,6 +200,7 @@
   }
   .nav-secondary-heading{
     margin-bottom: map-get($spacers, 4);
+    font-size: 17px;
     @include media($nav-responsive-breakpoint) {
       margin-bottom: 0;
     }
@@ -213,9 +226,11 @@
   @include media($nav-responsive-breakpoint) {
     width: 21.5rem;
     border: $outer-border;
-    border-top: 0;
     padding-left: 0;
     position: absolute;
+    z-index: 1;
+    padding-top: map-get($spacers, 3);
+    padding-bottom: map-get($spacers, 3);
   }
 
   &[aria-hidden=true] {
@@ -229,9 +244,14 @@
       @include body-copy-text;
       display: block;
       text-decoration: none;
-      &:hover, &:visited, &:focus{
+      .no-touchevents &:hover, &:visited, &:focus{
           color: $color-text;
       }
+  }
+
+  .current {
+    font-weight: $font-weight-semibold;
+    color: $color-primary !important;
   }
 
   button, a{
@@ -243,7 +263,7 @@
       padding: 8px 16px;
       margin: 0;
       border: none;
-      &:hover{
+      .no-touchevents &:hover{
         background-color: $color-gray-pale;
       }
     }
@@ -263,6 +283,41 @@
   flex-direction: column;
   @include media($nav-responsive-breakpoint) {
     flex-direction: row;
+  }
+}
+
+.nav{
+  @media (max-width: $nav-responsive-breakpoint) {
+    //overflow menu in nav
+    .overflow-menu{
+      width: 100%;
+      .button-overflow-menu{
+        width: 100%;
+        justify-content: left;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 16px;
+        padding-bottom: 16px; 
+        &:after, &:before{
+          display: none !important;
+        }
+      }
+      .overflow-menu-inner{
+        position: static;
+        border: none;
+        box-shadow:  none;
+        .overflow-list{
+          padding-left: 16px;
+        }
+        a, button{
+          text-align: left;
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+      }
+    }
   }
 }
 

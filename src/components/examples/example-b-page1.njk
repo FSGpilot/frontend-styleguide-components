@@ -30,6 +30,55 @@
                 <h4>Hvis du vil klage:</h4>
                 <p>Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
                 <button class="button button-primary">Næste</button>
+
+
+          <form>
+            <fieldset>
+              <legend class="drop_text field-group-title">{{ fieldgroup.title }}</legend>
+              <hr>
+              <span>{{ fieldgroup.text }}</span>
+
+              <div class="row">
+                <div class="col-12">
+                  <label for="streetname">Gade/vej <span class="required"><i class="mdi mdi-asterisk"></i></span></label>
+                  <input id="address-streetname" type="text" name="streetname" autocorrect="off">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4">
+                  <label for="address-number">Husnummer <span class="required"><i class="mdi mdi-asterisk"></i></span></label>
+                  <input id="address-number" type="number">
+                </div>
+                <div class="col-lg-4">
+                  <label for="address-floor">Etage</label>
+                  <input id="address-floor" type="text">
+                </div>
+                <div class="col-lg-4">
+                  <label for="address-side">Side</label>
+                  <input id="address-side" type="text">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="button-row">
+                    <button class="button-primary"><i class="mdi mdi-chevron-left"></i> Forrige</button>
+                    <button class="button-primary ml-auto">Næste <i class="mdi mdi-chevron-right"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="info-row">
+                    <span>Klik forrige for at gå tilbage</span>
+                    <span class="ml-auto">Klik på næste for at gemme</span>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
             </div>
         </div>
     </section>

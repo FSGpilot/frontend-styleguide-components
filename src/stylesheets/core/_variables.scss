@@ -176,13 +176,14 @@ $spacers: (
 ) !default;
 
 //Translate $spacer into rem
-$spacing-small:                 0.4rem !default; //rem-calc(4)
-$spacing:                       0.8rem !default; //0.8rem;
-$spacing-md-small:              1.6rem !default; //1.6rem;
-$spacing-medium:                2.4rem !default; //2.4rem;
-$spacing-large:                 3.2rem !default; //3.2rem;
-$spacing-x-large:               4.0rem !default; //4.0rem;
-$spacing-xx-large:              4.8rem !default; //6.4rem;
+$spacing-small:                 0.4rem !default;
+$spacing:                       0.8rem !default;
+$spacing-md-small:              1.6rem !default;
+$spacing-medium:                2.4rem !default;
+$spacing-large:                 3.2rem !default;
+$spacing-x-large:               4.0rem !default;
+$spacing-xx-large:              4.8rem !default; 
+$spacing-xxx-large:             5.6rem !default; 
 
 
 //############################### Swatches and Theming ####################

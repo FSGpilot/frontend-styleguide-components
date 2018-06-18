@@ -1,35 +1,8 @@
-$form-width: 32rem;
-
-form {
-  a {
-    border-bottom: 0;
-  }
-
-  //TODO: Change to not show: ??
-  // [name=password],
-  // [name=confirmPassword] {
-  //   margin-bottom: 1rem;
-  // }
-  // [type=submit] {
-  //   @include media($medium-screen) {
-  //     margin-top: calc(3rem - .2em); // Label margin minus input bottom margin
-  //   }
-  // }
-}
+$form-width: 40rem;
 
 .form {
   @include media($medium-screen) {
     max-width: $form-width;
-  }
-}
-
-.form-note {
-  float: right;
-  font-size: $h5-font-size;
-  margin: 0 0 1.5rem;
-
-  + * {
-    clear: both;
   }
 }
 
@@ -39,14 +12,9 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 fieldset + fieldset{
   margin-top: $spacing-x-large;
-}
-
-.form-large {
-  @include media($medium-screen) {
-    max-width: 46rem;
-  }
 }
 
 input { 
