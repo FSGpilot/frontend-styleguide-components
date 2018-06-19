@@ -4,15 +4,14 @@
     border: $outer-border;
     width: 100%;
 
-
-    &.table-compact {
+    &.table--compact {
       th,td {
         padding-top: calc(#{map-get($spacers, 3)} - 1px);
         padding-bottom: calc(#{map-get($spacers, 3)} - 1px);
       }
     }
 
-    &.table-extracompact {
+    &.table--extracompact {
       th,td {
         padding-top: 0;
         padding-bottom: 0;
@@ -42,8 +41,6 @@
         border-right: $inner-border;
         //vertical-align: top;
 
-
-
         &:last-child{
             border-right: none;
         }
@@ -62,18 +59,8 @@
         }
     }
 
-
-    //hover on row
-    &.row-hover{
-        tr:hover{
-            td {
-                background-color:  $color-gray-pale;
-            }
-        }
-    }
-
     //no border
-    &.borderless {
+    &.table--borderless {
         border: none;
         thead {
             background-color: transparent;
@@ -117,35 +104,11 @@
         }
     }
 
-    //lines
-    &.lines {
-      thead {
-        th{
-            border-right-color: transparent;
-            &:last-child{
-              //border-right: $inner-border;
-            }
-        }
-      }
-      tr:nth-child(even) {
-          //background-color: $color-gray-pale;
-      }
-
-      tbody{
-          td{
-              border-right: transparent;
-          }
-      }
-    }
-
     //zebra lines
-    &.zebra {
+    &.table--zebra {
         thead {
           th{
               border-right-color: transparent;
-              &:last-child{
-                //border-right: $inner-border;
-              }
           }
         }
         tr:nth-child(even) {
@@ -158,7 +121,7 @@
             }
         }
 
-        &.borderless {
+        &.table--borderless {
             thead{
                 background-color: $color-gray-pale;
             }
@@ -178,4 +141,39 @@
             }
         }
     }
+
+
+    //make row into a "card" on phone
+    &.table--responsive-headers{
+        @include media-breakpoint-down(md) {
+            thead{
+                display: none;
+            }
+            tr{
+                border-bottom: $inner-border;
+                &:last-child{
+                    border-bottom: 0;
+                }
+            }
+            tr td {
+                display: block;
+                border: none !important;
+        
+                &[data-title]:not([data-title=""]):before {
+                    content: attr(data-title);
+                    text-align: left;
+                    display: block;
+                    font-weight: $font-weight-semibold;
+                }
+            }
+
+            &.table--borderless tbody tr td:first-child{
+                padding-left: 16px;
+            }
+        }
+    }
+}
+.table-responsive-scroll{
+    overflow-x: auto;
+    min-height: .01%;
 }
