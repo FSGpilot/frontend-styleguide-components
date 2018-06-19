@@ -60,15 +60,15 @@
 	}
 
 	.modal__close {
-		right: map-get($spacers, 6);
 		position: absolute;
-		top:map-get($spacers, 5);
+		top: 8px;
+		right: 8px;
+		width: inherit;
+		@include media-breakpoint-up(md) {
+			top:map-get($spacers, 5);
+			right: map-get($spacers, 6);
+		 }
 
-		@include for-size(phone-only) {
-			top: 8px;
-			right: 8px;
-			width: inherit;
-		}
 	}
 	
 	/**************************\

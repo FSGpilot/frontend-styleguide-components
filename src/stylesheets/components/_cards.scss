@@ -119,10 +119,11 @@
 
   .action-buttons {
     button {
-      margin-right: map-get($spacers, 3);
+      margin-right: map-get($spacers, 0);
       margin-top:map-get($spacers, 3);
-      @include for-size(phone-only) {
-        margin-right: map-get($spacers, 0);
+ 
+      @include media-breakpoint-up(md) { 
+        margin-right: map-get($spacers, 3);
         margin-top:map-get($spacers, 3);
       }
     }

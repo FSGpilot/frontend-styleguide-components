@@ -81,33 +81,29 @@ $v-padding: $spacing-md-small;
   .icon_text {
     font-weight: $font-weight-semibold;
     margin-right: map-get($spacers, 3);
-    @include for-size(phone-only) {
-      float: left;
-    }
+    float: left;
   }
   .accordion-icon {
-    position: absolute;
-    top: 50%;
+
     right: calc(16px + 16px + 24px); //2x padding + 24px icon
     height: 2.4rem;
     line-height: 2.4rem;
-    text-align: center;
-    transform: translateY(-50%);
-    display: flex;
-
-    @include for-size(phone-only) {
-      position: initial !important;
-      text-align: left !important;
-      transform: none !important;
-      display: block !important;
-      margin-top: 0.8rem !important;
-    }
+    position: initial;
+    text-align: left;
+    transform: none;
+    display: block;
+    top: 0.8rem;
+   @include media-breakpoint-up(md) {
+      text-align: center;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      display: flex;
+   }
 
     .icon-svg {
       fill: $color-black;
-      @include for-size(phone-only) {
-        float: left;
-      }
+      float: left;
     }
   }
 }
