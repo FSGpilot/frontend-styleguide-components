@@ -34,8 +34,7 @@ footer {
     }
 
     .logo{
-      //background-image is set by the themes in the "themes"-scss-files.
-      background-image: url('../img/logo-placeholder.png');
+      background-image: url('./../assets/img/logo-placeholder.png');
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
