@@ -1,10 +1,10 @@
 $form-width: 40rem;
 
-.form {
-  @include media($medium-screen) {
-    max-width: $form-width;
-  }
-}
+// .form {
+//   @include media($medium-screen) {
+//     max-width: $form-width;
+//   }
+// }
 
 fieldset {
   position: relative;
@@ -29,6 +29,35 @@ input {
     @include media($medium-screen) {
       max-width: 12rem;
     }
+  }
+
+  &.input-width-50 {
+    max-width: 50px;
+    width: 100%;
+  }
+  &.input-width-100 {
+    max-width: 100px;
+    width: 100%;
+  }
+  &.input-width-150 {
+    max-width: 150px;
+    width: 100%;
+  }
+  &.input-width-200 {
+    max-width: 300px;
+    width: 100%;
+  }
+  &.input-width-300 {
+    max-width: 300px;
+    width: 100%;
+  }
+  &.input-width-400 {
+    max-width: 400px;
+    width: 100%;
+  }
+  &.input-width-500 {
+    max-width: 500px;
+    width: 100%;
   }
 
 }
