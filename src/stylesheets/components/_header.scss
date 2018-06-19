@@ -10,8 +10,8 @@ $z-index-nav:     9000;
   width: 100%;
   //background-color: $color-gray-pale;
   z-index: $z-index-header;
-  padding-left: calc(#{$grid-gutter-width}/2);
-  padding-right: calc(#{$grid-gutter-width}/2);
+  // padding-left: calc(#{$grid-gutter-width}/2);
+  // padding-right: calc(#{$grid-gutter-width}/2);
   @include media($grid-xl){
     padding-left: 0;
     padding-right: 0;
