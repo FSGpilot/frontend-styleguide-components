@@ -216,7 +216,12 @@ p, .body-text, .body-copy-text{
   @include body-copy-text;
 }
 
-.semibold {
+.weight-normal {
+  font-family: $font-name;
+  font-weight: $font-weight-normal;
+}
+
+.weight-semibold {
   font-family: $font-name;
   font-weight: $font-weight-semibold;
 }
