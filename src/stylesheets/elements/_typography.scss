@@ -297,9 +297,6 @@ h1, h2, h3, h4, h5, h6, p, legend, strong, b, cite, var, address, dfn{
   line-height: $body-text-line-height;
   .icon-svg{
     margin-left: map-get($spacers, 2);
-    .background-dark &{
-      fill: white;
-    } 
   }
 }
 

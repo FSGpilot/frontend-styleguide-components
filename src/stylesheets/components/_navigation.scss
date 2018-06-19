@@ -178,6 +178,8 @@
   }
   button.current{ //nav-submenu
     font-weight: $font-weight-semibold;
+    background-color: $color-subnav-background;
+    color: #fff;
   }
 
   .nav-primary {
