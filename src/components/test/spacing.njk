@@ -1,6 +1,7 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
-{% from "07-form/controls/text-input.njk" import textinput as textinput %}
+{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+{% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
 <div class="container">
     <h1>Heading 1</h1>
@@ -11,13 +12,25 @@
     <h6>Heading 6</h6>
     <p class="font-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <form>
+    <h1>Oplysninger om dig</h1>
+    <form class="form">
         <fieldset>
-            {{textinput(item.id, item.label, item.class, item.error, item.name, item.classLabel, item.success, item.hint)}}
-            {{ checkbox(item.id, item.name, item.value, item.disabled, item.checked, item.text, item.class, item.focus, item.large) }}
-            {{ checkbox(item.id, item.name, item.value, item.disabled, item.checked, item.text, item.class, item.focus, item.large) }}
+            {{textinput("id-fornavn", "Fornavn", "", "input-width-400", "", "Input til fornavn", "", false, "")}}
+            {{textinput("id-efternavn", "Efternavn", "", "input-width-400", "", "Input til efternavn", "", false, "")}}
+            {{textinput("id-gade-vej", "Gade/vej", "", "input-width-400", "", "Input til gade/vej", "", false, "")}}
+            {{textinput("id-husnummer", "Husnummer", "", "input-width-100", "", "Input til husnummer", "", false, "")}}
+            {{textinput("id-etage", "Etage", "(frivilligt)", "input-width-100", "", "Input til etage", "", false, "")}}
+            {{textinput("id-side", "Side", "(frivilligt)", "input-width-100", "", "Input til side", "", false, "Fx: TV, 2. dør")}}
+            {{textinput("id-postnummer", "Postnummer", "", "input-width-150", "", "Input til postnummer", "", false, "")}}
+            {{textinput("id-by", "By", "", "input-width-400", "", "Input til by", "", false, "")}}
+            {{textinput("id-co-adresse", "Evt. CO-adresse", "(frivilligt)", "input-width-400", "", "Input til CO-adresse", "", false, "")}}
+        </fieldset>
+        <fieldset>
+            {{radiobutton("id-aktindsigt-ja", "aktindsigt", "Ja", false, false, "Ja", "radio-large", false, "true")}}
+            {{radiobutton("id-aktindsigt-nej", "aktindsigt", "Ja", false, false, "Nej", "radio-large", false, "true")}}
         </fieldset>
     </form>
+    <a href="#" class="button button-primary">Næste</a>
     <table class="table">
         <thead>
             <tr>

@@ -258,29 +258,31 @@ h1, h2, h3, h4, h5, h6, p, legend, strong, b, cite, var, address, dfn{
 
 
 //margin top and bottom for text
-// h1, .h1,
-// h2, .h2,
-// h3, .h3,
-// h4, .h4,
-// h5, .h5,
-// h6, .h6,
-// .sub-header-text{
-//   margin-top: map-get($spacers, 7);
-//   margin-bottom: map-get($spacers, 4);
-//   &:first-child{
-//     margin-top: 0;
-//   }
-// }
-// p, .body-text,
-// .lead, .font-lead{
-//   margin-top: map-get($spacers, 4);
-//   margin-bottom: map-get($spacers, 4);
-// }
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6, 
+p{ 
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
 
-// Text colors
-// @each $color, $value in $colors {
-//   @include text-color('.color-text-#{$color}', $value);
-// }
+h1{
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+p, .body-text, .font-lead{
+  margin-top: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 4);
+}
+
 
 //a function link, does not look like a link
 .function-link{
