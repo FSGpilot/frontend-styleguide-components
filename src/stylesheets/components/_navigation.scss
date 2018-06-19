@@ -161,13 +161,14 @@
       background-size: 24px;
 
       @include media($nav-responsive-breakpoint) {
-        background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
+        background-image: url('#{$icons-folder-path}/angle-arrow-down-white.svg');
         background-position: right 1.5rem center;
         //create borders:
         border-left: 1px solid $color-gray-medium-light;
         border-right: 1px solid $color-gray-medium-light;
         //box-shadow: 0px 2px 0px -1px #fff; //hide nav bottom border.
-
+        background-color: $color-subnav-background;
+        color: #fff;
       }
     }
   }
@@ -178,8 +179,6 @@
   }
   button.current{ //nav-submenu
     font-weight: $font-weight-semibold;
-    background-color: $color-subnav-background;
-    color: #fff;
   }
 
   .nav-primary {
@@ -192,7 +191,6 @@
       }
     }
   }
-
 }
 
 .nav-secondary{
@@ -232,6 +230,7 @@
     z-index: 1;
     padding-top: map-get($spacers, 3);
     padding-bottom: map-get($spacers, 3);
+    background-color: $color-subnav-background;
   }
 
   &[aria-hidden=true] {
@@ -247,12 +246,19 @@
       text-decoration: none;
       .no-touchevents &:hover, &:visited, &:focus{
           color: $color-text;
+          @include media($nav-responsive-breakpoint) {
+            color: #fff;
+            text-decoration: underline;
+          }
       }
   }
 
   .current {
     font-weight: $font-weight-semibold;
-    color: $color-primary !important;
+    color: $color-primary;
+    @include media($nav-responsive-breakpoint) {
+      color: #fff;
+    }
   }
 
   button, a{
@@ -264,9 +270,9 @@
       padding: 8px 16px;
       margin: 0;
       border: none;
-      .no-touchevents &:hover{
-        background-color: $color-gray-pale;
-      }
+    }
+    &:focus{
+      background-color: transparent;
     }
   }
   li:first-child button, li:first-child a{
