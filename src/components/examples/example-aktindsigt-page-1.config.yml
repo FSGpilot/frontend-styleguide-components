@@ -17,7 +17,7 @@ context:
       href: '#'
       title: 'Hjem'
       label: 'logo link'
-      text: 'Løsningstitel'
+      text: 'Ansøg om indsigt'
     authority:
       name: 'Erhvervsministeriet'
       text: '<button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button>'

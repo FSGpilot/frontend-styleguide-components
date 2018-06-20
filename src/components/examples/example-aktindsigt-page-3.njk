@@ -33,13 +33,9 @@
 
 {% block body %}
   <section class="container">
-    <div class="breadcrumb">
-      <a href="#">Tilbage</a>
-    </div>
-    
     <div class="row page-container">
       <div class="col-12">
-          {{overflowmenu("Trin 3 af 4","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 3 af 3","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
                       <a href='#'>
@@ -62,16 +58,6 @@
                           3. Trin 3 
                       </a>
                   </li>
-                  <li>
-                      <a href='#'>
-                          4. Trin 4
-                      </a>
-                  </li>
-                  <li>
-                      <a href='#'>
-                          5. Trin 5
-                      </a>
-                  </li>
               </ul>
               "
           ) }}
@@ -80,20 +66,25 @@
             <h1>Bekræft oplysninger</h1>
             
             <label class="form-label">Navn</label>
-            <span>Karen Jensen</span>
-
-            <label class="form-label">Adresse</label>
-            <span>Vængetstræde 77 <br>
-            0081 Købstad</span>
-
-            <label class="form-label">Alder</label>
-            <span>39</span>
-
-            <label class="form-label">Tidligere ansøgninger</label>
-            <span>Nej</span>
-
+            <p class="mt-0">Karen Jensen</p>
+            <div class="mt-5">
+              <label class="form-label">Adresse</label>
+              <p class="mt-0">Vængetstræde 77 <br>
+              0081 Købstad</p>
+            </div>
+            <div class="mt-5">
+              <label class="form-label">Alder</label>
+              <p class="mt-0">39</p>
+            </div>
+            <div class="mt-5">
+              <label class="form-label">Tidligere ansøgninger</label>
+              <p class="mt-0">Nej</p>
+            </div>
             <br>
           <a href="#" class="button button-primary">Indsend</a>
+          <div class="breadcrumb">
+            <a href="#" class="button button-ghost">Tilbage</a>
+          </div>
   </section>
 {% endblock %}
 

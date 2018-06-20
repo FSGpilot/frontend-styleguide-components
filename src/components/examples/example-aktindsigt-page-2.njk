@@ -36,13 +36,9 @@
 
 {% block body %}
   <section class="container">
-    <div class="breadcrumb">
-      <a href="#">Tilbage</a>
-    </div>
-    
     <div class="row page-container">
       <div class="col-12">
-          {{overflowmenu("Trin 2 af 4","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 2 af 3","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
                       <a href='#'>
@@ -62,16 +58,6 @@
                           3. Trin 3 
                       </a>
                   </li>
-                  <li>
-                      <a href='#'>
-                          4. Trin 4
-                      </a>
-                  </li>
-                  <li>
-                      <a href='#'>
-                          5. Trin 5
-                      </a>
-                  </li>
               </ul>
               "
           ) }}
@@ -79,21 +65,44 @@
             <h1>Oplysninger om dig</h1>
             <form class="form">
                 <fieldset>
-                    {{textinput("id-fornavn", "Fornavn", "", "input-width-400", "", "Input til fornavn", "", false, "")}}
-                    {{textinput("id-efternavn", "Efternavn", "", "input-width-400", "", "Input til efternavn", "", false, "")}}
-                    {{textinput("id-gade-vej", "Gade/vej", "", "input-width-400", "", "Input til gade/vej", "", false, "")}}
-                    {{textinput("id-husnummer", "Husnummer", "", "input-width-100", "", "Input til husnummer", "", false, "")}}
-                    {{textinput("id-etage", "Etage", "(frivilligt)", "input-width-100", "", "Input til etage", "", false, "")}}
-                    {{textinput("id-side", "Side", "(frivilligt)", "input-width-100", "", "Input til side", "", false, "Fx: TV, 2. dør")}}
-                    {{textinput("id-postnummer", "Postnummer", "", "input-width-150", "", "Input til postnummer", "", false, "")}}
-                    {{textinput("id-by", "By", "", "input-width-400", "", "Input til by", "", false, "")}}
-                    {{textinput("id-co-adresse", "Evt. CO-adresse", "(frivilligt)", "input-width-400", "", "Input til CO-adresse", "", false, "")}}
-                    <label class="form-label">Er der tidligere søgt om aktindsigt?</label>
-                    {{radiobutton("id-aktindsigt-ja", "aktindsigt", "Ja", false, false, "Ja", "radio-large", false, "true")}}
-                    {{radiobutton("id-aktindsigt-nej", "aktindsigt", "Ja", false, false, "Nej", "radio-large", false, "true")}}
+                    
+                        {{textinput("id-fornavn", "Fornavn", "", "input-width-400", "", "Input til fornavn", "", false, "")}}
+                    <div class="mt-5">
+                        {{textinput("id-efternavn", "Efternavn", "", "input-width-400", "", "Input til efternavn", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-gade-vej", "Gade/vej", "", "input-width-400", "", "Input til gade/vej", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-husnummer", "Husnummer", "", "input-width-100", "", "Input til husnummer", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-etage", "Etage", "(frivilligt)", "input-width-100", "", "Input til etage", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-side", "Side", "(frivilligt)", "input-width-100", "", "Input til side", "", false, "Fx: TV, 2. dør")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-postnummer", "Postnummer", "", "input-width-150", "", "Input til postnummer", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-by", "By", "", "input-width-400", "", "Input til by", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        {{textinput("id-co-adresse", "Evt. CO-adresse", "(frivilligt)", "input-width-400", "", "Input til CO-adresse", "", false, "")}}
+                    </div>
+                    <div class="mt-5">
+                        <label class="form-label">Er der tidligere søgt om aktindsigt?</label>
+                    </div>
+                    <br>
+                        {{radiobutton("id-aktindsigt-ja", "aktindsigt", "Ja", false, false, "Ja", "radio-large", false, "true")}}
+                        {{radiobutton("id-aktindsigt-nej", "aktindsigt", "Ja", false, false, "Nej", "radio-large", false, "true")}}
                 </fieldset>
           </form>
           <a href="#" class="button button-primary">Næste</a>
+          <div class="breadcrumb">
+            <a href="#" class="button button-ghost">Tilbage</a>
+          </div>
   </section>
 {% endblock %}
 
