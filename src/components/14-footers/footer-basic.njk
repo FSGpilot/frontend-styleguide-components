@@ -1,24 +1,27 @@
-<footer>
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
-          <div class="align-left">
-            <ul class="unstyled-list inline-list">
-              <li><span class="h6 weight-semibold">Undervisningsministeriet</span></li>
-              <li><p>Styrelsen for IT og læring</p></li>
-            </ul>
+{% macro footer_basic(footer_basic_data) %}
+  <footer>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          {%- for col in footer_basic_data.cols -%}
+          <div class="col-12 col-sm-12 col-md-{{ col.col_size_desktop | default('6') }} footer-col">
+            <div class="{%- if col.text_align_right %} align-right {% else %} align-left {% endif -%}">
+              {%- for listsitem in col.lists -%}
+                <ul class="unstyled-list {%- if listsitem.inline_list %} inline-list {% endif -%} ">
+                  {%- for item in listsitem.listitems -%}
+                  <li>{{item.content | safe}}</li>
+                  {% endfor -%}
+                </ul>
+              {% endfor -%}
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
-        <div class="align-right">
-            <ul class="unstyled-list inline-list">
-              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
-              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
-            </ul>
-          </div>
+          {% endfor -%}
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+{% endmacro %}
+
+{{ footer_basic(footer_basic_data) }}
+
+
