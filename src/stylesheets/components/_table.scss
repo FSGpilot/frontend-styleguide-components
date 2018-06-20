@@ -104,6 +104,22 @@
         }
     }
 
+    //No call borders right (row arrear as one single line)
+    &.lines {
+        thead {
+            th{
+                border-right-color: transparent;
+            }
+        }
+    
+        tbody{
+            td{
+                border-right: transparent;
+            }
+        }
+    }
+      
+
     //zebra lines
     &.table--zebra {
         thead {

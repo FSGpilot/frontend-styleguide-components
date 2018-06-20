@@ -40,6 +40,7 @@
     "classlist-polyfill": "^1.0.3",
     "core-js": "^2.5.7",
     "datatables.net-dt": "^1.10.16",
+    "datatables.net-responsive": "^2.2.1",
     "datatables.net-select": "^1.2.5",
     "domready": "^1.0.8",
     "elem-dataset": "^1.1.1",

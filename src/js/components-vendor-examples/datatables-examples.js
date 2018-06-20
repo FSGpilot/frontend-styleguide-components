@@ -5,6 +5,7 @@ window.$ = $;
 const microModal = require("../../vendor/micromodal.js");
 const dt = require( 'datatables.net' )( window, $ );
 const dt_select =require( 'datatables.net-select' )( window, $ );
+const dt_responsive =require( 'datatables.net-responsive' )( window, $ );
 
 const jsSelectorDatatable_Example_basic = "#js-datatable-example-basic";
 const jsSelectorDatatable_Example_extra_pagination = "#js-datatable-example-extra_pagination";
@@ -21,7 +22,9 @@ class datatablesExamples {
     //////////////////////////////////////
     //Init a datatable with no configuration
     //////////////////////////////////////
-    var table_basic = $(jsSelectorDatatable_Example_basic).DataTable();
+    var table_basic = $(jsSelectorDatatable_Example_basic).DataTable({
+        responsive: true
+    });
 
 
     //////////////////////////////////////
