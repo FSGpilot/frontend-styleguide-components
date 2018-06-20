@@ -5,6 +5,7 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
+
 {% block header %}
   <header class="header" role="banner">
     {{ portal_header(portal_header_data) }}
@@ -31,23 +32,33 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
+  <section class="container">
+    <div class="breadcrumb">
+      <a href="#">Tilbage</a>
+    </div>
+    
+    <div class="row page-container">
       <div class="col-12">
-          {{overflowmenu("Trin 1 af 4","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 3 af 4","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
-                      <a href='#' class='active'>
+                      <a href='#'>
                           1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
                       </a>
                   </li>
                   <li>
                       <a href='#'>
                           2. Trin 2
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
                       </a>
                   </li>
                   <li>
-                      <a href='#' >
+                      <a href='#' class='active'>
                           3. Trin 3 
                       </a>
                   </li>
@@ -65,19 +76,24 @@
               "
           ) }}
           <div class="content">
-            <h1>Inden du går igang</h1>
-            <p class="font-lead">Inden du går igang, skal du være opmærksom på:</p>
-            <ul>
-              <li>At alle oplysninger kan ændres, efter at du har indtastet dem. Det gælder dog ikke, når løsningen er sendt.</li>
-              <li>At oplysningerne ikke bliver brugt i andre sammenhænge, med mindre du får andet af vide.</li>
-              <li>At du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området, Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, med mindre andet er anført.</li>
-            </ul>
-            <h2>Hvis du vil klage</h2>
-            <p class="font-lead">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
-            <a href="#" class="button button-primary">Næste</a>
-          </div>
-      </div>
-    </div>
+            
+            <h1>Bekræft oplysninger</h1>
+            
+            <label class="form-label">Navn</label>
+            <span>Karen Jensen</span>
+
+            <label class="form-label">Adresse</label>
+            <span>Vængetstræde 77 <br>
+            0081 Købstad</span>
+
+            <label class="form-label">Alder</label>
+            <span>39</span>
+
+            <label class="form-label">Tidligere ansøgninger</label>
+            <span>Nej</span>
+
+            <br>
+          <a href="#" class="button button-primary">Indsend</a>
   </section>
 {% endblock %}
 

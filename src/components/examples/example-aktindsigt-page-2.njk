@@ -42,7 +42,7 @@
     
     <div class="row page-container">
       <div class="col-12">
-          {{overflowmenu("Trin 2 af 5","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 2 af 4","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
                       <a href='#'>
@@ -88,12 +88,10 @@
                     {{textinput("id-postnummer", "Postnummer", "", "input-width-150", "", "Input til postnummer", "", false, "")}}
                     {{textinput("id-by", "By", "", "input-width-400", "", "Input til by", "", false, "")}}
                     {{textinput("id-co-adresse", "Evt. CO-adresse", "(frivilligt)", "input-width-400", "", "Input til CO-adresse", "", false, "")}}
-                </fieldset>
-                <fieldset>
+                    <label class="form-label">Er der tidligere søgt om aktindsigt?</label>
                     {{radiobutton("id-aktindsigt-ja", "aktindsigt", "Ja", false, false, "Ja", "radio-large", false, "true")}}
                     {{radiobutton("id-aktindsigt-nej", "aktindsigt", "Ja", false, false, "Nej", "radio-large", false, "true")}}
                 </fieldset>
-        
           </form>
           <a href="#" class="button button-primary">Næste</a>
   </section>
