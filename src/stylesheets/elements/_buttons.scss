@@ -69,13 +69,14 @@ $button-stroke: inset 0 0 0 2px;
     }
   }
 
-  &:disabled,
-  .disabled {
-    background-color: $button-disabled-bg !important;
-    border-color: $button-disabled-bg !important;
-    color: $color-gray-medium-light !important;
-    box-shadow: none !important;
-  }
+  // &:disabled,
+  // .disabled {
+  //   background-color: $button-disabled-bg !important;
+  //   border-color: $button-disabled-bg !important;
+  //   color: $color-gray-medium-light !important;
+  //   opacity:0.5;
+  //   box-shadow: none !important;
+  // }
 
   //############ Primary ###############
   &.button-primary {
@@ -99,6 +100,20 @@ $button-stroke: inset 0 0 0 2px;
     &:focus {
       background-color: $button-primary-focus-bg;
       border-color: $button-primary-focus-border-color;
+    }
+
+    &:disabled,
+    .disabled {
+      opacity:0.5;
+      box-shadow: none !important;
+
+      &:hover {
+        color: $button-primary-color !important;
+        background-color: $button-primary-bg !important;
+        border-color: $button-primary-border-color !important;
+        opacity:0.5 !important;
+        box-shadow: none !important;
+      }
     }
   }
 
@@ -124,6 +139,19 @@ $button-stroke: inset 0 0 0 2px;
     &:focus {
       background-color: $color-gray-pale;
       border-color: $color-gray-light;
+    }
+    &:disabled,
+    .disabled {
+      opacity:0.5;
+      box-shadow: none !important;
+
+      &:hover {
+        color: $color-black !important;
+        background-color: $color-gray-pale !important;
+        border-color: $color-gray-light !important;
+        opacity:0.5 !important;
+        box-shadow: none !important;
+      }
     }
   }
 
@@ -154,6 +182,22 @@ $button-stroke: inset 0 0 0 2px;
       color: $color-black;
       box-shadow:none;
     }
+
+    &:disabled,
+    .disabled {
+      opacity:0.5;
+      box-shadow: none !important;
+
+      &:hover {
+        color: $color-gray-dark !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        text-decoration: underline !important;
+        font-weight: $font-weight-normal !important;
+        opacity:0.5 !important;
+        box-shadow: none !important;
+      }
+    }
   }
 
   //############### tertiary ############
@@ -177,6 +221,21 @@ $button-stroke: inset 0 0 0 2px;
     &:focus {
       border-color:$color-gray-light;
       background-color: transparent;
+    }
+
+    &:disabled,
+    .disabled {
+      opacity:0.5;
+      box-shadow: none !important;
+
+      &:hover {
+        border-color:$color-gray-005 !important;
+        background-color: transparent !important;
+        color: $color-black;
+        font-weight: $font-weight-normal !important;
+        opacity:0.5;
+        box-shadow: none !important !important;
+      }
     }
   }
 
@@ -202,6 +261,20 @@ $button-stroke: inset 0 0 0 2px;
       background-color: $color-gray-pale;
       border-color: $color-gray-light;
     }
+
+    &:disabled,
+    .disabled {
+      opacity:0.5;
+      box-shadow: none !important;
+
+      &:hover {
+        color: $color-black !important;
+        background-color: $color-gray-pale !important;
+        border-color: $color-gray-light !important;
+        opacity:0.5 !important;
+        box-shadow: none !important;
+      }
+    }
   }
 
   .icon-svg {
@@ -212,38 +285,38 @@ $button-stroke: inset 0 0 0 2px;
 }
 
 /* stylelint-disable */
-.button-secondary-disabled,          // Deprecated
-.button-secondary-inverse-disabled,  // Deprecated
-.button-secondary:disabled,
-.button-secondary-inverse:disabled,
-.button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
-  box-shadow: $button-stroke $color-gray-light;
-  color: lighten($color-black, 40%);
+// .button-secondary-disabled,          // Deprecated
+// .button-secondary-inverse-disabled,  // Deprecated
+// .button-secondary:disabled,
+// .button-secondary-inverse:disabled,
+// .button-outline-inverse:disabled {   // Outline inverse to be deprecated in 2.0
+//   box-shadow: $button-stroke $color-gray-light;
+//   color: lighten($color-black, 40%);
 
-  &:hover,
-  &.button-hover,
-  &:active,
-  &.button-active,
-  &:focus,
-  &.focus {
-    background-color: $color-white;
-    //box-shadow: $button-stroke $color-gray-light;
-    color: $color-gray-light;
-    cursor: not-allowed;
-  }
-}
+//   &:hover,
+//   &.button-hover,
+//   &:active,
+//   &.button-active,
+//   &:focus,
+//   &.focus {
+//     background-color: $color-white;
+//     //box-shadow: $button-stroke $color-gray-light;
+//     color: $color-gray-light;
+//     cursor: not-allowed;
+//   }
+// }
 
-html .button-secondary-disabled,          // Deprecated
-.button-secondary:disabled {
-  background-color: $color-white;
-}
+// html .button-secondary-disabled,          // Deprecated
+// .button-secondary:disabled {
+//   background-color: $color-white;
+// }
 
-html .button-secondary-inverse-disabled,  // Deprecated
-.button-secondary-inverse:disabled {
-  background-color: transparent;
-  color: $color-gray-medium-dark;
-  box-shadow: $button-stroke $color-gray-medium-dark;
-}
+// html .button-secondary-inverse-disabled,  // Deprecated
+// .button-secondary-inverse:disabled {
+//   background-color: transparent;
+//   color: $color-gray-medium-dark;
+//   box-shadow: $button-stroke $color-gray-medium-dark;
+// }
 
 @mixin button-unstyled {
   background-color: transparent;
