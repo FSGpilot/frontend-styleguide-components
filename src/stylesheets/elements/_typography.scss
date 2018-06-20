@@ -337,6 +337,10 @@ dfn {
   .font-lead{
     max-width: $lead-max-width;
   }
+
+  a{
+    max-width: $lead-max-width;
+  }
 }
 
 .content-list {
