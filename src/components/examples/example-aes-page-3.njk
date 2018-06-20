@@ -5,6 +5,8 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
+{% from "07-form/controls/text-input.njk" import textinput as textinput %}
+
 {% block header %}
   <header class="header" role="banner">
     {{ portal_header(portal_header_data) }}
@@ -15,6 +17,7 @@
 
       <div class="portal-info-mobile">
         <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
+        <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p>
         <a href="#" class="button button-secondary button-signout">
           Log ud
         </a>
@@ -23,6 +26,16 @@
       <div class="solution-info-mobile">
         <p><b>Erhvervsministeriet</b></p>
         <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+      <div class="navbar">
+        <div class="navbar-inner navbar-context-actions container">
+          <div class="nav-actions">
+            <a href="" class="function-link">Gem kladde
+              {{icon_svg("save")}}
+            </a>
+          </div>
+        </div>
       </div>
 
     </nav> <!-- collapsible nav end-->
@@ -34,36 +47,73 @@
   <section class="container page-container">
     <div class="row">
       <div class="col-12">
-          {{overflowmenu("Trin 1 af 3","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 3 af 9","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
-                      <a href='#' class='active'>
+                      <a href='#'>
                           1. Trin 1
+                           <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
                       </a>
                   </li>
                   <li>
                       <a href='#'>
                           2. Trin 2
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' class='active'>
+                          3. Trin 3 
                       </a>
                   </li>
                   <li>
                       <a href='#' >
-                          3. Trin 3 
+                          4. Trin 4 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          5. Trin 5 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          6. Trin 6 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          7. Trin 7 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          8. Trin 8 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='#' >
+                          9. Trin 9 
                       </a>
                   </li>
               </ul>
               "
           ) }}
           <div class="content">
-            <h1>Inden du går igang</h1>
-            <p class="font-lead">Inden du går igang, skal du være opmærksom på:</p>
-            <ul>
-              <li class="mt-6">At alle oplysninger kan ændres, efter at du har indtastet dem. Det gælder dog ikke, når løsningen er sendt.</li>
-              <li class="mt-6">At oplysningerne ikke bliver brugt i andre sammenhænge, med mindre du får andet af vide.</li>
-              <li class="mt-6">At du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området, Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, med mindre andet er anført.</li>
-            </ul>
-            <h2>Hvis du vil klage</h2>
-            <p class="font-lead">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
+            <h1>Oplysninger om skadelidte</h1>
+             <div class="mt-0">
+                  {{textinput("id-cpr", "Skadelidtes CPR-nr.", "", "input-width-400", "", "Input til skadelidtes CPR-nr.", "", false, "")}}
+              </div>
+               <div class="mt-5">
+                <label class="form-label">Navn</label>
+                <p class="mt-0">Susanne Maria Zaggariasen</p>
+              </div>
+            <br>
+
             <a href="#" class="button button-primary">Næste</a>
           </div>
       </div>

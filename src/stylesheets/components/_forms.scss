@@ -18,6 +18,8 @@ fieldset + fieldset{
 }
 
 input { 
+  max-width: 40rem;
+  width: 100%;
 
   &.input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
     @include media($medium-screen) {
@@ -32,31 +34,31 @@ input {
   }
 
   &.input-width-55 {
-    max-width: 55px;
+    max-width: 5.5rem !important;
     width: 100%;
   }
   &.input-width-100 {
-    max-width: 100px;
+    max-width: 10rem !important;
     width: 100%;
   }
   &.input-width-150 {
-    max-width: 150px;
+    max-width: 15rem !important;
     width: 100%;
   }
   &.input-width-200 {
-    max-width: 200px;
+    max-width: 20rem !important;
     width: 100%;
   }
   &.input-width-300 {
-    max-width: 300px;
+    max-width: 30rem !important;
     width: 100%;
   }
   &.input-width-400 {
-    max-width: 400px;
+    max-width: 40rem !important;
     width: 100%;
   }
   &.input-width-500 {
-    max-width: 500px;
+    max-width: 50rem !important;
     width: 100%;
   }
 
