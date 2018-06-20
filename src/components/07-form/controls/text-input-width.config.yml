@@ -1,0 +1,35 @@
+label: Tekst-input width
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  textinput_example:
+    items:
+      - id: input-type-text-55
+        label: Tekst input med bredde på 55px
+        name: input-type-text-55
+        class: input-width-55
+      - id: input-type-text-100
+        label: Tekst input med bredde på 100px
+        name: input-type-text-100
+        class: input-width-100
+      - id: input-type-text-150
+        label: Tekst input med bredde på 150px
+        name: input-type-text-100
+        class: input-width-150
+      - id: input-type-text-200
+        label: Tekst input med bredde på 200px
+        name: input-type-text-200
+        class: input-width-200
+      - id: input-type-text-300
+        label: Tekst input med bredde på 300px
+        name: input-type-text-300
+        class: input-width-300
+      - id: input-type-text-400
+        label: Tekst input med bredde på 400px
+        name: input-type-text-400
+        class: input-width-400
+      - id: input-type-text-500
+        label: Tekst input med bredde på 500px
+        name: input-type-text-500
+        class: input-width-500
