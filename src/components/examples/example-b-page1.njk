@@ -1,92 +1,83 @@
-{% import "08-side-navigation/tringuide.njk" as tringuiden %}
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
 
 {% block header %}
-    {% render '@header--simpel' %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
 {% endblock %}
 
 
 {% block body %}
-    <header class="container">
-        <div class="col">
-           <h2>{{title}}</h2>
-        </div>
+  <div class="container page-container">
+    <header>
+      <h1>{{title}}</h1>
+      <p class="font-lead">Brug en af de følgende funktioner, til at administrere børnetilskud:</p>
     </header>
-    <section class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                {{tringuiden.tringuide([{ text: "Inden du går igang", current: true}, { text: "Oplysninger om dig"}, {text: "Bekræft oplysninger"}])}}
-            </div>
-            <div class="col-sm-8">
-                <h3>Inden du går igang</h3>
-                <p>Inden du går igang skal du være opmærksom på:</p>
-                <ul>
-                    <li>at alle oplysninger kan ændres, efter at du har indtastet. Det gælder dog ikke, når løsningen er sendt.</li>
-                    <li>at oplysningerne ikke bliver brugt i andre sammenhænge, medmindre du får andet at vide.</li>
-                    <li>
-                    at du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området.
-                    Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, medmindre andet er anført
-                    </li>
-                </ul>
-                <h4>Hvis du vil klage:</h4>
-                <p>Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
-                <button class="button button-primary">Næste</button>
-
-
-          <form>
-            <fieldset>
-              <legend class="drop_text field-group-title">{{ fieldgroup.title }}</legend>
-              <hr>
-              <span>{{ fieldgroup.text }}</span>
-
-              <div class="row">
-                <div class="col-12">
-                  <label for="streetname">Gade/vej <span class="required"><i class="mdi mdi-asterisk"></i></span></label>
-                  <input id="address-streetname" type="text" name="streetname" autocorrect="off">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-4">
-                  <label for="address-number">Husnummer <span class="required"><i class="mdi mdi-asterisk"></i></span></label>
-                  <input id="address-number" type="number">
-                </div>
-                <div class="col-lg-4">
-                  <label for="address-floor">Etage</label>
-                  <input id="address-floor" type="text">
-                </div>
-                <div class="col-lg-4">
-                  <label for="address-side">Side</label>
-                  <input id="address-side" type="text">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12">
-                  <div class="button-row">
-                    <button class="button-primary"><i class="mdi mdi-chevron-left"></i> Forrige</button>
-                    <button class="button-primary ml-auto">Næste <i class="mdi mdi-chevron-right"></i></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12">
-                  <div class="info-row">
-                    <span>Klik forrige for at gå tilbage</span>
-                    <span class="ml-auto">Klik på næste for at gemme</span>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-            </div>
-        </div>
+    <section class="content">
+      <h3><a>Beskeder</a></h3>
+      <p class="mt-0">Læs beskeder omkring dine aktive sager</p>
+      <h3><a>Udbetalinger</a></h3>
+      <p class="mt-0">Se tidligere og kommende udbetalinger</p>
+      <h3><a>Sager</a></h3>
+      <p class="mt-0">Få status på dine nuværende sager</p>
+      <h3><a>Ansøgninger</a></h3>
+      <p class="mt-0">Se aktive og tidligere ansøgninger</p>
+      <h3><a>Ændringer</a></h3>
+      <p class="mt-0">Foretag ændringer omkring dit børnetilskud</p>
+      <h3><a>Dokumentation</a></h3>
+      <p class="mt-0">Opslagsværk for hvordan børnetilskud fungerer</p>
     </section>
+  </div>
 {% endblock %}
 
-
-{% block banner -%}
-{% endblock %}
 {% block footer -%}
-{% render '@footer' %}
+  <footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-left">
+            <ul class="unstyled-list">
+              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 {% endblock %}

@@ -1,6 +1,26 @@
-label: Eksempel-B - Side 1
+label: Eksempel-Boernetilskud - Side 1
 
 context:
-  title: Ansøg om indsigt
-
-    
+  portal_header_data:
+    user:
+      name: 'Christian Emil Vestergaard Christiansen'
+    logolink: 
+      title: 'Hjem'
+      href: 'javascript:void(0);'
+      label: 'logo link'
+    link:
+      href: '#'
+      class: 'button-secondary'
+      text: 'Log ud'
+  solution_header_data:
+    title:
+      href: '#'
+      title: 'Hjem'
+      label: 'logo link'
+      text: 'Familieydelser - børnetilskud'
+    authority:
+      name: 'Styrelse'
+      text: 'Tlf.: 33 28 38 38'
+  
+  title: "Familieydelser - børnetilskud"
+  lead: "Brug en af de følgende funktioner, til at administrere børnetilskud:"
