@@ -3,7 +3,7 @@ status: ready
 preview: '@dkwds-framed'
 
 context:
-  textinput_example:
+  textinputwidth_example:
     items:
       - id: input-type-text-55
         label: Tekst input med bredde på 55px
