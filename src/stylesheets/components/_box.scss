@@ -1,0 +1,18 @@
+
+.box-gray {
+	padding:map-get($spacers, 5);
+	background:$color-background;
+
+	.box-function-link {
+		margin-left: auto;
+		display: block;
+		align-items: baseline;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+		 }
+
+	}
+}
