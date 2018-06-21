@@ -5,10 +5,6 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
-{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
-{% from "07-form/controls/text-input.njk" import textinput as textinput %}
-{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
-
 {% block header %}
   <header class="header" role="banner">
     {{ portal_header(portal_header_data) }}
@@ -124,23 +120,173 @@
               "
           ) }}
           <div class="content">
-            <h1>Opsummering</h1>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <h1>Opsummering</h1>
 
-            {# <div class="mt-0">
-              {{datoinput("Skadedato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-            </div>
-            <div class="mt-5">
-              {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-200", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
-            </div>
-            <div class="mt-5">
-            {{ checkbox(item.id, item.name, item.value, item.disabled, item.checked, item.text, item.class, item.focus, item.large) }}
-              {{ checkbox("checkbox-id-1", "Der verserer en retssag", "checkbox3_selected", false, true, "Der verserer en retssag", "", false, true) }}
-            </div> #}
+                    <p class="font-lead">Her kan du kontrollere, om oplysningerne er korrekte.</p>
 
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Virksomhedens navn</td>
+                                <td>Forsikringens forsikring (enhed)</td>
+                                <td><a href="example-aes-page-1">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Kontaktperson</td>
+                                <td>John Doe<br>privatskade@ff.dk<br>+45 1234 5678</td>
+                                <td><a href="example-aes-page-2">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Afsender er</td>
+                                <td>Forsikringens forsikring (enhed)</td>
+                                <td><a href="example-aes-page-1">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om skadelidte</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes navn</td>
+                                <td>Susanne Maria Zaggariasen</td>
+                                <td><a href="example-aes-page-3">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes CPR</td>
+                                <td>110687-1478</td>
+                                <td><a href="example-aes-page-3">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om sagen</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Sagstype</td>
+                                <td>Erstatningsansvarloven</td>
+                                <td><a href="example-aes-page-4">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Emne</td>
+                                <td>Mén (6.220 kr.)</td>
+                                <td><a href="example-aes-page-4">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadedato</td>
+                                <td>1/10-2017</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Sagsnummer</td>
+                                <td>prsk013456</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Verserende retsag</td>
+                                <td>Nej</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes advokat</td>
+                                <td>Nej</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om sagen</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Faktuelle oplysninger</td>
+                                <td>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. 
+                                    Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. 
+                                    Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel seo est vitae eros pretium dignissim. 
+                                    Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. 
+                                </td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="h2">Bilagsoversigt</h2>
+                    <h5 class="h5">Første undersøgelse af skade</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om varigt mén</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Første undersøgelse af skade</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            <a href="example-aes-page-10" class="button button-primary">Næste</a>
-            <div class="breadcrumb">
-              <a href="example-aes-page-8" class="button button-ghost">Tilbage</a>
+                    <a href="example-aes-page-10" class="button button-primary">Næste</a>
+                    <div class="breadcrumb">
+                    <a href="example-aes-page-8" class="button button-ghost">Tilbage</a>
+                    </div>
+                </div>
             </div>
           </div>
       </div>

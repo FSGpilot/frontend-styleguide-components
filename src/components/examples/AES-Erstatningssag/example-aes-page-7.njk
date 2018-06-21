@@ -5,7 +5,7 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
-{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
+{% from "07-form/controls/select.njk" import select as select %}
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
 
@@ -120,16 +120,7 @@
           <div class="content">
             <h1>Tilføj dokumentation fra sagen</h1>
 
-            {# <div class="mt-0">
-              {{datoinput("Skadedato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-            </div>
-            <div class="mt-5">
-              {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-200", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
-            </div>
-            <div class="mt-5">
-            {{ checkbox(item.id, item.name, item.value, item.disabled, item.checked, item.text, item.class, item.focus, item.large) }}
-              {{ checkbox("checkbox-id-1", "Der verserer en retssag", "checkbox3_selected", false, true, "Der verserer en retssag", "", false, true) }}
-            </div> #}
+            
 
 
             <a href="example-aes-page-8" class="button button-primary">Næste</a>

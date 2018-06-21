@@ -5,9 +5,8 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
-{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
-{% from "07-form/controls/text-input.njk" import textinput as textinput %}
-{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+{% from "alerts/alerts.njk" import alert as alert %}
+
 
 {% block header %}
   <header class="header" role="banner">
@@ -46,24 +45,52 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
+  <section class="container">
     <div class="row">
+      <div class="col-12">
+          {{ alert("alert alert-success alert--show-icon", "alert", "Sagen er sendt til AES", "", "success" ) }}
+      </div>
+    </div>
+    <div class="row page-container">
       <div class="col-12">
           <div class="content">
             <h1>Kvittering</h1>
-
-            {# <div class="mt-0">
-              {{datoinput("Skadedato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
+            <div class="mt-0">
+              <p>Hvis du ønsker dokumentation på fremsendelse kan du downloade anmodningen.</p>
             </div>
-            <div class="mt-5">
-              {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-200", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
+            <br>
+            <button class="button button-secondary">{{ icon_svg('download')}} Download kvittering som pdf</button>
+            <h5 class="h5">Hvad sker der nu</h5>
+            <p>Sagens parter vil indenfor 7 hverdage modtage en kvittering med journalnummer og oplysninger om, hvornår AES forventer at have en udtalelse klar.</p>
+            <h5 class="h5">Husk betaling</h5>
+            <p class="mt-0 mb-0">Gebyret for udtalelsen skal sættes ind på vores konto i Danske Bank:</p>
+            <div class="row">
+              <div class="col-12 col-sm-3 col-md-3 col-lg-3">
+                  <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Reg.nr.:</td>
+                                <td>0216</td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Kontonr.:</td>
+                                <td>4069068936</td>
+                            </tr>
+                        </tbody>
+                  </table>
+                </div>
             </div>
-            <div class="mt-5">
-            {{ checkbox(item.id, item.name, item.value, item.disabled, item.checked, item.text, item.class, item.focus, item.large) }}
-              {{ checkbox("checkbox-id-1", "Der verserer en retssag", "checkbox3_selected", false, true, "Der verserer en retssag", "", false, true) }}
-            </div> #}
-
-          </div>
+            <div class="mt-4">
+              <p class="mt-0 mb-0">Gebyr: 6.220 kr.</p>
+              <p class="mt-0 mb-0">Ved overførslen skal I oplyse skadelidtes CPR-nr.: 1702671913</p>
+            </div>
+            <h5 class="h5">Ved spørgsmål eller supplerende oplysninger</h5>
+            <div class="mt-4">
+              <p class="mt-0 mb-0">Kontakt AES på aes@aes.dk eller 72 00 60 00</p>
+              <p class="mt-0 mb-0">Referencenummer: 28346863</p>
+            </div>
+            <br>
+            <button class="button button-secondary">Opret ny sag</button>
       </div>
     </div>
   </section>
