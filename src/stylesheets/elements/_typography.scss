@@ -282,16 +282,25 @@ h2 {
   margin-top:40px;
   margin-bottom:16px;
 }
+h3{
+  margin-top: 24px;
+  margin-bottom: 16px; 
+}
+.font-lead{
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+p, .body-text{
+  margin-top: map-get($spacers, 4);
+  margin-bottom: map-get($spacers, 4);
+}
 
 // .form-label {
 //   margin-top:map-get($spacers, 5);
 
 // }
 
-p, .body-text, .font-lead{
-  margin-top: map-get($spacers, 4);
-  margin-bottom: map-get($spacers, 4);
-}
+
 
 
 //a function link, does not look like a link
