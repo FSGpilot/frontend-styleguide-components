@@ -223,8 +223,9 @@
   border-top: $inner-border;
 
   @include media($nav-responsive-breakpoint) {
-    width: 21.5rem;
+    width: 30rem;
     border: $outer-border;
+    border-top: 0;
     padding-left: 0;
     position: absolute;
     z-index: 1;
