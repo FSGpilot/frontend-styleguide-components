@@ -1,0 +1,327 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
+        <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p>
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+      <div class="navbar">
+        <div class="navbar-inner navbar-context-actions container">
+          <div class="nav-actions">
+            <a href="" class="function-link">Gem kladde
+              {{icon_svg("save")}}
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container page-container">
+    <div class="row">
+      <div class="col-12">
+          {{overflowmenu("Trin 9 af 9","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='example-aes-page-1'>
+                          1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-2'>
+                          2. Trin 2
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-3' >
+                          3. Trin 3 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-4'>
+                          4. Trin 4 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-5'>
+                          5. Trin 5 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-6'>
+                          6. Trin 6 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-7'>
+                          7. Trin 7 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-8'>
+                          8. Trin 8 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-9' class='active'>
+                          9. Trin 9 
+                      </a>
+                  </li>
+              </ul>
+              "
+          ) }}
+          <div class="content">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                    <h1>Opsummering</h1>
+
+                    <p class="font-lead">Her kan du kontrollere, om oplysningerne er korrekte.</p>
+
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Virksomhedens navn</td>
+                                <td>Forsikringens forsikring (enhed)</td>
+                                <td><a href="example-aes-page-1">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Kontaktperson</td>
+                                <td>John Doe<br>privatskade@ff.dk<br>+45 1234 5678</td>
+                                <td><a href="example-aes-page-2">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Afsender er</td>
+                                <td>Forsikringens forsikring (enhed)</td>
+                                <td><a href="example-aes-page-1">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om skadelidte</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes navn</td>
+                                <td>Susanne Maria Zaggariasen</td>
+                                <td><a href="example-aes-page-3">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes CPR</td>
+                                <td>110687-1478</td>
+                                <td><a href="example-aes-page-3">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om sagen</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Sagstype</td>
+                                <td>Erstatningsansvarloven</td>
+                                <td><a href="example-aes-page-4">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Emne</td>
+                                <td>Mén (6.220 kr.)</td>
+                                <td><a href="example-aes-page-4">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadedato</td>
+                                <td>1/10-2017</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Sagsnummer</td>
+                                <td>prsk013456</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Verserende retsag</td>
+                                <td>Nej</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td class="weight-semibold">Skadelidtes advokat</td>
+                                <td>Nej</td>
+                                <td><a href="example-aes-page-5">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om sagen</h5>
+                    <table class="table table--borderless">
+                        <tbody>
+                            <tr>
+                                <td class="weight-semibold">Faktuelle oplysninger</td>
+                                <td>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. 
+                                    Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. 
+                                    Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel seo est vitae eros pretium dignissim. 
+                                    Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. 
+                                </td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="h2">Bilagsoversigt</h2>
+                    <h5 class="h5">Første undersøgelse af skade</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Oplysninger om varigt mén</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5 class="h5">Første undersøgelse af skade</h5>
+                    <table class="table table--borderless">
+                        <thead>
+                            <tr>
+                                <th>Original titel</th>
+                                <th>Navngivning</th>
+                                <th>Kommentar</th>
+                                <th>Størrelse</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>prn1023152_attest.pdf</td>
+                                <td>Journal fra egen læge</td>
+                                <td>2/10-2017</td>
+                                <td>2,3 mb</td>
+                                <td><a href="#">Rediger</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="example-aes-page-10" class="button button-primary">Næste</a>
+                    <div class="breadcrumb">
+                    <a href="example-aes-page-8" class="button button-ghost">Tilbage</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  <footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-left">
+            <ul class="unstyled-list">
+              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}

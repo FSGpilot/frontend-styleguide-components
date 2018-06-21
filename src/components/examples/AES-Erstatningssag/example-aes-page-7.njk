@@ -5,7 +5,7 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
-{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
+{% from "07-form/controls/select.njk" import select as select %}
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
 
@@ -49,7 +49,7 @@
   <section class="container page-container">
     <div class="row">
       <div class="col-12">
-          {{overflowmenu("Trin 5 af 9","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 7 af 9","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
                       <a href='example-aes-page-1'>
@@ -84,17 +84,23 @@
                       </a>
                   </li>
                   <li>
-                      <a href='example-aes-page-5' class='active'>
+                      <a href='example-aes-page-5'>
                           5. Trin 5 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
                       </a>
                   </li>
                   <li>
                       <a href='example-aes-page-6'>
-                          6. Trin 6 
+                          6. Trin 6
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span> 
                       </a>
                   </li>
                   <li>
-                      <a href='example-aes-page-7'>
+                      <a href='example-aes-page-7' class='active'>
                           7. Trin 7 
                       </a>
                   </li>
@@ -104,7 +110,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href='example-aes-page-9'>
+                      <a href='example-aes-page-9' >
                           9. Trin 9 
                       </a>
                   </li>
@@ -112,22 +118,14 @@
               "
           ) }}
           <div class="content">
-            <h1>Oplysninger om sagen</h1>
+            <h1>Tilføj dokumentation fra sagen</h1>
 
-            <div class="mt-0">
-              {{datoinput("Skadedato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-            </div>
-            <div class="mt-5">
-              {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-200", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
-            </div>
-            <div class="mt-5">
-              {{ checkbox("id-retssag", "Der verserer en retssag", "Der verserer en retssag", false, true, "Der verserer en retssag", "", false, true) }}
-            </div>
+            
 
 
-            <a href="example-aes-page-6" class="button button-primary">Næste</a>
+            <a href="example-aes-page-8" class="button button-primary">Næste</a>
             <div class="breadcrumb">
-              <a href="example-aes-page-4" class="button button-ghost">Tilbage</a>
+              <a href="example-aes-page-6" class="button button-ghost">Tilbage</a>
             </div>
           </div>
       </div>

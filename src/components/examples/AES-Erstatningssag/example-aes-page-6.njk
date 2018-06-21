@@ -5,9 +5,8 @@
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
 
-{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
-{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+{% from "07-form/controls/select.njk" import select as select %}
 
 {% block header %}
   <header class="header" role="banner">
@@ -49,7 +48,7 @@
   <section class="container page-container">
     <div class="row">
       <div class="col-12">
-          {{overflowmenu("Trin 5 af 9","overflow_steps", true, false, "menu-down" ,"
+          {{overflowmenu("Trin 6 af 9","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
                       <a href='example-aes-page-1'>
@@ -84,12 +83,15 @@
                       </a>
                   </li>
                   <li>
-                      <a href='example-aes-page-5' class='active'>
+                      <a href='example-aes-page-5'>
                           5. Trin 5 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
                       </a>
                   </li>
                   <li>
-                      <a href='example-aes-page-6'>
+                      <a href='example-aes-page-6' class='active'>
                           6. Trin 6 
                       </a>
                   </li>
@@ -112,22 +114,41 @@
               "
           ) }}
           <div class="content">
-            <h1>Oplysninger om sagen</h1>
+            <h1>Tilføj dokumentation for første undersøgelse af skaden</h1>
 
-            <div class="mt-0">
-              {{datoinput("Skadedato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-            </div>
-            <div class="mt-5">
-              {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-200", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
-            </div>
-            <div class="mt-5">
-              {{ checkbox("id-retssag", "Der verserer en retssag", "Der verserer en retssag", false, true, "Der verserer en retssag", "", false, true) }}
+            <div class="row mt-6">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="box-gray">
+                  <form class="form mt-0">
+                    <fieldset>
+                    <div class="form-group file-input">
+                      <label class="form-label" for="file">Vedhæft fil</label>
+                      <input type="file" id="file" name="file">
+                    </div>
+                    </fieldset> 
+                  </form>
+                  <div class="mt-6">
+                    {{select("Dokumentationdtype", "select-dokumentationdtype", "Dokumentationdtype", select_example.options)}}
+                  </div>
+                  <div class="mt-6">
+                    <p>Hvor i dokumentet er første undersøgelse dokumenteret</p>
+                  </div>
+                  <div class="mt-3">
+                    {{textinput("id-pagenumber", "Sidetal", "(frivilligt)", "input-width-100", "", "Sidetal", "", false, "")}}
+                  </div>
+                  <div class="mt-5">
+                    <div class="box-function-link">
+                      <p><a href="#" class="function-link link-right">Slet dokument {{ icon_svg('delete-outline')}}</a></p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
             </div>
 
-
-            <a href="example-aes-page-6" class="button button-primary">Næste</a>
+            <a href="example-aes-page-7" class="button button-primary">Næste</a>
             <div class="breadcrumb">
-              <a href="example-aes-page-4" class="button button-ghost">Tilbage</a>
+              <a href="example-aes-page-5" class="button button-ghost">Tilbage</a>
             </div>
           </div>
       </div>
