@@ -4,6 +4,10 @@ preview: '@dkwds-framed'
 
 context:
   datoinput_example:
-    label1: Fødselsdato
-    label2: Indsendelsesfrist
+    items:
+      - label: Indsendelsesfrist
+        hint: "For eksempel: 05 12 2018"
+        day: "Day"
+        month: "Måned"
+        year: "År"
     
