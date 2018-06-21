@@ -347,7 +347,7 @@ dfn {
     max-width: $lead-max-width;
   }
 
-  a{
+  a:not(.button){
     max-width: $lead-max-width;
   }
 }

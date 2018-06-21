@@ -16,6 +16,7 @@
   line-height: $body-text-line-height;
   text-align: center;
   text-decoration: none;
+  user-select: none;
   cursor: pointer;
   transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out; 
 
@@ -264,23 +265,9 @@
   @include button-unstyled;
 }
 
-.button-small {
-  padding: .5rem 1rem;
-  font-size: $small-text;
-}
-
-.signout-button {
-  margin-left: auto;
-  font-size: 1.3rem;
-  font-weight: 400;
-
-  ul > li:first-of-type {
-    font-weight: 700;
+.button + .button{
+  margin-left: 8px;
+  &:first-child{
+    margin-left: 0;
   }
-}
-
-// Button row
-.button-row {
-  display: flex;
-  margin: 2rem 0 1rem;
 }

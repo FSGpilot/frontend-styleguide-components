@@ -224,7 +224,7 @@ class datatablesExamples {
                 "orderable": false,
                 "render": function ( data, type, full, meta ) {
                     var overflowID = "overflow-table-"+full.id;
-                    return  `<div class="overflow-menu overflow-menu--open-left">
+                    return  `<div class="overflow-menu overflow-menu--open-left overflow-menu--hover-bg">
                                 <button class="button-overflow-menu js-dropdown" data-js-target="#`+ overflowID +`" aria-haspopup="true" aria-expanded="false">
                                     <svg class="icon-svg"><use xlink:href="#dots-vertical"></use></svg>
                                 </button>

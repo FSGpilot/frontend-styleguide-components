@@ -18,12 +18,14 @@
 
 {%- endmacro -%}
 
-{%- for buttons in button_example.items -%}
-  {%- if buttons.label %}
-    <h4>{{ buttons.label }}</h4>
+{%- for buttongroup in button_example.button_groups -%}
+  {%- if buttongroup.label %}
+    <h4>{{ buttongroup.label }}</h4>
   {% endif -%}
-  {{ button(buttons.class, buttons.state) }}
-{% endfor -%}
+  {%- for item in buttongroup.items -%}
+    {{ button(item.class, item.state) }}
+  {% endfor -%}
+ {% endfor -%}
 
 <h4>Funktionslinks</h4>
 <p><a href="#" class="function-link">Print entire guide {{ icon_svg('printer')}}</a></p>
