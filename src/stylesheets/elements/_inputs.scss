@@ -1,7 +1,10 @@
 // scss-lint:disable QualifyingElement, PropertyCount
 
-.form-group + .form-group{
+.form-group{
   margin-top: map-get($spacers, 4);
+  &:first-child{
+    margin-top: 0;
+  }
 }
 
 .form-label {
@@ -9,7 +12,6 @@
   max-width: $input-max-width;
   @include form-label-text();
 }
- 
 
 .form-input{
   appearance: none;
@@ -137,9 +139,11 @@ $radio-size-large: 34px;
   font-weight: $font-weight-normal;
   line-height: $body-text-line-height;
   margin-bottom: 0;
-  display: flex;
+  display: block;
   outline: none;
   color: $color-gray-dark;
+  position: relative;
+  padding-left: calc(#{$checkbox-size} + 8px);
 }
 
 //Outline for checkbox and radio
@@ -154,12 +158,15 @@ $radio-size-large: 34px;
   line-height: $body-text-line-height;
   margin-right: map-get($spacers, 3);
   width: $checkbox-size;
-  position: relative;
+  position: absolute;
   top: 3px;
+  left: 0;
 }
 //outline large
 [type=checkbox].checkbox-large + label {
-  line-height: $checkbox-radio-line-height-large;
+  padding-top: 8px;
+  padding-left: calc(#{$checkbox-size-large} + 8px);
+  //line-height: $checkbox-radio-line-height-large;
   &:before{
     height: $checkbox-size-large;
     width: $checkbox-size-large;
@@ -173,7 +180,9 @@ $radio-size-large: 34px;
   width: $radio-size;
 }
 [type=radio].radio-large + label{
-  line-height: $checkbox-radio-line-height-large;
+  padding-top: 8px;
+  padding-left: calc(34px + 8px);
+  //line-height: $checkbox-radio-line-height-large;
   &:before{
     height: $radio-size-large;
     width: $radio-size-large;
@@ -182,7 +191,6 @@ $radio-size-large: 34px;
 
 //checked checkbox
 [type=checkbox]:checked + label{
-  position: relative;
   &:before{
     background-color: $color-text;
   }
@@ -203,7 +211,7 @@ $radio-size-large: 34px;
     height: 12px;
     width: 22px;
     left: 6px;
-    top: 8px;
+    top: 6px;
     box-shadow: -3px 3px 0 0 #fff;
   }
 }
