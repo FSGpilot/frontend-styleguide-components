@@ -9,55 +9,65 @@ variants:
 
 context:
   button_example:
-    items:
-      - class: 'primary'
+    button_groups:
+      - button_group:
         label: 'Primary buttons'
-        state: 'default'
-      - class: 'primary'
-        state: 'hover'
-      - class: 'primary'
-        state: 'active'
-      - class: 'primary'
-        state: 'focus'
-      - class: 'primary'
-        state: 'disabled'
-
-      - class: 'secondary'
+        items: 
+          - class: 'primary'
+            state: 'default'
+          - class: 'primary'
+            state: 'hover'
+          - class: 'primary'
+            state: 'active'
+          - class: 'primary'
+            state: 'focus'
+          - class: 'primary'
+            state: 'disabled'
+      
+      - button_group:
         label: 'Secondary buttons'
-        state: 'default'
-      - class: 'secondary'
-        state: 'hover'
-      - class: 'secondary'
-        state: 'active'
-      - class: 'secondary'
-        state: 'focus'
-      - class: 'secondary'
-        state: 'disabled'
+        items: 
+          - class: 'secondary'
+            state: 'default'
+          - class: 'secondary'
+            state: 'hover'
+          - class: 'secondary'
+            state: 'active'
+          - class: 'secondary'
+            state: 'focus'
+          - class: 'secondary'
+            state: 'disabled'
 
-      - class: 'ghost'
+      - button_group:
         label: 'Ghost buttons'
-        state: 'default'
-      - class: 'ghost'
-        state: 'hover'
-      - class: 'ghost'
-        state: 'active'
-      - class: 'ghost'
-        state: 'focus'
-      - class: 'ghost'
-        state: 'disabled'
+        items: 
+          - class: 'ghost'
+            state: 'default'
+          - class: 'ghost'
+            state: 'hover'
+          - class: 'ghost'
+            state: 'active'
+          - class: 'ghost'
+            state: 'focus'
+          - class: 'ghost'
+            state: 'disabled'
 
-      - class: 'tertiary'
+      - button_group:
         label: 'Tertiary buttons'
-        state: 'default'
-      - class: 'tertiary'
-        state: 'hover'
-      - class: 'tertiary'
-        state: 'active'
-      - class: 'tertiary'
-        state: 'focus'
-      - class: 'tertiary'
-        state: 'disabled'
-
-      - class: 'primary'
+        items: 
+          - class: 'tertiary'
+            state: 'default'
+          - class: 'tertiary'
+            state: 'hover'
+          - class: 'tertiary'
+            state: 'active'
+          - class: 'tertiary'
+            state: 'focus'
+          - class: 'tertiary'
+            state: 'disabled'
+      
+      - button_group:
         label: 'Button with icon'
-        state: 'icon'
+        items: 
+          - class: 'primary'
+            state: 'icon'
