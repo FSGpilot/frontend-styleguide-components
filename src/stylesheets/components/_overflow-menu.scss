@@ -12,15 +12,16 @@ $overflow-menu-dropdown-distance: 8px;
         @include button-unstyled;
         min-height: 40px;
         min-width: 40px;
-        padding: 8px;
+        padding: 8px 0;
         display: flex;
         align-items: center;
         justify-content: center;
         color: $color-black;
 
         .no-touchevents &:hover{
-            background-color: $color-gray-pale;
+            text-decoration: underline;
         }
+
         //below: arrow with border
         &:after, &:before {
             display: none;
@@ -49,6 +50,15 @@ $overflow-menu-dropdown-distance: 8px;
         &[aria-expanded="true"]{
             &:after, &:before{
                 display: block;
+            }
+        }
+    }
+
+    &.overflow-menu--hover-bg{ //used when button only contains an icon
+        .button-overflow-menu{
+            padding: 0;
+            .no-touchevents &:hover{
+                background-color: $color-gray-pale;
             }
         }
     }
