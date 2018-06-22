@@ -130,6 +130,10 @@ $z-index-nav:     9000;
         color: $color-black;
         text-decoration: none;
         display: inline-block;
+        @include media-breakpoint-down(sm) {
+          font-size: 2.2rem; 
+          line-height: 2.4rem;
+        }
       }
     }
     .solution-info{
