@@ -272,3 +272,15 @@
     margin-left: 0;
   }
 }
+.button-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .button{
+    margin-top: 8px;
+    margin-left: 0;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
