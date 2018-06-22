@@ -274,7 +274,6 @@
 
     
     &.current { /* stylelint-disable-line selector-no-qualifying-type */
-      border: none;
       padding-left: map-get($spacers, 6);
 
     }
@@ -292,7 +291,6 @@
       }
 
       &.current { /* stylelint-disable-line selector-no-qualifying-type */
-        border: none;
         padding-left: map-get($spacers, 8);
         
       }
