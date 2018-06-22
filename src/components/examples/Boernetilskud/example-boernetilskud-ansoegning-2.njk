@@ -2,8 +2,7 @@
 {% from "12-modal/modal.njk" import modal as modal %}
 {% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
 {% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
-{% from "alerts/alerts.njk" import alert as alert %}
-{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+{% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
@@ -83,15 +82,18 @@
 {% block body %}
   <main class="container page-container">
     <header class="page-header">
-        {{overflowmenu("Trin 1 af 6","overflow_steps", true, false, "menu-down" ,"
+        {{overflowmenu("Trin 2 af 6","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
-                      <a href='example-boernetilskud-ansoegning-1' class='active'>
-                          1. trin af 6
+                      <a href='example-boernetilskud-ansoegning-1'>
+                            1. trin af 6
+                            <span class='sidenav-icon'>
+                                <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                            </span>
                       </a>
                   </li>
                   <li>
-                      <a href='example-boernetilskud-ansoegning-2'>
+                      <a href='example-boernetilskud-ansoegning-2' class='active'>
                           2. trin af 6
                       </a>
                   </li>
@@ -110,7 +112,7 @@
                           5. trin af 6
                       </a>
                   </li>
-                  <li>
+                   <li>
                       <a href='#'>
                           6. trin af 6
                       </a>
@@ -119,30 +121,16 @@
               "
           ) }}
         <h1 class="mt-0">{{title}}</h1>
+        <p class="font-lead">{{lead | safe}}</p>
     </header>
     <section class="page-content content">
-        <div class="row">
-            <div class="col-12 col-md-8 col-lg-5">
-                <h3>Jeg søger tilskud til:</h3>
-                <button class="button button-secondary">{{ icon_svg('plus')}} Tilføj barn</button>
-                <form class="form">
-                    <fieldset>
-                        {{ alert("alert-warning", "alert", "Allerede registreret", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.", "Beskedbox der viser en advarsel" ) }}
-                        {{ checkbox("checkbox-id-1", "", "checkbox1_selected", true, false, "Keld Hedagaardsen <br> 353535-3535 <br> Fælles", "", false, true) }}
-
-                        {{ alert("alert-warning", "alert", "Allerede registreret", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.", "Beskedbox der viser en advarsel" ) }}
-                        {{ checkbox("checkbox-id-2", "", "checkbox2_selected", true, false, "Anita Hedagaardsen <br> 353535-3535 <br> Fælles", "", false, true) }}
-
-                        {{ checkbox("checkbox-id-3", "", "checkbox3_selected", false, false, "<b>Ylmig Hedagaardsen</b> <br> 353535-3535 <br> Fælles", "", false, true) }}
-                    </fieldset>
-                    <div>
-                </form>
-            </div>
-        </div>
-       
+        {{datoinput("Jeg blev eller bliver enlig:", "", "Dato", "Måned", "År")}}
     </section>
     <footer class="page-footer">
-        <a href="example-boernetilskud-ansoegning-2" class="button button-primary">Næste</a>
+        <div class="button-column">
+            <a href="#" class="button button-primary">Næste</a>
+            <a href="example-boernetilskud-ansoegning-1" class="button button-ghost">Tilbage</a>
+        </div>
     </footer>
   </main>
 {% endblock %}
