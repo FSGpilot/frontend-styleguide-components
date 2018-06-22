@@ -15,19 +15,64 @@
     {{ solution_header(solution_header_data) }}
 
     <nav role="navigation" class=" nav"> <!-- collapsible-->
-      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+        <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
 
-      <div class="portal-info-mobile">
-        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
-        <a href="#" class="button button-secondary button-signout">
-          Log ud
-        </a>
-      </div>
+        <!-- 3: Main navigation-->
+        <div class="navbar navbar-primary">
+            <!--3A: Main navigation-->
+            <div class="navbar-inner container">
+                <ul class="nav-primary">
+                    <li>
+                        <a href="example-boernetilskud-oversigt" class="nav-link" title="Designsystem">
+                            <span>Oversigt</span>
+                        </a>
+                    </li>            
+                    <li>
+                        <a href="#" class="nav-link" title="Eksempler">
+                            <span>Beskeder</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" title="Kom godt i gang">
+                            <span>Udbetalinger</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" title="Fællesoffentlige krav">
+                            <span>Sager</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="example-boernetilskud-ansoegning-1" class="nav-link current" title="Fællesoffentlige krav">
+                            <span>Ansøgninger</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" title="Fællesoffentlige krav">
+                            <span>Ændringer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" title="Fællesoffentlige krav">
+                            <span>Dokumentation</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 3: Main navigation end-->
 
-      <div class="solution-info-mobile">
-        <p><b>Erhvervsministeriet</b></p>
-        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
-      </div>
+        <div class="portal-info-mobile">
+            <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
+            <a href="#" class="button button-secondary button-signout">
+            Log ud
+            </a>
+        </div>
+
+        <div class="solution-info-mobile">
+            <p><b>Erhvervsministeriet</b></p>
+            <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+        </div>
 
     </nav> <!-- collapsible nav end-->
   </header>
@@ -68,12 +113,11 @@
               </ul>
               "
           ) }}
-        <h1>{{title}}</h1>
-        <p class="font-lead">Brug en af de følgende funktioner, til at administrere børnetilskud:</p>
+        <h1 class="mt-0">{{title}}</h1>
     </header>
     <section class="page-content content">
         <div class="row">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-8 col-lg-5">
                 <h3>Jeg søger tilskud til:</h3>
                 <button class="button button-secondary">{{ icon_svg('plus')}} Tilføj barn</button>
                 <form class="form">
