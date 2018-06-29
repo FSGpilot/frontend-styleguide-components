@@ -1,0 +1,21 @@
+{% import "02-buttons/buttons.njk" as button %}
+
+<button class="button button-primary js-collapse" data-js-target="#collapse1" aria-controls="collapse1">Toggle collapse 1</button>
+<br>
+<div id="collapse1" class="background-dark">
+  <div class="p-6">
+    <p>Content of collapsible 1</p>
+    <p>Content of collapsible 1</p>
+    <p>Content of collapsible 1</p>
+  </div>
+</div>
+
+<button class="button button-primary mt-6 js-collapse" data-js-target="#collapse2" aria-expanded="false"  aria-controls="collapse2">Toggle collapse 2</button>
+<br>
+<div id="collapse2" class="background-dark  collapsed">
+  <div class="p-6">
+    <p>Content of collapsible 2</p>
+    <p>Content of collapsible 2</p>
+    <p>Content of collapsible 2</p>
+  </div>
+</div>

@@ -10,6 +10,7 @@ module.exports = {
   regexmask:  require('./regex-input-mask'),
   dropdown:   require('./dropdown'),
   navsubmenu:   require('./nav-submenu'),
+  navsubmenu:   require('./collapse'),
   //table:      require('./table'),
   
 };
