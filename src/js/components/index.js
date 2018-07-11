@@ -3,8 +3,6 @@ module.exports = {
   banner:     require('./banner'),
   footer:     require('./footer'),
   navigation: require('./navigation'),
-  password:   require('./password'),
-  search:     require('./search'),
   skipnav:    require('./skipnav'),
   validator:  require('./validator'),
   regexmask:  require('./regex-input-mask'),
