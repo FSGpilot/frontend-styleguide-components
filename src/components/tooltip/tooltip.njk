@@ -1,0 +1,13 @@
+{% import "02-buttons/buttons.njk" as button %}
+
+<div class="p-8 align-center">
+  <button class="button button-primary js-tooltip" title="Dette er et tooltip">Knap med tooltip</button>
+  <h6 class="mt-6">Placering</h6>
+  <button class="button button-primary js-tooltip" data-tippy-placement="top" title="Top tooltip">Top</button>
+  <button class="button button-primary js-tooltip" data-tippy-placement="bottom" title="Bund tooltip">Bund</button>
+  <button class="button button-primary js-tooltip" data-tippy-placement="left" title="Venstre tooltip">Venstre</button>
+  <button class="button button-primary js-tooltip" data-tippy-placement="right" title="Højre tooltip">Højre</button>
+  <h6 class="mt-6">Triggers</h6>
+  <button class="button button-primary js-tooltip" data-tippy-trigger="mouseenter" title="Hover eller touch">Hover eller touch</button>
+  <button class="button button-primary js-tooltip" data-tippy-trigger="click" title="Klik">Klik</button>
+</div>

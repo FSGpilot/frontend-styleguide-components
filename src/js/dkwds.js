@@ -6,6 +6,7 @@ const modernizr = require("../vendor/modernizr-custom.js");
 const datepicker = require('./components/datepicker');
 const modal = require('./components/modal');
 const table = require('./components/table');
+const tooltip = require('./components/tooltip');
 
 /**
  * The 'polyfills' define key ECMAScript 5 methods that may be missing from
