@@ -1,0 +1,48 @@
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12"><h4 class="my-4">Sidebar i dropdown</h4></div>
+    <div class="col-12">
+      {{overflowmenu("Trin 3 af 5","overflow3", true, false, "menu-down" ,"
+          <ul class='sidenav-list'>
+              <li>
+                  <a href='#'>
+                      1. Trin 1
+                      <span class='sidenav-icon'>
+                          <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                      </span>
+                  </a>
+              </li>
+              <li>
+                  <a href='#'>
+                      2. Trin 2
+                      <span class='sidenav-icon'>
+                          <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                      </span>
+                  </a>
+              </li>
+              <li>
+                  <a href='#' class='active'>
+                      3. Trin 3 (valgt)
+                  </a>
+              </li>
+              <li>
+                  <a href='#'>
+                      4. Trin 4
+                  </a>
+              </li>
+              <li>
+                  <a href='#'>
+                      5. Trin 5
+                  </a>
+              </li>
+          </ul>
+          ", true
+      ) }}
+
+      <div style="padding-bottom: 240px;"></div>
+    </div>
+  </div>
+</div>

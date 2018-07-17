@@ -81,7 +81,7 @@
         background-color: transparent;
       }
     }
-    & > a, & > button{
+    & > a, & > button, & .button-overflow-menu{
       @include media($nav-responsive-breakpoint) {
         padding-left: 12px;
         padding-right: 12px;
@@ -118,78 +118,12 @@
     }
   }
 
-  button {
-    @include button-unstyled;
-    color: $color-black;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    display: block;
-    width: 100%;
-    padding-top: calc(#{map-get($spacers, 4)} - 1px);
-    padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
-    @include media($nav-responsive-breakpoint) {
-      width: unset;
-    }
-    span{
-      padding-right: 32px;
-      white-space: nowrap;
-    }
-
-    &:focus,
-    &:active {
-      box-shadow: $focus-outline;
-    }
-
-    &[aria-expanded=false] {
-      background-image: url('#{$icons-folder-path}/plus.svg');
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 24px;
-
-      @include media($nav-responsive-breakpoint) {
-        background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
-        background-position: right 1.5rem center;
-        border-left: 1px solid transparent;
-        border-right: 1px solid transparent;
-      }
-    }
-
-    &[aria-expanded=true] { 
-      background-image: url('#{$icons-folder-path}/minus.svg');
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 24px;
-
-      @include media($nav-responsive-breakpoint) {
-        background-image: url('#{$icons-folder-path}/angle-arrow-down-white.svg');
-        background-position: right 1.5rem center;
-        //create borders:
-        border-left: 1px solid $color-gray-medium-light;
-        border-right: 1px solid $color-gray-medium-light;
-        //box-shadow: 0px 2px 0px -1px #fff; //hide nav bottom border.
-        background-color: $color-subnav-background;
-        color: #fff;
-      }
-    }
-  }
-
   a.current{
     font-weight: $font-weight-semibold;
     color: $color-primary;
   }
-  button.current{ //nav-submenu
+  button.current{
     font-weight: $font-weight-semibold;
-  }
-
-  .nav-primary {
-    button {
-      &[aria-expanded=false],
-      &[aria-expanded=true] {
-        @include media($nav-responsive-breakpoint) {
-          background-position: right 1.5rem top 53%;
-        }
-      }
-    }
   }
 }
 
@@ -211,73 +145,136 @@
   }
 }
 
-// Navigation submenu (dropdown) ----- //
-.nav-submenu {
-  //@include sidenav-sublist;
-  @include unstyled-list;
-  font-size: $body-text;
-  line-height: $body-text-line-height;
-  color: $color-text;
-  background-color: #fff;
-  padding-left: 16px;
-  border-top: $inner-border;
-
-  @include media($nav-responsive-breakpoint) {
-    width: 30rem;
-    border: $outer-border;
-    border-top: 0;
-    padding-left: 0;
-    position: absolute;
-    z-index: 1;
-    padding-top: map-get($spacers, 3);
-    padding-bottom: map-get($spacers, 3);
-    background-color: $color-subnav-background;
-  }
-
-  &[aria-hidden=true] {
-    display: none;
-  }
-
-  button{
-      @include button-unstyled;   
-  }
-  a{
-      @include body-copy-text;
+// Overflow menu(dropdown) in primary navigation.
+.nav-primary{
+  .overflow-menu{
+    .button-overflow-menu{
+      color: $color-black;
+      font-size: $base-font-size;
+      line-height: $base-line-height;
       display: block;
-      text-decoration: none;
-      .no-touchevents &:hover, &:visited, &:focus{
-          color: $color-text;
-          @include media($nav-responsive-breakpoint) {
-            color: #fff;
-            text-decoration: underline;
+      padding-top: calc(#{map-get($spacers, 4)} - 1px);
+      padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
+      padding-right: 44px;
+      white-space: nowrap;
+      width: 100%;
+      @include media($nav-responsive-breakpoint) {
+        width: unset;
+      }
+
+      &:focus,
+      &:active {
+        box-shadow: $focus-outline;
+      }
+      .no-touchevents &:hover{
+        text-decoration: none;
+      }
+  
+      &[aria-expanded=false] {
+        background-image: url('#{$icons-folder-path}/plus.svg');
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 24px;
+  
+        @include media($nav-responsive-breakpoint) {
+          background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
+          background-position: right 1.5rem center;
+          border-left: 1px solid transparent;
+          border-right: 1px solid transparent;
+        }
+      }
+  
+      &[aria-expanded=true] { 
+        background-image: url('#{$icons-folder-path}/minus.svg');
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 24px;
+  
+        @include media($nav-responsive-breakpoint) {
+          background-image: url('#{$icons-folder-path}/angle-arrow-down-white.svg');
+          background-position: right 1.5rem center;
+          //create borders:
+          border-left: 1px solid $color-gray-medium-light;
+          border-right: 1px solid $color-gray-medium-light;
+          //box-shadow: 0px 2px 0px -1px #fff; //hide nav bottom border.
+          background-color: $color-subnav-background;
+          color: #fff;
+          &:before, &:after{
+            display: none;
+          }
+        }
+      }
+    }
+
+    .overflow-menu-inner {
+      //@include sidenav-sublist;
+      @include unstyled-list;
+      font-size: $body-text;
+      line-height: $body-text-line-height;
+      color: $color-text;
+      background-color: #fff;
+      padding-left: 16px;
+      border-top: $inner-border;
+  
+      @include media($nav-responsive-breakpoint) {
+        width: 30rem;
+        border: $outer-border;
+        border-top: 0;
+        padding-left: 0;
+        position: absolute;
+        z-index: 1;
+        padding-top: map-get($spacers, 3);
+        padding-bottom: map-get($spacers, 3);
+        background-color: $color-subnav-background;
+        top: 100%;
+      }
+  
+      button{
+          @include button-unstyled;   
+      }
+      a{
+          @include body-copy-text;
+          display: block;
+          text-decoration: none;
+          .no-touchevents &:hover, &:visited, &:focus{
+              color: $color-text;
+              background-color: transparent;
+              @include media($nav-responsive-breakpoint) {
+                color: #fff;
+                text-decoration: underline;
+              }
           }
       }
-  }
-
-  .current {
-    font-weight: $font-weight-semibold;
-    color: $color-primary;
-    @include media($nav-responsive-breakpoint) {
-      color: #fff;
+  
+      .current {
+        font-weight: $font-weight-semibold;
+        color: $color-primary;
+        @include media($nav-responsive-breakpoint) {
+          color: #fff;
+        }
+      }
+  
+      button, a{
+        padding: 15px 0 15px 0;
+        border-top: $inner-border;
+        width: 100%;
+  
+        @include media($nav-responsive-breakpoint) {
+          padding: 8px 16px;
+          margin: 0;
+          border: none;
+        }
+        &:focus{
+          background-color: transparent;
+        }
+      }
+      li:first-child button, li:first-child a{
+        border-top: 0;
+      }
     }
   }
-
-  button, a{
-    padding: 15px 0 15px 0;
-    border-top: $inner-border;
-    width: 100%;
-
-    @include media($nav-responsive-breakpoint) {
-      padding: 8px 16px;
-      margin: 0;
-      border: none;
-    }
-    &:focus{
-      background-color: transparent;
-    }
-  }
-  li:first-child button, li:first-child a{
-    border-top: 0;
+  .xxoverflow-menu{
+    
   }
 }
 

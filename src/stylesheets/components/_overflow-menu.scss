@@ -3,10 +3,11 @@ $overflow-menu-arrow-size: 8px;
 $overflow-menu-dropdown-distance: 8px;
 
 .overflow-menu {
-    cursor: pointer;
     display: inline-block;
     position: relative;
-
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
     .button-overflow-menu{
         position: relative;
         @include button-unstyled;
@@ -134,5 +135,17 @@ $overflow-menu-dropdown-distance: 8px;
                 }
             }
         }
+    }
+    .button-overflow-menu.js-dropdown--responsive-collapse{
+        //behaves like a collapse on mobile, no positon absolute and width 100%
+        @include media-breakpoint-down(md) {
+            &:before, &:after{
+                display: none; //hide arrow
+            }
+            &  ~ .overflow-menu-inner {
+                width: 100%;
+                position: static;
+            }
+		}
     }
 }

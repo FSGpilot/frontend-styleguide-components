@@ -7,6 +7,7 @@ const datepicker = require('./components/datepicker');
 const modal = require('./components/modal');
 const table = require('./components/table');
 const tooltip = require('./components/tooltip');
+const dropdown = require('./components/dropdown');
 
 /**
  * The 'polyfills' define key ECMAScript 5 methods that may be missing from
@@ -30,6 +31,11 @@ domready(() => {
   const jsSelectorDatepicker = '.js-calendar-group';
   forEach(select(jsSelectorDatepicker), calendarGroupElement => {
     new datepicker(calendarGroupElement);
+  });
+
+  const jsSelectorDropdown = '.js-dropdown';
+  forEach(select(jsSelectorDropdown), dropdownElement => {
+    new dropdown(dropdownElement);
   });
 
 });

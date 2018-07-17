@@ -1,8 +1,8 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 
- {% macro overflowmenu(text, id, openRight, openLeft, icon, contentHTML) %}
+ {% macro overflowmenu(text, id, openRight, openLeft, icon, contentHTML, doResponsiveCollapse) %}
     <div class="overflow-menu {% if openRight %} overflow-menu--open-right {% endif %}{% if openLeft %} overflow-menu--open-left {% endif %}">
-        <button class="button-overflow-menu js-dropdown" data-js-target="#{{ id }}" aria-haspopup="true" aria-expanded="false">
+        <button class="button-overflow-menu js-dropdown {% if doResponsiveCollapse %} js-dropdown--responsive-collapse {% endif %}" data-js-target="#{{ id }}" aria-haspopup="true" aria-expanded="false">
             {{ text }}
             {% if icon %}<svg class="icon-svg"><use xlink:href="#{{ icon }}"></use></svg>{% endif %}
             <span class="sr-only">Åbner overflow menu</span>
@@ -76,7 +76,7 @@
                 </a>
             </li>
         </ul>
-        "
+        ", true
     ) }}
 
     <div style="padding-bottom: 240px;"></div>

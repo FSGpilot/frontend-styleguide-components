@@ -22,16 +22,10 @@ const toggleCollapse = function (triggerEl, forceClose) {
                 //change state
                 if(triggerEl.getAttribute("aria-expanded") == "true" || triggerEl.getAttribute("aria-expanded") == undefined || forceClose ){
                     //close
-                    triggerEl.setAttribute("aria-expanded", "false");
-                    
-                    animateCollapse(targetEl);
-                    targetEl.setAttribute("aria-hidden", "true");
+                    animateCollapse(targetEl, triggerEl);
                 }else{
                     //open
-                    triggerEl.setAttribute("aria-expanded", "true");
-                    animateExpand(targetEl);
-
-                    targetEl.setAttribute("aria-hidden", "false");
+                    animateExpand(targetEl, triggerEl);
                 }
             }
         }       
@@ -47,10 +41,11 @@ const toggle = function (event) {
 };
 
 var animateInProgress = false;
-//KOMMET HERTIL
-function animateCollapse(targetEl) {
+
+function animateCollapse(targetEl, triggerEl) {
     if(!animateInProgress){
         animateInProgress = true;
+        
         targetEl.style.height = targetEl.clientHeight+ "px";
         targetEl.classList.add("collapse-transition-collapse");
         setTimeout(function(){ 
@@ -59,25 +54,31 @@ function animateCollapse(targetEl) {
         setTimeout(function(){ 
             targetEl.classList.add("collapsed");
             targetEl.classList.remove("collapse-transition-collapse");
+            
+            triggerEl.setAttribute("aria-expanded", "false");
+            targetEl.setAttribute("aria-hidden", "true");
             animateInProgress = false;
         }, 200);
     }
 }
 
-function animateExpand(targetEl) {
+function animateExpand(targetEl, triggerEl) {
     if(!animateInProgress){
         animateInProgress = true;
         targetEl.classList.remove("collapsed");
         var expandedHeight = targetEl.clientHeight;
         targetEl.style.height = "0px";
+        targetEl.classList.add("collapse-transition-expand");
         setTimeout(function(){ 
-            targetEl.classList.add("collapse-transition-expand");
             targetEl.style.height = expandedHeight+ "px";
         }, 5);
         
         setTimeout(function(){ 
             targetEl.classList.remove("collapse-transition-expand");
             targetEl.removeAttribute("style");
+
+            targetEl.setAttribute("aria-hidden", "false");
+            triggerEl.setAttribute("aria-expanded", "true");
             animateInProgress = false;
         }, 200);
     }
