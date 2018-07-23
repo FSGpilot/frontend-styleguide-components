@@ -1,4 +1,4 @@
-{% macro textinput(id, label, optionallabel, class, error, name, classlabel, success, hint) %}
+{% macro textinput(id, label, optionallabel, class, error, name, classlabel, success, disabled, hint) %}
   {% if error1 %}
   <div class="form-group input-error">
     <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
@@ -6,17 +6,17 @@
     <input class="form-input {{class}}" id="{{id}}" name="{{name}}" type="text" aria-describedby="input-error-message-{{id}}">
   </div>
   {% else %} 
-  <div class="form-group{% if success %} input-success{% endif %}{% if error %} input-error{% endif %}">
+  <div class="form-group{% if success %} input-success{% endif %}{% if error %} input-error{% endif %}{% if disabled %} input-disabled{% endif %}">
      <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
       {% if error %}<span class="input-error-message" id="input-error-message-{{id}}" role="alert">{{error}}</span>{% endif %}
       {% if hint %}<span class="form-hint" id="input-hint-message-{{id}}">{{hint}}</span>{% endif %}
-     <input class="form-input  {{class}}" id="{{id}}" name="{{name}}" type="text" {% if error %}aria-describedby="input-error-message-{{id}}"{% endif %} {% if error %}aria-describedby="input-hint-message-{{id}}"{% endif %}>
+     <input class="form-input  {{class}}" placeholder="{{placeholder}}" id="{{id}}" name="{{name}}" type="text" {% if disabled %}disabled="disabled"{% endif %} {% if error %}aria-describedby="input-error-message-{{id}}"{% endif %} {% if error %}aria-describedby="input-hint-message-{{id}}"{% endif %}>
   </div>
   {% endif %}
 {% endmacro %}
 
 <div class="container">
   {% for item in textinput_example.items %}
-    {{textinput(item.id, item.label, item.optionallabel, item.class, item.error, item.name, item.classLabel, item.success, item.hint)}}
+    {{textinput(item.id, item.label, item.optionallabel, item.class, item.error, item.name, item.classLabel, item.success, item.disabled, item.hint, item.placeholder)}}
   {% endfor %}
 </div>

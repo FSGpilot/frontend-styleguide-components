@@ -91,6 +91,13 @@ legend {
   }
 }
 
+.input-disabled {
+  input {
+    background: $color-gray-pale;
+    color:$color-gray-medium-light;
+  }
+}
+
 .input-required:after {
   color: $color-required;
   content: ' (*required)';
@@ -141,7 +148,7 @@ $radio-size-large: 34px;
   margin-bottom: 0;
   display: block;
   outline: none;
-  color: $color-gray-dark;
+  color: $color-black;
   position: relative;
   padding-left: calc(#{$checkbox-size} + 8px);
   min-height: $checkbox-size;
