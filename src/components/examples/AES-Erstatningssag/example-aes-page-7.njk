@@ -7,6 +7,7 @@
 
 {% from "07-form/controls/select.njk" import select as select %}
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
+{% from "07-form/controls/text-area.njk" import textarea as textarea %}
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
 
 {% block header %}
@@ -120,7 +121,36 @@
           <div class="content">
             <h1>Tilføj dokumentation fra sagen</h1>
             <div class="mt-0">
-              {{ checkbox("id-documentation-1", "Oplysninger om varigt mén", "Oplysninger om varigt mén", false, true, "Oplysninger om varigt mén", "", false, true) }}
+              {{ checkbox("id-documentation-1", "Oplysninger om varigt mén", "Oplysninger om varigt mén", false, false, "Oplysninger om varigt mén", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
+              <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
+                <div class="py-4">
+                    <button href="example-aes-page-8" class="button button-secondary mt-4">Tilføj dokument</button>
+                  <table class="table table--borderless table--compact table--responsive-headers mt-5">
+                        <thead>
+                            <tr>
+                                <th>Filnavn</th>
+                                <th>Navngiv dokument</th>
+                                <th>Kommentar (frivilligt)</th>
+                                <th>Slet dokument</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ icon_svg('file')}} prn1023152_attest.pdf</td>
+                                <td class="mt-4 mt-lg-0">{{select("Navngiv dokument", "select-dokumentationdtype", "", select_example.options)}}</td>
+                                <td class="mt-4 mt-lg-0">{{ textarea("id-documentation-1-expanded", "", "", "input-width-400", "Kommentar", "", "") }}</td>
+                                <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
+                            </tr>
+                            <tr>
+                                <td class="mt-4 mt-lg-0">{{ icon_svg('file')}} sgn1023152_attest.pdf</td>
+                                <td class="mt-4 mt-lg-0">{{select("Navngiv dokument", "select-dokumentationdtype", "", select_example.options)}}</td>
+                                <td class="mt-4 mt-lg-0">{{ textarea("id-documentation-1-expanded", "", "", "input-width-400", "Kommentar", "", "") }}</td>
+                                <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div> 
             </div>
             <div class="mt-3">
               {{ checkbox("id-documentation-2", "Oplysninger om tabt erhvervsevne", "Oplysninger om tabt erhvervsevne", false, false, "Oplysninger om tabt erhvervsevne", "", false, true) }}
@@ -136,6 +166,7 @@
       </div>
     </div>
   </section>
+                      
 {% endblock %}
 
 {% block banner -%}

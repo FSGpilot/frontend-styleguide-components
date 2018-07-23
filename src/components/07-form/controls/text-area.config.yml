@@ -1,0 +1,11 @@
+label: Tekst-area
+status: ready
+preview: '@dkwds-framed'
+
+context:
+  textarea_example:
+    items:
+      - id: input-area
+        label: Text area label
+        name: input-area
+

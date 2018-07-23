@@ -1,0 +1,15 @@
+{% macro textarea(id, label, optionallabel, class, name, classlabel, placeholder) %}
+  <div class="form-group">
+     <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
+     <textarea class="form-input textarea {{class}}" placeholder="{{placeholder}}" id="{{id}}" name="{{name}}" type="text"></textarea>
+  </div>
+  {# <div class="mt-3">
+    <span class="textareaWordCount">0</span>/2000 tegn
+  </div> #}
+{% endmacro %}
+
+<div class="container">
+  {% for item in textarea_example.items %}
+    {{textarea(item.id, item.label, item.optionallabel, item.class, item.name, item.classLabel, item.placeholder)}}
+  {% endfor %}
+</div>

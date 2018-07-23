@@ -17,7 +17,7 @@ fieldset + fieldset{
   margin-top: $spacing-x-large;
 }
 
-input { 
+input, textarea, select { 
   max-width: 40rem;
   width: 100%;
 

@@ -24,6 +24,7 @@ $icons: (
 .icon-svg {
     height: $body-text-line-height;
     width: $body-text-line-height;
+    vertical-align: middle;
     &--inherit-color{
         fill: currentColor; //svg inherit color
     }
