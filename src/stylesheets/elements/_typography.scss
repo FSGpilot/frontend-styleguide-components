@@ -281,25 +281,45 @@ p{
 }
 
 h1, .h1{
-  margin-top: $h1-line-height;
-  margin-bottom: $h1-line-height;
+  margin-top: $h2-line-height;
+  margin-bottom: $h2-line-height;
+  @include media(md) {
+    margin-top: $h1-line-height;
+    margin-bottom: $h1-line-height;
+  }
 }
 
 h2, .h2 {
-  margin-top: $h2-line-height;
-  margin-bottom: $h2-line-height;
+  margin-top: $h3-line-height;
+  margin-bottom: $h3-line-height;
+  @include media(md) {
+    margin-top: $h2-line-height;
+    margin-bottom: $h2-line-height;
+  }
 }
 h3, .h3{
-  margin-top: $h3-line-height;
-  margin-bottom: $h3-line-height; 
+  margin-top: $h4-line-height;
+  margin-bottom: $h4-line-height;
+  @include media(md) {
+    margin-top: $h3-line-height;
+    margin-bottom: $h3-line-height;
+  } 
 }
 h4, .h4{
-  margin-top: $h4-line-height;
-  margin-bottom: $h4-line-height; 
+  margin-top: $h5-line-height;
+  margin-bottom: $h5-line-height;
+  @include media(md) {
+    margin-top: $h4-line-height;
+    margin-bottom: $h4-line-height;
+  }
 }
 h5, .h5{
-  margin-top: $h5-line-height;
-  margin-bottom: $h5-line-height; 
+  margin-top: $h6-line-height;
+  margin-bottom: $h6-line-height;
+  @include media(md) {
+    margin-top: $h5-line-height;
+    margin-bottom: $h5-line-height;
+  }
 }
 h6, .h6{
   margin-top: $h6-line-height;
