@@ -5,9 +5,7 @@ $overflow-menu-dropdown-distance: 8px;
 .overflow-menu {
     display: inline-block;
     position: relative;
-    @include media-breakpoint-down(md) {
-        width: 100%;
-    }
+
     .button-overflow-menu{
         position: relative;
         @include button-unstyled;
@@ -16,7 +14,7 @@ $overflow-menu-dropdown-distance: 8px;
         padding: 8px 0;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         color: $color-black;
 
         .no-touchevents &:hover{
