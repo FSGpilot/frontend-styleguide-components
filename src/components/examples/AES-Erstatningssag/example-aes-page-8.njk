@@ -121,14 +121,21 @@
           ) }}
           <div class="content">
             <h1>Tilføj kommentarer til sagen</h1>
-             <div class="mt-0">
-              {{ checkbox("id-comments-1", "Faktuelle oplysninger", "Faktuelle oplysninger", false, true, "Faktuelle oplysninger", "", false, true) }}
+            <div class="mt-0">
+              {{ checkbox("id-comments-1", "Spørgsmål til AES", "Spørgsmål til AES", false, false, "Spørgsmål til AES", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
+              <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
+                <div class="py-4">
+                  <p>Content of collapsible check</p>
+                  <p>Content of collapsible check</p>
+                  <p>Content of collapsible check</p>
+                </div>
+              </div>     
             </div>
             <div class="mt-3">
-              {{ checkbox("id-comments-2", "Spørgsmål til AES", "Spørgsmål til AES", false, false, "Spørgsmål til AES", "", false, true) }}
+              {{ checkbox("id-comments-2", "Særlige forsikringsbetingelser", "Særlige forsikringsbetingelser", false, false, "Særlige forsikringsbetingelser", "", false, true) }}
             </div>
             <div class="mt-3">
-              {{ checkbox("id-comments-3", "Instruks til AES", "Instruks til AES", false, false, "Instruks til AES", "", false, true) }}
+              {{ checkbox("id-comments-3", "Særlige forsikringsbetingelser", "Særlige forsikringsbetingelser", false, false, "Særlige forsikringsbetingelser", "", false, true) }}
             </div>
             <div class="mt-3">
               {{ checkbox("id-comments-4", "Særlige forsikringsbetingelser", "Særlige forsikringsbetingelser", false, false, "Særlige forsikringsbetingelser", "", false, true) }}

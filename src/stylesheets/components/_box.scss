@@ -16,3 +16,8 @@
 
 	}
 }
+
+.box-border-l{
+	padding-left: calc(#{map-get($spacers, 4)} - 4px);
+	border-left: 4px solid $color-gray-light;
+}

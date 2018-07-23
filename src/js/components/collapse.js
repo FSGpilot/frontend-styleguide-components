@@ -33,7 +33,7 @@ const toggleCollapse = function (triggerEl, forceClose) {
 };
 
 const toggle = function (event) {
-    event.preventDefault();
+    //event.preventDefault();
     var triggerElm = closest(event.target, jsCollapseTrigger);
     if(triggerElm !== null && triggerElm !== undefined){
         toggleCollapse(triggerElm);
