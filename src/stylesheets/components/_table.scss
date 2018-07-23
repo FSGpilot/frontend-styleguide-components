@@ -4,6 +4,12 @@
     border: $outer-border;
     width: 100%;
 
+    @include media-breakpoint-up(lg) {
+        .table-text-right {
+            text-align:right;
+        }
+    }
+
     &.table--compact {
       th,td {
         padding-top: calc(#{map-get($spacers, 3)} - 1px);
@@ -76,7 +82,7 @@
                 }
                 &:last-child{
                     padding-right: 0;
-                    text-align: right;
+                    
                 }
             }
         }
@@ -91,7 +97,6 @@
                     }
                     &:last-child{
                         padding-right: 0;
-                        text-align: right;
                     }
                 }
                 &:first-child td{

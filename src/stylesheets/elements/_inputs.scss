@@ -27,9 +27,19 @@
   text-align: left;
   height: $input-standard-height;
 }
+
+table {
+  .form-input {
+    margin-top:0;
+  } 
+  textarea.form-input{
+    height: 4rem;
+  }
+}
 textarea.form-input{
   height: 16rem;
 }
+
 
 //Note for select. Uses browser-specific styling for arrow. No custom.
 .form-select {
@@ -51,6 +61,12 @@ textarea.form-input{
     color: transparent;
     text-shadow: 0 0 0 $color-black;
   }
+}
+
+table {
+  .form-select {
+    margin-top:0;
+  } 
 }
 
 

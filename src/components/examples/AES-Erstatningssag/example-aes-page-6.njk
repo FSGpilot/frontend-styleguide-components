@@ -115,41 +115,30 @@
           ) }}
           <div class="content">
             <h1>Tilføj dokumentation for første undersøgelse af skaden</h1>
+             <button href="example-aes-page-8" class="button button-secondary mt-0">Tilføj dokument</button>
+              <table class="table table--borderless table--compact table--responsive-headers mt-6">
+                <thead>
+                  <tr>
+                      <th>Filnavn</th>
+                      <th>Dokumentationstype</th>
+                      <th>Sidetal (frivilligt)</th>
+                      <th>Slet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mt-4 mt-lg-0">{{ icon_svg('file')}}prn1023152_journal.pdf</td>
+                        <td class="mt-4 mt-lg-0">{{select("Navngiv dokument", "select-dokumentationdtype", "", select_example.options)}}</td>
+                        <td class="mt-4 mt-lg-0">{{textinput("id-pagenumber", "", "", "input-width-100", "", "Sidetal", "", false, "")}}</td>
+                        <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
+                    </tr>
+                </tbody>
+              </table>
 
-            <div class="row mt-6">
-              <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="box-gray">
-                  <form class="form mt-0">
-                    <fieldset>
-                    <div class="form-group file-input">
-                      <label class="form-label" for="file">Vedhæft fil</label>
-                      <input type="file" id="file" name="file">
-                    </div>
-                    </fieldset> 
-                  </form>
-                  <div class="mt-6">
-                    {{select("Dokumentationdtype", "select-dokumentationdtype", "Dokumentationdtype", select_example.options)}}
-                  </div>
-                  <div class="mt-6">
-                    <p>Hvor i dokumentet er første undersøgelse dokumenteret</p>
-                  </div>
-                  <div class="mt-3">
-                    {{textinput("id-pagenumber", "Sidetal", "(frivilligt)", "input-width-100", "", "Sidetal", "", false, "")}}
-                  </div>
-                  <div class="mt-5">
-                    <div class="box-function-link">
-                      <p><a href="#" class="function-link link-right">Slet dokument {{ icon_svg('delete-outline')}}</a></p>
-                    </div>
-                  </div>
-                  
-                </div>
+              <a href="example-aes-page-7" class="button button-primary mt-7">Næste</a>
+              <div class="breadcrumb">
+                <a href="example-aes-page-5" class="button button-ghost">Tilbage</a>
               </div>
-            </div>
-
-            <a href="example-aes-page-7" class="button button-primary mt-7">Næste</a>
-            <div class="breadcrumb">
-              <a href="example-aes-page-5" class="button button-ghost">Tilbage</a>
-            </div>
           </div>
       </div>
     </div>

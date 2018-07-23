@@ -1,4 +1,4 @@
-{% macro textinput(id, label, optionallabel, class, error, name, classlabel, success, disabled, hint) %}
+{% macro textinput(id, label, optionallabel, class, error, name, classlabel, success, disabled, hint, placeholder) %}
   {% if error1 %}
   <div class="form-group input-error">
     <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
