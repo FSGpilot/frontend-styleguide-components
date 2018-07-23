@@ -119,11 +119,16 @@
           ) }}
           <div class="content">
             <h1>Tilføj dokumentation fra sagen</h1>
-
-            
-
-
-            <a href="example-aes-page-8" class="button button-primary">Næste</a>
+            <div class="mt-0">
+              {{ checkbox("id-documentation-1", "Oplysninger om varigt mén", "Oplysninger om varigt mén", false, true, "Oplysninger om varigt mén", "", false, true) }}
+            </div>
+            <div class="mt-3">
+              {{ checkbox("id-documentation-2", "Oplysninger om tabt erhvervsevne", "Oplysninger om tabt erhvervsevne", false, false, "Oplysninger om tabt erhvervsevne", "", false, true) }}
+            </div>
+            <div class="mt-3">
+              {{ checkbox("id-documentation-3", "Tilføj andre dokumenter", "Tilføj andre dokumenter", false, false, "Tilføj andre dokumenter", "", false, true) }}
+            </div>
+            <a href="example-aes-page-8" class="button button-primary mt-7">Næste</a>
             <div class="breadcrumb">
               <a href="example-aes-page-6" class="button button-ghost">Tilbage</a>
             </div>

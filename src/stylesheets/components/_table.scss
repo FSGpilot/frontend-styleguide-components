@@ -39,7 +39,7 @@
         padding: calc(#{map-get($spacers, 4)} - 1px); //16px -1px (for the border)
         background-color: inherit;
         border-right: $inner-border;
-        //vertical-align: top;
+        vertical-align: top;
 
         &:last-child{
             border-right: none;
@@ -76,6 +76,7 @@
                 }
                 &:last-child{
                     padding-right: 0;
+                    text-align: right;
                 }
             }
         }
@@ -90,6 +91,7 @@
                     }
                     &:last-child{
                         padding-right: 0;
+                        text-align: right;
                     }
                 }
                 &:first-child td{
