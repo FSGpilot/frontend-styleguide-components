@@ -14,91 +14,6 @@ $em-base:           62.5%; //-> 10px for standard browsers, now 'Font size' from
 $base-font-size:    1.6rem !default;
 $base-line-height:  2.4rem !default;
 
-/*
-Removes the unit (e.g. px, em, rem) from a value, returning the number only.
-@param {Number} $num - Number to strip unit from.
-@returns {Number} The same number, sans unit.
-*/
-
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
-}
-
-/*
-Converts one or more pixel values into matching rem values.
-@param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
-
-@param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
-
-@returns {List} A list of converted values.
-*/
-
-@function rem-calc($values, $base: null) {
-  $rem-values: ();
-  $count: length($values);
-
-  /* If no base is defined, defer to the global font size */
-  @if $base == null {
-    $base: $em-base; //TODO
-  }
-
-  /* If the base font size is a %, then multiply it by 16px
-     This is because 100% font size = 16px in most all browsers
-  */
-  @if unit($base) == '%' {
-    $base: ($base / 100%) * $em-base;
-  }
-
-  /* Using rem as base allows correct scaling */
-  @if unit($base) == 'rem' {
-    $base: strip-unit($base) * $em-base;
-  }
-
-  @if $count == 1 {
-    @return -to-rem($values, $base);
-  }
-
-  @for $i from 1 through $count {
-    $rem-values: append($rem-values, -to-rem(nth($values, $i), $base));
-  }
-
-  @return $rem-values;
-}
-
-/*
-Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
-
-@access private
-@param {Number} $value - Pixel value to convert.
-@param {Number} $base [null] - Base for pixel conversion.
-
-@returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
-*/
-@function -to-rem($value, $base: null) {
-  /* Check if the value is a number */
-  @if type-of($value) != 'number' {
-    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
-    @return $value;
-  }
-
-  /* Transform em into rem if someone hands over 'em's */
-  @if unit($value) == 'em' {
-    $value: strip-unit($value) * 1rem;
-  }
-
-  /* Calculate rem if units for $value is not rem or em */
-  @if unit($value) != 'rem' {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
-  }
-
-  /* Turn 0rem into 0 */
-  @if $value == 0rem {
-    $value: 0;
-  }
-
-  @return $value;
-}
-
 // Paths
 // Relative font and image file paths
 $font-path:                     '../fonts/IBMPlexSans/' !default;
@@ -109,23 +24,23 @@ $icons-folder-path:             "../img/svg-icons/" !default;
 // Typography
 // Typography font-size and line-height
 
-$h1-font-size:                3.6rem !default; //rem-calc(43) !default; //4.3rem !default;
-$h1-line-height:              4.0rem !default; //4.8rem !default;rem-calc(48) !default
+$h1-font-size:                3.6rem !default; 
+$h1-line-height:              4.0rem !default;
 
-$h2-font-size:                2.7rem !default; //rem-calc(33) !default; 
-$h2-line-height:              3.2rem !default; //rem-calc(40) !default; 
+$h2-font-size:                2.7rem !default;
+$h2-line-height:              3.2rem !default;
 
-$h3-font-size:                2.4rem !default; //rem-calc(26) !default
-$h3-line-height:              3.2rem !default; //rem-calc(32) !default;
+$h3-font-size:                2.4rem !default;
+$h3-line-height:              3.2rem !default;
 
-$h4-font-size:                2.2rem !default; //rem-calc(22) !default;
-$h4-line-height:              2.4rem !default; //rem-calc(24) !default;
+$h4-font-size:                2.2rem !default;
+$h4-line-height:              2.4rem !default;
 
-$h5-font-size:                2.0rem   !default; //rem-calc(20) !default;
-$h5-line-height:              2.4rem !default; //rem-calc(24) !default;
+$h5-font-size:                2.0rem !default;
+$h5-line-height:              2.4rem !default;
 
-$h6-font-size:                1.6rem !default; //rem-calc(14) !default;
-$h6-line-height:              2.4rem !default; //rem-calc(16) !default;
+$h6-font-size:                1.6rem !default;
+$h6-line-height:              2.4rem !default;
 
 $display-1-heading-size:        8.0rem !default;
 $display-1-heading-line-height: 12.0rem !default;
@@ -133,17 +48,17 @@ $display-1-heading-line-height: 12.0rem !default;
 $display-2-heading-size:        6.0rem !default;
 $display-2-heading-line-height: 7.2rem !default;
 
-$body-text:                   1.6rem !default; //rem-calc(18) !default;
-$body-text-line-height:       2.4rem !default; //rem-calc(24) !default;
+$body-text:                   1.6rem !default;
+$body-text-line-height:       2.4rem !default;
 
-$form-label:                  1.6rem !default; //rem-calc(18) !default;
-$form-label-line-height:      2.4rem !default; //rem-calc(24) !default;
+$form-label:                  1.6rem !default;
+$form-label-line-height:      2.4rem !default;
 
-$small-text:                  1.3rem !default; //rem-calc(13) !default;
-$small-text-line-height:      2.4rem !default; //rem-calc(16) !default;
+$small-text:                  1.3rem !default;
+$small-text-line-height:      2.4rem !default;
 
-$lead-font-size:              2.0rem !default; //rem-calc(25) !default;
-$lead-line-height:            3.2rem !default; //rem-calc(32) !default;
+$lead-font-size:              2.0rem !default;
+$lead-line-height:            3.2rem !default;
 
 $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
@@ -194,48 +109,48 @@ $spacing-xxx-large:             5.6rem !default;
 
 ////////////////////////////////////////////////////////////////////////////
 //color contrasting
-$color-base-001:              #ffffff !default; //DONE
-$color-base-002:              #1a1a1a !default; //DONE
+$color-base-001:              #ffffff !default;
+$color-base-002:              #1a1a1a !default;
 
 //Gray
 $color-gray-001:              $color-base-002 !default;
-$color-gray-002:              #454545 !default; //DONE
-$color-gray-003:              #747474 !default; //DONE
-$color-gray-004:              #999999 !default; //DONE
-$color-gray-005:              #BFBFBF !default; //DONE
-$color-gray-006:              #F5F5F5 !default; //DONE
+$color-gray-002:              #454545 !default;
+$color-gray-003:              #747474 !default;
+$color-gray-004:              #999999 !default;
+$color-gray-005:              #BFBFBF !default;
+$color-gray-006:              #F5F5F5 !default;
 
 //Greeen
-$color-green-001:             #568331 !default; //DONE ~ Borger primary
-$color-green-002:             #3C5C22 !default; //DONE ~ Borger medium
-$color-green-021:             #233614 !default; //DONE ~ Borger Dark
-$color-green-003:             #87c51c !default; //DONE
-$color-green-004:             #e7fbe4 !default; //DONE
-$color-green-005:             #3F9800 !default; //DONE ~ Value colour (green)
+$color-green-001:             #568331 !default;
+$color-green-002:             #3C5C22 !default;
+$color-green-021:             #233614 !default;
+$color-green-003:             #87c51c !default;
+$color-green-004:             #e7fbe4 !default;
+$color-green-005:             #3F9800 !default;
 
 //orange
 //$color-orange-001:          #b4630c !default;
 //$color-orange-002:          #d8770e !default;
 //$color-orange-003:          #f08b1e !default;
-$color-orange-004:            #febb30 !default; //DONE
-$color-orange-005:            #ffeecc !default; //DONE
+$color-orange-004:            #febb30 !default;
+$color-orange-005:            #ffeecc !default;
 
 //red
-$color-red-001:               #CC0000 !default; //DONE
-$color-red-002:               #E92021 !default; //DONE
-$color-red-003:               #fbd3d3 !default; //DONE
+$color-red-001:               #CC0000 !default; 
+$color-red-002:               #E92021 !default; 
+$color-red-003:               #fbd3d3 !default; 
 
 //blue
-$color-blue-001:              #0059b3 !default; //DONE
-$color-blue-002:              #004080 !default; //DONE
-$color-blue-003:              #000040 !default; //DONE
-$color-blue-004:              #e2f2fb !default; //DONE
-$color-blue-005:              #067293 !default; //DONE
-$color-blue-006:              #04556E !default; //DONE
-$color-blue-007:              #033747 !default; //DONE
+$color-blue-001:              #0059b3 !default; 
+$color-blue-002:              #004080 !default; 
+$color-blue-003:              #000040 !default; 
+$color-blue-004:              #e2f2fb !default; 
+$color-blue-005:              #067293 !default; 
+$color-blue-006:              #04556E !default; 
+$color-blue-007:              #033747 !default; 
 
 //purple
-$color-purple-001:            #801258 !default; //DONE
+$color-purple-001:            #801258 !default; 
 
 //Data visualisation colors
 $color-data-green-001:        #2eab22 !default;
@@ -303,7 +218,6 @@ $color-primary-lightest:      $color-gray-004 !default;
 $color-background:            $color-gray-006 !default;
 
 // Special text colors
-$color-text-neutral-18:       $color-blue-003 !default; //TODO: delete me!
 $color-text-positive:         $color-green-005 !default;
 $color-text-negative:         $color-red-001 !default;
 

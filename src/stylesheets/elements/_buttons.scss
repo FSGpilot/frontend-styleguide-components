@@ -267,9 +267,11 @@
 }
 
 .button + .button{
-  margin-left: 8px;
-  &:first-child{
-    margin-left: 0;
+  @include media($small-screen) {
+    margin-left: 8px;
+    &:first-child{
+      margin-left: 0;
+    }
   }
 }
 .button-column{
