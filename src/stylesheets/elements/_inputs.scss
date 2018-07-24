@@ -61,6 +61,11 @@ textarea.form-input{
     color: transparent;
     text-shadow: 0 0 0 $color-black;
   }
+
+  &:disabled {
+    background: $color-gray-pale;
+    color:$color-gray-medium-light;
+  }
 }
 
 table {

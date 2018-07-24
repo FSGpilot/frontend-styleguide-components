@@ -1,7 +1,7 @@
-{% macro select(name, id, label, options) %}
+{% macro select(name, id, label, class, options, disabled) %}
   <div class="form-group">
     <label class="form-label" for="{{name}}">{{label}}</label>
-    <select class="form-select" name="{{name}}" id="{{id}}">
+    <select class="{{class}} form-select" name="{{name}}" id="{{id}}"  {% if disabled %}disabled="disabled"{% endif %}>
       <option value>- Vælg -</option>
       {% for option in options %}
         <option value="{{option.value}}">{{option.text}}</option>
@@ -12,6 +12,6 @@
 
 <div class="container">
   <form class="form mb-7 input-width-200">
-    {{select(select_example.name, select_example.id, select_example.label, select_example.options)}}
+    {{select(select_example.name, select_example.id, select_example.label, select_example.class, select_example.options, select_example.disabled)}}
   </form>
 </div> 

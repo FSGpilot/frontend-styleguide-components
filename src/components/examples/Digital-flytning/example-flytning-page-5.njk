@@ -1,0 +1,169 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
+{% from "alerts/alerts.njk" import alert as alert %}
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Navn</b></p>
+        {# <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p> #}
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+      <div class="navbar">
+        <div class="navbar-inner navbar-context-actions container">
+          <div class="nav-actions">
+          <ul>
+            <a href="#" class="function-link">Om digital flytning</a>
+            <a href="" class="function-link">Sprog
+              {{icon_svg("language")}}
+            </a>
+            
+          </div>
+        </div>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container page-container">
+   <div class="row">
+      <div class="col-12 mb-6">
+          {{ alert("alert alert-error alert--show-icon", "alert", "Der er sket en fejl", "Der er sket en fejl hos KRAK. Afstanden til din nuværende læge kan ikke beregnes i øjeblikket. Beregningen er vigtig for at dit lægevalg kan blive registreret korrekt. Fejlen er blevet registreret og vil blive rettet hurtigst muligt. Prøv at registrere din flytning senere.", "error" ) }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+          {{overflowmenu("Trin 5 af 5","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='example-aes-page-1'>
+                          1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-2'>
+                          2. Trin 2
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-3'>
+                          3. Trin 3 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-4'>
+                          4. Trin 4 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-5'  class='active'>
+                          5. Trin 5 
+                      </a>
+                  </li>
+              </ul>
+              ", true
+          ) }}
+          <div class="content">
+            <h1>Lægevalg</h1>
+            <p class="font-lead mt-0">Når du anmelder flytning skal du altid vælge læge, også selvom det er tidligere læge du ønsker</p>
+             <div class="mt-6">
+              <label class="form-label">Ny adresse</label>
+              <p class="mt-0">Odensegade 23, 4.tv. 2100 København Ø</p>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="mt-5">
+                  <h5 class="h5">Valg af læge</h5>
+                </div>
+                <table class="table table--borderless table--compact mt-5">
+                  <thead>
+                    <tr>
+                      <th>Personer som flytter</th>
+                      <th>Læge efter flytning</th>
+                      <th>Afstand</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Klaus Egegreen Hansen</td>
+                      <td>Paw Bjørn Jensen <br>Østerbrogade 60, 1 th,<br>2100 København Ø</td>
+                      <td>0,6 Km</td>
+                      <td><a href="#">Skift læge</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <a href="#" class="button button-primary mt-7">Næste</a>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  <footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-left">
+            <ul class="unstyled-list">
+              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}

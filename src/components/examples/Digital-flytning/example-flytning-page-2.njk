@@ -1,0 +1,165 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
+{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Navn</b></p>
+        {# <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p> #}
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+      <div class="navbar">
+        <div class="navbar-inner navbar-context-actions container">
+          <div class="nav-actions">
+          <ul>
+            <a href="#" class="function-link">Om digital flytning</a>
+            <a href="" class="function-link">Sprog
+              {{icon_svg("language")}}
+            </a>
+            
+          </div>
+        </div>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container page-container">
+    <div class="row">
+      <div class="col-12">
+          {{overflowmenu("Trin 2 af 5","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='example-aes-page-1'>
+                          1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-2' class='active'>
+                          2. Trin 2
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-3'>
+                          3. Trin 3 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-4'>
+                          4. Trin 4 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-5'>
+                          5. Trin 5 
+                      </a>
+                  </li>
+              </ul>
+              ", true
+          ) }}
+          <div class="content">
+            <h1>Personer</h1>
+             <div class="mt-0">
+             <p class="font-lead">Her kan du vælge hvilke personer i din husstand du ønsker at anmelde flytning for. Din eventuelle ægtefælle og eventuelle børn kan vælges.</p>
+            </div>
+            <p class="mt-6">Hvis der er flere personer i din husstand, som skal medtages i flytteanmeldelsen, skal de tilføjes særskilt ved angivelse af CPR-nr. Angiv maks 5 cpr-numre (10 cifre uden bindestreg)</p>
+            <a href="#" class="mt-5">Regler i forbindelse med flytning når vi har børn sammen</a>
+            <div class="mt-5">
+                <h5>Valgte personer</h5>
+            </div>
+            <button class="button button-secondary mt-5">{{icon_svg("add")}}Tilføj personer 
+            </button>
+            
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                <table class="table table--borderless table--compact mt-7">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Navn</th>
+                      <th>CPR nummer</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ checkbox("id-person-1", "Checkbox for Klaus", "", false, true, "", "", false, false) }}</td>
+                      <td>Klaus Egegreen Hansen</td>
+                      <td>090889-2210</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>{{ checkbox("id-person-1", "Checkbox for Klaus", "", false, false, "", "", false, false) }}</td>
+                      <td>Line Von Larsen</td>
+                      <td>240789-4695</td>
+                      <td><a href="#" class="text-negative">slet</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <a href="example-aes-page-2" class="button button-primary mt-7">Næste</a>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  <footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-left">
+            <ul class="unstyled-list">
+              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}

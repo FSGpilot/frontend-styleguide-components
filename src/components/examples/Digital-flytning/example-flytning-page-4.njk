@@ -1,0 +1,135 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+
+{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Navn</b></p>
+        {# <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p> #}
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+
+      <div class="navbar">
+        <div class="navbar-inner navbar-context-actions container">
+          <div class="nav-actions">
+          <ul>
+            <a href="#" class="function-link">Om digital flytning</a>
+            <a href="" class="function-link">Sprog
+              {{icon_svg("language")}}
+            </a>
+            
+          </div>
+        </div>
+      </div>
+
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container page-container">
+    <div class="row">
+      <div class="col-12">
+          {{overflowmenu("Trin 4 af 5","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='example-aes-page-1'>
+                          1. Trin 1
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-2'>
+                          2. Trin 2
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-3'>
+                          3. Trin 3 
+                          <span class='sidenav-icon'>
+                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                          </span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-4' class='active'>
+                          4. Trin 4 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='example-aes-page-5'>
+                          5. Trin 5 
+                      </a>
+                  </li>
+              </ul>
+              ", true
+          ) }}
+          <div class="content">
+            <h1>Særlig flytning</h1>
+            <p class="font-lead mt-0">Hvis du flytter til en anden persons adresse, skal denne person bekræfte din indflytning. Kommunen indhenter selv denne bekræftelse.</p>
+            <div class="mt-6">
+              {{ checkbox("id-special-moving", "Person(er) på den nye adresse bliver boende (logivært)", "Person(er) på den nye adresse bliver boende (logivært)", false, true, "Person(er) på den nye adresse bliver boende (logivært)", "", false, true) }}
+            </div>
+            <a href="example-aes-page-2" class="button button-primary mt-7">Næste</a>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  <footer>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-left">
+            <ul class="unstyled-list">
+              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
+              <li><p>Styrelsen for IT og læring</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
+          <div class="align-right">
+            <ul class="unstyled-list">
+              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
+              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}
