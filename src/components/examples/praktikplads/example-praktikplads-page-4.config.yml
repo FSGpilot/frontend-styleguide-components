@@ -1,0 +1,47 @@
+label: Eksempel Praktikplads Side 4
+
+context:
+  portal_header_data:
+    user:
+      name: 'Jens Jensen'
+    logolink: 
+      title: 'Hjem'
+      href: 'javascript:void(0);'
+      label: 'logo link'
+    link:
+      href: '#'
+      class: 'button-secondary'
+      text: 'Log ud'
+  solution_header_data:
+    title:
+      href: '#'
+      title: 'Hjem'
+      label: 'logo link'
+      text: 'Praktikplads AUB'
+    authority:
+      name: 'Praktikplads-AUB'
+      text: 'Kontakt'
+  
+  title: "Erhvervsuddannede medarbejdere i 2021"
+  lead: ""
+
+  footer_data:
+    cols:
+      - col:
+        col_size_desktop: 6
+        text_align_right: false
+        lists:
+          - list:
+            inline_list: false
+            listitems:
+              - content: '<span class="h6 weight-semibold">Ministeriet for Eksempel</span>'
+              - content: '<p>Styrelsen for Eksempel</p>'
+      - col:
+        col_size_desktop: 6
+        text_align_right: true
+        lists:
+          - list:
+            inline_list: false
+            listitems:
+              - content: <a class="" href="mailto:support@example.dk">support@example.dk</a>
+              - content: <a class="" href="tel:12 34 56 78">12 34 56 78</a>
