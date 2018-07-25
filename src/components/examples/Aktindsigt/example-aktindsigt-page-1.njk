@@ -4,6 +4,8 @@
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+{% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
+
 
 {% block header %}
   <header class="header" role="banner">
@@ -62,8 +64,8 @@
               <li class="mt-6">At oplysningerne ikke bliver brugt i andre sammenhænge, med mindre du får andet af vide.</li>
               <li class="mt-6">At du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området, Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, med mindre andet er anført.</li>
             </ul>
-            <h2>Hvis du vil klage</h2>
-            <p class="font-lead">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
+            <h2 class="mb-0">Hvis du vil klage</h2>
+            <p class="font-lead mb-0 mt-4">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
             <a href="/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-2" class="button button-primary mt-7">Næste</a>
           </div>
       </div>
@@ -75,30 +77,7 @@
 {% endblock %}
 
 {% block footer -%}
-  <footer>
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
-          <div class="align-left">
-            <ul class="unstyled-list">
-              <li><span class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Undervisningsministeriet</span></li>
-              <li><p>Styrelsen for IT og læring</p></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-col">
-          <div class="align-right">
-            <ul class="unstyled-list">
-              <li><a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a></li>
-              <li><a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  {{ footer_basic(footer_data) }}
 {% endblock %}
 
 {{ modal('modal-contact', modal_contact_data) }}
