@@ -1,0 +1,115 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "12-modal/modal.njk" import modal as modal %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
+
+{%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
+{%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+{% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
+
+{% from "07-form/controls/text-input.njk" import textinput as textinput %}
+
+
+{% block header %}
+  <header class="header" role="banner">
+    {{ portal_header(portal_header_data) }}
+    {{ solution_header(solution_header_data) }}
+
+    <nav role="navigation" class=" nav"> <!-- collapsible-->
+      <button class="button button-secondary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
+
+      <div class="portal-info-mobile">
+        <p class="user"><b>Navn</b></p>
+        {# <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p> #}
+        <a href="#" class="button button-secondary button-signout">
+          Log ud
+        </a>
+      </div>
+
+      <div class="solution-info-mobile">
+        <p><b>Erhvervsministeriet</b></p>
+        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+      </div>
+    </nav> <!-- collapsible nav end-->
+  </header>
+  <div class="overlay"></div>
+{% endblock %}
+
+{% block body %}
+  <section class="container page-container">
+    <div class="row">
+      <div class="col-12">
+          {{overflowmenu("Trin 1 af 4","overflow_steps", true, false, "menu-down" ,"
+              <ul class='sidenav-list'>
+                  <li>
+                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-1' class='active'>
+                          1. Trin 1
+                      </a>
+                  </li>
+                  <li>
+                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2'>
+                          2. Trin 2
+                      </a>
+                  </li>
+                  <li>
+                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-3'>
+                          3. Trin 3 
+                      </a>
+                  </li>
+                  <li>
+                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4'>
+                          4. Trin 4 
+                      </a>
+                  </li>
+              </ul>
+              ", true
+          ) }}
+          <div class="content">
+            <h1>Stamdata</h1>
+              <div class="mt-0">
+                  {{textinput("id-cvr-number", "CVR nummer", "", "input-width-200", "", "Input til cvr nummer", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companyname", "Navn på virksomhed", "", "input-width-400", "", "Input til navn på virksomhed", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companyaddress", "Adresse", "", "input-width-400", "", "Input til virksomhedsadresse", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-zipcode", "Postnr.", "", "input-width-100", "", "Input til postnummer", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companycity", "By", "", "input-width-400", "", "Input til by", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companyphone", "Telefonnr.", "", "input-width-200", "", "Input til telefonnummer", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companywebsite", "Website.", "(frivilligt)", "input-width-400", "", "Input til website", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-company-contactperson", "Kontaktperson.", "", "input-width-400", "", "Input til kontaktperson", "", false, "")}}
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-companyemail", "E-mail", "", "input-width-400", "", "Input til email", "", false, "")}}
+                  <p class="mt-3 mb-0">Kvittering bliver sendt til denne e-mailadresse</p>
+              </div>
+              <div class="mt-6">
+                  {{textinput("id-launchyear", "Etableringsår.", "", "input-width-100", "", "Input til etableringsår", "", false, "")}}
+              </div>
+
+              <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-primary mt-7">Næste</a>
+
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block banner -%}
+{% endblock %}
+
+{% block footer -%}
+  {{ footer_basic(footer_data) }}
+{% endblock %}
+
+{{ modal('modal-contact', modal_contact_data) }}
