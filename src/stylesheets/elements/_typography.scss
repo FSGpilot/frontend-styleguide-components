@@ -264,7 +264,7 @@ small, .small-text {
 }
 
 //Margin top and bottom for text
-//Generel principle for spacing: both margin-top and bottom are the same as lineheight of the text. 
+//Generel principle for spacing: margin-top same as lineheight of the text, margin-bottom is just standard lineheight for text.  
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -282,52 +282,47 @@ p{
 
 h1, .h1{
   margin-top: $h2-line-height;
-  margin-bottom: $h2-line-height;
+  margin-bottom: $body-text-line-height;
   @include media(md) {
     margin-top: $h1-line-height;
-    margin-bottom: $h1-line-height;
   }
 }
 
 h2, .h2 {
   margin-top: $h3-line-height;
-  margin-bottom: $h3-line-height;
+  margin-bottom: $body-text-line-height;
   @include media(md) {
     margin-top: $h2-line-height;
-    margin-bottom: $h2-line-height;
   }
 }
 h3, .h3{
   margin-top: $h4-line-height;
-  margin-bottom: $h4-line-height;
+  margin-bottom: $body-text-line-height;
   @include media(md) {
     margin-top: $h3-line-height;
-    margin-bottom: $h3-line-height;
   } 
 }
 h4, .h4{
   margin-top: $h5-line-height;
-  margin-bottom: $h5-line-height;
+  margin-bottom: $body-text-line-height;
   @include media(md) {
     margin-top: $h4-line-height;
-    margin-bottom: $h4-line-height;
   }
 }
 h5, .h5{
   margin-top: $h6-line-height;
-  margin-bottom: $h6-line-height;
+  margin-bottom: $body-text-line-height;
   @include media(md) {
     margin-top: $h5-line-height;
-    margin-bottom: $h5-line-height;
   }
 }
 h6, .h6{
   margin-top: $h6-line-height;
-  margin-bottom: $h6-line-height; 
+  margin-bottom: $body-text-line-height;
 }
 .font-lead{
   margin-top: $lead-line-height;
-  margin-bottom: $lead-line-height;
+  margin-bottom: $body-text-line-height;
 }
 p, .body-text{
   margin-top: $body-text-line-height;
@@ -453,11 +448,6 @@ dfn {
   }
 }
 
-.step-title {
-  margin-top: 0;
-  font-weight: 400;
-}
-
 .field-group-title {
   font-weight: 400;
 
@@ -475,4 +465,11 @@ h1, h2, h3, h4, h5, h6, p, legend, strong, b, cite, var, address, dfn{
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern=1";
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
 }

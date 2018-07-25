@@ -1,9 +1,0 @@
-label: Secondary (header)
-preview: '@dkwds-header'
-
-context:
-  nav:
-    search: true
-    links:
-      - text: Secondary priority link
-      - text: Easy to comprehend
