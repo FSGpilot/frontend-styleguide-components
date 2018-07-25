@@ -1,5 +1,6 @@
 {% import "02-buttons/buttons.njk" as button %}
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
+{% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
 <div class="pl-4">
   <button class="button button-primary js-collapse" data-js-target="#collapse1" aria-controls="collapse1" aria-expanded="true">Toggle collapse 1</button>
@@ -26,6 +27,15 @@
       <p>Content of collapsible check</p>
       <p>Content of collapsible check</p>
       <p>Content of collapsible check</p>
+    </div>
+  </div>
+</div>
+ {{radiobutton("id-radio", "Name", "Value", false, false, "Collapse radiobutton", "js-collapse", false, true, "data-js-target='#collapse-radio' aria-controls='collapse-radio' aria-expanded='false'")}}
+  <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
+    <div class="py-4">
+      <p>Content of collapsible radiobutton</p>
+      <p>Content of collapsible radiobutton</p>
+      <p>Content of collapsible radiobutton</p>
     </div>
   </div>
 </div>
