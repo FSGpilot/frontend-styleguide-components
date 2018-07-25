@@ -453,11 +453,6 @@ dfn {
   }
 }
 
-.step-title {
-  margin-top: 0;
-  font-weight: 400;
-}
-
 .field-group-title {
   font-weight: 400;
 
@@ -475,4 +470,11 @@ h1, h2, h3, h4, h5, h6, p, legend, strong, b, cite, var, address, dfn{
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern=1";
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
 }

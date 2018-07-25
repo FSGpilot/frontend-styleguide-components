@@ -26,9 +26,11 @@
     counter-reset: item;
     color:$color-gray-dark;
     li {
-      display: block;
       margin-top:map-get($spacers, 3);
+      list-style: none;
       position: relative;
+      padding-left: 37px;
+      line-height: $body-text-line-height;
 
       &:before { 
         content: counters(item, ".") "."; 
