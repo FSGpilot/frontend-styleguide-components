@@ -67,6 +67,12 @@
 
     //no border
     &.table--borderless {
+        tr {
+            &:last-child{
+                border-bottom: $inner-border;
+                
+            }
+        }
         border: none;
         thead {
             background-color: transparent;
