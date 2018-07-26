@@ -20,7 +20,7 @@ context:
       text: 'Praktikplads AUB'
     authority:
       name: 'Praktikplads-AUB'
-      text: 'Kontakt'
+      text: '<button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button>'
   
   title: "2019, revision 1."
   lead: ""
