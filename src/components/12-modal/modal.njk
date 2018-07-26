@@ -4,6 +4,7 @@
 <br>
 <br>
 <button class="button button-primary" data-micromodal-trigger="modal-passive">Åben modal (passive)</button>
+<div class="styleguide-spacer-modals"></div>
  
 {% macro modal(modal_id,modal_data) %}
 	<div class="modal" id="{{ modal_id | default('modal-id-1') }}" aria-hidden="true">
@@ -22,7 +23,8 @@
 					{{ modal_data.modal_actions }} 
 				</footer>
 				{% endif %}
-				<button class="modal__close button button-ghost" aria-label="Close modal" data-micromodal-close>{{ modal_data.modal_close_text  | default('Luk') }}</button>			</div>
+				<button class="modal__close button button-ghost" aria-label="Close modal" data-micromodal-close>{{ modal_data.modal_close_text  | default('Luk') }}</button>			
+			</div>
 		</div>
 	</div>
 {% endmacro %}

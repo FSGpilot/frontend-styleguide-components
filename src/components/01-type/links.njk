@@ -3,32 +3,35 @@
   <a href="{{url}}" class="{{class}}" {{attr}}>{{text}}</a>
 {% endmacro %}
 
-<p>This is a {{ link('javascript:void(0);', '', 'default link state','') }}</p>
+<div class="container">
+  <p>This is a {{ link('javascript:void(0);', '', 'default link state','') }}</p>
 
-<p>This is a {{ link('javascript:void(0);', 'link-hover', 'hover link state','') }} </p>
+  <p>This is a {{ link('javascript:void(0);', 'link-hover', 'hover link state','') }} </p>
 
-<p>This is a {{ link('javascript:void(0);', 'link-active', 'active link state','') }}</p>
+  <p>This is a {{ link('javascript:void(0);', 'link-active', 'active link state','') }}</p>
 
-<p>This is a {{ link('javascript:void(0);', 'link-visited', 'visited link state','') }}</p>
+  <p>This is a {{ link('javascript:void(0);', 'link-visited', 'visited link state','') }}</p>
 
-<p>This is a {{ link('javascript:void(0);', 'link-focus', 'focus link state','') }}</p>
+  <p>This is a {{ link('javascript:void(0);', 'link-focus', 'focus link state','') }}</p>
 
-<p>This is a link that goes to an <a href="" class="icon-link">external website{{ icon_svg('open-in-new')}}</a> </p>
+  <p>This is a link that goes to an <a href="" class="icon-link">external website{{ icon_svg('open-in-new')}}</a> </p>
 
-<p>This is a text <a href="javascript:void(0);" class="disabled" disabled="disabled" tabindex="-1">disabled link state</a></p>
+  <p>This is a text <a href="javascript:void(0);" class="disabled" disabled="disabled" tabindex="-1">disabled link state</a></p>
 
-<p><b>This is a {{ link('javascript:void(0);', '', 'link','') }} in bold</b></p>
-
-<p><small>This is a {{ link('javascript:void(0);', '', 'link','') }} in smalltext</small></p>
-
-<div class="background-dark p-6">
-  <p>This is a {{ link('javascript:void(0);', '', 'default link state','') }} on a dark background.</p>
-  <p>This is a {{ link('javascript:void(0);', 'link-hover', 'hover link state','') }} on a dark background.</p>
-  <p>This is a {{ link('javascript:void(0);', 'link-active', 'active link state','') }} on a dark background.</p>
-  <p>This is a {{ link('javascript:void(0);', 'link-visited', 'visited link state','') }} on a dark background.</p>
-  <p>This is a {{ link('javascript:void(0);', 'link-focus', 'focus link state','') }} on a dark background.</p>
-  <p>This is a link that goes to an <a href="" class="icon-link">external website{{ icon_svg('open-in-new')}}</a> on a dark background.</p>
-  <p>This is a text <a href="javascript:void(0);" class="disabled" disabled="disabled" tabindex="-1">disabled link state</a> on a dark background.</p>
   <p><b>This is a {{ link('javascript:void(0);', '', 'link','') }} in bold</b></p>
+
   <p><small>This is a {{ link('javascript:void(0);', '', 'link','') }} in smalltext</small></p>
+
+  <div class="background-dark p-6">
+    <p>This is a {{ link('javascript:void(0);', '', 'default link state','') }} on a dark background.</p>
+    <p>This is a {{ link('javascript:void(0);', 'link-hover', 'hover link state','') }} on a dark background.</p>
+    <p>This is a {{ link('javascript:void(0);', 'link-active', 'active link state','') }} on a dark background.</p>
+    <p>This is a {{ link('javascript:void(0);', 'link-visited', 'visited link state','') }} on a dark background.</p>
+    <p>This is a {{ link('javascript:void(0);', 'link-focus', 'focus link state','') }} on a dark background.</p>
+    <p>This is a link that goes to an <a href="" class="icon-link">external website{{ icon_svg('open-in-new')}}</a> on a dark background.</p>
+    <p>This is a text <a href="javascript:void(0);" class="disabled" disabled="disabled" tabindex="-1">disabled link state</a> on a dark background.</p>
+    <p><b>This is a {{ link('javascript:void(0);', '', 'link','') }} in bold</b></p>
+    <p><small>This is a {{ link('javascript:void(0);', '', 'link','') }} in smalltext</small></p>
+  </div>
 </div>
+
