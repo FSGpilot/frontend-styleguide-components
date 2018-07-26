@@ -155,11 +155,13 @@
       display: block;
       padding-top: calc(#{map-get($spacers, 4)} - 1px);
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
-      padding-right: 44px;
       white-space: nowrap;
       width: 100%;
       @include media($nav-responsive-breakpoint) {
         width: unset;
+      }
+      span{
+        padding-right: 24px;
       }
 
       &:focus,
@@ -178,7 +180,7 @@
   
         @include media($nav-responsive-breakpoint) {
           background-image: url('#{$icons-folder-path}/angle-arrow-down.svg');
-          background-position: right 1.5rem center;
+          background-position: right 1rem center;
           border-left: 1px solid transparent;
           border-right: 1px solid transparent;
         }
@@ -192,7 +194,7 @@
   
         @include media($nav-responsive-breakpoint) {
           background-image: url('#{$icons-folder-path}/angle-arrow-down-white.svg');
-          background-position: right 1.5rem center;
+          background-position: right 1rem center;
           //create borders:
           border-left: 1px solid $color-gray-medium-light;
           border-right: 1px solid $color-gray-medium-light;
@@ -237,12 +239,15 @@
           display: block;
           text-decoration: none;
           .no-touchevents &:hover, &:visited, &:focus{
-              color: $color-text;
-              background-color: transparent;
-              @include media($nav-responsive-breakpoint) {
-                color: #fff;
-                text-decoration: underline;
-              }
+            color: $color-text;
+            background-color: transparent;
+            @include media($nav-responsive-breakpoint) {
+              color: #fff!important;
+              text-decoration: underline;
+            }
+          }
+          @include media($nav-responsive-breakpoint) {
+            color: #fff!important;
           }
       }
   
@@ -272,9 +277,6 @@
         border-top: 0;
       }
     }
-  }
-  .xxoverflow-menu{
-    
   }
 }
 
