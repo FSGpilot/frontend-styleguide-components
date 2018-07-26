@@ -22,6 +22,7 @@ class dropdown {
 
         if(this.triggerEl !== null && this.triggerEl !== undefined && this.targetEl !== null && this.targetEl !== undefined){
             var that = this;
+
             //Clicked outside dropdown -> close it
             select('body')[0].addEventListener("click", function(event){
                 that.outsideClose(event);
@@ -30,6 +31,7 @@ class dropdown {
             //Clicked on dropdown open button --> toggle it
             this.triggerEl.addEventListener("click", function(event){
                 event.preventDefault();
+                event.stopPropagation();//prevents ouside click listener from triggering. 
                 that.toggleDropdown();
             });
         }       
