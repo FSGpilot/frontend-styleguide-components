@@ -97,11 +97,12 @@ $z-index-nav:     9000;
           margin-left: map-get($spacers, 4);
         }
       }
+      .user{
+        text-align: right;
+        max-width: 500px;
+      }
       .button{
         white-space: nowrap;
-      }
-      .username{
-        font-weight: $font-weight-semibold;
       }
     }
   }
