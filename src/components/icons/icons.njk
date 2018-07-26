@@ -4,16 +4,18 @@
 
 {% macro icon_old(icon, classes) %}<i class="mdi mdi-{{icon}}{% if classes %} {{classes}}{% endif %}"></i>{% endmacro %}
 
-<div class="icon-list row">
-  {% for icons in icons_example.items %}
-    <div class="col-md-3">
-      <div class="icon-box">
-        <div>{{ icon(icons.icon, "color-text-blue") }}</div>
-        <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
+<div class="container">
+  <div class="icon-list row">
+    {% for icons in icons_example.items %}
+      <div class="col-md-3">
+        <div class="icon-box">
+          <div>{{ icon(icons.icon, "color-text-blue") }}</div>
+          <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</div> 
+    {% endfor %}
+  </div> 
+</div>
 
 <style scoped>
   .icon-box {

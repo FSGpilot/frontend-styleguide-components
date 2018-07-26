@@ -1,13 +1,13 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 {%- macro tag(class, state) -%}
   {%- if (state == 'default') -%}
-    <button class="tag tag-{{class}}">Default</button>
+    <button class="tag">Default</button>
   {%- elif (state == 'hover') -%}
-    <button class="tag tag-{{class}} tag-hover">Hover</button>
+    <button class="tag tag-hover">Hover</button>
   {%- elif (state == 'active') -%}
-    <button class="tag tag-{{class}} tag-active">Active</button>
+    <button class="tag tag-active">Active</button>
   {%- elif (state == 'focus') -%}
-    <button class="tag tag-{{class}} focus">Focus</button>
+    <button class="tag focus">Focus</button>
   {%- elif (state == 'icon-default') -%}
     <button class="tag tag-icon tag-{{class}}">Default {{ icon_svg('close-circle')}}</button>
   {%- elif (state == 'icon-hover') -%}
@@ -19,9 +19,11 @@
   {%- endif %}
 {%- endmacro -%}
 
-{%- for tags in tag_example.items -%}
-  {%- if tags.label %}
-    <h4>{{ tags.label }}</h4>
-  {% endif -%}
-  {{ tag(tags.class, tags.state) }}
-{% endfor -%}
+<div class="container">
+  {%- for tags in tag_example.items -%}
+    {%- if tags.label %}
+      <p class="h6">{{ tags.label }}</p>
+    {% endif -%}
+    {{ tag(tags.class, tags.state) }}
+  {% endfor -%}
+</div>

@@ -21,7 +21,7 @@ context:
         state: 'focus'
 
       - class: ''
-        label: 'Tags with icons'
+        label: 'Tags med ikon'
         state: 'icon-default'
       - class: ''
         state: 'icon-hover'
