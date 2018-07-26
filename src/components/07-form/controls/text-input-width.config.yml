@@ -5,31 +5,31 @@ preview: '@dkwds-framed'
 context:
   textinputwidth_example:
     items:
-      - id: input-type-text-55
-        label: Tekst input med bredde på 55px
-        name: input-type-text-55
-        class: input-width-55
-      - id: input-type-text-100
-        label: Tekst input med bredde på 100px
-        name: input-type-text-100
-        class: input-width-100
-      - id: input-type-text-150
-        label: Tekst input med bredde på 150px
-        name: input-type-text-100
-        class: input-width-150
-      - id: input-type-text-200
-        label: Tekst input med bredde på 200px
-        name: input-type-text-200
-        class: input-width-200
-      - id: input-type-text-300
-        label: Tekst input med bredde på 300px
-        name: input-type-text-300
-        class: input-width-300
-      - id: input-type-text-400
-        label: Tekst input med bredde på 400px
-        name: input-type-text-400
-        class: input-width-400
-      - id: input-type-text-500
-        label: Tekst input med bredde på 500px
-        name: input-type-text-500
-        class: input-width-500
+      - id: input-type-text-xxs
+        label: Tekst input med bredde på 5.5rem
+        name: input-type-text-xxs
+        class: input-width-xxs
+      - id: input-type-text-xs
+        label: Tekst input med bredde på 10rem
+        name: input-type-text-xs
+        class: input-width-xs
+      - id: input-type-text-s
+        label: Tekst input med bredde på 15rem
+        name: input-type-text-s
+        class: input-width-s
+      - id: input-type-text-m
+        label: Tekst input med bredde på 20rem
+        name: input-type-text-m
+        class: input-width-m
+      - id: input-type-text-l
+        label: Tekst input med bredde på 30rem
+        name: input-type-text-l
+        class: input-width-l
+      - id: input-type-text-xl
+        label: Tekst input med bredde på 40rem
+        name: input-type-text-xl
+        class: input-width-xl
+      - id: input-type-text-xxl
+        label: Tekst input med bredde på 50rem
+        name: input-type-text-xxl
+        class: input-width-xxl
