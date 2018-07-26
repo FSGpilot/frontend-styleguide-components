@@ -2,25 +2,7 @@
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
 {% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
-<div class="pl-4">
-  <button class="button button-primary js-collapse" data-js-target="#collapse1" aria-controls="collapse1" aria-expanded="true">Toggle collapse 1</button>
-  <div id="collapse1" class="background-dark" aria-hidden="false">
-    <div class="p-6">
-      <p>Content of collapsible 1</p>
-      <p>Content of collapsible 1</p>
-      <p>Content of collapsible 1</p>
-    </div>
-  </div>
-  <br>
-  <button class="button button-primary mt-6 js-collapse" data-js-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Toggle collapse 2</button>
-  <div id="collapse2" class="background-dark collapsed" aria-hidden="true">
-    <div class="p-6">
-      <p>Content of collapsible 2</p>
-      <p>Content of collapsible 2</p>
-      <p>Content of collapsible 2</p>
-    </div>
-  </div>
-
+<div class="p-4">
   {{ checkbox("id-comments-3", "Name", "Value", false, false, "Collapse checkbox", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
   <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
     <div class="py-4">
@@ -38,6 +20,5 @@
       <p>Content of collapsible radiobutton</p>
     </div>
   </div>
-
 </div>
 

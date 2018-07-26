@@ -11,7 +11,7 @@ context:
   button_example:
     button_groups:
       - button_group:
-        label: 'Primary buttons'
+        label: 'Primær knapper'
         items: 
           - class: 'primary'
             state: 'default'
@@ -25,7 +25,7 @@ context:
             state: 'disabled'
       
       - button_group:
-        label: 'Secondary buttons'
+        label: 'Sekundær knapper'
         items: 
           - class: 'secondary'
             state: 'default'
@@ -39,7 +39,7 @@ context:
             state: 'disabled'
 
       - button_group:
-        label: 'Ghost buttons'
+        label: 'Ghost knapper'
         items: 
           - class: 'ghost'
             state: 'default'
@@ -53,7 +53,7 @@ context:
             state: 'disabled'
 
       - button_group:
-        label: 'Tertiary buttons'
+        label: 'Tertiær knapper'
         items: 
           - class: 'tertiary'
             state: 'default'
@@ -67,7 +67,7 @@ context:
             state: 'disabled'
       
       - button_group:
-        label: 'Button with icon'
+        label: 'Knap med ikon'
         items: 
           - class: 'primary'
             state: 'icon'

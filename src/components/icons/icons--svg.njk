@@ -2,16 +2,18 @@
   <svg class="icon-svg {{ classes }}" {% if aria %}aria-label ="{{aria}}"{% endif %}><use xlink:href="#{{iconname}}"></use></svg>
 {% endmacro %}
 
-<div class="icon-list row">
-  {% for icons in icons_example.items %}
-    <div class="col-md-3">
-      <div class="icon-box">
-        <div>{{ icon_svg(icons.icon, "")}}</div>
-        <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
+<div class="container">
+  <div class="icon-list row">
+    {% for icons in icons_example.items %}
+      <div class="col-md-3">
+        <div class="icon-box">
+          <div>{{ icon_svg(icons.icon, "")}}</div>
+          <span><span class="sr-only">Example of </span>{{ icons.icon }}</span>
+        </div>
       </div>
-    </div>
-  {% endfor %}
-</div> 
+    {% endfor %}
+  </div> 
+</div>
 
 <style scoped>
   .icon-box {
@@ -24,8 +26,7 @@
     flex-direction: column;
   }
 
-  .icon-box i {
-    font-size: 3rem;
+  .icon-box .icon-svg {
     margin-bottom: 5px;
   }
 </style>
