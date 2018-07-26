@@ -305,6 +305,7 @@ class datatablesExamples {
 }
 
 
+
 //PRAKTIKPLADS DATATABLE
 var table_praktikplads = $(jsSelectorDatatable_Example_praktikplads).DataTable( {
     language: {
