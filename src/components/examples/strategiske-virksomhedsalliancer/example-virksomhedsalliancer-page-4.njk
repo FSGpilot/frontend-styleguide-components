@@ -76,14 +76,13 @@
           <div class="content">
             <h1>Tilskud til land</h1>
             <div class="mt-0">
-                {{textinput("id-advisors", "Navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", "input-width-500", "", "Input til navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", false, "")}}
-                <p class="mt-3">Navne skal skrives i samme rækkefølge, som landene er anført</p>
+                {{textinput("id-advisors", "Navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", "input-width-500", "", "Input til navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", false, false, "Navne skal skrives i samme rækkefølge, som landene er anført", "")}}
             </div>
             <div class="mt-6">
                 {{textinput("id-companyalliance", "Navn på virksomhedsalliance", "", "input-width-400", "", "Input til navn på virksomhedsalliance", "", false, "")}}
             </div>
-            <h5 class="mt-6">Bilag og bemærkninger</h5>
-            <label class="form-label mt-6">Ønsker du at vedhæfte bilag til ansøgningen (det er muligt at vedhæfte op til 3 bilag)?</label>
+            <h2 class="mt-6 mb-3">Bilag og bemærkninger</h2>
+            <p class="font-article mt-3 mb-4">Ønsker du at vedhæfte bilag til ansøgningen (det er muligt at vedhæfte op til 3 bilag)?</p>
             <div class="mt-3">
                 {{radiobutton("id-state-yes", "minimis", "Ja", false, false, "Ja", "radio-large js-collapse", false, true, "data-js-target='#collapse-radio' aria-controls='collapse-radio' aria-expanded='false'")}}
                  <div id="collapse-radio" aria-hidden="true" class="box-border-l collapsed">
@@ -100,7 +99,15 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="mt-4 mt-lg-0"></td>
+                                            <td class="mt-4 mt-lg-0">{{ icon_svg('file')}}vedhæftfil-1.pdf</td>
+                                            <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mt-4 mt-lg-0">{{ icon_svg('file')}}vedhæftfil-2.pdf</td>
+                                            <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="mt-4 mt-lg-0">{{ icon_svg('file')}}vedhæftfil-3.pdf</td>
                                             <td class="table-text-right mt-4 mt-lg-0"><a href="#" class="function-link link-right">{{ icon_svg('delete-outline')}}</a></td>
                                         </tr>
                                     </tbody>

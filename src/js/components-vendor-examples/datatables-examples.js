@@ -336,14 +336,17 @@ var table_praktikplads = $(jsSelectorDatatable_Example_praktikplads).DataTable( 
             "data":           null,
             "defaultContent": ''
         },
-        { "data": "student" },
+        { "data": "student", "width": "20%" },
         { "data": "birthday" },
         { "data": "education" },
         { "data": "education2" },
         { "data": "education3" },
         { "data": "education4" }
     ],
-    order: [[1, 'asc']]
+    order: [[1, 'asc']],
+    paging:   false,
+    searching: false,
+    info:     false
 } );
 
 // Add event listener for opening and closing details 

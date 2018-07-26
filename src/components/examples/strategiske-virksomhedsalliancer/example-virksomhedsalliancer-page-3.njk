@@ -72,14 +72,13 @@
           ) }}
           <div class="content">
             <h1>Statsstøtte</h1>
-            <p class="mt-0">Virksomheder må ikke modtage statsstøtte, også kaldet EU de minimums-støtte, der overstiger grænsen på de EUR 200.000 over de seneste 3 år. Tidligere tilskud givet fra Eksportrådet er omfattet af de minimis-reglerne og de skal nævnes nedenfor.</p>
-            <p>Hvis virksomheden juridisk er en del af en koncernstruktur (indenlandsk som udenlandsk), som tilsammen hæfter for de minimis-støtte, oplyses det fulde beløb for hele koncernen. Se Statsstøttehåndbogen side 65-86, hvis du er i tvivl om, hvor meget af koncernen, der er omfattet.</p>
-            <p>Støtte fra eksportrådet i form af tilskud ydes i henhold til EU-reglerne for de minimis-støtte, jf. Komissionernes forordning (EU) nr. 1407/2013 af 18. december 2013.</p>
+            <p class="mt-0">Virksomheder må ikke modtage statsstøtte, også kaldet EU de-minimums-støtte, der overstiger grænsen på de EUR 200.000 over de seneste 3 år. Tidligere tilskud givet fra Eksportrådet er omfattet af de-minimis-reglerne og de skal nævnes nedenfor.</p>
+            <p>Hvis virksomheden juridisk er en del af en koncernstruktur (indenlandsk som udenlandsk), som tilsammen hæfter for de-minimis-støtte, oplyses det fulde beløb for hele koncernen. Se Statsstøttehåndbogen side 65-86, hvis du er i tvivl om, hvor meget af koncernen, der er omfattet.</p>
+            <p>Støtte fra eksportrådet i form af tilskud ydes i henhold til EU-reglerne for de-minimis-støtte, jf. Komissionernes forordning (EU) nr. 1407/2013 af 18. december 2013.</p>
             <div class="mt-6">
-                {{textinput("id-state", "Statsstøtte (EU de minimis) i DKK", "", "input-width-400", "", "Input til statsstøtte (EU de minimis) i DKK", "", false, "")}}
-                <p class="mt-3">Modtaget fra dags dato og de tre seneste løbende år eksl. det aktuelle projekt.</p>
+                {{textinput("id-state", "Statsstøtte (EU de-minimis) i DKK", "", "input-width-400", "", "Input til statsstøtte (EU de-minimis) i DKK", "", false, false, "Modtaget fra dags dato og de tre seneste løbende år eksl. det aktuelle projekt.", "")}}
             </div>
-            <label class="form-label mt-6">Har i modtaget støtte gennem andre internationale de minimis-ordninger (fx OECD)?</label>
+            <label class="form-label mt-6">Har i modtaget støtte gennem andre internationale de-minimis-ordninger (fx OECD)?</label>
             <div class="mt-3">
                 {{radiobutton("id-state-yes", "minimis", "Ja", false, false, "Ja", "radio-large js-collapse", false, true, "data-js-target='#collapse-radio' aria-controls='collapse-radio' aria-expanded='false'")}}
                  <div id="collapse-radio" aria-hidden="true" class="box-border-l collapsed">
@@ -94,7 +93,7 @@
                             {{textinput("id-amount", "Beløb i DKK", "", "input-width-200", "", "Input til beløb i DKK", "", false, "")}}
                         </div>
                         <div class="mt-6">
-                            {{textinput("id-reference", "Henvisning til yderligere information om ordningen", "<br>Fx. et link", "input-width-400", "", "Input til henvisning til yderligere information om ordningen", "", false, "")}}
+                            {{textinput("id-reference", "Henvisning til yderligere information om ordningen", "", "input-width-400", "", "Input til henvisning til yderligere information om ordningen", "", false, false, "Fx. et link", "")}}
                         </div>
                     </div>
                 </div>   

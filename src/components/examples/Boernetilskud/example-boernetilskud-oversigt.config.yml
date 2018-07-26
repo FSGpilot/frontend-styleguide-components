@@ -19,7 +19,7 @@ context:
       label: 'logo link'
       text: 'Familieydelser - børnetilskud'
     authority:
-      name: 'Styrelse'
+      name: 'Ministeriet for Eksempel'
       text: 'Tlf.: 33 28 38 38'
   
   title: "Oversigt"
@@ -43,5 +43,5 @@ context:
           - list:
             inline_list: false
             listitems:
-              - content: <a class="" href="mailto:support@example.dk">support@example.dk</a>
-              - content: <a class="" href="tel:12 34 56 78">12 34 56 78</a>
+              - content: <a class="function-link" href="mailto:support@example.dk">support@example.dk</a>
+              - content: <a class="function-link" href="tel:12 34 56 78">12 34 56 78</a>

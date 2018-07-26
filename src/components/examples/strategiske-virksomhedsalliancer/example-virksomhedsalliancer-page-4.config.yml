@@ -3,7 +3,7 @@ label: Eksempel Strategiske virksomhedsalliancer - Side 4
 context:
   portal_header_data:
     user:
-      name: 'Navn'
+      name: 'Christian Emil Vestergaard Christiansen'
     logolink: 
       title: 'Hjem'
       href: 'javascript:void(0);'
@@ -19,7 +19,7 @@ context:
       label: 'logo link'
       text: 'Strategiske virksomhedsalliancer'
     authority:
-      name: 'Navn på myndighed'
+      name: 'Ministeriet for Eksempel'
       text: '<button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button>'
   
   modal_contact_data:
@@ -49,5 +49,5 @@ context:
             - list:
               inline_list: false
               listitems:
-                - content: <a class="" href="mailto:support@example.dk">support@example.dk</a>
-                - content: <a class="" href="tel:12 34 56 78">12 34 56 78</a>
+                - content: <a class="function-link" href="mailto:support@example.dk">support@example.dk</a>
+                - content: <a class="function-link" href="tel:12 34 56 78">12 34 56 78</a>

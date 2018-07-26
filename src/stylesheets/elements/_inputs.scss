@@ -9,7 +9,6 @@
 
 .form-label {
   display: block;
-  max-width: $input-max-width;
   @include form-label-text();
 }
 
