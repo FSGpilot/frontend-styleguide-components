@@ -5,6 +5,7 @@
 
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
 {% from "07-form/controls/select.njk" import select as select %}
+{% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
@@ -104,9 +105,36 @@
       <div class="mt-5">
         {{select("Vælg uddannelse", "select-education", "Vælg uddannelse", "input-width-300", "")}}
       </div>
-      
-  
-       
+      <div class="mt-5">
+        <label class="form-label">Sagen handler om</label>
+      </div>
+      <div class="mt-3">
+        {{radiobutton("id-view1", "Vælg visning", "Elevpoint", false, false, "Elevpoint", "", false, false)}}
+      </div>
+      <div class="mt-0">
+        {{radiobutton("id-view2", "Vælg visning", "Aftaleperiode", false, true, "Aftaleperiode", "", false, false)}}
+      </div>
+      <div class="row">
+        <div class="col-12">
+         <table class="mt-5 table table--zebra table--lines table-responsive-scroll" id="js-datatable-example-praktikplads">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Elev</th>
+              <th>Fødselsdato</th>
+              <th>Uddannelse</th>
+              <th>Uddannelsesvægt</th>
+              <th>Erhvervsuddannede medarbejdere</th>
+              <th>Beregnede erhvervsuddannede</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        </div>
+      </div>
+     
     </section>
   </main>
 {% endblock %}

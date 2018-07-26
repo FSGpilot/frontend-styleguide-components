@@ -14,6 +14,8 @@ const jsSelectorDatatable_Example_detailsrow = "#js-datatable-example-detailsrow
 const jsSelectorDatatable_Example_selectable = "#js-datatable-example-selectable";
 const jsSelectorDatatable_Example_edit = "#js-datatable-example-edit";
 
+const jsSelectorDatatable_Example_praktikplads = "#js-datatable-example-praktikplads";
+
 class datatablesExamples {
   constructor(el){
 
@@ -301,6 +303,64 @@ class datatablesExamples {
     });
   }
 }
+
+
+//PRAKTIKPLADS DATATABLE
+var table_praktikplads = $(jsSelectorDatatable_Example_praktikplads).DataTable( {
+    language: {
+        "lengthMenu": "Viser _MENU_ elementer pr side",
+        "zeroRecords": "Der blev fundet intet resultat",
+        "info": "Viser sider _PAGE_ af _PAGES_",
+        "infoEmpty": "Intet resultat",
+        "infoFiltered": "(filtreret fra _MAX_ elementer)",
+        "emptyTable": "Ingen data",
+        "search": "Søg i tabel:",
+        "Sort": true,
+        "paginate": {
+            "first":      "Første",
+            "last":       "Sidste",
+            "next":       "Næste",
+            "previous":   "Forrige"
+        },
+    },
+    ajax: {
+        "url": "https://api.myjson.com/bins/1adkvm",
+        "dataSrc": ""
+    },
+    rowId: "id",
+    columns: [
+        {
+            "className":      'details-control',
+            "orderable":      false,
+            "data":           null,
+            "defaultContent": ''
+        },
+        { "data": "student" },
+        { "data": "birthday" },
+        { "data": "education" },
+        { "data": "education2" },
+        { "data": "education3" },
+        { "data": "education4" }
+    ],
+    order: [[1, 'asc']]
+} );
+
+// Add event listener for opening and closing details 
+$(jsSelectorDatatable_Example_praktikplads).on('click', 'td.details-control', function () {
+    var tr = $(this).closest('tr');
+    var row = table_praktikplads.row( tr );
+
+    if ( row.child.isShown() ) {
+        // This row is already open - close it
+        row.child.hide();
+        tr.removeClass('shown');
+    }
+    else {
+        // Open this row
+        row.child( format(row.data()) ).show();
+        tr.addClass('shown');
+    }
+} );
 
 
 
