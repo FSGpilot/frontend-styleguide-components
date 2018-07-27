@@ -7,7 +7,7 @@
     line-height: $body-text-line-height;
     li { 
       margin-top:map-get($spacers, 3);
-      list-style: none;
+      list-style-type: none;
       position: relative;
       padding-left: 37px;
       line-height: $body-text-line-height;
