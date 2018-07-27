@@ -1,6 +1,6 @@
-{% macro radiobutton(id, name, value, disabled, checked, text, class, focus, large, attr) %}
+{% macro radiobutton(id, name, value, disabled, checked, text, class, focus, large, attr, inputClasses, inputAttrs) %}
   <div class="form-group">
-    <input id="{{id}}" type="radio" name="{{name}}" value="{{value}}" class="{% if focus %}focus{% endif %} {% if large %}radio-large{% endif %}" {% if disabled %}disabled{% elif checked %}checked{% endif %}>
+    <input id="{{id}}" type="radio" name="{{name}}" value="{{value}}" class="{% if focus %}focus{% endif %} {% if large %}radio-large{% endif %} {{inputClasses}}" {% if disabled %}disabled{% elif checked %}checked{% endif %} {{inputAttrs}}>
     <label for="{{id}}" class="{{class}}" {{attr}}>{{text}}</label>
   </div>
 {% endmacro %}

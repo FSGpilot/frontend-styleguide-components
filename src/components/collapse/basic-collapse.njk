@@ -2,7 +2,7 @@
 {% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
 {% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
-<div class="p-4">
+<div class="container">
   {{ checkbox("id-comments-3", "Name", "Value", false, false, "Collapse checkbox", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
   <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
     <div class="py-4">
