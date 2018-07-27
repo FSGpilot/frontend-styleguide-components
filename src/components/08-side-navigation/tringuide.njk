@@ -1,4 +1,5 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
+{% from "overflow-menu/overflow-menu.njk" import overflowmenu as overflowmenu %}
 
 {# Free step guide #}
 {% macro tringuide(trinliste) %}
@@ -18,14 +19,6 @@
     {% endfor %}
   </ul>
 {% endmacro %}
-<div class="container">
-  <div class="row">
-    <div class="col-12 sidebar-col">
-      <h4 class="h4">Klikbar trinindikator</h4>
-      {{ tringuide(tringuiden.trinlisten) }}
-    </div>
-  </div>
-</div>
 
 {# Locked step guide #}
 {% macro tringuide(trinliste) %}
@@ -46,11 +39,99 @@
   </ul>
 {% endmacro %}
 
-<div class="container mt-6">
+<div class="container">
   <div class="row">
     <div class="col-12 sidebar-col">
-      <h4 class="h4">Låst trinindikator</h4>
+    
+      <p class="h6">Klikbar trinindikator</p>
       {{ tringuide(tringuiden.trinlisten) }}
+
+      <p class="h6 mt-6">Låst trinindikator</p>
+      {{ tringuide(tringuiden.trinlisten) }}
+      
+      <p class="h6 mt-6">Trinindikator i overflow-menu</p>
+      {{overflowmenu("Trin 3 af 5","overflow5", true, false, "menu-down" ,"
+        <ul class='sidenav-list'>
+            <li>
+                <a href='#'>
+                    1. Trin 1
+                    <span class='sidenav-icon'>
+                        <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href='#'>
+                    2. Trin 2
+                    <span class='sidenav-icon'>
+                        <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href='#' class='active'>
+                    3. Trin 3 (valgt)
+                </a>
+            </li>
+            <li>
+                <a href='#'>
+                    4. Trin 4
+                </a>
+            </li>
+            <li>
+                <a href='#'>
+                    5. Trin 5
+                </a>
+            </li>
+        </ul>
+        "
+    ) }}
+
+
+      <p class="h6 mt-6">Trinindikator - responsivt i overflow-menu</p>
+        <div class="overflow-menu  overflow-menu--open-right overflow-menu--md-no-responsive">
+          <button class="button-overflow-menu js-dropdown " data-js-target="#overflow4" aria-haspopup="true" aria-expanded="false">
+              Trin 3 af 5
+              <svg class="icon-svg"><use xlink:href="#menu-down"></use></svg>
+              <span class="sr-only">Åbner overflow menu</span>
+          </button>
+          <div class="overflow-menu-inner" id="overflow4" aria-hidden="true">
+            <ul class="sidenav-list">
+                <li>
+                    <a href="#">
+                        1. Trin 1
+                        <span class="sidenav-icon">
+                            <svg class="icon-svg"><use xlink:href="#check"></use></svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        2. Trin 2
+                        <span class="sidenav-icon">
+                            <svg class="icon-svg"><use xlink:href="#check"></use></svg>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="active">
+                        3. Trin 3 (valgt)
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        4. Trin 4
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        5. Trin 5
+                    </a>
+                </li>
+            </ul>
+          </div>
+        </div> 
+      
     </div>
   </div>
 </div>
