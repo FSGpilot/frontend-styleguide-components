@@ -14,10 +14,8 @@
       &:before {
         content: "\2022";
         position: absolute;
-        left: 20px;
-        
+        left: 23px;
       }
-
     }
   }
   //Ol lists
@@ -37,46 +35,10 @@
         counter-increment: item; 
         font-weight: $font-weight-medium;
         position: absolute;
-        
-      }
-    }
-  }
-
-
-  //Body lists ul
-  ul.body-list{
-    font-size: $body-text;
-    line-height: $body-text-line-height;
-    li {
-      padding-left: 37px;
-      &:before {
-
-        left: 23px;
-      }
-
-      ul {
-        li {
-          padding-left: 37px;
-          &:before { 
-
-            left: 23px;
-          }
-        }
-      }
-    }
-  }
-  //Body lists ol
-  ol.body-list{
-    font-size: $body-text;
-    line-height: $body-text-line-height;
-    li {
-      padding-left: 37px;
-      &:before {
         left: 20px;
       }
       ol {
         li {
-          padding-left: 37px;
           &:before { 
             left: 6px;
           }
@@ -84,26 +46,6 @@
       }
     }
   }
-
-
-  // ul,
-  // ol {
-  //   margin: $spacing 0;
-  //   padding-left: $spacing-md-small;
-  // }
-
-  // li {
-  //   line-height: $base-line-height;
-  //   margin-bottom: map-get($spacers, 3);
-
-  //   //ul and ol inside li
-  //   ul,
-  //   ol{
-  //     margin-top: map-get($spacers, 3);;
-  //     margin-bottom: map-get($spacers, 3);;
-  //   }
-  // }
-
 
 // Unstyled lists
 .unstyled-list {
