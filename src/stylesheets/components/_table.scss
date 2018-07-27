@@ -4,12 +4,6 @@
     border: $outer-border;
     width: 100%;
 
-    @include media-breakpoint-up(lg) {
-        .table-text-right {
-            text-align:right;
-        }
-    }
-
     &.table--compact {
       th,td {
         padding-top: calc(#{map-get($spacers, 3)} - 1px);
@@ -36,6 +30,9 @@
         }
     }
     tbody{
+        th{
+            font-weight: $font-weight-semibold;
+        }
         tr {
             background-color: $color-white;
         }
@@ -46,6 +43,7 @@
         background-color: inherit;
         border-right: $inner-border;
         vertical-align: top;
+        text-align: left;
 
         &:last-child{
             border-right: none;
@@ -94,7 +92,7 @@
         }
         tbody{
             tr{
-                td {
+                td, th {
                     border: $inner-border;
                     border-left-color: transparent;
                     border-right-color: transparent;
@@ -105,13 +103,18 @@
                         padding-right: 0;
                     }
                 }
-                &:first-child td{
-                    border-top-color: transparent;
-                    border-top-color: transparent;
+                &:first-child {
+                    td, th{
+                        //border-top-color: transparent;
+                        //border-top-color: transparent;
+                    }
+                    
                 }
-                &:last-child td{
-                    border-bottom-color: transparent;
-                    border-bottom-color: transparent;
+                &:last-child{
+                    td, th{
+                        //border-bottom-color: transparent;
+                        //border-bottom-color: transparent;
+                    }
                 }
             }
         }
@@ -126,7 +129,7 @@
         }
     
         tbody{
-            td{
+            td, th{
                 border-right: transparent;
             }
         }
@@ -145,7 +148,7 @@
         }
 
         tbody{
-            td{
+            td, th{
                 border-right: transparent;
             }
         }
@@ -174,7 +177,7 @@
 
     //make row into a "card" on phone
     &.table--responsive-headers{
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
             thead{
                 display: none;
             }
@@ -184,7 +187,7 @@
                     border-bottom: 0;
                 }
             }
-            tr td {
+            tr td, tr th {
                 display: block;
                 border: none !important;
         
@@ -196,20 +199,21 @@
                 }
             }
 
-            &.table--borderless tbody tr td:first-child{
-                padding-left: 16px;
+            &.table--borderless tbody tr{
+                &:first-child{
+                    border-top: solid 1px $color-gray-light;
+                }
+                &:last-child{
+                    border-bottom: solid 1px $color-gray-light;
+                }
+                td:first-child, th:first-child{
+                    padding-left: 16px;
+                }
             }
         }
     }
 }
-.table-responsive-scroll{
+.table--responsive-scroll{
     overflow-x: auto;
     min-height: .01%;
-}
-
-
-
-//custom table styling for praktikplads example 4 
-#js-datatable-example-praktikplads_wrapper {
-    margin-top:24px;
 }

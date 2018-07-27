@@ -6,6 +6,10 @@
 @import 'core/uswd-grid';
 @import 'core/utilities';
 
+// Utilities------------//
+@import 'core/utilities/width';
+@import 'core/utilities/textalign';
+
 // Elements -------------- //
 // Styles basic HTML elements
 @import 'elements/typography';
