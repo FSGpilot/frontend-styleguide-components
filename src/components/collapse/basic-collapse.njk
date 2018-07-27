@@ -1,23 +1,10 @@
 {% import "02-buttons/buttons.njk" as button %}
-{% from "07-form/controls/checkbox.njk" import checkbox as checkbox %}
-{% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 
 <div class="container">
-  {{ checkbox("id-comments-3", "Name", "Value", false, false, "Collapse checkbox", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
-  <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
+  <button class="button button-secondary js-collapse" data-js-target='#collapse1' aria-controls='collapse1' aria-expanded='false'>Vis indhold</button>
+  <div id="collapse1" aria-hidden="true" class="box-border-l mt-4 collapsed">
     <div class="py-4">
-      <p>Content of collapsible check</p>
-      <p>Content of collapsible check</p>
-      <p>Content of collapsible check</p>
-    </div>
-  </div>
-
-  {{radiobutton("id-radio", "Name", "Value", false, false, "Collapse radiobutton", "js-collapse", false, true, "data-js-target='#collapse-radio' aria-controls='collapse-radio' aria-expanded='false'")}}
-  <div id="collapse-radio" aria-hidden="true" class="box-border-l collapsed">
-    <div class="py-4">
-      <p>Content of collapsible radiobutton</p>
-      <p>Content of collapsible radiobutton</p>
-      <p>Content of collapsible radiobutton</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
   </div>
 </div>

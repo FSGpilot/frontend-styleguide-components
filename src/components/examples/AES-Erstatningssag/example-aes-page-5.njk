@@ -122,15 +122,15 @@
               {{textinput("id-skadenummer", "Jeres sags-/skadenummer", "", "input-width-m", "", "Input til Jeres sags-/skadenummer.", "", false, "")}}
             </div>
             <div class="mt-6">
-              {{ checkbox("id-retssag", "Der verserer en retssag", "Der verserer en retssag", false, false, "Der verserer en retssag", "js-collapse", false, true, "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
-              <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
-                <div class="py-4">
-                  {{datoinput("Berammelsesdato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-                  <div class="mt-5">
-                    {{ checkbox("id-berammet", "Ikke berammet", "Ikke berammet", false, false, "Ikke berammet", "", false, true) }}
-                  </div>
-                </div>
-              </div>   
+                {{ checkbox("id-retssag", "Der verserer en retssag", "Der verserer en retssag", false, false, "Der verserer en retssag", "", false, true, "", "js-checkbox-toggle-content", "data-js-target='#collapse-check' aria-controls='collapse-check' aria-expanded='false'") }}
+                <div id="collapse-check" aria-hidden="true" class="box-border-l collapsed">
+                    <div class="py-4">
+                        {{datoinput("Berammelsesdato", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
+                        <div class="mt-5">
+                            {{ checkbox("id-berammet", "Ikke berammet", "Ikke berammet", false, false, "Ikke berammet", "", false, true) }}
+                        </div>
+                    </div>
+                </div>   
             </div>
 
 
