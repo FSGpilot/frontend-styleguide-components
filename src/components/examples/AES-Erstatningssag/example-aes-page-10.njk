@@ -50,19 +50,21 @@
     <div class="row">
       <div class="col-12">
           {{ alert("alert alert-success alert--show-icon", "alert", "Sagen er sendt til AES", "", "success" ) }}
+          {{ alert("alert alert-warning alert--show-icon", "alert", "Husk betaling", "Gebyret skal indsættes på vores konto i banken", "warning" ) }}
       </div>
     </div>
     <div class="row page-container">
       <div class="col-12">
           <div class="content">
-            <h1>Kvittering</h1>
+            <h1 class="mb-0">Kvittering</h1>
+            <p class="form-hint mt-2">Referencenummer: 28346863</p>
             <div class="mt-0 mb-4">
               <p>Hvis du ønsker dokumentation på fremsendelse kan du downloade anmodningen.</p>
             </div>
             <button class="button button-secondary">{{ icon_svg('download')}} Download kvittering som pdf</button>
-            <h5 class="h5 mt-7 mb-5">Hvad sker der nu</h5>
+            <h2 class="h5 mt-7 mb-5">Hvad sker der nu</h2>
             <p>Sagens parter vil indenfor 7 hverdage modtage en kvittering med journalnummer og oplysninger om, hvornår AES forventer at have en udtalelse klar.</p>
-            <h5 class="h5 mt-7 mb-5">Husk betaling</h5>
+            <h2 class="h5 mt-7 mb-5">Husk betaling</h2>
             <p class="mt-0 mb-0">Gebyret for udtalelsen skal sættes ind på vores konto i Danske Bank:</p>
             <div class="row">
               <div class="col-12 col-sm-3 col-md-3 col-lg-3">
@@ -84,7 +86,7 @@
               <p class="mt-0 mb-0">Gebyr: 6.220 kr.</p>
               <p class="mt-0 mb-0">Ved overførslen skal I oplyse skadelidtes CPR-nr.: 1702671913</p>
             </div>
-            <h5 class="h5">Ved spørgsmål eller supplerende oplysninger</h5>
+            <h2 class="h5">Ved spørgsmål eller supplerende oplysninger</h2>
             <div class="mt-4">
               <p class="mt-0 mb-0">Kontakt AES på aes@aes.dk eller 72 00 60 00</p>
               <p class="mt-0 mb-0">Referencenummer: 28346863</p>
