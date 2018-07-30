@@ -6,30 +6,44 @@ context:
   textinputwidth_example:
     items:
       - id: input-type-text-xxs
-        label: Tekst input med bredde på 5.5rem
+        label: Inputfelt med klassen input-width-xxs (8rem)
         name: input-type-text-xxs
         class: input-width-xxs
       - id: input-type-text-xs
-        label: Tekst input med bredde på 10rem
+        label: Inputfelt med klassen input-width-xs (16rem)
         name: input-type-text-xs
         class: input-width-xs
       - id: input-type-text-s
-        label: Tekst input med bredde på 15rem
+        label: Inputfelt med klassen input-width-s (24rem)
         name: input-type-text-s
         class: input-width-s
       - id: input-type-text-m
-        label: Tekst input med bredde på 20rem
+        label: Inputfelt med klassen input-width-m (32rem)
         name: input-type-text-m
         class: input-width-m
       - id: input-type-text-l
-        label: Tekst input med bredde på 30rem
+        label: Inputfelt med klassen input-width-l (40rem)
         name: input-type-text-l
         class: input-width-l
       - id: input-type-text-xl
-        label: Tekst input med bredde på 40rem
+        label: Inputfelt med klassen input-width-xl (48rem)
         name: input-type-text-xl
         class: input-width-xl
-      - id: input-type-text-xxl
-        label: Tekst input med bredde på 50rem
-        name: input-type-text-xxl
-        class: input-width-xxl
+  textinputchar_example:
+    items:
+      - id: input-type-text-char-4
+        label: Inputfelt med klassen input-char-4 (4 tegn)
+        name: input-type-text-char-4
+        class: input-char-4
+      - id: input-type-text-char-8
+        label: Inputfelt med klassen input-char-8 (8 tegn)
+        name: input-type-text-char-8
+        class: input-char-8
+      - id: input-type-text-char-11
+        label: Inputfelt med klassen input-char-11 (11 tegn)
+        name: input-type-text-char-11
+        class: input-char-11
+      - id: input-type-text-char-27
+        label: Inputfelt med klassen input-char-27 (27 tegn)
+        name: input-type-text-char-27
+        class: input-char-27
