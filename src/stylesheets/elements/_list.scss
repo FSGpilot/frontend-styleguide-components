@@ -3,7 +3,7 @@
   ul {
     padding-left: 0;
     list-style-type: none;
-    color:$color-gray-dark;
+    color: $color-text;
     line-height: $body-text-line-height;
     li { 
       margin-top:map-get($spacers, 3);
@@ -22,7 +22,7 @@
   ol {
     padding-left: 0;
     counter-reset: item;
-    color:$color-gray-dark;
+    color: $color-text;
     li {
       margin-top:map-get($spacers, 3);
       list-style: none;
