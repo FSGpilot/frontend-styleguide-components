@@ -64,6 +64,7 @@ textarea.form-input{
   &:disabled {
     background: $color-gray-pale;
     color:$color-gray-medium-light;
+    cursor: not-allowed;
   }
 }
 
@@ -115,7 +116,13 @@ legend {
   input {
     background: $color-gray-pale;
     color:$color-gray-medium-light;
+    cursor: not-allowed;
   }
+}
+input[type=text]:disabled, input[type=textarea]:disabled{
+  background: $color-gray-pale;
+  color:$color-gray-medium-light;
+  cursor: not-allowed;
 }
 
 .input-required:after {
