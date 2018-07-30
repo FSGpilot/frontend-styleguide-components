@@ -18,7 +18,7 @@ fieldset + fieldset{
 }
 
 input, textarea, select { 
-  max-width: 40rem;
+  max-width: 32rem;
   width: 100%;
 
   &.input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
@@ -33,36 +33,54 @@ input, textarea, select {
     }
   }
 
+  //Input width with rem
   &.input-width-xxs {
-    max-width: 5.5rem !important;
+    max-width: 8rem !important;
     width: 100%;
   }
   &.input-width-xs {
-    max-width: 10rem !important;
+    max-width: 16rem !important;
     width: 100%;
   }
   &.input-width-s {
-    max-width: 15rem !important;
+    max-width: 24rem !important;
     width: 100%;
   }
   &.input-width-m {
-    max-width: 20rem !important;
+    max-width: 32rem !important;
     width: 100%;
   }
   &.input-width-l {
-    max-width: 30rem !important;
-    width: 100%;
-  }
-  &.input-width-xl {
     max-width: 40rem !important;
     width: 100%;
   }
-  &.input-width-xxl {
-    max-width: 50rem !important;
+  &.input-width-xl {
+    max-width: 48rem !important;
     width: 100%;
   }
 
+  //Input width with characters
+  &.input-char-4 {
+    max-width: calc(2px + 16px + 16px + 4ch);
+    width: 100%;
+  }
+  &.input-char-8 {
+    max-width: calc(2px + 16px + 16px + 8ch);
+    width: 100%;
+  }
+  &.input-char-11 {
+    max-width: calc(2px + 16px + 16px + 11ch);
+    width: 100%;
+  }
+  &.input-char-27 {
+    max-width: calc(2px + 16px + 16px + 27ch);
+    width: 100%;
+  }
 }
+
+
+
+
 
 .input-grid {
   @include media($medium-screen) {

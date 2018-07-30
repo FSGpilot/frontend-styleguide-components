@@ -18,4 +18,4 @@ class select2Examples {
 }
 
 
-module.exports = select2Examples;
+module.exports = select2Examples; 
