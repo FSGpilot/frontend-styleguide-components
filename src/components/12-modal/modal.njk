@@ -1,10 +1,11 @@
 
-<div></div>
-<button class="button button-primary" data-micromodal-trigger="modal-active">Åben modal (aktiv)</button>
-<br>
-<br>
-<button class="button button-primary" data-micromodal-trigger="modal-passive">Åben modal (passive)</button>
-<div class="styleguide-spacer-modals"></div>
+<div class="container">
+	<button class="button button-primary" data-micromodal-trigger="modal-active">Åben modal (aktiv)</button>
+	<br>
+	<br>
+	<button class="button button-primary" data-micromodal-trigger="modal-passive">Åben modal (passive)</button>
+	<div class="styleguide-spacer-modals"></div>
+</div>
  
 {% macro modal(modal_id,modal_data) %}
 	<div class="modal" id="{{ modal_id | default('modal-id-1') }}" aria-hidden="true">
