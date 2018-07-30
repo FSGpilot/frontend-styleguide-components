@@ -6,7 +6,7 @@ context:
   tabnavlist:
     items: &default_links
       - title: Tabnav 1
-      - title: Tabnav 2 (valgt)
+      - title: Tabnav 2
         active: true
       - title: Tabnav 3
       - title: Tabnav 4
