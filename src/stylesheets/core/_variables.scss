@@ -185,7 +185,7 @@ $color-gray-pale:             $color-gray-006 !default;
 $color-focus:                 $color-orange-004 !default;
 
 // Text color
-$color-text:                  $color-base-002 !default;
+$color-text:                  $color-black !default;
 $color-text-secondary:        $color-gray-003 !default;
 $color-text-bright:           $color-gray-006 !default;
 
@@ -317,7 +317,8 @@ $sidenav-active-border-width: 4px !default;
 //Alert
 $alert-heading-fontsize: $h6-font-size !default;
 $alert-heading-lineheight: $h6-line-height !default;
-$alert-heading-color: $color-gray-001 !default;
+$alert-heading-color: $color-text !default;
+$alert-text-color: $color-text !default;
 
 //Borders
 $outer-border:            1px solid $color-gray-medium-light;

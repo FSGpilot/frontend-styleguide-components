@@ -146,7 +146,7 @@ a {
   font-size: $body-text;
   line-height: $body-text-line-height;
   font-weight: $font-weight-normal;
-  color: $color-gray-dark;
+  color: $color-text;
 }
 @mixin form-label-text {
   font-family: $font-name;
@@ -228,7 +228,7 @@ p, .body-text, .body-copy-text{
   font-weight: $font-weight-normal;
   line-height: $lead-line-height;
   max-width: $lead-max-width;
-  color:$color-gray-dark;
+  color: $color-text;
   @include media-breakpoint-down(sm) {
     @include body-copy-text;
   }
