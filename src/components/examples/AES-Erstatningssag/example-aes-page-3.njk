@@ -107,7 +107,15 @@
           <div class="content">
               <h1>Oplysninger om skadelidte</h1>
               <div class="mt-0">
-                  {{textinput("id-cpr", "Skadelidtes CPR-nr.", "", "input-width-m", "", "Input til skadelidtes CPR-nr.", "", false, "")}}
+              <label class="form-label " for="id-cpr">Skadelidtes CPR-nr.</label>
+                <form action="/search" method="get" role="search">
+                    <div class="search">
+                        <div class="form-group search__item-wrapper">
+                            <input class="form-input input-width-xs" id="id-cpr" value="123456-7890" name="Input til skadelidtes CPR-nr." title="Search" type="search">
+                            <button type="submit" class="search__submit button button-primary search-submit"><span class="sr-only">Søg</span></button>
+                        </div>
+                    </div>
+                </form>
               </div>
                <div class="mt-5">
                 <label class="form-label">Navn</label>
@@ -118,7 +126,7 @@
             <div class="breadcrumb">
               <a href="/frontend-styleguide/pages/page-templates/AES-erstatningssag/aes-2" class="button button-ghost">Tilbage</a>
             </div>
-          </div>
+          </div> 
       </div>
     </div>
   </section>

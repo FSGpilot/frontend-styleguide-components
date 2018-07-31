@@ -13,7 +13,7 @@ $btn-big-width:     11.6rem;
   @include clearfix;
   max-width: none;
   position: relative;
-  margin:   0.4rem;
+  margin-top: map-get($spacers, 3);
 
   &__item-wrapper {
     display: flex!important;
