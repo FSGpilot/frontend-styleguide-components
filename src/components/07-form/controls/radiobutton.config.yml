@@ -26,6 +26,13 @@ context:
         checked: false
         disabled: true
 
+      - id: Disabled-checked
+        name: Disabled-checked
+        value: Disabled-checked
+        text: Disabled checked
+        checked: true
+        disabled: true
+
       - id: Focus
         name: Focus
         value: Focus
@@ -55,6 +62,14 @@ context:
         value: Disabled-large
         text: Disabled-large
         checked: false
+        disabled: true
+        large: true
+
+      - id: Disabled-checked-large
+        name: Disabled-checked-large
+        value: Disabled-checked-large
+        text: Disabled-checked-large
+        checked: true
         disabled: true
         large: true
 
