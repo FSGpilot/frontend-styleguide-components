@@ -1,4 +1,7 @@
 //Styling of tippy.js tooltips
+.popover{
+    cursor: pointer;
+}
 .tippy-popper{
     .tippy-tooltip{
         background-color: $color-black;
