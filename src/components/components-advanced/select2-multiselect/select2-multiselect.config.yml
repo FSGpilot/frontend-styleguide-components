@@ -5,13 +5,18 @@ preview: '@dkwds-framed'
 context:
   select_multiple_example:
     name: options
-    id: options
-    label: Select label
+    id: js-select2-example1
+    label: Vælg flere muligheder
     options:
       - value: "option1"
         text: "Mulighed 1"
       - value: "option2"
         text: "Mulighed 2"
       - value: "option3"
-        text: "Mulighed 3"    
+        text: "Mulighed 3"
+  select_multiple_example2:
+    name: options
+    id: js-select2-example2
+    label: Valgmuligheder
+
       
