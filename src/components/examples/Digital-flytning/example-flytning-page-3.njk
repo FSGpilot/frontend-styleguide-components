@@ -4,12 +4,13 @@
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+{% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
 
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
 {% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
 {% from "07-form/controls/select.njk" import select as select %}
+{% from "alerts/alerts.njk" import alert as alert %}
 
-{% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
 
 {% block header %}
   <header class="header" role="banner">
@@ -90,20 +91,21 @@
           ) }}
           <div class="content">
             <h1>Adresse</h1>
-             <div class="mt-0">
+            {{ alert("alert alert-warning alert--show-icon", "alert", "", "Ikke alle adresser er registreret i dette register <br>Kan du ikke finde din tilflytningsadresse, bedes du kontakte din tilflytningskommune.", "warning" ) }}
+             <div class="mt-6">
               {{datoinput("Dato for flytning", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
             </div>
             <div class="mt-6">
-              {{select("Gade / vejnavn", "select-dokumentationdtype", "Gade / vejnavn", "input-width-m", "")}}
+              {{select("Gade / vejnavn", "select-dokumentationdtype", "Gade / vejnavn", "input-width-m", "- Vælg -", "", false)}}
             </div>
             <div class="mt-6">
-              {{select("Husnr. / bogstav", "select-dokumentationdtype", "Husnr. / bogstav", "input-width-m", "", true)}}
+              {{select("Husnr. / bogstav", "select-dokumentationdtype", "Husnr. / bogstav", "input-width-xxs", "", "", true)}}
             </div>
             <div class="mt-6">
-              {{select("Etage, side/dør", "select-dokumentationdtype", "Etage, side/dør", "input-width-m", "", true)}}
+              {{select("Etage, side/dør", "select-dokumentationdtype", "Etage, side/dør", "input-width-xxs", "", "", true)}}
             </div>
             <div class="mt-6">
-              {{textinput("id-co", "C/O navn", "(frivilligt)", "input-width-m", "", "Input til C/O navn", "", false, "C/O navn skal kun udfyldes, hvis du skal bo til leje hos de nuværende beboere.", "")}}
+              {{textinput("id-co", "C/O navn", "(frivilligt)", "input-width-m", false, "Input til C/O navn", "", false, false, "C/O navn skal kun udfyldes, hvis du skal bo til leje hos de nuværende beboere.", "")}}
             </div>
             
             <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4" class="button button-primary mt-7">Næste</a>

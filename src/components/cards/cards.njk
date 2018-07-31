@@ -221,82 +221,17 @@
 <div class="row">
   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
     {% for card4 in cards4_example.items -%}
-      {{ cards4(card4.name, card4.header, card4.subheader, card4.cardtext, card4.contenttext, card4.cardcontent, card4.actioncontent, card4.actionbuttons, card4.actionlinks, card4.actionfunctionlinks ) }}
+      {{ cards4(card4.name, card4.header, card4.subheader, card4.cardtext, card4.contenttext, card4.cardcontent, card4.actioncontent, card4.actionbuttons, card4.actionlinks ) }}
     {%- endfor %}
   </div>
   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
     {% for card5 in cards5_example.items -%}
-      {{ cards5(card5.name, card5.header, card5.subheader, card5.cardtext, card5.contenttext, card5.cardcontent, card5.actioncontent, card5.actionbuttons, card5.actionlinks, card5.actionfunctionlinks ) }}
+      {{ cards5(card5.name, card5.header, card5.subheader, card5.cardtext, card5.contenttext, card5.cardcontent, card5.actioncontent, card5.actionbuttons, card5.actionlinks ) }}
     {%- endfor %}
   </div>
   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
     {% for card6 in cards6_example.items -%}
-      {{ cards6(card6.name, card6.header, card6.subheader, card6.cardtext, card6.contenttext, card6.cardcontent, card6.actioncontent, card6.actionbuttons, card6.actionlinks, card6.actionfunctionlinks ) }}
+      {{ cards6(card6.name, card6.header, card6.subheader, card6.cardtext, card6.contenttext, card6.cardcontent, card6.actioncontent, card6.actionbuttons, card6.actionlinks ) }}
     {%- endfor %}
   </div>
 </div> 
-
-
-
-{# <div class="card">
-  {% macro cards(name, header, subheader) %}
-  {%- if (name == 'cardheader') -%}
-      {%if (header) or (subheader) %}
-        <div class="card-header">
-          <h6 class="header-title">{{header}}</h6>
-          <p class="sub-header">{{subheader}}</p>
-        </div>
-      {% endif %}
-    {% endif %}
-  {%- endif %}
-  {% endmacro %}
-
-  {% macro cards(name, cardtext) %}
-  {%- if (name == 'cardtext') -%}
-      {%if cardtext %} 
-        <div class="card-text">
-          <p class="text">{{cardtext}}</p>
-        </div>
-      {% endif %}
-    {% endif %}
-  {%- endif %}
-  {% endmacro %}
-
-  {% macro cards(name, contenttext, cardcontent) %}
-  {%- if (name == 'cardcontent') -%}
-      {%if (contenttext) or (cardcontent) %}
-        <div class="card-content">
-          <div class="contenttext">
-            <p>{{contenttext}}</p>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-10">
-              <div class="content">
-                {{cardcontent}}
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endif %}
-    {% endif %}
-  {%- endif %}
-  {% endmacro %}
-
-  {% macro cards(name, actioncontent, actionbuttons, actionlinks) %}
-  {%- if (name == 'cardaction') -%}
-      {%if (actioncontent) or (actionbuttons) or (actionlinks) %}
-        <div class="card-action">
-          <div class="action-content">
-            {{actioncontent}}
-          </div>
-          <div class="action-buttons">
-          {{ actionbuttons }}
-          </div>
-          <div class="action-links">
-          {{ actionlinks }}
-          </div>
-      </div>
-    {% endif %}
-  {%- endif %}
-  {% endmacro %}
-</div>  #}

@@ -7,6 +7,8 @@
 {% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
 
 {% from "alerts/alerts.njk" import alert as alert %}
+{% from "cards/cards.njk" import cards4 as cards4 %}
+
 
 {% block header %}
   <header class="header" role="banner">
@@ -143,19 +145,58 @@
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Adressebeskyttelse</h5>
+                {# <h5 class="mt-6">Adressebeskyttelse</h5>
                 <p class="mt-5">Hvis du benytter nedenstående link åbnes et nyt vindue, hvor du kan oprette, rette eller slette dine adressebeskyttelser.</p>
-                <a href="#">Adressebeskyttelse</a>
+                <a href="#">Adressebeskyttelse</a> #}
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Adressebeskyttelse</p>
+                      <p class="sub-header">Hvis du benytter nedenstående link åbnes et nyt vindue, hvor du kan oprette, rette eller slette dine adressebeskyttelser.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Adressebeskyttelse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Udrejse</h5>
-                <p class="mt-5">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
-                <a href="#">Anmeld udrejse</a>
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Udrejse</p>
+                      <p class="sub-header">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Anmeld udrejse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Fuldmagt</h5>
-                <p class="mt-5">Afgiv en eller flere fulmagt til at anmelde flytning</p>
-                <a href="#">Angiv fuldmagt</a>
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Fuldmagt</p>
+                      <p class="sub-header">Afgiv en eller flere fulmagt til at anmelde flytning.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Angiv fuldmagt <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
