@@ -290,6 +290,21 @@ $radio-size-large: 34px;
   }
 }
 
+//Disable checked
+[type=checkbox]:checked[disabled] + label:before {
+  background-color: $color-text;
+  border-color: $color-text;
+  opacity:0.5;
+}
+
+//Disable checked
+[type=radio]:checked[disabled] + label:before {
+  background-color: $color-text;
+  border-color: $color-text;
+  opacity:0.5;
+}
+
+
 // checkbox focus
 [type=checkbox]:focus + label::before,
 [type=checkbox].focus + label::before{

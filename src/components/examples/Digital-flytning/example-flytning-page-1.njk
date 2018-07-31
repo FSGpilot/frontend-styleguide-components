@@ -4,8 +4,10 @@
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
-
 {% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
+
+{% from "alerts/alerts.njk" import alert as alert %}
+{% from "cards/cards.njk" import cards4 as cards4 %}
 
 
 {% block header %}
@@ -85,7 +87,7 @@
              <p class="font-lead">Digital Flytning er kommunernes digitale folkeregister, hvor du kan melde flytning og samtidig foretage valg af læge.</p>
             </div>
             <div class="mt-6">
-                <h5>Anmelder</h5>
+                <h2>Anmelder</h2>
             </div>
             <div class="mt-5">
               <label class="form-label">Navn</label>
@@ -96,19 +98,18 @@
               <p class="mt-0">Odensegade 23, 4tv. 2100 København</p>
             </div>
             <div class="mt-5">
-              <label class="form-label">Adressebeskyttelse</label>
-              <ul>
+              <label class="form-label">Du har følgende beskyttelse på din adresse:</label>
+              <ul class="mb-0">
                 <li>Markedsføringsbeskyttelse</li>
                 <li>Vejviserbeskyttelse</li>
                 <li>Navne- og adressebeskyttelse</li>
               </ul>
             </div>
-            <div class="row">
-              <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                <div class="mt-7">
-                  <h5 class="h5">Seneste flytninger</h5>
-                </div>
-                <table class="table table--borderless table--compact mt-5">
+            {{ alert("alert alert-warning alert--show-icon alert--paragraph", "alert", "Skal din adresse beskyttes fra første dag?", "Hvis du ønsker navne- og adressebeskyttelse i forbindelse med denne flytning, bør du anmode om navne- og adressebeskyttelse, før du anmelder flytning. Ellers risikerer du, at navne- og adressebeskyttelsen ikke er gældende fra første dag på din nye adresse.", "warning" ) }}
+            <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
+              <div class="alert-body">
+                <p class="alert-heading">Seneste flytninger</p>
+                <table class="table table--borderless table--responsive-headers table--compact mt-5">
                   <thead>
                     <tr>
                       <th>Dato</th>
@@ -136,27 +137,66 @@
                 </table>
               </div>
             </div>
-
+          
             <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-primary mt-7">Næste</a>
 
             <div class="mt-9">
-              <h2>Andre formularer</h2>
+              <h2 class="h5">Relaterede selvbetjeningsløsninger</h2>
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Adressebeskyttelse</h5>
+                {# <h5 class="mt-6">Adressebeskyttelse</h5>
                 <p class="mt-5">Hvis du benytter nedenstående link åbnes et nyt vindue, hvor du kan oprette, rette eller slette dine adressebeskyttelser.</p>
-                <a href="#">Ændr adressebeskyttelse</a>
+                <a href="#">Adressebeskyttelse</a> #}
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Adressebeskyttelse</p>
+                      <p class="sub-header">Hvis du benytter nedenstående link åbnes et nyt vindue, hvor du kan oprette, rette eller slette dine adressebeskyttelser.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Adressebeskyttelse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Udrejse</h5>
-                <p class="mt-5">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
-                <a href="#">Anmeld udrejse</a>
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Udrejse</p>
+                      <p class="sub-header">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Anmeld udrejse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
               <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <h5 class="mt-6">Fuldmagt</h5>
-                <p class="mt-5">Afgiv en eller flere fulmagt til at anmelde flytning</p>
-                <a href="#">Angiv fuldmagt</a>
+                <div class="card mt-6">
+                    <div class="card-header">
+                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Fuldmagt</p>
+                      <p class="sub-header">Afgiv en eller flere fulmagt til at anmelde flytning.</p>
+                    </div>
+                    <div class="card-action">
+                      <div class="action-links">
+                        <ul class="unstyled-list">
+                          <li>
+                            <a href="#" class="icon-link">Angiv fuldmagt <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>

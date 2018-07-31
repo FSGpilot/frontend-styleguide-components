@@ -40,7 +40,7 @@ $icon-size: 24px;
   border-left: $bar-size solid darken($color-gray-pale, 40%);
 
   &.alert--paragraph {
-    width: $text-max-width;
+    max-width: $text-max-width;
   }
 
   .alert-heading {

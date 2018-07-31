@@ -90,9 +90,9 @@
              <p class="font-lead">Her kan du vælge hvilke personer i din husstand du ønsker at anmelde flytning for. Din eventuelle ægtefælle og eventuelle børn kan vælges.</p>
             </div>
             <p class="mt-6">Hvis der er flere personer i din husstand, som skal medtages i flytteanmeldelsen, skal de tilføjes særskilt ved angivelse af CPR-nr. Angiv maks 5 cpr-numre (10 cifre uden bindestreg)</p>
-            <a href="#" class="mt-5">Regler i forbindelse med flytning når vi har børn sammen</a>
+            <a href="#" class="mt-5">Regler i forbindelse med flytning når vi har børn sammen <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
             <div class="mt-5">
-                <h5>Valgte personer</h5>
+                <h2 class="h5">Valgte personer</h2>
             </div>
             <button class="button button-secondary mt-5">{{icon_svg("add")}}Tilføj personer 
             </button>
@@ -105,21 +105,18 @@
                       <th></th>
                       <th>Navn</th>
                       <th>CPR nummer</th>
-                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>{{ checkbox("id-person-1", "Checkbox for Klaus", "", false, true, "", "", false, false) }}</td>
+                      <td>{{ checkbox("id-person-1", "Checkbox for Klaus", "", true, true, "", "checkbox", false, false) }}</td>
                       <td>Klaus Egegreen Hansen</td>
                       <td>090889-2210</td>
-                      <td></td>
                     </tr>
                     <tr>
                       <td>{{ checkbox("id-person-2", "Checkbox for Line", "", false, false, "", "", false, false) }}</td>
                       <td>Line Von Larsen</td>
                       <td>240789-4695</td>
-                      <td><a href="#" class="text-negative">slet</a></td>
                     </tr>
                   </tbody>
                 </table>
