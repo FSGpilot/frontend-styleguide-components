@@ -7,6 +7,8 @@
 {% from "14-footers/footer-basic.njk" import footer_basic as footer_basic %}
 
 {% from "07-form/controls/text-input.njk" import textinput as textinput %}
+{% from "07-form/controls/text-area.njk" import textarea as textarea%}
+
 {% from "07-form/controls/radiobutton.njk" import radiobutton as radiobutton %}
 {% from "07-form/controls/date-input.njk" import datoinput as datoinput %}
 
@@ -76,7 +78,7 @@
           <div class="content">
             <h1>Tilskud til land</h1>
             <div class="mt-0">
-                {{textinput("id-advisors", "Navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", "input-width-xl", "", "Input til navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", false, false, "Navne skal skrives i samme rækkefølge, som landene er anført", "")}}
+                {{textarea("id-advisors", "Navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", "input-width-m", "Input til navn(-e) på rådgivere på ambassaden/generalkonsulatet", "", "", "Navne skal skrives i samme rækkefølge, som landene er anført")}}
             </div>
             <div class="mt-6">
                 {{textinput("id-companyalliance", "Navn på virksomhedsalliance", "", "input-width-m", "", "Input til navn på virksomhedsalliance", "", false, "")}}
