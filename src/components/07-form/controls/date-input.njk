@@ -1,8 +1,8 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
-{% macro datoinput(label, hint, day, month, year) %}
+{% macro datoinput(label, hint, day, month, year, tooltip, tooltipTitle) %}
 <fieldset>
   <div class="form-group">
-    <label class="form-label">{{label}}</label>
+    <label class="form-label">{{label}} {% if tooltip %}<button class="js-tooltip tooltip" data-tippy-trigger="click" title="{{tooltipTitle}}"><svg class='icon-svg'><use xlink:href='#help-circle-outline'></use></svg></button>{% endif %}</label>
     <span class="input-error-message" id="input-error-message-input-error" role="alert"></span>
     <span class="form-hint">{{hint}}</span>
     <div class="date-group js-calendar-group mt-3">
@@ -29,6 +29,6 @@
 
 <div class="container">
 {% for item in datoinput_example.items %}
-  {{datoinput(item.label, item.hint, item.day, item.month, item.year)}}
+  {{datoinput(item.label, item.hint, item.day, item.month, item.year, item.tooltip, item.tooltipTitle)}}
 {% endfor %}
 </div>

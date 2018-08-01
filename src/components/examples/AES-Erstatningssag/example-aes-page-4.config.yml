@@ -3,7 +3,7 @@ label: Eksempel AES - Side 4
 context:
   portal_header_data:
     user:
-      name: 'Christian Emil Vestergaard Christiansen'
+      name: 'Christian Emil Vestergaard Christiansen <br><span class="weight-normal">Forsikringens Forsikringsfirma</span>'
     logolink: 
       title: 'Hjem'
       href: 'javascript:void(0);'
@@ -20,7 +20,7 @@ context:
       text: 'Vejledende udtalelse fra AES i privat erstatningssag'
     authority:
       name: 'Ministeriet for Eksempel'
-      text: '<button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button>'
+      text: '<p>Support: 72 20 60 00 · <button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>'
   
   modal_contact_data:
     modal_title_id: 'modal-contact-1'

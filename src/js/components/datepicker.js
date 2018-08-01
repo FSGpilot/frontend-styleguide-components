@@ -50,6 +50,7 @@ class datepickerGroup {
   initDatepicker(el){
     if(el){
       //Note: el may not be a <svg>, IE11 does not add .blur() method to svg elements (--> esc and enter does not dismiss pikaday). 
+      this.initDone = false;
       var that = this;
 
       this.pikadayInstance = new Pikaday({
@@ -65,8 +66,10 @@ class datepickerGroup {
         },
         onSelect: function(date) {
           //selected new date in pikaday, update input fields. 
-          that.updateDateInputs(date);
-          that.validateInputs();
+          if(that.initDone){
+            that.updateDateInputs(date);
+            that.validateInputs();
+          }
         },
         onOpen: function(){
           //update pikaday with values from input fields
@@ -82,7 +85,8 @@ class datepickerGroup {
 
       var initDate = new Date();
       this.pikadayInstance.setDate(initDate);
-      this.updateDateInputs(initDate);
+      //this.updateDateInputs(initDate);
+      this.initDone = true;
     }
   }
 
@@ -140,9 +144,12 @@ class datepickerGroup {
   formatInputs(){
     var day = parseInt(this.dayInputElement.value)
     var month = parseInt(this.monthInputElement.value);
-
-    this.dayInputElement.value = this.dayFormat(day);
-    this.monthInputElement.value = this.monthFormat(month);
+    if(!isNaN(day) ) {
+      this.dayInputElement.value = this.dayFormat(day);
+    } 
+    if(!isNaN(month)){
+      this.monthInputElement.value = this.monthFormat(month);
+    }
   }
 
   updateDatepickerDate(newDate){
