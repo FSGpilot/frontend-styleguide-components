@@ -3,7 +3,7 @@ label: Eksempel AES - Side 6
 context:
   portal_header_data:
     user:
-      name: 'Christian Emil Vestergaard Christiansen <br><span class="weight-normal">Forsikringens Forsikringsfirma</span>'
+      name: 'Christian Emil Vestergaard Christiansen<br><span class="weight-normal">Forsikringens Forsikringsfirma</span>'
     logolink: 
       title: 'Hjem'
       href: 'javascript:void(0);'
