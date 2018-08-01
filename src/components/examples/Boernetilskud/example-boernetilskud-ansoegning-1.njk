@@ -123,10 +123,10 @@
     <section class="page-content content">
         <div class="row">
             <div class="col-12 col-md-8 col-lg-5">
-                <h3>Jeg søger tilskud til:</h3>
-                <button class="button button-secondary">{{ icon_svg('plus')}} Tilføj barn</button>
+                <h3>Jeg søger tilskud til:</h3> 
                 <form class="form">
                     <fieldset>
+                        <button class="button button-secondary">{{ icon_svg('plus')}} Tilføj barn</button>
                         {{ alert("alert-warning", "alert", "Allerede registreret", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.", "Beskedbox der viser en advarsel" ) }}
                         {{ checkbox("checkbox-id-1", "", "checkbox1_selected", true, false, "Keld Hedagaardsen <br> 353535-3535 <br> Fælles", "", false, true) }}
 

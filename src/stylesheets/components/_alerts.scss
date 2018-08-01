@@ -39,6 +39,10 @@ $icon-size: 24px;
  
   border-left: $bar-size solid darken($color-gray-pale, 40%);
 
+  &:first-child {
+    margin-top:0;
+  }
+
   &.alert--paragraph {
     max-width: $text-max-width;
   }
@@ -59,7 +63,7 @@ $icon-size: 24px;
     max-width: $lead-max-width;
   }
 }
-
+ 
 @each $name, $bgcolor in $alerts {
   .alert-#{$name} {
     background-color: $bgcolor;
