@@ -21,7 +21,7 @@
 {% endmacro %}
 
 {# Locked step guide #}
-{% macro tringuide(trinliste) %}
+{% macro tringuide_locked(trinliste) %}
   <ul class="sidenav-list-locked">
     {% for trin in trinliste %}
       <li class="disabled">
@@ -47,7 +47,7 @@
       {{ tringuide(tringuiden.trinlisten) }}
 
       <p class="h6 mt-6">Låst trinindikator</p>
-      {{ tringuide(tringuiden.trinlisten) }}
+      {{ tringuide_locked(tringuiden.trinlisten) }}
       
       <p class="h6 mt-6">Trinindikator i overflow-menu</p>
       {{overflowmenu("Trin 3 af 5","overflow5", true, false, "menu-down" ,"
@@ -88,7 +88,8 @@
     ) }}
 
 
-    <p class="h6 mt-6">Trinindikator - responsivt i overflow-menu</p>
+    <p class="h6 mt-6 mb-3">Trinindikator - responsivt i overflow-menu</p>
+	<p class="form-hint mt-0">Du skal gøre browservinduet mindre for at se ændringen</p>
       <div class="overflow-menu  overflow-menu--open-right overflow-menu--md-no-responsive">
         <button class="button-overflow-menu js-dropdown " data-js-target="#overflow4" aria-haspopup="true" aria-expanded="false">
             Trin 3 af 5

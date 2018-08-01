@@ -1,3 +1,21 @@
+//Styling of tippy.js tooltips
+.popover{
+    cursor: pointer;
+}
+.tippy-popper{
+    .tippy-tooltip{
+        background-color: $color-black;
+    }
+    .tippy-content{
+        @include body-copy-text;
+        color: #fff;
+        font-size: 1.3rem;
+        h1,h2,h3,h4,h5,h6,p{
+            color: #fff;
+        }
+    }
+}
+
 .tooltip {
   border:none;
   background: none;
