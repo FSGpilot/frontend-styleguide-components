@@ -3,6 +3,7 @@ const forEach = require('array-foreach');
 const $  = require( 'jquery' );
 window.$ = $;
 const microModal = require("../../vendor/micromodal.js");
+const dropdown = require('../components/dropdown');
 const dt = require( 'datatables.net' )( window, $ );
 const dt_select =require( 'datatables.net-select' )( window, $ );
 const dt_responsive =require( 'datatables.net-responsive' )( window, $ );
@@ -18,8 +19,6 @@ const jsSelectorDatatable_Example_praktikplads = "#js-datatable-example-praktikp
 
 class datatablesExamples {
   constructor(el){
-
-    //NOTE: you only need to externally include the javascript. A theme is shipped with DKWDS.
 
     //////////////////////////////////////
     //Init a datatable with no configuration
@@ -141,6 +140,7 @@ class datatablesExamples {
             '<div class="col-5">'+
               '<p class="h3">Headline</p>' +
               '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>'+
+              '<div class="responsive-content"></div>'+
             '</div>'+
             '<div class="col-6">'+
                 '<img src="https://ramen-files.s3.amazonaws.com/charturl-images/2017-01-26/9b64e497-3a7a-40c8-b7c7-322f84f84ba9.png"></div>' +
@@ -170,22 +170,24 @@ class datatablesExamples {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        'responsive': true,
         'rowId': "id",
         'columns': [
             {
                 "className":      'details-control',
                 "orderable":      false,
                 "data":           null,
-                "defaultContent": ''
+                "defaultContent": '',
+                "width": "24px" 
             },
             { "data": "name" },
-            { "data": "email" },
             { "data": "address.street" },
             { "data": "address.city" },
             { "data": "phone" },
         ],
-        'order': [[1, 'asc']]
+        'order': [[1, 'asc']],
+        'responsive': {
+            details: false
+        }
     } );
 
     // Add event listener for opening and closing details
@@ -200,7 +202,7 @@ class datatablesExamples {
         }
         else {
             // Open this row
-            row.child( format(row.data()) ).show();
+            row.child( format(row.data()), 'child').show();
             tr.addClass('shown');
         }
     } );
@@ -243,6 +245,7 @@ class datatablesExamples {
                 "className":      'row-control',
                 "data": null,
                 "orderable": false,
+                "responsivePriority": 1, //hide last
                 "render": function ( data, type, full, meta ) {
                     var overflowID = "overflow-table-"+full.id;
                     return  `<div class="overflow-menu overflow-menu--open-left overflow-menu--hover-bg">
@@ -259,8 +262,16 @@ class datatablesExamples {
                 }
             }
         ],
-        order: [[1, 'asc']]
+        order: [[1, 'asc']],
+        'responsive': true,
+        'initComplete': function(settings, json) {
+            $(jsSelectorDatatable_Example_edit).find('.js-dropdown').each(function( index ) {
+                new dropdown(this);
+            });
+        }
     } );
+
+  
 
     var currentEditTr = null
 
