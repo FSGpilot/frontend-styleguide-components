@@ -48,14 +48,8 @@
 {% endblock %}
 
 {% block body %}
-  <div class="container">
-   <div class="row">
-      <div class="col-12">
-          {{ alert("alert alert-error alert--show-icon", "alert", "Der er sket en fejl", "Der er sket en fejl hos KRAK. Afstanden til din nuværende læge kan ikke beregnes i øjeblikket. Beregningen er vigtig for at dit lægevalg kan blive registreret korrekt. Fejlen er blevet registreret og vil blive rettet hurtigst muligt. Prøv at registrere din flytning senere.", "error" ) }}
-      </div>
-    </div>
-  </div>
   <section class="container page-container">
+    {{ alert("alert alert-error alert--show-icon", "alert", "Der er sket en fejl", "Der er sket en fejl hos KRAK. Afstanden til din nuværende læge kan ikke beregnes i øjeblikket. Beregningen er vigtig for at dit lægevalg kan blive registreret korrekt. Fejlen er blevet registreret og vil blive rettet hurtigst muligt. Prøv at registrere din flytning senere.", "error" ) }}
 
     <div class="row">
       <div class="col-12">
@@ -103,23 +97,22 @@
           ) }}
           <div class="content">
             <h1>Lægevalg</h1>
-            <p class="font-lead mt-0">Når du anmelder flytning skal du altid vælge læge, også selvom det er tidligere læge du ønsker</p>
+            <div class="mt-0">
+              {{ alert("alert alert-info alert--paragraph", "alert", "Når du anmelder flytning skal du altid vælge læge også selv om det er tidligere læge du ønsker.", "<br>Du kan kontakte Folkeregisteret, på telefonnr. 3366 3366, såfremt der er lukket for tilgang til læger inden for en radius af 5 km.<br><br>Flytter du inden for Københavns kommune, men uden for lægens 5 km grænse, kan du beholde lægen. Du skal acceptere ikke at kunne få sygebesøg af lægen.<br><br>Flytter du tik Københavns kommune uden for lægens km grænse, kan du kun beholde din læge, hvis du opfylder betingelserne og accepterer ikke at kunne få sygebesøg af lægen.<br><br>Betingelserne i § 1 stk 9, i Bekendtgørelsen om valg og skift af alment praktiserende læge og om behandling hos læge i praksissektoren for at kunne beholde lægen.<br><br>Du vil modtage dit nye sundhedskort i løbet af 2-3 uger. Hvis du ikke modtager dit nye sundhedskort, skal du kontakte kommunen inden 60 dage fra din flyttedato. Ellers kommer du til at betale for dit nye kort.", "warning" ) }}
+            </div>
              <div class="mt-6">
               <label class="form-label">Ny adresse</label>
               <p class="mt-0">Odensegade 23, 4.tv. 2100 København Ø</p>
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-                <div class="mt-5">
-                  <h5 class="h5">Valg af læge</h5>
-                </div>
                 <table class="table table--borderless table--compact table--responsive-headers mt-5">
                   <thead>
                     <tr>
                       <th>Personer som flytter</th>
                       <th>Læge efter flytning</th>
                       <th>Afstand</th>
-                      <th></th>
+                      <th class="align-text-md-right">Skift læge</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -127,15 +120,15 @@
                       <td>Klaus Egegreen Hansen</td>
                       <td>John Doe <br>Østerbrogade 893 18.tv. <br>2100 København Ø</td>
                       <td>0,6 Km</td>
-                      <td><a href="#">Skift læge</a></td>
+                      <td class="align-text-md-right"><a href="#"> <svg class='icon-svg'><use xlink:href='#pencil'></use></svg></a></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
             <a href="#" class="button button-primary mt-7">Næste</a>
-            <div class="mt-7">
-              {{ alert("alert alert-info alert--show-icon alert--paragraph", "alert", "Når du anmelder flytning skal du altid vælge læge også selv om det er tidligere læge du ønsker.", "<br>Du kan kontakte Folkeregisteret, på telefonnr. 3366 3366, såfremt der er lukket for tilgang til læger inden for en radius af 5 km.<br><br>Flytter du inden for Københavns kommune, men uden for lægens 5 km grænse, kan du beholde lægen. Du skal acceptere ikke at kunne få sygebesøg af lægen.<br><br>Flytter du tik Københavns kommune uden for lægens km grænse, kan du kun beholde din læge, hvis du opfylder betingelserne og accepterer ikke at kunne få sygebesøg af lægen.<br><br>Betingelserne i § 1 stk 9, i Bekendtgørelsen om valg og skift af alment praktiserende læge og om behandling hos læge i praksissektoren for at kunne beholde lægen.<br><br>Du vil modtage dit nye sundhedskort i løbet af 2-3 uger. Hvis du ikke modtager dit nye sundhedskort, skal du kontakte kommunen inden 60 dage fra din flyttedato. Ellers kommer du til at betale for dit nye kort.", "warning" ) }}
+            <div class="breadcrumb">
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4' class="button button-ghost">Tilbage</a>
             </div>
           </div>
       </div>
