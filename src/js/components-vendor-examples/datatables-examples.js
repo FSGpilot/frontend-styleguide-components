@@ -25,15 +25,7 @@ class datatablesExamples {
     //Init a datatable with no configuration
     //////////////////////////////////////
     var table_basic = $(jsSelectorDatatable_Example_basic).DataTable({
-        responsive: true
-    });
-
-
-    //////////////////////////////////////
-    //Init a datatable with ajax data
-    //////////////////////////////////////
-    var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
-        language: {
+        'language': {
             "lengthMenu": "Viser _MENU_ elementer pr side",
             "zeroRecords": "Der blev fundet intet resultat",
             "info": "Viser sider _PAGE_ af _PAGES_",
@@ -49,12 +41,37 @@ class datatablesExamples {
                 "previous":   "Forrige"
             },
         },
-        processing: true,
-        ajax: {
+        'responsive': true
+    });
+
+
+    //////////////////////////////////////
+    //Init a datatable with ajax data
+    //////////////////////////////////////
+    var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
+        'language': {
+            "lengthMenu": "Viser _MENU_ elementer pr side",
+            "zeroRecords": "Der blev fundet intet resultat",
+            "info": "Viser sider _PAGE_ af _PAGES_",
+            "infoEmpty": "Intet resultat",
+            "infoFiltered": "(filtreret fra _MAX_ elementer)",
+            "emptyTable": "Ingen data",
+            "search": "Søg i tabel:",
+            "Sort": true,
+            "paginate": {
+                "first":      "Første",
+                "last":       "Sidste",
+                "next":       "Næste",
+                "previous":   "Forrige"
+            },
+        },
+        'responsive': true,
+        'processing': true,
+        'ajax': {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        columns: [
+        'columns': [
             { "data": "name" },
             { "data": "email" },
             { "data": "address.street" },
@@ -67,7 +84,7 @@ class datatablesExamples {
     //Init a datatable with selectable rows
     //////////////////////////////////////
     var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
-        language: {
+        'language': {
             "lengthMenu": "Viser _MENU_ elementer pr side",
             "zeroRecords": "Der blev fundet intet resultat",
             "info": "Viser sider _PAGE_ af _PAGES_",
@@ -83,7 +100,8 @@ class datatablesExamples {
                 "previous":   "Forrige"
             },
         },
-        columnDefs: [ {
+        'responsive': true,
+        'columnDefs': [ {
             orderable: false,
             targets:   0,
             render: function ( data, type, full, meta ) {
@@ -98,7 +116,7 @@ class datatablesExamples {
             style:    'single',
             selector: 'td:first-child'
         },*/
-        order: [[ 1, 'asc' ]]
+        'order': [[ 1, 'asc' ]]
     });
 
     $(jsSelectorDatatable_Example_selectable).on("click", "input[type='checkbox']", function (event) {
@@ -132,7 +150,7 @@ class datatablesExamples {
 
 
     var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
-        language: {
+        'language': {
             "lengthMenu": "Viser _MENU_ elementer pr side",
             "zeroRecords": "Der blev fundet intet resultat",
             "info": "Viser sider _PAGE_ af _PAGES_",
@@ -148,12 +166,13 @@ class datatablesExamples {
                 "previous":   "Forrige"
             },
         },
-        ajax: {
+        'ajax': {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        rowId: "id",
-        columns: [
+        'responsive': true,
+        'rowId': "id",
+        'columns': [
             {
                 "className":      'details-control',
                 "orderable":      false,
@@ -166,7 +185,7 @@ class datatablesExamples {
             { "data": "address.city" },
             { "data": "phone" },
         ],
-        order: [[1, 'asc']]
+        'order': [[1, 'asc']]
     } );
 
     // Add event listener for opening and closing details

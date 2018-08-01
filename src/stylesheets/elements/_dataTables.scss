@@ -1,3 +1,23 @@
+/*
+//Show x entries
+.dataTables_length {
+    
+}
+
+// Filtering input
+.dataTables_filter{
+    input[type=search] {
+        border: $outer-border;
+        border-radius: $input-border-radius;
+        color: $color-black; // standardize on firefox
+        font-size: $input-font-size;
+        line-height: $input-line-height;
+        padding: $input-top-bottom-padding $input-left-right-padding;
+        height: $input-standard-height;
+    }
+}
+*/
+
 //
  // Colour customisation
  //
