@@ -19,8 +19,7 @@
       <button class="button button-tertiary button-menu-close js-menu-close" title="Luk mobil menu">{{icon_svg("close")}}Luk</button>
 
       <div class="portal-info-mobile">
-        <p class="user"><b>Christian Emil Vestergaard Christiansen</b></p>
-        <p class="mt-0">Københavns Urmager Værksted v/Martin Elsig</p>
+        <p class="user"><b>Christian Emil Vestergaard Christiansen</b><br>Forsikringens Forsikringsfirma</p>
         <a href="#" class="button button-secondary button-signout">
           Log ud
         </a>
@@ -28,24 +27,20 @@
 
       <div class="solution-info-mobile">
         <p><b>Erhvervsministeriet</b></p>
-        <p><button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
+        <p>Support: 72 20 60 00 <br> <button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>
       </div>
     </nav> <!-- collapsible nav end-->
   </header>
 {% endblock %}
 
 {% block body %}
-  <section class="container">
-    <div class="row">
-      <div class="col-12">
-          {{ alert("alert alert-success alert--show-icon", "alert", "Sagen er sendt til AES", "", "success" ) }}
-          {{ alert("alert alert-warning alert--show-icon", "alert", "Husk betaling", "Gebyret skal indsættes på vores konto i banken", "warning" ) }}
-      </div>
-    </div>
-    <div class="row page-container">
+  <section class="container page-container">
+    {{ alert("alert alert-success alert--show-icon", "alert", "Sagen er sendt til AES", "", "success" ) }}
+    {{ alert("alert alert-warning alert--show-icon", "alert", "Husk betaling", "Gebyret skal indsættes på vores konto i banken", "warning" ) }}
+    <div class="row ">
       <div class="col-12">
           <div class="content">
-            <h1 class="mb-0">Kvittering</h1>
+            <h1 class="mb-0 mt-5">Kvittering</h1>
             <p class="form-hint mt-2">Referencenummer: 28346863</p>
             <div class="mt-0 mb-4">
               <p>Hvis du ønsker dokumentation på fremsendelse kan du downloade anmodningen.</p>
@@ -81,7 +76,7 @@
               <p class="mt-0 mb-0">Referencenummer: 28346863</p>
             </div>
             <br>
-            <button class="button button-secondary">Opret ny sag</button>
+            <button class="button button-secondary mt-5">Opret ny sag</button>
       </div>
     </div>
   </section>
