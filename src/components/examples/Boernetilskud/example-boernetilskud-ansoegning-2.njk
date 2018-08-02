@@ -6,6 +6,8 @@
 
 {%- from "09-header/header-simple.njk" import portal_header as portal_header -%}
 {%- from "09-header/header-simple.njk" import solution_header as solution_header -%}
+{% from "alerts/alerts.njk" import alert as alert %}
+
 
 
 {% block header %}
@@ -81,7 +83,6 @@
 
 {% block body %}
   <main class="container page-container">
-    <header class="page-header">
         {{overflowmenu("Trin 2 af 6","overflow_steps", true, false, "menu-down" ,"
               <ul class='sidenav-list'>
                   <li>
@@ -120,11 +121,19 @@
               </ul>
               "
           ) }}
-        <h1 class="mt-0">{{title}}</h1>
-        <p class="font-lead">{{lead | safe}}</p>
-    </header>
     <section class="page-content content">
+    <h1 class="mt-0">{{title}}</h1>
+    {# {{ alert("alert alert-info alert--paragraph", "alert", "For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger", "<br>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med. <br><a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig</a>", "info" ) }} #}
+    <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
+        <div class="alert-body">
+        <p class="alert-heading">For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger</p>
+        <p>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med.</p>
+        <a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig<svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+        </div>
+    </div>
+    <div class="mt-7">
         {{datoinput("Jeg blev eller bliver enlig:", "", "Dato", "Måned", "År")}}
+    </div>
     </section>
     <footer class="page-footer">
         <div class="button-column">

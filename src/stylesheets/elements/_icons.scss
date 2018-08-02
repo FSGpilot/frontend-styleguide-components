@@ -33,7 +33,6 @@ $icons: (
 .icon-svg-large {
     height: $display-1-heading-size;
     width: $display-1-heading-size;
-    line-height: $display-1-heading-line-height;
     vertical-align: middle;
     &--inherit-color{
         fill: currentColor; //svg inherit color
