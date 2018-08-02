@@ -3,6 +3,7 @@ const forEach = require('array-foreach');
 const $  = require( 'jquery' );
 window.$ = $;
 const microModal = require("../../vendor/micromodal.js");
+const dropdown = require('../components/dropdown');
 const dt = require( 'datatables.net' )( window, $ );
 const dt_select =require( 'datatables.net-select' )( window, $ );
 const dt_responsive =require( 'datatables.net-responsive' )( window, $ );
@@ -13,19 +14,36 @@ const jsSelectorDatatable_Example_ajax = "#js-datatable-example-ajax";
 const jsSelectorDatatable_Example_detailsrow = "#js-datatable-example-detailsrow";
 const jsSelectorDatatable_Example_selectable = "#js-datatable-example-selectable";
 const jsSelectorDatatable_Example_edit = "#js-datatable-example-edit";
+const jsSelectorDatatable_Example_edit2 = "#js-datatable-example-edit2";
 
 const jsSelectorDatatable_Example_praktikplads = "#js-datatable-example-praktikplads";
 
 class datatablesExamples {
   constructor(el){
 
-    //NOTE: you only need to externally include the javascript. A theme is shipped with DKWDS.
+    var languageConfig = {
+        "lengthMenu": "Viser _MENU_ elementer pr side",
+        "zeroRecords": "Der blev fundet intet resultat",
+        "info": "Viser sider _PAGE_ af _PAGES_",
+        "infoEmpty": "Intet resultat",
+        "infoFiltered": "(filtreret fra _MAX_ elementer)",
+        "emptyTable": "Ingen data",
+        "search": "Søg i tabel:",
+        "Sort": true,
+        "paginate": {
+            "first":      "Første",
+            "last":       "Sidste",
+            "next":       "Næste",
+            "previous":   "Forrige"
+        },
+    };
 
     //////////////////////////////////////
     //Init a datatable with no configuration
     //////////////////////////////////////
     var table_basic = $(jsSelectorDatatable_Example_basic).DataTable({
-        responsive: true
+        'language': languageConfig,
+        'responsive': true
     });
 
 
@@ -33,28 +51,14 @@ class datatablesExamples {
     //Init a datatable with ajax data
     //////////////////////////////////////
     var table_ajax = $(jsSelectorDatatable_Example_ajax).DataTable({
-        language: {
-            "lengthMenu": "Viser _MENU_ elementer pr side",
-            "zeroRecords": "Der blev fundet intet resultat",
-            "info": "Viser sider _PAGE_ af _PAGES_",
-            "infoEmpty": "Intet resultat",
-            "infoFiltered": "(filtreret fra _MAX_ elementer)",
-            "emptyTable": "Ingen data",
-            "search": "Søg i tabel:",
-            "Sort": true,
-            "paginate": {
-                "first":      "Første",
-                "last":       "Sidste",
-                "next":       "Næste",
-                "previous":   "Forrige"
-            },
-        },
-        processing: true,
-        ajax: {
+        'language': languageConfig,
+        'responsive': true,
+        'processing': true,
+        'ajax': {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        columns: [
+        'columns': [
             { "data": "name" },
             { "data": "email" },
             { "data": "address.street" },
@@ -67,23 +71,9 @@ class datatablesExamples {
     //Init a datatable with selectable rows
     //////////////////////////////////////
     var table_selectable = $(jsSelectorDatatable_Example_selectable).DataTable({
-        language: {
-            "lengthMenu": "Viser _MENU_ elementer pr side",
-            "zeroRecords": "Der blev fundet intet resultat",
-            "info": "Viser sider _PAGE_ af _PAGES_",
-            "infoEmpty": "Intet resultat",
-            "infoFiltered": "(filtreret fra _MAX_ elementer)",
-            "emptyTable": "Ingen data",
-            "search": "Søg i tabel:",
-            "Sort": true,
-            "paginate": {
-                "first":      "Første",
-                "last":       "Sidste",
-                "next":       "Næste",
-                "previous":   "Forrige"
-            },
-        },
-        columnDefs: [ {
+        'language': languageConfig,
+        'responsive': true,
+        'columnDefs': [ {
             orderable: false,
             targets:   0,
             render: function ( data, type, full, meta ) {
@@ -98,7 +88,7 @@ class datatablesExamples {
             style:    'single',
             selector: 'td:first-child'
         },*/
-        order: [[ 1, 'asc' ]]
+        'order': [[ 1, 'asc' ]]
     });
 
     $(jsSelectorDatatable_Example_selectable).on("click", "input[type='checkbox']", function (event) {
@@ -123,6 +113,7 @@ class datatablesExamples {
             '<div class="col-5">'+
               '<p class="h3">Headline</p>' +
               '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna <a href="#">aliqua</a>.</p>'+
+              '<div class="responsive-content"></div>'+
             '</div>'+
             '<div class="col-6">'+
                 '<img src="https://ramen-files.s3.amazonaws.com/charturl-images/2017-01-26/9b64e497-3a7a-40c8-b7c7-322f84f84ba9.png"></div>' +
@@ -132,41 +123,29 @@ class datatablesExamples {
 
 
     var table_detailsrow = $(jsSelectorDatatable_Example_detailsrow).DataTable( {
-        language: {
-            "lengthMenu": "Viser _MENU_ elementer pr side",
-            "zeroRecords": "Der blev fundet intet resultat",
-            "info": "Viser sider _PAGE_ af _PAGES_",
-            "infoEmpty": "Intet resultat",
-            "infoFiltered": "(filtreret fra _MAX_ elementer)",
-            "emptyTable": "Ingen data",
-            "search": "Søg i tabel:",
-            "Sort": true,
-            "paginate": {
-                "first":      "Første",
-                "last":       "Sidste",
-                "next":       "Næste",
-                "previous":   "Forrige"
-            },
-        },
-        ajax: {
+        'language': languageConfig,
+        'ajax': {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
         },
-        rowId: "id",
-        columns: [
+        'rowId': "id",
+        'columns': [
             {
                 "className":      'details-control',
                 "orderable":      false,
                 "data":           null,
-                "defaultContent": ''
+                "defaultContent": '',
+                "width": "24px" 
             },
             { "data": "name" },
-            { "data": "email" },
             { "data": "address.street" },
             { "data": "address.city" },
             { "data": "phone" },
         ],
-        order: [[1, 'asc']]
+        'order': [[1, 'asc']],
+        'responsive': {
+            details: false
+        }
     } );
 
     // Add event listener for opening and closing details
@@ -181,7 +160,7 @@ class datatablesExamples {
         }
         else {
             // Open this row
-            row.child( format(row.data()) ).show();
+            row.child( format(row.data()), 'child').show();
             tr.addClass('shown');
         }
     } );
@@ -190,25 +169,8 @@ class datatablesExamples {
     //////////////////////////////////////
     //Init a datatable with edit and delete
     //////////////////////////////////////
-
-
     var table_edit = $(jsSelectorDatatable_Example_edit).DataTable( {
-        language: {
-            "lengthMenu": "Viser _MENU_ elementer pr side",
-            "zeroRecords": "Der blev fundet intet resultat",
-            "info": "Viser sider _PAGE_ af _PAGES_",
-            "infoEmpty": "Intet resultat",
-            "infoFiltered": "(filtreret fra _MAX_ elementer)",
-            "emptyTable": "Ingen data",
-            "search": "Søg i tabel:",
-            "Sort": true,
-            "paginate": {
-                "first":      "Første",
-                "last":       "Sidste",
-                "next":       "Næste",
-                "previous":   "Forrige"
-            },
-        },
+        language: languageConfig,
         ajax: {
             "url": "https://jsonplaceholder.typicode.com/users",
             "dataSrc": ""
@@ -224,6 +186,7 @@ class datatablesExamples {
                 "className":      'row-control',
                 "data": null,
                 "orderable": false,
+                "responsivePriority": 1, //do not responsive hide last
                 "render": function ( data, type, full, meta ) {
                     var overflowID = "overflow-table-"+full.id;
                     return  `<div class="overflow-menu overflow-menu--open-left overflow-menu--hover-bg">
@@ -240,7 +203,13 @@ class datatablesExamples {
                 }
             }
         ],
-        order: [[1, 'asc']]
+        order: [[1, 'asc']],
+        'responsive': true,
+        'initComplete': function(settings, json) {
+            $(jsSelectorDatatable_Example_edit).find('.js-dropdown').each(function( index ) {
+                new dropdown(this);
+            });
+        }
     } );
 
     var currentEditTr = null
@@ -301,70 +270,95 @@ class datatablesExamples {
         //close modal
         microModal.close('modal-delete');
     });
-  }
+        
+    //////////////////////////////////
+    //Edit tabel uden overflow-menu.
+    //////////////////////////////////
+    var table_edit2 = $(jsSelectorDatatable_Example_edit2).DataTable( {
+        language: languageConfig,
+        ajax: {
+            "url": "https://jsonplaceholder.typicode.com/users",
+            "dataSrc": ""
+        },
+        rowId: "id",
+        columns: [
+            { "data": "name" },
+            { "data": "address.street" },
+            { "data": "address.city" },
+            { "data": "company.name" },
+            {
+                "targets": -1,
+                "className":      'row-control',
+                "data": null,
+                "orderable": false,
+                "responsivePriority": 1, //do not responsive hide last
+                "render": function ( data, type, full, meta ) {
+                    return  `<button class="button button-unstyled px-3 js-delete-modal-trigger"><svg class="icon-svg"><use xlink:href="#delete"></use></svg></button>`
+                }
+            }
+        ],
+        order: [[1, 'asc']],
+        'responsive': true
+    });
+    $(jsSelectorDatatable_Example_edit2).on('click', '.js-delete-modal-trigger', function () {
+
+        currentDeleteTr = $(this).closest('tr');
+
+        //open modal
+        microModal.show('modal-delete');
+    });
+  
+
+    /////////////////////////////////
+    //PRAKTIKPLADS DATATABLE
+    /////////////////////////////////
+    var table_praktikplads = $(jsSelectorDatatable_Example_praktikplads).DataTable( {
+        language: languageConfig,
+        ajax: {
+            "url": "https://api.myjson.com/bins/1adkvm",
+            "dataSrc": ""
+        },
+        rowId: "id",
+        columns: [
+            {
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": ''
+            },
+            { "data": "student", "width": "20%" },
+            { "data": "birthday" },
+            { "data": "education" },
+            { "data": "education2" },
+            { "data": "education3" },
+            { "data": "education4" }
+        ],
+        order: [[1, 'asc']],
+        paging:   false,
+        searching: false,
+        info:     false
+    } );
+
+    // Add event listener for opening and closing details 
+    $(jsSelectorDatatable_Example_praktikplads).on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table_praktikplads.row( tr );
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
+
+  }  
 }
 
-
-
-//PRAKTIKPLADS DATATABLE
-var table_praktikplads = $(jsSelectorDatatable_Example_praktikplads).DataTable( {
-    language: {
-        "lengthMenu": "Viser _MENU_ elementer pr side",
-        "zeroRecords": "Der blev fundet intet resultat",
-        "info": "Viser sider _PAGE_ af _PAGES_",
-        "infoEmpty": "Intet resultat",
-        "infoFiltered": "(filtreret fra _MAX_ elementer)",
-        "emptyTable": "Ingen data",
-        "search": "Søg i tabel:",
-        "Sort": true,
-        "paginate": {
-            "first":      "Første",
-            "last":       "Sidste",
-            "next":       "Næste",
-            "previous":   "Forrige"
-        },
-    },
-    ajax: {
-        "url": "https://api.myjson.com/bins/1adkvm",
-        "dataSrc": ""
-    },
-    rowId: "id",
-    columns: [
-        {
-            "className":      'details-control',
-            "orderable":      false,
-            "data":           null,
-            "defaultContent": ''
-        },
-        { "data": "student", "width": "20%" },
-        { "data": "birthday" },
-        { "data": "education" },
-        { "data": "education2" },
-        { "data": "education3" },
-        { "data": "education4" }
-    ],
-    order: [[1, 'asc']],
-    paging:   false,
-    searching: false,
-    info:     false
-} );
-
-// Add event listener for opening and closing details 
-$(jsSelectorDatatable_Example_praktikplads).on('click', 'td.details-control', function () {
-    var tr = $(this).closest('tr');
-    var row = table_praktikplads.row( tr );
-
-    if ( row.child.isShown() ) {
-        // This row is already open - close it
-        row.child.hide();
-        tr.removeClass('shown');
-    }
-    else {
-        // Open this row
-        row.child( format(row.data()) ).show();
-        tr.addClass('shown');
-    }
-} );
 
 
 

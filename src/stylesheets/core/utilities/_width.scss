@@ -20,7 +20,7 @@ $percent-widths: (
   @include media-breakpoint-up($breakpoint) {
     @each $name, $size in $percent-widths { 
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-      .w-percent#{$infix}-#{$name}         { width: $size; }
+      .w-percent#{$infix}-#{$name}         { width: $size !important;}
     }
   }
 } 

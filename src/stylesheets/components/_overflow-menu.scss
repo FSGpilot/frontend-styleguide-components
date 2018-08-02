@@ -14,7 +14,7 @@ $overflow-menu-dropdown-distance: 8px;
         padding: 8px 0;
         display: flex;
         align-items: center;
-        justify-content: left;
+        justify-content: center;
         color: $color-black;
 
         .no-touchevents &:hover{
@@ -85,6 +85,9 @@ $overflow-menu-dropdown-distance: 8px;
         font-size: $body-text; 
         line-height: $body-text-line-height;
         color: $color-text;
+        &>li{
+            display: flex; //fixes bug for overflow lists inside datatables. 
+        }
         button{
             @include button-unstyled;   
         }

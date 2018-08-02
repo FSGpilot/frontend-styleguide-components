@@ -8,7 +8,7 @@
 }
 
 .form-label {
-  display: block;
+  display: inline-block;
   @include form-label-text();
 }
 
@@ -173,7 +173,7 @@ $radio-size-large: 34px;
   font-weight: $font-weight-normal;
   line-height: $body-text-line-height;
   margin-bottom: 0;
-  display: block;
+  display: inline-block;
   outline: none;
   color: $color-black;
   position: relative;

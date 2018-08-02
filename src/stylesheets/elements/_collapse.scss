@@ -1,5 +1,5 @@
 
-.collapsed{
+.collapsed:not(.dataTable){
     display: none;
 }
 .collapse-transition-collapse{

@@ -1,23 +1,39 @@
+
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-        <p class="form-label">Edit and delete row</p>
-        <table id="js-datatable-example-edit" class="table table--zebra table--lines">
-            <thead>
-                <tr>
-                    <th>Navn</th>
-                    <th>Vej</th>
-                    <th>By</th>
-                    <th>Firmanavn</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- filled in by js-->
-            </tbody>
-        </table>
-    </div>
-  </div>
+    <p class="form-label">Funktionalitet i overflow-menu</p>
+    <table id="js-datatable-example-edit" class="table table--zebra table--lines w-percent-100">
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Vej</th>
+                <th>By</th>
+                <th>Firmanavn</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- filled in by js-->
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container pt-7">
+    <p class="form-label">Funktionalitet uden overflow-menu</p>
+    <table id="js-datatable-example-edit2" class="table table--zebra table--lines w-percent-100">
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Vej</th>
+                <th>By</th>
+                <th>Firmanavn</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- filled in by js-->
+        </tbody>
+    </table>
 </div>
 
 <!-- MODAL EDIT START -->
@@ -32,13 +48,9 @@
             <main class="modal__content content" id="modal-edit-content">
                 <div class="row">
                     <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="alert alert-error alert--show-icon" role="alert" aria-label="Beskedbox der viser en fejlmeddelselse">
-                                    <div class="alert-body"><h3 class="alert-heading">Error alert - with icon</h3>
-                                        <p class="alert-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-                                    </div>
-                                </div>
+                        <div class="alert alert-error alert--show-icon" role="alert" aria-label="Beskedbox der viser en fejlmeddelselse">
+                            <div class="alert-body"><h3 class="alert-heading">Error alert - with icon</h3>
+                                <p class="alert-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
                             </div>
                         </div>
                         <input id="edit-row-id" name="" type="hidden">
