@@ -26,13 +26,13 @@ table.dataTable {
                 height: 24px;
                 width: 24px;
                 background-repeat: no-repeat;
-                background-position: center -2px;
+                background-position: center -1px;
             }
         }
         .sorting {
             &:after {
                 background-image: url('#{$icons-folder-path}/sort-none.svg');  //sort_both
-                opacity: .2;
+                opacity: .75;
             }
         }
         .sorting_asc {

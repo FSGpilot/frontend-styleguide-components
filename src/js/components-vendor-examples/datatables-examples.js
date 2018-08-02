@@ -99,11 +99,6 @@ class datatablesExamples {
             $(event.target).closest("tr").removeClass("selected-row");
         }
     } );
-
-    var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
-    var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
-    $("#js-datatable-example-selectable_wrapper").find('.dataTables_filter').prepend(downloadButton).prepend(settingsButton);
-    tippy('.js-tooltip');
     
     //////////////////////////////////////
     //Init a datatable with expand row
@@ -311,6 +306,14 @@ class datatablesExamples {
         //open modal
         microModal.show('modal-delete');
     });
+
+    /////////////////////////////////
+    //Give dummy buttons to top bar (all datatables)
+    /////////////////////////////////
+    var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
+    var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
+    $('.dataTables_filter').prepend(downloadButton).prepend(settingsButton);
+    tippy('.js-tooltip');
   
 
     /////////////////////////////////
