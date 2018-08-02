@@ -70,11 +70,6 @@ table.dataTable {
                 box-shadow: inset 2px 0 0 0 #454545;
             }
 
-            //remove hover styling for child row. 
-            &:hover{
-                background-color: inherit;
-            }
-
              //Responsive details list
             ul.dtr-details{
                 @include unstyled-list;
@@ -117,8 +112,11 @@ table.dataTable {
         }
     }
     //Responsive expanded (minus icon)
-    &.dtr-inline.collapsed>tbody>tr.parent>td:first-child, &.dtr-inline.collapsed>tbody>tr.parent>th:first-child{
-        box-shadow: inset 2px 0 0 0 #454545;
+    &.dtr-inline.collapsed>tbody>tr.parent>td, &.dtr-inline.collapsed>tbody>tr.parent>th{
+        border-bottom: none;
+        &:first-child{
+            box-shadow: inset 2px 0 0 0 #454545;
+        }
         &:before{
             background-image: url(../img/svg-icons/minus.svg);
         }
@@ -140,6 +138,9 @@ table.dataTable {
             background-color: $color-gray-pale;
             & + tr.child{ //child row (the expanded row) should have same color as parent. 
                 background-color: $color-gray-pale;
+                &:hover{
+                    background-color: $color-gray-pale !important; //overwrite hover styling
+                }
             }
         }
     }
@@ -218,12 +219,17 @@ table.dataTable {
         font-size: $input-font-size;
         line-height: $input-line-height;
         height: $input-standard-height; //fixes bug in chrome where line-height is not respected.
+        width: inherit;
     }
 }
 
 // Filtering input
 .dataTables_filter{
+    display: flex;
     margin-bottom: map-get($spacers, 4);
+    button{ //utiltiy button next to search
+        width: inherit;
+    }
     label{
         display: flex;
         white-space: nowrap;
