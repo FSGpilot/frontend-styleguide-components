@@ -1,0 +1,7 @@
+label: Kanter
+status: ready
+preview: '@dkwds-framed'
+
+variants:
+  - name: default
+    label: Examples
