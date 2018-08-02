@@ -101,7 +101,7 @@ table.dataTable {
     //Responsive collapsed (plus icon)
     &.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, &.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child{
         &:before{
-            background-image: url(../img/svg-icons/plus.svg);
+            background-image: url('#{$icons-folder-path}/plus.svg');
             height: 24px;
             width: 24px;
             background-color: transparent;
@@ -118,7 +118,7 @@ table.dataTable {
             box-shadow: inset 2px 0 0 0 #454545;
         }
         &:before{
-            background-image: url(../img/svg-icons/minus.svg);
+            background-image: url('#{$icons-folder-path}/minus.svg') !important;
         }
     }
 
