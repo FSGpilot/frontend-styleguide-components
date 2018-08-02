@@ -292,7 +292,7 @@ class datatablesExamples {
                 "orderable": false,
                 "responsivePriority": 1, //do not responsive hide last
                 "render": function ( data, type, full, meta ) {
-                    return  `<button class="button button-unstyled px-3 js-delete-modal-trigger"><svg class="icon-svg"><use xlink:href="#delete"></use></svg></button>`
+                    return  `<button class="button button-unstyled px-3 js-delete-modal-trigger"><svg class="icon-svg"><use xlink:href="#delete-outline"></use></svg></button>`
                 }
             }
         ],
