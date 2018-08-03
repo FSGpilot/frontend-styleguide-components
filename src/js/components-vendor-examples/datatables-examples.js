@@ -343,7 +343,8 @@ class datatablesExamples {
         order: [[1, 'asc']],
         paging:   false,
         searching: false,
-        info:     false
+        info:     false,
+        'responsive': true
     } );
 
     // Add event listener for opening and closing details 
@@ -358,10 +359,10 @@ class datatablesExamples {
         }
         else {
             // Open this row
-            row.child( format(row.data()) ).show();
+            row.child( format(row.data()), 'child').show();
             tr.addClass('shown');
         }
-    } );
+    });
 
   }  
 }
