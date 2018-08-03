@@ -19,7 +19,7 @@ context:
       label: 'logo link'
       text: 'Familieydelser - børnetilskud'
     authority:
-      name: 'Ministeriet for Eksempel'
+      name: 'Ansvarlig myndighed'
       text: 'Tlf.: 33 28 38 38'
   
   title: "Hvilke børn søger du tilskud til?"
@@ -34,7 +34,7 @@ context:
           - list:
             inline_list: false
             listitems:
-              - content: '<span class="h6 weight-semibold">Ministeriet for Eksempel</span>'
+              - content: '<span class="h6 weight-semibold">Ansvarlig myndighed</span>'
               - content: '<p>Styrelsen for Eksempel</p>'
       - col:
         col_size_desktop: 6
