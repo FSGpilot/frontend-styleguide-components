@@ -19,7 +19,7 @@ context:
       label: 'logo link'
       text: 'Familieydelser - børnetilskud'
     authority:
-      name: 'Ansvarlig myndighed'
+      name: 'Styrelsen for Eksempler'
       text: 'Tlf.: 33 28 38 38'
   
   title: "Oversigt"

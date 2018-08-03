@@ -19,7 +19,7 @@ context:
       label: 'logo link'
       text: 'Vejledende udtalelse fra AES i privat erstatningssag'
     authority:
-      name: 'Ansvarlig myndighed'
+      name: 'Styrelsen for Eksempler'
       text: '<p>Support: 72 20 60 00 · <button class="button-unstyled button-contact" data-micromodal-trigger="modal-contact">Kontakt<svg class="icon-svg "><use xlink:href="#menu-right"></use></svg></button></p>'
   
   modal_contact_data:
