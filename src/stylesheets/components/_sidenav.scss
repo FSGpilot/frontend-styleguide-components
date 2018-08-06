@@ -10,9 +10,7 @@
       }
 
       .sidenav-icon-before {
-        margin-right: 10px;
-        width: 22px;
-        height: 22px;
+        margin-right: map-get($spacers, 2);
         line-height: 23px;
         text-align: left;
       }
@@ -32,6 +30,9 @@
       .sidenav-information {
         margin-top:0;
         margin-bottom:0;
+        @include body-copy-text;
+        display: block;
+        color: $color-gray-medium-dark;
       }
 
       &:focus{
@@ -55,9 +56,6 @@
     a {
 
       .sidenav-icon-before {
-        margin-right: 10px;
-        width: 22px;
-        height: 22px;
         line-height: 23px;
         text-align: left;
       }
@@ -75,8 +73,12 @@
         }
       }
       .sidenav-information {
+        margin-right: map-get($spacers, 2);
         margin-top:0;
         margin-bottom:0;
+        @include body-copy-text;
+        display: block;
+        color: $color-gray-medium-dark;
       }
     }
   }

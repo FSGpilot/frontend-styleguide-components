@@ -1,9 +1,18 @@
+{% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 
 {% macro nav_list(links, subclass) %}
   {% for item in links %}
   <li>
     <a href="{{ item.href }}"{% if item.active %} class="active" {% endif %}{% if item.current %} class="current" {% endif %}>
+      {% if item.iconbefore %}
+          <span class="sidenav-icon-before">
+              {{ icon_svg(item.iconbefore) }}
+          </span>
+      {% endif %}
       {{ item.text }}
+      {% if item.information %}
+          <p class="sidenav-information">{{item.information}}</p>
+      {% endif %}
     </a>
     {% if item.current and item.links %}
     <ul class="{{ subclass }}">

@@ -39,29 +39,6 @@
   </ul>
 {% endmacro %}
 
-{# Icon step guide #}
-{% macro tringuide_icon(trinliste) %}
-  <ul class="sidenav-list">
-    {% for trin in trinliste %}
-      <li{% if trin.disabled %} class="disabled"{% endif %}>
-        <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
-            {% if trin.iconbefore %}
-                <span class="sidenav-icon-before">
-                    {{ icon_svg(trin.iconbefore) }}
-                </span>
-            {% endif %}
-            {{loop.index}}. {{trin.text}}
-            {% if trin.icon %}
-                <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
-                    {{ icon_svg(trin.icon) }}
-                </span>
-            {% endif %}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endmacro %}
-
 {# information step guide #}
 {% macro tringuide_information(trinliste) %}
   <ul class="sidenav-list">
@@ -85,27 +62,21 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
             <p class="h6 mt-6">Klikbar trinindikator</p>
             {{ tringuide(tringuiden.trinlisten) }}
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
             <p class="h6 mt-6">Låst trinindikator</p>
             {{ tringuide_locked(tringuiden.trinlisten) }}
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
-            <p class="h6 mt-6">Trinindikator med ikon</p>
-            {{ tringuide_icon(tringuiden.trinlisten) }}
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
             <p class="h6 mt-6">Trinindikator med information</p>
             {{ tringuide_information(tringuiden.trinlisten) }}
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
 
             <p class="h6 mt-6">Trinindikator i overflow-menu</p>
             {{overflowmenu("Trin 3 af 5","overflow5", true, false, "menu-down" ,"
@@ -145,7 +116,7 @@
                 "
             ) }}
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-md-lg sidebar-col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
             <p class="h6 mt-6 mb-3">Trinindikator - responsivt i overflow-menu</p>
             <p class="form-hint mt-0">Du skal gøre browservinduet mindre for at se ændringen</p>
             <div class="overflow-menu  overflow-menu--open-right overflow-menu--md-no-responsive">
