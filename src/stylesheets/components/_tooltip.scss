@@ -3,16 +3,16 @@
     cursor: pointer;
 }
 .tippy-popper{
+    .tippy-backdrop{
+        background-color: #fff;
+    }
     .tippy-tooltip{
-        background-color: $color-black;
+        box-shadow: 0 4px 20px 4px rgba(0,20,60,.1), 0 4px 80px -8px rgba(0,20,60,.2);
+        
     }
     .tippy-content{
         @include body-copy-text;
-        color: #fff;
         font-size: 1.3rem;
-        h1,h2,h3,h4,h5,h6,p{
-            color: #fff;
-        }
     }
 }
 

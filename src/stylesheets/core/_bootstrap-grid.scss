@@ -54,12 +54,3 @@
 
   @include make-grid-columns();
 }
-
-// Additional flex utilities
-
-@import 'utilities/flex';
-@import 'utilities/spacing';
-
-// Additional Bootstrap non-grid related utilities
-@import 'utilities/position';
-@import 'utilities/display';
