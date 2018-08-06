@@ -4,9 +4,9 @@
 //
 
 $backgroundcolors: (
-  1: $background-1, //WHITE
-  2: $background-2, //GRAY
-  3: $background-3 //BLACK
+  normal: $background-normal, //WHITE
+  alternative: $background-alternative, //GRAY
+  modal: $background-modal //BLACK
 ) !default;
 
 
