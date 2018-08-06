@@ -5,13 +5,23 @@ context:
   tringuiden:
     trinlisten: &default_links
       - text: Trin 1
+        iconbefore: message
+        information: Informationstekst for trin 1
         icon: check
       - text: Trin 2
+        iconbefore: cash-multiple
+        information: Informationstekst for trin 2
         icon: check
       - text: Trin 3 (valgt)
+        iconbefore: folder-multiple
+        information: Informationstekst for trin 3
         active: true
       - text: Trin 4
+        iconbefore: file
+        information: Informationstekst for trin 4
       - text: Trin 5
+        iconbefore: settings
+        information: Informationstekst for trin 5
 
 
 
