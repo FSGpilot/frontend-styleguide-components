@@ -53,7 +53,7 @@ gulp.task('copy-dist-sass', function () {
 });
 
 
-gulp.task(task, function () {  //[ 'copy-vendor-sass' ]
+gulp.task(task, ['copy-vendor-sass', 'copy-dist-sass' ], function () { 
 
   dutil.logMessage(task, 'Compiling Sass');
 
