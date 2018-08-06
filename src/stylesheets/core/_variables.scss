@@ -148,9 +148,10 @@ $color-blue-004:              #e2f2fb !default;
 $color-blue-005:              #067293 !default; 
 $color-blue-006:              #04556E !default; 
 $color-blue-007:              #033747 !default; 
+$color-blue-008:              #1B86C3 !default;
 
 //purple
-$color-purple-001:            #801258 !default; 
+$color-purple-001:            #800080!default; 
 
 //Data visualisation colors
 $color-data-green-001:        #2eab22 !default;
@@ -228,7 +229,7 @@ $color-warning:               $color-orange-004 !default;
 $color-warning-light:         $color-orange-005 !default;
 $color-error:                 $color-red-002 !default;
 $color-error-light:           $color-red-003 !default;
-$color-info:                  $color-blue-001 !default;
+$color-info:                  $color-blue-008 !default;
 $color-info-light:            $color-blue-004 !default;
 
 $color-data-green:            $color-data-green-001 !default;
