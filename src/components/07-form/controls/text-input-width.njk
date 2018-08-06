@@ -1,7 +1,7 @@
 {% macro textinputwidth(id, label, optionallabel, class, name, classlabel) %}
   <div class="form-group">
     <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
-    <input class="form-input {{class}}" id="{{id}}" name="{{name}}" type="text" aria-describedby="input-error-message-{{id}}">
+    <input class="form-input {{class}}" id="{{id}}" name="{{name}}" type="text">
   </div>
 {% endmacro %}
 
@@ -16,7 +16,7 @@
 {% macro textinputchar(id, label, optionallabel, class, name, classlabel) %}
   <div class="form-group">
     <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
-    <input class="form-input {{class}}" id="{{id}}" name="{{name}}" type="text" aria-describedby="input-error-message-{{id}}">
+    <input class="form-input {{class}}" id="{{id}}" name="{{name}}" type="text">
   </div>
 {% endmacro %}
 
