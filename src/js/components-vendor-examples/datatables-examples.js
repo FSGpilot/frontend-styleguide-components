@@ -313,8 +313,11 @@ class datatablesExamples {
     var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
     var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
     $('.dataTables_filter').prepend(downloadButton).prepend(settingsButton);
-    tippy('.js-tooltip');
-  
+    tippy('.dataTables_wrapper', {
+        target: '.js-tooltip',
+        duration: 0
+    });
+    
 
     /////////////////////////////////
     //PRAKTIKPLADS DATATABLE

@@ -4,5 +4,7 @@ const domready = require('domready');
 const tippy = require("tippy.js");
 
 domready(() => {
-    tippy('.js-tooltip') //init tooltip on elements with the .js-tooltip class
+    tippy('.js-tooltip', { 
+        duration: 0
+    }) //init tooltip on elements with the .js-tooltip class
 });
