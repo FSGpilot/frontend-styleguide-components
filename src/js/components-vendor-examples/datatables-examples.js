@@ -4,7 +4,7 @@ const $  = require( 'jquery' );
 window.$ = $;
 const microModal = require("../../vendor/micromodal.js");
 const dropdown = require('../components/dropdown');
-const tippy = require("tippy.js");
+const tippy = require("tippy.js/dist/tippy.js"); //version without injected css
 const dt = require( 'datatables.net' )( window, $ );
 const dt_select =require( 'datatables.net-select' )( window, $ );
 const dt_responsive =require( 'datatables.net-responsive' )( window, $ );
@@ -313,11 +313,8 @@ class datatablesExamples {
     var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
     var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
     $('.dataTables_filter').prepend(downloadButton).prepend(settingsButton);
-    tippy('.dataTables_wrapper', {
-        target: '.js-tooltip',
-        duration: 0
-    });
-    
+    var event = new Event('init-tooltips');
+    $('body')[0].dispatchEvent(event);
 
     /////////////////////////////////
     //PRAKTIKPLADS DATATABLE
