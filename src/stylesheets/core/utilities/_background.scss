@@ -4,9 +4,9 @@
 //
 
 $backgroundcolors: (
-  1: rgba(0, 0, 0, 0.75), //BLACK
-  2: #f5f5f5, //GRAY
-  3: #ffffff
+  1: $background-1, //WHITE
+  2: $background-2, //GRAY
+  3: $background-3 //BLACK
 ) !default;
 
 
