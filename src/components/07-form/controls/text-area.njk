@@ -2,9 +2,9 @@
   <div class="form-group">
      <label class="form-label {{classlabel}}" for="{{id}}">{{label}}{% if optionallabel %}<span class="weight-normal"> {{optionallabel}}</span>{% endif %}</label>
      {% if hint %}<span class="form-hint" id="input-hint-message-{{id}}">{{hint}}</span>{% endif %}
-     <textarea class="form-input textarea {{class}}" placeholder="{{placeholder}}" id="{{id}}" name="{{name}}" type="text"></textarea>
+     <textarea class="form-input textarea input-width-m {{class}}" placeholder="{{placeholder}}" id="{{id}}" name="{{name}}" type="text"></textarea>
   </div>
-  {# <div class="mt-3">
+  {# <div class="mt-3"> 
     <span class="textareaWordCount">0</span>/2000 tegn
   </div> #}
 {% endmacro %}

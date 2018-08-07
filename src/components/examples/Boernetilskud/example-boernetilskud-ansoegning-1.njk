@@ -24,10 +24,22 @@
             <div class="navbar-inner container">
                 <ul class="nav-primary">
                     <li>
-                        <a href="/frontend-styleguide/pages/page-templates/boernetilskud/boernetilskud-oversigt" class="nav-link" title="Designsystem">
-                            <span>Oversigt</span>
-                        </a>
-                    </li>            
+              <div class="overflow-menu">
+                <button class="button-overflow-menu js-dropdown js-dropdown--responsive-collapse" data-js-target="#headeroverflow1" aria-haspopup="true" aria-expanded="false">
+                  <span>Oversigt</span>
+                </button>
+                <div class="overflow-menu-inner" id="headeroverflow1" aria-hidden="true">
+                  <ul class="overflow-list">
+                      <li>
+                        <a href="/frontend-styleguide/pages/page-templates/boernetilskud/boernetilskud-oversigt">Overssigtsside som liste</a>
+                      </li>
+                      <li>
+                        <a  href="/frontend-styleguide/pages/page-templates/boernetilskud/boernetilskud-oversigt-2">Oversigt med cards</a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </li>              
                     <li>
                         <a href="#" class="nav-link" title="Eksempler">
                             <span>Beskeder</span>
