@@ -327,12 +327,6 @@ class datatablesExamples {
         },
         rowId: "id",
         columns: [
-            {
-                "className":      'details-control',
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ''
-            },
             { "data": "student", "width": "20%" },
             { "data": "birthday" },
             { "data": "education" },
@@ -346,23 +340,6 @@ class datatablesExamples {
         info:     false,
         'responsive': true
     } );
-
-    // Add event listener for opening and closing details 
-    $(jsSelectorDatatable_Example_praktikplads).on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = table_praktikplads.row( tr );
-
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-            tr.removeClass('shown');
-        }
-        else {
-            // Open this row
-            row.child( format(row.data()), 'child').show();
-            tr.addClass('shown');
-        }
-    });
 
   }  
 }
