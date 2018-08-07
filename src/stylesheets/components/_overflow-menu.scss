@@ -85,9 +85,7 @@ $overflow-menu-dropdown-distance: 8px;
         font-size: $body-text; 
         line-height: $body-text-line-height;
         color: $color-text;
-        /*&>li{
-            display: flex; //fixes bug for overflow lists inside datatables. 
-        }*/
+
         button{
             @include button-unstyled;   
         }

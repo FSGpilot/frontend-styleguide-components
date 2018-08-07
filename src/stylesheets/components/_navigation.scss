@@ -145,6 +145,42 @@
   }
 }
 
+.nav{
+  @media (max-width: $nav-responsive-breakpoint) {
+    //overflow menu (the ones not in nav-primary)
+    .overflow-menu{
+      width: 100%;
+      .button-overflow-menu{
+        width: 100%;
+        justify-content: left;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 16px;
+        padding-bottom: 16px; 
+        &:after, &:before{
+          display: none !important;
+        }
+      }
+      .overflow-menu-inner{
+        position: static;
+        border: none;
+        box-shadow:  none;
+        .overflow-list{
+          padding-left: 16px;
+        }
+        a, button{
+          text-align: left;
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+
 // Overflow menu(dropdown) in primary navigation.
 .nav-primary{
   .overflow-menu{
@@ -217,6 +253,8 @@
       background-color: #fff;
       padding-left: 16px;
       border-top: $inner-border;
+      padding-top: 0;
+      padding-bottom: 0;
   
       @include media($nav-responsive-breakpoint) {
         width: 30rem;
@@ -293,40 +331,6 @@
   }
 }
 
-.nav{
-  @media (max-width: $nav-responsive-breakpoint) {
-    //overflow menu in nav
-    .overflow-menu{
-      width: 100%;
-      .button-overflow-menu{
-        width: 100%;
-        justify-content: left;
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 16px;
-        padding-bottom: 16px; 
-        &:after, &:before{
-          display: none !important;
-        }
-      }
-      .overflow-menu-inner{
-        position: static;
-        border: none;
-        box-shadow:  none;
-        .overflow-list{
-          padding-left: 16px;
-        }
-        a, button{
-          text-align: left;
-          padding-left: 0;
-          padding-right: 0;
-          padding-top: 16px;
-          padding-bottom: 16px;
-        }
-      }
-    }
-  }
-}
 
 .nav-info-list {
   display: flex;
