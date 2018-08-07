@@ -68,7 +68,7 @@ $overflow-menu-dropdown-distance: 8px;
         z-index: 1;
         width: auto;
         border: $outer-border;
-        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: $box-shadow-moderately;
         background: #fff;
         padding-top: map-get($spacers, 3);
         padding-bottom: map-get($spacers, 3);
