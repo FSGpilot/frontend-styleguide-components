@@ -102,6 +102,7 @@ legend {
   @include form-label-text();
   display: block;
   color: $color-error;
+  margin-top: map-get($spacers, 2);
 }
 
 .form-group.input-success {
