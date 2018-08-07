@@ -181,8 +181,13 @@ table.dataTable {
             }
         }
     }
-
-    
+    .overflow-menu{
+        .overflow-list{
+            li{
+                display: flex;
+            }
+        }
+    }
 }
 
 //Pagination button
