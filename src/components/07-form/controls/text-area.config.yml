@@ -8,4 +8,7 @@ context:
       - id: input-area
         label: Text area label
         name: input-area
-
+      - id: input-error
+        label: Text area error
+        name: input-area
+        error: Hjælpsom error besked
