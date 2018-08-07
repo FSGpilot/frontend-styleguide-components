@@ -18,6 +18,19 @@
       }
     }
 
+    td, th {
+        padding: calc(#{map-get($spacers, 4)} - 1px); //16px -1px (for the border)
+        background-color: inherit;
+        border-right: $inner-border;
+        vertical-align: top;
+        text-align: left;
+        border-bottom: $inner-border;
+
+        &:last-child{
+            border-right: none;
+        }
+    }
+
     thead {
         background-color: $color-gray-pale;
         tr {
@@ -38,24 +51,8 @@
         }
     }
 
-    td, th {
-        padding: calc(#{map-get($spacers, 4)} - 1px); //16px -1px (for the border)
-        background-color: inherit;
-        border-right: $inner-border;
-        vertical-align: top;
-        text-align: left;
-
-        &:last-child{
-            border-right: none;
-        }
-    }
+    
     tr{
-        td{
-            border-bottom: $inner-border;
-            &:last-child{
-                border-right: none;
-            }
-        }
         &:last-child{
             td{
                 border-bottom: none;
