@@ -17,7 +17,7 @@ $overflow-menu-dropdown-distance: 8px;
         justify-content: center;
         color: $color-black;
 
-        .no-touchevents &:hover{
+        &:hover{
             text-decoration: underline;
         }
 
@@ -56,7 +56,7 @@ $overflow-menu-dropdown-distance: 8px;
     &.overflow-menu--hover-bg{ //used when button only contains an icon
         .button-overflow-menu{
             padding: 0;
-            .no-touchevents &:hover{
+            &:hover{
                 background-color: $color-gray-pale;
             }
         }

@@ -2,7 +2,6 @@
 const domready = require('domready');
 const forEach = require('array-foreach');
 const select = require('./utils/select');
-const modernizr = require("../vendor/modernizr-custom.js");
 const datepicker = require('./components/datepicker');
 const modal = require('./components/modal');
 const table = require('./components/table');

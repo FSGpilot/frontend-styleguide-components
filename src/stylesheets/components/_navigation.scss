@@ -72,7 +72,7 @@
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
       white-space: nowrap;
 
-      .no-touchevents &:hover {
+      &:hover {
         @include media($nav-responsive-breakpoint) {
           background-color: transparent;
         }
@@ -106,7 +106,7 @@
   }
 
   .nav-link {
-    .no-touchevents &:hover {
+    &:hover {
       @media (max-width: $nav-responsive-breakpoint) {
         background-color: $color-gray-pale;
       }
@@ -204,7 +204,7 @@
       &:active {
         box-shadow: $focus-outline;
       }
-      .no-touchevents &:hover{
+      &:hover{
         text-decoration: none;
       }
   
@@ -276,7 +276,7 @@
           @include body-copy-text;
           display: block;
           text-decoration: none;
-          .no-touchevents &:hover, &:visited, &:focus{
+          &:hover, &:visited, &:focus{
             color: $color-text;
             background-color: transparent;
             @include media($nav-responsive-breakpoint) {
