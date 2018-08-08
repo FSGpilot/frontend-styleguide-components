@@ -14,6 +14,14 @@
   border-bottom: 7px solid $color-primary;
   padding-bottom: 12px;
 }
+@mixin nav-hover {
+  border-bottom: 7px solid $color-primary;
+  padding-bottom: 12px;
+}
+@mixin nav-focus {
+  border-bottom: 7px solid $color-primary;
+  padding-bottom: 12px;
+}
 
 .navbar {
   width: 100%;
@@ -93,6 +101,8 @@
     span {
       @include media($nav-responsive-breakpoint) {
         @include nav-active;
+        @include nav-hover;
+        @include nav-focus;
       }
     }
   }
@@ -101,6 +111,8 @@
     @include media($nav-responsive-breakpoint) {
       span {
         @include nav-active;
+        @include nav-hover;
+        @include nav-focus;
       }
     }
   }
@@ -113,6 +125,8 @@
       span {
         @include media($nav-responsive-breakpoint) {
           @include nav-active;
+          @include nav-hover;
+          @include nav-focus;
         }
       }
     }
@@ -198,6 +212,11 @@
       }
       span{
         padding-right: 24px;
+      }
+      &:hover {
+        span {
+          @include nav-hover;
+        }
       }
 
       &:focus,
