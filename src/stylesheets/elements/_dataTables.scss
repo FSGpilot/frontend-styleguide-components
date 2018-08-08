@@ -1,6 +1,11 @@
 
 table.dataTable {
 
+    th:focus,td:focus{
+        outline: $focus-outline;
+        outline-offset: 0;
+    }
+
     thead{
         //padding
         th{
