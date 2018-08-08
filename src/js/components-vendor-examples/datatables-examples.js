@@ -1,13 +1,11 @@
 'use strict';
-const forEach = require('array-foreach');
 const $  = require( 'jquery' );
 window.$ = $;
 const microModal = require("../../vendor/micromodal.js");
 const dropdown = require('../components/dropdown');
-const tippy = require("tippy.js/dist/tippy.js"); //version without injected css
-const dt = require( 'datatables.net' )( window, $ );
-const dt_select =require( 'datatables.net-select' )( window, $ );
-const dt_responsive =require( 'datatables.net-responsive' )( window, $ );
+const dt = require( 'datatables.net' )( window, $ ); //COre datatables
+const dt_select =require( 'datatables.net-select' )( window, $ ); //Makes datatable rows selectable
+const dt_responsive =require( 'datatables.net-responsive' )( window, $ ); //Makes datatables responsive
 
 const jsSelectorDatatable_Example_basic = "#js-datatable-example-basic";
 const jsSelectorDatatable_Example_extra_pagination = "#js-datatable-example-extra_pagination";
@@ -44,7 +42,12 @@ class datatablesExamples {
     //////////////////////////////////////
     var table_basic = $(jsSelectorDatatable_Example_basic).DataTable({
         'language': languageConfig,
-        'responsive': true
+        'responsive': true,
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     });
 
 
@@ -65,7 +68,12 @@ class datatablesExamples {
             { "data": "address.street" },
             { "data": "address.city" },
             { "data": "phone" }
-        ]
+        ],
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     } );
 
     //////////////////////////////////////
@@ -89,7 +97,12 @@ class datatablesExamples {
             style:    'single',
             selector: 'td:first-child'
         },*/
-        'order': [[ 1, 'asc' ]]
+        'order': [[ 1, 'asc' ]],
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     });
 
     $(jsSelectorDatatable_Example_selectable).on("click", "input[type='checkbox']", function (event) {
@@ -144,7 +157,12 @@ class datatablesExamples {
         'order': [[1, 'asc']],
         'responsive': {
             details: false
-        }
+        },
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     } );
 
     // Add event listener for opening and closing details
@@ -202,6 +220,11 @@ class datatablesExamples {
                 }
             }
         ],
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
         order: [[1, 'asc']],
         'responsive': true,
         'initComplete': function(settings, json) {
@@ -297,7 +320,12 @@ class datatablesExamples {
             }
         ],
         order: [[1, 'asc']],
-        'responsive': true
+        'responsive': true,
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     });
     $(jsSelectorDatatable_Example_edit2).on('click', '.js-delete-modal-trigger', function () {
 
@@ -310,8 +338,8 @@ class datatablesExamples {
     /////////////////////////////////
     //Give dummy buttons to top bar (all datatables)
     /////////////////////////////////
-    var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
-    var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
+    var downloadButton = "<button class='button button-unstyled mr-4 js-tooltip' tabindex='0' aria-label='Download som PDF' title='Download som PDF'><svg class='icon-svg'><use xlink:href='#download'></use></svg></button>";
+    var settingsButton = "<button class='button button-unstyled mr-4 js-tooltip' tabindex='0' aria-label='Rediger egenskaber' title='Rediger egenskaber'><svg class='icon-svg'><use xlink:href='#settings'></use></svg></button>";
     $('.dataTables_filter').prepend(downloadButton).prepend(settingsButton);
     var event = new Event('init-tooltips');
     $('body')[0].dispatchEvent(event);
@@ -338,7 +366,12 @@ class datatablesExamples {
         paging:   false,
         searching: false,
         info:     false,
-        'responsive': true
+        'responsive': true,
+        'createdRow': function( row, data, dataIndex ) {
+            $(row).find('td').each(function( index, elm ) {
+                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+            });
+        },
     } );
 
   }  
