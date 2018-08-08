@@ -154,18 +154,35 @@ $color-blue-008:              #1B86C3 !default;
 $color-purple-001:            #800080!default; 
 
 //Data visualisation colors
-$color-data-green-001:        #2eab22 !default;
-$color-data-moss-001:         #275e00 !default;
-$color-data-teal-001:         #15B094 !default;
 $color-data-turqoice-001:     #56D4D6 !default;
-$color-data-violet-001:       #474E95 !default;
+$color-data-turqoice-002:     #56D4D6 !default;
+$color-data-turqoice-003:     #56D4D6 !default;
+$color-data-turqoice-004:     #56D4D6 !default;
+
+$color-data-teal-001:         #15b094 !default;
+$color-data-teal-002:         #15b094 !default;
+$color-data-teal-003:         #15b094 !default;
+$color-data-teal-004:         #15b094 !default;
+
+$color-data-orange-001:       #FF6A38 !default;
+$color-data-orange-002:       #FF6A38 !default;
+$color-data-orange-003:       #FF6A38 !default;
+$color-data-orange-004:       #FF6A38 !default;
+
+$color-data-magenta-001:      #D81884!default;
+$color-data-magenta-002:      #D81884!default;
+$color-data-magenta-003:      #D81884!default;
+$color-data-magenta-004:      #D81884!default;
+
 $color-data-purple-001:       #8F2B8F !default;
-$color-data-yellow-001:       #EBE049 !default;
-$color-data-khaki-001:        #B89E5E !default;
-$color-data-brown-001:        #6B4A21 !default;
-$color-data-orange-001:       #FF531A !default;
-$color-data-cyklamen-001:     #E64969 !default;
-$color-data-magenta-001:      #E50081 !default;
+$color-data-purple-002:       #8F2B8F !default;
+$color-data-purple-003:       #8F2B8F !default;
+$color-data-purple-004:       #8F2B8F !default;
+
+$color-data-violet-001:       #474E95 !default;
+$color-data-violet-002:       #474E95 !default;
+$color-data-violet-003:       #474E95 !default;
+$color-data-violet-004:       #474E95 !default;
 
 //############################### Component variables ####################
 //########################################################################
@@ -193,10 +210,10 @@ $color-text-bright:           $color-gray-006 !default;
 //Links color
 $color-link:                  $color-blue-001 !default;
 $color-link-hover:            $color-blue-002 !default;
-$color-active:                $color-blue-003 !default;
+$color-link-active:           $color-blue-003 !default;
 $color-link-focus:            $color-blue-001 !default;
 $color-link-focus-bg:         $color-focus !default;
-$color-visited:               $color-purple-001 !default;
+$color-link-visited:          $color-purple-001 !default;
 
 // Default neutral color-scheme (the neutral one that is neither virk.dk nor borger.dk)
 $color-neutral:               $color-gray-002 !default;
@@ -232,18 +249,37 @@ $color-error-light:           $color-red-003 !default;
 $color-info:                  $color-blue-008 !default;
 $color-info-light:            $color-blue-004 !default;
 
-$color-data-green:            $color-data-green-001 !default;
-$color-data-moss:             $color-data-moss-001 !default;
-$color-data-teal:             $color-data-teal-001 !default;
-$color-data-turqoice:         $color-data-turqoice-001 !default;
-$color-data-violet:           $color-data-violet-001 !default;
-$color-data-purple:           $color-data-purple-001 !default;
-$color-data-yellow:           $color-data-yellow-001 !default;
-$color-data-brown:            $color-data-brown-001 !default;
-$color-data-khaki:            $color-data-khaki-001 !default;
-$color-data-orange:           $color-data-orange-001 !default;
-$color-data-magenta:          $color-data-magenta-001 !default;
-$color-data-cyklamen:         $color-data-cyklamen-001 !default;
+//Data visualisation colors
+$color-data-turqoice:                 $color-data-turqoice-001 !default;
+$color-data-turqoice-high-opacity:    $color-data-turqoice-002 !default;
+$color-data-turqoice-medium-opacity:  $color-data-turqoice-003 !default;
+$color-data-turqoice-low-opacity:     $color-data-turqoice-004 !default;
+
+$color-data-teal:                     $color-data-teal-001 !default;
+$color-data-teal-high-opacity:        $color-data-teal-002 !default;
+$color-data-teal-medium-opacity:      $color-data-teal-003 !default;
+$color-data-teal-low-opacity:         $color-data-teal-004 !default;
+
+$color-data-orange:                   $color-data-orange-001 !default;
+$color-data-orange-high-opacity:      $color-data-orange-002 !default;
+$color-data-orange-medium-opacity:    $color-data-orange-003 !default;
+$color-data-orange-low-opacity:       $color-data-orange-004 !default;
+
+$color-data-magenta:                  $color-data-magenta-001 !default;
+$color-data-magenta-high-opacity:     $color-data-magenta-002 !default;
+$color-data-magenta-medium-opacity:   $color-data-magenta-003 !default;
+$color-data-magenta-low-opacity:      $color-data-magenta-004 !default;
+
+$color-data-purple:                   $color-data-purple-001 !default;
+$color-data-purple-high-opacity:      $color-data-purple-002 !default;
+$color-data-purple-medium-opacity:    $color-data-purple-003 !default;
+$color-data-purple-low-opacity:       $color-data-purple-004 !default;
+
+$color-data-violet:                   $color-data-violet-001 !default;
+$color-data-violet-high-opacity:      $color-data-violet-002 !default;
+$color-data-violet-medium-opacity:    $color-data-violet-003 !default;
+$color-data-violet-low-opacity:       $color-data-violet-003 !default;
+
 
 //$color-error-background:      $color-red-003 !default;
 //$color-success-background:    $color-green-004 !default;
