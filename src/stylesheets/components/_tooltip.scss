@@ -9,7 +9,7 @@
 .tippy-tooltip{
     @include body-copy-text;
     font-size: 1.3rem;
-    box-shadow: 0 4px 20px 4px rgba(0,20,60,.1), 0 4px 80px -8px rgba(0,20,60,.2);
+    box-shadow: $box-shadow-moderately;
     background-color:#fff;
     border: $outer-border;
 }
