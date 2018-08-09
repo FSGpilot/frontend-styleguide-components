@@ -3,7 +3,7 @@ $overflow-menu-arrow-size: 8px;
 $overflow-menu-dropdown-distance: 8px;
 
 .overflow-menu {
-    display: inline-block;
+    display: inline-block; //inlinblock so the .overflow-menu-inner is position underneath .button-overflow-menu 
     position: relative;
 
     .button-overflow-menu{
