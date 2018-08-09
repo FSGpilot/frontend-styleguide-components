@@ -1,38 +1,13 @@
-@mixin search-icon {
-  background-image: url('#{$image-path}/search.png');
-  background-image: url('#{$image-path}/search.svg');
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
 .search {
-  @include clearfix;
-  max-width: none;
-  position: relative;
-  margin-top: map-get($spacers, 3);
-
-  &__item-wrapper {
-    display: flex!important;
-
-
-    .search__submit {
-      width: calc(16px + 16px + 24px); //2 x padding + 24 icon-size
-    }
-
-    .search__text_submit{
-      width: inherit !important;
-    }
+  display: flex;
+  
+  .form-input{
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
-  &__text_submit {
-    background-image: none !important;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-  }
-
-  [type=submit],
-  .search__submit {
-    @include search-icon;
+  button{
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
@@ -43,21 +18,4 @@ input[type=search] { /* stylelint-disable-line selector-no-qualifying-type */
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none; //Fixes border-radius bug on iPhone X Safari. 
-}
-
-[type=search],
-.search-input {
-  border-bottom-right-radius: 0;
-  border-right: none;
-  border-top-right-radius: 0;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.search-submit-text {
-  @include sr-only;
-
-  @include media($small-screen) {
-    @include not-sr-only();
-  }
 }
