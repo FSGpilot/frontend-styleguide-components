@@ -161,6 +161,9 @@ class datatablesExamples {
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
                 $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if($(elm).hasClass('details-control')){
+                    $(elm).attr('aria-label', 'Klik her for at udfolde en række nedenfor med detaljer.');
+                }
             });
         },
     } );
@@ -173,11 +176,14 @@ class datatablesExamples {
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
+            $($(tr).find('.details-control')[0]).attr('aria-expanded', false);
             tr.removeClass('shown');
         }
         else {
             // Open this row
             row.child( format(row.data()), 'child').show();
+            $(row.child()[0]).attr('aria-label', 'Række med detaljer');
+            $($(tr).find('.details-control')[0]).attr('aria-expanded', true)
             tr.addClass('shown');
         }
     } );
