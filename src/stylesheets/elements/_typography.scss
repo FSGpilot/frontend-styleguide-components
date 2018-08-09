@@ -425,6 +425,10 @@ dfn {
   @include color-text-negative();
 }
 
+.color-text-black {
+  color: $color-black;
+}
+
 .background-dark {
   background-color: $color-black;
 
