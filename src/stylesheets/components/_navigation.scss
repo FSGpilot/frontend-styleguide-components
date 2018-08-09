@@ -218,7 +218,9 @@
       }
       &:hover {
         span {
-          @include nav-hover;
+          @include media($nav-responsive-breakpoint) {
+            @include nav-hover;
+          }
         }
       }
 
