@@ -33,7 +33,7 @@
 }
 
 //Choise
-.select2-container--default .select2-selection--multiple .select2-selection__choice{
+.select2-container--default .select2-selection--multiple .select2-selection__choice{ 
   background-color: black;
   color: #fff;
   border: 1px solid black;
@@ -42,6 +42,8 @@
 //Choise rmove icon
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
   color: white;
+  float: right;
+  margin-left: 4px;
   &:hover{
     color: white;
   }

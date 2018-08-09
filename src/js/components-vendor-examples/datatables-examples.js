@@ -239,10 +239,10 @@ class datatablesExamples {
                                         <li><button class="js-delete-modal-trigger danger-delete">Slet <svg class="icon-svg"><use xlink:href="#delete"></use></svg></button></li>
                                     </ul>
                                 </div>
-                            </div>`
-                }
+                            </div>` 
+                } 
             }
-        ],
+        ], 
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
                 if(!$(elm).hasClass('row-control')){
