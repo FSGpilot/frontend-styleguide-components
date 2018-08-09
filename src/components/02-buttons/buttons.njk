@@ -13,7 +13,7 @@
   {%- elif (state == 'disabled') -%}
     <button class="button button-{{class}}" disabled tab-index="-1" aria-disabled="true">Disabled</button>
   {%- elif (state == 'icon') -%}
-  <button class="button button-{{class}}">Refresh {{ icon_svg('refresh')}}</button>
+  <button class="button button-{{class}}">{{ icon_svg('refresh')}} Refresh</button>
   {%- endif %}
 
 {%- endmacro -%}
@@ -29,6 +29,6 @@
   {% endfor -%}
 
   <p class="h6">Funktionslink</p>
-  <p><a href="#" class="function-link">Print hele guiden {{ icon_svg('printer')}}</a></p>
+  <p><a href="#" class="function-link">{{ icon_svg('printer')}} Print hele guiden</a></p>
 </div>
 

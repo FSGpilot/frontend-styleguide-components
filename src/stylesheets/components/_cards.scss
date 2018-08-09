@@ -120,14 +120,23 @@
 
   .action-buttons {
     button {
-      margin-right: map-get($spacers, 0);
+      margin-right: map-get($spacers, 4);
       margin-top:map-get($spacers, 3);
  
       @include media-breakpoint-up(md) { 
-        margin-right: map-get($spacers, 3);
+        margin-right: map-get($spacers, 4);
         margin-top:map-get($spacers, 3);
       }
     }
+    .button + .button{
+      @include media($small-screen) {
+        margin-left: 0px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+
   }
   
 

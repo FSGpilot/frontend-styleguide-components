@@ -325,7 +325,7 @@ p, .body-text{
     color: $color-text;
   }
   .icon-svg{
-    margin-left: map-get($spacers, 2);
+    margin-right: map-get($spacers, 2);
     .background-dark &{
       fill: white;
     } 
@@ -337,7 +337,6 @@ p, .body-text{
 }
 
 .icon-link{
-  display: inline-flex;
   line-height: $body-text-line-height;
   .icon-svg{
     margin-left: map-get($spacers, 2);
