@@ -169,7 +169,7 @@
       width: 100%;
       .button-overflow-menu{
         width: 100%;
-        justify-content: left;
+        justify-content: flex-start;
         padding-left: 0;
         padding-right: 0;
         padding-top: 16px;
@@ -226,7 +226,7 @@
 
       &:focus,
       &:active {
-        box-shadow: $focus-outline;
+        outline: $focus-outline;
       }
       &:hover{
         text-decoration: none;
