@@ -45,7 +45,9 @@ class datatablesExamples {
         'responsive': true,
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
     });
@@ -71,7 +73,9 @@ class datatablesExamples {
         ],
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
     } );
@@ -100,7 +104,9 @@ class datatablesExamples {
         'order': [[ 1, 'asc' ]],
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
     });
@@ -160,7 +166,9 @@ class datatablesExamples {
         },
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
                 if($(elm).hasClass('details-control')){
                     $(elm).attr('aria-label', 'Klik her for at udfolde en række nedenfor med detaljer.');
                 }
@@ -168,9 +176,8 @@ class datatablesExamples {
         },
     } );
 
-    // Add event listener for opening and closing details
-    $(jsSelectorDatatable_Example_detailsrow).on('click', 'td.details-control', function () {
-        var tr = $(this).closest('tr');
+    var toggleDetails = function(element){
+        var tr = $(element).closest('tr');
         var row = table_detailsrow.row( tr );
 
         if ( row.child.isShown() ) {
@@ -186,7 +193,17 @@ class datatablesExamples {
             $($(tr).find('.details-control')[0]).attr('aria-expanded', true)
             tr.addClass('shown');
         }
-    } );
+    }
+
+    // Add event listener for opening and closing details
+    $(jsSelectorDatatable_Example_detailsrow).on('click', 'td.details-control', function () {
+        toggleDetails(this);
+    });
+    $(jsSelectorDatatable_Example_detailsrow).keypress(function(event) {
+        if(event.which == 13 || event.which == 32) { //enter and space
+            toggleDetails(event.target);
+        }
+    });
 
 
     //////////////////////////////////////
@@ -228,7 +245,9 @@ class datatablesExamples {
         ],
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
         order: [[1, 'asc']],
@@ -329,7 +348,9 @@ class datatablesExamples {
         'responsive': true,
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
     });
@@ -375,7 +396,9 @@ class datatablesExamples {
         'responsive': true,
         'createdRow': function( row, data, dataIndex ) {
             $(row).find('td').each(function( index, elm ) {
-                $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                if(!$(elm).hasClass('row-control')){
+                    $(elm).attr('tabindex', 0); //Accessibility fix: make td's focusable by tab
+                }
             });
         },
     } );
