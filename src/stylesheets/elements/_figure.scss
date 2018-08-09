@@ -3,7 +3,7 @@ img {
 }
 
 @mixin media-link {
-  display: block;
+  display: block; //must be block due to IE11.
   line-height: 0;
 }
 
