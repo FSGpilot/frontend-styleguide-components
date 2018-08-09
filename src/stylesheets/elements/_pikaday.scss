@@ -86,7 +86,7 @@ $pd-font-size: $body-text;
     position: relative;
     text-align: center;
     max-height: 38px;
-    border-bottom: 1px solid $inner-border;
+    border-bottom: $inner-border;
     background-color: $pd-title-bg;
 
     select {

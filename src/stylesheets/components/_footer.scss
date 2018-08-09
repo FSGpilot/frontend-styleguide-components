@@ -17,16 +17,6 @@ footer {
       padding-bottom: 56px;
     }
 
-    .align-left {
-      text-align: left;
-    }
-    .align-right {
-      text-align: left;
-      @include media-breakpoint-up(md) { 
-        text-align: right;
-      }
-    }
-
     .footer-col {
       &:not(:first-child) {
         margin-top: map-get($spacers, 5);
@@ -62,13 +52,8 @@ footer {
     .inline-list {
     > li:not(:last-child) {
         &:after {
-          content: "" !important;
-          float: auto;
-          margin-left: 0;
-    
           @include media-breakpoint-up(md) { 
             content: "\00b7" !important;
-            float: right;
             margin-left: map-get($spacers, 2);
           }
         }

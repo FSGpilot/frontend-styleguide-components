@@ -5,7 +5,7 @@
         <div class="row">
           {%- for col in footer_basic_data.cols -%}
           <div class="col-12 col-sm-12 col-md-{{ col.col_size_desktop | default('6') }} footer-col">
-            <div class="{%- if col.text_align_right %} align-right {% else %} align-left {% endif -%}">
+            <div class="{%- if col.text_align_right %} align-text-right  {% else %} align-text-left {% endif -%}">
               {%- for listsitem in col.lists -%}
                 <ul class="unstyled-list {%- if listsitem.inline_list %} inline-list {% endif -%} ">
                   {%- for item in listsitem.listitems -%}
