@@ -6,9 +6,9 @@ context:
   textarea_example:
     items:
       - id: input-area
-        label: Text area label
+        label: Tekstområde med label
         name: input-area
       - id: input-error
-        label: Text area error
+        label: Tekstområde med fejlbesked
         name: input-area
-        error: Hjælpsom error besked
+        error: Hjælpsom fejlbesked

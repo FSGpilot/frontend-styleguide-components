@@ -13,31 +13,34 @@
     </div>
 {% endmacro %}
 <div class="container pt-6">
-
-    <h5 class="h5">Overflow menu</h5>
-    {{overflowmenu("Overflow menu","overflow1", true, false, "dots-vertical" ,"
-        <ul class='overflow-list'>
-            <li><button>Option 1</button></li>
-            <li><button>Option 2</button></li>
-            <li><a href='#'>Option 3 as link</a></li>
-            <li><button>Option 4 is longer text</button></li>
-        </ul>
-        "
-    ) }}
-    <div style="padding-bottom: 50px;"></div>
-
-    <h5 class="h5">Overflow menu - åbner til venstre</h5>
-    
-    <div style="padding-left: 100px;">
-        {{overflowmenu("Overflow menu","overflow2", false, true, "dots-vertical" ,"
-            <ul class='overflow-list'>
-                <li><button>Option 1</button></li>
-                <li><button>Option 2</button></li>
-                <li><a href='#'>Option 3 as link</a></li>
-                <li><button>Option 4 is longer text</button></li>
-            </ul>
-            "
-        ) }}
-    </div>
-    <div style="padding-bottom: 240px;"></div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+               <p class="h6">Overflow menu</p>
+                {{overflowmenu("Overflow menu","overflow1", true, false, "dots-vertical" ,"
+                    <ul class='overflow-list'>
+                        <li><button>Option 1</button></li>
+                        <li><button>Option 2</button></li>
+                        <li><a href='#'>Option 3 as link</a></li>
+                        <li><button>Option 4 is longer text</button></li>
+                    </ul>
+                    "
+                ) }}
+                <div style="padding-bottom: 50px;"></div>
+        </div>
+        <div class="col-12 col-md-6">
+            <p class="h6">Overflow menu - åbner til venstre</p>
+            <div >
+                {{overflowmenu("Overflow menu","overflow2", false, true, "dots-vertical" ,"
+                    <ul class='overflow-list'>
+                        <li><button>Option 1</button></li>
+                        <li><button>Option 2</button></li>
+                        <li><a href='#'>Option 3 as link</a></li>
+                        <li><button>Option 4 is longer text</button></li>
+                    </ul>
+                    "
+                ) }}
+            </div>
+        </div>
+    </div> 
+    <div style="padding-bottom: 100px;"></div>
 </div>

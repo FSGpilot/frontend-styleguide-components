@@ -11,10 +11,10 @@ context:
   badge_example:
     items:
       - class: 'large'
-        label: 'Large badge'
+        label: 'Stort badge'
         state: 'large'
 
 
       - class: 'small'
-        label: 'Small badge'
+        label: 'Lille badge'
         state: 'small'

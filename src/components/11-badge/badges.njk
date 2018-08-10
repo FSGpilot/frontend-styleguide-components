@@ -2,14 +2,17 @@
   {%- if (state == 'large') -%}
     <label class="badge badge-{{class}}">Nyhed</label>
   {%- elif (state == 'small') -%}
-    <label class="badge badge-{{class}}">Nyhed small</label>
+    <label class="badge badge-{{class}}">Lille nyhed</label>
   {%- endif %}
 {%- endmacro -%}
 
-{%- for badges in badge_example.items -%}
-  {%- if badges.label %}
-    <h4>{{ badges.label }}</h4>
-  {% endif -%}
-  {{ badge(badges.class, badges.state) }}
-{% endfor -%}
+<div class="container">
+  {%- for badges in badge_example.items -%}
+    {%- if badges.label %}
+      <p class="h6">{{ badges.label }}</p>
+    {% endif -%}
+    {{ badge(badges.class, badges.state) }}
+  {% endfor -%}
+</div>
+
 
