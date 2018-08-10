@@ -79,9 +79,8 @@ $z-index-nav:     9000;
       padding-top: calc(#{map-get($spacers, 4)} - 1px);
       padding-bottom: calc(#{map-get($spacers, 4)} - 1px);
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       @include media($nav-responsive-breakpoint) {
-        align-items: center;
         flex-direction: row;
       }
     }
