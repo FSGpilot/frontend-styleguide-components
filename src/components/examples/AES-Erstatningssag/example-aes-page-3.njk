@@ -105,14 +105,13 @@
               <h1>Oplysninger om skadelidte</h1>
               <div class="mt-0">
               <label class="form-label " for="id-cpr">Skadelidtes CPR-nr.</label>
-                <form action="/search" method="get" role="search">
-                    <div class="search">
-                        <div class="form-group search__item-wrapper">
-                            <input class="form-input input-width-xs" id="id-cpr" value="123456-7890" name="Input til skadelidtes CPR-nr." title="Search" type="search">
-                            <button type="submit" class="search__submit button button-primary search-submit"><span class="sr-only">Søg</span></button>
-                        </div>
-                    </div>
-                </form>
+              <div class="form-group search">
+                    <input class="form-input input-width-xs" id="input-type-text" name="" title="Search" type="search">
+                    <button class="button button-primary">
+                        <svg class="icon-svg m-0"><use xlink:href="#magnify"></use></svg>
+                        <span class="sr-only">Søg</span>
+                    </button>
+                </div>
               </div>
                <div class="mt-5">
                 <label class="form-label">Navn</label>
