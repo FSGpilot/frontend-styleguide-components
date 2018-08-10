@@ -39,20 +39,6 @@ context:
             state: 'disabled'
 
       - button_group:
-        label: 'Ghost knapper'
-        items: 
-          - class: 'ghost'
-            state: 'default'
-          - class: 'ghost'
-            state: 'hover'
-          - class: 'ghost'
-            state: 'active'
-          - class: 'ghost'
-            state: 'focus'
-          - class: 'ghost'
-            state: 'disabled'
-
-      - button_group:
         label: 'Tertiær knapper'
         items: 
           - class: 'tertiary'
@@ -64,6 +50,20 @@ context:
           - class: 'tertiary'
             state: 'focus'
           - class: 'tertiary'
+            state: 'disabled'
+      
+      - button_group:
+        label: 'Ghost knapper'
+        items: 
+          - class: 'ghost'
+            state: 'default'
+          - class: 'ghost'
+            state: 'hover'
+          - class: 'ghost'
+            state: 'active'
+          - class: 'ghost'
+            state: 'focus'
+          - class: 'ghost'
             state: 'disabled'
       
       - button_group:

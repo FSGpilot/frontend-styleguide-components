@@ -6,18 +6,18 @@ context:
   textinput_example:
     items:
       - id: input-type-text
-        label: Text input label
+        label: Inputfelt med label
         name: input-type-text
-        hint: For example, VO123456D
+        hint: Fx 12345678
       - id: input-focus
-        label: Text input focused
+        label: Inputfelt i fokus
         class: focus
         name: input-focus
       - id: input-error
         name: input-error
-        label: Text input error
-        error: Helpful error message
-        hint: For example, VO123456D
+        label: Inputfelt med fejl
+        error: Hjælpsom fejlbesked
+        hint: Fx 12345678
       - id: input-success
-        label: Text input success
+        label: Inputfelt med succes
         success: true
