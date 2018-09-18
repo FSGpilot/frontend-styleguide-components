@@ -8,7 +8,7 @@ $color-primary-dark:          #033747;
 .header {
     .portal-header{
         .logo{
-            background-image: url('./../assets/img/logo_virk_indberet.svg');
+            background-image: url($image-path + '/logo_virk_indberet.svg');
             width: 200px;
             height: 58px;
         }    

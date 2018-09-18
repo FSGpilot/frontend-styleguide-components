@@ -9,7 +9,7 @@ $color-primary-dark:          #233614;
     .portal-header{
         background-color: #f1f1f1;
         .logo{
-            background-image: url('./../assets/img/logo-borgerdk.svg');
+            background-image: url($image-path + '/logo-borgerdk.svg');
             width: 144px;
             height: 36px;
         }    
