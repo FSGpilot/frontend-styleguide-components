@@ -41,7 +41,7 @@ $icons: (
 
 @each $icon in $icons {
     .icon-#{$icon} {
-        background-image: url($icons-folder-path + $icon + ".svg");
+        background-image: url($icons-folder-path + "/"+ $icon + ".svg");
     }
 }
 
