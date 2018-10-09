@@ -99,31 +99,16 @@
           ) }}
           <div class="content">
             <h1>Oplysninger om afsender</h1>
-             <div class="mt-0">
-              <label class="form-label">Virksomhed</label>
-              <p class="mt-0">Forsikringens Forsikringsfirma</p>
-            </div>
+            <label class="form-label">Virksomhed</label>
+            <p class="mt-0">Forsikringens Forsikringsfirma</p>
             <div class="mt-5">
                 <label class="form-label">Afsender er</label>
+                {{radiobutton("id-afsender1", "afsender", "Advokat for forsikringsselskab", false, false, "Advokat for forsikringsselskab", "radio-large", false, "true", "", "", "", "mt-3")}}
+                {{radiobutton("id-afsender2", "afsender", "Advokat for skadelidte", false, false, "Advokat for skadelidte", "radio-large", false, "true", "", "", "", "mt-3")}}
+                {{radiobutton("id-afsender3", "afsender", "Forsikringsselskab", false, false, "Forsikringsselskab", "radio-large", false, "true", "", "", "", "mt-3")}}
+                {{radiobutton("id-afsender4", "afsender", "Erstatningsnævnet", false, false, "Erstatningsnævnet", "radio-large", false, "true", "", "", "", "mt-3")}}
+                {{radiobutton("id-afsender5", "afsender", "Anden", false, false, "Anden", "radio-large", false, "true", "", "", "", "mt-3")}}
             </div>
-            <div class="mt-3">
-            {{radiobutton("id-afsender1", "afsender", "Advokat for forsikringsselskab", false, false, "Advokat for forsikringsselskab", "radio-large", false, "true")}}
-            </div>
-            <div class="mt-3">
-              {{radiobutton("id-afsender2", "afsender", "Advokat for skadelidte", false, false, "Advokat for skadelidte", "radio-large", false, "true")}}
-            </div>
-            <div class="mt-3">
-              {{radiobutton("id-afsender3", "afsender", "Forsikringsselskab", false, false, "Forsikringsselskab", "radio-large", false, "true")}}
-            </div>
-            <div class="mt-3">
-              {{radiobutton("id-afsender4", "afsender", "Erstatningsnævnet", false, false, "Erstatningsnævnet", "radio-large", false, "true")}}
-            </div>
-            <div class="mt-3">
-              {{radiobutton("id-afsender5", "afsender", "Anden", false, false, "Anden", "radio-large", false, "true")}}
-            </div>
-
-
-
             <a href="/frontend-styleguide/pages/page-templates/AES-erstatningssag/aes-2" class="button button-primary mt-7">Næste</a>
           </div>
       </div>
