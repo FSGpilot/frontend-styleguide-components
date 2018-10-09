@@ -94,7 +94,7 @@ a {
     &.disabled {
       box-shadow: none !important;
       cursor: not-allowed !important;
-      color: #858585 !important;
+      color: $color-gray-medium-light !important;
       box-shadow: none !important;
       outline-offset: inherit !important;
       &:focus{
