@@ -1,6 +1,6 @@
 {% macro select(name, id, label, class, optiontitle, options, disabled) %}
   <div class="form-group">
-    <label class="form-label" for="{{name}}">{{label}}</label>
+    {% if label != "" %}<label class="form-label" for="{{name}}">{{label}}</label>{% endif %}
     <select class="{{class}} form-select" name="{{name}}" id="{{id}}"  {% if disabled %}disabled="disabled"{% endif %}>
       <option value>{{optiontitle}}</option>
       {% for option in options %}

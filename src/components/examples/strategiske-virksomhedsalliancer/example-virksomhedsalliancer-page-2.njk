@@ -34,62 +34,53 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
-      <div class="col-12">
-          {{overflowmenu("Trin 2 af 4","overflow_steps", true, false, "menu-down" ,"
-              <ul class='sidenav-list'>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1'>
-                          1. Stamdata
-                          <span class='sidenav-icon'>
-                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
-                          </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2' class='active'>
-                          2. SMV-kriterier
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3'>
-                          3. Statsstøtte
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-4'>
-                          4. Tilskud til land
-                      </a>
-                  </li>
-              </ul>
-              "
-          ) }}
-          <div class="content">
-            <h1>SMV-kriterier</h1>
-                <p class="font-lead mt-0">Ved tildeling af støtte SMV'er defineres som SMV som værende en virksomhed</p>
-                <ul>
-                    <li class="font-lead mt-4 mb-4">Med mindre end 250 ansatte</li>
-                    <li class="font-lead mt-4 mb-4">Med en årlig omsætning, der ikke må overstige 375 mio. kr i det seneste regnskab</li>
-                </ul>
-                <p class="mt-6">Hvis ansøger er ejet af moderselskab(-er) med mere end 49% og/eller har et datterselskab(-er) med en ejerandel på mere end 49% skal antal ansatte og omsætning for hele koncernen medregnes, dvs. heri skal også medregnes, hvis moderselskabet er ejet af et andet moderselskab med mere end 49% osv.<br>Dette er uanset om moderselskaber og/eller datterselskaber er danske eller udenlandske.</p>
-                <a href="#" class="5">Se eksempel</a>
-                <div class="mt-6">
-                    {{textinput("id-employees", "Antal ansatte i seneste regnskabsår", "", "input-width-m", "", "Input til antal ansatte i seneste regnskabsår", "", false, false, "")}}
-                </div>
-                <div class="mt-6">
-                    {{textinput("id-sales", "Omsætning i DKK i seneste regnskabsår", "", "input-width-m", "", "Input til omsætning i DKK i seneste regnskabsår", "", false, false, "Angives i helt tal, fx. 11.650.334", "")}}
-                </div>
+<main class="container page-container">
 
-                <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3" class="button button-primary mt-7">Næste</a>
-                <div class="breadcrumb">
-                    <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1" class="button button-ghost">Tilbage</a>
-                </div>
+    {{overflowmenu("Trin 2 af 4","overflow_steps", true, false, "menu-down" ,"
+        <ul class='sidenav-list'>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1'>
+                    1. Stamdata
+                    <span class='sidenav-icon'>
+                        <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2' class='active'>
+                    2. SMV-kriterier
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3'>
+                    3. Statsstøtte
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-4'>
+                    4. Tilskud til land
+                </a>
+            </li>
+        </ul>
+        "
+    ) }}
 
-          </div>
-      </div>
-    </div>
-  </section>
+    <h1>SMV-kriterier</h1>
+    <p class="font-lead">Ved tildeling af støtte SMV'er defineres som SMV som værende en virksomhed</p>
+    <ul>
+        <li class="font-lead mt-4 mb-4">Med mindre end 250 ansatte</li>
+        <li class="font-lead mt-4 mb-4">Med en årlig omsætning, der ikke må overstige 375 mio. kr i det seneste regnskab</li>
+    </ul>
+    <p class="mt-6">Hvis ansøger er ejet af moderselskab(-er) med mere end 49% og/eller har et datterselskab(-er) med en ejerandel på mere end 49% skal antal ansatte og omsætning for hele koncernen medregnes, dvs. heri skal også medregnes, hvis moderselskabet er ejet af et andet moderselskab med mere end 49% osv.<br>Dette er uanset om moderselskaber og/eller datterselskaber er danske eller udenlandske.</p>
+    <a href="#" class="5">Se eksempel</a>
+    {{textinput("id-employees", "Antal ansatte i seneste regnskabsår", "", "input-width-m", "", "Input til antal ansatte i seneste regnskabsår", "", false, false, "")}}
+    {{textinput("id-sales", "Omsætning i DKK i seneste regnskabsår", "", "input-width-m", "", "Input til omsætning i DKK i seneste regnskabsår", "", false, false, "Angives i helt tal, fx. 11.650.334", "")}}
+
+    <nav class="page-navigation">
+      <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3" class="button button-primary">Næste</a>
+      <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1" class="button button-ghost">Tilbage</a>
+    </nav>
+</main>
 {% endblock %}
 
 {% block banner -%}

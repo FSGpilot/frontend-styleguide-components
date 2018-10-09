@@ -6,7 +6,10 @@ fieldset {
 }
 
 fieldset + fieldset{
-  margin-top: $spacing-x-large;
+  margin-top: map-get($spacers, 5);
+}
+.form-group + fieldset{
+  margin-top: map-get($spacers, 5);
 }
 
 input, select { 
@@ -75,13 +78,13 @@ textarea {
   width: 32rem;
   max-width: 100%;
 
-  &.input-tiny { /* stylelint-disable-line selector-no-qualifying-type */
+  &.input-tiny {
     @include media($medium-screen) {
       min-width: 6rem;
     }
   }
 
-  &.input-medium { /* stylelint-disable-line selector-no-qualifying-type */
+  &.input-medium {
     @include media($medium-screen) {
       min-width: 12rem;
     }

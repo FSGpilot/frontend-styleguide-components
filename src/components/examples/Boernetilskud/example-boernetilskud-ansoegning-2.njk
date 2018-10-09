@@ -112,47 +112,45 @@
                   </li>
                   <li>
                       <a href='#' >
-                          3. 
+                          3. Hvornår blev du eller bliver du enlig?
                       </a>
                   </li>
                   <li>
                       <a href='#'>
-                          4. 
+                          4. Hvornår blev du eller bliver du enlig?
                       </a>
                   </li>
                   <li>
                       <a href='#'>
-                          5. 
+                          5. Hvornår blev du eller bliver du enlig?
                       </a>
                   </li>
                    <li>
                       <a href='#'>
-                          6. 
+                          6. Hvornår blev du eller bliver du enlig?
                       </a>
                   </li>
               </ul>
               "
           ) }}
-    <section class="page-content content">
-    <h1 class="mt-0">{{title}}</h1>
-    {# {{ alert("alert alert-info alert--paragraph", "alert", "For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger", "<br>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med. <br><a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig</a>", "info" ) }} #}
-    <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
-        <div class="alert-body">
-        <p class="alert-heading">For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger</p>
-        <p>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med.</p>
-        <a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig<svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+    <section class="page-content">
+        <h1 class="mt-0">{{title}}</h1>
+        {# {{ alert("alert alert-info alert--paragraph", "alert", "For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger", "<br>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med. <br><a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig</a>", "info" ) }} #}
+        <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
+            <div class="alert-body">
+            <p class="alert-heading">For at du kan modtage børnetilskud til enlige, skal du være enlig forsørger</p>
+            <p>Du er enlig forsørger, når du ikke får økonomisk og praktisk hjælp fra en anden person over 18 år, som du kan blive gift med.</p>
+            <a class="icon-link" href='#'>Læs mere om, hvornår du er enlig forsøger på borger.dk/enlig<svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+            </div>
         </div>
-    </div>
-    <div class="mt-7">
-        {{datoinput("Jeg blev eller bliver enlig:", "", "Dato", "Måned", "År")}}
-    </div>
+        <div class="mt-7">
+            {{datoinput("Jeg blev eller bliver enlig:", "", "Dato", "Måned", "År")}}
+        </div>
     </section>
-    <footer class="page-footer">
-        <div class="button-column">
-            <a href="#" class="button button-primary">Næste</a>
-            <a href="/frontend-styleguide/pages/page-templates/boernetilskud/boernetilskud-1" class="button button-ghost">Tilbage</a>
-        </div>
-    </footer>
+    <nav class="page-navigation">
+        <a href="#" class="button button-primary">Næste</a>
+        <a href="/frontend-styleguide/pages/page-templates/boernetilskud/boernetilskud-1" class="button button-ghost">Tilbage</a>
+    </nav>
   </main>
 {% endblock %}
 

@@ -34,35 +34,30 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
+<main class="container page-container">
     {{ alert("alert alert-success alert--show-icon", "alert", "Success", "Vi har modtaget dine oplysninger og vil behandle ansøgningen hurtigst muligt", "success" ) }}
+
+    <h1 class="mt-5">Kvittering</h1>
+    <label class="form-label">Navn</label>
+    <p class="mt-0">Karen Jensen</p>
+    <div class="mt-5">
+      <label class="form-label">Adresse</label>
+      <p class="mt-0">Vængetstræde 77 <br>
+      0081 Købstad</p>
+    </div>
+    <div class="mt-5">
+      <label class="form-label">Alder</label>
+      <p class="mt-0">39</p>
+    </div>
+    <div class="mt-5">
+      <label class="form-label">Tidligere ansøgninger</label>
+      <p class="mt-0">Nej</p>
+    </div>
+  
+    <button href="#" class="button button-secondary mt-7">{{ icon_svg('download')}} Gem som pdf</button> <br>
+    <button href="#" class="button button-secondary mt-3">{{ icon_svg('printer')}} Print</button>
     
-    <div class="row">
-      <div class="col-12">
-          <div class="content">
-            
-            <h1 class="mt-5">Kvittering</h1>
-            
-            <label class="form-label">Navn</label>
-            <p class="mt-0">Karen Jensen</p>
-            <div class="mt-5">
-              <label class="form-label">Adresse</label>
-              <p class="mt-0">Vængetstræde 77 <br>
-              0081 Købstad</p>
-            </div>
-            <div class="mt-5">
-              <label class="form-label">Alder</label>
-              <p class="mt-0">39</p>
-            </div>
-            <div class="mt-5">
-              <label class="form-label">Tidligere ansøgninger</label>
-              <p class="mt-0">Nej</p>
-            </div>
-         
-            <button href="#" class="button button-secondary mt-7">{{ icon_svg('download')}} Gem som pdf</button> <br>
-            <button href="#" class="button button-secondary mt-3">{{ icon_svg('printer')}} Print</button>
-            
-  </section>
+</main>
 {% endblock %}
 
 {% block banner -%}

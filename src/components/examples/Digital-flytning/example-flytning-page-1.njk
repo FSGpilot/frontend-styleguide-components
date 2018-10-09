@@ -48,160 +48,152 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
-      <div class="col-12">
-          {{overflowmenu("Trin 1 af 5","overflow_steps", true, false, "menu-down" ,"
-              <ul class='sidenav-list'>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-1' class='active'>
-                          1. Oversigt
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2'>
-                          2. Personer
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-3'>
-                          3. Adresse
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4'>
-                          4. Særlig flytning
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-5'>
-                          5. Lægevalg
-                      </a>
-                  </li>
-              </ul>
-              "
-          ) }}
-          <div class="content">
-            <h1>Oversigt</h1>
-             <div class="mt-0">
-             <p class="font-lead">Digital Flytning er kommunernes digitale folkeregister, hvor du kan melde flytning og samtidig foretage valg af læge.</p>
-            </div>
-            <div class="mt-6">
-                <h2>Anmelder</h2>
-            </div>
-            <div class="mt-5">
-              <label class="form-label">Navn</label>
-              <p class="mt-0">Klaus Egegreen Hansen (090889-2210)</p>
-            </div>
-            <div class="mt-5">
-              <label class="form-label">Flytter fra</label>
-              <p class="mt-0">Odensegade 23, 4tv. 2100 København</p>
-            </div>
-            <div class="mt-5">
-              <label class="form-label">Du har følgende beskyttelse på din nuværende adresse:</label>
-              <ul class="mb-0">
-                <li>Markedsføringsbeskyttelse</li>
-                <li>Vejviserbeskyttelse</li>
-                <li>Navne- og adressebeskyttelse</li>
-              </ul>
-            </div>
-            <div class="mb-8 mt-4">
-              {{ alert("alert alert-warning alert--show-icon alert--paragraph", "alert", "Skal din nye adresse beskyttes fra første dag?", "Hvis du ønsker navne- og adressebeskyttelse i forbindelse med denne flytning, bør du anmode om navne- og adressebeskyttelse, før du anmelder flytning. Ellers risikerer du, at navne- og adressebeskyttelsen ikke er gældende fra første dag på din nye adresse.", "warning" ) }}
-            </div>
-            <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
-              <div class="alert-body">
-                <p class="alert-heading">Seneste flytninger</p>
-                <table class="table table--borderless table--responsive-headers table--compact mt-5">
-                  <thead>
-                    <tr>
-                      <th>Dato</th>
-                      <th>Fra adresse</th>
-                      <th>Til adresse</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>01-02-2014</td>
-                      <td>Smallegade 6,<br>2000 Frederiksberg</td>
-                      <td>Smallegade 12,<br>2000 Frederiksberg</td>
-                    </tr>
-                    <tr>
-                      <td>01-02-2014</td>
-                      <td>Smallegade 6,<br>2000 Frederiksberg</td>
-                      <td>Smallegade 12,<br>2000 Frederiksberg</td>
-                    </tr>
-                    <tr>
-                      <td>01-02-2014</td>
-                      <td>Smallegade 6,<br>2000 Frederiksberg</td>
-                      <td>Smallegade 12,<br>2000 Frederiksberg</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          
-            <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-primary mt-7">Næste</a>
+<main class="container page-container">
+  {{overflowmenu("Trin 1 af 5","overflow_steps", true, false, "menu-down" ,"
+      <ul class='sidenav-list'>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-1' class='active'>
+                  1. Oversigt
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2'>
+                  2. Personer
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-3'>
+                  3. Adresse
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4'>
+                  4. Særlig flytning
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-5'>
+                  5. Lægevalg
+              </a>
+          </li>
+      </ul>
+      "
+  ) }}
 
-            <div class="mt-9">
-              <h2 class="h5">Relaterede selvbetjeningsløsninger</h2>
-            </div>
-            <div class="row">
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <div class="card mt-6">
-                    <div class="card-header">
-                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Adressebeskyttelse</p>
-                      <p class="sub-header">Her kan du kan oprette, rette eller slette dine adressebeskyttelser.</p>
-                    </div>
-                    <div class="card-action">
-                      <div class="action-links">
-                        <ul class="unstyled-list">
-                          <li>
-                            <a href="#" class="icon-link">Adressebeskyttelse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <div class="card mt-6">
-                    <div class="card-header">
-                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Udrejse</p>
-                      <p class="sub-header">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
-                    </div>
-                    <div class="card-action">
-                      <div class="action-links">
-                        <ul class="unstyled-list">
-                          <li>
-                            <a href="#" class="icon-link">Anmeld udrejse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <div class="card mt-6">
-                    <div class="card-header">
-                      <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Fuldmagt</p>
-                      <p class="sub-header">Afgiv en eller flere fulmagt til at anmelde flytning.</p>
-                    </div>
-                    <div class="card-action">
-                      <div class="action-links">
-                        <ul class="unstyled-list">
-                          <li>
-                            <a href="#" class="icon-link">Angiv fuldmagt <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                </div>
-              </div>
+  <h1>Oversigt</h1>
+  <p class="font-lead">Digital Flytning er kommunernes digitale folkeregister, hvor du kan melde flytning og samtidig foretage valg af læge.</p>
+  <h2>Anmelder</h2>
+  <div class="mt-5">
+    <label class="form-label">Navn</label>
+    <p class="mt-0">Klaus Egegreen Hansen (090889-2210)</p>
+  </div>
+  <div class="mt-5">
+    <label class="form-label">Flytter fra</label>
+    <p class="mt-0">Odensegade 23, 4tv. 2100 København</p>
+  </div>
+  <div class="mt-5">
+    <label class="form-label">Du har følgende beskyttelse på din nuværende adresse:</label>
+    <ul class="mb-0">
+      <li>Markedsføringsbeskyttelse</li>
+      <li>Vejviserbeskyttelse</li>
+      <li>Navne- og adressebeskyttelse</li>
+    </ul>
+  </div>
+  <div class="mb-8 mt-4">
+    {{ alert("alert alert-warning alert--show-icon alert--paragraph", "alert", "Skal din nye adresse beskyttes fra første dag?", "Hvis du ønsker navne- og adressebeskyttelse i forbindelse med denne flytning, bør du anmode om navne- og adressebeskyttelse, før du anmelder flytning. Ellers risikerer du, at navne- og adressebeskyttelsen ikke er gældende fra første dag på din nye adresse.", "warning" ) }}
+  </div>
+  <div class="alert alert-info alert--paragraph" role="alert" aria-label ="Adresse info">
+    <div class="alert-body">
+      <p class="alert-heading">Seneste flytninger</p>
+      <table class="table table--borderless table--responsive-headers table--compact mt-5">
+        <thead>
+          <tr>
+            <th>Dato</th>
+            <th>Fra adresse</th>
+            <th>Til adresse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01-02-2014</td>
+            <td>Smallegade 6,<br>2000 Frederiksberg</td>
+            <td>Smallegade 12,<br>2000 Frederiksberg</td>
+          </tr>
+          <tr>
+            <td>01-02-2014</td>
+            <td>Smallegade 6,<br>2000 Frederiksberg</td>
+            <td>Smallegade 12,<br>2000 Frederiksberg</td>
+          </tr>
+          <tr>
+            <td>01-02-2014</td>
+            <td>Smallegade 6,<br>2000 Frederiksberg</td>
+            <td>Smallegade 12,<br>2000 Frederiksberg</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <nav class="page-navigation">
+    <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-primary">Næste</a>
+  </nav>
+  
+  <div class="mt-9">
+    <h2 class="h5">Relaterede selvbetjeningsløsninger</h2>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card mt-6">
+          <div class="card-header">
+            <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Adressebeskyttelse</p>
+            <p class="sub-header">Her kan du kan oprette, rette eller slette dine adressebeskyttelser.</p>
+          </div>
+          <div class="card-action">
+            <div class="action-links">
+              <ul class="unstyled-list">
+                <li>
+                  <a href="#" class="icon-link">Adressebeskyttelse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                </li>
+              </ul>
             </div>
           </div>
       </div>
     </div>
-  </section>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card mt-6">
+          <div class="card-header">
+            <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Udrejse</p>
+            <p class="sub-header">Hvis du flytter til udlandet, skal du benytte nedenstående link.</p>
+          </div>
+          <div class="card-action">
+            <div class="action-links">
+              <ul class="unstyled-list">
+                <li>
+                  <a href="#" class="icon-link">Anmeld udrejse <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card mt-6">
+          <div class="card-header">
+            <p class="h6 header-title" title="Card header" aria-label="Card header adressebeskyttelse">Fuldmagt</p>
+            <p class="sub-header">Afgiv en eller flere fulmagt til at anmelde flytning.</p>
+          </div>
+          <div class="card-action">
+            <div class="action-links">
+              <ul class="unstyled-list">
+                <li>
+                  <a href="#" class="icon-link">Angiv fuldmagt <svg class="icon-svg "><use xlink:href="#open-in-new"></use></svg></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</main>
 {% endblock %}
 
 {% block banner -%}

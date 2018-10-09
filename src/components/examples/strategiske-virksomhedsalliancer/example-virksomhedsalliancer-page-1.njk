@@ -34,73 +34,50 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
-      <div class="col-12">
-          {{overflowmenu("Trin 1 af 4","overflow_steps", true, false, "menu-down" ,"
-              <ul class='sidenav-list'>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1' class='active'>
-                          1. Stamdata
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2'>
-                          2. SMV-kriterier
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3'>
-                          3. Statsstøtte
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-4'>
-                          4. Tilskud til land
-                      </a>
-                  </li>
-              </ul>
-              "
-          ) }}
-          <div class="content">
-            <h1>Stamdata</h1>
-              <div class="mt-0">
-                  {{textinput("id-cvr-number", "CVR nummer", "", "input-char-8", "", "Input til cvr nummer", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companyname", "Navn på virksomhed", "", "input-width-m", "", "Input til navn på virksomhed", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companyaddress", "Adresse", "", "input-width-m", "", "Input til virksomhedsadresse", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-zipcode", "Postnr.", "", "input-char-4", "", "Input til postnummer", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companycity", "By", "", "input-width-m", "", "Input til by", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companyphone", "Telefonnr.", "", "input-char-8", "", "Input til telefonnummer", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companywebsite", "Website", "(frivilligt)", "input-width-m", "", "Input til website", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-company-contactperson", "Kontaktperson.", "", "input-width-m", "", "Input til kontaktperson", "", false, "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-companyemail", "E-mail", "", "input-width-m", "", "Input til email", "", false, false, "Kvittering bliver sendt til denne e-mailadresse", "")}}
-              </div>
-              <div class="mt-6">
-                  {{textinput("id-launchyear", "Etableringsår", "", "input-char-4", "", "Input til etableringsår", "", false, "")}}
-              </div>
+<main class="container page-container">
 
-              <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2" class="button button-primary mt-7">Næste</a>
+    {{overflowmenu("Trin 1 af 4","overflow_steps", true, false, "menu-down" ,"
+        <ul class='sidenav-list'>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-1' class='active'>
+                    1. Stamdata
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2'>
+                    2. SMV-kriterier
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-3'>
+                    3. Statsstøtte
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-4'>
+                    4. Tilskud til land
+                </a>
+            </li>
+        </ul>
+        "
+    ) }}
 
-          </div>
-      </div>
-    </div>
-  </section>
+    <h1>Stamdata</h1>
+    {{textinput("id-cvr-number", "CVR nummer", "", "input-char-8", "", "Input til cvr nummer", "", false, "")}}
+    {{textinput("id-companyname", "Navn på virksomhed", "", "input-width-m", "", "Input til navn på virksomhed", "", false, "")}}
+    {{textinput("id-companyaddress", "Adresse", "", "input-width-m", "", "Input til virksomhedsadresse", "", false, "")}}
+    {{textinput("id-zipcode", "Postnr.", "", "input-char-4", "", "Input til postnummer", "", false, "")}}
+    {{textinput("id-companycity", "By", "", "input-width-m", "", "Input til by", "", false, "")}}
+    {{textinput("id-companyphone", "Telefonnr.", "", "input-char-8", "", "Input til telefonnummer", "", false, "")}}
+    {{textinput("id-companywebsite", "Website", "(frivilligt)", "input-width-m", "", "Input til website", "", false, "")}}
+    {{textinput("id-company-contactperson", "Kontaktperson.", "", "input-width-m", "", "Input til kontaktperson", "", false, "")}}
+    {{textinput("id-companyemail", "E-mail", "", "input-width-m", "", "Input til email", "", false, false, "Kvittering bliver sendt til denne e-mailadresse", "")}}
+    {{textinput("id-launchyear", "Etableringsår", "", "input-char-4", "", "Input til etableringsår", "", false, "")}}
+
+    <nav class="page-navigation">
+      <a href="/frontend-styleguide/pages/page-templates/strategiske-virksomhedsalliancer/virksomhedsalliancer-2" class="button button-primary">Næste</a>
+    </nav>    
+</main>
 {% endblock %}
 
 {% block banner -%}

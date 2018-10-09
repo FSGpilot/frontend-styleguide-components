@@ -34,52 +34,42 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
+  <main class="container page-container">
     {{ alert("alert alert-success alert--show-icon", "alert", "Sagen er sendt til AES", "", "success" ) }}
     {{ alert("alert alert-warning alert--show-icon", "alert", "Husk betaling", "Gebyret skal indsættes på vores konto i banken", "warning" ) }}
     <div class="row">
       <div class="col-12">
-          <div class="content">
-            <h1 class="mb-0 mt-5">Kvittering</h1>
-            <p class="form-hint mt-2">Referencenummer: 28346863</p>
-            <div class="mt-0 mb-4">
-              <p>Hvis du ønsker dokumentation på fremsendelse kan du downloade anmodningen.</p>
-            </div>
-            <button class="button button-secondary">{{ icon_svg('download')}} Download kvittering som pdf</button>
-            <h2 class="h5 mt-7 mb-5">Hvad sker der nu</h2>
-            <p>Sagens parter vil indenfor 7 hverdage modtage en kvittering med journalnummer og oplysninger om, hvornår AES forventer at have en udtalelse klar.</p>
-            <h2 class="h5 mt-7 mb-5">Husk betaling</h2>
-            <p class="mt-0 mb-0">Gebyret for udtalelsen skal sættes ind på vores konto i Danske Bank:</p>
-            <div class="row">
-              <div class="col-12 col-sm-3 col-md-3 col-lg-3">
-                  <table class="table table--borderless table--compact">
-                        <tbody>
-                            <tr>
-                                <td class="weight-semibold">Reg.nr.:</td>
-                                <td>0216</td>
-                            </tr>
-                            <tr>
-                                <td class="weight-semibold">Kontonr.:</td>
-                                <td>4069068936</td>
-                            </tr>
-                        </tbody>
-                  </table>
-                </div>
-            </div>
-            <div class="mt-4">
-              <p class="mt-0 mb-0">Gebyr: 6.220 kr.</p>
-              <p class="mt-0 mb-0">Ved overførslen skal I oplyse skadelidtes CPR-nr.: 1702671913</p>
-            </div>
-            <h2 class="h5">Ved spørgsmål eller supplerende oplysninger</h2>
-            <div class="mt-4">
-              <p class="mt-0 mb-0">Kontakt AES på aes@aes.dk eller 72 00 60 00</p>
-              <p class="mt-0 mb-0">Referencenummer: 28346863</p>
-            </div>
-            <br>
-            <button class="button button-secondary mt-5">Opret ny sag</button>
+        <h1 class="mb-0 mt-5">Kvittering</h1>
+        <p class="form-hint mt-2">Referencenummer: 28346863</p>
+        <p class="mb-4">Hvis du ønsker dokumentation på fremsendelse kan du downloade anmodningen.</p>
+        <button class="button button-secondary">{{ icon_svg('download')}} Download kvittering som pdf</button>
+        <h2 class="h4 mt-7">Hvad sker der nu</h2>
+        <p>Sagens parter vil indenfor 7 hverdage modtage en kvittering med journalnummer og oplysninger om, hvornår AES forventer at have en udtalelse klar.</p>
+        <h2 class="h4 mt-7">Husk betaling</h2>
+        <p class="my-0">Gebyret for udtalelsen skal sættes ind på vores konto i Danske Bank:</p>
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-3 col-lg-3">
+            <table class="table table--borderless table--compact">
+              <tbody>
+                <tr>
+                  <td class="weight-semibold">Reg.nr.:</td>
+                  <td>0216</td>
+                </tr>
+                <tr>
+                  <td class="weight-semibold">Kontonr.:</td>
+                  <td>4069068936</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Gebyr: 6.220 kr. <br> Ved overførslen skal I oplyse skadelidtes CPR-nr.: 1702671913</p>
+        <h2 class="h4">Ved spørgsmål eller supplerende oplysninger</h2>
+        <p>Kontakt AES på aes@aes.dk eller 72 00 60 00 <br> Referencenummer: 28346863</p>
+        <button class="button button-secondary mt-7">Opret ny sag</button>
       </div>
     </div>
-  </section>
+  </main>
 {% endblock %}
 
 {% block banner -%}

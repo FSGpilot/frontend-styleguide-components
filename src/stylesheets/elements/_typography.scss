@@ -216,7 +216,7 @@ p, .body-text, .body-copy-text{
   font-size: $lead-font-size;
   font-weight: $font-weight-normal;
   line-height: $lead-line-height;
-  max-width: $lead-max-width;
+  max-width: $text-max-width;
   color: $color-text;
   @include media-breakpoint-down(sm) {
     @include body-copy-text;
@@ -364,24 +364,34 @@ dfn {
   font-style: normal;
 }
 
-.content {
-  p,
-  ul:not(.accordion):not(.accordion-bordered),
-  ol:not(.accordion):not(.accordion-bordered) {
-    max-width: $text-max-width;
-  }
-  .font-lead{
-    max-width: $lead-max-width;
-  }
-
-  a:not(.button){
-    max-width: $lead-max-width;
-  }
-}
-
-.content-list {
+//max-width of 66ch for text
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
   max-width: $text-max-width;
 }
+p,
+ul:not(.accordion):not(.accordion-bordered):not(.nav-primary),
+ol:not(.accordion):not(.accordion-bordered){
+  max-width: $text-max-width;
+}
+.font-lead{
+  max-width: $text-max-width;
+}
+
+.form-label, .form-hint, .input-error-message{
+  max-width: $text-max-width;
+}
+[type=checkbox]+label, [type=radio]+label{
+  max-width: $text-max-width;
+}
+a:not(.button){
+  max-width: $text-max-width;
+}
+
 
 .displayheading {
   &-1 {

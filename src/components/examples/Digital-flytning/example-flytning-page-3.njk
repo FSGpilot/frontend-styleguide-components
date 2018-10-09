@@ -48,72 +48,66 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
-      <div class="col-12">
-          {{overflowmenu("Trin 3 af 5","overflow_steps", true, false, "menu-down" ,"
-              <ul class='sidenav-list'>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-1'>
-                          1. Oversigt
-                          <span class='sidenav-icon'>
-                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
-                          </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2'>
-                          2. Personer
-                          <span class='sidenav-icon'>
-                              <svg class='icon-svg'><use xlink:href='#check'></use></svg>
-                          </span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-3' class='active'>
-                          3. Adresse
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4'>
-                          4. Særlig flytning
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-5'>
-                          5. Lægevalg
-                      </a>
-                  </li>
-              </ul>
-              "
-          ) }}
-          <div class="content">
-            <h1>Adresse</h1>
-            {{ alert("alert alert-warning", "alert", "Ikke alle adresser er registreret i dette register", "Kan du ikke finde din tilflytningsadresse, bedes du kontakte din tilflytningskommune.", "warning" ) }}
-             <div class="mt-6">
-              {{datoinput("Dato for flytning", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
-            </div>
-            <div class="mt-6">
-              {{select("Gade / vejnavn", "select-dokumentationdtype", "Gade / vejnavn", "input-width-m", "- Vælg -", "", false)}}
-            </div>
-            <div class="mt-6">
-              {{select("Husnr. / bogstav", "select-dokumentationdtype", "Husnr. / bogstav", "input-width-xxs", "", "", true)}}
-            </div>
-            <div class="mt-6">
-              {{select("Etage, side/dør", "select-dokumentationdtype", "Etage, side/dør", "input-width-xxs", "", "", true)}}
-            </div>
-            <div class="mt-6">
-              {{textinput("id-co", "C/O navn", "(frivilligt)", "input-width-m", false, "Input til C/O navn", "", false, false, "C/O navn skal kun udfyldes, hvis du skal bo til leje hos de nuværende beboere.", "")}}
-            </div>
-            
-            <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4" class="button button-primary mt-7">Næste</a>
-            <div class="breadcrumb">
-              <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-ghost">Tilbage</a>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
+<main class="container page-container">
+  {{overflowmenu("Trin 3 af 5","overflow_steps", true, false, "menu-down" ,"
+      <ul class='sidenav-list'>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-1'>
+                  1. Oversigt
+                  <span class='sidenav-icon'>
+                      <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                  </span>
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2'>
+                  2. Personer
+                  <span class='sidenav-icon'>
+                      <svg class='icon-svg'><use xlink:href='#check'></use></svg>
+                  </span>
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-3' class='active'>
+                  3. Adresse
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4'>
+                  4. Særlig flytning
+              </a>
+          </li>
+          <li>
+              <a href='/frontend-styleguide/pages/page-templates/digital-flytning/flytning-5'>
+                  5. Lægevalg
+              </a>
+          </li>
+      </ul>
+      "
+  ) }}
+  <h1>Adresse</h1>
+  {{ alert("alert alert-warning", "alert", "Ikke alle adresser er registreret i dette register", "Kan du ikke finde din tilflytningsadresse, bedes du kontakte din tilflytningskommune.", "warning" ) }}
+  <div class="mt-6">
+    {{datoinput("Dato for flytning", "Fx. 28 04 1996", "Dato", "Måned", "År")}}
+  </div>
+  <div class="mt-6">
+    {{select("Gade / vejnavn", "select-dokumentationdtype", "Gade / vejnavn", "input-width-m", "- Vælg -", "", false)}}
+  </div>
+  <div class="mt-6">
+    {{select("Husnr. / bogstav", "select-dokumentationdtype", "Husnr. / bogstav", "input-width-xxs", "", "", true)}}
+  </div>
+  <div class="mt-6">
+    {{select("Etage, side/dør", "select-dokumentationdtype", "Etage, side/dør", "input-width-xxs", "", "", true)}}
+  </div>
+  <div class="mt-6">
+    {{textinput("id-co", "C/O navn", "(frivilligt)", "input-width-m", false, "Input til C/O navn", "", false, false, "C/O navn skal kun udfyldes, hvis du skal bo til leje hos de nuværende beboere.", "")}}
+  </div>
+  
+  <nav class="page-navigation">
+    <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-4" class="button button-primary">Næste</a>
+    <a href="/frontend-styleguide/pages/page-templates/digital-flytning/flytning-2" class="button button-ghost">Tilbage</a>
+  </nav>
+</main>
 {% endblock %}
 
 {% block banner -%}

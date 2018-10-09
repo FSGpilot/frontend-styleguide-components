@@ -33,44 +33,42 @@
 {% endblock %}
 
 {% block body %}
-  <section class="container page-container">
-    <div class="row">
-      <div class="col-12">
-          {{overflowmenu("Trin 1 af 3","overflow_steps", true, false, "menu-down" ,"
-              <ul class='sidenav-list'>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-1' class='active'>
-                          1. Inden du går igang
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-2'>
-                          2. Oplysninger om dig
-                      </a>
-                  </li>
-                  <li>
-                      <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-3' >
-                          3. Bekræft oplysninger
-                      </a>
-                  </li>
-              </ul>
-              "
-          ) }}
-          <div class="content">
-            <h1>Inden du går igang</h1>
-            <p class="font-lead">Inden du går igang, skal du være opmærksom på:</p>
-            <ul>
-              <li class="mt-6">At alle oplysninger kan ændres, efter at du har indtastet dem. Det gælder dog ikke, når løsningen er sendt.</li>
-              <li class="mt-6">At oplysningerne ikke bliver brugt i andre sammenhænge, med mindre du får andet af vide.</li>
-              <li class="mt-6">At du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området, Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, med mindre andet er anført.</li>
-            </ul>
-            <h2 class="mb-0">Hvis du vil klage</h2>
-            <p class="mb-0 mt-4">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
-            <a href="/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-2" class="button button-primary mt-7">Næste</a>
-          </div>
-      </div>
-    </div>
-  </section>
+<main class="container page-container">
+    {{overflowmenu("Trin 1 af 3","overflow_steps", true, false, "menu-down" ,"
+        <ul class='sidenav-list'>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-1' class='active'>
+                    1. Inden du går igang
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-2'>
+                    2. Oplysninger om dig
+                </a>
+            </li>
+            <li>
+                <a href='/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-3' >
+                    3. Bekræft oplysninger
+                </a>
+            </li>
+        </ul>
+        "
+    ) }}
+    
+    <h1>Inden du går igang</h1>
+    <p class="font-lead">Inden du går igang, skal du være opmærksom på:</p>
+    <ul>
+      <li class="mt-6">At alle oplysninger kan ændres, efter at du har indtastet dem. Det gælder dog ikke, når løsningen er sendt.</li>
+      <li class="mt-6">At oplysningerne ikke bliver brugt i andre sammenhænge, med mindre du får andet af vide.</li>
+      <li class="mt-6">At du kan forvente en afgørelse i løbet af 14 dage. Ansøgningen er underlagt lov om indsigt på området, Vær opmærksom på, at nedenstående oplysninger ikke benyttes i andre sammenhænge, med mindre andet er anført.</li>
+    </ul>
+    <h2 class="mb-0">Hvis du vil klage</h2>
+    <p class="mb-0 mt-4">Klager skal være modtaget senest to måneder efter afgørelsen af din ansøgning.</p>
+    
+    <nav class="page-navigation">
+      <a href="/frontend-styleguide/pages/page-templates/aktindsigt/aktindsigt-2" class="button button-primary">Næste</a>
+    </nav>
+</main>
 {% endblock %}
 
 {% block banner -%}
