@@ -5,16 +5,51 @@ preview: '@dkwds-framed'
 context:
   icons_example:
     items:
+      - icon: add
       - icon: alert-outline
       - icon: angle-arrow-down
       - icon: angle-arrow-up
+      - icon: arrow-left
+      - icon: arrow-right
+      - icon: book-open
       - icon: calendar
+      - icon: cash-multiple
       - icon: check
       - icon: check-circle-outline
+      - icon: chevron-left
+      - icon: chevron-right
+      - icon: close
+      - icon: close-circle
+      - icon: close-circle-outline
       - icon: content-save
       - icon: delete
+      - icon: delete-outline
+      - icon: dots-vertical
+      - icon: download
+      - icon: error
+      - icon: file
+      - icon: file-document-box
+      - icon: folder-multiple
+      - icon: help
       - icon: help-circle-outline
       - icon: info
+      - icon: language
       - icon: magnify
+      - icon: menu-down
+      - icon: menu-left
+      - icon: menu-right
+      - icon: menu-up
+      - icon: message
+      - icon: minus
+      - icon: open-in-new
       - icon: pencil
+      - icon: plus
+      - icon: printer
       - icon: refresh
+      - icon: save
+      - icon: settings
+      - icon: sort-acending
+      - icon: sort-descending
+      - icon: sort-none
+      - icon: success
+      - icon: warning
