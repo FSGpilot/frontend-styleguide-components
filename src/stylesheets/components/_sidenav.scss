@@ -3,7 +3,6 @@
   li {
 
     a {
-      
 
       ul {
         width:100%
@@ -21,17 +20,12 @@
         height: 22px;
         line-height: 23px;
         text-align: center;
-        float: right;
 
         i {
           color: #fff;
         }
       }
       .sidenav-information {
-        margin-top:0;
-        margin-bottom:0;
-        @include body-copy-text;
-        display: block;
         color: $color-gray-medium-dark;
       }
 
@@ -73,11 +67,6 @@
         }
       }
       .sidenav-information {
-        margin-right: map-get($spacers, 2);
-        margin-top:0;
-        margin-bottom:0;
-        @include body-copy-text;
-        display: block;
         color: $color-gray-medium-dark;
       }
     }

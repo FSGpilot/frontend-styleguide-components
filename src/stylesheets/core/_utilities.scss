@@ -102,7 +102,7 @@
   a {
     border: none;
     color: $sidenav-link-color;
-    display: block;
+    display: flex;
     line-height: $base-line-height;
     padding: $spacer;
     padding-top:$input-top-bottom-padding;

@@ -45,14 +45,16 @@
     {% for trin in trinliste %}
       <li{% if trin.disabled %} class="disabled"{% endif %}>
         <a href="{{trin.href}}" {% if trin.active %} class="active" {% endif %}>
-            {{loop.index}}. {{trin.text}}
+            <div class="d-inline-block">
+                {{loop.index}}. {{trin.text}}
+                {% if trin.information %}
+                    <p class="sidenav-information">{{trin.information}}</p>
+                {% endif %}
+            </div>
             {% if trin.icon %}
                 <span class="sidenav-icon{%if trin.iconclass %} {{ trin.iconclass }}{% endif %}">
                     {{ icon_svg(trin.icon) }}
                 </span>
-            {% endif %} 
-            {% if trin.information %}
-                <p class="sidenav-information">{{trin.information}}</p>
             {% endif %}
         </a>
       </li>
@@ -63,22 +65,22 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
-            <p class="h6 mt-6">Klikbar trinindikator</p>
+            <p class="h5 mt-6">Klikbar trinindikator</p>
             {{ tringuide(tringuiden.trinlisten) }}
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
-            <p class="h6 mt-6">Låst trinindikator</p>
+            <p class="h5 mt-6">Låst trinindikator</p>
             {{ tringuide_locked(tringuiden.trinlisten) }}
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
-            <p class="h6 mt-6">Trinindikator med information</p>
+            <p class="h5 mt-6">Trinindikator med information</p>
             {{ tringuide_information(tringuiden.trinlisten) }}
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
 
-            <p class="h6 mt-6">Trinindikator i overflow-menu</p>
+            <p class="h5 mt-6">Trinindikator i overflow-menu</p>
             {{overflowmenu("Trin 3 af 5","overflow5", true, false, "menu-down" ,"
                 <ul class='sidenav-list'>
                     <li>
@@ -117,7 +119,7 @@
             ) }}
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 sidebar-col">
-            <p class="h6 mt-6 mb-3">Trinindikator - responsivt i overflow-menu</p>
+            <p class="h5 mt-6 mb-3">Trinindikator - responsivt i overflow-menu</p>
             <p class="form-hint mt-0">Du skal gøre browservinduet mindre for at se ændringen</p>
             <div class="overflow-menu  overflow-menu--open-right overflow-menu--md-no-responsive">
                 <button class="button-overflow-menu js-dropdown " data-js-target="#overflow4" aria-haspopup="true" aria-expanded="false">
