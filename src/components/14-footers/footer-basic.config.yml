@@ -10,7 +10,7 @@ context:
           - list:
             inline_list: true
             listitems:
-              - content: '<span class="h6 weight-semibold">Undervisningsministeriet</span>'
+              - content: '<span class="h5 weight-semibold">Undervisningsministeriet</span>'
               - content: '<p>Styrelsen for IT og læring</p>'
       - col:
         col_size_desktop: 6

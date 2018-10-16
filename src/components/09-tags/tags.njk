@@ -22,7 +22,7 @@
 <div class="container">
   {%- for tags in tag_example.items -%}
     {%- if tags.label %}
-      <p class="h6">{{ tags.label }}</p>
+      <p class="h5">{{ tags.label }}</p>
     {% endif -%}
     {{ tag(tags.class, tags.state) }}
   {% endfor -%}

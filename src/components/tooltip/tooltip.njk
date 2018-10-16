@@ -2,12 +2,12 @@
 {% from "icons/icons--svg.njk" import icon_svg as icon_svg %}
 
 <div class="container">
-  <p class="h6">Tooltip (kommer frem ved mouse-over):</p>
+  <p class="h5">Tooltip (kommer frem ved mouse-over):</p>
   <button class="button button-primary js-tooltip" role="tooltip" title="Dette er et tooltip" aria-label="Dette er et tooltip">Knap med tooltip</button>
-  <p class="h6">Popover (kræver tryk)</p>
+  <p class="h5">Popover (kræver tryk)</p>
   <a class="popover js-tooltip" data-tippy-trigger="click" role="tooltip" title="Dette er en hjælpetekst i en popover" aria-label="Dette er en hjælpetekst i en popover">{{ icon_svg('help-circle-outline')}}</a>
 
-  <p class="h6">Eksempel på konfiguration - placering:</p>
+  <p class="h5">Eksempel på konfiguration - placering:</p>
   <button class="button button-primary js-tooltip" data-tippy-placement="top" title="Top tooltip">Top</button>
   <button class="button button-primary js-tooltip" data-tippy-placement="bottom" title="Bund tooltip">Bund</button>
   <button class="button button-primary js-tooltip" data-tippy-placement="left" title="Venstre tooltip">Venstre</button>

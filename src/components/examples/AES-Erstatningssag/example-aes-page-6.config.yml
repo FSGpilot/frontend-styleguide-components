@@ -40,7 +40,7 @@ context:
           - list:
             inline_list: false
             listitems:
-              - content: '<span class="h6 weight-semibold">Ansvarlig myndighed</span>'
+              - content: '<span class="h5 weight-semibold">Ansvarlig myndighed</span>'
               - content: '<p>Styrelsen for Eksempel</p>'
       - col:
         col_size_desktop: 6

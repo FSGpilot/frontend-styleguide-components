@@ -9,7 +9,7 @@
 <div class="container">
   {%- for badges in badge_example.items -%}
     {%- if badges.label %}
-      <p class="h6">{{ badges.label }}</p>
+      <p class="h5">{{ badges.label }}</p>
     {% endif -%}
     {{ badge(badges.class, badges.state) }}
   {% endfor -%}

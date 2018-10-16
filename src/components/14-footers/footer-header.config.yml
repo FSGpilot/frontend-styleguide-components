@@ -10,7 +10,7 @@ context:
           - list:
             inline_list: false
             listitems:
-              - content: '<p class="h6 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Ansvarlig myndighed</p>'
+              - content: '<p class="h5 weight-semibold" title="Ansvarlig myndighed" aria-label="Ansvarlig myndighed">Ansvarlig myndighed</p>'
               - content: '<p>Undervisningsministeriet</p>'
               - content: '<p>Styrelsen for IT og læring</p>'
       - col:
@@ -20,6 +20,6 @@ context:
           - list:
             inline_list: false
             listitems:
-              - content: <p class="h6 weight-semibold" title="Kontakt" aria-label="Kontakt">Kontakt</p>
+              - content: <p class="h5 weight-semibold" title="Kontakt" aria-label="Kontakt">Kontakt</p>
               - content: <a class="function-link" href="mailto:support@stil.dk">support@stil.dk</a>
               - content: <a class="function-link" href="tel:004533925200">(+45) 33 92 52 00</a>
