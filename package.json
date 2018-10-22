@@ -1,7 +1,7 @@
 {
   "name": "dkwds",
   "version": "2.1.2",
-  "description": "Open source UI components and visual style guide for UFrontend Styleguide",
+  "description": "Frontend Styleguiden er den fælles guide til selvbetjeningsløsninger, der skal på Borger.dk og Virk.",
   "engines": {
     "node": ">= 4"
   },
@@ -12,31 +12,20 @@
     "fb": "fractal build",
     "build:css": "gulp sass",
     "build:js": "gulp javascript",
-    "cover": "istanbul cover --config config/istanbul.yml gulp cover",
-    "cracks": "cracks --paths package.json,spec",
-    "federalist": "npm install --dev && gulp build && fractal build",
-    "mocha": "mocha --opts spec/mocha.opts",
     "prepublish": "gulp build",
     "release": "gulp release",
-    "spec": "npm run mocha -- 'spec/**/*.spec.js'",
     "start": "fractal start --sync",
-    "test": "gulp eslint typecheck stylelint test",
     "version": "npm run prepublish",
     "watch": "gulp watch"
   },
   "fractal": {
     "main": "fractalfile.js"
   },
-  "author": "18F",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Erhvervsstyrelsen og Digitaliseringsstyrelsen",
   "dependencies": {
     "@types/node": "^8.5.5",
     "array-filter": "^1.0.0",
     "array-foreach": "^1.0.2",
-    "bourbon": "4.2.7",
-    "bourbon-neat": "https://github.com/thoughtbot/neat/archive/neat-1.8.0-node-sass.tar.gz",
-    "browserify": "^13.0.0",
-    "choices.js": "^3.0.4",
     "classlist-polyfill": "^1.0.3",
     "core-js": "^2.5.7",
     "datatables.net-dt": "^1.10.16",
