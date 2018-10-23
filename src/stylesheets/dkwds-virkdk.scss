@@ -1,6 +1,6 @@
 // virkdk theme
 
-@import 'dkwds-lib';
+@import './lib/normalize';
 @import './core/functions';
 @import './core/variables';
 @import './themes/virkdk';  //import variable-overrides specific to this theme 

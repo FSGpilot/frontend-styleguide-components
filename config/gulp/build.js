@@ -25,8 +25,6 @@ gulp.task('docs', function (done) {
 
   var stream = gulp.src([
     'README.md',
-    'LICENSE.md',
-    'CONTRIBUTING.md'
     ])
     .pipe(gulp.dest('dist'));
 

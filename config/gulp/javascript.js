@@ -69,10 +69,6 @@ gulp.task('typecheck', function () {
 });
 
 gulp.task('eslint', function (done) {
-  if (!cFlags.test) {
-    dutil.logMessage('eslint', 'Skipping linting of JavaScript files.');
-    return done();
-  }
 
   return gulp.src([
       'src/js/**/*.js',

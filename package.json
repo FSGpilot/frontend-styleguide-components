@@ -37,12 +37,9 @@
     "moment": "^2.22.1",
     "object-assign": "^4.1.1",
     "receptor": "^1.0.0",
-    "resolve-id-refs": "^0.1.0",
-    "typescript": "^2.4.1",
-    "yargs": "^8.0.2"
+    "resolve-id-refs": "^0.1.0"
   },
   "devDependencies": {
-    "@18f/stylelint-rules": "^1.2.0",
     "@frctl/fractal": "^1.1.7",
     "@frctl/mandelbrot": "^1.2.0",
     "@frctl/nunjucks": "^1.0.3",
