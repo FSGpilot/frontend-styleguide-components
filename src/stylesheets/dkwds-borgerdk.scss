@@ -2,7 +2,7 @@
 
 @import 'dkwds-lib';
 @import './core/functions';
-@import './core/variables';
 @import './themes/borgerdk';  //import variable-overrides specific to this theme 
+@import './core/variables';
 @import 'dkwds-base'; //imports everything thats shared between all themes (the above theme handles making things specific to that theme).
 
